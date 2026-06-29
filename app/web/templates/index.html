@@ -1,0 +1,242 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>BTDigg + RD</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/btdigg-rd.css') }}?v=16">
+</head>
+<body>
+  <main class="shell">
+    <header class="topbar">
+      <div>
+        <h1 class="gear-title">
+          <button id="settingsToggle" class="gear-btn" type="button" title="Ajustes" onclick="toggleSettingsView()">⚙</button>
+          <button id="historyToggle" class="gear-btn" type="button" title="Historial" onclick="toggleHistoryView()">&#128221;</button>
+          <span>BTDigg + RD</span>
+        </h1>
+        <p class="sub">Búsqueda limpia, Real-Debrid primero y qBittorrent si hace falta.</p>
+      </div>
+    </header>
+
+    <div id="mainView" class="view">
+      <section class="panel search-panel">
+        <div class="field grow">
+          <label for="bQuery">Título o búsqueda</label>
+          <input id="bQuery" type="search" enterkeyhint="search" autocomplete="off" placeholder="Ejemplo: película 2024 castellano 1080p">
+        </div>
+        <div class="field small">
+          <label for="bPages">Páginas</label>
+          <input id="bPages" value="1">
+        </div>
+        <div class="field medium">
+          <label for="bMode">Modo</label>
+          <select id="bMode">
+            <option value="2">Castellano preferente</option>
+            <option value="3">Castellano obligatorio</option>
+            <option value="1">Calidad pura</option>
+            <option value="0" selected>Sin filtro</option>
+          </select>
+        </div>
+        <div class="field small">
+          <label for="bMinGb">GB mínimo</label>
+          <input id="bMinGb" inputmode="decimal" placeholder="opcional">
+        </div>
+        <div class="actions">
+          <button class="btn primary" type="button" onclick="searchBT()">BUSCAR</button>
+          <button class="btn" type="button" onclick="clearCurrent()">Limpiar</button>
+        </div>
+      </section>
+
+      <section class="live-area">
+        <div class="panel">
+          <div class="panel-head">
+            <h2>Actividad</h2>
+            <div class="panel-head-actions">
+              <button id="qbitToggle" class="qbit-toggle is-on" type="button" title="qBittorrent activo para la siguiente búsqueda" aria-pressed="true" onclick="toggleQbitSearch(this)">qB ON</button>
+              <button id="activityToggle" class="panel-toggle" type="button" title="Ocultar actividad" onclick="toggleActivity()">▾</button>
+            </div>
+          </div>
+          <div id="log-btdigg" class="log">
+            <div class="line">Listo. Escribe una búsqueda y pulsa BUSCAR.</div>
+          </div>
+        </div>
+      </section>
+
+      <section id="resultsCard" class="panel results-panel">
+        <div class="panel-head">
+          <h2 id="resultsTitle">Resultados BTDigg + RD</h2>
+          <span class="status-pill" id="lastAction">Listo</span>
+        </div>
+        <div id="results" class="results"><p class="hint">Sin resultados todavía.</p></div>
+      </section>
+    </div>
+
+    <section id="settingsView" class="view hidden">
+      <div class="panel settings-page">
+        <div class="settings-page-head">
+          <div>
+            <h2>BTDigg + RD</h2>
+            <p class="sub">Ajustes seguros para tocar fino.</p>
+          </div>
+          <div class="settings-actions">
+            <button id="settingsResetBtn" class="btn" type="button" onclick="openSettingsResetModal()">Restablecer</button>
+            <button id="settingsSaveBtn" class="btn primary" type="button" onclick="saveSettings(this)">Guardar</button>
+          </div>
+        </div>
+        <div id="settingsGeneralSection" class="settings-section">
+          <button class="settings-section-head" type="button" aria-expanded="false" onclick="toggleSettingsSection('settingsGeneralSection')">
+            <span>
+              <strong>Ajustes generales</strong>
+              <small>Busqueda, espera RD visible y qBittorrent.</small>
+            </span>
+            <span class="panel-toggle settings-section-toggle is-collapsed" aria-hidden="true">&#9662;</span>
+          </button>
+          <div class="settings-section-body is-hidden">
+            <div id="settingsPanel" class="settings-grid settings-grid-full"></div>
+          </div>
+        </div>
+        <div id="settingsRdSection" class="settings-section">
+          <button class="settings-section-head" type="button" aria-expanded="false" onclick="toggleSettingsSection('settingsRdSection')">
+            <span>
+              <strong>Ajustes RD</strong>
+              <small>Ritmo, concurrencia y enfado 429 de Real-Debrid.</small>
+            </span>
+            <span class="panel-toggle settings-section-toggle is-collapsed" aria-hidden="true">&#9662;</span>
+          </button>
+          <div class="settings-section-body is-hidden">
+            <div id="settingsRdPanel" class="settings-rd-groups"></div>
+          </div>
+        </div>
+        <div id="rdFollowSection" class="settings-section">
+          <button class="settings-section-head" type="button" aria-expanded="false" onclick="toggleSettingsSection('rdFollowSection')">
+            <span>
+              <strong>Seguimiento RD</strong>
+              <small>Lectura en vivo para afinar ritmo, 429 y limpieza.</small>
+            </span>
+            <span class="panel-toggle settings-section-toggle is-collapsed" aria-hidden="true">&#9662;</span>
+          </button>
+          <div class="settings-section-body is-hidden">
+            <div class="rd-follow-wrap">
+              <div class="rd-follow-test">
+                <div class="rd-follow-test-head">
+                  <strong>Prueba de afinado</strong>
+                  <small>Arranca una búsqueda real y mira cómo responde RD.</small>
+                </div>
+                <div class="rd-follow-test-grid">
+                  <label class="setting-item rd-setting">
+                    <span>Título / búsqueda</span>
+                    <input id="rdFollowQuery" type="search" autocomplete="off" placeholder="Ejemplo: 1080p">
+                    <small>Texto de prueba para lanzar el motor real.</small>
+                  </label>
+                  <label class="setting-item rd-setting">
+                    <span>Páginas</span>
+                    <input id="rdFollowPages" value="1" inputmode="numeric">
+                    <small>Prueba corta: 1. Más fina: 1-3.</small>
+                  </label>
+                  <label class="setting-item rd-setting">
+                    <span>Modo</span>
+                    <select id="rdFollowMode">
+                      <option value="0" selected>Sin filtro</option>
+                      <option value="1">Calidad pura</option>
+                      <option value="2">Castellano preferente</option>
+                      <option value="3">Castellano obligatorio</option>
+                    </select>
+                    <small>Mismo criterio que la búsqueda principal.</small>
+                  </label>
+                  <label class="setting-item rd-setting">
+                    <span>GB mínimo</span>
+                    <input id="rdFollowMinGb" inputmode="decimal" placeholder="0">
+                    <small>Déjalo en 0 para no estrechar la prueba.</small>
+                  </label>
+                </div>
+                <div class="rd-follow-actions">
+                  <button id="rdFollowUseCurrentBtn" class="btn" type="button" onclick="rdFollowUseCurrentSearch(this)">Usar búsqueda actual</button>
+                  <button id="rdFollowStartBtn" class="btn primary" type="button" onclick="rdFollowStartTest(this)">Probar seguimiento</button>
+                </div>
+              </div>
+              <div id="rdFollowMetrics" class="rd-follow-metrics"></div>
+              <div class="rd-follow-panel">
+                <div class="panel-head">
+                  <h2>Ojo RD</h2>
+                  <div class="panel-head-actions">
+                    <span id="rdFollowStatus" class="status-pill">Esperando</span>
+                    <button id="rdFollowToggle" class="panel-toggle" type="button" title="Ocultar seguimiento" onclick="toggleRdFollow()">▾</button>
+                  </div>
+                </div>
+                <div id="rdFollowLog" class="log rd-follow-log">
+                  <div class="line">Sin búsqueda activa. Lanza una prueba o una búsqueda normal.</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div id="settingsTvRulesSection" class="settings-section">
+          <button class="settings-section-head" type="button" aria-expanded="false" onclick="toggleSettingsSection('settingsTvRulesSection')">
+            <span>
+              <strong>Reglas Series / TV</strong>
+              <small>Reglas editables para mandar series a TV y dejar el resto como peliculas.</small>
+            </span>
+            <span class="panel-toggle settings-section-toggle is-collapsed" aria-hidden="true">&#9662;</span>
+          </button>
+          <div class="settings-section-body is-hidden">
+            <div id="tvRulesPanel" class="tv-rules-preview">
+              <label class="tv-rule-card tv-rule-editor">
+                <span>Plantillas de serie</span>
+                <textarea id="tvSeriesTemplates" rows="8" spellcheck="false" placeholder="SXXEXX&#10;XXxXX&#10;Temporada XX"></textarea>
+                <small>Cada X mayuscula representa un numero. Si coincide, manda a Series / TV.</small>
+              </label>
+              <label class="tv-rule-card tv-rule-editor">
+                <span>Palabras de serie</span>
+                <textarea id="tvSeriesWords" rows="8" spellcheck="false" placeholder="capitulo&#10;episodio&#10;season"></textarea>
+                <small>Palabras sueltas que tambien fuerzan destino Series / TV.</small>
+              </label>
+              <div class="tv-rule-card tv-rule-test">
+                <label for="tvClassifyTitle">Probar titulo</label>
+                <div class="tv-rule-test-row">
+                  <input id="tvClassifyTitle" type="text" placeholder="Ejemplo: Serie S01E01 2160p">
+                  <span id="tvClassifyResult" class="status-pill mid">Sin probar</span>
+                </div>
+                <div class="tv-rule-actions">
+                  <button class="btn" type="button" onclick="testTvRules(this)">Probar titulo</button>
+                  <button class="btn" type="button" onclick="restoreTvRuleDefaults(this)">Restaurar reglas</button>
+                </div>
+                <small>Si no coincide con ninguna regla, el destino sigue siendo Peliculas.</small>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="settings-footer">
+          <span id="settingsStatus" class="hint"></span>
+        </div>
+      </div>
+    </section>
+
+    <section id="historyView" class="view hidden">
+      <div class="panel history-page">
+        <div class="history-page-head">
+          <div>
+            <h2>Historial BTDigg + RD</h2>
+            <p class="sub">Búsquedas guardadas automáticamente.</p>
+          </div>
+          <button class="btn" type="button" onclick="loadHistory(true)">Actualizar</button>
+        </div>
+        <div id="historyPanel" class="history-list"></div>
+      </div>
+    </section>
+  </main>
+
+  <div id="settingsResetModal" class="modal-backdrop hidden" role="dialog" aria-modal="true" aria-labelledby="settingsResetTitle">
+    <div class="modal-card">
+      <h2 id="settingsResetTitle">Restablecer ajustes</h2>
+      <p>Se cargarán los valores recomendados y se guardarán directamente.</p>
+      <div class="modal-actions">
+        <button class="btn" type="button" onclick="closeSettingsResetModal()">Cancelar</button>
+        <button id="settingsResetConfirmBtn" class="btn primary" type="button" onclick="confirmSettingsReset(this)">Restablecer</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="{{ url_for('static', filename='js/btdigg-rd.js') }}?v=12"></script>
+</body>
+</html>

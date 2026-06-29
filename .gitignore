@@ -1,0 +1,31 @@
+# Git local para BTDigg + RD: no subir runtime, backups ni secretos.
+
+_backups/
+.playwright-mcp/
+
+data/
+logs/
+handoff-conversacion-anterior.md
+
+app/motor/btdigg/rd_token.txt
+app/motor/btdigg/config.json
+app/motor/btdigg/exports/
+app/motor/btdigg/temp/
+app/motor/btdigg/logs/
+app/motor/btdigg/Links qB RD/
+app/motor/btdigg/historial_*.txt
+app/motor/btdigg/EDITOR_*.log
+
+**/__pycache__/
+*.pyc
+
+*.log
+*.tmp
+*.part
+
+# ZIPs grandes o entregables externos.
+*.zip
+!_backups/.gitkeep
+
+# Capturas de comprobacion local.
+btdigg-rd-final-mobile.png

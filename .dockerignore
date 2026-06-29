@@ -1,0 +1,10 @@
+BTDigg + RD.zip
+deep-research-report.md
+instrucciones de la investigacion avanzada.txt
+AGENTS.md
+docker-compose.yml.lnk
+_codex_source/
+logs/
+data/
+**/__pycache__/
+**/*.pyc
