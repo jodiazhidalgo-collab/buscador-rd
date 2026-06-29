@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>BTDigg + RD</title>
-  <link rel="stylesheet" href="{{ url_for('static', filename='css/btdigg-rd.css') }}?v=16">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/btdigg-rd.css') }}?v=26">
 </head>
 <body>
   <main class="shell">
@@ -112,7 +112,7 @@
           <button class="settings-section-head" type="button" aria-expanded="false" onclick="toggleSettingsSection('rdFollowSection')">
             <span>
               <strong>Seguimiento RD</strong>
-              <small>Lectura en vivo para afinar ritmo, 429 y limpieza.</small>
+              <small>Proceso en vivo con segundos, esperas y avisos 429.</small>
             </span>
             <span class="panel-toggle settings-section-toggle is-collapsed" aria-hidden="true">&#9662;</span>
           </button>
@@ -120,52 +120,34 @@
             <div class="rd-follow-wrap">
               <div class="rd-follow-test">
                 <div class="rd-follow-test-head">
-                  <strong>Prueba de afinado</strong>
-                  <small>Arranca una búsqueda real y mira cómo responde RD.</small>
+                  <strong>Prueba</strong>
                 </div>
-                <div class="rd-follow-test-grid">
-                  <label class="setting-item rd-setting">
+                <div class="rd-follow-test-grid compact-search">
+                  <label class="field grow">
                     <span>Título / búsqueda</span>
-                    <input id="rdFollowQuery" type="search" autocomplete="off" placeholder="Ejemplo: 1080p">
-                    <small>Texto de prueba para lanzar el motor real.</small>
+                    <input id="rdFollowQuery" type="search" autocomplete="off" placeholder="2160p">
                   </label>
-                  <label class="setting-item rd-setting">
+                  <label class="field small">
                     <span>Páginas</span>
-                    <input id="rdFollowPages" value="1" inputmode="numeric">
-                    <small>Prueba corta: 1. Más fina: 1-3.</small>
+                    <input id="rdFollowPages" value="1-1" inputmode="numeric">
                   </label>
-                  <label class="setting-item rd-setting">
-                    <span>Modo</span>
-                    <select id="rdFollowMode">
-                      <option value="0" selected>Sin filtro</option>
-                      <option value="1">Calidad pura</option>
-                      <option value="2">Castellano preferente</option>
-                      <option value="3">Castellano obligatorio</option>
-                    </select>
-                    <small>Mismo criterio que la búsqueda principal.</small>
-                  </label>
-                  <label class="setting-item rd-setting">
-                    <span>GB mínimo</span>
-                    <input id="rdFollowMinGb" inputmode="decimal" placeholder="0">
-                    <small>Déjalo en 0 para no estrechar la prueba.</small>
-                  </label>
-                </div>
-                <div class="rd-follow-actions">
-                  <button id="rdFollowUseCurrentBtn" class="btn" type="button" onclick="rdFollowUseCurrentSearch(this)">Usar búsqueda actual</button>
-                  <button id="rdFollowStartBtn" class="btn primary" type="button" onclick="rdFollowStartTest(this)">Probar seguimiento</button>
+                  <div class="actions rd-follow-actions">
+                    <button id="rdFollowStartBtn" class="btn primary" type="button" onclick="rdFollowStartTest(this)">Buscar</button>
+                    <button id="rdFollowClearBtn" class="btn" type="button" onclick="rdFollowClearTest(this)">Limpiar</button>
+                  </div>
                 </div>
               </div>
               <div id="rdFollowMetrics" class="rd-follow-metrics"></div>
               <div class="rd-follow-panel">
                 <div class="panel-head">
-                  <h2>Ojo RD</h2>
+                  <h2>Proceso RD</h2>
                   <div class="panel-head-actions">
                     <span id="rdFollowStatus" class="status-pill">Esperando</span>
                     <button id="rdFollowToggle" class="panel-toggle" type="button" title="Ocultar seguimiento" onclick="toggleRdFollow()">▾</button>
                   </div>
                 </div>
                 <div id="rdFollowLog" class="log rd-follow-log">
-                  <div class="line">Sin búsqueda activa. Lanza una prueba o una búsqueda normal.</div>
+                  <div class="line rd-follow-line"><span class="rd-follow-marker"></span><span class="rd-follow-text">Sin señales RD todavía. Lanza una prueba o una búsqueda normal.</span><span class="rd-follow-seconds">+0.0s</span></div>
                 </div>
               </div>
             </div>
@@ -237,6 +219,6 @@
     </div>
   </div>
 
-  <script src="{{ url_for('static', filename='js/btdigg-rd.js') }}?v=12"></script>
+  <script src="{{ url_for('static', filename='js/btdigg-rd.js') }}?v=19"></script>
 </body>
 </html>

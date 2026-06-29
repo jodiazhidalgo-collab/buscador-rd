@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import json
 from collections import Counter
+from datetime import datetime
 from pathlib import Path
 from typing import Any
 
@@ -14,9 +15,17 @@ USEFUL_EVENTS = {
     "PROCESS_STARTED",
     "JOB_FINISHED_OK",
     "JOB_FINISHED_ERROR",
+    "browser_auto_search_start_dom",
+    "browser_auto_search_end_dom",
+    "extract_magnets",
+    "prepare_after_filter",
+    "prepare_after_query_prefilter",
     "btdigg_search_end",
+    "rd_verify_batch_start",
     "rd_verify_queue_start",
     "rd_verify_queue_done_item",
+    "rd_endpoint_pace_wait",
+    "rd_rate_wait",
     "rd_verify_select_files",
     "rd_verify_post_select_poll",
     "rd_verify_ok",
@@ -94,11 +103,87 @@ def _fmt_sec(value: Any) -> str:
     return text + "s"
 
 
-def _short_title(value: Any) -> str:
+def _parse_dt(value: Any) -> datetime | None:
     text = str(value or "").strip()
-    if len(text) > 82:
-        return text[:79] + "..."
-    return text
+    if not text:
+        return None
+    if text.endswith("Z"):
+        text = text[:-1] + "+00:00"
+    if len(text) >= 5 and text[-5] in "+-" and text[-3] != ":":
+        text = text[:-2] + ":" + text[-2:]
+    try:
+        return datetime.fromisoformat(text)
+    except Exception:
+        return None
+
+
+def _job_started_at(events: list[dict[str, Any]], summary_file: dict[str, Any]) -> datetime | None:
+    for record in events:
+        when = _parse_dt(record.get("ts"))
+        if when:
+            return when
+    return _parse_dt(summary_file.get("started_at"))
+
+
+def _elapsed(record: dict[str, Any], started_at: datetime | None) -> str:
+    current = _parse_dt(record.get("ts"))
+    if not current or not started_at:
+        return "+0.0s"
+    try:
+        seconds = max(0.0, (current - started_at).total_seconds())
+    except Exception:
+        return "+0.0s"
+    return "+" + _fmt_sec(seconds)
+
+
+def _mode_label(value: Any) -> str:
+    labels = {
+        "0": "Sin filtro",
+        "1": "Calidad pura",
+        "2": "Castellano preferente",
+        "3": "Castellano obligatorio",
+    }
+    return labels.get(str(value), str(value or "Sin filtro"))
+
+
+def _endpoint_label(value: Any) -> str:
+    text = str(value or "")
+    labels = {
+        "addMagnet": "Meter magnet",
+        "selectFiles": "Seleccionar archivos",
+        "delete": "Borrar",
+        "info": "Mirar info",
+        "activeCount": "Estado RD",
+        "list": "Lista RD",
+    }
+    if text in labels:
+        return labels[text]
+    if "addMagnet" in text:
+        return labels["addMagnet"]
+    if "selectFiles" in text:
+        return labels["selectFiles"]
+    if "delete" in text:
+        return labels["delete"]
+    if "/info" in text:
+        return labels["info"]
+    if "/activeCount" in text:
+        return labels["activeCount"]
+    if text == "/torrents":
+        return labels["list"]
+    return text or "RD"
+
+
+def _endpoint_hint(value: Any) -> str:
+    label = _endpoint_label(value)
+    if label == "Meter magnet":
+        return 'sube "Meter magnet" o "Pausa endpoint"'
+    if label == "Seleccionar archivos":
+        return 'sube "Seleccionar archivos" o "Pausa endpoint"'
+    if label == "Borrar":
+        return 'sube "Borrar" o "Pausa endpoint"'
+    if label == "Mirar info":
+        return 'baja "Info a la vez" si se repite'
+    return 'sube "Pausa 429" si se repite'
 
 
 def _human_reason(value: Any) -> str:
@@ -116,26 +201,103 @@ def _human_reason(value: Any) -> str:
     return labels.get(text, text.replace("_", " ") or "descarte")
 
 
-def _line(ts: str, level: str, kind: str, text: str) -> dict[str, Any]:
-    return {"ts": ts, "level": level, "kind": kind, "text": text}
 
 
-def _event_to_line(record: dict[str, Any]) -> dict[str, Any] | None:
-    event = str(record.get("event") or "")
+def _status_label(value: Any) -> str:
+    labels = {
+        "RD_OK": "OK con link",
+        "NO_INSTANT": "no instantáneo",
+        "PACK_SIN_COINCIDENCIA": "pack descartado",
+        "RD_FAIL": "fallo RD descartado",
+        "RD_ERROR": "aviso RD",
+        "RD_ERROR_TEMPORAL": "aviso temporal RD",
+    }
+    return labels.get(str(value or ""), str(value or "procesado"))
+
+
+def _default_badge(kind: str, level: str) -> tuple[str, str]:
+    if level in {"warn", "error"}:
+        return "Aviso", "principal"
+    return "", "neutral"
+
+
+def _endpoint_badge_tone(value: Any) -> tuple[str, str]:
+    label = _endpoint_label(value)
+    if label == "Meter magnet":
+        return "Principal", "principal"
+    if label in {"Seleccionar archivos", "Borrar"}:
+        return "Secundario", "secundario"
+    if label in {"Mirar info", "Estado RD", "Lista RD"}:
+        return "Ajuste", "ajuste"
+    return "RD", "neutral"
+
+
+def _line(
+    record: dict[str, Any],
+    started_at: datetime | None,
+    level: str,
+    kind: str,
+    text: str,
+    badge: str | None = None,
+    tone: str | None = None,
+) -> dict[str, Any]:
     ts = str(record.get("ts") or "")[11:19] or "--:--:--"
+    default_badge, default_tone = _default_badge(kind, level)
+    return {
+        "ts": ts,
+        "elapsed": _elapsed(record, started_at),
+        "level": level,
+        "kind": kind,
+        "text": text,
+        "badge": badge or default_badge,
+        "tone": tone or default_tone,
+    }
+
+
+def _event_to_line(record: dict[str, Any], started_at: datetime | None) -> dict[str, Any] | None:
+    event = str(record.get("event") or "")
     data = _data(record)
 
     if event == "JOB_STARTED":
         payload = data.get("payload") if isinstance(data.get("payload"), dict) else {}
         query = payload.get("query") or "sin título"
         pages = payload.get("pages") or "1"
-        return _line(ts, "info", "start", f"Prueba/búsqueda iniciada: {query} | páginas {pages}.")
+        mode = _mode_label(payload.get("mode"))
+        return _line(record, started_at, "info", "start", f"Búsqueda: {query} | Páginas: {pages} | Modo: {mode}")
 
     if event == "PROCESS_STARTED":
-        return _line(ts, "info", "start", "Motor arrancado. Esperando señales RD.")
+        return _line(record, started_at, "info", "start", "Motor arrancado. Esperando señales de RD.")
+
+    if event == "browser_auto_search_start_dom":
+        pages = data.get("parsed_pages")
+        if isinstance(pages, list) and pages:
+            return _line(record, started_at, "info", "btdigg", f"BTDigg: revisando página {pages[0]}/{pages[-1]}...")
+        return _line(record, started_at, "info", "btdigg", "BTDigg: revisando páginas...")
+
+    if event in {"browser_auto_search_end_dom", "extract_magnets"}:
+        total = data.get("total") or data.get("magnets")
+        if total is None:
+            return None
+        return _line(record, started_at, "info", "btdigg", f"BTDigg: {total} candidatos encontrados.")
+
+    if event == "prepare_after_filter":
+        before = data.get("before", 0)
+        after_count = data.get("after", 0)
+        removed = data.get("removed", 0)
+        return _line(record, started_at, "info", "filter", f"Filtro: {after_count}/{before} candidatos siguen; quitados {removed}.")
+
+    if event == "prepare_after_query_prefilter":
+        before = data.get("before", 0)
+        after_count = data.get("after", 0)
+        removed = data.get("removed", 0)
+        return _line(record, started_at, "info", "filter", f"Criba por búsqueda: {after_count}/{before} candidatos; quitados {removed}.")
 
     if event == "btdigg_search_end":
-        return _line(ts, "info", "btdigg", f"BTDigg entrega {_fmt_num(data.get('total'))} candidatos para cribar.")
+        return _line(record, started_at, "info", "btdigg", f"BTDigg: {_fmt_num(data.get('total'))} candidatos para cribar.")
+
+    if event == "rd_verify_batch_start":
+        total = data.get("verifying") or data.get("total")
+        return _line(record, started_at, "info", "rd", f"RD: preparando {total} candidatos.")
 
     if event == "rd_verify_queue_start":
         cfg = data.get("config") if isinstance(data.get("config"), dict) else {}
@@ -143,103 +305,133 @@ def _event_to_line(record: dict[str, Any]) -> dict[str, Any] | None:
         workers = data.get("workers")
         per_min = cfg.get("rd_api_rate_limit_per_min")
         burst = cfg.get("rd_api_rate_limit_burst")
-        return _line(ts, "info", "rd", f"RD empieza: {verifying} candidatos, {workers} workers, límite {per_min}/min, ráfaga {burst}.")
+        return _line(record, started_at, "info", "rd", f"RD: {verifying} candidatos | {workers} workers | límite {per_min}/min | ráfaga {burst}.")
+
+    if event == "rd_endpoint_pace_wait":
+        wait = float(data.get("wait_sec") or 0)
+        if wait < 0.05:
+            return None
+        raw_group = data.get("group") or data.get("path")
+        group = _endpoint_label(raw_group)
+        badge, tone = _endpoint_badge_tone(raw_group)
+        why = str(data.get("why") or "")
+        reason = "concurrencia" if "max_concurrent" in why else "ritmo"
+        return _line(record, started_at, "info", "pace", f"Ritmo: {group} espera {_fmt_sec(wait)} por {reason}.", badge, tone)
+
+    if event == "rd_rate_wait":
+        wait = float(data.get("wait_sec") or 0)
+        if wait < 0.05:
+            return None
+        why = str(data.get("why") or "ritmo")
+        why_label = "ráfaga" if why == "burst" else why
+        return _line(record, started_at, "info", "pace", f"Ritmo global: espera {_fmt_sec(wait)} por {why_label}.", "Avanzado", "avanzado")
 
     if event == "rd_verify_queue_done_item":
         done = int(data.get("done") or 0)
         total = int(data.get("total") or 0)
         status = str(data.get("status") or "")
-        if status not in IMPORTANT_STATUS and total and done % 5 and done != total:
-            return None
-        title = _short_title(data.get("title"))
-        return _line(ts, "ok" if status == "RD_OK" else "warn" if status in IMPORTANT_STATUS else "info", "progress", f"RD {done}/{total}: {status or 'procesado'} | {title}")
+        if status in {"RD_ERROR", "RD_ERROR_TEMPORAL"}:
+            return _line(record, started_at, "warn", "progress", f"RD: {done}/{total} aviso.", "Principal", "principal")
+        return _line(record, started_at, "info", "progress", f"RD: {done}/{total} OK.", "OK", "ok")
 
     if event == "rd_verify_select_files":
-        title = _short_title(data.get("title"))
         files = data.get("files") or data.get("selected_file") or ""
-        return _line(ts, "info", "select", f"Seleccionando archivo interno: {title} | {files}")
+        suffix = f" | archivos {files}" if files else ""
+        return _line(record, started_at, "info", "select", "RD: pack detectado, seleccionando archivo interno" + suffix + ".", "Secundario", "secundario")
 
     if event == "rd_verify_post_select_poll":
         progress = _fmt_num(data.get("progress"))
         links = _fmt_num(data.get("links"))
-        return _line(ts, "info", "select", f"Post-selección: progreso {progress}% | links {links}.")
+        try:
+            has_links = int(float(str(links or 0))) > 0
+        except Exception:
+            has_links = False
+        level = "ok" if has_links else "info"
+        badge, tone = ("OK", "ok") if has_links else ("Secundario", "secundario")
+        return _line(record, started_at, level, "select", f"RD: tras seleccionar | progreso {progress}% | links {links}.", badge, tone)
 
     if event == "rd_verify_ok":
-        title = _short_title(data.get("title"))
         links = _fmt_num(data.get("links"))
         size = _fmt_num(data.get("size_gb"))
-        return _line(ts, "ok", "ok", f"RD_OK: {links} link real | {size} GB | {title}")
+        return _line(record, started_at, "ok", "ok", f"RD_OK: {links} link real | {size} GB.", "OK", "ok")
 
     if event == "rd_verify_not_instant":
-        title = _short_title(data.get("title"))
         status = data.get("status") or "no instantáneo"
-        return _line(ts, "warn", "discard", f"NO_INSTANT: {status} | {title}")
+        return _line(record, started_at, "info", "discard", f"RD: no instantáneo | {status}.", "OK", "ok")
 
     if event == "rd_fast_discard":
-        reason = _human_reason(data.get("reason"))
-        status = data.get("status") or "descartado"
-        title = _short_title(data.get("title"))
-        return _line(ts, "warn", "discard", f"Descarte rápido: {status} | {reason} | {title}")
+        return None
 
     if event == "rd_call_retry_429":
         op = data.get("op") or data.get("path") or "RD"
         attempt = data.get("attempt")
         max_attempts = data.get("max_attempts")
         wait = _fmt_sec(data.get("wait_sec"))
-        return _line(ts, "warn", "429", f"429 en {op}: intento {attempt}/{max_attempts}, espera {wait}.")
+        label = _endpoint_label(op)
+        badge, tone = _endpoint_badge_tone(op)
+        return _line(record, started_at, "warn", "429", f"429: {label} protesta | intento {attempt}/{max_attempts} | espera {wait} | Consejo: {_endpoint_hint(op)}.", badge, tone)
 
     if event == "rd_endpoint_429_backoff":
         group = data.get("group") or "endpoint"
         cooldown = _fmt_sec(data.get("cooldown_sec"))
         interval = _fmt_sec(data.get("min_interval"))
+        label = _endpoint_label(group)
+        badge, tone = _endpoint_badge_tone(group)
         massive = " masivo" if data.get("massive") else ""
-        return _line(ts, "warn", "429", f"Freno{massive} en {group}: pausa {cooldown}, intervalo {interval}.")
+        return _line(record, started_at, "warn", "429", f"429{massive}: freno en {label} | pausa {cooldown} | intervalo {interval} | Consejo: {_endpoint_hint(group)}.", badge, tone)
 
     if event == "rd_rate_429_cooldown":
-        path = data.get("path") or "RD"
-        return _line(ts, "warn", "429", f"Pausa general 429: {_fmt_sec(data.get('cooldown_sec'))} en {path}.")
+        return _line(record, started_at, "warn", "429", f"429: pausa general {_fmt_sec(data.get('cooldown_sec'))} | Consejo: sube Pausa 429 si se repite.", "Principal", "principal")
 
     if event == "rd_api_http_error":
         code = data.get("code")
         path = data.get("path") or "RD"
-        err = data.get("error") or ""
         if int(code or 0) == 429:
-            return _line(ts, "warn", "429", f"RD protesta 429 en {path}: {err}.")
-        return _line(ts, "warn", "http", f"RD HTTP {code} en {path}: {err}.")
+            label = _endpoint_label(path)
+            badge, tone = _endpoint_badge_tone(path)
+            return _line(record, started_at, "warn", "429", f"429: RD protesta en {label} | Consejo: {_endpoint_hint(path)}.", badge, tone)
+        if int(code or 0) in {35, 37, 403, 451}:
+            return None
+        badge, tone = _endpoint_badge_tone(path)
+        return _line(record, started_at, "warn", "http", f"RD HTTP {code} en {_endpoint_label(path)}.", badge, tone)
 
     if event == "rd_call_terminal_error":
         code = data.get("code")
-        err = data.get("error") or ""
         op = data.get("op") or data.get("path") or "RD"
-        return _line(ts, "warn", "terminal", f"Terminal RD {code} en {op}: {err}.")
+        if int(code or 0) in {35, 451}:
+            return None
+        badge, tone = _endpoint_badge_tone(op)
+        return _line(record, started_at, "warn", "terminal", f"RD: error terminal {code} en {_endpoint_label(op)}.", badge, tone)
 
     if event == "rd_cleanup_final_start":
-        ctx = data.get("context") if isinstance(data.get("context"), dict) else {}
         total = data.get("total")
-        pending = ctx.get("cleanup_pending", 0)
-        return _line(ts, "info", "cleanup", f"Limpieza final: {total} candidatos pendientes | cola previa {pending}.")
+        return _line(record, started_at, "info", "cleanup", f"Limpieza: revisando {total} temporales.", "Secundario", "secundario")
 
     if event == "rd_cleanup_final_end":
         deleted = data.get("cleanup_deleted", 0)
-        missing = data.get("cleanup_missing", 0)
         pending = data.get("cleanup_pending", 0)
         leftover = data.get("cleanup_leftover", 0)
         level = "ok" if not pending and not leftover else "warn"
-        return _line(ts, level, "cleanup", f"Limpieza RD: borrados {deleted}, ausentes {missing}, pendientes {pending}, sobrantes {leftover}.")
+        badge, tone = ("OK", "ok") if level == "ok" else ("Secundario", "secundario")
+        return _line(record, started_at, level, "cleanup", f"Limpieza: borrados {deleted} | pendientes {pending} | sobrantes {leftover}.", badge, tone)
 
     if event == "rd_rate_summary":
-        label = data.get("label") or "resumen"
         calls = data.get("api_calls_total", 0)
         max_window = data.get("max_window_count", 0)
         cooldowns = data.get("cooldowns_429", 0)
         waits = data.get("waits_total", 0)
-        return _line(ts, "info", "summary", f"Ritmo RD {label}: {calls} llamadas, ventana máx {max_window}, esperas {waits}, 429 {cooldowns}.")
+        level = "warn" if int(cooldowns or 0) else "info"
+        text = f"Ritmo RD: {calls} peticiones | pico {max_window}/min | esperas {waits} | 429 {cooldowns}."
+        if int(cooldowns or 0):
+            text += " Consejo: sube Pausa 429 si se repite."
+        return _line(record, started_at, level, "summary", text, "Avanzado", "avanzado")
 
     if event == "rd_endpoint_pacer_summary":
-        label = data.get("label") or "resumen"
         by_group = data.get("429_by_group") if isinstance(data.get("429_by_group"), dict) else {}
-        text_429 = ", ".join(f"{k}={v}" for k, v in by_group.items()) or "0"
-        return _line(ts, "warn" if by_group else "ok", "summary", f"Pacer RD {label}: 429 por endpoint {text_429}.")
+        if not by_group:
+            return None
+        text_429 = ", ".join(f"{_endpoint_label(k)}={v}" for k, v in by_group.items())
+        return _line(record, started_at, "warn", "summary", f"429 por zona: {text_429}. Consejo: ajusta la zona que más protesta.", "Principal", "principal")
 
     if event in {"rd_verify_batch_end", "rd_check_summary"}:
         ok = data.get("RD_OK", 0)
@@ -248,15 +440,18 @@ def _event_to_line(record: dict[str, Any]) -> dict[str, Any] | None:
         fail = data.get("RD_FAIL", 0)
         err = int(data.get("RD_ERROR", 0) or 0) + int(data.get("RD_ERROR_TEMPORAL", 0) or 0)
         level = "ok" if not err else "warn"
-        return _line(ts, level, "summary", f"Resumen RD: OK={ok} | NO_INSTANT={no_inst} | PACK={pack} | FAIL={fail} | ERROR={err}.")
+        text = f"Resumen RD: OK {ok} | no instantáneos {no_inst} | packs {pack} | descartes RD {fail} | avisos RD {err}."
+        if err:
+            text += " Consejo: no apures velocidad hasta revisar esos avisos."
+        return _line(record, started_at, level, "summary", text, "Ajuste" if err else None, "ajuste" if err else None)
 
     if event == "JOB_FINISHED_OK":
         elapsed = _fmt_sec(data.get("elapsed_sec"))
         results = data.get("results_count", 0)
-        return _line(ts, "ok", "finish", f"Trabajo terminado: {results} resultados, {elapsed}.")
+        return _line(record, started_at, "ok", "finish", f"Terminado: {results} resultados | tiempo total {elapsed}.")
 
     if event == "JOB_FINISHED_ERROR":
-        return _line(ts, "error", "finish", "Trabajo terminado con error. Revisa caja negra.")
+        return _line(record, started_at, "error", "finish", "Terminado con error. Revisa caja negra.")
 
     return None
 
@@ -269,6 +464,39 @@ def _count_fast_discard(events: list[dict[str, Any]]) -> dict[str, int]:
         reason = str(_data(record).get("reason") or "otro")
         counter[reason] += 1
     return dict(counter)
+
+
+def _sum_dict(data: dict[str, Any]) -> int:
+    return sum(int(value or 0) for value in data.values())
+
+
+def _advice(summary: dict[str, Any]) -> list[str]:
+    pacer = summary.get("pacer") if isinstance(summary.get("pacer"), dict) else {}
+    by_group = pacer.get("429_by_group") if isinstance(pacer.get("429_by_group"), dict) else {}
+    cleanup = summary.get("cleanup") if isinstance(summary.get("cleanup"), dict) else {}
+    rd_counts = summary.get("rd_counts") if isinstance(summary.get("rd_counts"), dict) else {}
+    rate = summary.get("rate") if isinstance(summary.get("rate"), dict) else {}
+    out: list[str] = []
+
+    if _sum_dict(by_group):
+        group = max(by_group, key=lambda key: int(by_group.get(key) or 0))
+        out.append(f"Consejo: hay 429 en {_endpoint_label(group)}; {_endpoint_hint(group)}.")
+    elif int(rate.get("cooldowns_429") or 0):
+        out.append('Consejo: hay pausa 429 general; sube "Pausa 429" si se repite.')
+
+    if int(cleanup.get("pending") or 0) or int(cleanup.get("leftover") or 0):
+        out.append('Consejo: limpieza sucia; sube "Borrar" o "Pausa endpoint" y repite prueba.')
+
+    if int(rd_counts.get("RD_ERROR") or 0) or int(rd_counts.get("RD_ERROR_TEMPORAL") or 0):
+        out.append("Consejo: hay avisos RD; repite prueba o mira caja negra antes de afinar velocidad.")
+
+    if not out:
+        waits = int(rate.get("waits_total") or 0)
+        if waits:
+            out.append("Consejo: RD no protesta; si quieres apurar, baja Meter magnet 0.05s y repite.")
+        else:
+            out.append("Consejo: no tocar ajustes; RD respondió limpio.")
+    return out[:3]
 
 
 def _summary(events: list[dict[str, Any]], summary_file: dict[str, Any]) -> dict[str, Any]:
@@ -286,7 +514,7 @@ def _summary(events: list[dict[str, Any]], summary_file: dict[str, Any]) -> dict
     calls_by_group = pacer.get("calls_by_group") if isinstance(pacer.get("calls_by_group"), dict) else {}
     waits_by_group = pacer.get("waits_by_group") if isinstance(pacer.get("waits_by_group"), dict) else {}
 
-    return {
+    result = {
         "progress": {"done": done, "total": total, "active": queue_item.get("active")},
         "rd_counts": status_counts,
         "rate": {
@@ -294,8 +522,8 @@ def _summary(events: list[dict[str, Any]], summary_file: dict[str, Any]) -> dict
             "max_window_count": rate.get("max_window_count", 0),
             "max_burst_count": rate.get("max_burst_count", 0),
             "cooldowns_429": rate.get("cooldowns_429", 0),
-            "per_min": rate.get("per_min"),
-            "burst": rate.get("burst"),
+            "per_min": rate.get("per_min") or queue_start.get("config", {}).get("rd_api_rate_limit_per_min") if isinstance(queue_start.get("config"), dict) else rate.get("per_min"),
+            "burst": rate.get("burst") or queue_start.get("config", {}).get("rd_api_rate_limit_burst") if isinstance(queue_start.get("config"), dict) else rate.get("burst"),
             "waits_total": rate.get("waits_total", 0),
             "wait_seconds_total": rate.get("wait_seconds_total", 0),
         },
@@ -318,27 +546,33 @@ def _summary(events: list[dict[str, Any]], summary_file: dict[str, Any]) -> dict
         "elapsed_sec": summary_file.get("elapsed_sec"),
         "updated_at": summary_file.get("updated_at"),
     }
+    result["advice"] = _advice(result)
+    return result
 
 
 def build_rd_follow(job_id: str, after: int = 0, max_lines: int = 90) -> dict[str, Any]:
     folder = job_folder(job_id)
     events = _read_events(folder / "events.jsonl")
     summary_file = _read_json(folder / "summary.json")
+    started_at = _job_started_at(events, summary_file)
     cursor = len(events)
     after = max(0, min(int(after or 0), cursor))
 
-    if after == 0:
-        scan = events
-    else:
-        scan = events[after:]
+    scan = events if after == 0 else events[after:]
 
     lines: list[dict[str, Any]] = []
+    seen_summary: set[tuple[str, str]] = set()
     for record in scan:
         event = str(record.get("event") or "")
         if event not in USEFUL_EVENTS and not event.startswith(("rd_", "JOB_")):
             continue
-        line = _event_to_line(record)
+        line = _event_to_line(record, started_at)
         if line:
+            key = (str(line.get("kind") or ""), str(line.get("text") or ""))
+            if line.get("kind") == "summary" and key in seen_summary:
+                continue
+            if line.get("kind") == "summary":
+                seen_summary.add(key)
             if not lines or lines[-1].get("text") != line.get("text"):
                 lines.append(line)
 

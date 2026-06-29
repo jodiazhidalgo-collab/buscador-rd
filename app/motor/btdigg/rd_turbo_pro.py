@@ -1812,7 +1812,7 @@ def qbt_probe_candidates(results):
             qbt_probe_one(opener, r, i, len(candidates))
             if _is_qbt_working_status(r.qbt_status):
                 vivos += 1
-                print(f"qBit vivo {i}/{total_candidates}: {r.qbt_status} - {_result_display_name(r)[:70]}", flush=True)
+                print(f"qBit vivo {i}/{total_candidates}: {r.qbt_status} - {_result_display_name(r)[:100]}", flush=True)
             elif i % progress_step == 0 or i == total_candidates:
                 print(f"qBit progreso: {i}/{total_candidates} comprobados | vivos {vivos}", flush=True)
     else:
@@ -1826,7 +1826,7 @@ def qbt_probe_candidates(results):
                     fut.result()
                     if _is_qbt_working_status(r.qbt_status):
                         vivos += 1
-                        print(f"qBit vivo {done}/{total_candidates}: {r.qbt_status} - {_result_display_name(r)[:70]}", flush=True)
+                        print(f"qBit vivo {done}/{total_candidates}: {r.qbt_status} - {_result_display_name(r)[:100]}", flush=True)
                     elif done % progress_step == 0 or done == total_candidates:
                         print(f"qBit progreso: {done}/{total_candidates} comprobados | vivos {vivos}", flush=True)
                 except Exception as e:
@@ -2327,7 +2327,7 @@ def validate_direct_links(results):
     print(f"\nComprobando enlaces directos: {len(direct)}")
     diag("direct_check_start", total=len(direct))
     for i, r in enumerate(direct, 1):
-        print(f"  Directo {i}/{len(direct)}: {r.title[:70]}")
+        print(f"  Directo {i}/{len(direct)}: {r.title[:100]}")
         validate_direct_link(r)
         diag("direct_check_item", n=i, total=len(direct), status=r.rd_status, url=r.source_url[:240], reason=r.reason[:300])
     summary = {}
@@ -4782,7 +4782,6 @@ def rd_verify_addmagnet_queue(batch, token, maxv):
                 while next_index < len(batch) and len(active) < workers:
                     cand = batch[next_index]
                     idx = next_index + 1
-                    print(f"  Cola RD {idx}/{maxv}: {_result_display_name(cand)[:70]}")
                     fut = ex.submit(rd_verify_by_addmagnet, cand, token, idx, maxv, ctx)
                     active[fut] = (idx, cand)
                     diag("rd_verify_queue_submit", n=idx, total=maxv, active=len(active), title=cand.title[:120])
@@ -4798,10 +4797,11 @@ def rd_verify_addmagnet_queue(batch, token, maxv):
                         cand.reason = str(e)[:500]
                         diag("rd_verify_queue_worker_error", n=idx, title=cand.title[:120], error=str(e)[:400])
                     summary[cand.rd_status] = summary.get(cand.rd_status, 0) + 1
+                    display_name = _result_display_name(cand)[:100]
                     if cand.rd_status == "RD_OK":
-                        print(f"  RD OK {idx}/{maxv}: {cand.title[:70]}")
-                    elif done_count == len(batch) or done_count % max(1, workers) == 0:
-                        print(f"  RD cola comprobados: {done_count}/{len(batch)}")
+                        print(f"  RD OK {idx}/{maxv}: {display_name}")
+                    else:
+                        print(f"  Verificando {idx}/{maxv}: {display_name}")
                     diag(
                         "rd_verify_queue_done_item",
                         n=idx,
@@ -4853,7 +4853,7 @@ def rd_verify_addmagnet_batch(rd_candidates, token, maxv):
     workers = min(workers, len(batch))
     if workers <= 1:
         for j, cand in enumerate(batch, 1):
-            print(f"  Verificando {j}/{maxv}: {_result_display_name(cand)[:70]}")
+            print(f"  Verificando {j}/{maxv}: {_result_display_name(cand)[:100]}")
             rd_verify_by_addmagnet(cand, token, j, maxv)
             summary[cand.rd_status] = summary.get(cand.rd_status, 0) + 1
             time.sleep(float(CONFIG.get("delay_between_rd_checks_sec", 0.0)))
@@ -4877,7 +4877,7 @@ def rd_verify_addmagnet_batch(rd_candidates, token, maxv):
                     diag("rd_verify_batch_worker_error", n=j, title=cand.title[:120], error=str(e)[:400])
                 summary[cand.rd_status] = summary.get(cand.rd_status, 0) + 1
                 if cand.rd_status == "RD_OK":
-                    print(f"  RD OK {j}/{maxv}: {cand.title[:70]}")
+                    print(f"  RD OK {j}/{maxv}: {_result_display_name(cand)[:100]}")
                 elif done == len(batch) or done % workers == 0:
                     print(f"  RD comprobados: {done}/{len(batch)}")
         diag("rd_verify_batch_parallel_end", **summary, verifying=maxv, workers=workers)
@@ -4951,7 +4951,7 @@ def rd_check_availability(results, token):
                 summary[r.rd_status] = summary.get(r.rd_status, 0) + 1
                 continue
             torrent_checks += 1
-            print(f"  Verificando .torrent {torrent_checks}/{max_torrent_checks}: {r.title[:70]}")
+            print(f"  Verificando .torrent {torrent_checks}/{max_torrent_checks}: {r.title[:100]}")
             rd_verify_by_torrent_url(r, token, torrent_checks, max_torrent_checks)
             summary[r.rd_status] = summary.get(r.rd_status, 0) + 1
             continue

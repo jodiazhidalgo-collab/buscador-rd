@@ -8,6 +8,7 @@ let rdFollowTimer = null;
 let rdFollowJobId = null;
 let rdFollowCursor = 0;
 let rdFollowLines = [];
+let rdFollowAdvice = [];
 let rdFollowCollapsed = false;
 let resultSort = { btdigg: { key: "index", dir: "asc" } };
 let settingsCache = null;
@@ -26,6 +27,7 @@ const activityStoreKey = "btdiggRd.activity.v1";
 const activeJobStoreKey = "btdiggRd.activeJob.v1";
 const rdFollowStoreKey = "btdiggRd.rdFollow.v1";
 const rdFollowTestStoreKey = "btdiggRd.rdFollowTest.v1";
+const rdOkVerifyTitleMarker = "__RD_OK_VERIFY_TITLE__";
 let historyCache = null;
 let historyOpenState = { days: {}, searches: {} };
 let historyResultStore = {};
@@ -222,7 +224,6 @@ function setSettingsView(show, persist = true) {
     try { localStorage.setItem(viewStoreKey, show ? "settings" : "main"); } catch (e) {}
   }
   if (show) {
-    collapseSettingsSections();
     loadSettings(false);
   }
 }
@@ -328,80 +329,101 @@ function setRdFollowStatus(text, tone = "mid") {
   status.textContent = text || "Esperando";
 }
 
-function rdFollowSumDict(data) {
-  return Object.values(data || {}).reduce((acc, value) => acc + (Number(value) || 0), 0);
-}
-
-function rdFollowDictText(data, empty = "0") {
-  const entries = Object.entries(data || {}).filter(([, value]) => Number(value) || String(value || "").trim());
-  if (!entries.length) return empty;
-  return entries.map(([key, value]) => key + "=" + value).join(" · ");
-}
-
-function rdFollowMetric(label, value, help, tone = "") {
-  return '<div class="rd-follow-metric ' + escAttr(tone) + '">' +
-    '<strong>' + esc(label) + '</strong>' +
-    '<span>' + esc(value) + '</span>' +
-    '<small>' + esc(help || "") + '</small>' +
-    '</div>';
-}
-
 function renderRdFollowMetrics(summary) {
   const box = document.getElementById("rdFollowMetrics");
-  if (!box) return;
-  const s = summary || {};
-  const progress = s.progress || {};
-  const rd = s.rd_counts || {};
-  const rate = s.rate || {};
-  const pacer = s.pacer || {};
-  const cleanup = s.cleanup || {};
-  const fast = s.fast_discard || {};
-  const total429 = rdFollowSumDict(pacer["429_by_group"]);
-  const cleanupDirty = Number(cleanup.pending || 0) + Number(cleanup.leftover || 0);
-  const done = Number(progress.done || 0);
-  const total = Number(progress.total || 0);
-  const progressText = total ? (done + "/" + total) : "Esperando";
-  const fastTotal = rdFollowSumDict(fast);
-  box.innerHTML =
-    rdFollowMetric("Progreso RD", progressText, "Candidatos ya decididos.", total && done >= total ? "good" : "") +
-    rdFollowMetric("429 RD", String(total429 || 0), rdFollowDictText(pacer["429_by_group"], "Sin 429"), total429 ? "warn" : "good") +
-    rdFollowMetric("RD_OK", String(rd.RD_OK || 0), "Links reales encontrados.", Number(rd.RD_OK || 0) ? "good" : "") +
-    rdFollowMetric("Descartes", String(fastTotal || 0), rdFollowDictText(fast, "Sin descarte rápido"), fastTotal ? "warn" : "") +
-    rdFollowMetric("API RD", String(rate.api_calls_total || 0), "Ventana máx " + (rate.max_window_count || 0) + " · ráfaga " + (rate.max_burst_count || 0), "") +
-    rdFollowMetric("Limpieza", cleanupDirty ? String(cleanupDirty) : "OK", "Borrados " + (cleanup.deleted || 0) + " · pendientes " + (cleanup.pending || 0) + " · sobrantes " + (cleanup.leftover || 0), cleanupDirty ? "warn" : "good");
+  if (box) box.innerHTML = "";
+}
+
+function rdFollowFold(text) {
+  return String(text || "").toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+}
+
+function rdFollowAdviceLevel(text) {
+  const lower = rdFollowFold(text);
+  if (lower.includes("no tocar") || lower.includes("respondio limpio")) return "ok";
+  if (lower.includes("consejo") || lower.includes("429") || lower.includes("sucia") || lower.includes("errores")) return "warn";
+  return "info";
+}
+
+function rdFollowAdviceTone(text) {
+  const lower = rdFollowFold(text);
+  if (lower.includes("limite") || lower.includes("rafaga") || lower.includes("api")) return "avanzado";
+  if (lower.includes("borrar") || lower.includes("seleccionar") || lower.includes("limpieza")) return "secundario";
+  if (lower.includes("429") || lower.includes("meter magnet") || lower.includes("pausa endpoint")) return "principal";
+  if (lower.includes("no tocar") || lower.includes("limpio")) return "ok";
+  return "ajuste";
+}
+
+function rdFollowSafeTone(value, fallback = "neutral") {
+  const tone = String(value || fallback).replace(/[^a-z0-9_-]/gi, "").toLowerCase();
+  return tone || fallback;
+}
+
+function rdFollowMarkerLabel(item, tone, level, kind) {
+  if (kind !== "advice" && level !== "warn" && level !== "error") return "";
+  const badge = String(item.badge || "").trim();
+  if (badge && !["OK", "RD", "Aviso", "Consejo"].includes(badge)) return badge;
+  if (tone === "principal") return "Principal";
+  if (tone === "secundario") return "Secundario";
+  if (tone === "avanzado") return "Avanzado";
+  if (tone === "ajuste") return "Ajuste";
+  return kind === "advice" ? "Consejo" : "Aviso";
+}
+
+function appendRdFollowLine(box, item) {
+  const div = document.createElement("div");
+  const level = String(item.level || "info");
+  const kind = String(item.kind || "info").replace(/[^a-z0-9_-]/gi, "");
+  const tone = rdFollowSafeTone(item.tone, level === "ok" ? "ok" : level === "warn" ? "principal" : "neutral");
+  div.className = "line rd-follow-line rd-follow-kind-" + kind + " rd-follow-tone-" + tone;
+  if (level === "ok") div.classList.add("is-ok");
+  else if (level === "warn") div.classList.add("is-warn");
+  else if (level === "error") div.classList.add("is-err");
+
+  const text = document.createElement("span");
+  text.className = "rd-follow-text";
+  text.textContent = item.text || "";
+
+  const marker = document.createElement("span");
+  marker.className = "rd-follow-marker rd-follow-marker-" + tone;
+  marker.textContent = rdFollowMarkerLabel(item, tone, level, kind);
+
+  const seconds = document.createElement("span");
+  seconds.className = "rd-follow-seconds";
+  seconds.textContent = item.elapsed || item.ts || "--";
+
+  div.appendChild(marker);
+  div.appendChild(text);
+  div.appendChild(seconds);
+  box.appendChild(div);
 }
 
 function renderRdFollowLines() {
   const box = document.getElementById("rdFollowLog");
   if (!box) return;
   box.innerHTML = "";
-  const lines = rdFollowLines.slice(-160);
+  const baseLines = rdFollowLines.slice(-130);
+  const advice = (rdFollowAdvice || []).filter(Boolean).slice(0, 3).map(text => ({
+    elapsed: "FINAL",
+    level: rdFollowAdviceLevel(text),
+    kind: "advice",
+    badge: "Consejo",
+    tone: rdFollowAdviceTone(text),
+    text
+  }));
+  const lines = advice.length && baseLines.length ? baseLines.concat(advice) : baseLines;
   if (!lines.length) {
-    const div = document.createElement("div");
-    div.className = "line";
-    div.textContent = "Sin señales RD todavía. Cuando arranque el motor aparecerán aquí.";
-    box.appendChild(div);
+    appendRdFollowLine(box, {
+      elapsed: "+0.0s",
+      level: "info",
+      kind: "start",
+      tone: "neutral",
+      text: "Sin señales RD todavía. Cuando arranque el motor aparecerá aquí."
+    });
     return;
   }
   lines.forEach(item => {
-    const div = document.createElement("div");
-    const level = String(item.level || "info");
-    div.className = "line rd-follow-line";
-    if (level === "ok") div.classList.add("is-ok");
-    else if (level === "warn") div.classList.add("is-warn");
-    else if (level === "error") div.classList.add("is-err");
-    const time = document.createElement("span");
-    time.className = "rd-follow-time";
-    time.textContent = item.ts || "--:--:--";
-    const tag = document.createElement("span");
-    tag.className = "rd-follow-tag rd-follow-tag-" + String(item.kind || "info").replace(/[^a-z0-9_-]/gi, "");
-    tag.textContent = item.kind || "RD";
-    const text = document.createElement("span");
-    text.textContent = item.text || "";
-    div.appendChild(time);
-    div.appendChild(tag);
-    div.appendChild(text);
-    box.appendChild(div);
+    appendRdFollowLine(box, item);
   });
   box.scrollTop = box.scrollHeight;
 }
@@ -409,18 +431,23 @@ function renderRdFollowLines() {
 function renderRdFollowPayload(follow) {
   if (!follow) return;
   renderRdFollowMetrics(follow.summary || {});
+  const summary = follow.summary || {};
+  rdFollowAdvice = Array.isArray(summary.advice) ? summary.advice : [];
   const lines = follow.lines || [];
   if (lines.length) {
-    rdFollowLines = rdFollowLines.concat(lines).slice(-220);
-    renderRdFollowLines();
-  } else if (!rdFollowLines.length) {
-    renderRdFollowLines();
+    lines.forEach(item => {
+      const key = String(item.elapsed || "") + "|" + String(item.text || "");
+      const duplicated = rdFollowLines.slice(-40).some(prev => (String(prev.elapsed || "") + "|" + String(prev.text || "")) === key);
+      if (!duplicated) rdFollowLines.push(item);
+    });
+    rdFollowLines = rdFollowLines.slice(-220);
   }
+  renderRdFollowLines();
   if (!follow.has_diagnostics) {
     setRdFollowStatus("Esperando RD", "mid");
-  } else if (String(follow.job_status || "").toLowerCase() === "done" || follow.summary?.operation_status === "ok") {
+  } else if (String(follow.job_status || "").toLowerCase() === "done" || summary.operation_status === "ok") {
     setRdFollowStatus("Terminado", "good");
-  } else if (String(follow.job_status || "").toLowerCase() === "error" || follow.summary?.operation_status === "error") {
+  } else if (String(follow.job_status || "").toLowerCase() === "error" || summary.operation_status === "error") {
     setRdFollowStatus("Error", "bad");
   } else {
     setRdFollowStatus("En vivo", "good");
@@ -454,6 +481,7 @@ function startRdFollow(jobId, reset = true) {
   if (reset || rdFollowCursor < 0) {
     rdFollowCursor = 0;
     rdFollowLines = [];
+    rdFollowAdvice = [];
   }
   setRdFollowStatus("Conectando", "mid");
   renderRdFollowLines();
@@ -468,6 +496,7 @@ function stopRdFollow(clear = false) {
     rdFollowJobId = null;
     rdFollowCursor = 0;
     rdFollowLines = [];
+    rdFollowAdvice = [];
     renderRdFollowMetrics({});
     renderRdFollowLines();
     setRdFollowStatus("Esperando", "mid");
@@ -483,9 +512,7 @@ function saveRdFollowTestState() {
   try {
     const data = {
       query: document.getElementById("rdFollowQuery")?.value || "",
-      pages: document.getElementById("rdFollowPages")?.value || "1",
-      mode: document.getElementById("rdFollowMode")?.value || "0",
-      minGb: document.getElementById("rdFollowMinGb")?.value || "0"
+      pages: document.getElementById("rdFollowPages")?.value || "1-1"
     };
     localStorage.setItem(rdFollowTestStoreKey, JSON.stringify(data));
   } catch (e) {}
@@ -494,27 +521,20 @@ function saveRdFollowTestState() {
 function restoreRdFollowTestState() {
   let data = null;
   try { data = JSON.parse(localStorage.getItem(rdFollowTestStoreKey) || "null"); } catch (e) {}
-  const mainQuery = document.getElementById("bQuery")?.value || "1080p";
   const query = document.getElementById("rdFollowQuery");
   const pages = document.getElementById("rdFollowPages");
-  const mode = document.getElementById("rdFollowMode");
-  const minGb = document.getElementById("rdFollowMinGb");
-  if (query) query.value = data?.query || mainQuery || "1080p";
-  if (pages) pages.value = data?.pages || "1";
-  if (mode) mode.value = data?.mode || "0";
-  if (minGb) minGb.value = data?.minGb || "0";
+  if (query) query.value = data?.query || "2160p";
+  if (pages) pages.value = data?.pages || "1-1";
 }
 
-function rdFollowUseCurrentSearch(btn = null) {
+function rdFollowClearTest(btn = null) {
   const query = document.getElementById("rdFollowQuery");
   const pages = document.getElementById("rdFollowPages");
-  const mode = document.getElementById("rdFollowMode");
-  const minGb = document.getElementById("rdFollowMinGb");
-  if (query) query.value = document.getElementById("bQuery")?.value || query.value || "1080p";
-  if (pages) pages.value = document.getElementById("bPages")?.value || pages.value || "1";
-  if (mode) mode.value = document.getElementById("bMode")?.value || mode.value || "0";
-  if (minGb) minGb.value = document.getElementById("bMinGb")?.value || minGb.value || "0";
+  if (query) query.value = "2160p";
+  if (pages) pages.value = "1-1";
+  stopRdFollow(true);
   saveRdFollowTestState();
+  setRdFollowStatus("Limpio", "mid");
   setActionButtonState(btn, "done", "OK");
 }
 
@@ -532,9 +552,9 @@ function rdFollowStartTest(btn = null) {
     module: "btdigg",
     action: "search",
     query,
-    pages: document.getElementById("rdFollowPages")?.value || "1",
-    mode: document.getElementById("rdFollowMode")?.value || "0",
-    min_gb: document.getElementById("rdFollowMinGb")?.value || "0"
+    pages: document.getElementById("rdFollowPages")?.value || "1-1",
+    mode: "0",
+    min_gb: "0"
   });
   setTimeout(() => setActionButtonState(btn, "done", "OK"), 700);
 }
@@ -583,6 +603,12 @@ function formatLiveLine(line) {
   if (m) return `qBit: ${m[1]}/${m[2]} comprobados | vivos ${m[3]}`;
   m = l.match(/^qBit vivo\s+(\d+)\/(\d+):\s*(.+)$/i);
   if (m) return `qBit vivo ${m[1]}/${m[2]}: ${m[3]}`;
+  m = l.match(/^Cola RD\s+\d+\/\d+:/i);
+  if (m) return null;
+  m = l.match(/^RD cola comprobados:/i);
+  if (m) return null;
+  m = l.match(/^RD OK\s+(\d+)\/(\d+):\s*(.+)$/i);
+  if (m) return `${rdOkVerifyTitleMarker}Verificando ${m[1]}/${m[2]}: ${m[3]}`;
   m = l.match(/^Resultados v.lidos para JDownloader\/RD:\s*(.+)$/i);
   if (m) return `Resultados v\u00e1lidos RD: ${m[1]}`;
   m = l.match(/^Lista extra qBittorrent vivos reales:\s*(.+)$/i);
@@ -626,12 +652,14 @@ function paintMetricLine(div, line) {
 }
 
 function renderLogLine(div, line) {
-  const text = String(line || "");
+  let text = String(line || "");
+  const rdOkVerifyTitle = text.startsWith(rdOkVerifyTitleMarker);
+  if (rdOkVerifyTitle) text = text.slice(rdOkVerifyTitleMarker.length);
   const lower = text.toLowerCase();
   let match = text.match(/^(Verificando\s+\d+\/\d+:\s*)(.+)$/i);
   if (match) {
     addLogPart(div, match[1], "log-part-work");
-    addLogPart(div, match[2]);
+    addLogPart(div, match[2], rdOkVerifyTitle ? "log-part-ok" : "");
     return;
   }
   match = text.match(/^(qBit:\s*)(.+)$/i);
@@ -1178,6 +1206,58 @@ function resultStatusClass(status) {
   return " mid";
 }
 
+function translateAddedLabel(value) {
+  const text = String(value || "hoy").trim();
+  if (!text) return "hoy";
+  const lower = text.toLowerCase();
+  if (lower === "hoy" || lower === "today") return "hoy";
+  if (lower === "yesterday") return "ayer";
+  const m = lower.match(/^(\d+|a|an|one)\s+(second|minute|hour|day|week|month|year)s?\s+ago$/i);
+  if (!m) return text;
+  const amount = /^(a|an|one)$/i.test(m[1]) ? 1 : Number(m[1]);
+  if (!Number.isFinite(amount) || amount <= 0) return text;
+  const unit = m[2].toLowerCase();
+  const labels = {
+    second: ["segundo", "segundos"],
+    minute: ["minuto", "minutos"],
+    hour: ["hora", "horas"],
+    day: ["d\u00eda", "d\u00edas"],
+    week: ["semana", "semanas"],
+    month: ["mes", "meses"],
+    year: ["a\u00f1o", "a\u00f1os"]
+  };
+  const pair = labels[unit];
+  if (!pair) return text;
+  return "hace " + amount + " " + (amount === 1 ? pair[0] : pair[1]);
+}
+
+function historyRouteKind(item, source, status) {
+  const raw = item && item.raw ? item.raw : {};
+  const text = [
+    source,
+    status,
+    item && item.quality,
+    item && item.confidence,
+    raw.qbt_status,
+    raw.rd_status
+  ].map(v => String(v || "").toLowerCase()).join(" ");
+  if (text.includes("qbit") || text.includes("qbt") || text.includes("vivo")) return "qbit";
+  if (text.includes("rd") || text.includes("direct")) return "rd";
+  return "download";
+}
+
+function historyRouteLabel(kind) {
+  if (kind === "qbit") return "qBit";
+  if (kind === "rd") return "RD";
+  return "Bajar";
+}
+
+function historyRouteTitle(kind) {
+  if (kind === "qbit") return "Descargar por qBit";
+  if (kind === "rd") return "Descargar por RD";
+  return "Descargar";
+}
+
 function renderResults(items) {
   const box = document.getElementById("results");
   box.innerHTML = "";
@@ -1186,7 +1266,7 @@ function renderResults(items) {
     return;
   }
   const rows = sortedResults(items);
-  const heads = [["title", "T\u00edtulo"], ["size", "Tama\u00f1o"], ["source", "Fuente"], ["status", "Estado"], ["seeds", "Seeds"], ["peers", "Peers"], ["added", "A\u00f1adido"]];
+  const heads = [["title", "T\u00edtulo"], ["size", "Tama\u00f1o"], ["seeds", "Seeds"], ["peers", "Peers"], ["added", "A\u00f1adido"]];
   const table = document.createElement("div");
   table.className = "results-table";
   const head = document.createElement("div");
@@ -1198,19 +1278,20 @@ function renderResults(items) {
   rows.forEach((item, idx) => {
     const source = item.source || item.quality || "-";
     const status = item.status || item.confidence || "-";
+    const routeKind = historyRouteKind(item, source, status);
+    const routeLabel = historyRouteLabel(routeKind);
+    const routeTitle = historyRouteTitle(routeKind);
     const row = document.createElement("div");
     row.className = "results-row";
     row.innerHTML =
       '<div class="results-cell result-num">' + esc(String(idx + 1)) + "</div>" +
       '<div class="results-cell result-title" title="' + escAttr(item.title || "") + '">' + esc(item.title || "(sin t\u00edtulo)") + "</div>" +
       '<div class="results-cell result-size">' + esc(item.size || "-") + "</div>" +
-      '<div class="results-cell result-source"><span class="source-pill' + resultSourceClass(source) + '">' + esc(source) + "</span></div>" +
-      '<div class="results-cell result-status"><span class="status-pill' + resultStatusClass(status) + '">' + esc(status) + "</span></div>" +
       '<div class="results-cell result-seeds">' + esc(String(item.seeds || "0")) + "</div>" +
       '<div class="results-cell result-peers">' + esc(String(item.peers || "0")) + "</div>" +
-      '<div class="results-cell result-added">' + esc(item.added || "hoy") + "</div>" +
+      '<div class="results-cell result-added">' + esc(translateAddedLabel(item.added || "hoy")) + "</div>" +
       '<div class="results-cell result-actions">' +
-        '<button class="result-icon result-download" type="button" title="Descargar">\u2193</button>' +
+        '<button class="result-icon result-download history-route-btn history-route-' + escAttr(routeKind) + '" type="button" title="' + escAttr(routeTitle) + '" aria-label="' + escAttr(routeTitle) + '">' + esc(routeLabel) + "</button>" +
         '<button class="result-icon result-copy" type="button" title="Copiar enlace">\u29c9</button>' +
       "</div>";
     const dl = row.querySelector(".result-download");
@@ -1314,6 +1395,10 @@ function renderHistory() {
         const result = document.createElement("div");
         const source = item.source || item.quality || "-";
         const status = item.status || item.confidence || "-";
+        const routeKind = historyRouteKind(item, source, status);
+        const routeLabel = historyRouteLabel(routeKind);
+        const routeTitle = historyRouteTitle(routeKind);
+        const metaText = [item.size || "-", translateAddedLabel(item.added || "hoy")].filter(Boolean).join(" \u00b7 ");
         const resultKey = searchKey + "-" + originalIndex;
         historyResultStore[resultKey] = {
           item,
@@ -1322,16 +1407,14 @@ function renderHistory() {
         };
         result.className = "history-result";
         result.innerHTML =
-          '<div class="history-result-main">' +
-            '<strong>' + esc(item.title || "(sin t\u00edtulo)") + '</strong>' +
-            '<span>' + esc(item.size || "-") + ' &middot; ' + esc(item.added || "hoy") + '</span>' +
-          '</div>' +
-          '<div class="history-result-tags">' +
-            '<span class="source-pill' + resultSourceClass(source) + '">' + esc(source) + '</span>' +
-            '<span class="status-pill' + resultStatusClass(status) + '">' + esc(status) + '</span>' +
+          '<div class="history-result-scroll">' +
+            '<div class="history-result-main">' +
+              '<strong>' + esc(item.title || "(sin t\u00edtulo)") + '</strong>' +
+              '<span>' + esc(metaText) + '</span>' +
+            '</div>' +
           '</div>' +
           '<div class="history-result-actions">' +
-            '<button class="result-icon result-download history-download" type="button" title="Descargar">&#8595;</button>' +
+            '<button class="result-icon result-download history-download history-route-btn history-route-' + escAttr(routeKind) + '" type="button" title="' + escAttr(routeTitle) + '" aria-label="' + escAttr(routeTitle) + '">' + esc(routeLabel) + '</button>' +
           '</div>';
         const dl = result.querySelector(".history-download");
         if (dl) dl.onclick = () => downloadHistoryItem(resultKey, dl);
@@ -1712,7 +1795,7 @@ if (settingsResetModal) {
   if (el) el.addEventListener("input", saveFormState);
 });
 
-["rdFollowQuery", "rdFollowPages", "rdFollowMode", "rdFollowMinGb"].forEach(id => {
+["rdFollowQuery", "rdFollowPages"].forEach(id => {
   const el = document.getElementById(id);
   if (el) el.addEventListener("input", saveRdFollowTestState);
 });

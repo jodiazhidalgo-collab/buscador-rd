@@ -79,6 +79,11 @@ def _result_status(item: dict[str, Any]) -> str:
     return rd or qbt or "-"
 
 
+def _clean_display_title(value: Any) -> str:
+    text = str(value or "").strip().lstrip("/\\").strip()
+    return text or "(sin nombre)"
+
+
 def _result_added(item: dict[str, Any]) -> str:
     for key in ("added", "publish_date", "pubdate", "date", "time"):
         value = str(item.get(key) or "").strip()
@@ -95,7 +100,7 @@ def sanitize_result_item(item: Any, idx: int) -> dict[str, Any]:
     if not isinstance(item, dict):
         return {"index": idx, "title": str(item)[:200], "size": "", "link": ""}
 
-    title = (
+    title = _clean_display_title(
         item.get("qbit_name")
         or item.get("selected_file_name")
         or item.get("btdigg_file_name")
@@ -115,7 +120,7 @@ def sanitize_result_item(item: Any, idx: int) -> dict[str, Any]:
 
     return {
         "index": idx,
-        "title": str(title)[:260],
+        "title": title[:260],
         "hash": item_hash,
         "size": size_txt,
         "size_value": size_value,
@@ -134,6 +139,15 @@ def sanitize_result_item(item: Any, idx: int) -> dict[str, Any]:
     }
 
 
+def _source_sort_rank(item: dict[str, Any]) -> int:
+    source = str(item.get("source") or "").lower()
+    if source == "rd":
+        return 0
+    if source == "qbit":
+        return 1
+    return 2
+
+
 def load_results() -> list[dict[str, Any]]:
     data = read_json(BTDIGG_DIR / "exports" / "EDITOR_MAESTRO_SHOWN.json")
     if data is None:
@@ -142,7 +156,17 @@ def load_results() -> list[dict[str, Any]]:
         items = data.get("shown") or data.get("results") or data.get("items") or []
     else:
         items = data or []
-    return [sanitize_result_item(item, i) for i, item in enumerate(items, 1)]
+    visible = [sanitize_result_item(item, i) for i, item in enumerate(items, 1)]
+    visible.sort(
+        key=lambda item: (
+            _source_sort_rank(item),
+            -_num_float(item.get("size_value")),
+            str(item.get("title") or "").lower(),
+        )
+    )
+    for i, item in enumerate(visible, 1):
+        item["index"] = i
+    return visible
 
 
 def resolve_btdigg_card_to_magnet(link: str, title: str, expected_hash: str = "") -> str:
