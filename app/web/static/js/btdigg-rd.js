@@ -32,6 +32,8 @@ const rdOkVerifyTitleMarker = "__RD_OK_VERIFY_TITLE__";
 let historyCache = null;
 let historyOpenState = { days: {}, searches: {} };
 let historyResultStore = {};
+let titleResolveOpenKey = "";
+let titleResolveCache = {};
 
 function getFinishSound() {
   if (!finishSound) {
@@ -1331,6 +1333,125 @@ function historyRouteTitle(kind) {
   return "Descargar";
 }
 
+function titleResolveKey(item, idx) {
+  const raw = item && item.raw ? item.raw : {};
+  return String(item && (item.hash || item.btih || item.infohash || raw.hash || item.link || item.title || idx) || idx);
+}
+
+function titleResolveEvidence(item) {
+  const raw = item && item.raw ? item.raw : {};
+  return [
+    item && item.title,
+    item && item.name,
+    item && item.link,
+    raw.title,
+    raw.name,
+    raw.selected_file_name
+  ].filter(Boolean).map(value => String(value));
+}
+
+function closeOtherTitleResolveRows(activeRow) {
+  document.querySelectorAll(".result-detail-row").forEach(row => {
+    if (row !== activeRow) row.classList.add("is-hidden");
+  });
+}
+
+function renderTitleResolveLoading(detailRow) {
+  detailRow.innerHTML = '<div class="results-cell result-detail-cell"><div class="title-resolve-card"><span class="status-pill mid">Cargando</span></div></div>';
+}
+
+function cleanTitleCopyValue(value) {
+  return String(value || "")
+    .normalize("NFKD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .replace(/[^A-Za-z0-9]+/g, " ")
+    .replace(/\s+/g, " ")
+    .trim();
+}
+
+function titleResolveBlock(label, title, copyTitle, copyWithYear) {
+  const cleanCopyTitle = cleanTitleCopyValue(copyTitle || title || "");
+  const cleanCopyWithYear = cleanTitleCopyValue(copyWithYear || title || "");
+  return '' +
+    '<section class="title-resolve-block">' +
+      '<span class="title-resolve-label">' + esc(label) + '</span>' +
+      '<strong class="title-resolve-text" title="' + escAttr(copyWithYear || title || "") + '">' + esc(copyWithYear || title || "-") + '</strong>' +
+      '<div class="title-resolve-actions">' +
+        '<button class="mini-copy" type="button" data-copy="' + escAttr(cleanCopyTitle) + '">Copiar</button>' +
+        '<button class="mini-copy" type="button" data-copy="' + escAttr(cleanCopyWithYear) + '">+A\u00f1o</button>' +
+      '</div>' +
+    '</section>';
+}
+
+function bindTitleResolveCopies(detailRow) {
+  detailRow.querySelectorAll(".mini-copy").forEach(btn => {
+    btn.onclick = () => copyText(btn.dataset.copy || "", btn, "Copiado");
+  });
+}
+
+function renderTitleResolveResult(detailRow, data) {
+  if (!data || !data.ok) {
+    detailRow.innerHTML = '<div class="results-cell result-detail-cell"><div class="title-resolve-card"><span class="status-pill bad">Error</span></div></div>';
+    return;
+  }
+  if (data.status !== "resolved" || !data.safe || !data.copy) {
+    detailRow.innerHTML = '<div class="results-cell result-detail-cell"><div class="title-resolve-card"><span class="status-pill mid">No seguro</span></div></div>';
+    return;
+  }
+  const copy = data.copy || {};
+  const english = copy.en || copy.english || copy.original || "";
+  const englishWithYear = copy.en_with_year || copy.english_with_year || copy.original_with_year || english;
+  detailRow.innerHTML =
+    '<div class="results-cell result-detail-cell">' +
+      '<div class="title-resolve-card is-resolved">' +
+        '<div class="title-resolve-grid">' +
+          titleResolveBlock("ES", copy.es, copy.es, copy.es_with_year) +
+          titleResolveBlock("EN", english, english, englishWithYear) +
+        '</div>' +
+      '</div>' +
+    '</div>';
+  bindTitleResolveCopies(detailRow);
+}
+
+async function toggleTitleResolveCard(item, detailRow, btn, key) {
+  if (!item || !detailRow) return;
+  if (!detailRow.classList.contains("is-hidden") && titleResolveOpenKey === key) {
+    detailRow.classList.add("is-hidden");
+    titleResolveOpenKey = "";
+    return;
+  }
+  closeOtherTitleResolveRows(detailRow);
+  titleResolveOpenKey = key;
+  detailRow.classList.remove("is-hidden");
+  if (titleResolveCache[key]) {
+    renderTitleResolveResult(detailRow, titleResolveCache[key]);
+    return;
+  }
+  renderTitleResolveLoading(detailRow);
+  setActionButtonState(btn, "loading");
+  try {
+    const response = await fetch("/api/title-resolver/resolve", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        title: item.title || "",
+        evidence: titleResolveEvidence(item),
+        media_hint: "movie"
+      })
+    });
+    const data = await response.json();
+    titleResolveCache[key] = data;
+    renderTitleResolveResult(detailRow, data);
+    setStatus(data.status === "resolved" ? "Titulo resuelto" : "No seguro");
+    setActionButtonState(btn, "done", "OK");
+  } catch (e) {
+    titleResolveCache[key] = { ok: false };
+    renderTitleResolveResult(detailRow, titleResolveCache[key]);
+    setStatus("Error titulo");
+    setActionButtonState(btn, "error", "!");
+  }
+}
+
 function renderResults(items) {
   const box = document.getElementById("results");
   box.innerHTML = "";
@@ -1356,6 +1477,7 @@ function renderResults(items) {
     const routeTitle = historyRouteTitle(routeKind);
     const row = document.createElement("div");
     row.className = "results-row";
+    const resolveKey = titleResolveKey(item, idx);
     row.innerHTML =
       '<div class="results-cell result-num">' + esc(String(idx + 1)) + "</div>" +
       '<div class="results-cell result-title" title="' + escAttr(item.title || "") + '">' + esc(item.title || "(sin t\u00edtulo)") + "</div>" +
@@ -1366,12 +1488,18 @@ function renderResults(items) {
       '<div class="results-cell result-actions">' +
         '<button class="result-icon result-download history-route-btn history-route-' + escAttr(routeKind) + '" type="button" title="' + escAttr(routeTitle) + '" aria-label="' + escAttr(routeTitle) + '">' + esc(routeLabel) + "</button>" +
         '<button class="result-icon result-copy" type="button" title="Copiar enlace">\u29c9</button>' +
+        '<button class="result-icon result-title-resolve" type="button" title="Resolver titulo" aria-label="Resolver titulo">Aa</button>' +
       "</div>";
     const dl = row.querySelector(".result-download");
     const cp = row.querySelector(".result-copy");
+    const tr = row.querySelector(".result-title-resolve");
+    const detailRow = document.createElement("div");
+    detailRow.className = "result-detail-row is-hidden";
     dl.onclick = () => downloadItem(item.index, dl);
     cp.onclick = () => copyText(item.link || "", cp);
+    tr.onclick = () => toggleTitleResolveCard(item, detailRow, tr, resolveKey);
     table.appendChild(row);
+    table.appendChild(detailRow);
   });
   box.appendChild(table);
 }
@@ -1471,7 +1599,8 @@ function renderHistory() {
         const routeKind = historyRouteKind(item, source, status);
         const routeLabel = historyRouteLabel(routeKind);
         const routeTitle = historyRouteTitle(routeKind);
-        const metaText = [item.size || "-", translateAddedLabel(item.added || "hoy")].filter(Boolean).join(" \u00b7 ");
+        const sizeText = item.size || "-";
+        const addedText = translateAddedLabel(item.added || "hoy");
         const resultKey = searchKey + "-" + originalIndex;
         historyResultStore[resultKey] = {
           item,
@@ -1479,19 +1608,30 @@ function renderHistory() {
           historyResult: originalIndex + 1
         };
         result.className = "history-result";
+        const resolveKey = "history-" + resultKey;
         result.innerHTML =
           '<div class="history-result-scroll">' +
             '<div class="history-result-main">' +
               '<strong>' + esc(item.title || "(sin t\u00edtulo)") + '</strong>' +
-              '<span>' + esc(metaText) + '</span>' +
+              '<span class="history-result-meta">' +
+                '<span class="history-result-size">' + esc(sizeText) + '</span>' +
+                '<span class="history-result-sep"> &middot; </span>' +
+                '<span class="history-result-added">' + esc(addedText) + '</span>' +
+              '</span>' +
             '</div>' +
           '</div>' +
           '<div class="history-result-actions">' +
             '<button class="result-icon result-download history-download history-route-btn history-route-' + escAttr(routeKind) + '" type="button" title="' + escAttr(routeTitle) + '" aria-label="' + escAttr(routeTitle) + '">' + esc(routeLabel) + '</button>' +
+            '<button class="result-icon result-title-resolve history-title-resolve" type="button" title="Resolver titulo" aria-label="Resolver titulo">Aa</button>' +
           '</div>';
         const dl = result.querySelector(".history-download");
+        const tr = result.querySelector(".history-title-resolve");
+        const detailRow = document.createElement("div");
+        detailRow.className = "result-detail-row history-detail-row is-hidden";
         if (dl) dl.onclick = () => downloadHistoryItem(resultKey, dl);
+        if (tr) tr.onclick = () => toggleTitleResolveCard(item, detailRow, tr, resolveKey);
         results.appendChild(result);
+        results.appendChild(detailRow);
       });
       searchCard.appendChild(results);
       searchesBox.appendChild(searchCard);
@@ -1501,9 +1641,9 @@ function renderHistory() {
   });
 }
 
-async function copyText(text, btn = null) {
+async function copyText(text, btn = null, successMessage = "Enlace copiado") {
   if (!text) {
-    setStatus("Sin enlace");
+    setStatus("Sin texto");
     setActionButtonState(btn, "error", "!");
     return;
   }
@@ -1522,7 +1662,7 @@ async function copyText(text, btn = null) {
       document.execCommand("copy");
       document.body.removeChild(ta);
     }
-    setStatus("Enlace copiado");
+    setStatus(successMessage || "Copiado");
     setActionButtonState(btn, "done", "OK");
   } catch (e) {
     setStatus("No pude copiar");

@@ -16,6 +16,9 @@ from .retention import cleanup_rd_test_runs, list_rd_test_runs
 from .results import load_results
 from .rd_follow import build_rd_event_detail, build_rd_follow
 from .send import api_rdt_send
+from .title_resolver import resolve_movie_title
+from .title_resolver.service import TitleResolverError
+from .title_resolver.tmdb_client import TmdbUnavailable
 from .utils import read_json
 
 
@@ -247,6 +250,29 @@ def api_results(module: str):
 @bp.get("/api/history/btdigg")
 def api_history_btdigg():
     return jsonify({"ok": True, "history": load_history()})
+
+
+@bp.post("/api/title-resolver/resolve")
+def api_title_resolver_resolve():
+    data = request.get_json(force=True, silent=True) or {}
+    title = str(data.get("title") or "").strip()
+    if not title:
+        return jsonify({"ok": False, "status": "error", "error_code": "missing_title", "message": "Falta titulo"}), 400
+    evidence = data.get("evidence") if isinstance(data.get("evidence"), list) else []
+    clean_evidence = [str(item or "").strip() for item in evidence if str(item or "").strip()]
+    try:
+        payload = resolve_movie_title(
+            title=title,
+            evidence=clean_evidence,
+            media_hint=str(data.get("media_hint") or "movie"),
+        )
+        return jsonify(payload)
+    except TmdbUnavailable as exc:
+        return jsonify({"ok": False, "status": "error", "error_code": "tmdb_unavailable", "message": str(exc)}), 503
+    except TitleResolverError as exc:
+        return jsonify({"ok": False, "status": "error", "error_code": exc.error_code, "message": str(exc)}), exc.status_code
+    except Exception as exc:
+        return jsonify({"ok": False, "status": "error", "error_code": "title_resolver_error", "message": str(exc)}), 500
 
 
 bp.add_url_rule("/api/rdt/send", view_func=api_rdt_send, methods=["POST"])

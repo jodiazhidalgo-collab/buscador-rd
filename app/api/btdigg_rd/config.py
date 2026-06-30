@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import os
 import tempfile
+import json
 from pathlib import Path
 
 
@@ -37,6 +38,14 @@ QBIT_PASS = os.environ.get("QBIT_PASS") or "CAMBIAR_EN_ENTORNO_REAL"
 
 REAL_DEBRID_API = os.environ.get("REAL_DEBRID_API") or "https://api.real-debrid.com/rest/1.0"
 
+TITLE_RESOLVER_CACHE_DB = DATA / "title_resolver.sqlite3"
+TITLE_RESOLVER_LANGUAGE = os.environ.get("TITLE_RESOLVER_LANGUAGE") or os.environ.get("TMDB_LANGUAGE") or "es-ES"
+TITLE_RESOLVER_REGION = os.environ.get("TITLE_RESOLVER_REGION") or os.environ.get("TMDB_REGION") or "ES"
+TITLE_RESOLVER_HTTP_TIMEOUT_MS = int(os.environ.get("TITLE_RESOLVER_HTTP_TIMEOUT_MS", "2500"))
+TITLE_RESOLVER_TOTAL_BUDGET_MS = int(os.environ.get("TITLE_RESOLVER_TOTAL_BUDGET_MS", "5000"))
+TITLE_RESOLVER_POSITIVE_TTL_SEC = int(os.environ.get("TITLE_RESOLVER_POSITIVE_TTL_SEC", str(30 * 24 * 3600)))
+TITLE_RESOLVER_NEGATIVE_TTL_SEC = int(os.environ.get("TITLE_RESOLVER_NEGATIVE_TTL_SEC", str(6 * 3600)))
+
 
 def ensure_runtime_dirs() -> None:
     for path in (
@@ -48,3 +57,38 @@ def ensure_runtime_dirs() -> None:
         BTDIGG_DIR / "exports",
     ):
         path.mkdir(parents=True, exist_ok=True)
+
+
+def _read_config_value(*keys: str) -> str:
+    path = BTDIGG_DIR / "config.json"
+    try:
+        if not path.exists():
+            return ""
+        data = json.loads(path.read_text(encoding="utf-8", errors="replace"))
+    except Exception:
+        return ""
+    if not isinstance(data, dict):
+        return ""
+    for key in keys:
+        value = str(data.get(key) or "").strip()
+        if value:
+            return value
+    return ""
+
+
+def title_resolver_token() -> str:
+    token = os.environ.get("TMDB_API_TOKEN") or os.environ.get("TITLE_RESOLVER_TMDB_TOKEN") or ""
+    token = token.strip()
+    if token:
+        return token
+
+    token_file = os.environ.get("TMDB_API_TOKEN_FILE") or os.environ.get("TITLE_RESOLVER_TMDB_TOKEN_FILE") or ""
+    if token_file:
+        try:
+            token = Path(token_file).read_text(encoding="utf-8", errors="ignore").strip()
+            if token:
+                return token
+        except Exception:
+            pass
+
+    return _read_config_value("tmdb_api_token", "tmdb_token", "TMDB_API_TOKEN")

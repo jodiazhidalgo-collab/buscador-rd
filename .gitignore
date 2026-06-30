@@ -18,6 +18,7 @@ app/motor/btdigg/EDITOR_*.log
 
 **/__pycache__/
 *.pyc
+.pytest_cache/
 
 *.log
 *.tmp
