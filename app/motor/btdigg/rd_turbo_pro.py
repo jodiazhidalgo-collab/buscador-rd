@@ -262,6 +262,10 @@ def load_config():
     return merged
 
 CONFIG = load_config()
+if str(os.environ.get("BTDIGG_DISABLE_EXPORTS", "")).strip().lower() in {"1", "true", "yes", "on", "si", "sí"}:
+    CONFIG["write_exports"] = False
+if str(os.environ.get("BTDIGG_DISABLE_LAST_LINKS", "")).strip().lower() in {"1", "true", "yes", "on", "si", "sí"}:
+    CONFIG["write_last_links_txt"] = False
 
 
 class RDAPIError(RuntimeError):
@@ -1048,6 +1052,13 @@ def _bb_clean(value):
             low = key.lower()
             if any(x in low for x in ("token", "pass", "password", "authorization", "auth", "apikey", "api_key")):
                 out[key] = "***"
+            elif any(x in low for x in ("magnet", "link", "url", "unrestricted", "download_url")):
+                if isinstance(v, str) and v.strip():
+                    out[key] = "***"
+                elif isinstance(v, (list, tuple, set)):
+                    out[key] = ["***" for _ in list(v)[:40]]
+                else:
+                    out[key] = _bb_clean(v)
             else:
                 out[key] = _bb_clean(v)
         return out
@@ -1212,6 +1223,18 @@ def _bb_code(event, data, level):
     clean_event = re.sub(r"[^A-Z0-9]+", "_", str(event or "").upper()).strip("_")
     return f"{category}.{clean_event or 'EVENT'}"
 
+BLACKBOX_SEQ = None
+
+def _blackbox_next_seq(events_file):
+    global BLACKBOX_SEQ
+    if BLACKBOX_SEQ is None:
+        try:
+            BLACKBOX_SEQ = sum(1 for line in events_file.read_text(encoding="utf-8").splitlines() if line.strip())
+        except Exception:
+            BLACKBOX_SEQ = 0
+    BLACKBOX_SEQ += 1
+    return BLACKBOX_SEQ
+
 def _blackbox_diag(event, data):
     events_path = os.environ.get("BTDIGG_BLACKBOX_EVENTS")
     if not events_path:
@@ -1222,10 +1245,19 @@ def _blackbox_diag(event, data):
         clean_data = _bb_clean(data or {})
         level = _bb_level(event, clean_data)
         phase = _bb_phase(event)
+        seq = _blackbox_next_seq(events_file)
+        trace_kind = os.environ.get("BTDIGG_BLACKBOX_KIND", "job")
+        trace_id = os.environ.get("BTDIGG_BLACKBOX_TRACE_ID") or os.environ.get("BTDIGG_BLACKBOX_JOB_ID", "")
+        ts = time.strftime("%Y-%m-%dT%H:%M:%S%z")
         record = {
-            "ts": time.strftime("%Y-%m-%dT%H:%M:%S%z"),
+            "ts": ts,
+            "observed_ts": ts,
+            "event_id": f"M{seq:06d}",
+            "seq": seq,
+            "trace_kind": trace_kind,
+            "trace_id": trace_id,
             "source": "motor",
-            "kind": "search",
+            "kind": "rd_test" if trace_kind == "rd_test" else "search",
             "job_id": os.environ.get("BTDIGG_BLACKBOX_JOB_ID", ""),
             "event": event,
             "level": level,
@@ -4661,6 +4693,7 @@ def _rd_build_batch_context(token, batch):
     try:
         if ctx.slots.enabled:
             ctx.slots.refresh(force=True)
+            diag("rd_active_count_before", **ctx.slots.snapshot())
     except Exception as e:
         diag("rd_slots_refresh_error", error=str(e)[:300])
     try:
@@ -4742,6 +4775,12 @@ def rd_cleanup_final(ctx, token):
             with ctx.lock:
                 ctx.cleanup_leftover.add(tid)
             diag("rd_cleanup_final_leftover", id=tid, final=True, error=str(e)[:260], why=why)
+    try:
+        if ctx.slots.enabled:
+            ctx.slots.refresh(force=True)
+            diag("rd_active_count_after", **ctx.slots.snapshot())
+    except Exception as e:
+        diag("rd_active_count_after_error", error=str(e)[:300])
     diag("rd_cleanup_final_end", **ctx.snapshot())
     rd_emit_rate_summary("cleanup_final")
 

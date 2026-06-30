@@ -7,9 +7,10 @@ from datetime import datetime
 from pathlib import Path
 from typing import Any
 
-from .config import BTDIGG_DIR, DIAGNOSTICS_DIR
+from .config import BTDIGG_DIR, DIAGNOSTICS_DIR, RD_TEST_DIAGNOSTICS_DIR
 
 SECRET_MARKERS = ("token", "pass", "password", "authorization", "auth", "apikey", "api_key")
+PRIVATE_VALUE_MARKERS = ("magnet", "link", "url", "unrestricted", "download_url")
 TEXT_LIMIT = 600
 LIST_LIMIT = 40
 
@@ -118,10 +119,43 @@ def _safe_name(value: str) -> str:
     return clean[:120] or "sin_id"
 
 
+def _kind_from_folder(folder: Path) -> str:
+    collection = folder.parent.parent.name
+    if collection == "rd_tests":
+        return "rd_test"
+    if collection.endswith("s"):
+        return collection[:-1]
+    return collection or "job"
+
+
+def _collection_for_kind(kind: str) -> str:
+    clean = str(kind or "job").strip().lower().replace("-", "_")
+    if clean in {"rd_test", "rd_tests", "rd_tuning"}:
+        return "rd_tests"
+    if clean in {"download", "downloads"}:
+        return "downloads"
+    return "jobs"
+
+
+def _next_seq(folder: Path) -> int:
+    path = folder / "events.jsonl"
+    if not path.exists():
+        return 1
+    try:
+        return sum(1 for line in path.read_text(encoding="utf-8").splitlines() if line.strip()) + 1
+    except Exception:
+        return int(time.time() * 1000)
+
+
 def _redact(key: str, value: Any) -> Any:
     lowered = key.lower()
     if any(marker in lowered for marker in SECRET_MARKERS):
         return "***"
+    if any(marker in lowered for marker in PRIVATE_VALUE_MARKERS):
+        if isinstance(value, str) and value.strip():
+            return "***"
+        if isinstance(value, (list, tuple, set)):
+            return ["***" for _ in list(value)[:LIST_LIMIT]]
     return _clean(value)
 
 
@@ -486,7 +520,7 @@ def _rebuild_summary_from_events(folder: Path, updates: dict[str, Any] | None = 
 
     summary = {
         "id": existing.get("id") or folder.name,
-        "kind": existing.get("kind") or folder.parent.parent.name.rstrip("s"),
+        "kind": existing.get("kind") or _kind_from_folder(folder),
         "started_at": existing.get("started_at") or events[0].get("ts"),
         "read_order": ["summary.json", "timeline.md", "warnings.jsonl", "errors.jsonl", "events.jsonl"],
         "counts": counts,
@@ -504,7 +538,7 @@ def _rebuild_summary_from_events(folder: Path, updates: dict[str, Any] | None = 
     if last_error_code:
         summary["last_error_code"] = last_error_code
 
-    if summary["kind"] == "job":
+    if summary["kind"] in {"job", "rd_test"}:
         _derive_job_summary(events, summary)
     elif summary["kind"] == "download":
         _derive_download_summary(events, summary)
@@ -542,7 +576,7 @@ def _update_summary(folder: Path, record: dict[str, Any], updates: dict[str, Any
     if not summary:
         summary = {
             "id": folder.name,
-            "kind": folder.parent.parent.name.rstrip("s"),
+            "kind": _kind_from_folder(folder),
             "started_at": record["ts"],
             "status": "running",
             "read_order": ["summary.json", "timeline.md", "warnings.jsonl", "errors.jsonl", "events.jsonl"],
@@ -569,8 +603,17 @@ def _update_summary(folder: Path, record: dict[str, Any], updates: dict[str, Any
 def _record(folder: Path, event: str, data: dict[str, Any] | None = None, updates: dict[str, Any] | None = None) -> dict[str, Any]:
     clean_data = _clean(data or {})
     level = _level(event, clean_data)
+    seq = _next_seq(folder)
+    trace_kind = _kind_from_folder(folder)
+    trace_id = folder.name
+    ts = _now()
     record = {
-        "ts": _now(),
+        "ts": ts,
+        "observed_ts": ts,
+        "event_id": f"E{seq:06d}",
+        "seq": seq,
+        "trace_kind": trace_kind,
+        "trace_id": trace_id,
         "event": event,
         "level": level,
         "phase": _phase(event),
@@ -587,16 +630,14 @@ def _record(folder: Path, event: str, data: dict[str, Any] | None = None, update
     return record
 
 
-def job_folder(job_id: str) -> Path:
-    return DIAGNOSTICS_DIR / "jobs" / _today() / _safe_name(job_id)
+def trace_folder(kind: str, trace_id: str, day: str | None = None) -> Path:
+    collection = _collection_for_kind(kind)
+    base = RD_TEST_DIAGNOSTICS_DIR if collection == "rd_tests" else DIAGNOSTICS_DIR / collection
+    return base / (day or _today()) / _safe_name(trace_id)
 
 
-def download_folder(trace_id: str) -> Path:
-    return DIAGNOSTICS_DIR / "downloads" / _today() / _safe_name(trace_id)
-
-
-def job_events_file(job_id: str) -> Path:
-    folder = job_folder(job_id)
+def trace_events_file(kind: str, trace_id: str) -> Path:
+    folder = trace_folder(kind, trace_id)
     try:
         folder.mkdir(parents=True, exist_ok=True)
     except Exception:
@@ -604,62 +645,134 @@ def job_events_file(job_id: str) -> Path:
     return folder / "events.jsonl"
 
 
-def start_job(job_id: str, action: str, payload: dict[str, Any] | None = None) -> Path:
-    folder = job_folder(job_id)
+def job_folder(job_id: str) -> Path:
+    return trace_folder("job", job_id)
+
+
+def download_folder(trace_id: str) -> Path:
+    return trace_folder("download", trace_id)
+
+
+def rd_test_folder(run_id: str) -> Path:
+    return trace_folder("rd_test", run_id)
+
+
+def job_events_file(job_id: str) -> Path:
+    return trace_events_file("job", job_id)
+
+
+def rd_test_events_file(run_id: str) -> Path:
+    return trace_events_file("rd_test", run_id)
+
+
+def start_trace(kind: str, trace_id: str, action: str, payload: dict[str, Any] | None = None, meta: dict[str, Any] | None = None) -> Path:
+    folder = trace_folder(kind, trace_id)
     try:
         folder.mkdir(parents=True, exist_ok=True)
         snapshot = _config_snapshot()
+        trace_kind = _kind_from_folder(folder)
+        started_at = _now()
+        base_doc = {
+            "id": trace_id,
+            "kind": trace_kind,
+            "trace_kind": trace_kind,
+            "trace_id": trace_id,
+            "action": action,
+            "payload": _clean(payload or {}),
+            "meta": _clean(meta or {}),
+            "config_snapshot": snapshot,
+            "started_at": started_at,
+            "status": "running",
+            "read_order": ["summary.json", "timeline.md", "warnings.jsonl", "errors.jsonl", "events.jsonl"],
+            "counts": {"info": 0, "warn": 0, "error": 0, "debug": 0},
+        }
         _write_json(
             folder / "summary.json",
-            {
-                "id": job_id,
-                "kind": "job",
-                "action": action,
-                "payload": _clean(payload or {}),
-                "config_snapshot": snapshot,
-                "started_at": _now(),
-                "status": "running",
-                "read_order": ["summary.json", "timeline.md", "warnings.jsonl", "errors.jsonl", "events.jsonl"],
-                "counts": {"info": 0, "warn": 0, "error": 0, "debug": 0},
-            },
+            base_doc,
         )
-        _record(folder, "JOB_STARTED", {"action": action, "payload": payload or {}})
+        _write_json(folder / "meta.json", base_doc)
+        for name in ("warnings.jsonl", "errors.jsonl", "timeline.md"):
+            (folder / name).touch(exist_ok=True)
+        _record(folder, "JOB_STARTED", {"action": action, "payload": payload or {}, "trace_kind": trace_kind, "meta": meta or {}})
         _record(folder, "CONFIG_SNAPSHOT", {"config_snapshot": snapshot})
     except Exception:
         pass
     return folder
 
 
-def job_event(job_id: str, event: str, **data: Any) -> None:
+def trace_event(kind: str, trace_id: str, event: str, **data: Any) -> None:
     try:
-        _record(job_folder(job_id), event, data)
+        _record(trace_folder(kind, trace_id), event, data)
     except Exception:
         pass
 
 
-def job_command(job_id: str, cmd: list[str], cwd: Path | str) -> None:
-    try:
-        _record(job_folder(job_id), "COMMAND_PREPARED", {"cmd": cmd, "cwd": str(cwd)})
-    except Exception:
-        pass
+def trace_command(kind: str, trace_id: str, cmd: list[str], cwd: Path | str) -> None:
+    trace_event(kind, trace_id, "COMMAND_PREPARED", cmd=cmd, cwd=str(cwd))
 
 
-def finish_job(job_id: str, status: str, **data: Any) -> None:
+def finish_trace(kind: str, trace_id: str, status: str, **data: Any) -> None:
     try:
         event = "JOB_FINISHED_OK" if status == "ok" else "JOB_FINISHED_ERROR"
-        folder = job_folder(job_id)
+        folder = trace_folder(kind, trace_id)
         _record(folder, event, data, {"status": status})
         _rebuild_summary_from_events(folder, {"status": status, **data})
     except Exception:
         pass
 
 
-def job_error(job_id: str, event: str, error: Any, **data: Any) -> None:
+def trace_error(kind: str, trace_id: str, event: str, error: Any, **data: Any) -> None:
     try:
         data["error"] = str(error)
-        _record(job_folder(job_id), event, data, {"status": "error"})
+        _record(trace_folder(kind, trace_id), event, data, {"status": "error"})
     except Exception:
         pass
+
+
+def start_job(job_id: str, action: str, payload: dict[str, Any] | None = None) -> Path:
+    return start_trace("job", job_id, action, payload)
+
+
+def job_event(job_id: str, event: str, **data: Any) -> None:
+    try:
+        trace_event("job", job_id, event, **data)
+    except Exception:
+        pass
+
+
+def job_command(job_id: str, cmd: list[str], cwd: Path | str) -> None:
+    try:
+        trace_command("job", job_id, cmd, cwd)
+    except Exception:
+        pass
+
+
+def finish_job(job_id: str, status: str, **data: Any) -> None:
+    finish_trace("job", job_id, status, **data)
+
+
+def job_error(job_id: str, event: str, error: Any, **data: Any) -> None:
+    trace_error("job", job_id, event, error, **data)
+
+
+def start_rd_test(run_id: str, action: str, payload: dict[str, Any] | None = None, meta: dict[str, Any] | None = None) -> Path:
+    return start_trace("rd_test", run_id, action, payload, meta)
+
+
+def rd_test_event(run_id: str, event: str, **data: Any) -> None:
+    trace_event("rd_test", run_id, event, **data)
+
+
+def rd_test_command(run_id: str, cmd: list[str], cwd: Path | str) -> None:
+    trace_command("rd_test", run_id, cmd, cwd)
+
+
+def finish_rd_test(run_id: str, status: str, **data: Any) -> None:
+    finish_trace("rd_test", run_id, status, **data)
+
+
+def rd_test_error(run_id: str, event: str, error: Any, **data: Any) -> None:
+    trace_error("rd_test", run_id, event, error, **data)
 
 
 def download_event(trace_id: str, event: str, **data: Any) -> None:

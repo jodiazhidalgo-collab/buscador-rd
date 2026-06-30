@@ -6,6 +6,7 @@ let moduleBusy = { btdigg: false };
 let activeJobIds = { btdigg: null };
 let rdFollowTimer = null;
 let rdFollowJobId = null;
+let rdFollowTraceKind = "job";
 let rdFollowCursor = 0;
 let rdFollowLines = [];
 let rdFollowAdvice = [];
@@ -329,29 +330,41 @@ function setRdFollowStatus(text, tone = "mid") {
   status.textContent = text || "Esperando";
 }
 
+function escapeHtml(value) {
+  return String(value ?? "").replace(/[&<>"']/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+}
+
 function renderRdFollowMetrics(summary) {
   const box = document.getElementById("rdFollowMetrics");
-  if (box) box.innerHTML = "";
-}
-
-function rdFollowFold(text) {
-  return String(text || "").toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "");
-}
-
-function rdFollowAdviceLevel(text) {
-  const lower = rdFollowFold(text);
-  if (lower.includes("no tocar") || lower.includes("respondio limpio")) return "ok";
-  if (lower.includes("consejo") || lower.includes("429") || lower.includes("sucia") || lower.includes("errores")) return "warn";
-  return "info";
-}
-
-function rdFollowAdviceTone(text) {
-  const lower = rdFollowFold(text);
-  if (lower.includes("limite") || lower.includes("rafaga") || lower.includes("api")) return "avanzado";
-  if (lower.includes("borrar") || lower.includes("seleccionar") || lower.includes("limpieza")) return "secundario";
-  if (lower.includes("429") || lower.includes("meter magnet") || lower.includes("pausa endpoint")) return "principal";
-  if (lower.includes("no tocar") || lower.includes("limpio")) return "ok";
-  return "ajuste";
+  if (!box) return;
+  const run = summary?.run || {};
+  const progress = summary?.progress || {};
+  const rd = summary?.rd_counts || {};
+  const rate = summary?.rate || {};
+  const pacer = summary?.pacer || {};
+  const cleanup = summary?.cleanup || {};
+  const active = summary?.active_count || {};
+  const by429 = pacer["429_by_group"] || {};
+  const parts = [];
+  const addMetric = (label, value, tone = "") => {
+    if (value === undefined || value === null || value === "") return;
+    parts.push('<div class="rd-follow-metric ' + tone + '"><span>' + escapeHtml(label) + '</span><strong>' + escapeHtml(String(value)) + '</strong></div>');
+  };
+  addMetric("Estado", run.status || summary?.operation_status || summary?.diagnostic_status || "-");
+  addMetric("Tiempo", summary?.elapsed_sec ? String(summary.elapsed_sec) + " s" : "-");
+  addMetric("Busqueda", run.query || "-");
+  addMetric("Paginas", run.pages || "-");
+  if (Number(progress.total || 0) > 0) {
+    addMetric("Progreso", String(progress.done || 0) + "/" + String(progress.total || 0));
+  }
+  addMetric("RD OK", rd.RD_OK || 0, Number(rd.RD_OK || 0) ? "good" : "");
+  addMetric("No instant", rd.NO_INSTANT || 0);
+  addMetric("Pack fuera", rd.PACK_SIN_COINCIDENCIA || 0);
+  addMetric("429", Object.values(by429).reduce((a, b) => a + Number(b || 0), 0), Object.values(by429).some(v => Number(v || 0) > 0) ? "warn" : "");
+  addMetric("API", String(rate.api_calls_total || 0) + " / pico " + String(rate.max_window_count || 0));
+  addMetric("Limpieza", "P" + String(cleanup.pending || 0) + " L" + String(cleanup.leftover || 0), (Number(cleanup.pending || 0) || Number(cleanup.leftover || 0)) ? "warn" : "");
+  addMetric("Activos RD", String(active?.before?.nb ?? "-") + ">" + String(active?.after?.nb ?? "-") + "/" + String(active?.after?.limit ?? active?.before?.limit ?? "-"), Number(active?.after?.nb || 0) ? "warn" : "");
+  box.innerHTML = parts.join("");
 }
 
 function rdFollowSafeTone(value, fallback = "neutral") {
@@ -376,6 +389,10 @@ function appendRdFollowLine(box, item) {
   const kind = String(item.kind || "info").replace(/[^a-z0-9_-]/gi, "");
   const tone = rdFollowSafeTone(item.tone, level === "ok" ? "ok" : level === "warn" ? "principal" : "neutral");
   div.className = "line rd-follow-line rd-follow-kind-" + kind + " rd-follow-tone-" + tone;
+  if (item.line_id) div.dataset.lineId = item.line_id;
+  if (item.source_event_id) div.dataset.eventId = item.source_event_id;
+  if (item.source_event) div.dataset.sourceEvent = item.source_event;
+  if (item.internal_code) div.title = item.internal_code;
   if (level === "ok") div.classList.add("is-ok");
   else if (level === "warn") div.classList.add("is-warn");
   else if (level === "error") div.classList.add("is-err");
@@ -403,14 +420,30 @@ function renderRdFollowLines() {
   if (!box) return;
   box.innerHTML = "";
   const baseLines = rdFollowLines.slice(-130);
-  const advice = (rdFollowAdvice || []).filter(Boolean).slice(0, 3).map(text => ({
-    elapsed: "FINAL",
-    level: rdFollowAdviceLevel(text),
-    kind: "advice",
-    badge: "Consejo",
-    tone: rdFollowAdviceTone(text),
-    text
-  }));
+  const advice = (rdFollowAdvice || []).filter(Boolean).slice(0, 3).map(item => {
+    if (typeof item === "string") {
+      return {
+        elapsed: "FINAL",
+        level: "info",
+        kind: "advice",
+        badge: "Consejo",
+        tone: "ajuste",
+        text: item
+      };
+    }
+    return {
+      elapsed: "FINAL",
+      level: item.level || "warn",
+      kind: item.kind || "advice",
+      badge: item.badge || "Consejo",
+      tone: item.tone || "ajuste",
+      text: item.text || "",
+      advice_id: item.advice_id || "",
+      rule_id: item.rule_id || "",
+      config_targets: item.config_targets || [],
+      evidence: item.evidence || {}
+    };
+  });
   const lines = advice.length && baseLines.length ? baseLines.concat(advice) : baseLines;
   if (!lines.length) {
     appendRdFollowLine(box, {
@@ -436,8 +469,8 @@ function renderRdFollowPayload(follow) {
   const lines = follow.lines || [];
   if (lines.length) {
     lines.forEach(item => {
-      const key = String(item.elapsed || "") + "|" + String(item.text || "");
-      const duplicated = rdFollowLines.slice(-40).some(prev => (String(prev.elapsed || "") + "|" + String(prev.text || "")) === key);
+      const key = String(item.line_id || item.source_event_id || "");
+      const duplicated = key ? rdFollowLines.slice(-80).some(prev => String(prev.line_id || prev.source_event_id || "") === key) : false;
       if (!duplicated) rdFollowLines.push(item);
     });
     rdFollowLines = rdFollowLines.slice(-220);
@@ -457,7 +490,9 @@ function renderRdFollowPayload(follow) {
 async function fetchRdFollow(finalRead = false) {
   if (!rdFollowJobId) return false;
   try {
-    const response = await fetch("/api/job/" + encodeURIComponent(rdFollowJobId) + "/rd-follow?after=" + encodeURIComponent(rdFollowCursor), { cache: "no-store" });
+    const base = rdFollowTraceKind === "rd_test" ? "/api/rd-test/job/" : "/api/job/";
+    const suffix = rdFollowTraceKind === "rd_test" ? "/follow" : "/rd-follow";
+    const response = await fetch(base + encodeURIComponent(rdFollowJobId) + suffix + "?after=" + encodeURIComponent(rdFollowCursor), { cache: "no-store" });
     const data = await response.json();
     if (!data.ok || !data.follow) {
       if (!finalRead) setRdFollowStatus("Sin datos", "mid");
@@ -474,10 +509,11 @@ async function fetchRdFollow(finalRead = false) {
   }
 }
 
-function startRdFollow(jobId, reset = true) {
+function startRdFollow(jobId, reset = true, traceKind = "job") {
   if (!jobId) return;
   if (rdFollowTimer) clearInterval(rdFollowTimer);
   rdFollowJobId = String(jobId);
+  rdFollowTraceKind = traceKind || "job";
   if (reset || rdFollowCursor < 0) {
     rdFollowCursor = 0;
     rdFollowLines = [];
@@ -494,6 +530,7 @@ function stopRdFollow(clear = false) {
   rdFollowTimer = null;
   if (clear) {
     rdFollowJobId = null;
+    rdFollowTraceKind = "job";
     rdFollowCursor = 0;
     rdFollowLines = [];
     rdFollowAdvice = [];
@@ -538,7 +575,30 @@ function rdFollowClearTest(btn = null) {
   setActionButtonState(btn, "done", "OK");
 }
 
-function rdFollowStartTest(btn = null) {
+async function rdFollowExportTest(btn = null) {
+  if (!rdFollowJobId || rdFollowTraceKind !== "rd_test") {
+    setRdFollowStatus("Sin prueba RD", "mid");
+    setActionButtonState(btn, "error", "!");
+    return;
+  }
+  setActionButtonState(btn, "loading");
+  try {
+    const response = await fetch("/api/rd-test/job/" + encodeURIComponent(rdFollowJobId) + "/export", { method: "POST" });
+    const data = await response.json();
+    if (!data.ok) {
+      setRdFollowStatus(data.error || "No exportó", "bad");
+      setActionButtonState(btn, "error", "!");
+      return;
+    }
+    setRdFollowStatus("ZIP creado", "good");
+    setActionButtonState(btn, "done", "OK");
+  } catch (e) {
+    setRdFollowStatus("Sin conexión", "bad");
+    setActionButtonState(btn, "error", "!");
+  }
+}
+
+async function rdFollowStartTest(btn = null) {
   const query = (document.getElementById("rdFollowQuery")?.value || "").trim();
   if (!query) {
     setRdFollowStatus("Falta título", "bad");
@@ -548,15 +608,27 @@ function rdFollowStartTest(btn = null) {
   saveRdFollowTestState();
   setActionButtonState(btn, "loading");
   setRdFollowStatus("Arrancando", "mid");
-  start({
-    module: "btdigg",
-    action: "search",
-    query,
-    pages: document.getElementById("rdFollowPages")?.value || "1-1",
-    mode: "0",
-    min_gb: "0"
-  });
-  setTimeout(() => setActionButtonState(btn, "done", "OK"), 700);
+  try {
+    const payload = {
+      module: "btdigg",
+      action: "rd_tuning",
+      query,
+      pages: document.getElementById("rdFollowPages")?.value || "1-1"
+    };
+    const response = await fetch("/api/rd-test/job", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(payload) });
+    const data = await response.json();
+    if (!data.ok) {
+      setRdFollowStatus(data.error || "No arrancÃ³", "bad");
+      setActionButtonState(btn, "error", "!");
+      if (data.running_job_id) startRdFollow(data.running_job_id, true, data.running_kind || "job");
+      return;
+    }
+    startRdFollow(data.run_id || data.job_id, true, "rd_test");
+    setActionButtonState(btn, "done", "OK");
+  } catch (e) {
+    setRdFollowStatus("Sin conexiÃ³n", "bad");
+    setActionButtonState(btn, "error", "!");
+  }
 }
 
 function resetStartupMemory() {
@@ -804,6 +876,7 @@ function applyJobSnapshot(job, module = "btdigg", options = {}) {
   if (!job) return false;
   const status = String(job.status || "queued");
   const id = String(job.id || "");
+  const traceKind = String(job.kind || "job");
   activeModule = module;
   moduleLogs[module] = job.log || [];
   renderLog(module);
@@ -815,14 +888,14 @@ function applyJobSnapshot(job, module = "btdigg", options = {}) {
     historyCache = null;
     setStatus(status === "done" ? "Terminado" : "Error");
     clearActiveJob(id, module);
-    if (id) startRdFollow(id, true);
+    if (id) startRdFollow(id, true, traceKind);
     finishRdFollow(id);
     if (options.notify) playFinishSound(id);
     return true;
   }
   moduleBusy[module] = true;
   saveActiveJob(id, module);
-  startRdFollow(id, true);
+  startRdFollow(id, true, traceKind);
   setStatus(status === "running" ? "Trabajando LIVE..." : "En cola...");
   return true;
 }
@@ -845,7 +918,7 @@ async function resumeJob(id, module = "btdigg", options = {}) {
     activeModule = module;
     moduleBusy[module] = true;
     saveActiveJob(id, module);
-    startRdFollow(id, false);
+    startRdFollow(id, false, String(data.job.kind || "job"));
     setStatus(status === "running" ? "Trabajando LIVE..." : "En cola...");
     if (!liveStreams[module]) {
       moduleLogs[module] = ["Reconectando actividad LIVE..."];

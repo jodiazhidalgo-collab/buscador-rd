@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>BTDigg + RD</title>
-  <link rel="stylesheet" href="{{ url_for('static', filename='css/btdigg-rd.css') }}?v=26">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/btdigg-rd.css') }}?v=27">
 </head>
 <body>
   <main class="shell">
@@ -134,6 +134,7 @@
                   <div class="actions rd-follow-actions">
                     <button id="rdFollowStartBtn" class="btn primary" type="button" onclick="rdFollowStartTest(this)">Buscar</button>
                     <button id="rdFollowClearBtn" class="btn" type="button" onclick="rdFollowClearTest(this)">Limpiar</button>
+                    <button id="rdFollowExportBtn" class="btn" type="button" onclick="rdFollowExportTest(this)">Exportar ZIP</button>
                   </div>
                 </div>
               </div>
@@ -219,6 +220,6 @@
     </div>
   </div>
 
-  <script src="{{ url_for('static', filename='js/btdigg-rd.js') }}?v=19"></script>
+  <script src="{{ url_for('static', filename='js/btdigg-rd.js') }}?v=23"></script>
 </body>
 </html>

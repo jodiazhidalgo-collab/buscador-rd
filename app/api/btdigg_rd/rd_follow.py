@@ -6,7 +6,10 @@ from datetime import datetime
 from pathlib import Path
 from typing import Any
 
-from .blackbox import job_folder
+from .blackbox import trace_folder
+
+
+TRANSLATOR_VERSION = "rd_follow_v2"
 
 
 IMPORTANT_STATUS = {"RD_OK", "RD_FAIL", "RD_ERROR", "RD_ERROR_TEMPORAL", "PACK_SIN_COINCIDENCIA", "NO_INSTANT"}
@@ -84,6 +87,22 @@ def _data(record: dict[str, Any] | None) -> dict[str, Any]:
     return data if isinstance(data, dict) else {}
 
 
+def _first_data(events: list[dict[str, Any]], *names: str) -> dict[str, Any]:
+    wanted = set(names)
+    for record in events:
+        if record.get("event") in wanted:
+            return _data(record)
+    return {}
+
+
+def _last_data(events: list[dict[str, Any]], *names: str) -> dict[str, Any]:
+    wanted = set(names)
+    for record in reversed(events):
+        if record.get("event") in wanted:
+            return _data(record)
+    return {}
+
+
 def _fmt_num(value: Any, default: str = "0") -> str:
     if value is None or value == "":
         return default
@@ -134,6 +153,16 @@ def _elapsed(record: dict[str, Any], started_at: datetime | None) -> str:
     except Exception:
         return "+0.0s"
     return "+" + _fmt_sec(seconds)
+
+
+def _elapsed_ms(record: dict[str, Any], started_at: datetime | None) -> int:
+    current = _parse_dt(record.get("ts"))
+    if not current or not started_at:
+        return 0
+    try:
+        return int(max(0.0, (current - started_at).total_seconds()) * 1000)
+    except Exception:
+        return 0
 
 
 def _mode_label(value: Any) -> str:
@@ -243,14 +272,37 @@ def _line(
 ) -> dict[str, Any]:
     ts = str(record.get("ts") or "")[11:19] or "--:--:--"
     default_badge, default_tone = _default_badge(kind, level)
+    seq = record.get("seq")
+    try:
+        seq_num = int(seq)
+    except Exception:
+        seq_num = 0
+    event_id = str(record.get("event_id") or (f"E{seq_num:06d}" if seq_num else ""))
+    data = record.get("data") if isinstance(record.get("data"), dict) else {}
+    endpoint_group = data.get("group") or data.get("endpoint_group") or data.get("op") or data.get("path") or record.get("phase") or kind
+    action = data.get("action") or data.get("op") or data.get("path") or data.get("method") or record.get("event") or kind
+    internal_code = record.get("code") or f"{str(record.get('phase') or kind).upper().replace('-', '_')}.{str(record.get('event') or kind).upper()}"
     return {
+        "line_id": f"L{event_id}" if event_id else (f"L{seq_num:06d}" if seq_num else ""),
+        "source_event_id": event_id,
+        "translator_version": TRANSLATOR_VERSION,
         "ts": ts,
         "elapsed": _elapsed(record, started_at),
+        "elapsed_ms": _elapsed_ms(record, started_at),
         "level": level,
         "kind": kind,
         "text": text,
         "badge": badge or default_badge,
         "tone": tone or default_tone,
+        "source_event": record.get("event"),
+        "source_phase": record.get("phase"),
+        "source_code": record.get("code"),
+        "trace_kind": record.get("trace_kind"),
+        "trace_id": record.get("trace_id") or record.get("job_id"),
+        "action": action,
+        "endpoint_group": endpoint_group,
+        "internal_code": internal_code,
+        "advice_id": data.get("advice_id") or "",
     }
 
 
@@ -470,32 +522,51 @@ def _sum_dict(data: dict[str, Any]) -> int:
     return sum(int(value or 0) for value in data.values())
 
 
-def _advice(summary: dict[str, Any]) -> list[str]:
+def _advice(summary: dict[str, Any]) -> list[dict[str, Any]]:
     pacer = summary.get("pacer") if isinstance(summary.get("pacer"), dict) else {}
     by_group = pacer.get("429_by_group") if isinstance(pacer.get("429_by_group"), dict) else {}
     cleanup = summary.get("cleanup") if isinstance(summary.get("cleanup"), dict) else {}
     rd_counts = summary.get("rd_counts") if isinstance(summary.get("rd_counts"), dict) else {}
     rate = summary.get("rate") if isinstance(summary.get("rate"), dict) else {}
-    out: list[str] = []
+    out: list[dict[str, Any]] = []
+
+    def item(rule_id: str, text: str, tone: str, targets: list[str], evidence: dict[str, Any]) -> dict[str, Any]:
+        return {
+            "advice_id": "ADV_" + rule_id.upper().replace(".", "_"),
+            "rule_id": rule_id,
+            "level": "warn" if tone != "ok" else "ok",
+            "kind": "advice",
+            "badge": "Consejo" if tone != "ok" else "OK",
+            "tone": tone,
+            "text": text,
+            "config_targets": targets,
+            "evidence": evidence,
+        }
 
     if _sum_dict(by_group):
         group = max(by_group, key=lambda key: int(by_group.get(key) or 0))
-        out.append(f"Consejo: hay 429 en {_endpoint_label(group)}; {_endpoint_hint(group)}.")
+        targets = {
+            "addMagnet": ["rd_addmagnet_min_interval_sec", "rd_endpoint_429_cooldown_sec"],
+            "selectFiles": ["rd_selectfiles_min_interval_sec", "rd_endpoint_429_cooldown_sec"],
+            "delete": ["rd_delete_min_interval_sec", "rd_endpoint_429_cooldown_sec"],
+            "info": ["rd_info_min_interval_sec", "rd_info_max_concurrent"],
+        }.get(str(group), ["rd_api_429_cooldown_sec"])
+        out.append(item(f"rd.429.{group}", f"Hay 429 en {_endpoint_label(group)}. {_endpoint_hint(group).capitalize()} y repite.", "principal", targets, {"429_by_group": by_group}))
     elif int(rate.get("cooldowns_429") or 0):
-        out.append('Consejo: hay pausa 429 general; sube "Pausa 429" si se repite.')
+        out.append(item("rd.429.global", 'Hay pausa 429 general. Sube "Pausa 429" si se repite.', "principal", ["rd_api_429_cooldown_sec"], {"cooldowns_429": rate.get("cooldowns_429")}))
 
     if int(cleanup.get("pending") or 0) or int(cleanup.get("leftover") or 0):
-        out.append('Consejo: limpieza sucia; sube "Borrar" o "Pausa endpoint" y repite prueba.')
+        out.append(item("rd.cleanup.pending", 'Limpieza pendiente. Sube "Borrar" o "Pausa endpoint" y repite.', "secundario", ["rd_delete_min_interval_sec", "rd_endpoint_429_cooldown_sec"], cleanup))
 
     if int(rd_counts.get("RD_ERROR") or 0) or int(rd_counts.get("RD_ERROR_TEMPORAL") or 0):
-        out.append("Consejo: hay avisos RD; repite prueba o mira caja negra antes de afinar velocidad.")
+        out.append(item("rd.errors.present", "Hay avisos RD. Repite prueba o mira caja negra antes de tocar velocidad.", "ajuste", [], rd_counts))
 
     if not out:
         waits = int(rate.get("waits_total") or 0)
         if waits:
-            out.append("Consejo: RD no protesta; si quieres apurar, baja Meter magnet 0.05s y repite.")
+            out.append(item("rd.clean.with_waits", 'RD no protesta. Si quieres apurar, baja "Meter magnet" 0.05s y repite.', "principal", ["rd_addmagnet_min_interval_sec"], {"waits_total": waits}))
         else:
-            out.append("Consejo: no tocar ajustes; RD respondió limpio.")
+            out.append(item("rd.clean.no_change", "No tocar ajustes. RD respondió limpio.", "ok", [], {}))
     return out[:3]
 
 
@@ -503,9 +574,12 @@ def _summary(events: list[dict[str, Any]], summary_file: dict[str, Any]) -> dict
     rate = _data(_last(events, "rd_rate_summary"))
     pacer = _data(_last(events, "rd_endpoint_pacer_summary"))
     cleanup = _data(_last(events, "rd_cleanup_final_end"))
+    active_before = _first_data(events, "rd_active_count_before", "rd_slots_refresh")
+    active_after = _last_data(events, "rd_active_count_after", "rd_slots_refresh")
     rd_counts = _data(_last(events, "rd_verify_batch_end") or _last(events, "rd_check_summary"))
     queue_item = _data(_last(events, "rd_verify_queue_done_item"))
     queue_start = _data(_last(events, "rd_verify_queue_start"))
+    payload = summary_file.get("payload") if isinstance(summary_file.get("payload"), dict) else {}
 
     total = int(queue_item.get("total") or queue_start.get("verifying") or rd_counts.get("total") or 0)
     done = int(queue_item.get("done") or 0)
@@ -515,6 +589,13 @@ def _summary(events: list[dict[str, Any]], summary_file: dict[str, Any]) -> dict
     waits_by_group = pacer.get("waits_by_group") if isinstance(pacer.get("waits_by_group"), dict) else {}
 
     result = {
+        "run": {
+            "status": summary_file.get("status"),
+            "query": payload.get("query"),
+            "pages": payload.get("pages"),
+            "mode": payload.get("mode"),
+            "elapsed_sec": summary_file.get("elapsed_sec"),
+        },
         "progress": {"done": done, "total": total, "active": queue_item.get("active")},
         "rd_counts": status_counts,
         "rate": {
@@ -541,17 +622,30 @@ def _summary(events: list[dict[str, Any]], summary_file: dict[str, Any]) -> dict
             "leftover": cleanup.get("cleanup_leftover", 0),
             "temp_ids": cleanup.get("temp_ids", 0),
         },
+        "active_count": {
+            "before": {
+                "nb": active_before.get("nb"),
+                "limit": active_before.get("limit"),
+                "free": active_before.get("free"),
+            },
+            "after": {
+                "nb": active_after.get("nb"),
+                "limit": active_after.get("limit"),
+                "free": active_after.get("free"),
+            },
+        },
         "diagnostic_status": summary_file.get("diagnostic_status"),
         "operation_status": summary_file.get("operation_status"),
         "elapsed_sec": summary_file.get("elapsed_sec"),
         "updated_at": summary_file.get("updated_at"),
+        "translator_version": TRANSLATOR_VERSION,
     }
     result["advice"] = _advice(result)
     return result
 
 
-def build_rd_follow(job_id: str, after: int = 0, max_lines: int = 90) -> dict[str, Any]:
-    folder = job_folder(job_id)
+def build_rd_follow(trace_id: str, after: int = 0, max_lines: int = 90, kind: str = "job") -> dict[str, Any]:
+    folder = trace_folder(kind, trace_id)
     events = _read_events(folder / "events.jsonl")
     summary_file = _read_json(folder / "summary.json")
     started_at = _job_started_at(events, summary_file)
@@ -582,9 +676,28 @@ def build_rd_follow(job_id: str, after: int = 0, max_lines: int = 90) -> dict[st
         lines = lines[:max_lines]
 
     return {
-        "job_id": job_id,
+        "job_id": trace_id,
+        "trace_id": trace_id,
+        "trace_kind": kind,
+        "translator_version": TRANSLATOR_VERSION,
         "cursor": cursor,
         "has_diagnostics": bool(events),
         "summary": _summary(events, summary_file),
         "lines": lines,
     }
+
+
+def build_rd_event_detail(trace_id: str, event_id: str, kind: str = "rd_test") -> dict[str, Any] | None:
+    folder = trace_folder(kind, trace_id)
+    wanted = str(event_id or "").strip()
+    if not wanted:
+        return None
+    for record in _read_events(folder / "events.jsonl"):
+        if str(record.get("event_id") or "") == wanted or str(record.get("seq") or "") == wanted:
+            return {
+                "trace_id": trace_id,
+                "trace_kind": kind,
+                "translator_version": TRANSLATOR_VERSION,
+                "event": record,
+            }
+    return None

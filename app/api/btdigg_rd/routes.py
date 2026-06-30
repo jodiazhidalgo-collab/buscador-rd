@@ -2,16 +2,19 @@ from __future__ import annotations
 
 import json
 import time
+import zipfile
 from typing import Any
 
 from flask import Blueprint, Response, jsonify, request, stream_with_context
 
+from .blackbox import trace_folder
 from .classification import classify_title, default_tv_rules, load_tv_rules, reset_tv_rules, save_tv_rules
-from .config import BTDIGG_DIR, ensure_runtime_dirs
+from .config import BTDIGG_DIR, RD_TEST_EXPORTS_DIR, ensure_runtime_dirs
 from .history import load_history
-from .jobs import jobs, lock, running_job, start_job
+from .jobs import jobs, lock, running_job, start_job, start_rd_test
+from .retention import cleanup_rd_test_runs, list_rd_test_runs
 from .results import load_results
-from .rd_follow import build_rd_follow
+from .rd_follow import build_rd_event_detail, build_rd_follow
 from .send import api_rdt_send
 from .utils import read_json
 
@@ -33,6 +36,7 @@ def api_job():
             "ok": False,
             "error": "BTDigg + RD ya está trabajando. Espera a que termine antes de repetir.",
             "running_job_id": current.get("id"),
+            "running_kind": current.get("kind") or "job",
             "module": "btdigg",
         }), 409
 
@@ -40,10 +44,39 @@ def api_job():
     return jsonify({"ok": True, "job_id": job_id})
 
 
+@bp.post("/api/rd-test/job")
+def api_rd_test_job():
+    data = request.get_json(force=True, silent=True) or {}
+    query = str(data.get("query") or "").strip()
+    if not query:
+        return jsonify({"ok": False, "error": "falta título"}), 400
+
+    current = running_job()
+    if current:
+        return jsonify({
+            "ok": False,
+            "error": "BTDigg + RD ya está trabajando. Espera a que termine antes de repetir.",
+            "running_job_id": current.get("id"),
+            "running_kind": current.get("kind") or "job",
+            "module": "btdigg",
+        }), 409
+
+    run_id = start_rd_test(data)
+    return jsonify({"ok": True, "job_id": run_id, "run_id": run_id, "trace_kind": "rd_test"})
+
+
 @bp.get("/api/job/active")
 def api_job_active():
     current = running_job()
     if current:
+        return jsonify({"ok": True, "active": True, "job": current})
+    return jsonify({"ok": True, "active": False})
+
+
+@bp.get("/api/rd-test/job/active")
+def api_rd_test_job_active():
+    current = running_job()
+    if current and current.get("kind") == "rd_test":
         return jsonify({"ok": True, "active": True, "job": current})
     return jsonify({"ok": True, "active": False})
 
@@ -74,6 +107,83 @@ def api_job_rd_follow(job_id: str):
         return jsonify({"ok": False, "error": "job no encontrado"}), 404
     follow["job_status"] = job_status or follow.get("summary", {}).get("operation_status") or ""
     return jsonify({"ok": True, "follow": follow})
+
+
+@bp.get("/api/rd-test/job/<run_id>")
+def api_rd_test_job_status(run_id: str):
+    with lock:
+        job = jobs.get(run_id)
+        if job:
+            return jsonify({"ok": True, "job": job})
+    folder = trace_folder("rd_test", run_id)
+    if not folder.exists():
+        return jsonify({"ok": False, "error": "prueba RD no encontrada"}), 404
+    return jsonify({"ok": True, "job": {"id": run_id, "kind": "rd_test", "status": "done"}})
+
+
+@bp.get("/api/rd-test/job/<run_id>/follow")
+def api_rd_test_job_follow(run_id: str):
+    try:
+        after = int(str(request.args.get("after") or "0").strip() or "0")
+    except Exception:
+        after = 0
+    with lock:
+        job = jobs.get(run_id)
+        job_status = str((job or {}).get("status") or "")
+    try:
+        follow = build_rd_follow(run_id, after=after, kind="rd_test")
+    except Exception as exc:
+        return jsonify({"ok": False, "error": f"No se pudo leer seguimiento RD: {exc}"}), 500
+    if not job and not follow.get("has_diagnostics"):
+        return jsonify({"ok": False, "error": "prueba RD no encontrada"}), 404
+    follow["job_status"] = job_status or follow.get("summary", {}).get("operation_status") or ""
+    return jsonify({"ok": True, "follow": follow})
+
+
+@bp.get("/api/rd-test/job/<run_id>/event/<event_id>")
+def api_rd_test_event_detail(run_id: str, event_id: str):
+    detail = build_rd_event_detail(run_id, event_id, kind="rd_test")
+    if not detail:
+        return jsonify({"ok": False, "error": "evento no encontrado"}), 404
+    return jsonify({"ok": True, "detail": detail})
+
+
+@bp.get("/api/rd-test/runs")
+def api_rd_test_runs():
+    try:
+        limit = int(str(request.args.get("limit") or "50").strip() or "50")
+    except Exception:
+        limit = 50
+    return jsonify({"ok": True, "runs": list_rd_test_runs(limit=limit)})
+
+
+@bp.post("/api/rd-test/cleanup")
+def api_rd_test_cleanup():
+    data = request.get_json(force=True, silent=True) or {}
+    result = cleanup_rd_test_runs(dry_run=bool(data.get("dry_run")))
+    return jsonify({"ok": True, "cleanup": result})
+
+
+@bp.post("/api/rd-test/job/<run_id>/export")
+def api_rd_test_export(run_id: str):
+    folder = trace_folder("rd_test", run_id)
+    if not folder.exists():
+        return jsonify({"ok": False, "error": "prueba RD no encontrada"}), 404
+    RD_TEST_EXPORTS_DIR.mkdir(parents=True, exist_ok=True)
+    zip_path = RD_TEST_EXPORTS_DIR / f"{run_id}.zip"
+    try:
+        with zipfile.ZipFile(zip_path, "w", compression=zipfile.ZIP_DEFLATED) as zf:
+            for name in ("summary.json", "meta.json", "events.jsonl", "warnings.jsonl", "errors.jsonl", "timeline.md"):
+                path = folder / name
+                if path.exists():
+                    zf.write(path, arcname=name)
+            follow = build_rd_follow(run_id, after=0, max_lines=1000, kind="rd_test")
+            zf.writestr("human_follow.json", json.dumps(follow, ensure_ascii=False, indent=2, default=str))
+            zf.writestr("advice.json", json.dumps((follow.get("summary") or {}).get("advice") or [], ensure_ascii=False, indent=2, default=str))
+            zf.writestr("README.txt", "Export de prueba RD. Datos saneados por la caja negra de BTDigg + RD.\n")
+    except Exception as exc:
+        return jsonify({"ok": False, "error": f"No se pudo crear export: {exc}"}), 500
+    return jsonify({"ok": True, "zip": str(zip_path), "file": zip_path.name})
 
 
 @bp.get("/api/job/<job_id>/stream")
