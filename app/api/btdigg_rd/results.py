@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import re
+from pathlib import Path
 from typing import Any
 
 from .config import BTDIGG_DIR
@@ -148,10 +149,17 @@ def _source_sort_rank(item: dict[str, Any]) -> int:
     return 2
 
 
-def load_results() -> list[dict[str, Any]]:
-    data = read_json(BTDIGG_DIR / "exports" / "EDITOR_MAESTRO_SHOWN.json")
+def load_results(path: Path | str | None = None, export_dir: Path | str | None = None) -> list[dict[str, Any]]:
+    data = None
+    if path:
+        data = read_json(Path(path))
     if data is None:
-        data = read_json(BTDIGG_DIR / "exports" / "ULTIMOS_RESULTADOS.json")
+        base = Path(export_dir) if export_dir else BTDIGG_DIR / "exports"
+        data = read_json(base / "EDITOR_MAESTRO_SHOWN.json")
+        if data is None:
+            data = read_json(base / "ULTIMOS_RESULTADOS.json")
+    if data is None:
+        data = []
     if isinstance(data, dict):
         items = data.get("shown") or data.get("results") or data.get("items") or []
     else:

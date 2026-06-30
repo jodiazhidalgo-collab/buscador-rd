@@ -18,6 +18,9 @@ RD_TEST_DIAGNOSTICS_DIR = DIAGNOSTICS_DIR / "rd_tests"
 RD_TEST_EXPORTS_DIR = DIAGNOSTICS_DIR / "_exports" / "rd_tests"
 RD_TEST_RETENTION_DAYS = int(os.environ.get("BTDIGG_RD_TEST_RETENTION_DAYS", "14"))
 RD_TEST_KEEP_LAST_RUNS = int(os.environ.get("BTDIGG_RD_TEST_KEEP_LAST_RUNS", "200"))
+JOB_RUNS_DIR = DATA / "jobs"
+JOB_RUN_RETENTION_DAYS = int(os.environ.get("BTDIGG_JOB_RUN_RETENTION_DAYS", "7"))
+JOB_RUN_KEEP_LAST_RUNS = int(os.environ.get("BTDIGG_JOB_RUN_KEEP_LAST_RUNS", "100"))
 TRACKING_FILE = DATA / "seguimiento_actual.json"
 
 SAFEOUT_FILE = Path(
@@ -54,6 +57,7 @@ def ensure_runtime_dirs() -> None:
         DIAGNOSTICS_DIR,
         RD_TEST_DIAGNOSTICS_DIR,
         RD_TEST_EXPORTS_DIR,
+        JOB_RUNS_DIR,
         BTDIGG_DIR / "exports",
     ):
         path.mkdir(parents=True, exist_ok=True)

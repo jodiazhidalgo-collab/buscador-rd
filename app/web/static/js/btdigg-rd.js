@@ -29,6 +29,8 @@ const activeJobStoreKey = "btdiggRd.activeJob.v1";
 const rdFollowStoreKey = "btdiggRd.rdFollow.v1";
 const rdFollowTestStoreKey = "btdiggRd.rdFollowTest.v1";
 const rdOkVerifyTitleMarker = "__RD_OK_VERIFY_TITLE__";
+const terminalJobStatuses = new Set(["done", "error", "cancelled"]);
+const activeJobStatuses = new Set(["queued", "running", "cancelling"]);
 let historyCache = null;
 let historyOpenState = { days: {}, searches: {} };
 let historyResultStore = {};
@@ -88,6 +90,34 @@ function playFinishSound(jobId) {
 function setStatus(text) {
   const last = document.getElementById("lastAction");
   if (last) last.textContent = text || "Listo";
+}
+
+function isTerminalJobStatus(status) {
+  return terminalJobStatuses.has(String(status || "").toLowerCase());
+}
+
+function isActiveJobStatus(status) {
+  return activeJobStatuses.has(String(status || "").toLowerCase());
+}
+
+function jobStatusLabel(status) {
+  const value = String(status || "").toLowerCase();
+  if (value === "done") return "Terminado";
+  if (value === "error") return "Error";
+  if (value === "cancelled") return "Cancelado";
+  if (value === "cancelling") return "Deteniendo...";
+  if (value === "running") return "Trabajando LIVE...";
+  return "En cola...";
+}
+
+function updateStopButton(status = null) {
+  const btn = document.getElementById("stopBTBtn");
+  if (!btn) return;
+  const value = String(status || "").toLowerCase();
+  const active = value ? isActiveJobStatus(value) : !!(moduleBusy.btdigg && activeJobIds.btdigg);
+  btn.classList.toggle("is-stopping", value === "cancelling");
+  btn.textContent = value === "cancelling" ? "Deteniendo..." : "Detener";
+  btn.disabled = !active || value === "cancelling";
 }
 
 function setQbitToggleState(enabled, busy = false) {
@@ -480,6 +510,8 @@ function renderRdFollowPayload(follow) {
   renderRdFollowLines();
   if (!follow.has_diagnostics) {
     setRdFollowStatus("Esperando RD", "mid");
+  } else if (String(follow.job_status || "").toLowerCase() === "cancelled" || summary.operation_status === "cancelled") {
+    setRdFollowStatus("Cancelado", "mid");
   } else if (String(follow.job_status || "").toLowerCase() === "done" || summary.operation_status === "ok") {
     setRdFollowStatus("Terminado", "good");
   } else if (String(follow.job_status || "").toLowerCase() === "error" || summary.operation_status === "error") {
@@ -503,7 +535,7 @@ async function fetchRdFollow(finalRead = false) {
     renderRdFollowPayload(data.follow);
     rdFollowCursor = Number(data.follow.cursor || rdFollowCursor || 0);
     const status = String(data.follow.job_status || "").toLowerCase();
-    if (status === "done" || status === "error") stopRdFollow(false);
+    if (isTerminalJobStatus(status)) stopRdFollow(false);
     return true;
   } catch (e) {
     if (!finalRead) setRdFollowStatus("Sin conexión", "bad");
@@ -832,6 +864,7 @@ function clearCurrent() {
   renderResults([]);
   stopRdFollow(true);
   setStatus("Limpio");
+  updateStopButton();
   saveFormState();
 }
 
@@ -882,13 +915,14 @@ function applyJobSnapshot(job, module = "btdigg", options = {}) {
   activeModule = module;
   moduleLogs[module] = job.log || [];
   renderLog(module);
-  if (status === "done" || status === "error") {
+  if (isTerminalJobStatus(status)) {
     closeLive(module);
     moduleBusy[module] = false;
-    moduleResults[module] = job.results || [];
+    moduleResults[module] = status === "done" ? (job.results || []) : [];
     renderResults(moduleResults[module]);
     historyCache = null;
-    setStatus(status === "done" ? "Terminado" : "Error");
+    setStatus(jobStatusLabel(status));
+    updateStopButton(status);
     clearActiveJob(id, module);
     if (id) startRdFollow(id, true, traceKind);
     finishRdFollow(id);
@@ -898,7 +932,8 @@ function applyJobSnapshot(job, module = "btdigg", options = {}) {
   moduleBusy[module] = true;
   saveActiveJob(id, module);
   startRdFollow(id, true, traceKind);
-  setStatus(status === "running" ? "Trabajando LIVE..." : "En cola...");
+  setStatus(jobStatusLabel(status));
+  updateStopButton(status);
   return true;
 }
 
@@ -913,7 +948,7 @@ async function resumeJob(id, module = "btdigg", options = {}) {
       return false;
     }
     const status = String(data.job.status || "");
-    if (status === "done" || status === "error") {
+    if (isTerminalJobStatus(status)) {
       applyJobSnapshot(data.job, module, options);
       return true;
     }
@@ -921,7 +956,8 @@ async function resumeJob(id, module = "btdigg", options = {}) {
     moduleBusy[module] = true;
     saveActiveJob(id, module);
     startRdFollow(id, false, String(data.job.kind || "job"));
-    setStatus(status === "running" ? "Trabajando LIVE..." : "En cola...");
+    setStatus(jobStatusLabel(status));
+    updateStopButton(status);
     if (!liveStreams[module]) {
       moduleLogs[module] = ["Reconectando actividad LIVE..."];
       renderLog(module);
@@ -968,6 +1004,7 @@ async function start(payload) {
   moduleBusy[module] = true;
   closeLive(module);
   setStatus("Trabajando LIVE...");
+  updateStopButton("running");
   moduleLogs[module] = ["Conectando actividad LIVE..."];
   renderLog(module);
 
@@ -982,6 +1019,7 @@ async function start(payload) {
       }
       moduleBusy[module] = false;
       setStatus("Error");
+      updateStopButton("error");
       pushLog(module, "ERROR: " + (data.error || "no se pudo arrancar"));
       return;
     }
@@ -991,6 +1029,7 @@ async function start(payload) {
   } catch (e) {
     moduleBusy[module] = false;
     setStatus("Error");
+    updateStopButton("error");
     pushLog(module, "ERROR arrancando buscador: " + e);
   }
 }
@@ -1015,8 +1054,8 @@ function openLive(id, module) {
   es.addEventListener("status", ev => {
     try {
       const data = JSON.parse(ev.data || "{}");
-      if (data.status === "running") setStatus("Trabajando LIVE...");
-      if (data.status === "queued") setStatus("En cola...");
+      setStatus(jobStatusLabel(data.status));
+      updateStopButton(data.status);
     } catch (e) {}
   });
   es.addEventListener("done", ev => {
@@ -1025,10 +1064,14 @@ function openLive(id, module) {
     try { data = JSON.parse(ev.data || "{}"); } catch (e) {}
     closeLive(module);
     moduleBusy[module] = false;
-    setStatus(data.status === "done" ? "Terminado" : "Error");
-    moduleResults[module] = data.results || [];
+    setStatus(jobStatusLabel(data.status));
+    updateStopButton(data.status);
+    moduleResults[module] = data.status === "done" ? (data.results || []) : [];
     renderResults(moduleResults[module]);
     historyCache = null;
+    if (data.status === "cancelled" && (data.forced_stop || data.cleanup_uncertain)) {
+      pushLog(module, "Aviso: cancelacion forzada. Revisa caja negra.");
+    }
     clearActiveJob(id, module);
     finishRdFollow(id);
     playFinishSound(id);
@@ -1050,19 +1093,55 @@ async function poll(id, module) {
     if (data.ok) {
       moduleLogs[module] = data.job.log || [];
       renderLog(module);
-      if (data.job.status === "done" || data.job.status === "error") {
+      if (isActiveJobStatus(data.job.status)) {
+        setStatus(jobStatusLabel(data.job.status));
+        updateStopButton(data.job.status);
+      }
+      if (isTerminalJobStatus(data.job.status)) {
         done = true;
         moduleBusy[module] = false;
-        setStatus(data.job.status === "done" ? "Terminado" : "Error");
-        moduleResults[module] = data.job.results || [];
+        setStatus(jobStatusLabel(data.job.status));
+        updateStopButton(data.job.status);
+        moduleResults[module] = data.job.status === "done" ? (data.job.results || []) : [];
         renderResults(moduleResults[module]);
         historyCache = null;
+        if (data.job.status === "cancelled" && (data.job.forced_stop || data.job.cleanup_uncertain)) {
+          pushLog(module, "Aviso: cancelacion forzada. Revisa caja negra.");
+        }
         clearActiveJob(id, module);
         finishRdFollow(id);
         playFinishSound(id);
       }
     }
     if (!done) await new Promise(resolve => setTimeout(resolve, 1000));
+  }
+}
+
+async function stopBT() {
+  const module = "btdigg";
+  const saved = storedActiveJob();
+  const id = activeJobIds[module] || (saved && saved.module === module ? saved.id : "");
+  if (!id) {
+    setStatus("Sin job");
+    updateStopButton();
+    return;
+  }
+  setStatus("Deteniendo...");
+  updateStopButton("cancelling");
+  pushLog(module, "Deteniendo busqueda...");
+  try {
+    const response = await fetch("/api/job/" + encodeURIComponent(id) + "/cancel", { method: "POST" });
+    const data = await response.json();
+    if (!response.ok || !data.ok) throw new Error(data.error || "no se pudo detener");
+    if (data.job) {
+      applyJobSnapshot(data.job, module);
+    } else {
+      updateStopButton("cancelling");
+    }
+  } catch (e) {
+    setStatus("Error detener");
+    updateStopButton("running");
+    pushLog(module, "ERROR deteniendo: " + e);
   }
 }
 
@@ -2021,6 +2100,7 @@ restoreRdFollowState();
 loadQbitToggle();
 loadSettings(true);
 renderResults([]);
+updateStopButton();
 reconnectActiveJob();
 
 window.addEventListener("pageshow", () => {

@@ -375,7 +375,7 @@ def _first_event(events: list[dict[str, Any]], name: str) -> dict[str, Any] | No
 
 
 def _summary_status(operation_status: str | None, counts: dict[str, int]) -> str:
-    if operation_status in {"ok", "error", "rejected"}:
+    if operation_status in {"ok", "error", "rejected", "cancelled"}:
         return operation_status
     if int(counts.get("error", 0)) > 0:
         return "error"
@@ -440,7 +440,7 @@ def _derive_job_summary(events: list[dict[str, Any]], summary: dict[str, Any]) -
         if data.get("shown") is not None:
             summary["results_shown"] = data.get("shown")
 
-    finished = _last_event(events, "JOB_FINISHED_OK") or _last_event(events, "JOB_FINISHED_ERROR")
+    finished = _last_event(events, "JOB_FINISHED_OK") or _last_event(events, "JOB_FINISHED_CANCELLED") or _last_event(events, "JOB_FINISHED_ERROR")
     if finished:
         data = finished.get("data") or {}
         for key in ("exit_code", "results_count", "elapsed_sec"):
@@ -713,7 +713,12 @@ def trace_command(kind: str, trace_id: str, cmd: list[str], cwd: Path | str) -> 
 
 def finish_trace(kind: str, trace_id: str, status: str, **data: Any) -> None:
     try:
-        event = "JOB_FINISHED_OK" if status == "ok" else "JOB_FINISHED_ERROR"
+        if status == "ok":
+            event = "JOB_FINISHED_OK"
+        elif status == "cancelled":
+            event = "JOB_FINISHED_CANCELLED"
+        else:
+            event = "JOB_FINISHED_ERROR"
         folder = trace_folder(kind, trace_id)
         _record(folder, event, data, {"status": status})
         _rebuild_summary_from_events(folder, {"status": status, **data})

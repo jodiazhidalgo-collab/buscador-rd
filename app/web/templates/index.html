@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>BTDigg + RD</title>
-  <link rel="stylesheet" href="{{ url_for('static', filename='css/btdigg-rd.css') }}?v=32">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/btdigg-rd.css') }}?v=33">
 </head>
 <body>
   <main class="shell">
@@ -42,9 +42,10 @@
           <label for="bMinGb">GB mínimo</label>
           <input id="bMinGb" inputmode="decimal" placeholder="opcional">
         </div>
-        <div class="actions">
+        <div class="actions search-actions">
           <button class="btn primary" type="button" onclick="searchBT()">BUSCAR</button>
           <button class="btn" type="button" onclick="clearCurrent()">Limpiar</button>
+          <button id="stopBTBtn" class="btn stop-btn" type="button" onclick="stopBT()" disabled>Detener</button>
         </div>
       </section>
 
@@ -220,6 +221,6 @@
     </div>
   </div>
 
-  <script src="{{ url_for('static', filename='js/btdigg-rd.js') }}?v=27"></script>
+  <script src="{{ url_for('static', filename='js/btdigg-rd.js') }}?v=28"></script>
 </body>
 </html>

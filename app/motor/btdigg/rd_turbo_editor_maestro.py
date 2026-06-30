@@ -22,10 +22,10 @@ from pathlib import Path
 
 APP_DIR = Path(__file__).resolve().parent
 ENGINE_FILE_DEFAULT = APP_DIR / "rd_turbo_pro.py"
-SHOWN_FILE = APP_DIR / "exports" / "EDITOR_MAESTRO_SHOWN.json"
+SHOWN_FILE = Path(os.environ.get("EDITOR_MAESTRO_SHOWN_FILE", str(APP_DIR / "exports" / "EDITOR_MAESTRO_SHOWN.json")))
 SAFEOUT_FILE = Path(os.environ.get("EDITOR_MAESTRO_SAFEOUT", str(Path(tempfile.gettempdir()) / "btdigg_rd_safeout.log")))
 
-ORDERED_LINKS_FILE = APP_DIR / "last_links_ordenado.txt"
+ORDERED_LINKS_FILE = Path(os.environ.get("EDITOR_MAESTRO_ORDERED_LINKS_FILE", str(APP_DIR / "last_links_ordenado.txt")))
 
 
 def _clean_one_line(value):
@@ -232,14 +232,19 @@ def do_search(engine, args):
     print("")
 
     engine.diag("editor_clean_search_start", query=query, pages=pages, mode=mode, min_gb=min_gb)
+    engine.cancel_checkpoint("editor.before_search")
     results = engine.search_btdigg_browser_auto_quality_aware(query, pages, mode)
+    engine.cancel_checkpoint("editor.after_search")
     print(f"\nEncontrados {len(results)} resultados brutos. Filtrando...")
     prepared = engine.prepare_results(results, mode, token)
+    engine.cancel_checkpoint("editor.after_prepare")
     shown = engine.display_results(prepared)
+    engine.cancel_checkpoint("editor.before_save_shown")
     save_shown(shown)
     try:
         temp_ids = [str(getattr(r, "rd_torrent_id", "") or "").strip() for r in shown if str(getattr(r, "rd_torrent_id", "") or "").strip() and not getattr(r, "rd_existing", False)]
-        engine.cleanup_unselected_verified(shown, [], token)
+        with engine.non_cancelable_cleanup():
+            engine.cleanup_unselected_verified(shown, [], token)
         print(f"Real-Debrid temporal limpio: {len(temp_ids)} id(s) revisado(s).")
         engine.diag("editor_clean_search_rd_cleanup", temp_ids=len(temp_ids))
     except Exception as e:
@@ -363,6 +368,13 @@ def main():
             return do_send(engine, args)
         print("Uso interno Editor Maestro: --search o --send")
         return 2
+    except engine.UserCancelled as e:
+        try:
+            engine.diag("editor_clean_cancelled", reason=str(e))
+        except Exception:
+            pass
+        print("\nCancelado por el usuario. Limpieza terminada.")
+        return 130
     except KeyboardInterrupt:
         print("\nCancelado por el usuario.")
         return 130

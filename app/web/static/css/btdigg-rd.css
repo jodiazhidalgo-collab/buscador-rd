@@ -35,10 +35,15 @@ h2{margin:0;font-size:15px;letter-spacing:0}
 .field input,.field select{height:40px;border:1px solid #3b444a;border-radius:7px;background:#0e1112;color:var(--text);padding:0 10px;outline:none}
 .field input:focus,.field select:focus{border-color:var(--cyan);box-shadow:0 0 0 2px rgba(85,199,217,.16)}
 .actions,.settings-actions{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.search-actions{flex-wrap:nowrap}
+.search-actions .btn{min-width:0;white-space:nowrap}
 .btn{height:40px;border:1px solid #465056;border-radius:7px;background:#242a2e;color:var(--text);padding:0 13px;font-weight:800;cursor:pointer;transition:transform .12s ease,background .12s ease,border-color .12s ease}
 .btn:hover{background:#2c3338;border-color:#5b6971}
 .btn:active{transform:translateY(1px)}
 .btn.primary{background:linear-gradient(180deg,#2ecc7d,#1f9b61);border-color:#43e494;color:#07120c}
+.btn.stop-btn{background:#2b2022;border-color:rgba(255,107,107,.48);color:#ffd8d8}
+.btn.stop-btn:hover{background:#342427;border-color:rgba(255,107,107,.7)}
+.btn.stop-btn.is-stopping{background:#3a2d18;border-color:rgba(240,184,90,.65);color:#ffe2a7}
 .btn:disabled{opacity:.65;cursor:wait}
 .btn.is-loading{position:relative;color:transparent}
 .btn-spinner{display:inline-block;width:16px;height:16px;border:2px solid rgba(255,255,255,.35);border-top-color:#fff;border-radius:50%;animation:spin .8s linear infinite}

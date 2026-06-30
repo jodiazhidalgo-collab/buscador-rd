@@ -17,6 +17,7 @@ USEFUL_EVENTS = {
     "JOB_STARTED",
     "PROCESS_STARTED",
     "JOB_FINISHED_OK",
+    "JOB_FINISHED_CANCELLED",
     "JOB_FINISHED_ERROR",
     "browser_auto_search_start_dom",
     "browser_auto_search_end_dom",
@@ -501,6 +502,11 @@ def _event_to_line(record: dict[str, Any], started_at: datetime | None) -> dict[
         elapsed = _fmt_sec(data.get("elapsed_sec"))
         results = data.get("results_count", 0)
         return _line(record, started_at, "ok", "finish", f"Terminado: {results} resultados | tiempo total {elapsed}.")
+
+    if event == "JOB_FINISHED_CANCELLED":
+        elapsed = _fmt_sec(data.get("elapsed_sec"))
+        forced = " Parada forzada: revisa caja negra." if data.get("forced_stop") or data.get("cleanup_uncertain") else ""
+        return _line(record, started_at, "info", "finish", f"Cancelado: tiempo total {elapsed}.{forced}", "Cancelado", "secundario")
 
     if event == "JOB_FINISHED_ERROR":
         return _line(record, started_at, "error", "finish", "Terminado con error. Revisa caja negra.")

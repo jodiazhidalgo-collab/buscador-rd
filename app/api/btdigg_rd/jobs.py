@@ -2,6 +2,8 @@ from __future__ import annotations
 
 import os
 import queue
+import shutil
+import signal
 import subprocess
 import sys
 import threading
@@ -25,16 +27,24 @@ from .blackbox import (
     start_job as blackbox_start_job,
     start_rd_test as blackbox_start_rd_test,
 )
-from .config import BTDIGG_DIR, SAFEOUT_FILE
+from .config import BTDIGG_DIR, JOB_RUNS_DIR
 from .history import record_search
-from .retention import cleanup_rd_test_runs
+from .retention import cleanup_job_runs, cleanup_rd_test_runs
 from .results import load_results
 from .send import rd_token
 from .utils import read_json, read_text
 
 
 jobs: dict[str, dict[str, Any]] = {}
+job_runtimes: dict[str, "JobRuntime"] = {}
 lock = threading.Lock()
+
+ACTIVE_STATUSES = {"queued", "running", "cancelling"}
+TERMINAL_STATUSES = {"done", "error", "cancelled"}
+CANCEL_EXIT_CODES = {0, 130, -int(getattr(signal, "SIGTERM", 15)), -int(getattr(signal, "SIGKILL", 9))}
+CANCEL_GRACE_SEC = float(os.environ.get("BTDIGG_CANCEL_GRACE_SEC", "30") or 30)
+CANCEL_TERMINATE_GRACE_SEC = float(os.environ.get("BTDIGG_CANCEL_TERMINATE_GRACE_SEC", "8") or 8)
+CANCEL_KILL_GRACE_SEC = float(os.environ.get("BTDIGG_CANCEL_KILL_GRACE_SEC", "4") or 4)
 
 
 @dataclass(frozen=True)
@@ -47,6 +57,25 @@ class RunScope:
     disable_last_links: bool = False
 
 
+@dataclass
+class JobRuntime:
+    job_id: str
+    scope_kind: str
+    run_dir: Path
+    cancel_file: Path
+    safeout_file: Path
+    shown_file: Path
+    exports_dir: Path
+    last_links_file: Path
+    ordered_links_file: Path
+    process: subprocess.Popen[str] | None = None
+    cancel_requested_at: float | None = None
+    forced_stop: bool = False
+    cleanup_uncertain: bool = False
+    terminate_sent_at: float | None = None
+    kill_sent_at: float | None = None
+
+
 SEARCH_SCOPE = RunScope(kind="job", action="search")
 RD_TEST_SCOPE = RunScope(
     kind="rd_test",
@@ -56,6 +85,51 @@ RD_TEST_SCOPE = RunScope(
     disable_exports=True,
     disable_last_links=True,
 )
+
+
+def _cancel_doc(requested: bool, job_id: str, reason: str = "") -> str:
+    return (
+        "{\n"
+        f'  "job_id": "{job_id}",\n'
+        f'  "cancel_requested": {"true" if requested else "false"},\n'
+        f'  "reason": "{str(reason or "").replace(chr(34), chr(39))}",\n'
+        f'  "updated_at": {time.time():.3f}\n'
+        "}\n"
+    )
+
+
+def _write_cancel_file(runtime: JobRuntime, requested: bool, reason: str = "") -> None:
+    runtime.cancel_file.parent.mkdir(parents=True, exist_ok=True)
+    runtime.cancel_file.write_text(_cancel_doc(requested, runtime.job_id, reason), encoding="utf-8")
+
+
+def create_job_runtime(job_id: str, scope: RunScope) -> JobRuntime:
+    run_dir = JOB_RUNS_DIR / job_id
+    exports_dir = run_dir / "exports"
+    exports_dir.mkdir(parents=True, exist_ok=True)
+    runtime = JobRuntime(
+        job_id=job_id,
+        scope_kind=scope.kind,
+        run_dir=run_dir,
+        cancel_file=run_dir / "cancel.json",
+        safeout_file=run_dir / "safeout.log",
+        shown_file=run_dir / "shown.json",
+        exports_dir=exports_dir,
+        last_links_file=run_dir / "last_links.txt",
+        ordered_links_file=run_dir / "last_links_ordenado.txt",
+    )
+    _write_cancel_file(runtime, False, "created")
+    return runtime
+
+
+def _public_runtime_flags(runtime: JobRuntime | None) -> dict[str, Any]:
+    if not runtime:
+        return {}
+    return {
+        "forced_stop": bool(runtime.forced_stop),
+        "cleanup_uncertain": bool(runtime.cleanup_uncertain),
+        "run_id": runtime.job_id,
+    }
 
 
 def append_job(job_id: str, line: str) -> None:
@@ -80,7 +154,7 @@ def set_job(job_id: str, **values: Any) -> None:
 def running_job() -> dict[str, Any] | None:
     with lock:
         for job in jobs.values():
-            if str(job.get("status") or "") in ("queued", "running"):
+            if str(job.get("status") or "") in ACTIVE_STATUSES:
                 return dict(job)
     return None
 
@@ -126,6 +200,139 @@ def _bb_events_file(scope: RunScope, job_id: str) -> Path:
     return blackbox_job_events_file(job_id)
 
 
+def _runtime_for(job_id: str) -> JobRuntime | None:
+    with lock:
+        return job_runtimes.get(job_id)
+
+
+def _set_runtime_process(job_id: str, process: subprocess.Popen[str] | None) -> JobRuntime | None:
+    with lock:
+        runtime = job_runtimes.get(job_id)
+        if runtime:
+            runtime.process = process
+        return runtime
+
+
+def _mark_cancel_requested(job_id: str, runtime: JobRuntime, reason: str = "user") -> None:
+    now = time.monotonic()
+    with lock:
+        runtime.cancel_requested_at = runtime.cancel_requested_at or now
+        job = jobs.get(job_id)
+        if job and str(job.get("status") or "") in {"queued", "running", "cancelling"}:
+            job["status"] = "cancelling"
+            job["cancel_requested"] = True
+            job["forced_stop"] = bool(runtime.forced_stop)
+            job["cleanup_uncertain"] = bool(runtime.cleanup_uncertain)
+    _write_cancel_file(runtime, True, reason)
+
+
+def cancel_job(job_id: str) -> dict[str, Any]:
+    message = ""
+    with lock:
+        job = jobs.get(job_id)
+        runtime = job_runtimes.get(job_id)
+        if not job:
+            return {"ok": False, "error": "job no encontrado", "status": "missing"}
+        status = str(job.get("status") or "queued")
+        public_job = dict(job)
+        if status in {"done", "error"}:
+            return {"ok": True, "already_finished": True, "status": status, "job": public_job}
+        if status in {"cancelled", "cancelling"}:
+            if runtime:
+                runtime.cancel_requested_at = runtime.cancel_requested_at or time.monotonic()
+            message = "Cancelacion ya estaba pedida."
+        else:
+            if runtime:
+                runtime.cancel_requested_at = runtime.cancel_requested_at or time.monotonic()
+            job["status"] = "cancelling"
+            job["cancel_requested"] = True
+            public_job = dict(job)
+            message = "Deteniendo busqueda..."
+
+    if runtime:
+        _write_cancel_file(runtime, True, "user")
+    if message:
+        append_job(job_id, message)
+    _bb_event(SEARCH_SCOPE if (job or {}).get("kind") != "rd_test" else RD_TEST_SCOPE, job_id, "JOB_CANCEL_REQUESTED", status=(job or {}).get("status"))
+    with lock:
+        public_job = dict(jobs.get(job_id) or public_job)
+    return {"ok": True, "status": public_job.get("status"), "job": public_job}
+
+
+def _process_group_signal(process: subprocess.Popen[str], sig: int) -> None:
+    if os.name != "nt":
+        try:
+            os.killpg(os.getpgid(process.pid), sig)
+            return
+        except Exception:
+            pass
+    if sig == int(getattr(signal, "SIGKILL", 9)):
+        process.kill()
+    else:
+        process.terminate()
+
+
+def _escalate_cancel_if_needed(job_id: str, runtime: JobRuntime, scope: RunScope) -> None:
+    if runtime.cancel_requested_at is None or runtime.process is None:
+        return
+    process = runtime.process
+    if process.poll() is not None:
+        return
+    elapsed = time.monotonic() - runtime.cancel_requested_at
+    if runtime.terminate_sent_at is None and elapsed >= CANCEL_GRACE_SEC:
+        runtime.forced_stop = True
+        runtime.cleanup_uncertain = True
+        runtime.terminate_sent_at = time.monotonic()
+        append_job(job_id, "Cancelacion lenta. Envio terminate y dejo aviso de revision.")
+        _bb_event(scope, job_id, "JOB_CANCEL_TERMINATE_SENT", pid=process.pid, elapsed_sec=round(elapsed, 3))
+        _process_group_signal(process, int(getattr(signal, "SIGTERM", 15)))
+    elif runtime.terminate_sent_at is not None and runtime.kill_sent_at is None and (time.monotonic() - runtime.terminate_sent_at) >= CANCEL_TERMINATE_GRACE_SEC:
+        runtime.forced_stop = True
+        runtime.cleanup_uncertain = True
+        runtime.kill_sent_at = time.monotonic()
+        append_job(job_id, "Cancelacion forzada. Revisa caja negra por limpieza incierta.")
+        _bb_event(scope, job_id, "JOB_CANCEL_KILL_SENT", pid=process.pid, elapsed_sec=round(elapsed, 3))
+        _process_group_signal(process, int(getattr(signal, "SIGKILL", 9)))
+
+
+def _promote_successful_artifacts(runtime: JobRuntime) -> None:
+    shared_exports = BTDIGG_DIR / "exports"
+    shared_exports.mkdir(parents=True, exist_ok=True)
+    if runtime.shown_file.exists():
+        shutil.copy2(runtime.shown_file, shared_exports / "EDITOR_MAESTRO_SHOWN.json")
+    if runtime.exports_dir.exists():
+        for path in runtime.exports_dir.iterdir():
+            if path.is_file():
+                shutil.copy2(path, shared_exports / path.name)
+    if runtime.last_links_file.exists():
+        shutil.copy2(runtime.last_links_file, BTDIGG_DIR / "last_links.txt")
+    if runtime.ordered_links_file.exists():
+        shutil.copy2(runtime.ordered_links_file, BTDIGG_DIR / "last_links_ordenado.txt")
+
+
+def _finalize_cancelled(job_id: str, scope: RunScope, runtime: JobRuntime, exit_code: int | None, started_monotonic: float) -> None:
+    results: list[dict[str, Any]] = []
+    append_job(job_id, "Cancelado.")
+    _bb_finish(
+        scope,
+        job_id,
+        "cancelled",
+        exit_code=exit_code,
+        forced_stop=bool(runtime.forced_stop),
+        cleanup_uncertain=bool(runtime.cleanup_uncertain),
+        elapsed_sec=round(time.monotonic() - started_monotonic, 3),
+    )
+    set_job(
+        job_id,
+        status="cancelled",
+        exit_code=exit_code,
+        finished=time.strftime("%H:%M:%S"),
+        results=results,
+        forced_stop=bool(runtime.forced_stop),
+        cleanup_uncertain=bool(runtime.cleanup_uncertain),
+    )
+
+
 def _payload_or_config(payload: dict[str, Any], payload_key: str, cfg: dict[str, Any], cfg_key: str, default: Any = "") -> str:
     raw = payload.get(payload_key)
     if raw is None or str(raw).strip() == "":
@@ -150,15 +357,27 @@ def sync_rd_token_for_motor() -> None:
 def run_process(job_id: str, cmd: list[str], cwd: Path, safeout: Path | None = None, scope: RunScope = SEARCH_SCOPE) -> None:
     started_monotonic = time.monotonic()
     payload = jobs.get(job_id, {}).get("payload") or {}
+    runtime = _runtime_for(job_id)
+    if runtime is None:
+        runtime = create_job_runtime(job_id, scope)
+        with lock:
+            job_runtimes[job_id] = runtime
+    safeout = runtime.safeout_file
     _bb_start(scope, job_id, payload)
     _bb_command(scope, job_id, cmd, cwd)
-    set_job(job_id, status="running", started=time.strftime("%H:%M:%S"), results=[])
     try:
-        if safeout:
-            try:
-                safeout.write_text("", encoding="utf-8")
-            except Exception:
-                pass
+        if runtime.cancel_requested_at is not None:
+            _write_cancel_file(runtime, True, "before_start")
+            append_job(job_id, "Cancelado antes de arrancar motor.")
+            _bb_event(scope, job_id, "JOB_CANCELLED_BEFORE_PROCESS")
+            _finalize_cancelled(job_id, scope, runtime, None, started_monotonic)
+            return
+
+        set_job(job_id, status="running", started=time.strftime("%H:%M:%S"), results=[])
+        try:
+            safeout.write_text("", encoding="utf-8")
+        except Exception:
+            pass
 
         append_job(job_id, "Arrancando motor...")
         env = os.environ.copy()
@@ -167,6 +386,12 @@ def run_process(job_id: str, cmd: list[str], cwd: Path, safeout: Path | None = N
         env["BTDIGG_BLACKBOX_TRACE_ID"] = job_id
         env["BTDIGG_BLACKBOX_JOB_ID"] = job_id
         env["BTDIGG_BLACKBOX_EVENTS"] = str(_bb_events_file(scope, job_id))
+        env["BTDIGG_CANCEL_FILE"] = str(runtime.cancel_file)
+        env["BTDIGG_EXPORT_DIR"] = str(runtime.exports_dir)
+        env["EDITOR_MAESTRO_SAFEOUT"] = str(runtime.safeout_file)
+        env["EDITOR_MAESTRO_SHOWN_FILE"] = str(runtime.shown_file)
+        env["BTDIGG_LAST_LINKS_FILE"] = str(runtime.last_links_file)
+        env["EDITOR_MAESTRO_ORDERED_LINKS_FILE"] = str(runtime.ordered_links_file)
         if scope.kind == "rd_test":
             env["BTDIGG_RD_TEST_MODE"] = "1"
             env["BTDIGG_DISABLE_HISTORY"] = "1"
@@ -174,8 +399,12 @@ def run_process(job_id: str, cmd: list[str], cwd: Path, safeout: Path | None = N
             env["BTDIGG_DISABLE_EXPORTS"] = "1"
         if scope.disable_last_links:
             env["BTDIGG_DISABLE_LAST_LINKS"] = "1"
-        if safeout:
-            env["EDITOR_MAESTRO_SAFEOUT"] = str(safeout)
+
+        popen_kwargs: dict[str, Any] = {}
+        if os.name == "nt":
+            popen_kwargs["creationflags"] = getattr(subprocess, "CREATE_NEW_PROCESS_GROUP", 0)
+        else:
+            popen_kwargs["start_new_session"] = True
 
         process = subprocess.Popen(
             cmd,
@@ -187,8 +416,10 @@ def run_process(job_id: str, cmd: list[str], cwd: Path, safeout: Path | None = N
             errors="replace",
             bufsize=1,
             env=env,
+            **popen_kwargs,
         )
-        _bb_event(scope, job_id, "PROCESS_STARTED", pid=process.pid)
+        _set_runtime_process(job_id, process)
+        _bb_event(scope, job_id, "PROCESS_STARTED", pid=process.pid, run_dir=str(runtime.run_dir))
 
         stdout_q: queue.Queue[str] = queue.Queue()
 
@@ -215,7 +446,7 @@ def run_process(job_id: str, cmd: list[str], cwd: Path, safeout: Path | None = N
 
         def drain_safeout() -> None:
             nonlocal last_safe_len
-            if not safeout or not safeout.exists():
+            if not safeout.exists():
                 return
             text = read_text(safeout)
             if len(text) <= last_safe_len:
@@ -228,6 +459,9 @@ def run_process(job_id: str, cmd: list[str], cwd: Path, safeout: Path | None = N
         while process.poll() is None:
             drain_stdout()
             drain_safeout()
+            if runtime.cancel_requested_at is not None:
+                _mark_cancel_requested(job_id, runtime, "supervisor")
+                _escalate_cancel_if_needed(job_id, runtime, scope)
             time.sleep(0.25)
 
         reader.join(timeout=1.5)
@@ -235,8 +469,40 @@ def run_process(job_id: str, cmd: list[str], cwd: Path, safeout: Path | None = N
         drain_safeout()
 
         code = process.returncode
-        results = load_results() if scope.load_shared_results else []
+        _set_runtime_process(job_id, None)
+        cancel_requested = runtime.cancel_requested_at is not None
+        if cancel_requested:
+            if runtime.forced_stop or code in CANCEL_EXIT_CODES:
+                _finalize_cancelled(job_id, scope, runtime, code, started_monotonic)
+                return
+            append_job(job_id, f"Error tras pedir cancelacion. Codigo: {code}")
+            _bb_finish(
+                scope,
+                job_id,
+                "error",
+                exit_code=code,
+                cancel_requested=True,
+                forced_stop=bool(runtime.forced_stop),
+                cleanup_uncertain=bool(runtime.cleanup_uncertain),
+                elapsed_sec=round(time.monotonic() - started_monotonic, 3),
+            )
+            set_job(
+                job_id,
+                status="error",
+                exit_code=code,
+                error="La cancelacion no termino limpia; revisar caja negra.",
+                finished=time.strftime("%H:%M:%S"),
+                results=[],
+                forced_stop=bool(runtime.forced_stop),
+                cleanup_uncertain=bool(runtime.cleanup_uncertain),
+            )
+            return
+
+        results: list[dict[str, Any]] = []
         if code == 0:
+            if scope.load_shared_results:
+                _promote_successful_artifacts(runtime)
+                results = load_results(runtime.shown_file, runtime.exports_dir)
             if scope.record_shared_history:
                 try:
                     record_search(jobs.get(job_id, {}).get("payload") or {}, results)
@@ -256,14 +522,13 @@ def run_process(job_id: str, cmd: list[str], cwd: Path, safeout: Path | None = N
                 elapsed_sec=round(time.monotonic() - started_monotonic, 3),
             )
         else:
-            append_job(job_id, f"Error del motor. Código: {code}")
-        if code != 0:
+            append_job(job_id, f"Error del motor. Codigo: {code}")
             _bb_finish(
                 scope,
                 job_id,
                 "error",
                 exit_code=code,
-                results_count=len(results),
+                results_count=0,
                 elapsed_sec=round(time.monotonic() - started_monotonic, 3),
             )
         set_job(
@@ -272,8 +537,10 @@ def run_process(job_id: str, cmd: list[str], cwd: Path, safeout: Path | None = N
             exit_code=code,
             finished=time.strftime("%H:%M:%S"),
             results=results,
+            **_public_runtime_flags(runtime),
         )
     except Exception as exc:
+        _set_runtime_process(job_id, None)
         append_job(job_id, f"ERROR WEB: {type(exc).__name__}: {exc}")
         _bb_error(
             scope,
@@ -283,19 +550,30 @@ def run_process(job_id: str, cmd: list[str], cwd: Path, safeout: Path | None = N
             elapsed_sec=round(time.monotonic() - started_monotonic, 3),
         )
         set_job(job_id, status="error", error=f"{type(exc).__name__}: {exc}", finished=time.strftime("%H:%M:%S"), results=[])
-    finally:
-        if safeout:
-            try:
-                safeout.unlink(missing_ok=True)
-            except Exception:
-                pass
 
 
 def start_job(payload: dict[str, Any]) -> str:
     sync_rd_token_for_motor()
+    try:
+        cleanup_job_runs()
+    except Exception:
+        pass
     job_id = uuid.uuid4().hex[:12]
+    runtime = create_job_runtime(job_id, SEARCH_SCOPE)
     with lock:
-        jobs[job_id] = {"id": job_id, "kind": "job", "module": "btdigg", "action": "search", "status": "queued", "payload": dict(payload), "log": [], "results": []}
+        job_runtimes[job_id] = runtime
+        jobs[job_id] = {
+            "id": job_id,
+            "kind": "job",
+            "module": "btdigg",
+            "action": "search",
+            "status": "queued",
+            "payload": dict(payload),
+            "log": [],
+            "results": [],
+            "cancel_requested": False,
+            **_public_runtime_flags(runtime),
+        }
 
     cfg = read_json(BTDIGG_DIR / "config.json") or {}
     if not isinstance(cfg, dict):
@@ -320,7 +598,7 @@ def start_job(payload: dict[str, Any]) -> str:
         min_gb,
     ]
 
-    thread = threading.Thread(target=run_process, args=(job_id, cmd, BTDIGG_DIR, SAFEOUT_FILE, SEARCH_SCOPE), daemon=True)
+    thread = threading.Thread(target=run_process, args=(job_id, cmd, BTDIGG_DIR, runtime.safeout_file, SEARCH_SCOPE), daemon=True)
     thread.start()
     return job_id
 
@@ -332,13 +610,26 @@ def start_rd_test(payload: dict[str, Any]) -> str:
     except Exception:
         pass
     run_id = "rdt_" + uuid.uuid4().hex[:10]
+    runtime = create_job_runtime(run_id, RD_TEST_SCOPE)
     test_payload = dict(payload)
     test_payload["module"] = "btdigg"
     test_payload["action"] = "rd_tuning"
     test_payload["mode"] = "0"
     test_payload["min_gb"] = "0"
     with lock:
-        jobs[run_id] = {"id": run_id, "kind": "rd_test", "module": "btdigg", "action": "rd_tuning", "status": "queued", "payload": test_payload, "log": [], "results": []}
+        job_runtimes[run_id] = runtime
+        jobs[run_id] = {
+            "id": run_id,
+            "kind": "rd_test",
+            "module": "btdigg",
+            "action": "rd_tuning",
+            "status": "queued",
+            "payload": test_payload,
+            "log": [],
+            "results": [],
+            "cancel_requested": False,
+            **_public_runtime_flags(runtime),
+        }
 
     cfg = read_json(BTDIGG_DIR / "config.json") or {}
     if not isinstance(cfg, dict):
@@ -361,6 +652,6 @@ def start_rd_test(payload: dict[str, Any]) -> str:
         "0",
     ]
 
-    thread = threading.Thread(target=run_process, args=(run_id, cmd, BTDIGG_DIR, SAFEOUT_FILE, RD_TEST_SCOPE), daemon=True)
+    thread = threading.Thread(target=run_process, args=(run_id, cmd, BTDIGG_DIR, runtime.safeout_file, RD_TEST_SCOPE), daemon=True)
     thread.start()
     return run_id

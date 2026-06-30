@@ -11,7 +11,7 @@ from .blackbox import trace_folder
 from .classification import classify_title, default_tv_rules, load_tv_rules, reset_tv_rules, save_tv_rules
 from .config import BTDIGG_DIR, RD_TEST_EXPORTS_DIR, ensure_runtime_dirs
 from .history import load_history
-from .jobs import jobs, lock, running_job, start_job, start_rd_test
+from .jobs import TERMINAL_STATUSES, cancel_job, jobs, lock, running_job, start_job, start_rd_test
 from .retention import cleanup_rd_test_runs, list_rd_test_runs
 from .results import load_results
 from .rd_follow import build_rd_event_detail, build_rd_follow
@@ -91,6 +91,13 @@ def api_job_status(job_id: str):
         if not job:
             return jsonify({"ok": False, "error": "job no encontrado"}), 404
         return jsonify({"ok": True, "job": job})
+
+
+@bp.post("/api/job/<job_id>/cancel")
+def api_job_cancel(job_id: str):
+    result = cancel_job(job_id)
+    status = 404 if not result.get("ok") and result.get("status") == "missing" else 200
+    return jsonify(result), status
 
 
 @bp.get("/api/job/<job_id>/rd-follow")
@@ -208,9 +215,11 @@ def api_job_stream(job_id: str):
                     return
                 logs = list(job.get("log") or [])
                 status = str(job.get("status") or "queued")
-                results = list(job.get("results") or []) if status in ("done", "error") else []
+                results = list(job.get("results") or []) if status == "done" else []
                 exit_code = job.get("exit_code")
                 error = job.get("error")
+                forced_stop = bool(job.get("forced_stop"))
+                cleanup_uncertain = bool(job.get("cleanup_uncertain"))
 
             if last_log_index > len(logs):
                 last_log_index = 0
@@ -222,8 +231,20 @@ def api_job_stream(job_id: str):
                 yield sse("status", {"ok": True, "status": status, "module": "btdigg"})
                 last_status = status
 
-            if status in ("done", "error"):
-                yield sse("done", {"ok": status == "done", "status": status, "module": "btdigg", "results": results, "exit_code": exit_code, "error": error})
+            if status in TERMINAL_STATUSES:
+                yield sse(
+                    "done",
+                    {
+                        "ok": status != "error",
+                        "status": status,
+                        "module": "btdigg",
+                        "results": results,
+                        "exit_code": exit_code,
+                        "error": error,
+                        "forced_stop": forced_stop,
+                        "cleanup_uncertain": cleanup_uncertain,
+                    },
+                )
                 return
 
             now = time.time()

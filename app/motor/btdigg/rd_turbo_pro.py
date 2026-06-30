@@ -31,6 +31,7 @@ from urllib.parse import quote, unquote, urlparse, parse_qs, urlencode, urljoin
 from urllib.request import Request, urlopen, build_opener, HTTPCookieProcessor
 import http.cookiejar
 from urllib.error import HTTPError, URLError
+from contextlib import contextmanager
 
 try:
     sys.stdout.reconfigure(errors="replace")
@@ -42,13 +43,15 @@ APP_DIR = Path(__file__).resolve().parent
 CONFIG_FILE = APP_DIR / "config.json"
 TOKEN_FILE = APP_DIR / "rd_token.txt"
 LOG_DIR = Path(os.environ.get("BTDIGG_LEGACY_LOG_DIR", str(Path(tempfile.gettempdir()) / "btdigg_rd_legacy_logs")))
-LAST_LINKS_FILE = APP_DIR / "last_links.txt"
-EXPORT_DIR = APP_DIR / "exports"
+LAST_LINKS_FILE = Path(os.environ.get("BTDIGG_LAST_LINKS_FILE", str(APP_DIR / "last_links.txt")))
+EXPORT_DIR = Path(os.environ.get("BTDIGG_EXPORT_DIR", str(APP_DIR / "exports")))
+CANCEL_FILE = Path(os.environ["BTDIGG_CANCEL_FILE"]) if os.environ.get("BTDIGG_CANCEL_FILE") else None
+_CANCEL_LOCAL = threading.local()
 LEGACY_MOTOR_LOGS = str(os.environ.get("BTDIGG_LEGACY_MOTOR_LOGS", "")).strip().lower() in {"1", "true", "yes", "on", "si", "sí"}
 
 if LEGACY_MOTOR_LOGS:
     LOG_DIR.mkdir(exist_ok=True)
-EXPORT_DIR.mkdir(exist_ok=True)
+EXPORT_DIR.mkdir(parents=True, exist_ok=True)
 
 RUN_STAMP = time.strftime("%Y-%m-%d_%H-%M-%S")
 RUN_LOG_FILE = LOG_DIR / f"legacy_motor_{RUN_STAMP}.log"
@@ -68,6 +71,90 @@ RD_RATE_LIMITER_KEY = None
 RD_ENDPOINT_PACER = None
 RD_ENDPOINT_PACER_KEY = None
 RD_INSTANT_DISABLED_UNTIL = 0.0
+
+
+class UserCancelled(BaseException):
+    """Cancelacion cooperativa pedida desde la web."""
+
+
+def cancel_requested():
+    if not CANCEL_FILE:
+        return False
+    try:
+        if not CANCEL_FILE.exists():
+            return False
+        text = CANCEL_FILE.read_text(encoding="utf-8", errors="ignore").lower()
+    except Exception:
+        return False
+    return '"cancel_requested": true' in text or "cancel_requested=true" in text or text.strip() in {"1", "true", "cancel"}
+
+
+def _cancel_disabled():
+    return int(getattr(_CANCEL_LOCAL, "disabled", 0) or 0) > 0
+
+
+def cancel_checkpoint(where=""):
+    if _cancel_disabled():
+        return
+    if cancel_requested():
+        try:
+            diag("job_cancel_checkpoint", where=str(where or "")[:120])
+        except Exception:
+            pass
+        raise UserCancelled(str(where or "cancelled"))
+
+
+def sleep_interruptible(seconds, step=0.25, where="sleep"):
+    end = time.monotonic() + max(0.0, float(seconds or 0.0))
+    while True:
+        cancel_checkpoint(where)
+        remaining = end - time.monotonic()
+        if remaining <= 0:
+            return
+        time.sleep(min(max(0.01, float(step or 0.25)), remaining))
+
+
+@contextmanager
+def non_cancelable_cleanup():
+    current = int(getattr(_CANCEL_LOCAL, "disabled", 0) or 0)
+    _CANCEL_LOCAL.disabled = current + 1
+    try:
+        yield
+    finally:
+        _CANCEL_LOCAL.disabled = current
+
+
+def run_capture_interruptible(cmd, timeout, where):
+    process = subprocess.Popen(
+        cmd,
+        stdout=subprocess.PIPE,
+        stderr=subprocess.PIPE,
+        text=True,
+        encoding="utf-8",
+        errors="replace",
+    )
+    deadline = time.monotonic() + max(1.0, float(timeout or 1.0))
+    try:
+        while True:
+            try:
+                out, err = process.communicate(timeout=0.25)
+                return process.returncode, out, err
+            except subprocess.TimeoutExpired:
+                cancel_checkpoint(where)
+                if time.monotonic() >= deadline:
+                    process.kill()
+                    out, err = process.communicate()
+                    raise subprocess.TimeoutExpired(cmd, timeout, output=out, stderr=err)
+    except UserCancelled:
+        try:
+            process.terminate()
+            process.wait(timeout=2)
+        except Exception:
+            try:
+                process.kill()
+            except Exception:
+                pass
+        raise
 
 DEFAULT_CONFIG = {
     "version": "2.4",
@@ -405,11 +492,13 @@ class RDRateLimiter:
         path = str(path or "")
         with self.lock:
             while True:
+                cancel_checkpoint("rd_rate_limiter")
                 now = time.monotonic()
                 if now < self.cooldown_until:
                     wait_sec = self.cooldown_until - now
                     self._record_wait("429_cooldown", wait_sec, method, path)
                     self.lock.wait(timeout=min(wait_sec, 2.0))
+                    cancel_checkpoint("rd_rate_limiter.cooldown")
                     continue
 
                 while self.events and (now - self.events[0]) >= 60.0:
@@ -432,6 +521,7 @@ class RDRateLimiter:
                 wait_sec = min(waits) if waits else 0.05
                 self._record_wait("minute" if minute_full else "burst", wait_sec, method, path)
                 self.lock.wait(timeout=min(wait_sec, 2.0))
+                cancel_checkpoint("rd_rate_limiter.wait")
 
     def notify_429(self, err, cooldown_override=None):
         with self.lock:
@@ -581,6 +671,7 @@ class RDEndpointPacer:
         group = _rd_endpoint_group(method, path)
         with self.lock:
             while True:
+                cancel_checkpoint("rd_endpoint_pacer")
                 now = time.monotonic()
                 self._maybe_recover_locked(group, now)
                 st = self.state[group]
@@ -604,6 +695,7 @@ class RDEndpointPacer:
                 wait_sec = max(0.01, min(waits))
                 self._record_wait_locked(group, wait_sec, method, path, ",".join(reasons))
                 self.lock.wait(timeout=min(wait_sec, 1.0))
+                cancel_checkpoint("rd_endpoint_pacer.wait")
 
     def release(self, group):
         if not self.enabled or not group:
@@ -1388,6 +1480,7 @@ def http_get_text(url, timeout=None):
     return raw.decode("utf-8", errors="ignore")
 
 def rd_api(method, path, token, data=None, raw=None, content_type=None):
+    cancel_checkpoint(f"rd_api.before:{path}")
     pacer = get_rd_endpoint_pacer()
     pacer_group = ""
     if pacer:
@@ -1414,6 +1507,7 @@ def rd_api(method, path, token, data=None, raw=None, content_type=None):
     try:
         with urlopen(req, timeout=int(CONFIG.get("request_timeout_sec", 20))) as resp:
             raw_resp = resp.read()
+            cancel_checkpoint(f"rd_api.after:{path}")
             if not raw_resp:
                 return None
             text = raw_resp.decode("utf-8", errors="ignore")
@@ -1487,7 +1581,7 @@ def _rd_retry_sleep(attempt, base_sec=None, max_sec=None):
     base = float(base_sec if base_sec is not None else CONFIG.get("rd_temp_error_retry_sec", 1.0) or 1.0)
     max_wait = float(max_sec if max_sec is not None else max(base, 4.0))
     wait_sec = min(max_wait, max(0.05, base * (1.5 ** max(0, int(attempt or 1) - 1))))
-    time.sleep(wait_sec)
+    sleep_interruptible(wait_sec, where="rd_retry_sleep")
     return wait_sec
 
 
@@ -1541,7 +1635,7 @@ def rd_call_with_retry(
                     break
                 wait_sec = float(CONFIG.get("rd_retry_21_wait_sec", 1.5) or 1.5)
                 diag("rd_call_retry_21", op=op, method=str(method).upper(), path=_rd_path_group(path), attempt=attempt, max_attempts=max_attempts, wait_sec=wait_sec, error=str(e)[:300])
-                time.sleep(wait_sec)
+                sleep_interruptible(wait_sec, where="rd_retry_21")
                 continue
             if e.is_429:
                 if retry_context:
@@ -1694,6 +1788,7 @@ def qbt_delete_hash(opener, h, why="probe"):
         diag("qbt_delete_error", hash=h, why=why, error=str(e)[:300])
 
 def qbt_probe_one(opener, r, idx=0, total=0):
+    cancel_checkpoint("qbt_probe.before")
     h = (r.hash or magnet_hash(r.magnet) or "").lower()
     if not h or not r.magnet:
         r.qbt_status = "QBT_SIN_HASH"
@@ -1727,6 +1822,7 @@ def qbt_probe_one(opener, r, idx=0, total=0):
         qbt_request(opener, "POST", "/api/v2/torrents/add", data, timeout=20)
         added_by_us = True
         diag("qbt_probe_add", n=idx, total=total, hash=h, title=r.title[:160])
+        cancel_checkpoint("qbt_probe.after_add")
     except Exception as e:
         r.qbt_status = "QBT_ADD_ERROR"
         r.qbt_reason = str(e)[:500]
@@ -1738,28 +1834,34 @@ def qbt_probe_one(opener, r, idx=0, total=0):
     poll = float(CONFIG.get("qbit_probe_poll_sec", 3) or 3)
     last_info = None
     last_status, last_reason = "QBT_NO_INFO", "Sin info todavía"
-    while time.time() < deadline:
-        time.sleep(poll)
-        info = qbt_info_by_hash(opener, h)
-        if not info:
-            continue
-        last_info = info
-        last_status, last_reason = qbt_eval_info(info)
-        diag(
-            "qbt_probe_poll",
-            n=idx,
-            total=total,
-            hash=h,
-            status=last_status,
-            state=str(info.get("state") or ""),
-            progress=round(float(info.get("progress") or 0), 4),
-            dlspeed=_safe_int(info.get("dlspeed"), 0),
-            seeds=max(0, _safe_int(info.get("num_seeds"), 0)),
-            peers=max(0, _safe_int(info.get("num_leechs"), 0)),
-            size_gb=round((_safe_int(info.get("size"), 0) / (1024**3)), 3),
-        )
-        if last_status in ("QBT_OK", "QBT_VIVO"):
-            break
+    try:
+        while time.time() < deadline:
+            sleep_interruptible(poll, where="qbt_probe.poll")
+            info = qbt_info_by_hash(opener, h)
+            if not info:
+                continue
+            last_info = info
+            last_status, last_reason = qbt_eval_info(info)
+            diag(
+                "qbt_probe_poll",
+                n=idx,
+                total=total,
+                hash=h,
+                status=last_status,
+                state=str(info.get("state") or ""),
+                progress=round(float(info.get("progress") or 0), 4),
+                dlspeed=_safe_int(info.get("dlspeed"), 0),
+                seeds=max(0, _safe_int(info.get("num_seeds"), 0)),
+                peers=max(0, _safe_int(info.get("num_leechs"), 0)),
+                size_gb=round((_safe_int(info.get("size"), 0) / (1024**3)), 3),
+            )
+            if last_status in ("QBT_OK", "QBT_VIVO"):
+                break
+    except UserCancelled:
+        if added_by_us and CONFIG.get("qbit_delete_probe_after", True):
+            with non_cancelable_cleanup():
+                qbt_delete_hash(opener, h, "cancel_probe")
+        raise
     if last_info:
         r.qbt_seeds = max(0, _safe_int(last_info.get("num_seeds"), 0))
         r.qbt_peers = max(0, _safe_int(last_info.get("num_leechs"), 0))
@@ -1806,6 +1908,7 @@ def _qbt_probe_one_fresh(r, idx, total):
     return qbt_probe_one(opener, r, idx, total)
 
 def qbt_probe_candidates(results):
+    cancel_checkpoint("qbt_probe_candidates.before")
     if not CONFIG.get("qbit_probe_enabled", True):
         diag("qbt_probe_skipped", reason="disabled")
         return results
@@ -1841,6 +1944,7 @@ def qbt_probe_candidates(results):
                 r.qbt_reason = "No pude conectar/login con qBittorrent"
             return results
         for i, r in enumerate(candidates, 1):
+            cancel_checkpoint("qbt_probe_candidates.item")
             qbt_probe_one(opener, r, i, len(candidates))
             if _is_qbt_working_status(r.qbt_status):
                 vivos += 1
@@ -1852,6 +1956,7 @@ def qbt_probe_candidates(results):
             futs = {ex.submit(_qbt_probe_one_fresh, r, i, len(candidates)): (i, r) for i, r in enumerate(candidates, 1)}
             done = 0
             for fut in as_completed(futs):
+                cancel_checkpoint("qbt_probe_candidates.worker")
                 i, r = futs[fut]
                 done += 1
                 try:
@@ -1990,18 +2095,14 @@ def _btdigg_dump_dom_fallback(url):
         url,
     ]
     try:
-        cp = subprocess.run(
+        rc, stdout, _stderr = run_capture_interruptible(
             cmd,
-            stdout=subprocess.PIPE,
-            stderr=subprocess.PIPE,
-            text=True,
-            encoding="utf-8",
-            errors="replace",
             timeout=int(CONFIG.get("btdigg_dump_dom_timeout_sec", 45) or 45),
+            where="btdigg_dump_dom",
         )
-        html_text = cp.stdout or ""
+        html_text = stdout or ""
         results = extract_magnets_from_text(html_text, source_url=url)
-        diag("btdigg_dump_dom_fallback", url=url, magnets=len(results), html_chars=len(html_text), rc=cp.returncode)
+        diag("btdigg_dump_dom_fallback", url=url, magnets=len(results), html_chars=len(html_text), rc=rc)
         if results:
             print(f"  Rescate DOM: {len(results)} magnets encontrados")
         return results
@@ -3035,7 +3136,7 @@ def ensure_browser_debug():
     subprocess.Popen(args, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
 
     for _ in range(40):
-        time.sleep(0.5)
+        sleep_interruptible(0.5, where="browser_debug_launch")
         if _port_open(port):
             try:
                 _json_http(port, "/json/version")
@@ -3180,7 +3281,7 @@ def browser_collect_page(cdp, url, page):
     cdp.call("Page.enable", timeout=10)
     cdp.call("Runtime.enable", timeout=10)
     cdp.call("Page.navigate", {"url": url}, timeout=15)
-    time.sleep(float(CONFIG.get("browser_wait_after_load_sec", 5)))
+    sleep_interruptible(float(CONFIG.get("browser_wait_after_load_sec", 5)), where="browser_collect_page.wait")
     for _ in range(8):
         try:
             state = browser_eval(cdp, "document.readyState", timeout=5)
@@ -3188,7 +3289,7 @@ def browser_collect_page(cdp, url, page):
                 break
         except Exception:
             pass
-        time.sleep(0.75)
+        sleep_interruptible(0.75, where="browser_collect_page.ready")
 
     js = r'''
 (() => {
@@ -3270,7 +3371,7 @@ def browser_collect_page(cdp, url, page):
 
 def browser_wait_ready(cdp, seconds=None):
     wait_total = float(seconds if seconds is not None else CONFIG.get("browser_wait_after_load_sec", 5))
-    time.sleep(max(0.5, min(wait_total, 3)))
+    sleep_interruptible(max(0.5, min(wait_total, 3)), where="browser_wait_ready.initial")
     for _ in range(8):
         try:
             state = browser_eval(cdp, "document.readyState", timeout=5)
@@ -3278,7 +3379,7 @@ def browser_wait_ready(cdp, seconds=None):
                 break
         except Exception:
             pass
-        time.sleep(0.75)
+        sleep_interruptible(0.75, where="browser_wait_ready.ready")
 
 def browser_snapshot(cdp):
     js = r'''
@@ -3585,6 +3686,7 @@ def search_btdigg_browser_auto(query, page_spec):
     empty_streak = 0
 
     for i, page in enumerate(pages, 1):
+        cancel_checkpoint("btdigg_browser_auto.page")
         url = build_url("https://en.btdig.com/search?q={query_quote}&p={page0}", search_query, page)
         print(f"\nNavegador automático página {page} ({i}/{len(pages)}):")
         print(f"  {url}")
@@ -3600,7 +3702,7 @@ def search_btdigg_browser_auto(query, page_spec):
                 print("  Corto: dos páginas seguidas sin magnets.")
                 break
 
-        time.sleep(float(CONFIG.get("browser_delay_between_pages_sec", 2)))
+        sleep_interruptible(float(CONFIG.get("browser_delay_between_pages_sec", 2)), where="btdigg_browser_auto.delay")
 
     final = dedupe_results(all_results)
     diag("browser_auto_search_end_dom", query=query, search_query=search_query, total=len(final))
@@ -3642,6 +3744,7 @@ def _quality_mode_extra_btdigg_queries(query, mode=0):
     return out[:3]
 
 def search_btdigg_browser_auto_quality_aware(query, page_spec, mode):
+    cancel_checkpoint("btdigg_quality.before_base")
     results = search_btdigg_browser_auto(query, page_spec)
     extra_queries = _quality_mode_extra_btdigg_queries(query, mode)
     if not extra_queries:
@@ -3650,6 +3753,7 @@ def search_btdigg_browser_auto_quality_aware(query, page_spec, mode):
     extra_pages = str(CONFIG.get("quality_mode_extra_btdigg_pages", "1") or "1")
     diag("browser_quality_rescue_start", query=query, extra_queries=extra_queries, pages=extra_pages)
     for extra_query in extra_queries:
+        cancel_checkpoint("btdigg_quality.rescue")
         print(f"\nRescate calidad BTDigg: {extra_query} (paginas {extra_pages})")
         try:
             extra_results = search_btdigg_browser_auto(extra_query, extra_pages)
@@ -3673,6 +3777,7 @@ def search_btdigg(query, page_spec):
     diag("btdigg_search_start", query=query, search_query=search_query, pages=page_spec, parsed_pages=pages[:80])
 
     for page in pages:
+        cancel_checkpoint("btdigg_direct.page")
         print(f"\nBuscando BTDigg página {page}...")
         page_results = []
         trial_templates = [working_template] if working_template else templates
@@ -3699,7 +3804,7 @@ def search_btdigg(query, page_spec):
                     page_had_429 = True
                     print("  Ese dominio ha frenado la consulta: HTTP 429")
                     diag("btdigg_429_continue", page=page, url=url)
-                    time.sleep(float(CONFIG.get("delay_after_btdigg_429_sec", 8)))
+                    sleep_interruptible(float(CONFIG.get("delay_after_btdigg_429_sec", 8)), where="btdigg_direct.429")
                     continue
                 continue
             except Exception as e:
@@ -3724,7 +3829,7 @@ def search_btdigg(query, page_spec):
             empty_streak = 0
             all_results.extend(page_results)
 
-        time.sleep(float(CONFIG.get("delay_between_btdigg_pages_sec", 7)))
+        sleep_interruptible(float(CONFIG.get("delay_between_btdigg_pages_sec", 7)), where="btdigg_direct.delay")
 
     diag("btdigg_search_end", query=query, search_query=search_query, total=len(dedupe_results(all_results)), total_429=total_429)
     return dedupe_results(all_results)
@@ -3734,6 +3839,7 @@ def export_results(results, shown=None, write_all_json=True):
     """Guarda resultados para depurar sin ir a ciegas."""
     if not CONFIG.get("write_exports", True):
         return
+    cancel_checkpoint("export_results.before_write")
     try:
         EXPORT_DIR.mkdir(exist_ok=True)
         all_json = EXPORT_DIR / "ULTIMOS_RESULTADOS.json"
@@ -4397,6 +4503,7 @@ def rd_verify_by_addmagnet(r, token, idx=0, total=0, ctx=None):
     - En packs elige solo el archivo interno que coincide con la búsqueda.
     - Solo marca RD_OK cuando RD entrega link real.
     """
+    cancel_checkpoint("rd_verify_by_addmagnet.before")
     if not r.magnet:
         r.rd_status = "SIN_MAGNET"
         r.reason = "No hay magnet para verificar"
@@ -4425,9 +4532,10 @@ def rd_verify_by_addmagnet(r, token, idx=0, total=0, ctx=None):
             if ctx and ctx.slots and not reserved_for_add:
                 ctx.slots.refresh(force=False)
                 while not ctx.slots.try_reserve_for_add():
-                    time.sleep(float(CONFIG.get("rd_active_slots_wait_sec", 0.35) or 0.35))
+                    sleep_interruptible(float(CONFIG.get("rd_active_slots_wait_sec", 0.35) or 0.35), where="rd_active_slots_wait")
                     ctx.slots.refresh(force=True)
                 reserved_for_add = True
+            cancel_checkpoint("rd_verify_by_addmagnet.before_add")
             res = rd_call_with_retry("POST", "/torrents/addMagnet", token, data={"magnet": r.magnet}, op_name="addMagnet", attempts=retries, retry_context=ctx, retry_429_attempts=retry_429_attempts)
             if ctx and ctx.slots and reserved_for_add:
                 ctx.slots.on_add_success()
@@ -4478,9 +4586,10 @@ def rd_verify_by_addmagnet(r, token, idx=0, total=0, ctx=None):
         diag("rd_verify_added", n=idx, total=total, id=tid, hash=r.hash)
         visible_pause = max(0.0, float(CONFIG.get("rd_visible_pause_after_add_sec", 0) or 0))
         if visible_pause:
-            time.sleep(visible_pause)
+            sleep_interruptible(visible_pause, where="rd_visible_pause_after_add")
 
         for attempt in range(1, attempts + 1):
+            cancel_checkpoint("rd_verify_by_addmagnet.poll")
             info = rd_call_with_retry("GET", f"/torrents/info/{tid}", token, op_name="existing_info", attempts=3, retry_context=get_rd_runtime(), retry_429_attempts=retry_429_attempts)
             if not isinstance(info, dict):
                 raise RuntimeError(f"info inesperada: {info}")
@@ -4545,6 +4654,7 @@ def rd_verify_by_addmagnet(r, token, idx=0, total=0, ctx=None):
                 r.rd_largest_gb = fgb or r.rd_largest_gb
                 r.pack_note = note
                 try:
+                    cancel_checkpoint("rd_verify_by_addmagnet.before_select")
                     rd_call_with_retry("POST", f"/torrents/selectFiles/{tid}", token, data={"files": ids}, op_name="selectFiles", attempts=retries, retry_context=ctx, retry_429_attempts=retry_429_attempts)
                     selected_once = True
                     diag("rd_verify_select_files", id=tid, n=idx, files=ids, file_name=fname[:240], file_size_gb=round(float(fgb or 0), 3), note=note[:500])
@@ -4552,7 +4662,7 @@ def rd_verify_by_addmagnet(r, token, idx=0, total=0, ctx=None):
                     diag("rd_verify_select_error", id=tid, n=idx, error=str(e)[:300])
                     raise
                 post_wait = float(CONFIG.get("rd_post_select_poll_sec", 0.25) or 0.25)
-                time.sleep(post_wait)
+                sleep_interruptible(post_wait, where="rd_post_select_poll")
                 if CONFIG.get("rd_post_select_extra_poll_enabled", True):
                     info2 = rd_call_with_retry("GET", f"/torrents/info/{tid}", token, op_name="info_post_select", attempts=retries, retry_context=ctx, retry_429_attempts=retry_429_attempts)
                     if isinstance(info2, dict):
@@ -4609,7 +4719,7 @@ def rd_verify_by_addmagnet(r, token, idx=0, total=0, ctx=None):
                     rd_delete_torrent(tid, token, "fallo", release_slot=True)
                 return r
 
-            time.sleep(wait_sec)
+            sleep_interruptible(wait_sec, where="rd_verify_wait")
 
         r.rd_status = "NO_INSTANT"
         r.reason = f"No entrega link instantáneo. Estado: {last_status}, progreso: {last_progress}"
@@ -4620,6 +4730,13 @@ def rd_verify_by_addmagnet(r, token, idx=0, total=0, ctx=None):
         diag("rd_verify_not_instant", n=idx, total=total, id=tid, status=last_status, progress=last_progress, selected_file=r.selected_file_name[:240], title=r.title[:160])
         return r
 
+    except UserCancelled:
+        if ctx and tid:
+            ctx.record_failed(tid, "cancelled")
+        if tid and CONFIG.get("cleanup_failed_verifications", True):
+            with non_cancelable_cleanup():
+                rd_delete_torrent(tid, token, "cancelled", release_slot=True)
+        raise
     except Exception as e:
         if _is_rd_temp_error_msg(e):
             if ctx and tid:
@@ -4714,7 +4831,7 @@ def rd_emit_rate_summary(label=""):
     rd_emit_endpoint_pacer_summary(label)
 
 
-def rd_cleanup_final(ctx, token):
+def _rd_cleanup_final_impl(ctx, token):
     if not ctx or not CONFIG.get("rd_final_cleanup_enabled", True):
         return
     attempts = max(1, int(CONFIG.get("rd_final_cleanup_attempts", 3) or 3))
@@ -4785,6 +4902,11 @@ def rd_cleanup_final(ctx, token):
     rd_emit_rate_summary("cleanup_final")
 
 
+def rd_cleanup_final(ctx, token):
+    with non_cancelable_cleanup():
+        return _rd_cleanup_final_impl(ctx, token)
+
+
 def rd_verify_addmagnet_queue(batch, token, maxv):
     summary = {}
     if not batch:
@@ -4819,13 +4941,17 @@ def rd_verify_addmagnet_queue(batch, token, maxv):
         with ThreadPoolExecutor(max_workers=workers) as ex:
             while next_index < len(batch) or active:
                 while next_index < len(batch) and len(active) < workers:
+                    cancel_checkpoint("rd_verify_queue.submit")
                     cand = batch[next_index]
                     idx = next_index + 1
                     fut = ex.submit(rd_verify_by_addmagnet, cand, token, idx, maxv, ctx)
                     active[fut] = (idx, cand)
                     diag("rd_verify_queue_submit", n=idx, total=maxv, active=len(active), title=cand.title[:120])
                     next_index += 1
-                done, _pending = wait(active, return_when=FIRST_COMPLETED)
+                done, _pending = wait(active, timeout=0.25, return_when=FIRST_COMPLETED)
+                cancel_checkpoint("rd_verify_queue.wait")
+                if not done:
+                    continue
                 for fut in done:
                     idx, cand = active.pop(fut)
                     done_count += 1
@@ -4864,7 +4990,8 @@ def rd_verify_addmagnet_queue(batch, token, maxv):
         return summary
     finally:
         try:
-            rd_cleanup_final(ctx, token)
+            with non_cancelable_cleanup():
+                rd_cleanup_final(ctx, token)
         except Exception as e:
             diag("rd_cleanup_final_error", error=str(e)[:500])
         clear_rd_runtime()
@@ -4892,10 +5019,11 @@ def rd_verify_addmagnet_batch(rd_candidates, token, maxv):
     workers = min(workers, len(batch))
     if workers <= 1:
         for j, cand in enumerate(batch, 1):
+            cancel_checkpoint("rd_verify_batch.item")
             print(f"  Verificando {j}/{maxv}: {_result_display_name(cand)[:100]}")
             rd_verify_by_addmagnet(cand, token, j, maxv)
             summary[cand.rd_status] = summary.get(cand.rd_status, 0) + 1
-            time.sleep(float(CONFIG.get("delay_between_rd_checks_sec", 0.0)))
+            sleep_interruptible(float(CONFIG.get("delay_between_rd_checks_sec", 0.0)), where="rd_verify_batch.delay")
     else:
         print(f"  Verificacion RD en paralelo prudente: {workers} a la vez.")
         diag("rd_verify_batch_parallel_start", verifying=maxv, workers=workers)
@@ -4906,6 +5034,7 @@ def rd_verify_addmagnet_batch(rd_candidates, token, maxv):
             }
             done = 0
             for fut in as_completed(futs):
+                cancel_checkpoint("rd_verify_batch.worker")
                 j, cand = futs[fut]
                 done += 1
                 try:
@@ -4946,6 +5075,7 @@ def _rd_batchable_magnet_candidates(candidates):
     return [r for r in candidates if getattr(r, "magnet", "") and getattr(r, "rd_status", "") not in blocked]
 
 def rd_check_availability(results, token):
+    cancel_checkpoint("rd_check_availability.before")
     validate_direct_links(results)
     materialize_torrent_candidates(results)
     rd_candidates = [r for r in results if not _is_direct_candidate_result(r)]
@@ -4980,6 +5110,7 @@ def rd_check_availability(results, token):
     max_torrent_checks = int(CONFIG.get("verify_max_candidates", 30) or 30)
 
     for i, r in enumerate(rd_candidates, 1):
+        cancel_checkpoint("rd_check_availability.item")
         if r.rd_status in ("TORRENT_NO_VALIDO", "DIRECT_NO_VALIDO", "DIRECT_ERROR"):
             summary[r.rd_status] = summary.get(r.rd_status, 0) + 1
             continue
@@ -5091,7 +5222,7 @@ def rd_check_availability(results, token):
         if CONFIG.get("diagnostic_rd_items", True):
             diag("rd_check_item", n=i, total=len(rd_candidates), status=r.rd_status, hash=r.hash, score=r.score, size_gb=round(float(r.size_gb or 0), 3), rd_largest_gb=round(float(r.rd_largest_gb or 0), 3), reason=(r.reason or "")[:500], title=r.title[:160])
 
-        time.sleep(float(CONFIG.get("delay_between_rd_checks_sec", 0.0)))
+        sleep_interruptible(float(CONFIG.get("delay_between_rd_checks_sec", 0.0)), where="rd_check_availability.delay")
 
     # Resumen real recalculado, porque en modo addMagnet se actualizan estados después.
     final = {}
@@ -5111,6 +5242,7 @@ def prepare_results(results, mode, token):
     global LAST_QBIT_EXTRAS, LAST_RD_TEMP_ERRORS
     LAST_QBIT_EXTRAS = []
     LAST_RD_TEMP_ERRORS = []
+    cancel_checkpoint("prepare_results.start")
     diag("prepare_results_start", incoming=len(results), mode=mode, min_size_gb=_current_min_size_gb())
     print(f"\nAspiradora terminada: {len(results)} resultados únicos encontrados.")
     scored = [score_result(r, mode) for r in results]
@@ -5133,6 +5265,7 @@ def prepare_results(results, mode, token):
         before = len(scored)
         relevant = []
         for r in scored:
+            cancel_checkpoint("prepare_results.prefilter")
             bucket = _query_relevance_bucket(r)
             if bucket == "primary":
                 relevant.append(r)
@@ -5159,8 +5292,10 @@ def prepare_results(results, mode, token):
     scored, size_drop = _apply_current_min_size_filter(scored, "before_rd")
     discarded_size.extend(size_drop)
 
+    cancel_checkpoint("prepare_results.before_rd")
     scored.sort(key=lambda r: (r.score, _effective_result_size_gb(r)), reverse=True)
     checked_core = rd_check_availability(scored, token)
+    cancel_checkpoint("prepare_results.after_rd")
     checked_core, size_drop = _apply_current_min_size_filter(checked_core, "after_rd")
     if token and CONFIG.get("cleanup_failed_verifications", True):
         for r in size_drop:
@@ -5169,6 +5304,7 @@ def prepare_results(results, mode, token):
     discarded_size.extend(size_drop)
 
     if CONFIG.get("rd_rescue_enabled", True) and rescue_query:
+        cancel_checkpoint("prepare_results.before_rd_rescue")
         has_rd_ok = any(_is_working_status(r.rd_status) for r in checked_core)
         only_if_no_ok = bool(CONFIG.get("rd_rescue_only_if_no_rd_ok", True))
         rescue_allowed = (not only_if_no_ok) or (not has_rd_ok)
@@ -5197,6 +5333,7 @@ def prepare_results(results, mode, token):
             discarded_query.extend(rescue_query)
 
     # Segunda lista: torrents con vida por qBittorrent aunque NO sean directos por Real-Debrid/JDownloader.
+    cancel_checkpoint("prepare_results.before_qbit")
     checked_core = qbt_probe_candidates(checked_core)
     LAST_QBIT_EXTRAS = sorted(
         [r for r in checked_core if _is_qbt_working_status(r.qbt_status) and not _is_working_status(r.rd_status)],
@@ -5225,10 +5362,12 @@ def prepare_results(results, mode, token):
         checked = working
 
     checked.sort(key=lambda r: (1 if _is_working_status(r.rd_status) else 0, 1 if _is_qbt_working_status(r.qbt_status) else 0, r.score, _effective_result_size_gb(r)), reverse=True)
+    cancel_checkpoint("prepare_results.before_export")
     export_results(checked_all, checked)
     return checked
 
 def display_results(results):
+    cancel_checkpoint("display_results.start")
     top_n = int(CONFIG.get("max_results_to_show", 30))
     shown = results[:top_n]
     print("\n" + "=" * 72)
@@ -5526,7 +5665,7 @@ def rd_torrent_id_to_downloads(tid, token, selected_ids="", wanted_title=""):
                 raise
         elif links:
             break
-        time.sleep(2)
+        sleep_interruptible(2, where="rd_select_all_pack.wait")
     if not isinstance(info, dict):
         raise RuntimeError("No pude leer info del torrent")
     links = info.get("links") or []
@@ -5945,7 +6084,7 @@ def main():
             break
         else:
             print("Opción no válida.")
-            time.sleep(1)
+            sleep_interruptible(1, where="main_loop.wait")
 
 if __name__ == "__main__":
     try:

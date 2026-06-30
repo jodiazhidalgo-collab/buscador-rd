@@ -5,7 +5,14 @@ from datetime import datetime, timedelta
 from pathlib import Path
 from typing import Any
 
-from .config import RD_TEST_DIAGNOSTICS_DIR, RD_TEST_KEEP_LAST_RUNS, RD_TEST_RETENTION_DAYS
+from .config import (
+    JOB_RUN_KEEP_LAST_RUNS,
+    JOB_RUN_RETENTION_DAYS,
+    JOB_RUNS_DIR,
+    RD_TEST_DIAGNOSTICS_DIR,
+    RD_TEST_KEEP_LAST_RUNS,
+    RD_TEST_RETENTION_DAYS,
+)
 from .utils import read_json
 
 
@@ -84,4 +91,48 @@ def cleanup_rd_test_runs(dry_run: bool = False) -> dict[str, Any]:
         "kept_count": len(kept),
         "retention_days": RD_TEST_RETENTION_DAYS,
         "keep_last_runs": RD_TEST_KEEP_LAST_RUNS,
+    }
+
+
+def _iter_job_runs() -> list[Path]:
+    runs: list[Path] = []
+    if not JOB_RUNS_DIR.exists():
+        return runs
+    for run_dir in JOB_RUNS_DIR.iterdir():
+        if run_dir.is_dir():
+            runs.append(run_dir)
+    return sorted(runs, key=lambda path: path.stat().st_mtime, reverse=True)
+
+
+def cleanup_job_runs(dry_run: bool = False) -> dict[str, Any]:
+    runs = _iter_job_runs()
+    cutoff = datetime.now() - timedelta(days=max(1, int(JOB_RUN_RETENTION_DAYS or 7)))
+    keep_last = max(1, int(JOB_RUN_KEEP_LAST_RUNS or 100))
+    keep_ids = {path.name for path in runs[:keep_last]}
+    deleted: list[str] = []
+    kept: list[str] = []
+
+    for run_dir in runs:
+        if run_dir.name in keep_ids:
+            kept.append(run_dir.name)
+            continue
+        try:
+            mtime = datetime.fromtimestamp(run_dir.stat().st_mtime)
+        except Exception:
+            mtime = datetime.now()
+        if mtime >= cutoff:
+            kept.append(run_dir.name)
+            continue
+        deleted.append(run_dir.name)
+        if not dry_run:
+            shutil.rmtree(run_dir, ignore_errors=True)
+
+    return {
+        "dry_run": bool(dry_run),
+        "total": len(runs),
+        "deleted": deleted,
+        "deleted_count": len(deleted),
+        "kept_count": len(kept),
+        "retention_days": JOB_RUN_RETENTION_DAYS,
+        "keep_last_runs": JOB_RUN_KEEP_LAST_RUNS,
     }
