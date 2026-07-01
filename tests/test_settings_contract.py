@@ -112,6 +112,8 @@ def test_tv_rules_contract(client, tmp_path, monkeypatch):
     assert "defaults" in get_payload
     assert get_payload["rules"]["series_templates"]
     assert get_payload["rules"]["series_words"]
+    assert "Cap.XXX" in get_payload["defaults"]["series_templates"]
+    assert "Cap.XXX" in get_payload["defaults"]["series_words"]
 
     new_rules = {"series_templates": ["SXXEXX"], "series_words": ["capitulo"]}
     post_response = client.post("/api/tv-rules", json={"rules": new_rules})

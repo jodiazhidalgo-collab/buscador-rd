@@ -24,6 +24,7 @@ DEFAULT_SERIES_TEMPLATES = [
     "Capitulo X",
     "Episode XX",
     "Episodio XX",
+    "Cap.XXX",
 ]
 
 DEFAULT_SERIES_WORDS = [
@@ -34,6 +35,7 @@ DEFAULT_SERIES_WORDS = [
     "temporada",
     "temp",
     "season",
+    "Cap.XXX",
 ]
 
 

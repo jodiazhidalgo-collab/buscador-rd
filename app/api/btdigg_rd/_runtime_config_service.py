@@ -52,6 +52,7 @@ TV_RULE_DEFAULTS: dict[str, list[str]] = {
         "Capitulo X",
         "Episode XX",
         "Episodio XX",
+        "Cap.XXX",
     ],
     "tv_series_words": [
         "capitulo",
@@ -61,6 +62,7 @@ TV_RULE_DEFAULTS: dict[str, list[str]] = {
         "temporada",
         "temp",
         "season",
+        "Cap.XXX",
     ],
 }
 
