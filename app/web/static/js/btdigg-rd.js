@@ -2199,18 +2199,18 @@ function renderSettings() {
   });
 }
 
-const SETTINGS_RESET_VALUES = {
+const SETTINGS_RESET_FALLBACK_VALUES = {
   default_mode: "0",
-  default_pages: "1",
+  default_pages: "1-3",
   safe_max_pages_when_zero: "30",
-  max_results_to_show: "30",
+  max_results_to_show: "80",
   min_size_gb: "0",
-  max_size_gb: "120",
+  max_size_gb: "400",
   request_timeout_sec: "30",
-  delay_between_btdigg_pages_sec: "4",
+  delay_between_btdigg_pages_sec: "3",
   pack_query_match_min_ratio: "0.55",
-  verify_max_candidates: "40",
-  verify_wait_sec: "2",
+  verify_max_candidates: "60",
+  verify_wait_sec: "0.25",
   rd_addmagnet_min_interval_sec: "1",
   rd_selectfiles_min_interval_sec: "0.75",
   rd_delete_min_interval_sec: "0.65",
@@ -2224,10 +2224,10 @@ const SETTINGS_RESET_VALUES = {
   rd_429_retry_attempts: "6",
   rd_api_rate_limit_per_min: "235",
   rd_api_rate_limit_burst: "4",
-  qbit_probe_max_candidates: "25",
-  qbit_probe_wait_sec: "25",
-  qbit_same_file_min_ratio: "0.85",
-  qbit_probe_parallel_workers: "4",
+  qbit_probe_max_candidates: "40",
+  qbit_probe_wait_sec: "35",
+  qbit_same_file_min_ratio: "0.9",
+  qbit_probe_parallel_workers: "5",
   hide_non_working_results: true
 };
 
@@ -2244,14 +2244,25 @@ function closeSettingsResetModal() {
   if (modal) modal.classList.add("hidden");
 }
 
+function settingsDefaultMap() {
+  const out = { ...SETTINGS_RESET_FALLBACK_VALUES };
+  const cfg = settingsCache && settingsCache.btdigg ? settingsCache.btdigg : {};
+  (cfg.fields || []).forEach(field => {
+    if (!field || !field.key || field.default === undefined || field.default === null) return;
+    out[field.key] = field.default;
+  });
+  return out;
+}
+
 function applySettingsResetValues() {
-  Object.keys(SETTINGS_RESET_VALUES).forEach(key => {
+  const resetValues = settingsDefaultMap();
+  Object.keys(resetValues).forEach(key => {
     const el = document.querySelector('#settingsPanel [data-key="' + escAttr(key) + '"], #settingsRdPanel [data-key="' + escAttr(key) + '"]');
     if (!el) return;
     if (el.dataset.type === "bool") {
-      el.checked = Boolean(SETTINGS_RESET_VALUES[key]);
+      el.checked = Boolean(resetValues[key]);
     } else {
-      el.value = String(SETTINGS_RESET_VALUES[key]);
+      el.value = String(resetValues[key]);
     }
   });
 }

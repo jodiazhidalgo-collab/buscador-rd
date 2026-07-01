@@ -12,6 +12,7 @@ from pathlib import Path
 from typing import Any
 
 from ._job_artifacts import promote_successful_artifacts
+from ._runtime_config_service import load_effective_runtime_config
 from ._runtime_dirs import JobRuntime, RunScope, build_job_runtime, cancel_doc, write_cancel_file
 from .blackbox import (
     finish_job as blackbox_finish_job,
@@ -32,7 +33,7 @@ from .history import record_search
 from .retention import cleanup_job_runs, cleanup_rd_test_runs
 from .results import load_results
 from .send import rd_token
-from .utils import read_json, read_text
+from .utils import read_text
 
 
 jobs: dict[str, dict[str, Any]] = {}
@@ -512,9 +513,7 @@ def start_job(payload: dict[str, Any]) -> str:
             **_public_runtime_flags(runtime),
         }
 
-    cfg = read_json(BTDIGG_DIR / "config.json") or {}
-    if not isinstance(cfg, dict):
-        cfg = {}
+    cfg = load_effective_runtime_config(BTDIGG_DIR / "config.json")
 
     query = str(payload.get("query") or "").strip()
     pages = _payload_or_config(payload, "pages", cfg, "default_pages", "1")
@@ -568,9 +567,7 @@ def start_rd_test(payload: dict[str, Any]) -> str:
             **_public_runtime_flags(runtime),
         }
 
-    cfg = read_json(BTDIGG_DIR / "config.json") or {}
-    if not isinstance(cfg, dict):
-        cfg = {}
+    cfg = load_effective_runtime_config(BTDIGG_DIR / "config.json")
 
     query = str(test_payload.get("query") or "").strip()
     pages = _payload_or_config(test_payload, "pages", cfg, "default_pages", "1")

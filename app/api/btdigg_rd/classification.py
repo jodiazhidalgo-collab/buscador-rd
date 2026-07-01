@@ -4,8 +4,8 @@ import json
 import re
 from typing import Any
 
+from ._runtime_config_service import load_effective_runtime_config
 from .config import BTDIGG_DIR
-from .utils import read_json
 
 
 TV_SERIES_TEMPLATES_KEY = "tv_series_templates"
@@ -77,9 +77,7 @@ def normalize_tv_rules(raw: Any) -> dict[str, list[str]]:
 
 
 def load_tv_rules() -> dict[str, list[str]]:
-    cfg = read_json(BTDIGG_DIR / "config.json") or {}
-    if not isinstance(cfg, dict):
-        cfg = {}
+    cfg = load_effective_runtime_config(BTDIGG_DIR / "config.json")
     return normalize_tv_rules(
         {
             "series_templates": cfg.get(TV_SERIES_TEMPLATES_KEY),
@@ -91,9 +89,7 @@ def load_tv_rules() -> dict[str, list[str]]:
 def save_tv_rules(raw: Any) -> dict[str, list[str]]:
     rules = normalize_tv_rules(raw)
     path = BTDIGG_DIR / "config.json"
-    cfg = read_json(path) or {}
-    if not isinstance(cfg, dict):
-        cfg = {}
+    cfg = load_effective_runtime_config(path)
 
     cfg[TV_SERIES_TEMPLATES_KEY] = rules["series_templates"]
     cfg[TV_SERIES_WORDS_KEY] = rules["series_words"]

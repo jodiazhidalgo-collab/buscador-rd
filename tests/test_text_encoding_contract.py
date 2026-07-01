@@ -8,6 +8,7 @@ TEXT_GUARDRAIL_FILES = [
     "app/api/btdigg_rd/routes.py",
     "app/api/btdigg_rd/send.py",
     "app/api/btdigg_rd/_settings_service.py",
+    "app/api/btdigg_rd/_runtime_config_service.py",
     "app/api/btdigg_rd/_qbt_client.py",
     "app/api/btdigg_rd/_send_contracts.py",
     "app/api/btdigg_rd/_send_manual_flow.py",

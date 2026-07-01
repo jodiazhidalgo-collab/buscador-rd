@@ -4,7 +4,7 @@ import json
 from pathlib import Path
 from typing import Any
 
-from .utils import read_json
+from ._runtime_config_service import PUBLIC_RUNTIME_DEFAULTS, load_effective_runtime_config
 
 
 SETTINGS_SCHEMA: list[dict[str, Any]] = [
@@ -75,15 +75,18 @@ def public_settings_payload(cfg: dict[str, Any]) -> dict[str, Any]:
     fields = []
     for spec in SETTINGS_SCHEMA:
         item = dict(spec)
-        item["value"] = cfg.get(spec["key"])
+        default = PUBLIC_RUNTIME_DEFAULTS.get(spec["key"], "")
+        value = cfg.get(spec["key"], default)
+        if value is None:
+            value = default
+        item["default"] = default
+        item["value"] = value
         fields.append(item)
     return {"module": "btdigg", "title": "BTDigg + RD", "fields": fields}
 
 
 def load_settings_payload(btdigg_dir: Path) -> dict[str, Any]:
-    cfg = read_json(btdigg_dir / "config.json") or {}
-    if not isinstance(cfg, dict):
-        cfg = {}
+    cfg = load_effective_runtime_config(btdigg_dir / "config.json")
     return {"ok": True, "settings": {"btdigg": public_settings_payload(cfg)}}
 
 
@@ -95,9 +98,7 @@ def save_settings_values(btdigg_dir: Path, data: dict[str, Any]) -> tuple[dict[s
         return {"ok": False, "error": "valores no válidos"}, 400
 
     path = btdigg_dir / "config.json"
-    cfg = read_json(path) or {}
-    if not isinstance(cfg, dict):
-        cfg = {}
+    cfg = load_effective_runtime_config(path)
     force_internal_settings(cfg)
 
     specs = {item["key"]: item for item in SETTINGS_SCHEMA}
@@ -123,9 +124,7 @@ def save_settings_values(btdigg_dir: Path, data: dict[str, Any]) -> tuple[dict[s
 
 
 def qbit_toggle_payload(btdigg_dir: Path) -> dict[str, Any]:
-    cfg = read_json(btdigg_dir / "config.json") or {}
-    if not isinstance(cfg, dict):
-        cfg = {}
+    cfg = load_effective_runtime_config(btdigg_dir / "config.json")
     return {"ok": True, "enabled": bool(cfg.get("qbit_probe_enabled", True))}
 
 
@@ -137,9 +136,7 @@ def save_qbit_toggle(btdigg_dir: Path, data: dict[str, Any]) -> tuple[dict[str, 
         enabled = bool(raw)
 
     path = btdigg_dir / "config.json"
-    cfg = read_json(path) or {}
-    if not isinstance(cfg, dict):
-        cfg = {}
+    cfg = load_effective_runtime_config(path)
     if bool(cfg.get("qbit_probe_enabled", True)) == enabled:
         return {"ok": True, "enabled": enabled, "changed": False}, 200
 

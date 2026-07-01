@@ -69,6 +69,10 @@ def test_start_job_public_flow_creates_queued_runtime(
     assert daemon is True
     assert args[0] == job_id
     assert args[2] == motor_dir
+    cmd = args[1]
+    assert cmd[cmd.index("--pages") + 1] == "2"
+    assert cmd[cmd.index("--mode") + 1] == "0"
+    assert cmd[cmd.index("--min-gb") + 1] == "1"
 
     with jobs.lock:
         public_job = dict(jobs.jobs[job_id])
@@ -82,6 +86,80 @@ def test_start_job_public_flow_creates_queued_runtime(
     assert public_job["run_id"] == job_id
     assert runtime.run_dir == isolated_data_dir / "jobs" / job_id
     assert runtime.cancel_file.exists()
+
+
+def test_start_job_uses_effective_config_when_runtime_config_is_trimmed(
+    isolated_data_dir, reload_data_dir_modules, tmp_path, monkeypatch
+):
+    jobs = _load_jobs(isolated_data_dir, reload_data_dir_modules)
+    motor_dir = tmp_path / "motor" / "btdigg"
+    motor_dir.mkdir(parents=True)
+    (motor_dir / "config.json").write_text(
+        json.dumps({"tmdb_api_token": "secret", "qbit_probe_enabled": True, "verify_wait_attempts": 1}),
+        encoding="utf-8",
+    )
+    monkeypatch.setattr(jobs, "BTDIGG_DIR", motor_dir)
+    monkeypatch.setattr(jobs, "sync_rd_token_for_motor", lambda: None)
+    monkeypatch.setattr(jobs, "cleanup_job_runs", lambda: None)
+    monkeypatch.setattr(jobs.uuid, "uuid4", lambda: type("Uuid", (), {"hex": "fedcba9876543210"})())
+
+    thread_calls: list[tuple[object, tuple[object, ...], bool | None]] = []
+
+    class InlineThread:
+        def __init__(self, target, args=(), daemon=None):
+            self.target = target
+            self.args = args
+            self.daemon = daemon
+            thread_calls.append((target, args, daemon))
+
+        def start(self):
+            return None
+
+    monkeypatch.setattr(jobs.threading, "Thread", InlineThread)
+
+    job_id = jobs.start_job({"query": "matrix"})
+
+    assert job_id == "fedcba987654"
+    cmd = thread_calls[0][1][1]
+    assert cmd[cmd.index("--pages") + 1] == "1-3"
+    assert cmd[cmd.index("--mode") + 1] == "0"
+    assert cmd[cmd.index("--min-gb") + 1] == "0.0"
+
+
+def test_start_rd_test_uses_effective_pages_when_runtime_config_is_trimmed(
+    isolated_data_dir, reload_data_dir_modules, tmp_path, monkeypatch
+):
+    jobs = _load_jobs(isolated_data_dir, reload_data_dir_modules)
+    motor_dir = tmp_path / "motor" / "btdigg"
+    motor_dir.mkdir(parents=True)
+    (motor_dir / "config.json").write_text(
+        json.dumps({"tmdb_api_token": "secret", "qbit_probe_enabled": True, "verify_wait_attempts": 1}),
+        encoding="utf-8",
+    )
+    monkeypatch.setattr(jobs, "BTDIGG_DIR", motor_dir)
+    monkeypatch.setattr(jobs, "sync_rd_token_for_motor", lambda: None)
+    monkeypatch.setattr(jobs, "cleanup_rd_test_runs", lambda: None)
+    monkeypatch.setattr(jobs.uuid, "uuid4", lambda: type("Uuid", (), {"hex": "0123456789abcdef"})())
+
+    thread_calls: list[tuple[object, tuple[object, ...], bool | None]] = []
+
+    class InlineThread:
+        def __init__(self, target, args=(), daemon=None):
+            self.target = target
+            self.args = args
+            self.daemon = daemon
+            thread_calls.append((target, args, daemon))
+
+        def start(self):
+            return None
+
+    monkeypatch.setattr(jobs.threading, "Thread", InlineThread)
+
+    run_id = jobs.start_rd_test({"query": "matrix"})
+
+    assert run_id == "rdt_0123456789"
+    cmd = thread_calls[0][1][1]
+    assert cmd[cmd.index("--pages") + 1] == "1-3"
 
 
 def test_successful_artifact_promotion_keeps_legacy_targets(
