@@ -177,11 +177,13 @@ No se movio ni modifico:
 
 ## Commit
 
+Commits principales de cierre y evidencia:
+
 - `11c647d refactor: close final motor cleanup`
 - `eb6e3be docs: record final motor cleanup commit`
 - `3a4afec docs: add pytest validation evidence`
 
-El ultimo commit anade la evidencia reproducible de pytest y deja enlazada esa evidencia desde este informe.
+El commit `3a4afec` anade la evidencia reproducible de pytest y deja enlazada esa evidencia desde este informe. Los commits documentales posteriores de revalidacion quedan como historial local en `git log`, para evitar un bucle de actualizar este archivo solo para apuntar al hash que acaba de cambiarlo.
 
 ## Criterio de cierre
 
