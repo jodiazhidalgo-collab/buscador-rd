@@ -90,9 +90,9 @@ def load_settings_payload(btdigg_dir: Path) -> dict[str, Any]:
 def save_settings_values(btdigg_dir: Path, data: dict[str, Any]) -> tuple[dict[str, Any], int]:
     values = data.get("values") or {}
     if str(data.get("module") or "btdigg") != "btdigg":
-        return {"ok": False, "error": "mÃ³dulo no vÃ¡lido"}, 400
+        return {"ok": False, "error": "módulo no válido"}, 400
     if not isinstance(values, dict):
-        return {"ok": False, "error": "valores no vÃ¡lidos"}, 400
+        return {"ok": False, "error": "valores no válidos"}, 400
 
     path = btdigg_dir / "config.json"
     cfg = read_json(path) or {}

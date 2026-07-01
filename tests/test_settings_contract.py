@@ -35,7 +35,9 @@ def test_settings_get_post_contract(client, tmp_path, monkeypatch):
 
     bad_response = client.post("/api/settings", json={"module": "otro", "values": {}})
     assert bad_response.status_code == 400
-    assert bad_response.get_json()["ok"] is False
+    bad_payload = bad_response.get_json()
+    assert bad_payload["ok"] is False
+    assert bad_payload["error"] == "módulo no válido"
 
     post_response = client.post(
         "/api/settings",
