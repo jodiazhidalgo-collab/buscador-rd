@@ -914,9 +914,17 @@ function formatLiveLine(line) {
 
 function cleanLines(lines) {
   const out = [];
+  let rdVerifyDisplayIndex = 0;
   for (const raw of (lines || [])) {
-    const line = formatLiveLine(raw);
+    let line = formatLiveLine(raw);
     if (!line) continue;
+    const rdOkPrefix = line.startsWith(rdOkVerifyTitleMarker);
+    const visibleLine = rdOkPrefix ? line.slice(rdOkVerifyTitleMarker.length) : line;
+    const rdMatch = visibleLine.match(/^Verificando\s+\d+\/(\d+):\s*(.+)$/i);
+    if (rdMatch) {
+      rdVerifyDisplayIndex += 1;
+      line = `${rdOkPrefix ? rdOkVerifyTitleMarker : ""}${rdVerifyDisplayIndex}/${rdMatch[1]}: ${rdMatch[2]}`;
+    }
     if (out[out.length - 1] !== line) out.push(line);
   }
   return out.slice(-80);
@@ -947,7 +955,7 @@ function renderLogLine(div, line) {
   const rdOkVerifyTitle = text.startsWith(rdOkVerifyTitleMarker);
   if (rdOkVerifyTitle) text = text.slice(rdOkVerifyTitleMarker.length);
   const lower = text.toLowerCase();
-  let match = text.match(/^(Verificando\s+\d+\/\d+:\s*)(.+)$/i);
+  let match = text.match(/^(\d+\/\d+:\s*)(.+)$/i);
   if (match) {
     addLogPart(div, match[1], "log-part-work");
     addLogPart(div, match[2], rdOkVerifyTitle ? "log-part-ok" : "");
