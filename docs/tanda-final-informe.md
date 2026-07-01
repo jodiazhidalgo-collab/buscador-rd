@@ -24,6 +24,7 @@ La tanda se cerro aplicando el camino preferido para las piezas de bajo-medio ri
 
 - `docs/tanda-final-plan.md`
 - `docs/tanda-final-informe.md`
+- `docs/evidencia-pytest-y-validacion-local.md`
 - `app/motor/btdigg/_motor_rd_retry.py`
 - `app/motor/btdigg/_motor_qbt_probe.py`
 - `app/motor/btdigg/_motor_exports.py`
@@ -147,7 +148,7 @@ Mapa de rutas clave comprobado con `create_app()`:
 
 Blackbox posterior final:
 
-- Ultimo diagnostico: `data/diagnostics/btdigg/downloads/2026-07-01/5a8d503833`.
+- Ultimo diagnostico: `data/diagnostics/btdigg/downloads/2026-07-01/fb9ee38ae1`.
 - Estado: `rejected`.
 - Motivo: `sin enlace`, generado por el smoke esperado de `/api/rdt/send`.
 - No indica fallo real del motor.
@@ -176,8 +177,11 @@ No se movio ni modifico:
 
 ## Commit
 
-- Commit principal de cierre local: `11c647d refactor: close final motor cleanup`.
-- Si este informe se actualiza para registrar el hash, puede existir un commit documental posterior; el listado final queda confirmado en `git log` y en la respuesta de cierre.
+- `11c647d refactor: close final motor cleanup`
+- `eb6e3be docs: record final motor cleanup commit`
+- `3a4afec docs: add pytest validation evidence`
+
+El ultimo commit anade la evidencia reproducible de pytest y deja enlazada esa evidencia desde este informe.
 
 ## Criterio de cierre
 

@@ -90,10 +90,10 @@ OK
 
 python -m pytest -q
 ................................................................         [100%]
-64 passed in 6.74s
+64 passed in 6.05s
 
 python -m unittest discover -s tests -v
-Ran 22 tests in 2.315s
+Ran 22 tests in 2.301s
 OK
 ```
 
