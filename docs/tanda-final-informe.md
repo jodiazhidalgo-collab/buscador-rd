@@ -175,7 +175,8 @@ No se movio ni modifico:
 
 ## Commit
 
-- Pendiente de cierre Git local al final de esta tanda. El hash exacto queda en la respuesta final y en `git log`.
+- Commit principal de cierre local: `11c647d refactor: close final motor cleanup`.
+- Si este informe se actualiza para registrar el hash, puede existir un commit documental posterior; el listado final queda confirmado en `git log` y en la respuesta de cierre.
 
 ## Criterio de cierre
 
