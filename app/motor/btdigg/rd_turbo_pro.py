@@ -340,7 +340,11 @@ DEFAULT_CONFIG = {
         "h265": 10, "x265": 10, "hevc": 10,
         "hdr": 8, "dv": 7, "720p": 5, "10bit": 8, "10bits": 8, "dts": 5, "truehd": 8, "atmos": 8,
     },
-    "bad_words": ["cam", "camrip", "ts", "telesync", "screener", "hdcam", "hdts", "workprint", "sample"],
+    "bad_words": [
+        "cam", "camrip", "ts", "telesync", "screener", "hdcam", "hdts", "workprint",
+        "telecine", "hdtc", "dvdscr", "dvdscreener", "bdscr", "webscr", "webscreener",
+        "pdvd", "predvdrip", "pre-dvd",
+    ],
     "min_size_gb": 0.3,
     "max_size_gb": 120,
 }
