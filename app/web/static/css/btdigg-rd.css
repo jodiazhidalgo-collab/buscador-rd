@@ -44,6 +44,8 @@ h2{margin:0;font-size:15px;letter-spacing:0}
 .btn.stop-btn{background:#2b2022;border-color:rgba(255,107,107,.48);color:#ffd8d8}
 .btn.stop-btn:hover{background:#342427;border-color:rgba(255,107,107,.7)}
 .btn.stop-btn.is-stopping{background:#3a2d18;border-color:rgba(240,184,90,.65);color:#ffe2a7}
+.btn.stop-btn:disabled{cursor:default}
+.btn.stop-btn.is-stopping:disabled{cursor:wait}
 .btn:disabled{opacity:.65;cursor:wait}
 .btn.is-loading{position:relative;color:transparent}
 .btn-spinner{display:inline-block;width:16px;height:16px;border:2px solid rgba(255,255,255,.35);border-top-color:#fff;border-radius:50%;animation:spin .8s linear infinite}
