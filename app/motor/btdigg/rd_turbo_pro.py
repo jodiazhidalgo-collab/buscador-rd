@@ -2482,7 +2482,7 @@ def _looks_html_bytes(raw):
 def probe_torrent_candidate_url(url):
     """
     Resuelve un candidato antes de mandarlo a Real-Debrid.
-    Evita el fallo visto en diagnÃ³stico: enviar HTML, imÃ¡genes o pÃ¡ginas de categorÃ­a como si fueran .torrent.
+    Evita el fallo visto en diagnóstico: enviar HTML, imágenes o páginas de categoría como si fueran .torrent.
     """
     timeout = int(CONFIG.get("torrent_candidate_probe_timeout_sec", 12) or 12)
     headers = {
@@ -2557,7 +2557,7 @@ def materialize_torrent_candidates(results):
     for r in targets:
         if checked >= max_probe:
             r.rd_status = "NO_VERIFICADO"
-            r.reason = "No verificado por lÃ­mite de seguridad de prueba .torrent"
+            r.reason = "No verificado por límite de seguridad de prueba .torrent"
             continue
         checked += 1
         meta = probe_torrent_candidate_url(r.torrent_url)
@@ -3458,7 +3458,7 @@ def _result_from_torrent_candidate_url(url, title=""):
 def browser_download_controls(cdp, page_url, depth=0, seen_pages=None):
     """
     En una ficha renderizada, busca botones/enlaces de descarga y prueba clics controlados.
-    Solo devuelve candidatos; la validaciÃ³n real de .torrent se hace despuÃ©s con probe_torrent_candidate_url.
+    Solo devuelve candidatos; la validación real de .torrent se hace después con probe_torrent_candidate_url.
     """
     max_clicks = int(CONFIG.get("authorized_site_download_clicks_max", 4) or 4)
     wait_sec = float(CONFIG.get("authorized_site_download_wait_sec", 4) or 4)

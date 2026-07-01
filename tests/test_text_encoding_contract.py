@@ -12,6 +12,8 @@ TEXT_GUARDRAIL_FILES = [
     "app/api/btdigg_rd/_send_contracts.py",
     "app/api/btdigg_rd/_send_manual_flow.py",
     "app/api/btdigg_rd/_send_routing.py",
+    "app/motor/btdigg/rd_turbo_pro.py",
+    "app/web/static/js/btdigg-rd.js",
     "tests/test_settings_contract.py",
     "tests/test_send_contract.py",
 ]

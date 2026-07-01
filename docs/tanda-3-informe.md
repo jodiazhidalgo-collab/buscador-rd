@@ -60,7 +60,7 @@ Estas zonas no se han movido en TANDA 3. La recomendacion es partirlas en TANDA 
 
 ## Riesgos abiertos
 
-- `rd_turbo_pro.py` sigue siendo monolitico, 6099 lineas, y contiene texto con mojibake interno. No se corrigio porque TANDA 3 prohibe tocarlo de forma estructural y solo permite caracterizacion.
+- `rd_turbo_pro.py` sigue siendo monolitico, 6099 lineas. El mojibake residual detectado en auditoria posterior se corrigio como cambio de texto no funcional.
 - `send.py` ya bajo a 1292 lineas, pero aun contiene flujo RDT native y rutas RD reutilizable dentro de la fachada. Es el siguiente punto razonable antes de partir motor.
 - Los smokes HTTP finales dependen de que el servicio local/NAS este disponible tras rebuild.
 

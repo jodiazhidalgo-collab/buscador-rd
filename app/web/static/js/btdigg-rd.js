@@ -843,7 +843,7 @@ async function rdFollowStartTest(btn = null) {
     const response = await fetch("/api/rd-test/job", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(payload) });
     const data = await response.json();
     if (!data.ok) {
-      setRdFollowStatus(data.error || "No arrancÃ³", "bad");
+      setRdFollowStatus(data.error || "No arrancó", "bad");
       setActionButtonState(btn, "error", "!");
       if (data.running_job_id) startRdFollow(data.running_job_id, true, data.running_kind || "job");
       return;
@@ -851,7 +851,7 @@ async function rdFollowStartTest(btn = null) {
     startRdFollow(data.run_id || data.job_id, true, "rd_test");
     setActionButtonState(btn, "done", "OK");
   } catch (e) {
-    setRdFollowStatus("Sin conexiÃ³n", "bad");
+    setRdFollowStatus("Sin conexión", "bad");
     setActionButtonState(btn, "error", "!");
   }
 }
