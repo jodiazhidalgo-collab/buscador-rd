@@ -76,6 +76,7 @@ Estas zonas no se han movido en TANDA 3. La recomendacion es partirlas en TANDA 
 - `python -m compileall -q app tests` OK.
 - `python -m pytest -q` -> 47 passed.
 - `python -m unittest discover -s tests -v` -> 22 tests OK.
+- Auditoria posterior: se corrigio `tests/test_job_cancel.py` para usar `_codex_runtime/test-data/test_job_cancel_<pid>` y evitar falsos fallos si dos runners se ejecutan a la vez.
 - Rebuild `btdigg-rd` OK, contenedor levantado y HTTP 200 en puerto 9007.
 - Smokes HTTP OK:
   - `GET /api/job/active` -> 200.

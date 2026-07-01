@@ -11,6 +11,7 @@ from unittest.mock import patch
 APP_DIR = Path(__file__).resolve().parents[1] / "app"
 PROJECT_ROOT = APP_DIR.parent
 TEST_DATA_DIR = PROJECT_ROOT / "_codex_runtime" / "test-data" / "test_job_cancel"
+TEST_DATA_DIR = TEST_DATA_DIR.with_name(f"{TEST_DATA_DIR.name}_{os.getpid()}")
 os.environ["DATA_DIR"] = str(TEST_DATA_DIR)
 
 if str(APP_DIR) not in sys.path:
