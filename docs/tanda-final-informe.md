@@ -148,7 +148,7 @@ Mapa de rutas clave comprobado con `create_app()`:
 
 Blackbox posterior final:
 
-- Ultimo diagnostico: `data/diagnostics/btdigg/downloads/2026-07-01/fb9ee38ae1`.
+- Ultimo diagnostico: `data/diagnostics/btdigg/downloads/2026-07-01/1833dea12a`.
 - Estado: `rejected`.
 - Motivo: `sin enlace`, generado por el smoke esperado de `/api/rdt/send`.
 - No indica fallo real del motor.
