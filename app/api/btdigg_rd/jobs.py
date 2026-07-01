@@ -2,17 +2,17 @@ from __future__ import annotations
 
 import os
 import queue
-import shutil
 import signal
 import subprocess
 import sys
 import threading
 import time
 import uuid
-from dataclasses import dataclass
 from pathlib import Path
 from typing import Any
 
+from ._job_artifacts import promote_successful_artifacts
+from ._runtime_dirs import JobRuntime, RunScope, build_job_runtime, cancel_doc, write_cancel_file
 from .blackbox import (
     finish_job as blackbox_finish_job,
     finish_rd_test as blackbox_finish_rd_test,
@@ -47,35 +47,6 @@ CANCEL_TERMINATE_GRACE_SEC = float(os.environ.get("BTDIGG_CANCEL_TERMINATE_GRACE
 CANCEL_KILL_GRACE_SEC = float(os.environ.get("BTDIGG_CANCEL_KILL_GRACE_SEC", "4") or 4)
 
 
-@dataclass(frozen=True)
-class RunScope:
-    kind: str
-    action: str
-    load_shared_results: bool = True
-    record_shared_history: bool = True
-    disable_exports: bool = False
-    disable_last_links: bool = False
-
-
-@dataclass
-class JobRuntime:
-    job_id: str
-    scope_kind: str
-    run_dir: Path
-    cancel_file: Path
-    safeout_file: Path
-    shown_file: Path
-    exports_dir: Path
-    last_links_file: Path
-    ordered_links_file: Path
-    process: subprocess.Popen[str] | None = None
-    cancel_requested_at: float | None = None
-    forced_stop: bool = False
-    cleanup_uncertain: bool = False
-    terminate_sent_at: float | None = None
-    kill_sent_at: float | None = None
-
-
 SEARCH_SCOPE = RunScope(kind="job", action="search")
 RD_TEST_SCOPE = RunScope(
     kind="rd_test",
@@ -88,38 +59,15 @@ RD_TEST_SCOPE = RunScope(
 
 
 def _cancel_doc(requested: bool, job_id: str, reason: str = "") -> str:
-    return (
-        "{\n"
-        f'  "job_id": "{job_id}",\n'
-        f'  "cancel_requested": {"true" if requested else "false"},\n'
-        f'  "reason": "{str(reason or "").replace(chr(34), chr(39))}",\n'
-        f'  "updated_at": {time.time():.3f}\n'
-        "}\n"
-    )
+    return cancel_doc(requested, job_id, reason)
 
 
 def _write_cancel_file(runtime: JobRuntime, requested: bool, reason: str = "") -> None:
-    runtime.cancel_file.parent.mkdir(parents=True, exist_ok=True)
-    runtime.cancel_file.write_text(_cancel_doc(requested, runtime.job_id, reason), encoding="utf-8")
+    write_cancel_file(runtime, requested, reason)
 
 
 def create_job_runtime(job_id: str, scope: RunScope) -> JobRuntime:
-    run_dir = JOB_RUNS_DIR / job_id
-    exports_dir = run_dir / "exports"
-    exports_dir.mkdir(parents=True, exist_ok=True)
-    runtime = JobRuntime(
-        job_id=job_id,
-        scope_kind=scope.kind,
-        run_dir=run_dir,
-        cancel_file=run_dir / "cancel.json",
-        safeout_file=run_dir / "safeout.log",
-        shown_file=run_dir / "shown.json",
-        exports_dir=exports_dir,
-        last_links_file=run_dir / "last_links.txt",
-        ordered_links_file=run_dir / "last_links_ordenado.txt",
-    )
-    _write_cancel_file(runtime, False, "created")
-    return runtime
+    return build_job_runtime(job_id, scope, JOB_RUNS_DIR)
 
 
 def _public_runtime_flags(runtime: JobRuntime | None) -> dict[str, Any]:
@@ -296,18 +244,7 @@ def _escalate_cancel_if_needed(job_id: str, runtime: JobRuntime, scope: RunScope
 
 
 def _promote_successful_artifacts(runtime: JobRuntime) -> None:
-    shared_exports = BTDIGG_DIR / "exports"
-    shared_exports.mkdir(parents=True, exist_ok=True)
-    if runtime.shown_file.exists():
-        shutil.copy2(runtime.shown_file, shared_exports / "EDITOR_MAESTRO_SHOWN.json")
-    if runtime.exports_dir.exists():
-        for path in runtime.exports_dir.iterdir():
-            if path.is_file():
-                shutil.copy2(path, shared_exports / path.name)
-    if runtime.last_links_file.exists():
-        shutil.copy2(runtime.last_links_file, BTDIGG_DIR / "last_links.txt")
-    if runtime.ordered_links_file.exists():
-        shutil.copy2(runtime.ordered_links_file, BTDIGG_DIR / "last_links_ordenado.txt")
+    promote_successful_artifacts(runtime, BTDIGG_DIR)
 
 
 def _finalize_cancelled(job_id: str, scope: RunScope, runtime: JobRuntime, exit_code: int | None, started_monotonic: float) -> None:

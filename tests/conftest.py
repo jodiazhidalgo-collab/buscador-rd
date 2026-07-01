@@ -26,6 +26,8 @@ DATA_DIR_SENSITIVE_MODULES = (
     "api.btdigg_rd.retention",
     "api.btdigg_rd.results",
     "api.btdigg_rd.ui_state",
+    "api.btdigg_rd._rd_client",
+    "api.btdigg_rd._ui_state_service",
     "api.btdigg_rd.send",
     "api.btdigg_rd.jobs",
     "api.btdigg_rd.routes",
