@@ -40,7 +40,7 @@ def qbit_login(base: str, user: str, password: str):
             last_error = f"login no aceptado: {text[:120]}"
         except Exception as exc:
             last_error = f"{type(exc).__name__}: {exc}"
-    raise RuntimeError(last_error or "login qBittorrent fallÃ³")
+    raise RuntimeError(last_error or "login qBittorrent falló")
 
 
 def qbit_add_url(base: str, user: str, password: str, url: str, target: dict[str, str], is_rdt: bool = False, trace_id: str = "", engine_label: str = "qBittorrent") -> str:
@@ -134,7 +134,7 @@ def _qbit_post_add(opener, basic: str, base: str, body: bytes, content_type: str
         except Exception as exc:
             last_error = f"{type(exc).__name__}: {exc}"
             trace_download(trace_id, f"{engine_label}_POST_ADD_ATTEMPT_FAIL", attempt=attempt, error=last_error)
-    raise RuntimeError(last_error or "qBittorrent no aceptÃ³ la descarga")
+    raise RuntimeError(last_error or "qBittorrent no aceptó la descarga")
 
 
 def client_info_by_hash(base: str, user: str, password: str, torrent_hash: str, trace_id: str = "", engine_label: str = "qBittorrent") -> tuple[dict[str, Any] | None, bool]:

@@ -1,4 +1,4 @@
-﻿from __future__ import annotations
+from __future__ import annotations
 
 from difflib import SequenceMatcher
 import hashlib
@@ -24,6 +24,19 @@ from ._qbt_client import (
     qbit_add_url,
     qbit_login,
 )
+from ._send_contracts import (
+    QBIT_REUSABLE_STATUSES,
+    RD_REUSABLE_STATUSES,
+    _payload_index,
+    _truthy,
+    _validate_btdigg_download_payload,
+    _validate_btdigg_history_payload,
+    build_btdigg_download_contract,
+    decide_btdigg_download_route,
+    trace_contract,
+)
+from ._send_manual_flow import handle_manual_magnet_flow, handle_manual_torrent_url_flow
+from ._send_routing import dest, download_dest_from_title, title_has_tv_marker
 from ._rd_client import rd_api, rd_delete, rd_select_all, rd_select_files, rd_token
 from ._rdt_client import (
     RDT_BLOCKED_PENDING,
@@ -46,75 +59,37 @@ from ._send_tracking import (
     _link_kind,
     _link_ref,
     _short,
-    clean_text,
     hash_from_magnet,
     log_download,
     safe_filename,
     trace_download,
 )
-from .classification import (
-    download_dest_from_title as configured_download_dest_from_title,
-    title_has_tv_marker as configured_title_has_tv_marker,
-)
 from .config import (
-    BTDIGG_DIR,
-    HISTORY_FILE,
     QBIT_BASE,
     QBIT_PASS,
     QBIT_USER,
     RDT_BASE,
     RDT_PASS,
     RDT_USER,
-    TORRENT_INBOX,
     TRACKING_FILE,
 )
-from .results import load_results, normalize_infohash, resolve_btdigg_card_to_magnet
+from .results import normalize_infohash, resolve_btdigg_card_to_magnet
 from .utils import read_json, write_json
 
 
 VIDEO_EXT_RE = re.compile(r"\.(mkv|mp4|avi|mov|m4v|ts|m2ts|wmv)$", re.I)
-RD_REUSABLE_STATUSES = {"RD_OK", "RD_INSTANT", "DIRECT_OK"}
-QBIT_REUSABLE_STATUSES = {"QBT_OK", "QBT_VIVO"}
-
-
-def _truthy(value: Any) -> bool:
-    if isinstance(value, bool):
-        return value
-    return str(value or "").strip().lower() in {"1", "true", "si", "sÃƒÂ­", "yes", "on"}
 
 
 def _norm_file_name(value: Any) -> str:
     text = str(value or "").replace("\\", "/").strip().lower()
     text = re.sub(r"^[./]+", "", text)
-    text = re.sub(r"[^a-z0-9ÃƒÂ¡ÃƒÂ©ÃƒÂ­ÃƒÂ³ÃƒÂºÃƒÂ¼ÃƒÂ±]+", " ", text)
+    text = re.sub(r"[^a-z0-9áéíóúüñ]+", " ", text)
     return re.sub(r"\s+", " ", text).strip()
 
 
 def _norm_file_basename(value: Any) -> str:
     text = str(value or "").replace("\\", "/").strip().split("/")[-1]
     return _norm_file_name(text)
-
-
-def title_has_tv_marker(value: Any) -> bool:
-    return configured_title_has_tv_marker(value)
-
-
-def download_dest_from_title(title: Any, fallback: str = "movies") -> str:
-    return configured_download_dest_from_title(title, fallback)
-
-
-def dest(value: Any) -> dict[str, str]:
-    raw = str(value or "movies").strip().lower()
-    if raw not in {"movies", "tv", "manual"}:
-        raw = "movies"
-    labels = {"movies": "PelÃƒÂ­culas", "tv": "Series", "manual": "Manual"}
-    return {
-        "key": raw,
-        "label": labels[raw],
-        "rdt_savepath": f"/data/downloads/{raw}",
-        "qbt_savepath": f"/data/downloads/torrents/complete/{raw}",
-        "inbox": str(TORRENT_INBOX / raw),
-    }
 
 
 def get_bytes(url: str, timeout: int = 60) -> bytes:
@@ -724,7 +699,7 @@ def rd_precheck_torrent(raw: bytes, title: str, trace_id: str = "", selected_fil
             trace_download(trace_id, "RD_PREFILTER_TORRENT_KEEP_ALIVE", id=torrent_id, files=selected_file_ids or "all")
         else:
             rd_delete(torrent_id, token, "prefiltro_ok_torrent", trace_id=trace_id)
-        return {"ok": True, "reason": "RD aceptÃƒÂ³ el .torrent", "id": torrent_id}
+        return {"ok": True, "reason": "RD aceptó el .torrent", "id": torrent_id}
     except Exception as exc:
         if torrent_id:
             rd_delete(torrent_id, token, "prefiltro_error_torrent", trace_id=trace_id)
@@ -752,7 +727,7 @@ def rd_precheck_magnet(magnet: str, title: str, trace_id: str = "", selected_fil
             trace_download(trace_id, "RD_PREFILTER_MAGNET_KEEP_ALIVE", id=torrent_id, files=selected_file_ids or "all")
         else:
             rd_delete(torrent_id, token, "prefiltro_ok_magnet", trace_id=trace_id)
-        return {"ok": True, "reason": "RD aceptÃƒÂ³ el magnet", "id": torrent_id}
+        return {"ok": True, "reason": "RD aceptó el magnet", "id": torrent_id}
     except Exception as exc:
         if torrent_id:
             rd_delete(torrent_id, token, "prefiltro_error_magnet", trace_id=trace_id)
@@ -785,7 +760,7 @@ def parse_bencode_item(data: bytes, pos: int = 0):
         length = int(data[pos:colon])
         start = colon + 1
         return data[start : start + length], start + length
-    raise ValueError("bencode invÃƒÂ¡lido")
+    raise ValueError("bencode inválido")
 
 
 def torrent_infohash_from_bytes(data: bytes) -> str:
@@ -819,7 +794,7 @@ def hash_from_qbit_response(response: Any) -> str:
 
 
 def record_download(title: str, module: str, link: str, torrent_path: Any = None, torrent_bytes: bytes | None = None, download_hash: str = "", destino: str = "", trace_id: str = "", rdt_id: str = "", route: str = "", rd_preflight_id: str = "") -> None:
-    title = title or "(sin tÃƒÂ­tulo)"
+    title = title or "(sin título)"
     torrent_hash = str(download_hash or "").strip().lower() or hash_from_magnet(link)
     if not torrent_hash and torrent_bytes:
         torrent_hash = torrent_infohash_from_bytes(torrent_bytes)
@@ -843,206 +818,6 @@ def record_download(title: str, module: str, link: str, torrent_path: Any = None
     write_json(TRACKING_FILE, records[:50])
     trace_download(trace_id, "TRACKING_REGISTERED", record_id=record["id"], module=module, destino=destino or "", hash=torrent_hash or "sin_hash", tracking_file=TRACKING_FILE)
     log_download(f"REGISTRADO module={module} destino={destino or ''} hash={torrent_hash or 'sin_hash'} title={title!r}")
-
-
-def _payload_index(value: Any) -> int:
-    try:
-        return int(str(value or "").strip())
-    except Exception:
-        return 0
-
-
-def _validate_btdigg_download_payload(payload: dict[str, Any], trace_id: str) -> tuple[dict[str, Any] | None, str]:
-    results = load_results()
-    index = _payload_index(payload.get("index"))
-    client_link = str(payload.get("link") or payload.get("url") or "").strip()
-    client_hash = normalize_infohash(payload.get("hash") or payload.get("btih") or client_link)
-    client_source = clean_text(payload.get("source"))
-    client_status = clean_text(payload.get("status"))
-
-    trace_download(
-        trace_id,
-        "BTDIGG_CLIENT_CARD",
-        index=index or "sin_index",
-        hash=client_hash or "sin_hash",
-        source=client_source,
-        status=client_status,
-        visible_results=len(results),
-    )
-
-    if not results:
-        return None, "No hay resultados actuales para validar el clic."
-    if index < 1 or index > len(results):
-        return None, f"El indice {index or '(vacio)'} no existe en los resultados actuales."
-
-    item = results[index - 1]
-    server_link = str(item.get("link") or "").strip()
-    server_hash = normalize_infohash(item.get("hash") or server_link)
-    server_title = str(item.get("title") or "").strip()
-
-    if not server_link:
-        return None, "El resultado actual no trae magnet/enlace real."
-    if client_hash and server_hash and client_hash != server_hash:
-        return None, f"El hash del clic no coincide con la fila actual: {client_hash} != {server_hash}."
-
-    client_link_hash = normalize_infohash(client_link)
-    if client_link_hash and server_hash and client_link_hash != server_hash:
-        return None, f"El enlace del clic no coincide con la fila actual: {client_link_hash} != {server_hash}."
-    if client_link and not client_link_hash and client_link != server_link:
-        return None, "El enlace del clic no coincide con el enlace actual del servidor."
-
-    trace_download(
-        trace_id,
-        "BTDIGG_SERVER_CARD_OK",
-        index=index,
-        hash=server_hash or "sin_hash",
-        title=server_title,
-        link_type=_link_kind(server_link),
-        link_ref=_link_ref(server_link),
-        source=item.get("source") or "",
-        status=item.get("status") or "",
-    )
-    return item, ""
-
-
-def _find_history_result(search_id: Any, result_position: Any) -> dict[str, Any] | None:
-    search_id = str(search_id or "").strip()
-    try:
-        position = int(result_position)
-    except Exception:
-        position = 0
-    if not search_id or position < 1:
-        return None
-    data = read_json(HISTORY_FILE)
-    entries = data.get("searches") if isinstance(data, dict) else data
-    if not isinstance(entries, list):
-        return None
-    for entry in entries:
-        if not isinstance(entry, dict):
-            continue
-        if str(entry.get("id") or "").strip() != search_id:
-            continue
-        results = entry.get("results") if isinstance(entry.get("results"), list) else []
-        if position <= len(results) and isinstance(results[position - 1], dict):
-            return dict(results[position - 1])
-        return None
-    return None
-
-
-def _validate_btdigg_history_payload(payload: dict[str, Any], trace_id: str) -> tuple[dict[str, Any] | None, str]:
-    history_id = str(payload.get("history_id") or "").strip()
-    history_result = _payload_index(payload.get("history_result") or payload.get("history_index"))
-    client_link = str(payload.get("link") or payload.get("url") or "").strip()
-    client_hash = normalize_infohash(payload.get("hash") or payload.get("btih") or client_link)
-    client_source = clean_text(payload.get("source"))
-    client_status = clean_text(payload.get("status"))
-
-    trace_download(
-        trace_id,
-        "BTDIGG_HISTORY_CARD",
-        history_id=history_id or "sin_id",
-        result=history_result or "sin_result",
-        hash=client_hash or "sin_hash",
-        source=client_source,
-        status=client_status,
-    )
-
-    item = _find_history_result(history_id, history_result)
-    if not item:
-        return None, "No encuentro esa tarjeta guardada en el historial."
-
-    server_link = str(item.get("link") or "").strip()
-    server_hash = normalize_infohash(item.get("hash") or server_link)
-    server_title = str(item.get("title") or "").strip()
-
-    if not server_link:
-        return None, "La tarjeta guardada no trae magnet/enlace real."
-    if client_hash and server_hash and client_hash != server_hash:
-        return None, f"El hash del historial no coincide: {client_hash} != {server_hash}."
-
-    client_link_hash = normalize_infohash(client_link)
-    if client_link_hash and server_hash and client_link_hash != server_hash:
-        return None, f"El enlace del historial no coincide: {client_link_hash} != {server_hash}."
-    if client_link and not client_link_hash and client_link != server_link:
-        return None, "El enlace del historial no coincide con la tarjeta guardada."
-
-    trace_download(
-        trace_id,
-        "BTDIGG_HISTORY_CARD_OK",
-        history_id=history_id,
-        result=history_result,
-        hash=server_hash or "sin_hash",
-        title=server_title,
-        link_type=_link_kind(server_link),
-        link_ref=_link_ref(server_link),
-        source=item.get("source") or "",
-        status=item.get("status") or "",
-    )
-    return item, ""
-
-
-def build_btdigg_download_contract(item: dict[str, Any], link: str, expected_hash: str = "") -> dict[str, Any]:
-    raw = item.get("raw") if isinstance(item.get("raw"), dict) else {}
-    magnet = str(raw.get("qbit_magnet") or raw.get("magnet") or "").strip()
-    torrent_url = str(raw.get("torrent_url") or raw.get("url") or raw.get("source_url") or "").strip()
-    if str(link or "").startswith("magnet:") and not magnet:
-        magnet = str(link or "").strip()
-    if str(link or "").startswith(("http://", "https://")) and not torrent_url:
-        torrent_url = str(link or "").strip()
-    item_hash = normalize_infohash(raw.get("hash") or raw.get("infohash") or item.get("hash") or expected_hash or magnet or link)
-    return {
-        "index": item.get("index"),
-        "title": str(raw.get("selected_file_name") or raw.get("qbit_name") or raw.get("title") or item.get("title") or "").strip(),
-        "hash": item_hash,
-        "link": str(link or "").strip(),
-        "magnet": magnet,
-        "torrent_url": torrent_url,
-        "rd_status": str(raw.get("rd_status") or "").strip(),
-        "rd_existing": _truthy(raw.get("rd_existing")),
-        "rd_links": _int_value(raw.get("rd_links")),
-        "rd_torrent_id": str(raw.get("rd_torrent_id") or "").strip(),
-        "selected_file_name": str(raw.get("selected_file_name") or "").strip(),
-        "selected_file_ids": str(raw.get("selected_file_ids") or "").strip(),
-        "qbt_status": str(raw.get("qbt_status") or "").strip(),
-        "qbt_was_existing": _truthy(raw.get("qbt_was_existing")),
-        "qbt_reason": str(raw.get("qbt_reason") or "").strip(),
-    }
-
-
-def decide_btdigg_download_route(contract: dict[str, Any]) -> tuple[str, str]:
-    rd_status = str(contract.get("rd_status") or "").strip()
-    qbt_status = str(contract.get("qbt_status") or "").strip()
-    rd_existing = _truthy(contract.get("rd_existing"))
-    rd_links = _int_value(contract.get("rd_links"))
-    if rd_status in RD_REUSABLE_STATUSES and rd_existing:
-        return "RD_REUSABLE", f"rd_status={rd_status} rd_existing={rd_existing} rd_links={rd_links}"
-    if qbt_status in QBIT_REUSABLE_STATUSES:
-        return "QBIT_REUSABLE", f"qbt_status={qbt_status}"
-    if rd_status in RD_REUSABLE_STATUSES and rd_links > 0:
-        return "RD_VERIFIED_MAGNET", f"rd_status={rd_status} rd_existing={rd_existing} rd_links={rd_links}"
-    if rd_status == "NO_INSTANT" and qbt_status in QBIT_REUSABLE_STATUSES:
-        return "QBIT_REUSABLE", f"rd_status=NO_INSTANT qbt_status={qbt_status}"
-    if not (contract.get("magnet") or contract.get("torrent_url") or contract.get("link")):
-        return "BLOCKED_NO_LINK", "sin magnet/torrent_url validado"
-    return "BLOCKED_UNSAFE", f"sin evidencia reutilizable rd_status={rd_status or '-'} qbt_status={qbt_status or '-'}"
-
-
-def trace_contract(trace_id: str, contract: dict[str, Any], route: str = "", reason: str = "") -> None:
-    trace_download(
-        trace_id,
-        "CONTRACT_SUMMARY",
-        route=route or "",
-        reason=reason or "",
-        index=contract.get("index"),
-        hash=contract.get("hash") or "sin_hash",
-        rd_status=contract.get("rd_status") or "",
-        rd_existing=contract.get("rd_existing"),
-        rd_links=contract.get("rd_links"),
-        rd_torrent_id=contract.get("rd_torrent_id") or "",
-        qbt_status=contract.get("qbt_status") or "",
-        qbt_was_existing=contract.get("qbt_was_existing"),
-        preferred_file_name=contract.get("selected_file_name") or "",
-    )
 
 
 def _rd_links_count(info: Any) -> int:
@@ -1115,7 +890,7 @@ def route_qbit_reusable(contract: dict[str, Any], link: str, target: dict[str, s
         info, checked = client_info_by_hash(QBIT_BASE, QBIT_USER, QBIT_PASS, hash_value, trace_id=trace_id, engine_label="qBittorrent")
         if not checked:
             trace_download(trace_id, "DOWNLOAD_REJECTED", route="QBIT_REUSABLE", reason="no se pudo comprobar duplicado qBit")
-            return jsonify({"ok": False, "error": "No pude comprobar qBittorrent por hash; no lo aÃƒÂ±ado para evitar duplicados.", "trace_id": trace_id}), 502
+            return jsonify({"ok": False, "error": "No pude comprobar qBittorrent por hash; no lo añado para evitar duplicados.", "trace_id": trace_id}), 502
         if info:
             trace_download(trace_id, "QBIT_REUSABLE_ALREADY_PRESENT", hash=hash_value, state=info.get("state") or "", progress=info.get("progress") or "")
             trace_download(trace_id, "CLEANUP_FINAL", action="none", reason="qbit_already_present")
@@ -1133,11 +908,11 @@ def route_qbit_reusable(contract: dict[str, Any], link: str, target: dict[str, s
         torrent_hash = torrent_infohash_from_bytes(raw)
         trace_download(trace_id, "QBIT_REUSABLE_TORRENT_URL_OK", bytes=len(raw or b""), hash=torrent_hash or "sin_hash")
         if not raw or len(raw) < 40:
-            return jsonify({"ok": False, "error": "El enlace devolviÃƒÂ³ un torrent vacÃƒÂ­o o invÃƒÂ¡lido.", "trace_id": trace_id}), 500
+            return jsonify({"ok": False, "error": "El enlace devolvió un torrent vacío o inválido.", "trace_id": trace_id}), 500
         check_hash = torrent_hash or hash_value
         info, checked = client_info_by_hash(QBIT_BASE, QBIT_USER, QBIT_PASS, check_hash, trace_id=trace_id, engine_label="qBittorrent")
         if check_hash and not checked:
-            return jsonify({"ok": False, "error": "No pude comprobar qBittorrent por hash; no lo aÃƒÂ±ado para evitar duplicados.", "trace_id": trace_id}), 502
+            return jsonify({"ok": False, "error": "No pude comprobar qBittorrent por hash; no lo añado para evitar duplicados.", "trace_id": trace_id}), 502
         if info:
             trace_download(trace_id, "QBIT_REUSABLE_ALREADY_PRESENT", hash=check_hash, state=info.get("state") or "", progress=info.get("progress") or "")
             trace_download(trace_id, "DOWNLOAD_END_OK", engine="qBittorrent", route="QBIT_REUSABLE", already_present=True, elapsed=_elapsed(started))
@@ -1159,13 +934,13 @@ def route_rd_reusable(contract: dict[str, Any], link: str, target: dict[str, str
     trace_download(trace_id, "RD_REUSABLE_EVIDENCE_RESULT", ok=evidence.get("ok"), id=evidence.get("id") or "", links=evidence.get("links") or 0, reason=evidence.get("reason") or "")
     if not evidence.get("ok"):
         trace_download(trace_id, "DOWNLOAD_REJECTED", route="RD_REUSABLE", reason=evidence.get("reason") or "RD no reutilizable")
-        return jsonify({"ok": False, "error": "La evidencia RD de esta fila ya no estÃƒÂ¡ viva. Vuelve a buscar antes de descargar.", "trace_id": trace_id}), 409
+        return jsonify({"ok": False, "error": "La evidencia RD de esta fila ya no está viva. Vuelve a buscar antes de descargar.", "trace_id": trace_id}), 409
 
     if hash_value:
         info, checked = client_info_by_hash(RDT_BASE, RDT_USER, RDT_PASS, hash_value, trace_id=trace_id, engine_label="RDT")
         if not checked:
             trace_download(trace_id, "DOWNLOAD_REJECTED", route="RD_REUSABLE", reason="no se pudo comprobar duplicado RDT")
-            return jsonify({"ok": False, "error": "No pude comprobar RDT-Client por hash; no lo aÃƒÂ±ado para evitar duplicados.", "trace_id": trace_id}), 502
+            return jsonify({"ok": False, "error": "No pude comprobar RDT-Client por hash; no lo añado para evitar duplicados.", "trace_id": trace_id}), 502
         if info:
             trace_download(trace_id, "RDT_ALREADY_PRESENT", hash=hash_value, state=info.get("state") or "", progress=info.get("progress") or "")
             rdt_select_main_files_async(hash_value, title, trace_id=trace_id, preferred_file_name=preferred_file)
@@ -1186,7 +961,7 @@ def route_rd_reusable(contract: dict[str, Any], link: str, target: dict[str, str
     if link.startswith(("http://", "https://")):
         raw = get_bytes(link, timeout=90)
         if not raw or len(raw) < 40:
-            return jsonify({"ok": False, "error": "El enlace devolviÃƒÂ³ un torrent vacÃƒÂ­o o invÃƒÂ¡lido.", "trace_id": trace_id}), 500
+            return jsonify({"ok": False, "error": "El enlace devolvió un torrent vacío o inválido.", "trace_id": trace_id}), 500
         rdt = rdt_dispatch_torrent_bytes(raw, safe_filename(title, module or "descarga"), target, title, trace_id=trace_id, preferred_file_name=preferred_file)
         path = rdt.get("path") or ""
         record_download(title, module, path or "rdt-api-torrent", torrent_path=path or None, torrent_bytes=raw, download_hash=rdt.get("hash") or "", destino=target["key"], trace_id=trace_id)
@@ -1217,7 +992,7 @@ def route_rd_verified_magnet(contract: dict[str, Any], link: str, target: dict[s
         info, checked = client_info_by_hash(RDT_BASE, RDT_USER, RDT_PASS, hash_value, trace_id=trace_id, engine_label="RDT")
         if not checked:
             trace_download(trace_id, "DOWNLOAD_REJECTED", route="RD_VERIFIED_MAGNET", reason="no se pudo comprobar duplicado RDT")
-            return jsonify({"ok": False, "error": "No pude comprobar RDT-Client por hash; no lo aÃƒÆ’Ã‚Â±ado para evitar duplicados.", "trace_id": trace_id}), 502
+            return jsonify({"ok": False, "error": "No pude comprobar RDT-Client por hash; no lo añado para evitar duplicados.", "trace_id": trace_id}), 502
         if info:
             trace_download(trace_id, "RDT_ALREADY_PRESENT", hash=hash_value, state=info.get("state") or "", progress=info.get("progress") or "")
             rdt_select_main_files_async(hash_value, title, trace_id=trace_id, preferred_file_name=preferred_file)
@@ -1231,7 +1006,7 @@ def route_rd_verified_magnet(contract: dict[str, Any], link: str, target: dict[s
         trace_download(trace_id, "RD_VERIFIED_PREFLIGHT_RESULT", ok=rd.get("ok"), id=rd.get("id") or "", reason=rd.get("reason") or "")
         if not rd.get("ok"):
             trace_download(trace_id, "DOWNLOAD_REJECTED", route="RD_VERIFIED_MAGNET", reason=rd.get("reason") or "RD no acepto preflight final")
-            return jsonify({"ok": False, "error": "Real-Debrid no aceptÃƒÆ’Ã‚Â³ esta descarga en la comprobaciÃƒÆ’Ã‚Â³n final.", "reason": str(rd.get("reason") or "")[:220], "trace_id": trace_id}), 409
+            return jsonify({"ok": False, "error": "Real-Debrid no aceptó esta descarga en la comprobación final.", "reason": str(rd.get("reason") or "")[:220], "trace_id": trace_id}), 409
         response = qbit_add_url(RDT_BASE, RDT_USER, RDT_PASS, link, target, is_rdt=True, trace_id=trace_id, engine_label="RDT")
         rdt_hash = hash_from_qbit_response(response) or hash_value or hash_from_magnet(link)
         record_download(title, module, link, download_hash=rdt_hash, destino=target["key"], trace_id=trace_id)
@@ -1243,12 +1018,12 @@ def route_rd_verified_magnet(contract: dict[str, Any], link: str, target: dict[s
     if link.startswith(("http://", "https://")):
         raw = get_bytes(link, timeout=90)
         if not raw or len(raw) < 40:
-            return jsonify({"ok": False, "error": "El enlace devolviÃƒÆ’Ã‚Â³ un torrent vacÃƒÆ’Ã‚Â­o o invÃƒÆ’Ã‚Â¡lido.", "trace_id": trace_id}), 500
+            return jsonify({"ok": False, "error": "El enlace devolvió un torrent vacío o inválido.", "trace_id": trace_id}), 500
         rd = rd_precheck_torrent(raw, title, trace_id=trace_id)
         trace_download(trace_id, "RD_VERIFIED_PREFLIGHT_RESULT", ok=rd.get("ok"), id=rd.get("id") or "", reason=rd.get("reason") or "")
         if not rd.get("ok"):
             trace_download(trace_id, "DOWNLOAD_REJECTED", route="RD_VERIFIED_MAGNET", reason=rd.get("reason") or "RD no acepto preflight final")
-            return jsonify({"ok": False, "error": "Real-Debrid no aceptÃƒÆ’Ã‚Â³ este torrent en la comprobaciÃƒÆ’Ã‚Â³n final.", "reason": str(rd.get("reason") or "")[:220], "trace_id": trace_id}), 409
+            return jsonify({"ok": False, "error": "Real-Debrid no aceptó este torrent en la comprobación final.", "reason": str(rd.get("reason") or "")[:220], "trace_id": trace_id}), 409
         rdt = rdt_dispatch_torrent_bytes(raw, safe_filename(title, module or "descarga"), target, title, trace_id=trace_id, preferred_file_name=preferred_file)
         path = rdt.get("path") or ""
         record_download(title, module, path or "rdt-api-torrent", torrent_path=path or None, torrent_bytes=raw, download_hash=rdt.get("hash") or "", destino=target["key"], trace_id=trace_id)
@@ -1460,59 +1235,54 @@ def api_rdt_send():
                 return jsonify({"ok": False, "error": f"Resultado bloqueado por seguridad: {route_reason}", "route": route, "trace_id": trace_id}), 409
 
         if link.startswith("magnet:"):
-            trace_download(trace_id, "MAGNET_FLOW_START", hash=hash_from_magnet(link) or "sin_hash")
-            rd = rd_precheck_magnet(link, title, trace_id=trace_id)
-            trace_download(trace_id, "RD_PREFILTER_RESULT", ok=rd.get("ok"), id=rd.get("id") or "", reason=rd.get("reason") or "")
-            if rd.get("ok"):
-                trace_download(trace_id, "ROUTE_SELECTED", engine="RDT-Client", reason="RD acepto magnet")
-                response = qbit_add_url(RDT_BASE, RDT_USER, RDT_PASS, link, target, is_rdt=True, trace_id=trace_id, engine_label="RDT")
-                rdt_hash = hash_from_qbit_response(response) or hash_from_magnet(link)
-                trace_download(trace_id, "RDT_HASH_RESOLVED", hash=rdt_hash or "sin_hash")
-                record_download(title, module, link, download_hash=rdt_hash, destino=target["key"], trace_id=trace_id)
-                rdt_select_main_files_async(rdt_hash, title, trace_id=trace_id)
-                log_download(f"DESCARGAR {module} MAGNET RD-FIRST OK destino={target['key']} titulo={title!r} resp={response[:160]!r}")
-                trace_download(trace_id, "DOWNLOAD_END_OK", engine="RDT-Client", elapsed=_elapsed(started))
-                return jsonify({"ok": True, "message": "RD aceptÃƒÂ³ Ã‚Â· enviado a RDT-Client", "module": module, "title": title, "engine": "RDT-Client"})
-
-            trace_download(trace_id, "ROUTE_SELECTED", engine="qBittorrent", reason=rd.get("reason") or "RD no acepto magnet")
-            response = qbit_add_url(QBIT_BASE, QBIT_USER, QBIT_PASS, link, target, is_rdt=False, trace_id=trace_id, engine_label="qBittorrent")
-            qbit_hash = hash_from_qbit_response(response) or hash_from_magnet(link)
-            trace_download(trace_id, "QBIT_HASH_RESOLVED", hash=qbit_hash or "sin_hash")
-            record_download(title, module, link, download_hash=qbit_hash, destino=target["key"], trace_id=trace_id)
-            log_download(f"DESCARGAR {module} MAGNET RD-FIRST FALLBACK_QBIT destino={target['key']} titulo={title!r} motivo={str(rd.get('reason') or '')[:180]!r} resp={response[:160]!r}")
-            trace_download(trace_id, "DOWNLOAD_END_OK", engine="qBittorrent", elapsed=_elapsed(started), reason=rd.get("reason") or "")
-            return jsonify({"ok": True, "message": "RD no lo aceptÃƒÂ³ Ã‚Â· enviado a qBittorrent", "module": module, "title": title, "engine": "qBittorrent", "reason": str(rd.get("reason") or "")[:200]})
+            return handle_manual_magnet_flow(
+                link=link,
+                title=title,
+                module=module,
+                target=target,
+                started=started,
+                trace_id=trace_id,
+                rdt_base=RDT_BASE,
+                rdt_user=RDT_USER,
+                rdt_pass=RDT_PASS,
+                qbit_base=QBIT_BASE,
+                qbit_user=QBIT_USER,
+                qbit_pass=QBIT_PASS,
+                rd_precheck_magnet=rd_precheck_magnet,
+                qbit_add_url=qbit_add_url,
+                hash_from_qbit_response=hash_from_qbit_response,
+                hash_from_magnet=hash_from_magnet,
+                record_download=record_download,
+                rdt_select_main_files_async=rdt_select_main_files_async,
+                log_download=log_download,
+                trace_download=trace_download,
+                elapsed=_elapsed,
+            )
 
         if link.startswith(("http://", "https://")):
-            trace_download(trace_id, "URL_FLOW_START", url=_link_ref(link))
-            download_started = time.monotonic()
-            raw = get_bytes(link, timeout=90)
-            trace_download(trace_id, "URL_DOWNLOAD_OK", bytes=len(raw or b""), elapsed=_elapsed(download_started), torrent_hash=torrent_infohash_from_bytes(raw) or "sin_hash")
-            if not raw or len(raw) < 40:
-                trace_download(trace_id, "URL_DOWNLOAD_INVALID", bytes=len(raw or b""))
-                return jsonify({"ok": False, "error": "El enlace devolviÃƒÂ³ un torrent vacÃƒÂ­o o invÃƒÂ¡lido."}), 500
-
-            rd = rd_precheck_torrent(raw, title, trace_id=trace_id)
-            trace_download(trace_id, "RD_PREFILTER_RESULT", ok=rd.get("ok"), id=rd.get("id") or "", reason=rd.get("reason") or "")
-            base_name = safe_filename(title, module or "descarga")
-
-            if rd.get("ok"):
-                trace_download(trace_id, "ROUTE_SELECTED", engine="RDT-Client", reason="RD acepto torrent")
-                rdt = rdt_dispatch_torrent_bytes(raw, base_name, target, title, trace_id=trace_id)
-                path = rdt.get("path") or ""
-                record_download(title, module, path or "rdt-api-torrent", torrent_path=path or None, torrent_bytes=raw, download_hash=rdt.get("hash") or "", destino=target["key"], trace_id=trace_id)
-                log_download(f"DESCARGAR {module} TORRENT RD-FIRST OK destino={target['key']} modo={rdt.get('mode')} archivo={Path(path).name if path else 'api'} titulo={title!r}")
-                trace_download(trace_id, "DOWNLOAD_END_OK", engine="RDT-Client", mode=rdt.get("mode"), path=path, elapsed=_elapsed(started))
-                return jsonify({"ok": True, "message": "RD aceptÃƒÂ³ Ã‚Â· enviado a RDT-Client", "module": module, "title": title, "engine": "RDT-Client", "path": path})
-
-            trace_download(trace_id, "ROUTE_SELECTED", engine="qBittorrent", reason=rd.get("reason") or "RD no acepto torrent")
-            response = qbit_add_torrent_bytes(QBIT_BASE, QBIT_USER, QBIT_PASS, raw, base_name, target, trace_id=trace_id, engine_label="qBittorrent")
-            qbit_hash = hash_from_qbit_response(response) or torrent_infohash_from_bytes(raw)
-            trace_download(trace_id, "QBIT_HASH_RESOLVED", hash=qbit_hash or "sin_hash")
-            record_download(title, module, "qbit-fallback-torrent", download_hash=qbit_hash, torrent_bytes=raw, destino=target["key"], trace_id=trace_id)
-            log_download(f"DESCARGAR {module} TORRENT RD-FIRST FALLBACK_QBIT destino={target['key']} titulo={title!r} motivo={str(rd.get('reason') or '')[:180]!r} resp={response[:160]!r}")
-            trace_download(trace_id, "DOWNLOAD_END_OK", engine="qBittorrent", elapsed=_elapsed(started), reason=rd.get("reason") or "")
-            return jsonify({"ok": True, "message": "RD no lo aceptÃƒÂ³ Ã‚Â· enviado a qBittorrent", "module": module, "title": title, "engine": "qBittorrent", "reason": str(rd.get("reason") or "")[:200]})
+            return handle_manual_torrent_url_flow(
+                link=link,
+                title=title,
+                module=module,
+                target=target,
+                started=started,
+                trace_id=trace_id,
+                qbit_base=QBIT_BASE,
+                qbit_user=QBIT_USER,
+                qbit_pass=QBIT_PASS,
+                get_bytes=get_bytes,
+                torrent_infohash_from_bytes=torrent_infohash_from_bytes,
+                rd_precheck_torrent=rd_precheck_torrent,
+                rdt_dispatch_torrent_bytes=rdt_dispatch_torrent_bytes,
+                qbit_add_torrent_bytes=qbit_add_torrent_bytes,
+                hash_from_qbit_response=hash_from_qbit_response,
+                record_download=record_download,
+                log_download=log_download,
+                trace_download=trace_download,
+                elapsed=_elapsed,
+                link_ref=_link_ref,
+                safe_filename=safe_filename,
+            )
 
         trace_download(trace_id, "DOWNLOAD_REJECTED", reason="link no soportado", link_type=_link_kind(link), link_ref=_link_ref(link))
         return jsonify({"ok": False, "error": "No pude resolver este resultado a magnet o .torrent real. Prueba otro resultado."}), 400

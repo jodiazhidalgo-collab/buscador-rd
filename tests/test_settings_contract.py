@@ -32,6 +32,9 @@ def test_settings_get_post_contract(client, tmp_path, monkeypatch):
     assert get_payload["ok"] is True
     fields = get_payload["settings"]["btdigg"]["fields"]
     assert any(field["key"] == "default_pages" for field in fields)
+    labels_by_key = {field["key"]: field["label"] for field in fields}
+    assert labels_by_key["default_pages"] == "Páginas BTDigg"
+    assert labels_by_key["min_size_gb"] == "Tamaño mínimo GB"
 
     bad_response = client.post("/api/settings", json={"module": "otro", "values": {}})
     assert bad_response.status_code == 400

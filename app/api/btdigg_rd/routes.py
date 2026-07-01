@@ -1,4 +1,4 @@
-﻿from __future__ import annotations
+from __future__ import annotations
 
 import json
 import time
@@ -46,13 +46,13 @@ def api_job():
     module = str(data.get("module") or "btdigg")
     action = str(data.get("action") or "search")
     if module != "btdigg" or action != "search":
-        return jsonify({"ok": False, "error": "mÃ³dulo no vÃ¡lido"}), 400
+        return jsonify({"ok": False, "error": "módulo no válido"}), 400
 
     current = running_job()
     if current:
         return jsonify({
             "ok": False,
-            "error": "BTDigg + RD ya estÃ¡ trabajando. Espera a que termine antes de repetir.",
+            "error": "BTDigg + RD ya está trabajando. Espera a que termine antes de repetir.",
             "running_job_id": current.get("id"),
             "running_kind": current.get("kind") or "job",
             "module": "btdigg",
@@ -67,13 +67,13 @@ def api_rd_test_job():
     data = request.get_json(force=True, silent=True) or {}
     query = str(data.get("query") or "").strip()
     if not query:
-        return jsonify({"ok": False, "error": "falta tÃ­tulo"}), 400
+        return jsonify({"ok": False, "error": "falta título"}), 400
 
     current = running_job()
     if current:
         return jsonify({
             "ok": False,
-            "error": "BTDigg + RD ya estÃ¡ trabajando. Espera a que termine antes de repetir.",
+            "error": "BTDigg + RD ya está trabajando. Espera a que termine antes de repetir.",
             "running_job_id": current.get("id"),
             "running_kind": current.get("kind") or "job",
             "module": "btdigg",
@@ -279,7 +279,7 @@ def api_results_btdigg():
 @bp.get("/api/results/<module>")
 def api_results(module: str):
     if module != "btdigg":
-        return jsonify({"ok": False, "error": "mÃ³dulo no vÃ¡lido"}), 400
+        return jsonify({"ok": False, "error": "módulo no válido"}), 400
     return jsonify({"ok": True, "results": load_results()})
 
 
