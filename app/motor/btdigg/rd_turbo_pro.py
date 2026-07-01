@@ -33,6 +33,14 @@ import http.cookiejar
 from urllib.error import HTTPError, URLError
 from contextlib import contextmanager
 
+_MOTOR_DIR = Path(__file__).resolve().parent
+if str(_MOTOR_DIR) not in sys.path:
+    sys.path.insert(0, str(_MOTOR_DIR))
+
+from _motor_exports import export_results_impl
+from _motor_qbt_probe import qbt_probe_one_impl
+from _motor_rd_retry import rd_call_with_retry_impl
+
 try:
     sys.stdout.reconfigure(errors="replace")
     sys.stderr.reconfigure(errors="replace")
@@ -1599,82 +1607,28 @@ def rd_call_with_retry(
     max_sec=None,
     retry_429_attempts=None,
 ):
-    max_attempts = max(1, int(attempts if attempts is not None else CONFIG.get("rd_temp_error_retries", 2) or 2))
-    max_429_attempts = max_attempts
-    if retry_429_attempts is not None:
-        max_429_attempts = max(max_attempts, int(retry_429_attempts or max_attempts))
-    op = str(op_name or path or "").strip()[:80]
-    last_error = None
-    exhausted_limit = max_attempts
-    for attempt in range(1, max(max_attempts, max_429_attempts) + 1):
-        try:
-            return rd_api(method, path, token, data=data, raw=raw, content_type=content_type)
-        except RDAPIError as e:
-            last_error = e
-            terminal = e.is_infringing
-            if terminal:
-                if retry_context:
-                    retry_context.bump("rd_error_terminal_count")
-                diag("rd_call_terminal_error", op=op, method=str(method).upper(), path=_rd_path_group(path), attempt=attempt, code=e.status_code, error_code=e.error_code, error=e.error[:120])
-                raise
-            if e.is_already_active:
-                if retry_context:
-                    retry_context.bump("rd_retry_33_count")
-                raise
-            if e.is_active_limit:
-                if retry_context:
-                    retry_context.bump("rd_retry_21_count")
-                    if op == "delete":
-                        retry_context.bump("delete_retries")
-                if retry_context and getattr(retry_context, "slots", None):
-                    try:
-                        retry_context.slots.refresh(force=True)
-                    except Exception as refresh_error:
-                        diag("rd_retry_21_refresh_error", op=op, error=str(refresh_error)[:300])
-                if attempt >= max_attempts:
-                    break
-                wait_sec = float(CONFIG.get("rd_retry_21_wait_sec", 1.5) or 1.5)
-                diag("rd_call_retry_21", op=op, method=str(method).upper(), path=_rd_path_group(path), attempt=attempt, max_attempts=max_attempts, wait_sec=wait_sec, error=str(e)[:300])
-                sleep_interruptible(wait_sec, where="rd_retry_21")
-                continue
-            if e.is_429:
-                if retry_context:
-                    retry_context.bump("rd_retry_429_count")
-                    if op == "delete":
-                        retry_context.bump("delete_retries")
-                exhausted_limit = max_429_attempts
-                if attempt >= max_429_attempts:
-                    break
-                wait_sec = _rd_retry_sleep(attempt, base_sec=base_sec, max_sec=max_sec)
-                diag("rd_call_retry_429", op=op, method=str(method).upper(), path=_rd_path_group(path), attempt=attempt, max_attempts=max_429_attempts, wait_sec=round(wait_sec, 3), error=str(e)[:300])
-                continue
-            if attempt > max_attempts:
-                break
-            if e.is_temp:
-                if retry_context:
-                    retry_context.bump("rd_retry_temp_count")
-                    if op == "delete":
-                        retry_context.bump("delete_retries")
-                if attempt >= max_attempts:
-                    break
-                wait_sec = _rd_retry_sleep(attempt, base_sec=base_sec, max_sec=max_sec)
-                diag("rd_call_retry_temp", op=op, method=str(method).upper(), path=_rd_path_group(path), attempt=attempt, max_attempts=max_attempts, wait_sec=round(wait_sec, 3), error=str(e)[:300])
-                continue
-            raise
-        except Exception as e:
-            last_error = e
-            if not _is_rd_temp_error_msg(e):
-                raise
-            if retry_context:
-                retry_context.bump("rd_retry_temp_count")
-                if op == "delete":
-                    retry_context.bump("delete_retries")
-            if attempt >= max_attempts:
-                break
-            wait_sec = _rd_retry_sleep(attempt, base_sec=base_sec, max_sec=max_sec)
-            diag("rd_call_retry_exception", op=op, method=str(method).upper(), path=_rd_path_group(path), attempt=attempt, max_attempts=max_attempts, wait_sec=round(wait_sec, 3), error=str(e)[:300])
-    diag("rd_call_retry_exhausted", op=op, method=str(method).upper(), path=_rd_path_group(path), attempts=exhausted_limit, error=str(last_error)[:400])
-    raise last_error
+    return rd_call_with_retry_impl(
+        method,
+        path,
+        token,
+        data=data,
+        raw=raw,
+        content_type=content_type,
+        op_name=op_name,
+        attempts=attempts,
+        retry_context=retry_context,
+        base_sec=base_sec,
+        max_sec=max_sec,
+        retry_429_attempts=retry_429_attempts,
+        config=CONFIG,
+        rd_api=rd_api,
+        rd_api_error_cls=RDAPIError,
+        rd_retry_sleep=_rd_retry_sleep,
+        diag=diag,
+        sleep_interruptible=sleep_interruptible,
+        is_rd_temp_error_msg=_is_rd_temp_error_msg,
+        rd_path_group=_rd_path_group,
+    )
 
 def qbt_request(opener, method, path, data=None, timeout=None):
     base = str(CONFIG.get("qbit_host", "")).rstrip("/")
@@ -1788,92 +1742,26 @@ def qbt_delete_hash(opener, h, why="probe"):
         diag("qbt_delete_error", hash=h, why=why, error=str(e)[:300])
 
 def qbt_probe_one(opener, r, idx=0, total=0):
-    cancel_checkpoint("qbt_probe.before")
-    h = (r.hash or magnet_hash(r.magnet) or "").lower()
-    if not h or not r.magnet:
-        r.qbt_status = "QBT_SIN_HASH"
-        r.qbt_reason = "Sin hash/magnet para probar en qBittorrent"
-        return r
-    existing = qbt_info_by_hash(opener, h)
-    added_by_us = False
-    name = _result_display_name(r)[:80]
-    if existing:
-        r.qbt_was_existing = True
-        status, reason = qbt_eval_info(existing)
-        r.qbt_status = status
-        r.qbt_reason = "Ya estaba en qBittorrent. " + reason
-        r.qbt_seeds = max(0, _safe_int(existing.get("num_seeds"), 0))
-        r.qbt_peers = max(0, _safe_int(existing.get("num_leechs"), 0))
-        r.qbt_progress = float(existing.get("progress") or 0)
-        r.qbt_speed_bps = _safe_int(existing.get("dlspeed"), 0)
-        r.qbt_size_gb = (_safe_int(existing.get("size"), 0) / (1024**3)) if existing.get("size") else 0.0
-        diag("qbt_probe_existing", n=idx, total=total, hash=h, status=status, reason=reason[:300])
-        return r
-    try:
-        data = {
-            "urls": r.magnet,
-            "paused": "false",
-            "autoTMM": "false",
-            "savepath": str(CONFIG.get("qbit_probe_save_path", "/data/downloads/torrents/incomplete/rd_turbo_probe")),
-        }
-        cat = str(CONFIG.get("qbit_probe_category", "") or "")
-        if cat:
-            data["category"] = cat
-        qbt_request(opener, "POST", "/api/v2/torrents/add", data, timeout=20)
-        added_by_us = True
-        diag("qbt_probe_add", n=idx, total=total, hash=h, title=r.title[:160])
-        cancel_checkpoint("qbt_probe.after_add")
-    except Exception as e:
-        r.qbt_status = "QBT_ADD_ERROR"
-        r.qbt_reason = str(e)[:500]
-        diag("qbt_probe_add_error", n=idx, total=total, hash=h, error=str(e)[:500])
-        print(f"  qBit error {idx}/{total}: QBT_ADD_ERROR - {name}", flush=True)
-        return r
-
-    deadline = time.time() + float(CONFIG.get("qbit_probe_wait_sec", 25) or 25)
-    poll = float(CONFIG.get("qbit_probe_poll_sec", 3) or 3)
-    last_info = None
-    last_status, last_reason = "QBT_NO_INFO", "Sin info todavía"
-    try:
-        while time.time() < deadline:
-            sleep_interruptible(poll, where="qbt_probe.poll")
-            info = qbt_info_by_hash(opener, h)
-            if not info:
-                continue
-            last_info = info
-            last_status, last_reason = qbt_eval_info(info)
-            diag(
-                "qbt_probe_poll",
-                n=idx,
-                total=total,
-                hash=h,
-                status=last_status,
-                state=str(info.get("state") or ""),
-                progress=round(float(info.get("progress") or 0), 4),
-                dlspeed=_safe_int(info.get("dlspeed"), 0),
-                seeds=max(0, _safe_int(info.get("num_seeds"), 0)),
-                peers=max(0, _safe_int(info.get("num_leechs"), 0)),
-                size_gb=round((_safe_int(info.get("size"), 0) / (1024**3)), 3),
-            )
-            if last_status in ("QBT_OK", "QBT_VIVO"):
-                break
-    except UserCancelled:
-        if added_by_us and CONFIG.get("qbit_delete_probe_after", True):
-            with non_cancelable_cleanup():
-                qbt_delete_hash(opener, h, "cancel_probe")
-        raise
-    if last_info:
-        r.qbt_seeds = max(0, _safe_int(last_info.get("num_seeds"), 0))
-        r.qbt_peers = max(0, _safe_int(last_info.get("num_leechs"), 0))
-        r.qbt_progress = float(last_info.get("progress") or 0)
-        r.qbt_speed_bps = _safe_int(last_info.get("dlspeed"), 0)
-        r.qbt_size_gb = (_safe_int(last_info.get("size"), 0) / (1024**3)) if last_info.get("size") else 0.0
-    r.qbt_status = last_status
-    r.qbt_reason = last_reason
-    diag("qbt_probe_result", n=idx, total=total, hash=h, status=r.qbt_status, reason=r.qbt_reason[:300], title=r.title[:160])
-    if added_by_us and CONFIG.get("qbit_delete_probe_after", True):
-        qbt_delete_hash(opener, h, "fin_probe")
-    return r
+    return qbt_probe_one_impl(
+        opener,
+        r,
+        idx=idx,
+        total=total,
+        config=CONFIG,
+        magnet_hash=magnet_hash,
+        qbt_info_by_hash=qbt_info_by_hash,
+        qbt_eval_info=qbt_eval_info,
+        qbt_request=qbt_request,
+        qbt_delete_hash=qbt_delete_hash,
+        result_display_name=_result_display_name,
+        safe_int=_safe_int,
+        diag=diag,
+        cancel_checkpoint=cancel_checkpoint,
+        sleep_interruptible=sleep_interruptible,
+        user_cancelled_cls=UserCancelled,
+        non_cancelable_cleanup=non_cancelable_cleanup,
+        time_module=time,
+    )
 
 def _is_qbt_working_status(status):
     if status in ("QBT_OK", "QBT_VIVO"):
@@ -3836,115 +3724,20 @@ def search_btdigg(query, page_spec):
 
 
 def export_results(results, shown=None, write_all_json=True):
-    """Guarda resultados para depurar sin ir a ciegas."""
-    if not CONFIG.get("write_exports", True):
-        return
-    cancel_checkpoint("export_results.before_write")
-    try:
-        EXPORT_DIR.mkdir(exist_ok=True)
-        all_json = EXPORT_DIR / "ULTIMOS_RESULTADOS.json"
-        top_txt = EXPORT_DIR / "ULTIMO_TOP.txt"
-        if write_all_json:
-            rows = []
-            for i, r in enumerate(results, 1):
-                rows.append({
-                    "n": i,
-                    "title": r.title,
-                    "hash": r.hash,
-                    "size_gb": round(float(r.size_gb or 0), 3),
-                    "score": r.score,
-                    "rd_status": r.rd_status,
-                    "rd_files": r.rd_files,
-                    "rd_largest_gb": round(float(r.rd_largest_gb or 0), 3),
-                    "rd_torrent_id": r.rd_torrent_id,
-                    "rd_existing": bool(getattr(r, "rd_existing", False)),
-                    "rd_links": r.rd_links,
-                    "selected_file_ids": r.selected_file_ids,
-                    "selected_file_name": r.selected_file_name,
-                    "selected_file_size_gb": round(float(r.selected_file_size_gb or 0), 3),
-                    "is_pack": r.is_pack,
-                    "pack_note": r.pack_note,
-                    "qbt_status": r.qbt_status,
-                    "qbt_reason": r.qbt_reason,
-                    "qbt_seeds": r.qbt_seeds,
-                    "qbt_peers": r.qbt_peers,
-                    "qbt_progress": round(float(r.qbt_progress or 0), 4),
-                    "qbt_speed_bps": r.qbt_speed_bps,
-                    "qbt_size_gb": round(float(r.qbt_size_gb or 0), 3),
-                    "qbt_was_existing": r.qbt_was_existing,
-                    "tracker_name": r.tracker_name,
-                    "tracker_seeders": r.tracker_seeders,
-                    "tracker_leechers": r.tracker_leechers,
-                    "tracker_category": r.tracker_category,
-                    "source_url": r.source_url,
-                    "btdigg_file_name": r.btdigg_file_name,
-                    "btdigg_file_size_gb": round(float(r.btdigg_file_size_gb or 0), 3),
-                    "same_file_match": r.same_file_match,
-                    "same_file_reason": r.same_file_reason,
-                    "raw_context": (getattr(r, "raw_context", "") or "")[:4000],
-                    "reason": r.reason,
-                    "magnet": r.magnet,
-                    "torrent_url": r.torrent_url,
-                })
-            all_json.write_text(json.dumps(rows, ensure_ascii=False, indent=2), encoding="utf-8")
-        qbit_txt = EXPORT_DIR / "ULTIMO_QBIT_VIVOS.txt"
-        qbit_rows = LAST_QBIT_EXTRAS or [r for r in results if _is_qbt_working_status(r.qbt_status) and not _is_working_status(r.rd_status)]
-        qlines = ["RD Turbo Pro - lista extra qBittorrent vivos", "=" * 80]
-        for qidx, r in enumerate(qbit_rows, 1):
-            qsize = r.qbt_size_gb or r.size_gb or r.rd_largest_gb
-            size_s = f"{qsize:.1f} GB" if qsize else "? GB"
-            qlines.append(f"[Q{qidx:02d}] QBT:{r.qbt_status:10} SIZE:{size_s:>9} HASH:{r.hash}")
-            qlines.append(f"      TORRENT: {r.title}")
-            if r.btdigg_file_name:
-                qlines.append(f"      ARCHIVO BTDIGG: {r.btdigg_file_name} ({(r.btdigg_file_size_gb or 0):.1f} GB)")
-            if r.selected_file_name:
-                qlines.append(f"      ARCHIVO RD: {r.selected_file_name} ({(r.selected_file_size_gb or 0):.1f} GB)")
-            qlines.append(f"      MOTIVO: {r.qbt_reason[:350]}")
-            qlines.append(f"      MAGNET: {r.magnet}")
-            qlines.append("")
-        qbit_txt.write_text("\n".join(qlines), encoding="utf-8")
-
-        rd_temp_txt = EXPORT_DIR / "ULTIMO_RD_TEMPORAL.txt"
-        temp_rows = LAST_RD_TEMP_ERRORS or [r for r in results if r.rd_status == "RD_ERROR_TEMPORAL"]
-        tlines = ["RD Turbo Pro - pendientes por error temporal Real-Debrid", "=" * 80]
-        tlines.append("No son resultados limpios ni confirmados. No se dan por muertos.")
-        tlines.append("")
-        for tidx, r in enumerate(temp_rows, 1):
-            tsize = r.size_gb or r.rd_largest_gb
-            size_s = f"{tsize:.1f} GB" if tsize else "? GB"
-            tlines.append(f"[T{tidx:02d}] RD:{r.rd_status:17} SIZE:{size_s:>9} HASH:{r.hash}")
-            tlines.append(f"      TORRENT: {r.title}")
-            if r.btdigg_file_name:
-                tlines.append(f"      ARCHIVO BTDIGG: {r.btdigg_file_name} ({(r.btdigg_file_size_gb or 0):.1f} GB)")
-            tlines.append(f"      MOTIVO: {r.reason[:350]}")
-            tlines.append(f"      MAGNET: {r.magnet}")
-            tlines.append("")
-        rd_temp_txt.write_text("\n".join(tlines), encoding="utf-8")
-
-        use = shown if shown is not None else results[:int(CONFIG.get("max_results_to_show", 30))]
-        lines = []
-        lines.append("RD Turbo Pro - último TOP")
-        lines.append("=" * 80)
-        for idx, r in enumerate(use, 1):
-            rd = r.rd_status
-            size = f"{r.size_gb:.1f} GB" if r.size_gb else (f"{r.rd_largest_gb:.1f} GB" if r.rd_largest_gb else "? GB")
-            lines.append(f"[{idx:02d}] RD:{rd:12} SCORE:{r.score:4d} SIZE:{size:>9} HASH:{r.hash}")
-            lines.append(f"     {r.title}")
-            if r.btdigg_file_name:
-                lines.append(f"     ARCHIVO BTDIGG: {r.btdigg_file_name} ({(r.btdigg_file_size_gb or 0):.1f} GB)")
-            if r.selected_file_name:
-                lines.append(f"     ARCHIVO: {r.selected_file_name} ({(r.selected_file_size_gb or r.size_gb or 0):.1f} GB)")
-            if r.qbt_status:
-                lines.append(f"     QBIT: {r.qbt_status} | seeds={r.qbt_seeds} peers={r.qbt_peers} | {r.qbt_reason[:220]}")
-            if r.tracker_name or r.tracker_seeders or r.tracker_leechers:
-                lines.append(f"     TRACKER: {r.tracker_name or '-'} | seeds={r.tracker_seeders} leechers={r.tracker_leechers} | {r.tracker_category or '-'}")
-            if r.reason:
-                lines.append(f"     MOTIVO: {r.reason[:300]}")
-            lines.append("")
-        top_txt.write_text("\n".join(lines), encoding="utf-8")
-        diag("export_results", all_json=str(all_json), all_json_written=bool(write_all_json), top_txt=str(top_txt), total=len(results), shown=len(use))
-    except Exception as e:
-        log(f"export_results error: {e}")
+    return export_results_impl(
+        results,
+        shown=shown,
+        write_all_json=write_all_json,
+        config=CONFIG,
+        export_dir=EXPORT_DIR,
+        cancel_checkpoint=cancel_checkpoint,
+        diag=diag,
+        log=log,
+        is_qbt_working_status=_is_qbt_working_status,
+        is_working_status=_is_working_status,
+        last_qbit_extras=LAST_QBIT_EXTRAS,
+        last_rd_temp_errors=LAST_RD_TEMP_ERRORS,
+    )
 
 
 def rd_token_healthcheck(token):
@@ -5074,6 +4867,24 @@ def _rd_batchable_magnet_candidates(candidates):
     blocked = {"TORRENT_NO_VALIDO", "DIRECT_NO_VALIDO", "DIRECT_ERROR", "RD_OK", "RD_INSTANT"}
     return [r for r in candidates if getattr(r, "magnet", "") and getattr(r, "rd_status", "") not in blocked]
 
+
+def _rd_verify_batch_when_instant_api_off(rd_candidates, token, summary, cached_disabled=False):
+    if CONFIG.get("verify_candidates_when_api_off", True):
+        batch_candidates = _rd_batchable_magnet_candidates(rd_candidates)
+        maxv = min(len(batch_candidates), int(CONFIG.get("verify_max_candidates", 30) or 30))
+        print(f"Paso serio: verifico de verdad con addMagnet los {maxv} mejores candidatos.")
+        diag("rd_verify_batch_start", total=len(batch_candidates), verifying=maxv, cached_disabled=bool(cached_disabled))
+        batch_summary = rd_verify_addmagnet_batch(batch_candidates, token, maxv)
+        for k, v in batch_summary.items():
+            summary[k] = summary.get(k, 0) + v
+        diag("rd_verify_batch_end", **summary, total=len(rd_candidates), cached_disabled=bool(cached_disabled))
+        return
+
+    for cand in rd_candidates:
+        cand.rd_status = "RD_API_OFF"
+        cand.reason = "Real-Debrid tiene desactivada instantAvailability"
+
+
 def rd_check_availability(results, token):
     cancel_checkpoint("rd_check_availability.before")
     validate_direct_links(results)
@@ -5134,19 +4945,7 @@ def rd_check_availability(results, token):
             first_error = first_error or "Real-Debrid instantAvailability desactivado en cache temporal"
             diag("rd_cache_api_disabled_cached_hit", checked=i, total=len(rd_candidates))
             print("\nAviso: Real-Debrid tiene instantAvailability desactivado; uso addMagnet directo.")
-            if CONFIG.get("verify_candidates_when_api_off", True):
-                batch_candidates = _rd_batchable_magnet_candidates(rd_candidates)
-                maxv = min(len(batch_candidates), int(CONFIG.get("verify_max_candidates", 30) or 30))
-                print(f"Paso serio: verifico de verdad con addMagnet los {maxv} mejores candidatos.")
-                diag("rd_verify_batch_start", total=len(batch_candidates), verifying=maxv, cached_disabled=True)
-                batch_summary = rd_verify_addmagnet_batch(batch_candidates, token, maxv)
-                for k, v in batch_summary.items():
-                    summary[k] = summary.get(k, 0) + v
-                diag("rd_verify_batch_end", **summary, total=len(rd_candidates), cached_disabled=True)
-            else:
-                for cand in rd_candidates:
-                    cand.rd_status = "RD_API_OFF"
-                    cand.reason = "Real-Debrid tiene desactivada instantAvailability"
+            _rd_verify_batch_when_instant_api_off(rd_candidates, token, summary, cached_disabled=True)
             break
         try:
             h = (r.hash or "").lower()
@@ -5198,19 +4997,7 @@ def rd_check_availability(results, token):
                 summary["RD_API_OFF"] = 0
                 diag("rd_cache_api_disabled", error=error_text[:500], checked=i, total=len(rd_candidates))
                 print("\nAviso: Real-Debrid tiene desactivada instantAvailability.")
-                if CONFIG.get("verify_candidates_when_api_off", True):
-                    batch_candidates = _rd_batchable_magnet_candidates(rd_candidates)
-                    maxv = min(len(batch_candidates), int(CONFIG.get("verify_max_candidates", 30) or 30))
-                    print(f"Paso serio: verifico de verdad con addMagnet los {maxv} mejores candidatos.")
-                    diag("rd_verify_batch_start", total=len(batch_candidates), verifying=maxv)
-                    batch_summary = rd_verify_addmagnet_batch(batch_candidates, token, maxv)
-                    for k, v in batch_summary.items():
-                        summary[k] = summary.get(k, 0) + v
-                    diag("rd_verify_batch_end", **summary, total=len(rd_candidates))
-                else:
-                    for cand in rd_candidates:
-                        cand.rd_status = "RD_API_OFF"
-                        cand.reason = "Real-Debrid tiene desactivada instantAvailability"
+                _rd_verify_batch_when_instant_api_off(rd_candidates, token, summary)
                 break
 
             r.rd_status = "RD_ERROR"
@@ -5238,6 +5025,40 @@ def _is_working_status(status):
 def _is_useful_result(r):
     return _is_working_status(getattr(r, "rd_status", "")) or _is_qbt_working_status(getattr(r, "qbt_status", ""))
 
+
+def _prepare_query_prefilter(scored):
+    discarded_query = []
+    rescue_query = []
+    if not CONFIG.get("strict_query_prefilter", True):
+        return list(scored), rescue_query, discarded_query
+
+    before = len(scored)
+    relevant = []
+    for r in scored:
+        cancel_checkpoint("prepare_results.prefilter")
+        bucket = _query_relevance_bucket(r)
+        if bucket == "primary":
+            relevant.append(r)
+        elif bucket == "rescue":
+            rescue_query.append(r)
+        else:
+            discarded_query.append(r)
+    diag(
+        "prepare_after_query_prefilter",
+        before=before,
+        after=len(relevant),
+        removed=len(discarded_query),
+        rescue=len(rescue_query),
+        terms=",".join(query_terms_for_match()),
+    )
+    print(f"Criba búsqueda seria: {len(relevant)}/{before} coinciden en el mismo título/archivo.")
+    if rescue_query:
+        print(f"Rescate RD pendiente por titulo/pack dudoso: {len(rescue_query)}")
+    if discarded_query:
+        print(f"Descartados antes de verificar por no coincidir: {len(discarded_query)}")
+    return relevant, rescue_query, discarded_query
+
+
 def prepare_results(results, mode, token):
     global LAST_QBIT_EXTRAS, LAST_RD_TEMP_ERRORS
     LAST_QBIT_EXTRAS = []
@@ -5258,35 +5079,8 @@ def prepare_results(results, mode, token):
 
     # Criba seria antes de gastar tiempo en Real-Debrid/qBittorrent.
     # Evita Mercedes/Krawall/Mägo/etc cuando la búsqueda era Venganza 2008.
-    discarded_query = []
     discarded_size = []
-    rescue_query = []
-    if CONFIG.get("strict_query_prefilter", True):
-        before = len(scored)
-        relevant = []
-        for r in scored:
-            cancel_checkpoint("prepare_results.prefilter")
-            bucket = _query_relevance_bucket(r)
-            if bucket == "primary":
-                relevant.append(r)
-            elif bucket == "rescue":
-                rescue_query.append(r)
-            else:
-                discarded_query.append(r)
-        scored = relevant
-        diag(
-            "prepare_after_query_prefilter",
-            before=before,
-            after=len(scored),
-            removed=len(discarded_query),
-            rescue=len(rescue_query),
-            terms=",".join(query_terms_for_match()),
-        )
-        print(f"Criba búsqueda seria: {len(scored)}/{before} coinciden en el mismo título/archivo.")
-        if rescue_query:
-            print(f"Rescate RD pendiente por titulo/pack dudoso: {len(rescue_query)}")
-        if discarded_query:
-            print(f"Descartados antes de verificar por no coincidir: {len(discarded_query)}")
+    scored, rescue_query, discarded_query = _prepare_query_prefilter(scored)
 
     # Ordena antes de verificar, para gastar la comprobación seria en los mejores primero.
     scored, size_drop = _apply_current_min_size_filter(scored, "before_rd")
