@@ -28,9 +28,6 @@ const activityStoreKey = "btdiggRd.activity.v1";
 const activeJobStoreKey = "btdiggRd.activeJob.v1";
 const rdFollowStoreKey = "btdiggRd.rdFollow.v1";
 const rdFollowTestStoreKey = "btdiggRd.rdFollowTest.v1";
-const uiStateStoreKey = "btdiggRd.uiState.v1";
-const uiStateClientStoreKey = "btdiggRd.uiClient.v1";
-const uiStateEndpoint = "/api/ui-state";
 const rdOkVerifyTitleMarker = "__RD_OK_VERIFY_TITLE__";
 const terminalJobStatuses = new Set(["done", "error", "cancelled"]);
 const activeJobStatuses = new Set(["queued", "running", "cancelling"]);
@@ -39,190 +36,6 @@ let historyOpenState = { days: {}, searches: {} };
 let historyResultStore = {};
 let titleResolveOpenKey = "";
 let titleResolveCache = {};
-let resultsSnapshot = "";
-let uiStateClientId = "";
-let uiStateSaveTimer = null;
-let uiStateSaveInFlight = false;
-let suppressUiStateSave = false;
-let lastUiStateRemoteMs = 0;
-let lastLocalUiStateChangeAt = 0;
-let sharedRefreshTimer = null;
-let lastResultsRefreshAt = 0;
-
-function getUiStateClientId() {
-  try {
-    let id = localStorage.getItem(uiStateClientStoreKey);
-    if (!id) {
-      id = "ui-" + Date.now().toString(36) + "-" + Math.random().toString(36).slice(2, 8);
-      localStorage.setItem(uiStateClientStoreKey, id);
-    }
-    return id;
-  } catch (e) {
-    return "ui-" + Date.now().toString(36);
-  }
-}
-
-uiStateClientId = getUiStateClientId();
-
-function visibleNow() {
-  return !document.hidden;
-}
-
-function currentViewName() {
-  if (settingsVisible()) return "settings";
-  if (historyVisible()) return "history";
-  return "main";
-}
-
-function readFormState() {
-  const query = document.getElementById("bQuery");
-  const pages = document.getElementById("bPages");
-  const mode = document.getElementById("bMode");
-  const minGb = document.getElementById("bMinGb");
-  return {
-    query: query ? query.value : "2160p",
-    pages: pages ? pages.value : "",
-    mode: mode ? mode.value : "",
-    minGb: minGb ? minGb.value : ""
-  };
-}
-
-function focusedFormField() {
-  const active = document.activeElement;
-  return !!(active && ["bQuery", "bPages", "bMode", "bMinGb"].includes(active.id));
-}
-
-function applyFormState(data) {
-  if (!data || typeof data !== "object") return;
-  const fields = [
-    ["bQuery", data.query || "2160p"],
-    ["bPages", data.pages],
-    ["bMode", data.mode],
-    ["bMinGb", data.minGb]
-  ];
-  fields.forEach(([id, value]) => {
-    const el = document.getElementById(id);
-    if (!el || document.activeElement === el || value === undefined) return;
-    el.value = value;
-  });
-}
-
-function applyJobPayloadToForm(payload) {
-  if (!payload || typeof payload !== "object" || focusedFormField()) return;
-  applyFormState({
-    query: payload.query || "2160p",
-    pages: payload.pages,
-    mode: payload.mode,
-    minGb: payload.min_gb || payload.minGb
-  });
-  saveFormState(false);
-}
-
-function uiStatePayload() {
-  return {
-    version: 1,
-    view: currentViewName(),
-    form: readFormState(),
-    history_open: {
-      days: historyOpenState.days || {},
-      searches: historyOpenState.searches || {}
-    },
-    result_sort: resultSort.btdigg || { key: "index", dir: "asc" }
-  };
-}
-
-function saveUiStateLocal(state) {
-  try { localStorage.setItem(uiStateStoreKey, JSON.stringify(state)); } catch (e) {}
-}
-
-function applyLocalUiState() {
-  try {
-    const local = JSON.parse(localStorage.getItem(uiStateStoreKey) || "null");
-    return local ? applyUiState(local, false) : false;
-  } catch (e) {
-    return false;
-  }
-}
-
-function markUiStateChanged(delay = 700) {
-  if (suppressUiStateSave) return;
-  lastLocalUiStateChangeAt = Date.now();
-  if (uiStateSaveTimer) clearTimeout(uiStateSaveTimer);
-  uiStateSaveTimer = setTimeout(saveSharedUiState, delay);
-}
-
-async function saveSharedUiState() {
-  if (uiStateSaveInFlight) {
-    markUiStateChanged(900);
-    return;
-  }
-  const state = uiStatePayload();
-  saveUiStateLocal(state);
-  uiStateSaveInFlight = true;
-  try {
-    const response = await fetch(uiStateEndpoint, {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        state,
-        client_id: uiStateClientId,
-        client_updated_at: Date.now()
-      })
-    });
-    const data = await response.json();
-    if (data.ok && data.state) lastUiStateRemoteMs = Number(data.state.server_updated_at || lastUiStateRemoteMs || 0);
-  } catch (e) {
-  } finally {
-    uiStateSaveInFlight = false;
-  }
-}
-
-function normalizeHistoryOpenState(value) {
-  const raw = value && typeof value === "object" ? value : {};
-  return {
-    days: raw.days && typeof raw.days === "object" ? raw.days : {},
-    searches: raw.searches && typeof raw.searches === "object" ? raw.searches : {}
-  };
-}
-
-function applyUiState(state, remote = false) {
-  if (!state || typeof state !== "object") return false;
-  const remoteMs = Number(state.server_updated_at || 0);
-  if (remote && remoteMs && remoteMs <= lastUiStateRemoteMs) return false;
-  if (remote && Date.now() - lastLocalUiStateChangeAt < 2500) return false;
-  suppressUiStateSave = true;
-  try {
-    if (!focusedFormField()) applyFormState(state.form || {});
-    historyOpenState = normalizeHistoryOpenState(state.history_open);
-    if (state.result_sort && typeof state.result_sort === "object") {
-      resultSort.btdigg = {
-        key: String(state.result_sort.key || "index"),
-        dir: String(state.result_sort.dir || "asc") === "desc" ? "desc" : "asc"
-      };
-    }
-    restoreViewState(String(state.view || "main"));
-    saveFormState(false);
-    saveUiStateLocal(state);
-    if (remoteMs) lastUiStateRemoteMs = remoteMs;
-    if (historyVisible()) loadHistory(false);
-    if (!historyVisible() && (moduleResults.btdigg || []).length) renderResults(moduleResults.btdigg || []);
-  } finally {
-    suppressUiStateSave = false;
-  }
-  return true;
-}
-
-async function loadSharedUiState(remote = false) {
-  const localApplied = remote ? false : applyLocalUiState();
-  try {
-    const response = await fetch(uiStateEndpoint, { cache: "no-store" });
-    const data = await response.json();
-    if (response.ok && data.ok && data.state && Number(data.state.server_updated_at || 0) > 0) {
-      return applyUiState(data.state, remote) || localApplied;
-    }
-  } catch (e) {}
-  return localApplied;
-}
 
 function getFinishSound() {
   if (!finishSound) {
@@ -322,15 +135,14 @@ function setQbitToggleState(enabled, busy = false) {
   btn.setAttribute("aria-pressed", qbitSearchEnabled ? "true" : "false");
 }
 
-async function loadQbitToggle(options = {}) {
-  const silent = !!(options && options.silent);
+async function loadQbitToggle() {
   try {
     const res = await fetch("/api/qbit-toggle", { cache: "no-store" });
     const data = await res.json();
     if (!res.ok || !data.ok) throw new Error(data.error || "No se pudo leer qBit");
     setQbitToggleState(data.enabled !== false, false);
   } catch (e) {
-    if (!silent) setQbitToggleState(true, false);
+    setQbitToggleState(true, false);
   }
 }
 
@@ -353,22 +165,33 @@ async function toggleQbitSearch(btn = null) {
   }
 }
 
-function saveFormState(shared = true) {
+function saveFormState() {
   try {
-    localStorage.setItem(formStoreKey, JSON.stringify(readFormState()));
+    const data = {
+      query: document.getElementById("bQuery").value,
+      pages: document.getElementById("bPages").value,
+      mode: document.getElementById("bMode").value,
+      minGb: document.getElementById("bMinGb").value
+    };
+    localStorage.setItem(formStoreKey, JSON.stringify(data));
   } catch (e) {}
-  if (shared) markUiStateChanged();
 }
 
 function restoreFormState() {
   formStateRestored = false;
   const query = document.getElementById("bQuery");
+  const pages = document.getElementById("bPages");
+  const mode = document.getElementById("bMode");
+  const minGb = document.getElementById("bMinGb");
   let data = null;
   try {
     data = JSON.parse(localStorage.getItem(formStoreKey) || "null");
   } catch (e) {}
   if (data && typeof data === "object") {
-    applyFormState(data);
+    if (query) query.value = data.query || "2160p";
+    if (pages && data.pages !== undefined) pages.value = data.pages;
+    if (mode && data.mode !== undefined) mode.value = data.mode;
+    if (minGb && data.minGb !== undefined) minGb.value = data.minGb;
     formStateRestored = true;
     return;
   }
@@ -432,7 +255,6 @@ function setSettingsView(show, persist = true) {
   }
   if (persist) {
     try { localStorage.setItem(viewStoreKey, show ? "settings" : "main"); } catch (e) {}
-    markUiStateChanged();
   }
   if (show) {
     loadSettings(false);
@@ -464,7 +286,6 @@ function setHistoryView(show, persist = true) {
   }
   if (persist) {
     try { localStorage.setItem(viewStoreKey, show ? "history" : "main"); } catch (e) {}
-    markUiStateChanged();
   }
   if (show) loadHistory(false);
 }
@@ -473,19 +294,7 @@ function toggleHistoryView() {
   setHistoryView(!historyVisible(), true);
 }
 
-function restoreViewState(savedView = null) {
-  let view = savedView;
-  if (!view) {
-    try { view = localStorage.getItem(viewStoreKey) || "main"; } catch (e) { view = "main"; }
-  }
-  if (view === "settings") {
-    setSettingsView(true, false);
-    return;
-  }
-  if (view === "history") {
-    setHistoryView(true, false);
-    return;
-  }
+function restoreViewState() {
   setSettingsView(false, false);
 }
 
@@ -856,6 +665,12 @@ async function rdFollowStartTest(btn = null) {
   }
 }
 
+function resetStartupMemory() {
+  try {
+    localStorage.removeItem(viewStoreKey);
+  } catch (e) {}
+}
+
 function formatLiveLine(line) {
   let l = String(line || "").trim();
   if (!l || /^=+$/.test(l)) return null;
@@ -1043,9 +858,10 @@ function renderLog(module) {
 function clearCurrent() {
   const query = document.getElementById("bQuery");
   if (query) query.value = "2160p";
-  setModuleResults("btdigg", [], true, true);
+  moduleResults.btdigg = [];
   moduleLogs.btdigg = ["Limpio. Preparado."];
   renderLog("btdigg");
+  renderResults([]);
   stopRdFollow(true);
   setStatus("Limpio");
   updateStopButton();
@@ -1097,13 +913,13 @@ function applyJobSnapshot(job, module = "btdigg", options = {}) {
   const id = String(job.id || "");
   const traceKind = String(job.kind || "job");
   activeModule = module;
-  applyJobPayloadToForm(job.payload);
   moduleLogs[module] = job.log || [];
   renderLog(module);
   if (isTerminalJobStatus(status)) {
     closeLive(module);
     moduleBusy[module] = false;
-    setModuleResults(module, status === "done" ? (job.results || []) : [], true, true);
+    moduleResults[module] = status === "done" ? (job.results || []) : [];
+    renderResults(moduleResults[module]);
     historyCache = null;
     setStatus(jobStatusLabel(status));
     updateStopButton(status);
@@ -1164,23 +980,6 @@ async function reconnectActiveJob() {
     }
   } catch (e) {}
   return false;
-}
-
-async function refreshSharedRuntime() {
-  if (!visibleNow()) return;
-  await loadQbitToggle({ silent: true });
-  await loadSharedUiState(true);
-  const connected = await reconnectActiveJob();
-  const now = Date.now();
-  if (!connected && !moduleBusy.btdigg && now - lastResultsRefreshAt > 30000) {
-    lastResultsRefreshAt = now;
-    await loadResults(true);
-  }
-}
-
-function startSharedRefresh() {
-  if (sharedRefreshTimer) return;
-  sharedRefreshTimer = setInterval(refreshSharedRuntime, 15000);
 }
 
 function pushLog(module, line) {
@@ -1267,7 +1066,8 @@ function openLive(id, module) {
     moduleBusy[module] = false;
     setStatus(jobStatusLabel(data.status));
     updateStopButton(data.status);
-    setModuleResults(module, data.status === "done" ? (data.results || []) : [], true, true);
+    moduleResults[module] = data.status === "done" ? (data.results || []) : [];
+    renderResults(moduleResults[module]);
     historyCache = null;
     if (data.status === "cancelled" && (data.forced_stop || data.cleanup_uncertain)) {
       pushLog(module, "Aviso: cancelacion forzada. Revisa caja negra.");
@@ -1302,7 +1102,8 @@ async function poll(id, module) {
         moduleBusy[module] = false;
         setStatus(jobStatusLabel(data.job.status));
         updateStopButton(data.job.status);
-        setModuleResults(module, data.job.status === "done" ? (data.job.results || []) : [], true, true);
+        moduleResults[module] = data.job.status === "done" ? (data.job.results || []) : [];
+        renderResults(moduleResults[module]);
         historyCache = null;
         if (data.job.status === "cancelled" && (data.job.forced_stop || data.job.cleanup_uncertain)) {
           pushLog(module, "Aviso: cancelacion forzada. Revisa caja negra.");
@@ -1500,36 +1301,11 @@ async function downloadHistoryItem(key, btn = null) {
   });
 }
 
-function resultsSignature(items) {
-  try {
-    return JSON.stringify((items || []).map(item => [
-      item.index,
-      item.title,
-      item.link,
-      item.size,
-      item.status || item.confidence,
-      item.added
-    ]));
-  } catch (e) {
-    return String((items || []).length);
-  }
-}
-
-function setModuleResults(module, items, show = true, force = false) {
-  const next = items || [];
-  const sig = resultsSignature(next);
-  const changed = sig !== resultsSnapshot;
-  moduleResults[module] = next;
-  if (module === "btdigg") resultsSnapshot = sig;
-  if (show && (force || changed)) renderResults(moduleResults[module]);
-}
-
 async function loadResults(show = true) {
-  const response = await fetch("/api/results/btdigg", { cache: "no-store" });
+  const response = await fetch("/api/results/btdigg");
   const data = await response.json();
-  if (!data.ok) return false;
-  setModuleResults("btdigg", data.results || [], show, false);
-  return true;
+  moduleResults.btdigg = data.results || [];
+  if (show) renderResults(moduleResults.btdigg);
 }
 
 function resultSortValue(item, key) {
@@ -1559,7 +1335,6 @@ function toggleResultSort(key) {
   const numeric = ["size", "seeds", "peers", "added"];
   const dir = current.key === key ? (current.dir === "asc" ? "desc" : "asc") : (numeric.includes(key) ? "desc" : "asc");
   resultSort.btdigg = { key, dir };
-  markUiStateChanged();
   renderResults(moduleResults.btdigg || []);
 }
 
@@ -1814,7 +1589,6 @@ async function loadHistory(force = false) {
   if (force) {
     historyOpenState = { days: {}, searches: {} };
     historyResultStore = {};
-    markUiStateChanged();
   }
   if (!historyCache || force) {
     panel.innerHTML = '<p class="hint history-empty">Cargando historial...</p>';
@@ -1880,7 +1654,6 @@ function renderHistory() {
     dayCard.innerHTML = '<summary><span>' + esc(day.label || day.date || "") + '</span></summary>';
     dayCard.addEventListener("toggle", () => {
       historyOpenState.days[dayKey] = dayCard.open;
-      markUiStateChanged();
     });
     const searchesBox = document.createElement("div");
     searchesBox.className = "history-searches";
@@ -1891,7 +1664,6 @@ function renderHistory() {
       searchCard.open = !!historyOpenState.searches[searchKey];
       searchCard.addEventListener("toggle", () => {
         historyOpenState.searches[searchKey] = searchCard.open;
-        markUiStateChanged();
       });
       const query = search.query || "(sin b\u00fasqueda)";
       searchCard.innerHTML =
@@ -2312,10 +2084,7 @@ if (settingsResetModal) {
 
 ["bQuery", "bPages", "bMode", "bMinGb"].forEach(id => {
   const el = document.getElementById(id);
-  if (el) {
-    el.addEventListener("input", () => saveFormState(true));
-    el.addEventListener("change", () => saveFormState(true));
-  }
+  if (el) el.addEventListener("input", saveFormState);
 });
 
 ["rdFollowQuery", "rdFollowPages"].forEach(id => {
@@ -2323,26 +2092,21 @@ if (settingsResetModal) {
   if (el) el.addEventListener("input", saveRdFollowTestState);
 });
 
-async function initApp() {
-  restoreFormState();
-  restoreActivityState();
-  restoreRdFollowState();
-  const restoredShared = await loadSharedUiState(false);
-  if (!restoredShared) restoreViewState();
-  await loadQbitToggle();
-  loadSettings(true);
-  updateStopButton();
-  const connected = await reconnectActiveJob();
-  if (!connected) await loadResults(true);
-  startSharedRefresh();
-}
-
-initApp();
+resetStartupMemory();
+restoreFormState();
+restoreViewState();
+restoreActivityState();
+restoreRdFollowState();
+loadQbitToggle();
+loadSettings(true);
+renderResults([]);
+updateStopButton();
+reconnectActiveJob();
 
 window.addEventListener("pageshow", () => {
-  refreshSharedRuntime();
+  reconnectActiveJob();
 });
 
 document.addEventListener("visibilitychange", () => {
-  if (!document.hidden) refreshSharedRuntime();
+  if (!document.hidden) reconnectActiveJob();
 });

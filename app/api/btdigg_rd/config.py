@@ -22,7 +22,6 @@ JOB_RUNS_DIR = DATA / "jobs"
 JOB_RUN_RETENTION_DAYS = int(os.environ.get("BTDIGG_JOB_RUN_RETENTION_DAYS", "7"))
 JOB_RUN_KEEP_LAST_RUNS = int(os.environ.get("BTDIGG_JOB_RUN_KEEP_LAST_RUNS", "100"))
 TRACKING_FILE = DATA / "seguimiento_actual.json"
-UI_STATE_FILE = DATA / "ui_state.json"
 
 SAFEOUT_FILE = Path(
     os.environ.get(

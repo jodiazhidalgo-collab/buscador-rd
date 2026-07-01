@@ -19,7 +19,6 @@ from .send import api_rdt_send
 from .title_resolver import resolve_movie_title
 from .title_resolver.service import TitleResolverError
 from .title_resolver.tmdb_client import TmdbUnavailable
-from .ui_state import load_ui_state, save_ui_state
 from .utils import read_json
 
 
@@ -272,21 +271,6 @@ def api_results(module: str):
 @bp.get("/api/history/btdigg")
 def api_history_btdigg():
     return jsonify({"ok": True, "history": load_history()})
-
-
-@bp.get("/api/ui-state")
-def api_ui_state():
-    return jsonify({"ok": True, "state": load_ui_state()})
-
-
-@bp.post("/api/ui-state")
-def api_ui_state_save():
-    data = request.get_json(force=True, silent=True) or {}
-    try:
-        state = save_ui_state(data)
-    except Exception as exc:
-        return jsonify({"ok": False, "error": f"No se pudo guardar estado UI: {exc}"}), 500
-    return jsonify({"ok": True, "state": state})
 
 
 @bp.post("/api/title-resolver/resolve")
