@@ -2798,13 +2798,32 @@ def _apply_current_min_size_filter(items, stage):
         print(f"Filtro tamano calidad: {len(kept)}/{len(items)} siguen con {_current_min_size_text()}.")
     return kept, discarded
 
+def _is_sin_filtro_mode(mode):
+    try:
+        return int(mode or 0) == 0
+    except Exception:
+        return False
+
+def _score_bad_words(text, score, found):
+    for w in CONFIG.get("bad_words", []):
+        if _word_hit(w, text):
+            score -= 70
+            found.append(f"-{w}")
+    return score
+
 def score_result(r, mode):
     original_context = getattr(r, "raw_context", "") or r.reason or ""
     text = normalize(r.title + " " + original_context)
     score = 0
     found = []
 
-    # Calidad: SIEMPRE puntúa, incluso en modo 0 sin filtro.
+    if _is_sin_filtro_mode(mode):
+        score = _score_bad_words(text, score, found)
+        r.score = score
+        r.reason = ", ".join(found) if found else "sin marcas relevantes"
+        return r
+
+    # Calidad: puntua en modos con criterio.
     for word, weight in CONFIG.get("quality_weights", {}).items():
         if _word_hit(word, text):
             score += int(weight)
@@ -2853,14 +2872,36 @@ def score_result(r, mode):
             score -= 40
             found.append("-idioma")
 
-    for w in CONFIG.get("bad_words", []):
-        if _word_hit(w, text):
-            score -= 70
-            found.append(f"-{w}")
+    score = _score_bad_words(text, score, found)
 
     r.score = score
     r.reason = ", ".join(found) if found else "sin marcas relevantes"
     return r
+
+def _score_order_key(r, mode):
+    if _is_sin_filtro_mode(mode):
+        return (r.score,)
+    return (r.score, _effective_result_size_gb(r))
+
+def _qbit_extra_order_key(r, mode):
+    if _is_sin_filtro_mode(mode):
+        return (r.score,)
+    return (r.score, r.qbt_size_gb or _effective_result_size_gb(r))
+
+def _rd_temp_order_key(r, mode):
+    if _is_sin_filtro_mode(mode):
+        return (r.score,)
+    return (r.score, r.size_gb or r.rd_largest_gb)
+
+def _final_order_key(r, mode):
+    base = (
+        1 if _is_working_status(r.rd_status) else 0,
+        1 if _is_qbt_working_status(r.qbt_status) else 0,
+        r.score,
+    )
+    if _is_sin_filtro_mode(mode):
+        return base
+    return base + (_effective_result_size_gb(r),)
 
 def dedupe_results(results):
     seen = set()
@@ -3614,6 +3655,8 @@ def _quality_mode_extra_btdigg_queries(query, mode=0):
     if not CONFIG.get("quality_mode_extra_btdigg_enabled", True):
         return []
     if _query_has_quality_marker(query):
+        return []
+    if _is_sin_filtro_mode(mode):
         return []
     # En calidad pura siempre interesa mirar 2160p. En modo normal lo hacemos solo
     # cuando la busqueda trae numero/año claro, para no abrir demasiado la puerta.
@@ -5079,7 +5122,7 @@ def prepare_results(results, mode, token):
         print(f"Filtro aplicado: {len(scored)}/{before} siguen como candidatos.")
     else:
         diag("prepare_after_filter", before=len(scored), after=len(scored), removed=0, mode="sin_filtro")
-        print("Modo sin filtro: no descarto por idioma/calidad, pero SÍ ordeno por calidad.")
+        print("Modo sin filtro: no descarto por idioma/calidad y no ordeno por calidad/tamano; solo penalizo basura.")
 
     # Criba seria antes de gastar tiempo en Real-Debrid/qBittorrent.
     # Evita Mercedes/Krawall/Mägo/etc cuando la búsqueda era Venganza 2008.
@@ -5091,7 +5134,7 @@ def prepare_results(results, mode, token):
     discarded_size.extend(size_drop)
 
     cancel_checkpoint("prepare_results.before_rd")
-    scored.sort(key=lambda r: (r.score, _effective_result_size_gb(r)), reverse=True)
+    scored.sort(key=lambda r: _score_order_key(r, mode), reverse=True)
     checked_core = rd_check_availability(scored, token)
     cancel_checkpoint("prepare_results.after_rd")
     checked_core, size_drop = _apply_current_min_size_filter(checked_core, "after_rd")
@@ -5108,7 +5151,7 @@ def prepare_results(results, mode, token):
         rescue_allowed = (not only_if_no_ok) or (not has_rd_ok)
         rescue_candidates, size_drop = _apply_current_min_size_filter(rescue_query, "rescue_before_rd")
         discarded_size.extend(size_drop)
-        rescue_candidates.sort(key=lambda r: (r.score, _effective_result_size_gb(r)), reverse=True)
+        rescue_candidates.sort(key=lambda r: _score_order_key(r, mode), reverse=True)
         max_rescue = max(0, int(CONFIG.get("rd_rescue_max_candidates", 5) or 5))
         rescue_candidates = rescue_candidates[:max_rescue]
         if rescue_allowed and rescue_candidates:
@@ -5135,12 +5178,12 @@ def prepare_results(results, mode, token):
     checked_core = qbt_probe_candidates(checked_core)
     LAST_QBIT_EXTRAS = sorted(
         [r for r in checked_core if _is_qbt_working_status(r.qbt_status) and not _is_working_status(r.rd_status)],
-        key=lambda r: (r.score, r.qbt_size_gb or _effective_result_size_gb(r)),
+        key=lambda r: _qbit_extra_order_key(r, mode),
         reverse=True,
     )
     LAST_RD_TEMP_ERRORS = sorted(
         [r for r in checked_core if r.rd_status == "RD_ERROR_TEMPORAL"],
-        key=lambda r: (r.score, r.size_gb or r.rd_largest_gb),
+        key=lambda r: _rd_temp_order_key(r, mode),
         reverse=True,
     )
     diag("prepare_qbit_extras", total=len(LAST_QBIT_EXTRAS))
@@ -5159,7 +5202,7 @@ def prepare_results(results, mode, token):
             print(f"Pendientes por error temporal RD (no se dan por muertos): {len(LAST_RD_TEMP_ERRORS)}", flush=True)
         checked = working
 
-    checked.sort(key=lambda r: (1 if _is_working_status(r.rd_status) else 0, 1 if _is_qbt_working_status(r.qbt_status) else 0, r.score, _effective_result_size_gb(r)), reverse=True)
+    checked.sort(key=lambda r: _final_order_key(r, mode), reverse=True)
     cancel_checkpoint("prepare_results.before_export")
     export_results(checked_all, checked)
     return checked
@@ -5263,7 +5306,7 @@ def prepare_quick_btdigg_results(results, mode):
     scored, size_drop = _apply_current_min_size_filter(scored, "quick_btdigg")
     discarded.extend(size_drop)
 
-    scored.sort(key=lambda r: (r.score, _effective_result_size_gb(r)), reverse=True)
+    scored.sort(key=lambda r: _score_order_key(r, mode), reverse=True)
     diag(
         "quick_btdigg_prepare_end",
         relevant=len(scored),

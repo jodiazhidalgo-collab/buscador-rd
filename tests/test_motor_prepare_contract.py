@@ -26,6 +26,71 @@ def result(motor, title, score=0, size_gb=2.0):
     )
 
 
+def test_mode_zero_score_is_flat_except_bad_words():
+    motor = load_motor_module()
+
+    clean = motor.score_result(motor.Result(title="Pelicula 2160p REMUX WEB-DL", size_gb=80), mode=0)
+    trash = motor.score_result(motor.Result(title="Pelicula telecine 2160p REMUX", size_gb=80), mode=0)
+    quality = motor.score_result(motor.Result(title="Pelicula 2160p REMUX WEB-DL", size_gb=80), mode=1)
+
+    assert clean.score == 0
+    assert clean.reason == "sin marcas relevantes"
+    assert trash.score == -70
+    assert "-telecine" in trash.reason
+    assert quality.score > 0
+
+
+def test_mode_zero_does_not_add_quality_rescue_query():
+    motor = load_motor_module()
+    original_config = dict(motor.CONFIG)
+    try:
+        motor.CONFIG["quality_mode_extra_btdigg_enabled"] = True
+        motor.CONFIG["quality_mode_extra_btdigg_terms"] = ["2160p"]
+
+        assert motor._quality_mode_extra_btdigg_queries("Venganza 2008", mode=0) == []
+        assert motor._quality_mode_extra_btdigg_queries("Venganza 2008", mode=1) == ["Venganza 2008 2160p"]
+    finally:
+        motor.CONFIG.clear()
+        motor.CONFIG.update(original_config)
+
+
+def test_prepare_results_mode_zero_does_not_use_size_as_tie_breaker(monkeypatch):
+    motor = load_motor_module()
+    calls = {"rd_order": [], "shown": []}
+    small = result(motor, "small-neutral", size_gb=1.0)
+    huge = result(motor, "huge-neutral", size_gb=80.0)
+    trash = result(motor, "trash-cam", size_gb=100.0)
+    scores = {"small-neutral": 0, "huge-neutral": 0, "trash-cam": -70}
+
+    def fake_score(r, mode):
+        r.score = scores[r.title]
+        return r
+
+    def fake_rd_check(rows, token):
+        calls["rd_order"] = [r.title for r in rows]
+        for r in rows:
+            r.rd_status = "NO_CACHE"
+        return rows
+
+    monkeypatch.setattr(motor, "cancel_checkpoint", lambda *args, **kwargs: None)
+    monkeypatch.setattr(motor, "diag", lambda *args, **kwargs: None)
+    monkeypatch.setattr(motor, "score_result", fake_score)
+    monkeypatch.setattr(motor, "_query_relevance_bucket", lambda r: "primary")
+    monkeypatch.setattr(motor, "_apply_current_min_size_filter", lambda rows, stage: (list(rows), []))
+    monkeypatch.setattr(motor, "rd_check_availability", fake_rd_check)
+    monkeypatch.setattr(motor, "qbt_probe_candidates", lambda rows: rows)
+    monkeypatch.setattr(motor, "export_results", lambda all_rows, shown: calls.__setitem__("shown", [r.title for r in shown]))
+    motor.CONFIG["strict_query_prefilter"] = True
+    motor.CONFIG["rd_rescue_enabled"] = False
+    motor.CONFIG["hide_non_working_results"] = False
+
+    shown = motor.prepare_results([small, huge, trash], mode=0, token="")
+
+    assert calls["rd_order"] == ["small-neutral", "huge-neutral", "trash-cam"]
+    assert [r.title for r in shown] == ["small-neutral", "huge-neutral", "trash-cam"]
+    assert calls["shown"] == ["small-neutral", "huge-neutral", "trash-cam"]
+
+
 def test_prepare_results_scores_filters_sorts_qbit_extras_and_exports(monkeypatch):
     motor = load_motor_module()
     scores = {"best": 90, "good": 50, "bad": -600}
