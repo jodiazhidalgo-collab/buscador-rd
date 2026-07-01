@@ -1,4 +1,6 @@
 import importlib.util
+import os
+import shutil
 import sys
 import time
 import unittest
@@ -7,6 +9,10 @@ from unittest.mock import patch
 
 
 APP_DIR = Path(__file__).resolve().parents[1] / "app"
+PROJECT_ROOT = APP_DIR.parent
+TEST_DATA_DIR = PROJECT_ROOT / "_codex_runtime" / "test-data" / "test_job_cancel"
+os.environ["DATA_DIR"] = str(TEST_DATA_DIR)
+
 if str(APP_DIR) not in sys.path:
     sys.path.insert(0, str(APP_DIR))
 
@@ -21,11 +27,14 @@ create_app = app_module.create_app
 
 class JobCancelTests(unittest.TestCase):
     def setUp(self):
+        shutil.rmtree(TEST_DATA_DIR, ignore_errors=True)
+        TEST_DATA_DIR.mkdir(parents=True, exist_ok=True)
         self.client = create_app().test_client()
         self._clear_jobs()
 
     def tearDown(self):
         self._clear_jobs()
+        shutil.rmtree(TEST_DATA_DIR, ignore_errors=True)
 
     def _clear_jobs(self):
         with jobmod.lock:
