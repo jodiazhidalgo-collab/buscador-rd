@@ -62,6 +62,8 @@ def test_removed_prefilter_ratio_setting_is_not_in_default_config():
     motor = load_motor_module()
 
     assert "strict_query_prefilter_min_ratio" not in motor.DEFAULT_CONFIG
+    assert "quality_weights" not in motor.DEFAULT_CONFIG
+    assert "quality_weights" not in motor.CONFIG
 
 
 def test_removed_mode_two_is_treated_as_sin_filtro():

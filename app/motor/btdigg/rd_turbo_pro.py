@@ -331,14 +331,6 @@ DEFAULT_CONFIG = {
     "torznab_max_results": 30,
     "language_good": ["castellano", "castilian", "espanol", "spanish", "esp", "es-en", "cast", "spa"],
     "language_bad": ["latino", "latin", "vose", "subtitulado"],
-    "quality_weights": {
-        "2160p": 35, "4k": 35, "uhd": 32,
-        "remux": 30, "bdremux": 35,
-        "bluray": 24, "blu-ray": 24,
-        "1080p": 22, "web-dl": 16, "webrip": 12,
-        "h265": 10, "x265": 10, "hevc": 10,
-        "hdr": 8, "dv": 7, "720p": 5, "10bit": 8, "10bits": 8, "dts": 5, "truehd": 8, "atmos": 8,
-    },
     "bad_words": [
         "cam", "camrip", "ts", "telesync", "screener", "hdcam", "hdts", "workprint",
         "telecine", "hdtc", "dvdscr", "dvdscreener", "bdscr", "webscr", "webscreener",
@@ -2838,48 +2830,6 @@ def _score_bad_words(text, score, found):
             found.append(f"-{w}")
     return score
 
-def _hit_any(text, aliases):
-    return any(_word_hit(alias, text) for alias in aliases)
-
-def _configured_quality_weight(default, aliases):
-    weights = CONFIG.get("quality_weights", {}) or {}
-    found = []
-    for alias in aliases:
-        if alias in weights:
-            try:
-                found.append(int(weights[alias]))
-            except Exception:
-                pass
-    return max(found) if found else int(default)
-
-_QUALITY_ALIAS_GROUPS = (
-    ("2160p", 35, ("2160p", "4k", "uhd", "ultra hd", "ultrahd")),
-    ("bdremux", 35, ("bdremux", "bd remux")),
-    ("remux", 30, ("remux",)),
-    ("bluray", 24, ("bluray", "blu-ray", "blu ray")),
-    ("1080p", 22, ("1080p",)),
-    ("web-dl", 16, ("web-dl", "webdl", "web dl")),
-    ("webrip", 12, ("webrip", "web rip")),
-    ("h265", 10, ("h265", "x265", "hevc")),
-    ("hdr", 8, ("hdr", "hdr10", "hdr10plus", "hdr10 plus")),
-    ("dv", 7, ("dv", "dolby vision")),
-    ("720p", 5, ("720p",)),
-    ("10bit", 8, ("10bit", "10bits", "10 bit", "10 bits")),
-    ("dts-hd", 8, ("dts-hd", "dts hd", "dtshd")),
-    ("dts", 5, ("dts",)),
-    ("truehd", 8, ("truehd", "true hd")),
-    ("atmos", 8, ("atmos",)),
-)
-
-_EXTRA_ALIAS_GROUPS = (
-    ("bdrip", -8, ("bdrip", "bd rip")),
-    ("brrip", -8, ("brrip", "br rip")),
-    ("dvdrip", -25, ("dvdrip", "dvd rip")),
-    ("xvid", -20, ("xvid",)),
-    ("hdrip", -15, ("hdrip", "hd rip")),
-    ("ac3", 3, ("ac3", "ac 3")),
-)
-
 _QUALITY_PURE_4K_ALIASES = ("2160p", "4k", "uhd", "ultra hd", "ultrahd")
 
 def _quality_pure_4k_label(text):
@@ -2978,39 +2928,6 @@ def score_result(r, mode):
         r.score = score
         r.reason = ", ".join(found) if found else "sin marcas relevantes"
         return r
-
-    # Calidad: cada familia de alias puntua una sola vez.
-    bdremux_hit = _hit_any(text, ("bdremux", "bd remux"))
-    dts_hd_hit = _hit_any(text, ("dts-hd", "dts hd", "dtshd"))
-    for label, default_weight, aliases in _QUALITY_ALIAS_GROUPS:
-        if label == "remux" and bdremux_hit:
-            continue
-        if label == "dts" and dts_hd_hit:
-            continue
-        if _hit_any(text, aliases):
-            weight = _configured_quality_weight(default_weight, aliases)
-            score += weight
-            found.append(f"+{label}")
-
-    # Extras realistas, tambien agrupados por alias.
-    for label, weight, aliases in _EXTRA_ALIAS_GROUPS:
-        if _hit_any(text, aliases):
-            score += weight
-            found.append(f"{label}:{weight:+d}")
-
-    if r.size_gb:
-        if CONFIG.get("min_size_gb", 0) <= r.size_gb <= CONFIG.get("max_size_gb", 9999):
-            # Da puntos por tamaño, pero no dejes que una burrada mande por encima de calidad.
-            score += min(25, max(0, int(r.size_gb // 3)))
-            found.append(f"+size:{r.size_gb:.1f}GB")
-        else:
-            score -= 35
-            found.append("tamaño_raro")
-
-    lang_good = [normalize(x) for x in CONFIG.get("language_good", [])]
-    lang_bad = [normalize(x) for x in CONFIG.get("language_bad", [])]
-    has_good_lang = any(_word_hit(w, text) for w in lang_good)
-    has_bad_lang = any(_word_hit(w, text) for w in lang_bad)
 
     score = _score_bad_words(text, score, found)
 
