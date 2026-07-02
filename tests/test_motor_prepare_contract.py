@@ -143,6 +143,19 @@ def test_castellano_required_ignores_quality_adds_soft_size_and_keeps_penalties(
     assert latino.reason == "+idioma_obligatorio, -idioma, +size:80.0GB"
 
 
+def test_castellano_required_language_words_are_cleaned_but_normalized_variants_work():
+    motor = load_motor_module()
+
+    assert motor.CONFIG["language_good"] == ["castellano", "espanol", "spanish", "esp", "es-en", "cast", "spa"]
+    assert motor.score_result(motor.Result(title="Pelicula Dual 1080p", size_gb=10), mode=3).score == -999
+    assert motor.score_result(motor.Result(title="Pelicula Spain 1080p", size_gb=10), mode=3).score == -999
+    assert motor.score_result(motor.Result(title="Pelicula Castellano Dual 1080p", size_gb=10), mode=3).score == 42
+    assert motor.score_result(motor.Result(title="Pelicula Espanol 1080p", size_gb=10), mode=3).score == 42
+    assert motor.score_result(motor.Result(title="Pelicula Español 1080p", size_gb=10), mode=3).score == 42
+    assert motor.score_result(motor.Result(title="Pelicula ES_EN 1080p", size_gb=10), mode=3).score == 42
+    assert motor.score_result(motor.Result(title="Pelicula ES EN 1080p", size_gb=10), mode=3).score == 42
+
+
 def test_prepare_results_mode_zero_does_not_use_size_as_tie_breaker(monkeypatch):
     motor = load_motor_module()
     calls = {"rd_order": [], "shown": []}
