@@ -4100,8 +4100,14 @@ def rd_mark_existing_ok(r, found, idx=0, total=0):
 
 
 def video_ext_ok(path):
-    p = normalize(path or "")
-    return bool(re.search(r"\.(mkv|mp4|avi|m4v|mov|wmv|m2ts|ts)($|[^a-z0-9])", p))
+    base = str(path or "").replace("\\", "/").rsplit("/", 1)[-1].strip().lower()
+    if "." not in base:
+        return False
+    ext = "." + base.rsplit(".", 1)[-1]
+    configured = CONFIG.get("video_extensions", [".mkv", ".mp4", ".avi", ".m4v", ".mov", ".wmv", ".m2ts", ".ts"])
+    allowed = {"." + str(x).lower().lstrip(".") for x in configured if str(x).strip()}
+    allowed.update({".m2ts", ".ts"})
+    return ext in allowed
 
 def _file_bytes(f):
     try:
@@ -4200,8 +4206,8 @@ def _match_context_for_result(r):
 
 def choose_internal_files(info, wanted_title="", wanted_terms=None):
     """
-    Escoge archivos internos seguros.
-    Regla clave: nunca selecciona todo a ciegas. En packs busca el archivo que coincide con la búsqueda.
+    Politica RD actual: seleccionar todos los archivos internos.
+    La caja negra guarda el listado para afinar filtros si hiciera falta.
     """
     files = info.get("files") if isinstance(info, dict) else []
     if not isinstance(files, list) or not files:
@@ -4211,62 +4217,41 @@ def choose_internal_files(info, wanted_title="", wanted_terms=None):
     if not terms and wanted_title:
         terms = query_terms_for_match(wanted_title)
 
-    candidates = []
-    fallback_videos = []
+    evaluated = []
     total_files = len(files)
     total_gb = 0.0
-    title_ratio, title_hits = _match_ratio(terms, wanted_title or "")
-    min_video_gb = float(CONFIG.get("pack_min_video_gb", 0.3) or 0.3)
-    fallback_min_gb = max(min_video_gb, float(CONFIG.get("pack_title_fallback_min_video_gb", 1.0) or 1.0), _current_min_size_gb())
     for f in files:
         path = _file_path(f)
         fid = _file_id(f)
         gb = _file_size_gb(f)
         total_gb += gb
-        if not fid or not path:
-            continue
-        if CONFIG.get("pack_only_video_files", True) and not video_ext_ok(path):
-            continue
         is_extra = _is_extra_video_path(path)
-        if gb and gb < min_video_gb:
-            continue
-        if not is_extra and (gb or 0) >= fallback_min_gb:
-            fallback_videos.append({"id": fid, "path": path, "gb": gb})
         ratio, hits = _match_ratio(terms, path)
-        quality = score_result(Result(title=path, size_gb=gb), 0).score
-        # Penaliza samples y extras.
-        if is_extra:
-            quality -= 100
-        # En torrents con varios archivos, si hay términos claros de búsqueda,
-        # el archivo elegido debe coincidir con la búsqueda; el tamaño solo decide entre coincidencias.
-        is_multi_file = total_files > 1
-        if is_multi_file and terms and ratio < float(CONFIG.get("pack_query_match_min_ratio", 0.55) or 0.55):
-            continue
-        # En torrents pequeños sin términos claros, el vídeo grande gana.
-        score = quality + int(min(60, gb * 2)) + int(ratio * 120)
-        candidates.append({"id": fid, "path": path, "gb": gb, "score": score, "ratio": ratio, "hits": hits})
+        evaluated.append({
+            "file_id": fid,
+            "path": path[:240],
+            "gb": round(float(gb or 0), 3),
+            "is_video_ext": video_ext_ok(path),
+            "is_extra": is_extra,
+            "ratio": round(float(ratio or 0), 3),
+            "hits": hits[:8],
+            "selection": "all",
+            "reason": "seleccion_total_por_politica",
+        })
 
-    if not candidates:
-        if (
-            CONFIG.get("pack_allow_title_single_video_fallback", True)
-            and terms
-            and title_ratio >= 1.0
-            and len(fallback_videos) == 1
-        ):
-            best = fallback_videos[0]
-            note = (
-                f"fallback_titulo_un_video={best['path']} | {best['gb']:.2f} GB | "
-                f"hits_titulo={','.join(title_hits) or '-'} | files_total={total_files}"
-            )
-            return best["id"], best["path"], best["gb"], note
-        # Si no hay candidato, NO seleccionar all: eso era lo peligroso.
-        return "", "", 0.0, f"sin_candidato_video_pack files={total_files} terms={','.join(terms)}"
-
-    candidates.sort(key=lambda x: (x["score"], x["gb"]), reverse=True)
-    best = candidates[0]
-    # Si hay varios trozos reales del mismo título, no hacemos inventos; elegimos el mejor vídeo.
-    note = f"archivo_interno={best['path']} | {best['gb']:.2f} GB | hits={','.join(best['hits']) or '-'} | files_total={total_files}"
-    return best["id"], best["path"], best["gb"], note
+    diag(
+        "rd_choose_file_list",
+        title=str(wanted_title or "")[:160],
+        files_total=total_files,
+        total_size_gb=round(float(total_gb or 0), 3),
+        terms=",".join(terms),
+        policy="select_all",
+        files=evaluated[:80],
+        files_logged=min(len(evaluated), 80),
+        truncated=len(evaluated) > 80,
+    )
+    note = f"seleccion_total_por_politica files={total_files} total={total_gb:.2f}GB terms={','.join(terms)}"
+    return "all", "todos_los_archivos_rd", total_gb, note
 
 def _rd_status_blob(info):
     if not isinstance(info, dict):
@@ -4383,7 +4368,9 @@ def _rd_mark_verify_ok(r, tid, links, idx=0, total=0, ctx=None):
     r.rd_status = "RD_OK"
     r.rd_links = len(links)
     shown_size = r.selected_file_size_gb or r.size_gb or r.rd_largest_gb
-    if r.selected_file_name:
+    if r.selected_file_ids == "all":
+        r.reason = f"Verificado con addMagnet: {len(links)} link(s). Todos los archivos RD seleccionados ({shown_size:.1f} GB)"
+    elif r.selected_file_name:
         r.reason = f"Verificado con addMagnet: {len(links)} link(s). Archivo interno: {r.selected_file_name} ({shown_size:.1f} GB)"
         if "  ==>  " not in r.title:
             r.title = f"{r.title}  ==>  {r.selected_file_name}"
@@ -4398,8 +4385,8 @@ def rd_verify_by_addmagnet(r, token, idx=0, total=0, ctx=None):
     """
     Verificación seria v2.1:
     - Añade magnet a RD.
-    - Si pide selección, NO selecciona todo.
-    - En packs elige solo el archivo interno que coincide con la búsqueda.
+    - Si pide seleccion, selecciona todos los archivos internos por politica.
+    - La caja negra registra el listado interno para afinar filtros despues.
     - Solo marca RD_OK cuando RD entrega link real.
     """
     cancel_checkpoint("rd_verify_by_addmagnet.before")
@@ -4557,6 +4544,8 @@ def rd_verify_by_addmagnet(r, token, idx=0, total=0, ctx=None):
                     cancel_checkpoint("rd_verify_by_addmagnet.before_select")
                     rd_call_with_retry("POST", f"/torrents/selectFiles/{tid}", token, data={"files": ids}, op_name="selectFiles", attempts=retries, retry_context=ctx, retry_429_attempts=retry_429_attempts)
                     selected_once = True
+                    if ids == "all":
+                        diag("rd_select_all_files", id=tid, n=idx, total=total, files="all", files_total=files_count, total_size_gb=round(float(fgb or size_gb or 0), 3), note=note[:500])
                     diag("rd_verify_select_files", id=tid, n=idx, files=ids, file_name=fname[:240], file_size_gb=round(float(fgb or 0), 3), note=note[:500])
                 except Exception as e:
                     diag("rd_verify_select_error", id=tid, n=idx, error=str(e)[:300])
