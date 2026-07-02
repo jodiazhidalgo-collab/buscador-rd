@@ -116,7 +116,7 @@ def test_quality_pure_size_caps_at_twenty_and_bad_words_are_hard_cut():
     assert "basura_calidad_pura" in trash.reason
 
 
-def test_castellano_required_ignores_quality_size_and_extra_query():
+def test_castellano_required_ignores_quality_adds_soft_size_and_keeps_penalties():
     motor = load_motor_module()
 
     high_quality = motor.score_result(
@@ -129,15 +129,18 @@ def test_castellano_required_ignores_quality_size_and_extra_query():
         mode=3,
     )
     trash = motor.score_result(motor.Result(title="Pelicula Castellano CAM 2160p", size_gb=80), mode=3)
+    latino = motor.score_result(motor.Result(title="Pelicula Castellano Latino 2160p", size_gb=80), mode=3)
 
-    assert high_quality.score == 40
-    assert high_quality.reason == "+idioma_obligatorio"
+    assert high_quality.score == 55
+    assert high_quality.reason == "+idioma_obligatorio, +size:80.0GB"
     assert plain.score == 40
     assert plain.reason == "+idioma_obligatorio"
     assert no_language.score == -999
     assert no_language.reason == "sin_idioma"
-    assert trash.score == -30
-    assert trash.reason == "+idioma_obligatorio, -cam"
+    assert trash.score == -15
+    assert trash.reason == "+idioma_obligatorio, +size:80.0GB, -cam"
+    assert latino.score == 15
+    assert latino.reason == "+idioma_obligatorio, -idioma, +size:80.0GB"
 
 
 def test_prepare_results_mode_zero_does_not_use_size_as_tie_breaker(monkeypatch):

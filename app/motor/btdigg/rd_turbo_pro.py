@@ -2966,6 +2966,14 @@ def score_result(r, mode):
             score -= 40
             found.append("-idioma")
 
+        if has_good_lang and r.size_gb:
+            if CONFIG.get("min_size_gb", 0) <= r.size_gb <= CONFIG.get("max_size_gb", 9999):
+                score += min(15, max(0, int(r.size_gb // 4)))
+                found.append(f"+size:{r.size_gb:.1f}GB")
+            else:
+                score -= 35
+                found.append("tamaño_raro")
+
         score = _score_bad_words(text, score, found)
         r.score = score
         r.reason = ", ".join(found) if found else "sin marcas relevantes"
