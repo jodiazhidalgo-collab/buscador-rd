@@ -60,6 +60,7 @@ let lastResultsRefreshAt = 0;
 let voiceRecognition = null;
 let voiceListening = false;
 let voiceResolveSeq = 0;
+let voiceStartTimer = null;
 
 function getUiStateClientId() {
   try {
@@ -319,6 +320,29 @@ function setVoiceButtonState(state) {
   btn.title = state === "listening" ? "Escuchando..." : "Dictar titulo";
 }
 
+function focusQueryForManualInput() {
+  const query = document.getElementById("bQuery");
+  if (!query) return;
+  try {
+    query.focus({ preventScroll: true });
+    query.select();
+  } catch (e) {
+    try { query.focus(); } catch (err) {}
+  }
+}
+
+function showVoiceBlocked(message) {
+  voiceListening = false;
+  voiceRecognition = null;
+  if (voiceStartTimer) {
+    clearTimeout(voiceStartTimer);
+    voiceStartTimer = null;
+  }
+  setVoiceButtonState("idle");
+  setStatus(message || "Micro bloqueado");
+  focusQueryForManualInput();
+}
+
 function setQueryFromVoice(value, shared = true) {
   const query = document.getElementById("bQuery");
   if (!query) return;
@@ -377,7 +401,8 @@ function startVoiceQuery() {
   const Recognition = speechRecognitionCtor();
   if (!Recognition) {
     setVoiceButtonState("unsupported");
-    setStatus("Sin micro");
+    showVoiceBlocked("Sin micro - usa teclado");
+    setVoiceButtonState("unsupported");
     return;
   }
   if (voiceListening && voiceRecognition) {
@@ -393,6 +418,10 @@ function startVoiceQuery() {
   recognition.interimResults = false;
   recognition.maxAlternatives = 3;
   recognition.onstart = () => {
+    if (voiceStartTimer) {
+      clearTimeout(voiceStartTimer);
+      voiceStartTimer = null;
+    }
     setVoiceButtonState("listening");
     setStatus("Escuchando...");
   };
@@ -409,25 +438,29 @@ function startVoiceQuery() {
   recognition.onerror = ev => {
     const err = String((ev && ev.error) || "");
     if (err === "not-allowed" || err === "service-not-allowed") {
-      setStatus("Permiso micro");
+      showVoiceBlocked("Micro bloqueado - usa teclado");
     } else if (err === "no-speech") {
-      setStatus("Sin voz");
+      showVoiceBlocked("Sin voz - usa teclado");
     } else {
-      setStatus("Error micro");
+      showVoiceBlocked("Micro bloqueado - usa teclado");
     }
   };
   recognition.onend = () => {
+    if (voiceStartTimer) {
+      clearTimeout(voiceStartTimer);
+      voiceStartTimer = null;
+    }
     voiceListening = false;
     if (voiceRecognition === recognition) voiceRecognition = null;
     if (!gotResult) setVoiceButtonState("idle");
   };
   try {
     recognition.start();
+    voiceStartTimer = setTimeout(() => {
+      if (voiceListening && !gotResult) showVoiceBlocked("Micro no arranca - usa teclado");
+    }, 3500);
   } catch (e) {
-    voiceListening = false;
-    voiceRecognition = null;
-    setVoiceButtonState("idle");
-    setStatus("Error micro");
+    showVoiceBlocked("Micro bloqueado - usa teclado");
   }
 }
 
