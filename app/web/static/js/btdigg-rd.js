@@ -86,7 +86,7 @@ function readFormState() {
   const mode = document.getElementById("bMode");
   const minGb = document.getElementById("bMinGb");
   return {
-    query: query ? query.value : "2160p",
+    query: query ? query.value : "",
     pages: pages ? pages.value : "",
     mode: mode ? normalizeSearchMode(mode.value) : "0",
     minGb: minGb ? minGb.value : ""
@@ -101,7 +101,7 @@ function focusedFormField() {
 function applyFormState(data) {
   if (!data || typeof data !== "object") return;
   const fields = [
-    ["bQuery", data.query || "2160p"],
+    ["bQuery", data.query || ""],
     ["bPages", data.pages],
     ["bMode", data.mode],
     ["bMinGb", data.minGb]
@@ -117,7 +117,7 @@ function applyFormState(data) {
 function applyJobPayloadToForm(payload) {
   if (!payload || typeof payload !== "object" || focusedFormField()) return;
   applyFormState({
-    query: payload.query || "2160p",
+    query: payload.query || "",
     pages: payload.pages,
     mode: payload.mode,
     minGb: payload.min_gb || payload.minGb
@@ -379,7 +379,7 @@ function restoreFormState() {
     formStateRestored = true;
     return;
   }
-  if (query) query.value = "2160p";
+  if (query) query.value = "";
 }
 
 function settingsVisible() {
@@ -1057,7 +1057,7 @@ function renderLog(module) {
 
 function clearCurrent() {
   const query = document.getElementById("bQuery");
-  if (query) query.value = "2160p";
+  if (query) query.value = "";
   setModuleResults("btdigg", [], true, true);
   moduleLogs.btdigg = ["Limpio. Preparado."];
   renderLog("btdigg");
