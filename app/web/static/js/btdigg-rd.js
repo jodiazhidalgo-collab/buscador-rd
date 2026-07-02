@@ -57,6 +57,9 @@ let lastUiStateRemoteMs = 0;
 let lastLocalUiStateChangeAt = 0;
 let sharedRefreshTimer = null;
 let lastResultsRefreshAt = 0;
+let voiceRecognition = null;
+let voiceListening = false;
+let voiceResolveSeq = 0;
 
 function getUiStateClientId() {
   try {
@@ -282,6 +285,150 @@ function playFinishSound(jobId) {
     const promise = audio.play();
     if (promise && promise.catch) promise.catch(() => {});
   } catch (e) {}
+}
+
+function speechRecognitionCtor() {
+  return window.SpeechRecognition || window.webkitSpeechRecognition || null;
+}
+
+function cleanVoiceTitle(value) {
+  return String(value || "")
+    .trim()
+    .replace(/\s+/g, " ")
+    .replace(/[.,;:!?]+$/g, "")
+    .trim();
+}
+
+function titleQueryWithFlatYear(value) {
+  return cleanVoiceTitle(value).replace(/\s+\((\d{4})\)\s*$/, " $1").trim();
+}
+
+function setVoiceButtonState(state) {
+  const btn = document.getElementById("voiceQueryBtn");
+  if (!btn) return;
+  btn.classList.toggle("is-listening", state === "listening");
+  btn.classList.toggle("is-resolving", state === "resolving");
+  btn.disabled = state === "resolving";
+  if (state === "unsupported") {
+    btn.disabled = false;
+    btn.classList.add("is-unsupported");
+    btn.title = "Micro no disponible en este navegador";
+    return;
+  }
+  btn.classList.remove("is-unsupported");
+  btn.title = state === "listening" ? "Escuchando..." : "Dictar titulo";
+}
+
+function setQueryFromVoice(value, shared = true) {
+  const query = document.getElementById("bQuery");
+  if (!query) return;
+  query.value = cleanVoiceTitle(value);
+  query.dispatchEvent(new Event("input", { bubbles: true }));
+  saveFormState(shared);
+}
+
+function bestVoiceResolvedTitle(data, fallback) {
+  if (!data || data.status !== "resolved" || !data.safe || !data.copy) return "";
+  const copy = data.copy || {};
+  return titleQueryWithFlatYear(
+    copy.es_with_year ||
+    copy.original_with_year ||
+    copy.en_with_year ||
+    copy.english_with_year ||
+    copy.es ||
+    copy.original ||
+    copy.en ||
+    fallback
+  );
+}
+
+async function resolveVoiceTitle(transcript, alternatives) {
+  const seq = ++voiceResolveSeq;
+  setVoiceButtonState("resolving");
+  setStatus("Resolviendo titulo...");
+  try {
+    const evidence = [transcript, ...(alternatives || [])].map(cleanVoiceTitle).filter(Boolean);
+    const response = await fetch("/api/title-resolver/resolve", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        title: transcript,
+        evidence,
+        media_hint: "movie"
+      })
+    });
+    const data = await response.json();
+    if (seq !== voiceResolveSeq) return;
+    const resolved = bestVoiceResolvedTitle(data, transcript);
+    if (response.ok && resolved) {
+      setQueryFromVoice(resolved, true);
+      setStatus("Titulo listo");
+    } else {
+      setStatus("No seguro");
+    }
+  } catch (e) {
+    if (seq === voiceResolveSeq) setStatus("No seguro");
+  } finally {
+    if (seq === voiceResolveSeq) setVoiceButtonState("idle");
+  }
+}
+
+function startVoiceQuery() {
+  const Recognition = speechRecognitionCtor();
+  if (!Recognition) {
+    setVoiceButtonState("unsupported");
+    setStatus("Sin micro");
+    return;
+  }
+  if (voiceListening && voiceRecognition) {
+    try { voiceRecognition.stop(); } catch (e) {}
+    return;
+  }
+  const recognition = new Recognition();
+  voiceRecognition = recognition;
+  voiceListening = true;
+  let gotResult = false;
+  recognition.lang = "es-ES";
+  recognition.continuous = false;
+  recognition.interimResults = false;
+  recognition.maxAlternatives = 3;
+  recognition.onstart = () => {
+    setVoiceButtonState("listening");
+    setStatus("Escuchando...");
+  };
+  recognition.onresult = ev => {
+    const result = ev.results && ev.results[0];
+    if (!result || !result.length) return;
+    const alternatives = Array.from(result).map(item => cleanVoiceTitle(item && item.transcript)).filter(Boolean);
+    const transcript = alternatives[0] || "";
+    if (!transcript) return;
+    gotResult = true;
+    setQueryFromVoice(transcript, true);
+    resolveVoiceTitle(transcript, alternatives);
+  };
+  recognition.onerror = ev => {
+    const err = String((ev && ev.error) || "");
+    if (err === "not-allowed" || err === "service-not-allowed") {
+      setStatus("Permiso micro");
+    } else if (err === "no-speech") {
+      setStatus("Sin voz");
+    } else {
+      setStatus("Error micro");
+    }
+  };
+  recognition.onend = () => {
+    voiceListening = false;
+    if (voiceRecognition === recognition) voiceRecognition = null;
+    if (!gotResult) setVoiceButtonState("idle");
+  };
+  try {
+    recognition.start();
+  } catch (e) {
+    voiceListening = false;
+    voiceRecognition = null;
+    setVoiceButtonState("idle");
+    setStatus("Error micro");
+  }
 }
 
 function setStatus(text) {
@@ -2471,6 +2618,7 @@ async function initApp() {
   restoreFormState();
   restoreActivityState();
   restoreRdFollowState();
+  setVoiceButtonState(speechRecognitionCtor() ? "idle" : "unsupported");
   const restoredShared = await loadSharedUiState(false);
   if (!restoredShared) restoreViewState();
   await loadQbitToggle();
