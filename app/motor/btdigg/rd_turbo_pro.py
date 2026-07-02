@@ -3006,11 +3006,7 @@ def btdigg_search_query(query):
     raw = str(query or "").strip()
     if not raw:
         return raw
-    normalized = normalize(raw)
-    if _query_looks_like_release(normalized):
-        cleaned = " ".join(terms_from_query_for_match(raw))
-        return cleaned or normalized or raw
-    return normalized or raw
+    return normalize(raw) or raw
 
 # ============================================================
 # NAVEGADOR AUTOMÁTICO POR CDP (sin Selenium / sin Playwright)
@@ -4093,72 +4089,12 @@ def _is_extra_video_path(path):
     base = _basename_norm(path)
     return bool(re.search(r"(^|[^a-z0-9])(sample|trailer|extra|extras|featurette|preview)([^a-z0-9]|$)", base))
 
-_PACK_STOP_WORDS = {
-    "the", "and", "con", "los", "las", "una", "uno", "para", "from", "www", "com",
-    "movie", "movies", "film", "films", "peli", "pelicula", "torrent", "bluray", "blu", "ray",
-    "bdrip", "brrip", "dvdrip", "hdrip", "web", "webrip", "webdl", "dl", "remux", "uhd",
-    "hevc", "x265", "h265", "x264", "h264", "2160p", "1080p", "720p", "4k", "hdr",
-    "10bit", "10bits", "dts", "truehd", "atmos", "ac3", "aac", "es", "en", "espanol", "español",
-    "castellano", "spanish", "ingles", "subs", "dual", "multi", "multisubs", "multisub",
-    "multiaudio", "vf2", "vff", "truefrench", "rip", "proper", "repack"
-}
-
-_PACK_STOP_WORDS.update({
-    "bdremux", "uhdremux", "webdlrip", "bdr", "bdripx",
-    "hdr10", "hdr10plus", "bit", "bits", "plus", "hd", "sd", "dtshd", "eac3", "ma",
-    "amzn", "nf", "netflix", "hmax", "dsnp", "disney", "itunes", "atvp",
-    "mkv", "mp4", "avi", "m4v", "mov", "wmv", "m2ts", "iso",
-    "newpct", "pctnew", "elitetorrent", "todotorrente", "wolfmax", "wolfmax4k",
-    "yify", "yts", "rarbg", "swtyblz", "dem3nt3",
-})
-
-_NATURAL_QUERY_WORDS = {
-    "the", "and", "con", "los", "las", "una", "uno", "para", "from", "es", "en",
-}
-
-def _query_looks_like_release(q):
-    return bool(re.search(
-        r"\b(?:2160p|1080p|720p|4k|uhd|bluray|bdrip|brrip|dvdrip|hdrip|web|webdl|webrip|"
-        r"remux|x265|h265|x264|h264|hevc|hdr|hdr10|hdr10plus|dts|truehd|atmos|ac3|eac3|"
-        r"subs|dual|multi|amzn|nf|hmax|dsnp|itunes|yify|yts|rarbg)\b",
-        q,
-    ))
-
-def _is_query_noise_token(token, release_like=True):
-    if not release_like and token in _NATURAL_QUERY_WORDS:
-        return False
-    if token in _PACK_STOP_WORDS:
-        return True
-    if "www" in token:
-        return True
-    return bool(re.fullmatch(
-        r"(?:hdr10plus|hdr10|uhdremux|bdremux|webdlrip|webdl|webrip|[xh]26[45]|10bits?)",
-        token,
-    ))
-
 def terms_from_query_for_match(query):
-    q = normalize(query or "")
-    release_like = _query_looks_like_release(q)
-    # Quita adornos y separadores para quedarnos con palabras reales de búsqueda.
-    # OJO: mantenemos números como 3 y años tipo 2008 porque ayudan a no mezclar títulos.
-    q = re.sub(r"\bhdr\s*10\s*plus\b|\bhdr\s*10\b|\bhdr10plus\b|\bhdr10\b", " ", q)
-    q = re.sub(r"\b(?:5|7|2)\s+1\b|\b(?:5|7|2)\s+0\b", " ", q)
-    q = re.sub(r"\b\d{3,4}p\b|\b\d+bits?\b", " ", q)
-    words = []
-    for raw in re.findall(r"[a-z0-9]+", q):
-        if _is_query_noise_token(raw, release_like=release_like):
-            continue
-        words.append(raw)
     out = []
-    for w in words:
-        if _is_query_noise_token(w, release_like=release_like):
-            continue
-        # Esto sí son adornos técnicos, no identidad de la película/serie.
-        if re.fullmatch(r"\d{3,4}p|\d+bits?", w):
-            continue
-        if w not in out:
-            out.append(w)
-    return out[:8]
+    for token in re.findall(r"[a-z0-9]+", normalize(query or "")):
+        if token not in out:
+            out.append(token)
+    return out
 
 def query_terms_for_match(query=None):
     return terms_from_query_for_match((CURRENT_QUERY if query is None else query) or "")

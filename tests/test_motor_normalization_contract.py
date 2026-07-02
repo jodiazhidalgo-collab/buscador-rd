@@ -91,16 +91,72 @@ def test_clean_manual_query_preserves_short_and_alphanumeric_title_tokens():
         assert hits == expected_terms
 
 
-def test_query_terms_drop_release_noise_without_losing_identity():
+def test_query_terms_keep_every_manual_token_as_title_identity():
     motor = load_motor_module()
 
     assert motor.terms_from_query_for_match(
         "Snatch.2000.2160p.AMZN.WEB-DL.x265.10bit.HDR10Plus.DTS-HD.MA.5.1-SWTYBLZ"
-    ) == ["snatch", "2000"]
+    ) == [
+        "snatch",
+        "2000",
+        "2160p",
+        "amzn",
+        "web",
+        "dl",
+        "x265",
+        "10bit",
+        "hdr10plus",
+        "dts",
+        "hd",
+        "ma",
+        "5",
+        "1",
+        "swtyblz",
+    ]
     assert motor.terms_from_query_for_match(
         "Malditos bastardos 4K UHDremux 2160p HDR10 DTS 5.1 Castellano DTS-HD 5.1 Ingles Subs ES-EN"
-    ) == ["malditos", "bastardos"]
-    assert motor.terms_from_query_for_match("Mad Max 2015 2160p HMAX WEB-DL") == ["mad", "max", "2015"]
+    ) == [
+        "malditos",
+        "bastardos",
+        "4k",
+        "uhdremux",
+        "2160p",
+        "hdr10",
+        "dts",
+        "5",
+        "1",
+        "castellano",
+        "hd",
+        "ingles",
+        "subs",
+        "es",
+        "en",
+    ]
+    assert motor.terms_from_query_for_match("Mad Max 2015 2160p HMAX WEB-DL") == [
+        "mad",
+        "max",
+        "2015",
+        "2160p",
+        "hmax",
+        "web",
+        "dl",
+    ]
+
+
+def test_manual_title_words_that_look_technical_are_not_stripped():
+    motor = load_motor_module()
+
+    cases = [
+        ("The Web 1947", ["the", "web", "1947"]),
+        ("Web 2024", ["web", "2024"]),
+        ("Remux 2020", ["remux", "2020"]),
+        ("HD 2018", ["hd", "2018"]),
+        ("Cam 2024", ["cam", "2024"]),
+    ]
+
+    for query, expected_terms in cases:
+        assert motor.terms_from_query_for_match(query) == expected_terms
+        assert motor.btdigg_search_query(query) == " ".join(expected_terms)
 
 
 def test_btdigg_search_query_is_normalized_for_remote_search():
@@ -114,7 +170,7 @@ def test_btdigg_search_query_is_normalized_for_remote_search():
     assert motor.btdigg_search_query("Se7en 1995") == "se7en 1995"
     assert motor.btdigg_search_query("Fast2Furious") == "fast2furious"
     assert motor.btdigg_search_query("Snatch.2000.2160p.AMZN.WEB-DL.x265.10bit.HDR10Plus") == (
-        "snatch 2000"
+        "snatch 2000 2160p amzn web dl x265 10bit hdr10plus"
     )
 
 
