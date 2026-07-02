@@ -45,10 +45,12 @@ def test_mode_zero_does_not_add_quality_rescue_query():
     original_config = dict(motor.CONFIG)
     try:
         motor.CONFIG["quality_mode_extra_btdigg_enabled"] = True
-        motor.CONFIG["quality_mode_extra_btdigg_terms"] = ["2160p"]
+        motor.CONFIG["quality_mode_extra_btdigg_terms"] = ["2160p", "4K", "UHD"]
 
         assert motor._quality_mode_extra_btdigg_queries("Venganza 2008", mode=0) == []
         assert motor._quality_mode_extra_btdigg_queries("Venganza 2008", mode=1) == ["Venganza 2008 2160p"]
+        assert motor._quality_mode_extra_btdigg_queries("Remux 2020", mode=1) == ["Remux 2020 2160p"]
+        assert motor._quality_mode_extra_btdigg_queries("Venganza 2008 4K", mode=1) == []
     finally:
         motor.CONFIG.clear()
         motor.CONFIG.update(original_config)
@@ -75,25 +77,41 @@ def test_removed_mode_two_is_treated_as_sin_filtro():
     assert motor._quality_mode_extra_btdigg_queries("Venganza 2008", mode=2) == []
 
 
-def test_quality_alias_families_score_once():
+def test_quality_pure_requires_4k_marker_and_ignores_other_quality_aliases():
     motor = load_motor_module()
 
+    full = motor.score_result(
+        motor.Result(title="Pelicula 2160p REMUX WEB-DL x265 HDR10 DTS-HD Atmos", size_gb=0),
+        mode=1,
+    )
     web = motor.score_result(motor.Result(title="Pelicula WEB-DL WEBDL WEB DL", size_gb=0), mode=1)
-    fourk = motor.score_result(motor.Result(title="Pelicula 2160p 4K UHD Ultra HD", size_gb=0), mode=1)
     bluray = motor.score_result(motor.Result(title="Pelicula BluRay Blu-Ray Blu Ray", size_gb=0), mode=1)
-    dts = motor.score_result(motor.Result(title="Pelicula DTS-HD DTS HD DTSHD DTS", size_gb=0), mode=1)
     remux = motor.score_result(motor.Result(title="Pelicula BDRemux REMUX", size_gb=0), mode=1)
+    uhd = motor.score_result(motor.Result(title="Pelicula UHDremux HDR10", size_gb=0), mode=1)
 
-    assert web.score == 16
-    assert web.reason == "+web-dl"
-    assert fourk.score == 35
-    assert fourk.reason == "+2160p"
-    assert bluray.score == 24
-    assert bluray.reason == "+bluray"
-    assert dts.score == 8
-    assert dts.reason == "+dts-hd"
-    assert remux.score == 35
-    assert remux.reason == "+bdremux"
+    assert full.score == 35
+    assert full.reason == "+2160p"
+    assert web.score == -999
+    assert web.reason == "sin_4k"
+    assert bluray.score == -999
+    assert bluray.reason == "sin_4k"
+    assert remux.score == -999
+    assert remux.reason == "sin_4k"
+    assert uhd.score == 35
+    assert uhd.reason == "+uhd"
+
+
+def test_quality_pure_size_caps_at_twenty_and_bad_words_are_hard_cut():
+    motor = load_motor_module()
+
+    large = motor.score_result(motor.Result(title="Pelicula 2160p", size_gb=80), mode=1)
+    trash = motor.score_result(motor.Result(title="Pelicula 2160p CAM", size_gb=80), mode=1)
+
+    assert large.score == 55
+    assert large.reason == "+2160p, +size:80.0GB"
+    assert trash.score == -999
+    assert "-cam" in trash.reason
+    assert "basura_calidad_pura" in trash.reason
 
 
 def test_prepare_results_mode_zero_does_not_use_size_as_tie_breaker(monkeypatch):

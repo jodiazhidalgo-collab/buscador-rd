@@ -2880,6 +2880,37 @@ _EXTRA_ALIAS_GROUPS = (
     ("ac3", 3, ("ac3", "ac 3")),
 )
 
+_QUALITY_PURE_4K_ALIASES = ("2160p", "4k", "uhd", "ultra hd", "ultrahd")
+
+def _quality_pure_4k_label(text):
+    for alias in _QUALITY_PURE_4K_ALIASES:
+        if _word_hit(alias, text):
+            return alias
+    return ""
+
+def _result_quality_pure_4k_label(r):
+    for value in (
+        getattr(r, "title", ""),
+        getattr(r, "btdigg_file_name", ""),
+        getattr(r, "selected_file_name", ""),
+    ):
+        label = _quality_pure_4k_label(value)
+        if label:
+            return label
+
+    terms = query_terms_for_match()
+    context = getattr(r, "raw_context", "") or ""
+    for c in _candidate_file_lines_from_context(context):
+        if c.get("kind") != "video":
+            continue
+        name = c.get("name", "")
+        label = _quality_pure_4k_label(name)
+        if not label:
+            continue
+        if not terms or _match_ratio(terms, name)[0] >= 1.0:
+            return label
+    return ""
+
 def score_result(r, mode):
     mode = coerce_mode(mode)
     original_context = getattr(r, "raw_context", "") or r.reason or ""
@@ -2889,6 +2920,32 @@ def score_result(r, mode):
 
     if _is_sin_filtro_mode(mode):
         score = _score_bad_words(text, score, found)
+        r.score = score
+        r.reason = ", ".join(found) if found else "sin marcas relevantes"
+        return r
+
+    if mode == 1:
+        score = _score_bad_words(text, score, found)
+        if found:
+            r.score = -999
+            r.reason = ", ".join(found + ["basura_calidad_pura"])
+            return r
+
+        label = _result_quality_pure_4k_label(r)
+        if not label:
+            r.score = -999
+            r.reason = "sin_4k"
+            return r
+
+        score += 35
+        found.append(f"+{label}")
+        if r.size_gb:
+            if CONFIG.get("min_size_gb", 0) <= r.size_gb <= CONFIG.get("max_size_gb", 9999):
+                score += min(20, max(0, int(r.size_gb // 3)))
+                found.append(f"+size:{r.size_gb:.1f}GB")
+            else:
+                score -= 35
+                found.append("tamaño_raro")
         r.score = score
         r.reason = ", ".join(found) if found else "sin marcas relevantes"
         return r
@@ -3697,15 +3754,18 @@ def _quality_mode_extra_btdigg_queries(query, mode=0):
     mode = coerce_mode(mode)
     if not CONFIG.get("quality_mode_extra_btdigg_enabled", True):
         return []
-    if _query_has_quality_marker(query):
-        return []
     if _is_sin_filtro_mode(mode):
+        return []
+    if mode == 1:
+        if _quality_pure_4k_label(query):
+            return []
+    elif _query_has_quality_marker(query):
         return []
     # En calidad pura siempre interesa mirar 2160p. En modo normal lo hacemos solo
     # cuando la busqueda trae numero/año claro, para no abrir demasiado la puerta.
     if mode != 1 and not _query_has_identity_number(query):
         return []
-    terms = CONFIG.get("quality_mode_extra_btdigg_terms", ["2160p"])
+    terms = ["2160p"] if mode == 1 else CONFIG.get("quality_mode_extra_btdigg_terms", ["2160p"])
     if isinstance(terms, str):
         terms = [x.strip() for x in re.split(r"[,;|]+", terms) if x.strip()]
     out = []
