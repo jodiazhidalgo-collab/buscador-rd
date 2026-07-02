@@ -68,6 +68,18 @@ def test_query_matching_ignores_accents_and_common_separators():
     assert hits == ["five", "nights", "freddys"]
 
 
+def test_query_terms_drop_release_noise_without_losing_identity():
+    motor = load_motor_module()
+
+    assert motor.terms_from_query_for_match(
+        "Snatch.2000.2160p.AMZN.WEB-DL.x265.10bit.HDR10Plus.DTS-HD.MA.5.1-SWTYBLZ"
+    ) == ["snatch", "2000"]
+    assert motor.terms_from_query_for_match(
+        "Malditos bastardos 4K UHDremux 2160p HDR10 DTS 5.1 Castellano DTS-HD 5.1 Ingles Subs ES-EN"
+    ) == ["malditos", "bastardos"]
+    assert motor.terms_from_query_for_match("Mad Max 2015 2160p HMAX WEB-DL") == ["mad", "max", "2015"]
+
+
 def test_btdigg_search_query_is_normalized_for_remote_search():
     motor = load_motor_module()
 

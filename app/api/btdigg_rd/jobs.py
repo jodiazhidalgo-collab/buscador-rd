@@ -518,6 +518,9 @@ def start_job(payload: dict[str, Any]) -> str:
     query = str(payload.get("query") or "").strip()
     pages = _payload_or_config(payload, "pages", cfg, "default_pages", "1")
     mode = _payload_or_config(payload, "mode", cfg, "default_mode", "0")
+    mode = str(mode).strip()
+    if mode not in {"0", "1", "3"}:
+        mode = "0"
     min_gb = _payload_or_config(payload, "min_gb", cfg, "min_size_gb", "")
     cmd = [
         sys.executable,

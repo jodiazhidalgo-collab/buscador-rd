@@ -212,7 +212,11 @@ def do_search(engine, args):
     token = engine.read_token()
     query = (args.query or "").strip()
     pages = (args.pages or str(engine.CONFIG.get("default_pages", "1-5"))).strip()
-    mode = int(args.mode)
+    try:
+        raw_mode = int(float(str(args.mode or 0).strip() or 0))
+    except Exception:
+        raw_mode = 0
+    mode = engine.coerce_mode(raw_mode) if hasattr(engine, "coerce_mode") else raw_mode
     min_gb = parse_min_gb(engine, args.min_gb)
 
     if not query:
@@ -356,7 +360,7 @@ def main():
     parser.add_argument("--send", action="store_true")
     parser.add_argument("--query", default="")
     parser.add_argument("--pages", default="1-5")
-    parser.add_argument("--mode", default="2")
+    parser.add_argument("--mode", default="0")
     parser.add_argument("--min-gb", default="")
     parser.add_argument("--choice", default="")
     args = parser.parse_args()

@@ -21,6 +21,12 @@ const finishSoundUrl = "/static/sounds/applepay.mp3";
 const finishSoundVolume = 0.55;
 const notifiedJobs = {};
 let qbitSearchEnabled = true;
+const searchModeValues = new Set(["0", "1", "3"]);
+
+function normalizeSearchMode(value) {
+  const mode = String(value ?? "").trim();
+  return searchModeValues.has(mode) ? mode : "0";
+}
 
 const formStoreKey = "btdiggRd.form.v1";
 const viewStoreKey = "btdiggRd.view.v1";
@@ -82,7 +88,7 @@ function readFormState() {
   return {
     query: query ? query.value : "2160p",
     pages: pages ? pages.value : "",
-    mode: mode ? mode.value : "",
+    mode: mode ? normalizeSearchMode(mode.value) : "0",
     minGb: minGb ? minGb.value : ""
   };
 }
@@ -103,6 +109,7 @@ function applyFormState(data) {
   fields.forEach(([id, value]) => {
     const el = document.getElementById(id);
     if (!el || document.activeElement === el || value === undefined) return;
+    if (id === "bMode") value = normalizeSearchMode(value);
     el.value = value;
   });
 }
@@ -1358,7 +1365,7 @@ function searchBT() {
     action: "search",
     query: document.getElementById("bQuery").value,
     pages: document.getElementById("bPages").value,
-    mode: document.getElementById("bMode").value,
+    mode: normalizeSearchMode(document.getElementById("bMode").value),
     min_gb: document.getElementById("bMinGb").value
   });
 }
@@ -2107,6 +2114,7 @@ function setControlValue(id, value) {
   const el = document.getElementById(id);
   if (!el || value === null || value === undefined) return;
   if (formStateRestored && el.value) return;
+  if (id === "bMode") value = normalizeSearchMode(value);
   el.value = String(value);
 }
 

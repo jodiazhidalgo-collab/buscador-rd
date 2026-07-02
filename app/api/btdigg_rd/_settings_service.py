@@ -8,7 +8,7 @@ from ._runtime_config_service import PUBLIC_RUNTIME_DEFAULTS, load_effective_run
 
 
 SETTINGS_SCHEMA: list[dict[str, Any]] = [
-    {"key": "default_mode", "label": "Modo por defecto", "help": "0 sin filtro, 1 calidad, 2 castellano preferente, 3 castellano obligatorio.", "type": "select", "options": [{"value": 0, "label": "Sin filtro"}, {"value": 1, "label": "Calidad pura"}, {"value": 2, "label": "Castellano preferente"}, {"value": 3, "label": "Castellano obligatorio"}]},
+    {"key": "default_mode", "label": "Modo por defecto", "help": "0 sin filtro, 1 calidad, 3 castellano obligatorio.", "type": "select", "options": [{"value": 0, "label": "Sin filtro"}, {"value": 1, "label": "Calidad pura"}, {"value": 3, "label": "Castellano obligatorio"}]},
     {"key": "default_pages", "label": "Páginas BTDigg", "help": "Páginas normales a revisar. Ejemplo: 1, 1-3 o 1-5.", "type": "text"},
     {"key": "safe_max_pages_when_zero", "label": "Límite si páginas = 0", "help": "Tope de seguridad cuando se pide revisar todo.", "type": "int", "min": 1, "max": 200},
     {"key": "max_results_to_show", "label": "Resultados en pantalla", "help": "Cuántos resultados enseña como máximo.", "type": "int", "min": 1, "max": 300},
@@ -79,6 +79,10 @@ def public_settings_payload(cfg: dict[str, Any]) -> dict[str, Any]:
         value = cfg.get(spec["key"], default)
         if value is None:
             value = default
+        if spec.get("type") == "select":
+            allowed = [option.get("value") for option in spec.get("options", [])]
+            if value not in allowed:
+                value = default
         item["default"] = default
         item["value"] = value
         fields.append(item)

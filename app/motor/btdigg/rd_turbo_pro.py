@@ -2820,11 +2820,17 @@ def _apply_current_min_size_filter(items, stage):
         print(f"Filtro tamano calidad: {len(kept)}/{len(items)} siguen con {_current_min_size_text()}.")
     return kept, discarded
 
-def _is_sin_filtro_mode(mode):
+VALID_MODES = {0, 1, 3}
+
+def coerce_mode(mode):
     try:
-        return int(mode or 0) == 0
+        value = int(float(str(mode if mode is not None else 0).strip() or 0))
     except Exception:
-        return False
+        value = 0
+    return value if value in VALID_MODES else 0
+
+def _is_sin_filtro_mode(mode):
+    return coerce_mode(mode) == 0
 
 def _score_bad_words(text, score, found):
     for w in CONFIG.get("bad_words", []):
@@ -2833,7 +2839,50 @@ def _score_bad_words(text, score, found):
             found.append(f"-{w}")
     return score
 
+def _hit_any(text, aliases):
+    return any(_word_hit(alias, text) for alias in aliases)
+
+def _configured_quality_weight(default, aliases):
+    weights = CONFIG.get("quality_weights", {}) or {}
+    found = []
+    for alias in aliases:
+        if alias in weights:
+            try:
+                found.append(int(weights[alias]))
+            except Exception:
+                pass
+    return max(found) if found else int(default)
+
+_QUALITY_ALIAS_GROUPS = (
+    ("2160p", 35, ("2160p", "4k", "uhd", "ultra hd", "ultrahd")),
+    ("bdremux", 35, ("bdremux", "bd remux")),
+    ("remux", 30, ("remux",)),
+    ("bluray", 24, ("bluray", "blu-ray", "blu ray")),
+    ("1080p", 22, ("1080p",)),
+    ("web-dl", 16, ("web-dl", "webdl", "web dl")),
+    ("webrip", 12, ("webrip", "web rip")),
+    ("h265", 10, ("h265", "x265", "hevc")),
+    ("hdr", 8, ("hdr", "hdr10", "hdr10plus", "hdr10 plus")),
+    ("dv", 7, ("dv", "dolby vision")),
+    ("720p", 5, ("720p",)),
+    ("10bit", 8, ("10bit", "10bits", "10 bit", "10 bits")),
+    ("dts-hd", 8, ("dts-hd", "dts hd", "dtshd")),
+    ("dts", 5, ("dts",)),
+    ("truehd", 8, ("truehd", "true hd")),
+    ("atmos", 8, ("atmos",)),
+)
+
+_EXTRA_ALIAS_GROUPS = (
+    ("bdrip", -8, ("bdrip", "bd rip")),
+    ("brrip", -8, ("brrip", "br rip")),
+    ("dvdrip", -25, ("dvdrip", "dvd rip")),
+    ("xvid", -20, ("xvid",)),
+    ("hdrip", -15, ("hdrip", "hd rip")),
+    ("ac3", 3, ("ac3", "ac 3")),
+)
+
 def score_result(r, mode):
+    mode = coerce_mode(mode)
     original_context = getattr(r, "raw_context", "") or r.reason or ""
     text = normalize(r.title + " " + original_context)
     score = 0
@@ -2845,22 +2894,24 @@ def score_result(r, mode):
         r.reason = ", ".join(found) if found else "sin marcas relevantes"
         return r
 
-    # Calidad: puntua en modos con criterio.
-    for word, weight in CONFIG.get("quality_weights", {}).items():
-        if _word_hit(word, text):
-            score += int(weight)
-            found.append(f"+{word}")
-
-    # Pesos extra realistas.
-    extras = {
-        "bdrip": -8, "brrip": -8, "dvdrip": -25, "xvid": -20,
-        "hdrip": -15, "webdl": 16, "web dl": 16,
-        "ac3": 3, "dts-hd": 8, "dts hd": 8,
-    }
-    for word, weight in extras.items():
-        if _word_hit(word, text):
+    # Calidad: cada familia de alias puntua una sola vez.
+    bdremux_hit = _hit_any(text, ("bdremux", "bd remux"))
+    dts_hd_hit = _hit_any(text, ("dts-hd", "dts hd", "dtshd"))
+    for label, default_weight, aliases in _QUALITY_ALIAS_GROUPS:
+        if label == "remux" and bdremux_hit:
+            continue
+        if label == "dts" and dts_hd_hit:
+            continue
+        if _hit_any(text, aliases):
+            weight = _configured_quality_weight(default_weight, aliases)
             score += weight
-            found.append(f"{word}:{weight:+d}")
+            found.append(f"+{label}")
+
+    # Extras realistas, tambien agrupados por alias.
+    for label, weight, aliases in _EXTRA_ALIAS_GROUPS:
+        if _hit_any(text, aliases):
+            score += weight
+            found.append(f"{label}:{weight:+d}")
 
     if r.size_gb:
         if CONFIG.get("min_size_gb", 0) <= r.size_gb <= CONFIG.get("max_size_gb", 9999):
@@ -2876,14 +2927,7 @@ def score_result(r, mode):
     has_good_lang = any(_word_hit(w, text) for w in lang_good)
     has_bad_lang = any(_word_hit(w, text) for w in lang_bad)
 
-    if mode == 2:
-        if has_good_lang:
-            score += 25
-            found.append("+idioma")
-        if has_bad_lang:
-            score -= 12
-            found.append("-idioma")
-    elif mode == 3:
+    if mode == 3:
         if has_good_lang:
             score += 40
             found.append("+idioma_obligatorio")
@@ -3688,6 +3732,7 @@ def _query_has_identity_number(query):
     return bool(re.search(r"\b\d{1,2}\b", text))
 
 def _quality_mode_extra_btdigg_queries(query, mode=0):
+    mode = coerce_mode(mode)
     if not CONFIG.get("quality_mode_extra_btdigg_enabled", True):
         return []
     if _query_has_quality_marker(query):
@@ -3696,7 +3741,7 @@ def _quality_mode_extra_btdigg_queries(query, mode=0):
         return []
     # En calidad pura siempre interesa mirar 2160p. En modo normal lo hacemos solo
     # cuando la busqueda trae numero/año claro, para no abrir demasiado la puerta.
-    if int(mode or 0) != 1 and not _query_has_identity_number(query):
+    if mode != 1 and not _query_has_identity_number(query):
         return []
     terms = CONFIG.get("quality_mode_extra_btdigg_terms", ["2160p"])
     if isinstance(terms, str):
@@ -4092,14 +4137,36 @@ _PACK_STOP_WORDS = {
     "multiaudio", "vf2", "vff", "truefrench", "rip", "proper", "repack"
 }
 
+_PACK_STOP_WORDS.update({
+    "bdremux", "uhdremux", "webdlrip", "bdr", "bdripx",
+    "hdr10", "hdr10plus", "bit", "bits", "plus", "dtshd", "eac3", "ma",
+    "amzn", "nf", "netflix", "hmax", "dsnp", "disney", "itunes", "atvp",
+    "mkv", "mp4", "avi", "m4v", "mov", "wmv", "m2ts", "iso",
+    "newpct", "pctnew", "elitetorrent", "todotorrente", "wolfmax", "wolfmax4k",
+    "yify", "yts", "rarbg", "swtyblz", "dem3nt3",
+})
+
+def _is_query_noise_token(token):
+    if token in _PACK_STOP_WORDS:
+        return True
+    if "www" in token:
+        return True
+    return bool(re.fullmatch(
+        r"(?:hdr10plus|hdr10|uhdremux|bdremux|webdlrip|webdl|webrip|[xh]26[45]|10bits?|"
+        r"[257]1|[257]0)",
+        token,
+    ))
+
 def terms_from_query_for_match(query):
     q = normalize(query or "")
     # Quita adornos y separadores para quedarnos con palabras reales de búsqueda.
     # OJO: mantenemos números como 3 y años tipo 2008 porque ayudan a no mezclar títulos.
+    q = re.sub(r"\bhdr\s*10\s*plus\b|\bhdr\s*10\b|\bhdr10plus\b|\bhdr10\b", " ", q)
+    q = re.sub(r"\b(?:5|7|2)\s+1\b|\b(?:5|7|2)\s+0\b", " ", q)
     q = re.sub(r"\b\d{3,4}p\b|\b\d+bits?\b", " ", q)
     words = []
     for raw in re.findall(r"[a-z0-9]+", q):
-        if raw in _PACK_STOP_WORDS:
+        if _is_query_noise_token(raw):
             continue
         parts = re.findall(r"[a-z]+|\d{1,4}", raw)
         if len(parts) > 1:
@@ -4108,7 +4175,7 @@ def terms_from_query_for_match(query):
             words.append(raw)
     out = []
     for w in words:
-        if w in _PACK_STOP_WORDS:
+        if _is_query_noise_token(w):
             continue
         # Esto sí son adornos técnicos, no identidad de la película/serie.
         if re.fullmatch(r"\d{3,4}p|\d+bits?", w):
@@ -5145,6 +5212,7 @@ def _prepare_query_prefilter(scored):
 
 def prepare_results(results, mode, token):
     global LAST_QBIT_EXTRAS, LAST_RD_TEMP_ERRORS
+    mode = coerce_mode(mode)
     LAST_QBIT_EXTRAS = []
     LAST_RD_TEMP_ERRORS = []
     cancel_checkpoint("prepare_results.start")
@@ -5321,6 +5389,7 @@ def display_results(results):
 
 def prepare_quick_btdigg_results(results, mode):
     global LAST_QBIT_EXTRAS, LAST_RD_TEMP_ERRORS
+    mode = coerce_mode(mode)
     LAST_QBIT_EXTRAS = []
     LAST_RD_TEMP_ERRORS = []
     diag("quick_btdigg_prepare_start", incoming=len(results), mode=mode, min_size_gb=_current_min_size_gb())
@@ -5740,15 +5809,15 @@ def ask_mode():
     print("\nModo:")
     print("  0) Sin requisitos / sin filtro")
     print("  1) Calidad pura")
-    print("  2) Castellano preferente")
     print("  3) Castellano obligatorio")
-    raw = input(f"Elige modo [{CONFIG.get('default_mode', 2)}]: ").strip()
+    default_mode = coerce_mode(CONFIG.get("default_mode", 0))
+    raw = input(f"Elige modo [{default_mode}]: ").strip()
     if not raw:
-        mode = int(CONFIG.get("default_mode", 2))
-    elif raw in ("0", "1", "2", "3"):
-        mode = int(raw)
+        mode = default_mode
+    elif raw in ("0", "1", "3"):
+        mode = coerce_mode(raw)
     else:
-        mode = int(CONFIG.get("default_mode", 2))
+        mode = default_mode
     if mode == 1:
         CURRENT_MIN_SIZE_GB = ask_quality_min_size()
     return mode

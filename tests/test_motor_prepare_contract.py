@@ -54,6 +54,42 @@ def test_mode_zero_does_not_add_quality_rescue_query():
         motor.CONFIG.update(original_config)
 
 
+def test_removed_mode_two_is_treated_as_sin_filtro():
+    motor = load_motor_module()
+
+    assert motor.coerce_mode(2) == 0
+    assert motor.coerce_mode("2") == 0
+    assert motor.coerce_mode("3") == 3
+
+    legacy = motor.score_result(motor.Result(title="Pelicula castellano 2160p WEB-DL", size_gb=80), mode=2)
+    plain = motor.score_result(motor.Result(title="Pelicula castellano 2160p WEB-DL", size_gb=80), mode=0)
+
+    assert legacy.score == plain.score == 0
+    assert legacy.reason == "sin marcas relevantes"
+    assert motor._quality_mode_extra_btdigg_queries("Venganza 2008", mode=2) == []
+
+
+def test_quality_alias_families_score_once():
+    motor = load_motor_module()
+
+    web = motor.score_result(motor.Result(title="Pelicula WEB-DL WEBDL WEB DL", size_gb=0), mode=1)
+    fourk = motor.score_result(motor.Result(title="Pelicula 2160p 4K UHD Ultra HD", size_gb=0), mode=1)
+    bluray = motor.score_result(motor.Result(title="Pelicula BluRay Blu-Ray Blu Ray", size_gb=0), mode=1)
+    dts = motor.score_result(motor.Result(title="Pelicula DTS-HD DTS HD DTSHD DTS", size_gb=0), mode=1)
+    remux = motor.score_result(motor.Result(title="Pelicula BDRemux REMUX", size_gb=0), mode=1)
+
+    assert web.score == 16
+    assert web.reason == "+web-dl"
+    assert fourk.score == 35
+    assert fourk.reason == "+2160p"
+    assert bluray.score == 24
+    assert bluray.reason == "+bluray"
+    assert dts.score == 8
+    assert dts.reason == "+dts-hd"
+    assert remux.score == 35
+    assert remux.reason == "+bdremux"
+
+
 def test_prepare_results_mode_zero_does_not_use_size_as_tie_breaker(monkeypatch):
     motor = load_motor_module()
     calls = {"rd_order": [], "shown": []}

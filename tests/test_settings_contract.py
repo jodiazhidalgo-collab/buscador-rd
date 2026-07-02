@@ -37,6 +37,8 @@ def test_settings_get_post_contract(client, tmp_path, monkeypatch):
     assert all(field.get("value") is not None for field in fields)
     assert all("default" in field for field in fields)
     assert any(field["key"] == "default_pages" for field in fields)
+    mode_field = next(field for field in fields if field["key"] == "default_mode")
+    assert [option["value"] for option in mode_field["options"]] == [0, 1, 3]
     labels_by_key = {field["key"]: field["label"] for field in fields}
     assert labels_by_key["default_pages"] == "Páginas BTDigg"
     assert labels_by_key["min_size_gb"] == "Tamaño mínimo GB"
@@ -84,6 +86,26 @@ def test_settings_trimmed_config_returns_effective_values_and_defaults(client, t
     assert by_key["default_pages"]["default"] == "1-3"
     assert by_key["max_results_to_show"]["value"] == 80
     assert by_key["verify_wait_sec"]["value"] == 0.25
+
+
+def test_settings_removed_mode_two_falls_back_and_cannot_be_saved(client, tmp_path, monkeypatch):
+    motor_dir = _patch_motor_config(tmp_path, monkeypatch)
+    (motor_dir / "config.json").write_text(
+        json.dumps({"default_mode": 2, "verify_wait_attempts": 1}),
+        encoding="utf-8",
+    )
+
+    response = client.get("/api/settings")
+
+    assert response.status_code == 200
+    fields = response.get_json()["settings"]["btdigg"]["fields"]
+    by_key = {field["key"]: field for field in fields}
+    assert by_key["default_mode"]["value"] == 0
+
+    bad_response = client.post("/api/settings", json={"module": "btdigg", "values": {"default_mode": "2"}})
+
+    assert bad_response.status_code == 400
+    assert bad_response.get_json()["ok"] is False
 
 
 def test_qbit_toggle_contract(client, tmp_path, monkeypatch):

@@ -170,10 +170,9 @@ def _mode_label(value: Any) -> str:
     labels = {
         "0": "Sin filtro",
         "1": "Calidad pura",
-        "2": "Castellano preferente",
         "3": "Castellano obligatorio",
     }
-    return labels.get(str(value), str(value or "Sin filtro"))
+    return labels.get(str(value), "Sin filtro")
 
 
 def _endpoint_label(value: Any) -> str:
