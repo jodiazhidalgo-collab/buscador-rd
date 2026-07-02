@@ -2674,22 +2674,44 @@ def _result_relevant_to_current_query(r):
     r.reason = "Descartado antes de verificar: la búsqueda no coincide en un mismo título/archivo. " + why
     return False
 
-def normalize(s):
+def _ascii_fold(s):
     s = str(s or "").lower()
-    repl = {"á":"a", "é":"e", "í":"i", "ó":"o", "ú":"u", "ñ":"n", "ü":"u"}
-    for a, b in repl.items():
-        s = s.replace(a, b)
-    s = unicodedata.normalize("NFKD", s).encode("ascii", "ignore").decode("ascii")
-    return s
+    return unicodedata.normalize("NFKD", s).encode("ascii", "ignore").decode("ascii")
+
+def normalize(s):
+    s = _ascii_fold(s)
+    s = re.sub(r"[^a-z0-9]+", " ", s)
+    return re.sub(r"\s+", " ", s).strip()
+
+def normalize_compact(s):
+    return re.sub(r"[^a-z0-9]+", "", normalize(s))
+
+_COMPACT_SHORT_WORDS = {"uhd"}
+
+def _word_tokens(s):
+    return re.findall(r"[a-z0-9]+", normalize(s))
 
 def _word_hit(word, text):
-    w = normalize(word)
-    if not w:
+    tokens = _word_tokens(word)
+    if not tokens:
         return False
-    # Para palabras cortas como ts/cam/esp evitamos falsos positivos dentro de otras palabras.
-    if len(w) <= 4 and re.fullmatch(r"[a-z0-9]+", w):
-        return re.search(r"(^|[^a-z0-9])" + re.escape(w) + r"([^a-z0-9]|$)", text) is not None
-    return w in text
+    nt = normalize(text)
+    compact_text = normalize_compact(nt)
+
+    if len(tokens) == 1:
+        w = tokens[0]
+        bounded = re.search(r"(^|[^a-z0-9])" + re.escape(w) + r"([^a-z0-9]|$)", nt) is not None
+        if bounded:
+            return True
+        # Para palabras cortas como ts/cam/esp evitamos falsos positivos dentro de otras palabras.
+        if len(w) <= 4 and w not in _COMPACT_SHORT_WORDS:
+            return False
+        return w in compact_text
+
+    phrase = " ".join(tokens)
+    if re.search(r"(^|[^a-z0-9])" + r"\s+".join(re.escape(t) for t in tokens) + r"([^a-z0-9]|$)", nt):
+        return True
+    return normalize_compact(phrase) in compact_text
 
 def _effective_result_size_gb(r):
     for attr in ("selected_file_size_gb", "btdigg_file_size_gb", "size_gb", "rd_largest_gb", "qbt_size_gb"):
@@ -2968,7 +2990,17 @@ def btdigg_search_query(query):
     final = re.sub(r"\s+", " ", " ".join(out)).strip()
     if changed and normalize(final) != normalize(raw):
         diag("btdigg_query_expanded", original=raw, expanded=final)
-    return final or raw
+    final = final or raw
+    normalized = normalize(final)
+    normalized = re.sub(r"\b(2160|1080|720)\s+p\b", r"\1p", normalized)
+    normalized = re.sub(r"\b([xh])\s*26\s*([45])\b", r"\g<1>26\2", normalized)
+    normalized = re.sub(r"\b10\s+bits?\b", "10bit", normalized)
+    normalized = re.sub(r"\b4\s+k\b", "4k", normalized)
+    normalized = re.sub(r"\beac\s+3\b", "eac3", normalized)
+    normalized = re.sub(r"\bac\s+3\b", "ac3", normalized)
+    normalized = re.sub(r"\bhdr\s+10\s+plus\b", "hdr10plus", normalized)
+    normalized = re.sub(r"\bhdr\s+10\b", "hdr10", normalized)
+    return normalized or final
 
 # ============================================================
 # NAVEGADOR AUTOMÁTICO POR CDP (sin Selenium / sin Playwright)
@@ -3643,7 +3675,11 @@ def search_btdigg_browser_auto(query, page_spec):
 
 def _query_has_quality_marker(query):
     text = normalize(query or "")
-    return bool(re.search(r"\b(?:2160p|1080p|720p|4k|uhd|remux|bdremux|bluray|blu\s*ray|hevc|x265|h265|x264|h264)\b", text))
+    markers = (
+        "2160p", "1080p", "720p", "4k", "uhd", "ultra hd", "ultrahd",
+        "remux", "bdremux", "bluray", "blu ray", "hevc", "x265", "h265", "x264", "h264",
+    )
+    return any(_word_hit(marker, text) for marker in markers)
 
 def _query_has_identity_number(query):
     text = normalize(query or "")
@@ -4089,10 +4125,11 @@ def query_terms_for_match(query=None):
 def _match_ratio(terms, text):
     if not terms:
         return 0.0, []
-    nt = normalize(text or "")
+    raw_text = text or ""
+    nt = normalize(raw_text)
     hits = []
     for t in terms:
-        if _word_hit(t, nt) or _year_covered_by_range(t, nt):
+        if _word_hit(t, nt) or _year_covered_by_range(t, raw_text):
             hits.append(t)
     return len(hits) / max(1, len(terms)), hits
 
@@ -4103,7 +4140,7 @@ def _year_covered_by_range(term, normalized_text):
         year = int(term)
     except Exception:
         return False
-    text = normalize(normalized_text or "")
+    text = _ascii_fold(normalized_text or "")
     for a, b in re.findall(r"\b((?:19|20)\d{2})\s*[-_/]\s*((?:19|20)\d{2})\b", text):
         start, end = int(a), int(b)
         if start > end:
