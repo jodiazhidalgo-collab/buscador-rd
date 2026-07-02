@@ -266,7 +266,6 @@ DEFAULT_CONFIG = {
     "qbit_same_file_min_ratio": 1.0,
     "qbit_show_irrelevant_skipped": False,
     "strict_query_prefilter": True,
-    "strict_query_prefilter_min_ratio": 1.0,
     "strict_query_prefilter_keep_discarded_in_exports": True,
     "rd_rescue_enabled": True,
     "rd_rescue_max_candidates": 5,
@@ -3007,44 +3006,11 @@ def btdigg_search_query(query):
     raw = str(query or "").strip()
     if not raw:
         return raw
-    out = []
-    changed = False
-    for token in re.split(r"\s+", raw):
-        if not token:
-            continue
-        if re.fullmatch(r"(?i)(?:\d{3,4}p|\d+k|x?26[45]|h?26[45]|\d+bits?)", token):
-            out.append(token)
-            continue
-        camel = re.sub(r"(?<=[a-z])(?=[A-Z])", " ", token)
-        parts = re.findall(r"[A-Za-z]+|\d+", camel)
-        if len(parts) >= 2:
-            nums = [p for p in parts if p.isdigit()]
-            split_ok = (
-                any(len(n) >= 2 for n in nums)
-                or (parts[-1].isdigit() and len(parts[-1]) == 1)
-                or bool(re.search(r"\d(?=[A-Z])", token))
-            )
-            if split_ok:
-                out.extend(parts)
-                changed = True
-                continue
-        out.append(camel)
-        if camel != token:
-            changed = True
-    final = re.sub(r"\s+", " ", " ".join(out)).strip()
-    if changed and normalize(final) != normalize(raw):
-        diag("btdigg_query_expanded", original=raw, expanded=final)
-    final = final or raw
-    normalized = normalize(final)
-    normalized = re.sub(r"\b(2160|1080|720)\s+p\b", r"\1p", normalized)
-    normalized = re.sub(r"\b([xh])\s*26\s*([45])\b", r"\g<1>26\2", normalized)
-    normalized = re.sub(r"\b10\s+bits?\b", "10bit", normalized)
-    normalized = re.sub(r"\b4\s+k\b", "4k", normalized)
-    normalized = re.sub(r"\beac\s+3\b", "eac3", normalized)
-    normalized = re.sub(r"\bac\s+3\b", "ac3", normalized)
-    normalized = re.sub(r"\bhdr\s+10\s+plus\b", "hdr10plus", normalized)
-    normalized = re.sub(r"\bhdr\s+10\b", "hdr10", normalized)
-    return normalized or final
+    normalized = normalize(raw)
+    if _query_looks_like_release(normalized):
+        cleaned = " ".join(terms_from_query_for_match(raw))
+        return cleaned or normalized or raw
+    return normalized or raw
 
 # ============================================================
 # NAVEGADOR AUTOMÁTICO POR CDP (sin Selenium / sin Playwright)
@@ -4139,26 +4105,40 @@ _PACK_STOP_WORDS = {
 
 _PACK_STOP_WORDS.update({
     "bdremux", "uhdremux", "webdlrip", "bdr", "bdripx",
-    "hdr10", "hdr10plus", "bit", "bits", "plus", "dtshd", "eac3", "ma",
+    "hdr10", "hdr10plus", "bit", "bits", "plus", "hd", "sd", "dtshd", "eac3", "ma",
     "amzn", "nf", "netflix", "hmax", "dsnp", "disney", "itunes", "atvp",
     "mkv", "mp4", "avi", "m4v", "mov", "wmv", "m2ts", "iso",
     "newpct", "pctnew", "elitetorrent", "todotorrente", "wolfmax", "wolfmax4k",
     "yify", "yts", "rarbg", "swtyblz", "dem3nt3",
 })
 
-def _is_query_noise_token(token):
+_NATURAL_QUERY_WORDS = {
+    "the", "and", "con", "los", "las", "una", "uno", "para", "from", "es", "en",
+}
+
+def _query_looks_like_release(q):
+    return bool(re.search(
+        r"\b(?:2160p|1080p|720p|4k|uhd|bluray|bdrip|brrip|dvdrip|hdrip|web|webdl|webrip|"
+        r"remux|x265|h265|x264|h264|hevc|hdr|hdr10|hdr10plus|dts|truehd|atmos|ac3|eac3|"
+        r"subs|dual|multi|amzn|nf|hmax|dsnp|itunes|yify|yts|rarbg)\b",
+        q,
+    ))
+
+def _is_query_noise_token(token, release_like=True):
+    if not release_like and token in _NATURAL_QUERY_WORDS:
+        return False
     if token in _PACK_STOP_WORDS:
         return True
     if "www" in token:
         return True
     return bool(re.fullmatch(
-        r"(?:hdr10plus|hdr10|uhdremux|bdremux|webdlrip|webdl|webrip|[xh]26[45]|10bits?|"
-        r"[257]1|[257]0)",
+        r"(?:hdr10plus|hdr10|uhdremux|bdremux|webdlrip|webdl|webrip|[xh]26[45]|10bits?)",
         token,
     ))
 
 def terms_from_query_for_match(query):
     q = normalize(query or "")
+    release_like = _query_looks_like_release(q)
     # Quita adornos y separadores para quedarnos con palabras reales de búsqueda.
     # OJO: mantenemos números como 3 y años tipo 2008 porque ayudan a no mezclar títulos.
     q = re.sub(r"\bhdr\s*10\s*plus\b|\bhdr\s*10\b|\bhdr10plus\b|\bhdr10\b", " ", q)
@@ -4166,21 +4146,15 @@ def terms_from_query_for_match(query):
     q = re.sub(r"\b\d{3,4}p\b|\b\d+bits?\b", " ", q)
     words = []
     for raw in re.findall(r"[a-z0-9]+", q):
-        if _is_query_noise_token(raw):
+        if _is_query_noise_token(raw, release_like=release_like):
             continue
-        parts = re.findall(r"[a-z]+|\d{1,4}", raw)
-        if len(parts) > 1:
-            words.extend(parts)
-        else:
-            words.append(raw)
+        words.append(raw)
     out = []
     for w in words:
-        if _is_query_noise_token(w):
+        if _is_query_noise_token(w, release_like=release_like):
             continue
         # Esto sí son adornos técnicos, no identidad de la película/serie.
         if re.fullmatch(r"\d{3,4}p|\d+bits?", w):
-            continue
-        if re.fullmatch(r"[a-z]+", w) and len(w) < 3:
             continue
         if w not in out:
             out.append(w)
@@ -4189,6 +4163,14 @@ def terms_from_query_for_match(query):
 def query_terms_for_match(query=None):
     return terms_from_query_for_match((CURRENT_QUERY if query is None else query) or "")
 
+def _query_term_hit(term, text):
+    if _word_hit(term, text):
+        return True
+    compact = normalize_compact(term)
+    if len(compact) <= 4 and any(ch.isdigit() for ch in compact):
+        return compact in normalize_compact(text)
+    return False
+
 def _match_ratio(terms, text):
     if not terms:
         return 0.0, []
@@ -4196,7 +4178,7 @@ def _match_ratio(terms, text):
     nt = normalize(raw_text)
     hits = []
     for t in terms:
-        if _word_hit(t, nt) or _year_covered_by_range(t, raw_text):
+        if _query_term_hit(t, nt) or _year_covered_by_range(t, raw_text):
             hits.append(t)
     return len(hits) / max(1, len(terms)), hits
 

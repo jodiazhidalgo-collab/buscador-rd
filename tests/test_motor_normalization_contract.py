@@ -58,14 +58,37 @@ def test_query_matching_ignores_accents_and_common_separators():
     motor = load_motor_module()
     terms = motor.terms_from_query_for_match("La niña del día 2024")
 
-    assert terms == ["nina", "del", "dia", "2024"]
+    assert terms == ["la", "nina", "del", "dia", "2024"]
     for title in ("La.nina-del_dia.2024", "La/niña_del-día 2024", "La nina del dia 2024"):
-        assert motor._match_ratio(terms, title) == (1.0, ["nina", "del", "dia", "2024"])
+        assert motor._match_ratio(terms, title) == (1.0, ["la", "nina", "del", "dia", "2024"])
 
     freddy_terms = motor.terms_from_query_for_match("Five Nights at Freddys")
     ratio, hits = motor._match_ratio(freddy_terms, "Five Nights at Freddy's 2")
     assert ratio == 1.0
-    assert hits == ["five", "nights", "freddys"]
+    assert hits == ["five", "nights", "at", "freddys"]
+
+
+def test_clean_manual_query_preserves_short_and_alphanumeric_title_tokens():
+    motor = load_motor_module()
+
+    cases = [
+        ("F1 2025", "F.1.2025.2160p", ["f1", "2025"]),
+        ("M3GAN 2022", "M 3 GAN 2022 1080p", ["m3gan", "2022"]),
+        ("Se7en 1995", "Se7en.1995.BluRay", ["se7en", "1995"]),
+        ("Fast2Furious", "Fast 2 Furious 1080p", ["fast2furious"]),
+        ("It 2017", "It 2017 1080p", ["it", "2017"]),
+        ("Up 2009", "Up 2009 1080p", ["up", "2009"]),
+        ("Us 2019", "Us 2019 1080p", ["us", "2019"]),
+        ("21 Gramos 2003", "21 Gramos 2003 1080p", ["21", "gramos", "2003"]),
+        ("Solo en casa 1990", "Solo.en.casa.1990", ["solo", "en", "casa", "1990"]),
+    ]
+    for query, title, expected_terms in cases:
+        terms = motor.terms_from_query_for_match(query)
+        ratio, hits = motor._match_ratio(terms, title)
+
+        assert terms == expected_terms
+        assert ratio == 1.0
+        assert hits == expected_terms
 
 
 def test_query_terms_drop_release_noise_without_losing_identity():
@@ -86,8 +109,12 @@ def test_btdigg_search_query_is_normalized_for_remote_search():
     assert motor.btdigg_search_query("La Niña.del-Día") == "la nina del dia"
     assert motor.btdigg_search_query("Malditos.bastardos") == "malditos bastardos"
     assert motor.btdigg_search_query("WEB-DL DTS_HD") == "web dl dts hd"
+    assert motor.btdigg_search_query("F1 2025") == "f1 2025"
+    assert motor.btdigg_search_query("M3GAN 2022") == "m3gan 2022"
+    assert motor.btdigg_search_query("Se7en 1995") == "se7en 1995"
+    assert motor.btdigg_search_query("Fast2Furious") == "fast2furious"
     assert motor.btdigg_search_query("Snatch.2000.2160p.AMZN.WEB-DL.x265.10bit.HDR10Plus") == (
-        "snatch 2000 2160p amzn web dl x265 10bit hdr10plus"
+        "snatch 2000"
     )
 
 

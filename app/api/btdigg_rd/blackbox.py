@@ -23,7 +23,6 @@ CONFIG_SNAPSHOT_KEYS = (
     "hide_non_working_results",
     "screen_hide_qbit_not_working",
     "strict_query_prefilter",
-    "strict_query_prefilter_min_ratio",
     "strict_query_prefilter_keep_discarded_in_exports",
     "min_size_gb",
     "max_size_gb",

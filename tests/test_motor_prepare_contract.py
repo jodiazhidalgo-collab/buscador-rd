@@ -54,6 +54,12 @@ def test_mode_zero_does_not_add_quality_rescue_query():
         motor.CONFIG.update(original_config)
 
 
+def test_removed_prefilter_ratio_setting_is_not_in_default_config():
+    motor = load_motor_module()
+
+    assert "strict_query_prefilter_min_ratio" not in motor.DEFAULT_CONFIG
+
+
 def test_removed_mode_two_is_treated_as_sin_filtro():
     motor = load_motor_module()
 
