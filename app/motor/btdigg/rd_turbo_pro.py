@@ -4099,9 +4099,21 @@ def rd_mark_existing_ok(r, found, idx=0, total=0):
     return r
 
 
+def _raw_basename(path):
+    return str(path or "").replace("\\", "/").rsplit("/", 1)[-1].strip()
+
+def _raw_suffix(path):
+    base = _raw_basename(path).lower()
+    if "." not in base:
+        return ""
+    return "." + base.rsplit(".", 1)[-1]
+
 def video_ext_ok(path):
-    p = normalize(path or "")
-    return bool(re.search(r"\.(mkv|mp4|avi|m4v|mov|wmv|m2ts|ts)($|[^a-z0-9])", p))
+    ext = _raw_suffix(path)
+    configured = CONFIG.get("video_extensions", [".mkv", ".mp4", ".avi", ".m4v", ".mov", ".wmv"])
+    allowed = {"." + str(x).lower().lstrip(".") for x in configured if str(x).strip()}
+    allowed.update({".m2ts", ".ts"})
+    return ext in allowed
 
 def _file_bytes(f):
     try:
@@ -4125,6 +4137,18 @@ def _basename_norm(path):
 def _is_extra_video_path(path):
     base = _basename_norm(path)
     return bool(re.search(r"(^|[^a-z0-9])(sample|trailer|extra|extras|featurette|preview)([^a-z0-9]|$)", base))
+
+def _diag_choose_file_eval(fid, path, gb, is_video_ext, is_extra, ratio, skipped_reason):
+    diag(
+        "rd_choose_file_eval",
+        file_id=str(fid or "")[:80],
+        path=str(path or "")[:240],
+        gb=round(float(gb or 0), 3),
+        is_video_ext=bool(is_video_ext),
+        is_extra=bool(is_extra),
+        ratio=round(float(ratio or 0), 3),
+        skipped_reason=str(skipped_reason or "")[:120],
+    )
 
 def terms_from_query_for_match(query):
     out = []
@@ -4224,11 +4248,15 @@ def choose_internal_files(info, wanted_title="", wanted_terms=None):
         gb = _file_size_gb(f)
         total_gb += gb
         if not fid or not path:
+            _diag_choose_file_eval(fid, path, gb, video_ext_ok(path), False, 0.0, "sin_id_o_path")
             continue
-        if CONFIG.get("pack_only_video_files", True) and not video_ext_ok(path):
+        is_video_ext = video_ext_ok(path)
+        if CONFIG.get("pack_only_video_files", True) and not is_video_ext:
+            _diag_choose_file_eval(fid, path, gb, is_video_ext, False, 0.0, "extension_no_video")
             continue
         is_extra = _is_extra_video_path(path)
         if gb and gb < min_video_gb:
+            _diag_choose_file_eval(fid, path, gb, is_video_ext, is_extra, 0.0, "tamano_menor_minimo")
             continue
         if not is_extra and (gb or 0) >= fallback_min_gb:
             fallback_videos.append({"id": fid, "path": path, "gb": gb})
@@ -4241,6 +4269,7 @@ def choose_internal_files(info, wanted_title="", wanted_terms=None):
         # el archivo elegido debe coincidir con la búsqueda; el tamaño solo decide entre coincidencias.
         is_multi_file = total_files > 1
         if is_multi_file and terms and ratio < float(CONFIG.get("pack_query_match_min_ratio", 0.55) or 0.55):
+            _diag_choose_file_eval(fid, path, gb, is_video_ext, is_extra, ratio, "ratio_menor_minimo")
             continue
         # En torrents pequeños sin términos claros, el vídeo grande gana.
         score = quality + int(min(60, gb * 2)) + int(ratio * 120)
