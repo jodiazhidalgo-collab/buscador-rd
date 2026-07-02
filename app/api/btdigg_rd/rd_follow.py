@@ -10,6 +10,7 @@ from .blackbox import trace_folder
 
 
 TRANSLATOR_VERSION = "rd_follow_v2"
+RD_MAGNETS_LIVE_FILE_NAME = "rd_magnets_live.jsonl"
 
 
 IMPORTANT_STATUS = {"RD_OK", "RD_FAIL", "RD_ERROR", "RD_ERROR_TEMPORAL", "PACK_SIN_COINCIDENCIA", "NO_INSTANT"}
@@ -74,6 +75,44 @@ def _read_events(path: Path) -> list[dict[str, Any]]:
     except Exception:
         return out
     return out
+
+
+def _read_rd_magnets(path: Path, limit: int = 160) -> list[dict[str, Any]]:
+    rows: list[dict[str, Any]] = []
+    indexes: dict[str, int] = {}
+    if not path.exists():
+        return rows
+    try:
+        for line in path.read_text(encoding="utf-8").splitlines():
+            line = line.strip()
+            if not line:
+                continue
+            item = json.loads(line)
+            if not isinstance(item, dict):
+                continue
+            magnet = str(item.get("magnet") or "").strip()
+            if not magnet:
+                continue
+            hash_value = str(item.get("hash") or "").strip()
+            key = hash_value.lower() or magnet
+            row = {
+                "seq": item.get("seq"),
+                "ts": item.get("ts"),
+                "n": item.get("n"),
+                "total": item.get("total"),
+                "title": str(item.get("title") or "").strip()[:240],
+                "hash": hash_value[:80],
+                "size_gb": item.get("size_gb"),
+                "magnet": magnet,
+            }
+            if key in indexes:
+                rows[indexes[key]].update(row)
+            else:
+                indexes[key] = len(rows)
+                rows.append(row)
+    except Exception:
+        return []
+    return rows[-max(1, int(limit or 160)) :]
 
 
 def _last(events: list[dict[str, Any]], name: str) -> dict[str, Any] | None:
@@ -649,7 +688,13 @@ def _summary(events: list[dict[str, Any]], summary_file: dict[str, Any]) -> dict
     return result
 
 
-def build_rd_follow(trace_id: str, after: int = 0, max_lines: int = 90, kind: str = "job") -> dict[str, Any]:
+def build_rd_follow(
+    trace_id: str,
+    after: int = 0,
+    max_lines: int = 90,
+    kind: str = "job",
+    include_magnets: bool = True,
+) -> dict[str, Any]:
     folder = trace_folder(kind, trace_id)
     events = _read_events(folder / "events.jsonl")
     summary_file = _read_json(folder / "summary.json")
@@ -689,6 +734,7 @@ def build_rd_follow(trace_id: str, after: int = 0, max_lines: int = 90, kind: st
         "has_diagnostics": bool(events),
         "summary": _summary(events, summary_file),
         "lines": lines,
+        "magnets": _read_rd_magnets(folder / RD_MAGNETS_LIVE_FILE_NAME) if include_magnets else [],
     }
 
 

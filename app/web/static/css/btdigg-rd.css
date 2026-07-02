@@ -348,3 +348,13 @@ h2{margin:0;font-size:15px;letter-spacing:0}
 @media (max-width:620px){.rd-follow-metrics{grid-template-columns:repeat(2,minmax(0,1fr));gap:7px}.rd-follow-wrap{padding:10px}.rd-follow-test-grid{grid-template-columns:1fr}.rd-follow-test-grid.compact-search{grid-template-columns:minmax(0,1fr) 82px;gap:8px}.rd-follow-test-grid.compact-search .field.grow{grid-column:auto}.rd-follow-test-grid.compact-search .actions{grid-column:1/-1;justify-content:stretch}.rd-follow-test-grid.compact-search .btn{flex:1 1 0;min-width:0}.rd-follow-test-grid .setting-item{min-height:94px}.rd-follow-actions{justify-content:stretch}.rd-follow-actions .btn{flex:1 1 150px}.rd-follow-log{height:340px;padding:10px}.rd-follow-line{grid-template-columns:70px minmax(0,1fr) 48px;gap:7px;font-size:13px;line-height:1.5}.rd-follow-marker{padding-left:6px;font-size:9px;line-height:21px}.rd-follow-seconds{font-size:11px;line-height:21px}}
 .rd-follow-log .line{font-size:14px;line-height:1.55}
 @media (max-width:620px){.rd-follow-log .line{font-size:13px}}
+.rd-follow-magnets{max-height:260px;overflow:auto;background:#080b0c;padding:10px 12px;display:grid;gap:0}
+.rd-follow-magnets.is-hidden{display:none}
+.rd-follow-magnet-row{display:grid;grid-template-columns:minmax(0,1fr) 86px;gap:10px;align-items:center;padding:8px 0;border-bottom:1px solid rgba(255,255,255,.045)}
+.rd-follow-magnet-row:last-child{border-bottom:0}
+.rd-follow-magnet-main{min-width:0;display:grid;gap:3px}
+.rd-follow-magnet-title{min-width:0;color:#edf3f1;font-size:13px;font-weight:900;line-height:1.25;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.rd-follow-magnet-meta{min-width:0;color:#8d9999;font-family:Consolas,ui-monospace,monospace;font-size:11px;font-weight:800;line-height:1.25;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.rd-follow-magnet-copy{width:86px;height:30px;justify-self:end}
+.rd-follow-magnet-empty{padding:16px 10px;color:#9fb5b6;font-family:Consolas,ui-monospace,monospace;font-size:13px;font-weight:800;text-align:center}
+@media (max-width:620px){.rd-follow-magnets{max-height:300px;padding:8px 10px}.rd-follow-magnet-row{grid-template-columns:minmax(0,1fr) 74px;gap:8px;padding:9px 0}.rd-follow-magnet-copy{width:74px;padding:0 6px}.rd-follow-magnet-title{font-size:12px}.rd-follow-magnet-meta{font-size:10px}}

@@ -1319,6 +1319,46 @@ def _bb_code(event, data, level):
     return f"{category}.{clean_event or 'EVENT'}"
 
 BLACKBOX_SEQ = None
+RD_MAGNETS_LIVE_FILE_NAME = "rd_magnets_live.jsonl"
+
+def _rd_magnets_live_file():
+    explicit = os.environ.get("BTDIGG_RD_MAGNETS_FILE")
+    if explicit:
+        return Path(explicit)
+    events_path = os.environ.get("BTDIGG_BLACKBOX_EVENTS")
+    if not events_path:
+        return None
+    return Path(events_path).with_name(RD_MAGNETS_LIVE_FILE_NAME)
+
+def record_rd_sent_magnet(r, idx=0, total=0):
+    magnet = str(getattr(r, "magnet", "") or "").strip()
+    if not magnet:
+        return
+    path = _rd_magnets_live_file()
+    if not path:
+        return
+    try:
+        with DIAG_LOCK:
+            path.parent.mkdir(parents=True, exist_ok=True)
+            try:
+                seq = sum(1 for line in path.read_text(encoding="utf-8").splitlines() if line.strip()) + 1
+            except Exception:
+                seq = 1
+            record = {
+                "ts": time.strftime("%Y-%m-%dT%H:%M:%S%z"),
+                "seq": seq,
+                "event": "rd_magnet_sent",
+                "n": int(idx or 0),
+                "total": int(total or 0),
+                "title": str(getattr(r, "title", "") or "")[:240],
+                "hash": str(getattr(r, "hash", "") or "")[:80],
+                "size_gb": round(float(getattr(r, "size_gb", 0) or 0), 3),
+                "magnet": magnet,
+            }
+            with path.open("a", encoding="utf-8") as f:
+                f.write(json.dumps(record, ensure_ascii=False, sort_keys=True, default=str) + "\n")
+    except Exception:
+        pass
 
 def _blackbox_next_seq(events_file):
     global BLACKBOX_SEQ
@@ -4395,6 +4435,7 @@ def rd_verify_by_addmagnet(r, token, idx=0, total=0, ctx=None):
                     ctx.slots.refresh(force=True)
                 reserved_for_add = True
             cancel_checkpoint("rd_verify_by_addmagnet.before_add")
+            record_rd_sent_magnet(r, idx, total)
             res = rd_call_with_retry("POST", "/torrents/addMagnet", token, data={"magnet": r.magnet}, op_name="addMagnet", attempts=retries, retry_context=ctx, retry_429_attempts=retry_429_attempts)
             if ctx and ctx.slots and reserved_for_add:
                 ctx.slots.on_add_success()

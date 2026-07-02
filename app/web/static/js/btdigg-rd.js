@@ -10,7 +10,9 @@ let rdFollowTraceKind = "job";
 let rdFollowCursor = 0;
 let rdFollowLines = [];
 let rdFollowAdvice = [];
+let rdFollowMagnets = [];
 let rdFollowCollapsed = false;
+let rdFollowMagnetsCollapsed = false;
 let resultSort = { btdigg: { key: "index", dir: "asc" } };
 let settingsCache = null;
 let tvRulesCache = null;
@@ -33,6 +35,7 @@ const viewStoreKey = "btdiggRd.view.v1";
 const activityStoreKey = "btdiggRd.activity.v1";
 const activeJobStoreKey = "btdiggRd.activeJob.v1";
 const rdFollowStoreKey = "btdiggRd.rdFollow.v1";
+const rdFollowMagnetsStoreKey = "btdiggRd.rdFollowMagnets.v1";
 const rdFollowTestStoreKey = "btdiggRd.rdFollowTest.v1";
 const uiStateStoreKey = "btdiggRd.uiState.v1";
 const uiStateClientStoreKey = "btdiggRd.uiClient.v1";
@@ -544,12 +547,40 @@ function toggleRdFollow() {
   setRdFollowCollapsed(!(log && log.classList.contains("is-hidden")), true);
 }
 
+function setRdFollowMagnetsCollapsed(collapsed, persist = true) {
+  const list = document.getElementById("rdFollowMagnetsList");
+  const btn = document.getElementById("rdFollowMagnetsToggle");
+  rdFollowMagnetsCollapsed = !!collapsed;
+  if (list) list.classList.toggle("is-hidden", rdFollowMagnetsCollapsed);
+  if (btn) {
+    btn.classList.toggle("is-collapsed", rdFollowMagnetsCollapsed);
+    btn.textContent = "\u25be";
+    btn.title = rdFollowMagnetsCollapsed ? "Mostrar magnets" : "Ocultar magnets";
+    btn.setAttribute("aria-pressed", rdFollowMagnetsCollapsed ? "true" : "false");
+  }
+  if (persist) {
+    try { localStorage.setItem(rdFollowMagnetsStoreKey, rdFollowMagnetsCollapsed ? "collapsed" : "open"); } catch (e) {}
+  }
+}
+
+function toggleRdFollowMagnets() {
+  const list = document.getElementById("rdFollowMagnetsList");
+  setRdFollowMagnetsCollapsed(!(list && list.classList.contains("is-hidden")), true);
+}
+
 function restoreRdFollowState() {
   let collapsed = false;
   try {
     collapsed = localStorage.getItem(rdFollowStoreKey) === "collapsed";
   } catch (e) {}
   setRdFollowCollapsed(collapsed, false);
+  try {
+    collapsed = localStorage.getItem(rdFollowMagnetsStoreKey) === "collapsed";
+  } catch (e) {
+    collapsed = false;
+  }
+  setRdFollowMagnetsCollapsed(collapsed, false);
+  renderRdFollowMagnets();
   restoreRdFollowTestState();
 }
 
@@ -691,6 +722,86 @@ function renderRdFollowLines() {
   box.scrollTop = box.scrollHeight;
 }
 
+function rdFollowMagnetKey(item) {
+  return String(item?.hash || item?.magnet || item?.title || "").trim().toLowerCase();
+}
+
+function mergeRdFollowMagnets(items) {
+  if (!Array.isArray(items)) return;
+  items.forEach(raw => {
+    const magnet = String(raw?.magnet || "").trim();
+    if (!magnet) return;
+    const item = {
+      key: rdFollowMagnetKey(raw) || magnet,
+      seq: raw.seq,
+      ts: raw.ts || "",
+      n: raw.n,
+      total: raw.total,
+      title: String(raw.title || "").trim() || "Magnet sin titulo",
+      hash: String(raw.hash || "").trim(),
+      size_gb: raw.size_gb,
+      magnet
+    };
+    const index = rdFollowMagnets.findIndex(prev => rdFollowMagnetKey(prev) === item.key);
+    if (index >= 0) rdFollowMagnets[index] = Object.assign({}, rdFollowMagnets[index], item);
+    else rdFollowMagnets.push(item);
+  });
+  rdFollowMagnets = rdFollowMagnets.slice(-160);
+}
+
+function renderRdFollowMagnets() {
+  const box = document.getElementById("rdFollowMagnetsList");
+  const count = document.getElementById("rdFollowMagnetsCount");
+  const items = rdFollowMagnets.slice(-120);
+  if (count) {
+    count.textContent = String(items.length || 0);
+    count.className = "status-pill " + (items.length ? "good" : "mid");
+  }
+  if (!box) return;
+  box.innerHTML = "";
+  if (!items.length) {
+    const empty = document.createElement("div");
+    empty.className = "rd-follow-magnet-empty";
+    empty.textContent = "Sin magnets enviados a RD todavía.";
+    box.appendChild(empty);
+    return;
+  }
+  items.forEach((item, index) => {
+    const row = document.createElement("div");
+    row.className = "rd-follow-magnet-row";
+
+    const main = document.createElement("div");
+    main.className = "rd-follow-magnet-main";
+
+    const title = document.createElement("strong");
+    title.className = "rd-follow-magnet-title";
+    title.textContent = item.title || "Magnet sin titulo";
+    title.title = item.title || "";
+
+    const meta = document.createElement("span");
+    meta.className = "rd-follow-magnet-meta";
+    const pos = Number(item.n || 0) > 0 ? String(item.n) + (Number(item.total || 0) > 0 ? "/" + String(item.total) : "") : String(index + 1);
+    const parts = ["#" + pos];
+    if (Number(item.size_gb || 0) > 0) parts.push(String(item.size_gb) + " GB");
+    if (item.hash) parts.push(item.hash.slice(0, 12));
+    meta.textContent = parts.join(" · ");
+
+    const btn = document.createElement("button");
+    btn.className = "mini-copy rd-follow-magnet-copy";
+    btn.type = "button";
+    btn.title = "Copiar magnet";
+    btn.textContent = "Copiar";
+    btn.onclick = () => copyText(item.magnet, btn, "Magnet copiado");
+
+    main.appendChild(title);
+    main.appendChild(meta);
+    row.appendChild(main);
+    row.appendChild(btn);
+    box.appendChild(row);
+  });
+  box.scrollTop = box.scrollHeight;
+}
+
 function renderRdFollowPayload(follow) {
   if (!follow) return;
   renderRdFollowMetrics(follow.summary || {});
@@ -705,7 +816,9 @@ function renderRdFollowPayload(follow) {
     });
     rdFollowLines = rdFollowLines.slice(-220);
   }
+  mergeRdFollowMagnets(follow.magnets || []);
   renderRdFollowLines();
+  renderRdFollowMagnets();
   if (!follow.has_diagnostics) {
     setRdFollowStatus("Esperando RD", "mid");
   } else if (String(follow.job_status || "").toLowerCase() === "cancelled" || summary.operation_status === "cancelled") {
@@ -750,9 +863,11 @@ function startRdFollow(jobId, reset = true, traceKind = "job") {
     rdFollowCursor = 0;
     rdFollowLines = [];
     rdFollowAdvice = [];
+    rdFollowMagnets = [];
   }
   setRdFollowStatus("Conectando", "mid");
   renderRdFollowLines();
+  renderRdFollowMagnets();
   fetchRdFollow();
   rdFollowTimer = setInterval(() => fetchRdFollow(), 1000);
 }
@@ -766,8 +881,10 @@ function stopRdFollow(clear = false) {
     rdFollowCursor = 0;
     rdFollowLines = [];
     rdFollowAdvice = [];
+    rdFollowMagnets = [];
     renderRdFollowMetrics({});
     renderRdFollowLines();
+    renderRdFollowMagnets();
     setRdFollowStatus("Esperando", "mid");
   }
 }

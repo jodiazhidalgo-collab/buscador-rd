@@ -202,7 +202,7 @@ def api_rd_test_export(run_id: str):
                 path = folder / name
                 if path.exists():
                     zf.write(path, arcname=name)
-            follow = build_rd_follow(run_id, after=0, max_lines=1000, kind="rd_test")
+            follow = build_rd_follow(run_id, after=0, max_lines=1000, kind="rd_test", include_magnets=False)
             zf.writestr("human_follow.json", json.dumps(follow, ensure_ascii=False, indent=2, default=str))
             zf.writestr("advice.json", json.dumps((follow.get("summary") or {}).get("advice") or [], ensure_ascii=False, indent=2, default=str))
             zf.writestr("README.txt", "Export de prueba RD. Datos saneados por la caja negra de BTDigg + RD.\n")
