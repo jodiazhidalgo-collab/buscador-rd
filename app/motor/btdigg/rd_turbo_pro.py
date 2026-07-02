@@ -329,7 +329,7 @@ DEFAULT_CONFIG = {
     "torznab_categories": "",
     "torznab_min_seeders": 1,
     "torznab_max_results": 30,
-    "language_good": ["castellano", "espanol", "spanish", "esp", "es-en", "cast", "spa"],
+    "language_good": ["castellano", "castilian", "espanol", "spanish", "esp", "es-en", "cast", "spa"],
     "language_bad": ["latino", "latin", "vose", "subtitulado"],
     "quality_weights": {
         "2160p": 35, "4k": 35, "uhd": 32,
