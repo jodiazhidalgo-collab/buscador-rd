@@ -51,6 +51,8 @@ def test_mode_zero_does_not_add_quality_rescue_query():
         assert motor._quality_mode_extra_btdigg_queries("Venganza 2008", mode=1) == ["Venganza 2008 2160p"]
         assert motor._quality_mode_extra_btdigg_queries("Remux 2020", mode=1) == ["Remux 2020 2160p"]
         assert motor._quality_mode_extra_btdigg_queries("Venganza 2008 4K", mode=1) == []
+        assert motor._quality_mode_extra_btdigg_queries("Venganza 2008", mode=3) == []
+        assert motor._quality_mode_extra_btdigg_queries("F1 2025", mode=3) == []
     finally:
         motor.CONFIG.clear()
         motor.CONFIG.update(original_config)
@@ -112,6 +114,30 @@ def test_quality_pure_size_caps_at_twenty_and_bad_words_are_hard_cut():
     assert trash.score == -999
     assert "-cam" in trash.reason
     assert "basura_calidad_pura" in trash.reason
+
+
+def test_castellano_required_ignores_quality_size_and_extra_query():
+    motor = load_motor_module()
+
+    high_quality = motor.score_result(
+        motor.Result(title="Pelicula Castellano 2160p REMUX WEB-DL x265 HDR10 DTS-HD Atmos", size_gb=80),
+        mode=3,
+    )
+    plain = motor.score_result(motor.Result(title="Pelicula Castellano", size_gb=0), mode=3)
+    no_language = motor.score_result(
+        motor.Result(title="Pelicula 2160p REMUX WEB-DL x265 HDR10 DTS-HD Atmos", size_gb=80),
+        mode=3,
+    )
+    trash = motor.score_result(motor.Result(title="Pelicula Castellano CAM 2160p", size_gb=80), mode=3)
+
+    assert high_quality.score == 40
+    assert high_quality.reason == "+idioma_obligatorio"
+    assert plain.score == 40
+    assert plain.reason == "+idioma_obligatorio"
+    assert no_language.score == -999
+    assert no_language.reason == "sin_idioma"
+    assert trash.score == -30
+    assert trash.reason == "+idioma_obligatorio, -cam"
 
 
 def test_prepare_results_mode_zero_does_not_use_size_as_tie_breaker(monkeypatch):

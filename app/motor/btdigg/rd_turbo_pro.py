@@ -2950,6 +2950,27 @@ def score_result(r, mode):
         r.reason = ", ".join(found) if found else "sin marcas relevantes"
         return r
 
+    if mode == 3:
+        lang_good = [normalize(x) for x in CONFIG.get("language_good", [])]
+        lang_bad = [normalize(x) for x in CONFIG.get("language_bad", [])]
+        has_good_lang = any(_word_hit(w, text) for w in lang_good)
+        has_bad_lang = any(_word_hit(w, text) for w in lang_bad)
+
+        if has_good_lang:
+            score += 40
+            found.append("+idioma_obligatorio")
+        else:
+            score -= 999
+            found.append("sin_idioma")
+        if has_bad_lang:
+            score -= 40
+            found.append("-idioma")
+
+        score = _score_bad_words(text, score, found)
+        r.score = score
+        r.reason = ", ".join(found) if found else "sin marcas relevantes"
+        return r
+
     # Calidad: cada familia de alias puntua una sola vez.
     bdremux_hit = _hit_any(text, ("bdremux", "bd remux"))
     dts_hd_hit = _hit_any(text, ("dts-hd", "dts hd", "dtshd"))
@@ -2982,17 +3003,6 @@ def score_result(r, mode):
     lang_bad = [normalize(x) for x in CONFIG.get("language_bad", [])]
     has_good_lang = any(_word_hit(w, text) for w in lang_good)
     has_bad_lang = any(_word_hit(w, text) for w in lang_bad)
-
-    if mode == 3:
-        if has_good_lang:
-            score += 40
-            found.append("+idioma_obligatorio")
-        else:
-            score -= 999
-            found.append("sin_idioma")
-        if has_bad_lang:
-            score -= 40
-            found.append("-idioma")
 
     score = _score_bad_words(text, score, found)
 
@@ -3755,6 +3765,8 @@ def _quality_mode_extra_btdigg_queries(query, mode=0):
     if not CONFIG.get("quality_mode_extra_btdigg_enabled", True):
         return []
     if _is_sin_filtro_mode(mode):
+        return []
+    if mode == 3:
         return []
     if mode == 1:
         if _quality_pure_4k_label(query):
