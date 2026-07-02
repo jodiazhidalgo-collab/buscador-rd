@@ -626,6 +626,19 @@ def rdt_followup_timeout() -> float:
         return 900.0
 
 
+def rd_cleanup_preflight(torrent_id: str, trace_id: str = "", why: str = "") -> None:
+    torrent_id = str(torrent_id or "").strip()
+    token = rd_token()
+    if not torrent_id:
+        trace_download(trace_id, "RD_PREFLIGHT_CLEANUP_SKIP", reason="missing_id", why=why or "")
+        return
+    if not token:
+        trace_download(trace_id, "RD_PREFLIGHT_CLEANUP_SKIP", reason="missing_token", id=torrent_id, why=why or "")
+        return
+    trace_download(trace_id, "RD_PREFLIGHT_CLEANUP_REQUESTED", id=torrent_id, why=why or "cleanup_preflight")
+    rd_delete(torrent_id, token, why or "cleanup_preflight", trace_id=trace_id)
+
+
 def rdt_native_followup_worker(rdt_id: str, rd_preflight_id: str, hash_value: str = "", title: str = "", trace_id: str = "") -> None:
     rdt_id = str(rdt_id or "").strip()
     rd_preflight_id = str(rd_preflight_id or "").strip()
@@ -665,11 +678,14 @@ def rdt_native_followup_worker(rdt_id: str, rd_preflight_id: str, hash_value: st
         trace_download(trace_id, "RDT_FOLLOWUP_TIMEOUT_CLEANED", rdt_id=rdt_id, rd_preflight_id=rd_preflight_id, phase=last_phase, status=last_status, elapsed=_elapsed(started))
     except Exception as exc:
         trace_download(trace_id, "RDT_FOLLOWUP_FAIL", rdt_id=rdt_id, rd_preflight_id=rd_preflight_id, error=f"{type(exc).__name__}: {str(exc)[:220]}", elapsed=_elapsed(started))
+        rd_cleanup_preflight(rd_preflight_id, trace_id=trace_id, why="rdt_followup_exception")
 
 
 def rdt_native_start_followup(rdt_id: str, rd_preflight_id: str, hash_value: str = "", title: str = "", trace_id: str = "") -> None:
     if not str(rdt_id or "").strip() or not str(rd_preflight_id or "").strip():
         trace_download(trace_id, "RDT_FOLLOWUP_NOT_STARTED", rdt_id=rdt_id or "", rd_preflight_id=rd_preflight_id or "")
+        if str(rd_preflight_id or "").strip() and not str(rdt_id or "").strip():
+            rd_cleanup_preflight(rd_preflight_id, trace_id=trace_id, why="rdt_followup_missing_rdt_id")
         return
     thread = threading.Thread(
         target=rdt_native_followup_worker,

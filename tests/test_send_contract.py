@@ -1,5 +1,7 @@
 from __future__ import annotations
 
+import time
+
 import pytest
 
 
@@ -218,3 +220,169 @@ def test_api_rdt_send_btdigg_contract_blocks_unsafe(client, monkeypatch):
     assert payload["ok"] is False
     assert payload["route"] == "BLOCKED_UNSAFE"
     assert "trace_id" in payload
+
+
+def test_rd_cleanup_preflight_with_token_deletes(monkeypatch):
+    from api.btdigg_rd import send
+
+    events: list[tuple[str, dict[str, object]]] = []
+    deletes: list[tuple[str, str, str]] = []
+
+    monkeypatch.setattr(send, "rd_token", lambda: "token")
+    monkeypatch.setattr(send, "trace_download", lambda trace_id, event, **kwargs: events.append((event, kwargs)))
+    monkeypatch.setattr(
+        send,
+        "rd_delete",
+        lambda torrent_id, token, why="", trace_id="": deletes.append((torrent_id, token, why)),
+    )
+
+    send.rd_cleanup_preflight("PRE1", trace_id="trace-1", why="rdt_followup_ready")
+
+    assert deletes == [("PRE1", "token", "rdt_followup_ready")]
+    assert events == [("RD_PREFLIGHT_CLEANUP_REQUESTED", {"id": "PRE1", "why": "rdt_followup_ready"})]
+
+
+def test_rd_cleanup_preflight_without_token_skips(monkeypatch):
+    from api.btdigg_rd import send
+
+    events: list[tuple[str, dict[str, object]]] = []
+    deletes: list[tuple[str, str, str]] = []
+
+    monkeypatch.setattr(send, "rd_token", lambda: "")
+    monkeypatch.setattr(send, "trace_download", lambda trace_id, event, **kwargs: events.append((event, kwargs)))
+    monkeypatch.setattr(
+        send,
+        "rd_delete",
+        lambda torrent_id, token, why="", trace_id="": deletes.append((torrent_id, token, why)),
+    )
+
+    send.rd_cleanup_preflight("PRE1", trace_id="trace-1", why="no_token_case")
+
+    assert deletes == []
+    assert events == [("RD_PREFLIGHT_CLEANUP_SKIP", {"reason": "missing_token", "id": "PRE1", "why": "no_token_case"})]
+
+
+def test_rd_cleanup_preflight_without_id_skips(monkeypatch):
+    from api.btdigg_rd import send
+
+    events: list[tuple[str, dict[str, object]]] = []
+    deletes: list[tuple[str, str, str]] = []
+
+    monkeypatch.setattr(send, "rd_token", lambda: "token")
+    monkeypatch.setattr(send, "trace_download", lambda trace_id, event, **kwargs: events.append((event, kwargs)))
+    monkeypatch.setattr(
+        send,
+        "rd_delete",
+        lambda torrent_id, token, why="", trace_id="": deletes.append((torrent_id, token, why)),
+    )
+
+    send.rd_cleanup_preflight("", trace_id="trace-1", why="missing_id_case")
+
+    assert deletes == []
+    assert events == [("RD_PREFLIGHT_CLEANUP_SKIP", {"reason": "missing_id", "why": "missing_id_case"})]
+
+
+def test_rdt_native_followup_worker_ready_cleans_preflight(monkeypatch):
+    from api.btdigg_rd import send
+
+    events: list[tuple[str, dict[str, object]]] = []
+    cleanups: list[tuple[str, str]] = []
+
+    monkeypatch.setattr(send, "trace_download", lambda trace_id, event, **kwargs: events.append((event, kwargs)))
+    monkeypatch.setattr(send, "rdt_followup_timeout", lambda: 90.0)
+    monkeypatch.setattr(send, "rdt_followup_interval", lambda: 5.0)
+    monkeypatch.setattr(send, "rdt_native_login", lambda trace_id="": object())
+    monkeypatch.setattr(send, "rdt_native_find_row", lambda session, rdt_id, expected_hash="", trace_id="": {"id": rdt_id})
+    monkeypatch.setattr(send, "rdt_native_row_phase", lambda row: "finished")
+    monkeypatch.setattr(send, "rdt_native_row_status", lambda row: "Torrent finished, waiting for download links")
+    monkeypatch.setattr(send, "rdt_native_phase_is_ready", lambda phase: True)
+    monkeypatch.setattr(
+        send,
+        "rd_cleanup_preflight",
+        lambda torrent_id, trace_id="", why="": cleanups.append((torrent_id, why)),
+    )
+
+    send.rdt_native_followup_worker("RDT1", "PRE1", hash_value="a" * 40, title="Peli", trace_id="trace-1")
+
+    assert cleanups == [("PRE1", "rdt_followup_ready")]
+    assert any(event == "RDT_FOLLOWUP_DONE" for event, _payload in events)
+    assert not any(event == "RDT_FOLLOWUP_FAIL" for event, _payload in events)
+
+
+def test_rdt_native_followup_worker_exception_cleans_preflight(monkeypatch):
+    from api.btdigg_rd import send
+
+    events: list[tuple[str, dict[str, object]]] = []
+    cleanups: list[tuple[str, str]] = []
+
+    def fail_find_row(*args, **kwargs):
+        raise RuntimeError("fallo interno")
+
+    monkeypatch.setattr(send, "trace_download", lambda trace_id, event, **kwargs: events.append((event, kwargs)))
+    monkeypatch.setattr(send, "rdt_followup_timeout", lambda: 90.0)
+    monkeypatch.setattr(send, "rdt_followup_interval", lambda: 5.0)
+    monkeypatch.setattr(send, "rdt_native_login", lambda trace_id="": object())
+    monkeypatch.setattr(send, "rdt_native_find_row", fail_find_row)
+    monkeypatch.setattr(
+        send,
+        "rd_cleanup_preflight",
+        lambda torrent_id, trace_id="", why="": cleanups.append((torrent_id, why)),
+    )
+
+    send.rdt_native_followup_worker("RDT1", "PRE1", hash_value="b" * 40, title="Peli", trace_id="trace-1")
+
+    assert cleanups == [("PRE1", "rdt_followup_exception")]
+    assert any(event == "RDT_FOLLOWUP_FAIL" for event, _payload in events)
+
+
+def test_route_rd_verified_magnet_native_upload_magnet_failure_cleans_preflight(client, monkeypatch):
+    from api.btdigg_rd import send
+
+    cleanups: list[tuple[str, str]] = []
+    magnet = "magnet:?xt=urn:btih:" + "c" * 40
+    contract = {"hash": "c" * 40, "selected_file_name": "/Peli.mkv", "selected_file_ids": "1", "rd_links": 1}
+
+    def fail_upload(*args, **kwargs):
+        raise RuntimeError("upload magnet failed")
+
+    monkeypatch.setattr(send, "trace_download", lambda *args, **kwargs: None)
+    monkeypatch.setattr(send, "rdt_native_existing_health_by_hash", lambda *args, **kwargs: (None, "", True))
+    monkeypatch.setattr(send, "rd_precheck_magnet", lambda *args, **kwargs: {"ok": True, "id": "PREM1", "reason": "ok"})
+    monkeypatch.setattr(send, "rdt_native_upload_magnet", fail_upload)
+    monkeypatch.setattr(
+        send,
+        "rd_cleanup_preflight",
+        lambda torrent_id, trace_id="", why="": cleanups.append((torrent_id, why)),
+    )
+
+    with client.application.app_context(), pytest.raises(RuntimeError, match="upload magnet failed"):
+        send.route_rd_verified_magnet_native(contract, magnet, {"key": "movies"}, "Peli", "btdigg", time.monotonic(), "trace-1")
+
+    assert cleanups == [("PREM1", "rdt_upload_magnet_failed")]
+
+
+def test_route_rd_verified_magnet_native_upload_torrent_failure_cleans_preflight(client, monkeypatch):
+    from api.btdigg_rd import send
+
+    cleanups: list[tuple[str, str]] = []
+    link = "https://example.test/peli.torrent"
+    contract = {"hash": "d" * 40, "selected_file_name": "/Peli.mkv", "selected_file_ids": "1", "rd_links": 1}
+
+    def fail_upload(*args, **kwargs):
+        raise RuntimeError("upload torrent failed")
+
+    monkeypatch.setattr(send, "trace_download", lambda *args, **kwargs: None)
+    monkeypatch.setattr(send, "rdt_native_existing_health_by_hash", lambda *args, **kwargs: (None, "", True))
+    monkeypatch.setattr(send, "get_bytes", lambda *args, **kwargs: b"d8:announce13:http://tracker4:infod5:fileslee")
+    monkeypatch.setattr(send, "rd_precheck_torrent", lambda *args, **kwargs: {"ok": True, "id": "PRET1", "reason": "ok"})
+    monkeypatch.setattr(send, "rdt_native_upload_torrent", fail_upload)
+    monkeypatch.setattr(
+        send,
+        "rd_cleanup_preflight",
+        lambda torrent_id, trace_id="", why="": cleanups.append((torrent_id, why)),
+    )
+
+    with client.application.app_context(), pytest.raises(RuntimeError, match="upload torrent failed"):
+        send.route_rd_verified_magnet_native(contract, link, {"key": "movies"}, "Peli", "btdigg", time.monotonic(), "trace-1")
+
+    assert cleanups == [("PRET1", "rdt_upload_torrent_failed")]
