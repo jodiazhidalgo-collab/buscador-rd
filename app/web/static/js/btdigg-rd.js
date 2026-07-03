@@ -730,15 +730,7 @@ async function startVoiceQuery(ev) {
   };
   try {
     if (isAndroidVoiceClient()) {
-      setVoiceButtonState("listening");
-      setStatus("Preparando micro...");
-      androidWarmupStatus = await warmAndroidVoiceAudio();
-      if (!voiceListening || voiceRecognition !== recognition) return;
-      if (androidWarmupStatus === "blocked") {
-        voiceErrorSeen = true;
-        showVoiceBlocked("Micro bloqueado");
-        return;
-      }
+      androidWarmupStatus = "skipped_android_direct";
     }
     const androidAudioTrack = isAndroidVoiceClient() ? getAndroidWarmupAudioTrack() : null;
     const startMode = androidAudioTrack ? "audio_track" : "microphone";
