@@ -61,6 +61,10 @@ let voiceRecognition = null;
 let voiceListening = false;
 let voiceResolveSeq = 0;
 let voiceStartTimer = null;
+let voiceTraceId = "";
+let voiceTraceStartedAt = 0;
+let voiceErrorSeen = false;
+let voiceDiagnosticQueue = Promise.resolve();
 
 function getUiStateClientId() {
   try {
@@ -292,6 +296,87 @@ function speechRecognitionCtor() {
   return window.SpeechRecognition || window.webkitSpeechRecognition || null;
 }
 
+function createVoiceTraceId() {
+  const stamp = new Date().toISOString().replace(/[^0-9A-Za-z]+/g, "").slice(0, 15);
+  const rnd = Math.random().toString(36).slice(2, 8);
+  return "voice-" + stamp + "-" + rnd;
+}
+
+function voiceElapsedMs() {
+  if (!voiceTraceStartedAt) return 0;
+  try {
+    return Math.max(0, Math.round(performance.now() - voiceTraceStartedAt));
+  } catch (e) {
+    return 0;
+  }
+}
+
+function voiceViewportData() {
+  return {
+    w: window.innerWidth || 0,
+    h: window.innerHeight || 0,
+    dpr: window.devicePixelRatio || 1
+  };
+}
+
+function voiceScreenData() {
+  const s = window.screen || {};
+  return {
+    w: s.width || 0,
+    h: s.height || 0
+  };
+}
+
+function sendVoiceDiagnostic(eventName, data = {}) {
+  const traceId = voiceTraceId || createVoiceTraceId();
+  if (!voiceTraceId) voiceTraceId = traceId;
+  const payload = {
+    trace_id: traceId,
+    event: eventName,
+    data: {
+      url: location.origin + location.pathname,
+      is_secure_context: !!window.isSecureContext,
+      has_media_devices: !!(navigator.mediaDevices && navigator.mediaDevices.getUserMedia),
+      language: navigator.language || "",
+      languages: Array.isArray(navigator.languages) ? navigator.languages.slice(0, 4) : [],
+      platform: navigator.platform || "",
+      vendor: navigator.vendor || "",
+      mobile: /Android|iPhone|iPad|iPod|Mobile/i.test(navigator.userAgent || ""),
+      touch_points: navigator.maxTouchPoints || 0,
+      visibility: document.visibilityState || "",
+      viewport: voiceViewportData(),
+      screen: voiceScreenData(),
+      elapsed_ms: voiceElapsedMs(),
+      ...data
+    }
+  };
+  const post = () => fetch("/api/voice/diagnostic", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(payload),
+      keepalive: true
+    }).catch(() => {});
+  try {
+    voiceDiagnosticQueue = voiceDiagnosticQueue.catch(() => {}).then(post);
+  } catch (e) {}
+}
+
+function reportVoicePermissionState() {
+  if (!navigator.permissions || !navigator.permissions.query) {
+    sendVoiceDiagnostic("voice_permission_state", { permission_state: "unsupported" });
+    return;
+  }
+  try {
+    navigator.permissions.query({ name: "microphone" }).then(result => {
+      sendVoiceDiagnostic("voice_permission_state", { permission_state: result && result.state ? result.state : "unknown" });
+    }).catch(err => {
+      sendVoiceDiagnostic("voice_permission_state", { permission_state: "error", permission_error: err && err.name ? err.name : String(err || "") });
+    });
+  } catch (e) {
+    sendVoiceDiagnostic("voice_permission_state", { permission_state: "error", permission_error: e && e.name ? e.name : String(e || "") });
+  }
+}
+
 function cleanVoiceTitle(value) {
   return String(value || "")
     .trim()
@@ -320,15 +405,10 @@ function setVoiceButtonState(state) {
   btn.title = state === "listening" ? "Escuchando..." : "Dictar titulo";
 }
 
-function focusQueryForManualInput() {
+function releaseQueryKeyboardFocus() {
   const query = document.getElementById("bQuery");
   if (!query) return;
-  try {
-    query.focus({ preventScroll: true });
-    query.select();
-  } catch (e) {
-    try { query.focus(); } catch (err) {}
-  }
+  if (document.activeElement === query) query.blur();
 }
 
 function showVoiceBlocked(message) {
@@ -340,7 +420,6 @@ function showVoiceBlocked(message) {
   }
   setVoiceButtonState("idle");
   setStatus(message || "Micro bloqueado");
-  focusQueryForManualInput();
 }
 
 function setQueryFromVoice(value, shared = true) {
@@ -397,16 +476,36 @@ async function resolveVoiceTitle(transcript, alternatives) {
   }
 }
 
-function startVoiceQuery() {
-  const Recognition = speechRecognitionCtor();
-  if (!Recognition) {
-    setVoiceButtonState("unsupported");
-    showVoiceBlocked("Sin micro - usa teclado");
-    setVoiceButtonState("unsupported");
+function startVoiceQuery(ev) {
+  if (ev && ev.preventDefault) ev.preventDefault();
+  if (ev && ev.stopPropagation) ev.stopPropagation();
+  releaseQueryKeyboardFocus();
+  if (voiceListening && voiceRecognition) {
+    sendVoiceDiagnostic("voice_end", { state: "manual_stop", got_result: false });
+    try { voiceRecognition.stop(); } catch (e) {}
     return;
   }
-  if (voiceListening && voiceRecognition) {
-    try { voiceRecognition.stop(); } catch (e) {}
+  voiceTraceId = createVoiceTraceId();
+  try {
+    voiceTraceStartedAt = performance.now();
+  } catch (e) {
+    voiceTraceStartedAt = 0;
+  }
+  voiceErrorSeen = false;
+  sendVoiceDiagnostic("voice_click", {
+    button_disabled: !!(document.getElementById("voiceQueryBtn") || {}).disabled
+  });
+  reportVoicePermissionState();
+  const Recognition = speechRecognitionCtor();
+  sendVoiceDiagnostic("voice_support_detected", {
+    has_speech_recognition: !!Recognition,
+    recognition_ctor: Recognition && Recognition.name ? Recognition.name : ""
+  });
+  if (!Recognition) {
+    setVoiceButtonState("unsupported");
+    sendVoiceDiagnostic("voice_unsupported", { message: "speech_recognition_missing" });
+    showVoiceBlocked("Sin micro");
+    setVoiceButtonState("unsupported");
     return;
   }
   const recognition = new Recognition();
@@ -422,9 +521,13 @@ function startVoiceQuery() {
       clearTimeout(voiceStartTimer);
       voiceStartTimer = null;
     }
+    sendVoiceDiagnostic("voice_onstart", { state: "started" });
     setVoiceButtonState("listening");
     setStatus("Escuchando...");
   };
+  recognition.onaudiostart = () => sendVoiceDiagnostic("voice_audiostart", { state: "audio_started" });
+  recognition.onsoundstart = () => sendVoiceDiagnostic("voice_soundstart", { state: "sound_started" });
+  recognition.onspeechstart = () => sendVoiceDiagnostic("voice_speechstart", { state: "speech_started" });
   recognition.onresult = ev => {
     const result = ev.results && ev.results[0];
     if (!result || !result.length) return;
@@ -432,17 +535,31 @@ function startVoiceQuery() {
     const transcript = alternatives[0] || "";
     if (!transcript) return;
     gotResult = true;
+    sendVoiceDiagnostic("voice_result", {
+      result_count: ev.results ? ev.results.length : 0,
+      alternatives_count: alternatives.length,
+      transcript_preview: transcript.slice(0, 120)
+    });
     setQueryFromVoice(transcript, true);
     resolveVoiceTitle(transcript, alternatives);
   };
+  recognition.onnomatch = () => {
+    sendVoiceDiagnostic("voice_nomatch", { state: "no_match" });
+  };
   recognition.onerror = ev => {
     const err = String((ev && ev.error) || "");
+    voiceErrorSeen = true;
+    sendVoiceDiagnostic("voice_error", {
+      error: err || "unknown",
+      message: ev && ev.message ? ev.message : "",
+      event_error: err || "unknown"
+    });
     if (err === "not-allowed" || err === "service-not-allowed") {
-      showVoiceBlocked("Micro bloqueado - usa teclado");
+      showVoiceBlocked("Micro bloqueado");
     } else if (err === "no-speech") {
-      showVoiceBlocked("Sin voz - usa teclado");
+      showVoiceBlocked("Sin voz");
     } else {
-      showVoiceBlocked("Micro bloqueado - usa teclado");
+      showVoiceBlocked("Micro bloqueado");
     }
   };
   recognition.onend = () => {
@@ -452,15 +569,31 @@ function startVoiceQuery() {
     }
     voiceListening = false;
     if (voiceRecognition === recognition) voiceRecognition = null;
+    sendVoiceDiagnostic("voice_end", { got_result: gotResult, event_error: voiceErrorSeen ? "yes" : "" });
     if (!gotResult) setVoiceButtonState("idle");
   };
   try {
+    sendVoiceDiagnostic("voice_start_called", {
+      recognition_ctor: Recognition && Recognition.name ? Recognition.name : "",
+      language: recognition.lang,
+      state: "calling_start"
+    });
     recognition.start();
     voiceStartTimer = setTimeout(() => {
-      if (voiceListening && !gotResult) showVoiceBlocked("Micro no arranca - usa teclado");
+      if (voiceListening && !gotResult) {
+        voiceErrorSeen = true;
+        sendVoiceDiagnostic("voice_timeout_no_start", { timeout_ms: 3500, state: "no_start_event" });
+        showVoiceBlocked("Micro no arranca");
+      }
     }, 3500);
   } catch (e) {
-    showVoiceBlocked("Micro bloqueado - usa teclado");
+    voiceErrorSeen = true;
+    sendVoiceDiagnostic("voice_error", {
+      error: e && e.name ? e.name : "start_exception",
+      message: e && e.message ? e.message : String(e || ""),
+      event_error: "start_exception"
+    });
+    showVoiceBlocked("Micro bloqueado");
   }
 }
 

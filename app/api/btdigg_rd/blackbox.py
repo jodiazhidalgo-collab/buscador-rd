@@ -133,6 +133,8 @@ def _collection_for_kind(kind: str) -> str:
         return "rd_tests"
     if clean in {"download", "downloads"}:
         return "downloads"
+    if clean in {"voice", "voices", "micro", "microphone"}:
+        return "voice"
     return "jobs"
 
 
@@ -195,6 +197,8 @@ def _phase(event: str) -> str:
         return "real-debrid"
     if lower.startswith(("btdigg", "browser", "dom", "extract")):
         return "btdigg"
+    if lower.startswith(("voice", "speech", "micro")):
+        return "voice"
     if lower.startswith(("download", "route", "contract", "client", "cleanup", "tracking")):
         return "download"
     if lower.startswith(("job", "process", "web", "command")):
@@ -662,6 +666,24 @@ def job_events_file(job_id: str) -> Path:
 
 def rd_test_events_file(run_id: str) -> Path:
     return trace_events_file("rd_test", run_id)
+
+
+def voice_folder(trace_id: str) -> Path:
+    return trace_folder("voice", trace_id)
+
+
+def voice_event(trace_id: str, event: str, status: str | None = None, **data: Any) -> None:
+    if not trace_id:
+        return
+    updates = {"status": status} if status in {"ok", "error", "rejected", "cancelled"} else None
+    try:
+        folder = trace_folder("voice", trace_id)
+        folder.mkdir(parents=True, exist_ok=True)
+        for name in ("warnings.jsonl", "errors.jsonl", "timeline.md"):
+            (folder / name).touch(exist_ok=True)
+        _record(folder, event, data, updates)
+    except Exception:
+        pass
 
 
 def start_trace(kind: str, trace_id: str, action: str, payload: dict[str, Any] | None = None, meta: dict[str, Any] | None = None) -> Path:

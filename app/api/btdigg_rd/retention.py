@@ -12,6 +12,9 @@ from .config import (
     RD_TEST_DIAGNOSTICS_DIR,
     RD_TEST_KEEP_LAST_RUNS,
     RD_TEST_RETENTION_DAYS,
+    VOICE_DIAGNOSTIC_KEEP_LAST_RUNS,
+    VOICE_DIAGNOSTIC_RETENTION_DAYS,
+    VOICE_DIAGNOSTICS_DIR,
 )
 from .utils import read_json
 
@@ -135,4 +138,51 @@ def cleanup_job_runs(dry_run: bool = False) -> dict[str, Any]:
         "kept_count": len(kept),
         "retention_days": JOB_RUN_RETENTION_DAYS,
         "keep_last_runs": JOB_RUN_KEEP_LAST_RUNS,
+    }
+
+
+def _iter_voice_diagnostic_runs() -> list[Path]:
+    runs: list[Path] = []
+    if not VOICE_DIAGNOSTICS_DIR.exists():
+        return runs
+    for day_dir in VOICE_DIAGNOSTICS_DIR.iterdir():
+        if not day_dir.is_dir():
+            continue
+        for run_dir in day_dir.iterdir():
+            if run_dir.is_dir():
+                runs.append(run_dir)
+    return sorted(runs, key=lambda path: path.stat().st_mtime, reverse=True)
+
+
+def cleanup_voice_diagnostic_runs(dry_run: bool = False) -> dict[str, Any]:
+    runs = _iter_voice_diagnostic_runs()
+    cutoff = datetime.now() - timedelta(days=max(1, int(VOICE_DIAGNOSTIC_RETENTION_DAYS or 3)))
+    keep_last = max(1, int(VOICE_DIAGNOSTIC_KEEP_LAST_RUNS or 80))
+    keep_ids = {path.name for path in runs[:keep_last]}
+    deleted: list[str] = []
+    kept: list[str] = []
+
+    for run_dir in runs:
+        if run_dir.name in keep_ids:
+            kept.append(run_dir.name)
+            continue
+        try:
+            mtime = datetime.fromtimestamp(run_dir.stat().st_mtime)
+        except Exception:
+            mtime = datetime.now()
+        if mtime >= cutoff:
+            kept.append(run_dir.name)
+            continue
+        deleted.append(run_dir.name)
+        if not dry_run:
+            shutil.rmtree(run_dir, ignore_errors=True)
+
+    return {
+        "dry_run": bool(dry_run),
+        "total": len(runs),
+        "deleted": deleted,
+        "deleted_count": len(deleted),
+        "kept_count": len(kept),
+        "retention_days": VOICE_DIAGNOSTIC_RETENTION_DAYS,
+        "keep_last_runs": VOICE_DIAGNOSTIC_KEEP_LAST_RUNS,
     }

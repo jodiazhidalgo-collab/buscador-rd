@@ -24,6 +24,7 @@ DATA_DIR_SENSITIVE_MODULES = (
     "api.btdigg_rd.history",
     "api.btdigg_rd.blackbox",
     "api.btdigg_rd.retention",
+    "api.btdigg_rd.voice_diagnostics",
     "api.btdigg_rd.results",
     "api.btdigg_rd.ui_state",
     "api.btdigg_rd._rd_client",

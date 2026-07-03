@@ -35,6 +35,7 @@ from .send import api_rdt_send
 from .title_resolver import resolve_movie_title
 from .title_resolver.service import TitleResolverError
 from .title_resolver.tmdb_client import TmdbUnavailable
+from .voice_diagnostics import record_voice_diagnostic
 
 
 bp = Blueprint("btdigg_rd", __name__)
@@ -297,6 +298,13 @@ def api_ui_state():
 def api_ui_state_save():
     data = request.get_json(force=True, silent=True) or {}
     payload, status = save_ui_state_payload(data)
+    return jsonify(payload), status
+
+
+@bp.post("/api/voice/diagnostic")
+def api_voice_diagnostic():
+    data = request.get_json(force=True, silent=True) or {}
+    payload, status = record_voice_diagnostic(data, user_agent=request.headers.get("User-Agent", ""))
     return jsonify(payload), status
 
 

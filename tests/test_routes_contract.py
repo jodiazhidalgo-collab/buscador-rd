@@ -13,6 +13,7 @@ def test_public_routes_stay_registered(app):
         "/api/qbit-toggle": {"GET", "POST"},
         "/api/tv-rules": {"GET", "POST"},
         "/api/title-resolver/resolve": {"POST"},
+        "/api/voice/diagnostic": {"POST"},
         "/api/results/btdigg": {"GET"},
         "/api/history/btdigg": {"GET"},
     }
@@ -33,6 +34,7 @@ def test_key_routes_keep_endpoint_names(app):
             "/api/results/btdigg",
             "/api/history/btdigg",
             "/api/title-resolver/resolve",
+            "/api/voice/diagnostic",
         }
     }
 
@@ -41,3 +43,4 @@ def test_key_routes_keep_endpoint_names(app):
     assert endpoints_by_rule["/api/results/btdigg"] == "btdigg_rd.api_results_btdigg"
     assert endpoints_by_rule["/api/history/btdigg"] == "btdigg_rd.api_history_btdigg"
     assert endpoints_by_rule["/api/title-resolver/resolve"] == "btdigg_rd.api_title_resolver_resolve"
+    assert endpoints_by_rule["/api/voice/diagnostic"] == "btdigg_rd.api_voice_diagnostic"
