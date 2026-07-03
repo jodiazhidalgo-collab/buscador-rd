@@ -65,6 +65,7 @@ let voiceTraceId = "";
 let voiceTraceStartedAt = 0;
 let voiceErrorSeen = false;
 let voiceDiagnosticQueue = Promise.resolve();
+let voiceClickGuardUntil = 0;
 
 function getUiStateClientId() {
   try {
@@ -292,8 +293,16 @@ function playFinishSound(jobId) {
   } catch (e) {}
 }
 
-function speechRecognitionCtor() {
-  return window.SpeechRecognition || window.webkitSpeechRecognition || null;
+function speechRecognitionInfo() {
+  const ua = navigator.userAgent || "";
+  const standard = window.SpeechRecognition || null;
+  const webkit = window.webkitSpeechRecognition || null;
+  if (webkit && /Android|Chrome|CriOS|Chromium|Edg\//i.test(ua)) {
+    return { Ctor: webkit, label: "webkitSpeechRecognition" };
+  }
+  if (standard) return { Ctor: standard, label: "SpeechRecognition" };
+  if (webkit) return { Ctor: webkit, label: "webkitSpeechRecognition" };
+  return { Ctor: null, label: "" };
 }
 
 function createVoiceTraceId() {
@@ -480,11 +489,18 @@ function startVoiceQuery(ev) {
   if (ev && ev.preventDefault) ev.preventDefault();
   if (ev && ev.stopPropagation) ev.stopPropagation();
   releaseQueryKeyboardFocus();
+  const clickNow = Date.now();
   if (voiceListening && voiceRecognition) {
-    sendVoiceDiagnostic("voice_end", { state: "manual_stop", got_result: false });
-    try { voiceRecognition.stop(); } catch (e) {}
+    sendVoiceDiagnostic("voice_busy_click", { state: "ignored_while_listening" });
+    setStatus("Escuchando...");
     return;
   }
+  if (clickNow < voiceClickGuardUntil) {
+    sendVoiceDiagnostic("voice_busy_click", { state: "ignored_by_guard" });
+    setStatus("Un momento...");
+    return;
+  }
+  voiceClickGuardUntil = clickNow + 1800;
   voiceTraceId = createVoiceTraceId();
   try {
     voiceTraceStartedAt = performance.now();
@@ -495,10 +511,11 @@ function startVoiceQuery(ev) {
   sendVoiceDiagnostic("voice_click", {
     button_disabled: !!(document.getElementById("voiceQueryBtn") || {}).disabled
   });
-  const Recognition = speechRecognitionCtor();
+  const recognitionInfo = speechRecognitionInfo();
+  const Recognition = recognitionInfo.Ctor;
   sendVoiceDiagnostic("voice_support_detected", {
     has_speech_recognition: !!Recognition,
-    recognition_ctor: Recognition && Recognition.name ? Recognition.name : ""
+    recognition_ctor: recognitionInfo.label || (Recognition && Recognition.name ? Recognition.name : "")
   });
   if (!window.isSecureContext) {
     sendVoiceDiagnostic("voice_insecure_context", {
@@ -564,6 +581,8 @@ function startVoiceQuery(ev) {
     });
     if (err === "not-allowed" || err === "service-not-allowed") {
       showVoiceBlocked("Micro bloqueado");
+    } else if (err === "aborted") {
+      showVoiceBlocked("Micro abortado");
     } else if (err === "no-speech") {
       showVoiceBlocked("Sin voz");
     } else {
@@ -582,7 +601,7 @@ function startVoiceQuery(ev) {
   };
   try {
     sendVoiceDiagnostic("voice_start_called", {
-      recognition_ctor: Recognition && Recognition.name ? Recognition.name : "",
+      recognition_ctor: recognitionInfo.label || (Recognition && Recognition.name ? Recognition.name : ""),
       language: recognition.lang,
       state: "calling_start"
     });

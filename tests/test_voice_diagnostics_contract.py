@@ -82,3 +82,23 @@ def test_voice_diagnostic_accepts_insecure_context(client, isolated_data_dir):
     assert data["status"] == "error"
     assert data["counts"]["warn"] == 1
     assert data["last_event"] == "voice_insecure_context"
+
+
+def test_voice_diagnostic_accepts_busy_click(client, isolated_data_dir):
+    response = client.post(
+        "/api/voice/diagnostic",
+        json={
+            "trace_id": "voice-busy",
+            "event": "voice_busy_click",
+            "data": {"state": "ignored_while_listening"},
+        },
+    )
+
+    assert response.status_code == 200
+    assert response.json["ok"] is True
+
+    events = list((isolated_data_dir / "diagnostics" / "btdigg" / "voice").glob("*/voice-busy/events.jsonl"))
+    assert len(events) == 1
+    record = json.loads(events[0].read_text(encoding="utf-8").splitlines()[0])
+    assert record["event"] == "voice_busy_click"
+    assert record["data"]["state"] == "ignored_while_listening"

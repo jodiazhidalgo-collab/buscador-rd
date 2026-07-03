@@ -10,6 +10,7 @@ from .retention import cleanup_voice_diagnostic_runs
 
 ALLOWED_EVENTS = {
     "voice_click",
+    "voice_busy_click",
     "voice_support_detected",
     "voice_permission_state",
     "voice_start_called",
