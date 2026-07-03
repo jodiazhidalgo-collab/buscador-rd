@@ -2,9 +2,27 @@ BTDigg + RD.zip
 deep-research-report.md
 instrucciones de la investigacion avanzada.txt
 AGENTS.md
+docker-compose.yaml.lnk
 docker-compose.yml.lnk
+.git/
+.agents/
+.codex/
+.playwright-mcp/
+_backups/
+_codex_runtime/
 _codex_source/
 logs/
 data/
+docs/
+tests/
+pytest.ini
+requirements-dev.txt
+handoff-conversacion-anterior.md
+btdigg-rd-final-mobile.png
 **/__pycache__/
 **/*.pyc
+*.zip
+*.rar
+*.log
+*.tmp
+*.part
