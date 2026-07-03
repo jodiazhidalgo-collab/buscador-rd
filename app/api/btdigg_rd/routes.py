@@ -1,8 +1,11 @@
 from __future__ import annotations
 
 import json
+import os
+import tempfile
 import time
 import zipfile
+from pathlib import Path
 from typing import Any
 
 from flask import Blueprint, Response, jsonify, request, stream_with_context
@@ -25,7 +28,7 @@ from ._tv_rules_service import (
 )
 from ._ui_state_service import save_ui_state_payload, ui_state_payload
 from .blackbox import trace_folder
-from .config import BTDIGG_DIR, RD_TEST_EXPORTS_DIR, ensure_runtime_dirs
+from .config import BTDIGG_DIR, RD_TEST_EXPORTS_DIR, VOICE_TRANSCRIBE_MAX_AUDIO_MB, ensure_runtime_dirs
 from .history import load_history
 from .jobs import TERMINAL_STATUSES, cancel_job, jobs, lock, running_job, start_job, start_rd_test
 from .retention import cleanup_rd_test_runs, list_rd_test_runs
@@ -36,6 +39,7 @@ from .title_resolver import resolve_movie_title
 from .title_resolver.service import TitleResolverError
 from .title_resolver.tmdb_client import TmdbUnavailable
 from .voice_diagnostics import record_voice_diagnostic
+from .voice_transcription import VoiceTranscriptionError, selected_voice_transcription_provider, transcribe_audio_file
 
 
 bp = Blueprint("btdigg_rd", __name__)
@@ -306,6 +310,107 @@ def api_voice_diagnostic():
     data = request.get_json(force=True, silent=True) or {}
     payload, status = record_voice_diagnostic(data, user_agent=request.headers.get("User-Agent", ""))
     return jsonify(payload), status
+
+
+def _voice_diag(trace_id: str, event: str, **data: Any) -> None:
+    try:
+        record_voice_diagnostic(
+            {"trace_id": trace_id, "event": event, "data": data},
+            user_agent=request.headers.get("User-Agent", ""),
+        )
+    except Exception:
+        pass
+
+
+def _audio_file_ext(filename: str, content_type: str) -> str:
+    suffix = Path(str(filename or "").replace("\\", "/")).suffix.lower()
+    if suffix:
+        return suffix[:16]
+    lowered = str(content_type or "").lower()
+    if "webm" in lowered:
+        return ".webm"
+    if "mp4" in lowered:
+        return ".mp4"
+    if "ogg" in lowered:
+        return ".ogg"
+    if "wav" in lowered:
+        return ".wav"
+    return ""
+
+
+def _audio_upload_allowed(filename: str, content_type: str) -> bool:
+    ext = _audio_file_ext(filename, content_type)
+    if ext in {".webm", ".mp4", ".m4a", ".ogg", ".wav", ".mp3", ".mpeg", ".mpga"}:
+        return True
+    lowered = str(content_type or "").lower()
+    return lowered.startswith("audio/") or lowered == "application/octet-stream"
+
+
+@bp.post("/api/voice/transcribe")
+def api_voice_transcribe():
+    trace_id = str(request.form.get("trace_id") or "").strip()
+    if not trace_id:
+        trace_id = f"voice-{int(time.time() * 1000)}"
+    lang = str(request.form.get("lang") or "es").strip()[:12] or "es"
+    upload = request.files.get("audio")
+    if upload is None:
+        _voice_diag(trace_id, "voice_transcribe_error", error="missing_audio", provider=selected_voice_transcription_provider())
+        return jsonify({"ok": False, "error_code": "missing_audio", "message": "Falta audio", "trace_id": trace_id}), 400
+
+    filename = str(upload.filename or "voice.webm").strip()
+    content_type = str(upload.mimetype or upload.content_type or "application/octet-stream").strip()
+    ext = _audio_file_ext(filename, content_type)
+    if not _audio_upload_allowed(filename, content_type):
+        _voice_diag(trace_id, "voice_transcribe_error", error="invalid_audio_type", content_type=content_type, file_ext=ext)
+        return jsonify({"ok": False, "error_code": "invalid_audio_type", "message": "Audio no valido", "trace_id": trace_id}), 400
+
+    max_bytes = max(1, int(float(VOICE_TRANSCRIBE_MAX_AUDIO_MB or 8) * 1024 * 1024))
+    provider = selected_voice_transcription_provider()
+    tmp_name = ""
+    written = 0
+    started = time.monotonic()
+    _voice_diag(trace_id, "voice_transcribe_request", provider=provider, content_type=content_type, file_ext=ext, lang=lang)
+    try:
+        with tempfile.NamedTemporaryFile(prefix="btdigg-voice-", suffix=ext or ".webm", delete=False) as tmp:
+            tmp_name = tmp.name
+            while True:
+                chunk = upload.stream.read(1024 * 1024)
+                if not chunk:
+                    break
+                written += len(chunk)
+                if written > max_bytes:
+                    _voice_diag(trace_id, "voice_transcribe_error", error="audio_too_large", audio_size=written, provider=provider)
+                    return jsonify({"ok": False, "error_code": "audio_too_large", "message": "Audio demasiado grande", "trace_id": trace_id}), 413
+                tmp.write(chunk)
+        if written <= 0:
+            _voice_diag(trace_id, "voice_transcribe_error", error="empty_audio", audio_size=0, provider=provider)
+            return jsonify({"ok": False, "error_code": "empty_audio", "message": "Audio vacio", "trace_id": trace_id}), 400
+
+        _voice_diag(trace_id, "voice_transcribe_provider_start", provider=provider, audio_size=written, content_type=content_type)
+        result = transcribe_audio_file(Path(tmp_name), filename=filename, content_type=content_type, language=lang)
+        text = str(result.get("text") or "").strip()
+        elapsed = int((time.monotonic() - started) * 1000)
+        _voice_diag(
+            trace_id,
+            "voice_transcribe_ok",
+            provider=str(result.get("provider") or provider),
+            audio_size=written,
+            text_len=len(text),
+            elapsed_ms=elapsed,
+        )
+        return jsonify({"ok": True, "text": text, "provider": result.get("provider") or provider, "trace_id": trace_id})
+    except VoiceTranscriptionError as exc:
+        _voice_diag(trace_id, "voice_transcribe_error", error=exc.code, message=str(exc), provider=exc.provider or provider)
+        return jsonify({"ok": False, "error_code": exc.code, "message": str(exc), "provider": exc.provider or provider, "trace_id": trace_id}), exc.status_code
+    except Exception as exc:
+        _voice_diag(trace_id, "voice_transcribe_error", error=type(exc).__name__, message=str(exc), provider=provider)
+        return jsonify({"ok": False, "error_code": "transcriber_error", "message": "No se pudo transcribir", "trace_id": trace_id}), 500
+    finally:
+        if tmp_name:
+            try:
+                os.unlink(tmp_name)
+            except OSError:
+                pass
 
 
 @bp.post("/api/title-resolver/resolve")

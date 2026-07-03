@@ -57,26 +57,25 @@ let lastUiStateRemoteMs = 0;
 let lastLocalUiStateChangeAt = 0;
 let sharedRefreshTimer = null;
 let lastResultsRefreshAt = 0;
-let voiceRecognition = null;
-let voiceListening = false;
+let voiceRecorder = null;
+let voiceStream = null;
+let voiceChunks = [];
+let voiceRecording = false;
+let voiceSpeechDetected = false;
 let voiceResolveSeq = 0;
-let voiceStartTimer = null;
-let voiceNoSpeechTimer = null;
 let voiceTraceId = "";
 let voiceTraceStartedAt = 0;
-let voiceErrorSeen = false;
 let voiceDiagnosticQueue = Promise.resolve();
 let voiceClickGuardUntil = 0;
-let voiceAndroidWarmupStream = null;
-const voiceNoSpeechTimeoutMs = 4500;
-
-function isAndroidVoiceClient() {
-  return /Android/i.test(navigator.userAgent || "");
-}
-
-function sleepMs(ms) {
-  return new Promise(resolve => setTimeout(resolve, ms));
-}
+let voiceMonitorTimer = null;
+let voiceMaxRecordTimer = null;
+let voicePendingStopReason = "";
+let voiceAudioContext = null;
+let voiceAnalyser = null;
+let voiceSourceNode = null;
+const voiceInitialSpeechTimeoutMs = 3500;
+const voiceSilenceStopMs = 900;
+const voiceMaxRecordMs = 10000;
 
 function getUiStateClientId() {
   try {
@@ -304,18 +303,6 @@ function playFinishSound(jobId) {
   } catch (e) {}
 }
 
-function speechRecognitionInfo() {
-  const ua = navigator.userAgent || "";
-  const standard = window.SpeechRecognition || null;
-  const webkit = window.webkitSpeechRecognition || null;
-  if (webkit && /Android|Chrome|CriOS|Chromium|Edg\//i.test(ua)) {
-    return { Ctor: webkit, label: "webkitSpeechRecognition" };
-  }
-  if (standard) return { Ctor: standard, label: "SpeechRecognition" };
-  if (webkit) return { Ctor: webkit, label: "webkitSpeechRecognition" };
-  return { Ctor: null, label: "" };
-}
-
 function createVoiceTraceId() {
   const stamp = new Date().toISOString().replace(/[^0-9A-Za-z]+/g, "").slice(0, 15);
   const rnd = Math.random().toString(36).slice(2, 8);
@@ -357,7 +344,8 @@ function sendVoiceDiagnostic(eventName, data = {}) {
       url: location.origin + location.pathname,
       is_secure_context: !!window.isSecureContext,
       has_media_devices: !!(navigator.mediaDevices && navigator.mediaDevices.getUserMedia),
-      language: navigator.language || "",
+      has_media_recorder: !!window.MediaRecorder,
+      lang: navigator.language || "",
       languages: Array.isArray(navigator.languages) ? navigator.languages.slice(0, 4) : [],
       platform: navigator.platform || "",
       vendor: navigator.vendor || "",
@@ -397,47 +385,6 @@ function reportVoicePermissionState() {
   }
 }
 
-async function warmAndroidVoiceAudio() {
-  if (!isAndroidVoiceClient()) return "skipped";
-  if (!(navigator.mediaDevices && navigator.mediaDevices.getUserMedia)) {
-    sendVoiceDiagnostic("voice_android_warmup_fail", {
-      state: "media_devices_missing",
-      error: "media_devices_missing"
-    });
-    return "failed";
-  }
-  let stream = null;
-  sendVoiceDiagnostic("voice_android_warmup_start", { state: "warmup_start" });
-  try {
-    stopAndroidVoiceWarmup("replace");
-    stream = await navigator.mediaDevices.getUserMedia({ audio: true });
-    const tracks = stream && stream.getTracks ? stream.getTracks() : [];
-    const audioTracks = tracks.filter(track => track && track.kind === "audio");
-    voiceAndroidWarmupStream = stream;
-    sendVoiceDiagnostic("voice_android_warmup_ok", {
-      state: "warmup_ok",
-      track_count: tracks.length,
-      audio_track_count: audioTracks.length
-    });
-    await sleepMs(80);
-    return "ok";
-  } catch (e) {
-    if (stream && stream.getTracks) {
-      stream.getTracks().forEach(track => {
-        try { track.stop(); } catch (ignore) {}
-      });
-    }
-    const errorName = e && e.name ? e.name : "get_user_media_error";
-    sendVoiceDiagnostic("voice_android_warmup_fail", {
-      state: "warmup_fail",
-      error: errorName,
-      message: e && e.message ? e.message : String(e || "")
-    });
-    if (errorName === "NotAllowedError" || errorName === "PermissionDeniedError") return "blocked";
-    return "failed";
-  }
-}
-
 function cleanVoiceTitle(value) {
   return String(value || "")
     .trim()
@@ -453,7 +400,7 @@ function titleQueryWithFlatYear(value) {
 function setVoiceButtonState(state) {
   const btn = document.getElementById("voiceQueryBtn");
   if (!btn) return;
-  btn.classList.toggle("is-listening", state === "listening");
+  btn.classList.toggle("is-listening", state === "recording");
   btn.classList.toggle("is-resolving", state === "resolving");
   btn.disabled = state === "resolving";
   if (state === "unsupported") {
@@ -463,7 +410,7 @@ function setVoiceButtonState(state) {
     return;
   }
   btn.classList.remove("is-unsupported");
-  btn.title = state === "listening" ? "Escuchando..." : "Dictar titulo";
+  btn.title = state === "recording" ? "Grabando..." : "Dictar titulo";
 }
 
 function releaseQueryKeyboardFocus() {
@@ -472,46 +419,42 @@ function releaseQueryKeyboardFocus() {
   if (document.activeElement === query) query.blur();
 }
 
-function clearVoiceNoSpeechTimer() {
-  if (voiceNoSpeechTimer) {
-    clearTimeout(voiceNoSpeechTimer);
-    voiceNoSpeechTimer = null;
+function clearVoiceTimers() {
+  if (voiceMonitorTimer) {
+    clearInterval(voiceMonitorTimer);
+    voiceMonitorTimer = null;
+  }
+  if (voiceMaxRecordTimer) {
+    clearTimeout(voiceMaxRecordTimer);
+    voiceMaxRecordTimer = null;
   }
 }
 
-function stopAndroidVoiceWarmup(reason = "cleanup") {
-  if (!voiceAndroidWarmupStream) return;
-  const stream = voiceAndroidWarmupStream;
-  voiceAndroidWarmupStream = null;
-  const tracks = stream && stream.getTracks ? stream.getTracks() : [];
-  tracks.forEach(track => {
-    try { track.stop(); } catch (e) {}
-  });
-  sendVoiceDiagnostic("voice_android_warmup_stop", {
-    state: "warmup_stop",
-    reason,
-    track_count: tracks.length
-  });
-}
-
-function getAndroidWarmupAudioTrack() {
-  const stream = voiceAndroidWarmupStream;
-  if (!stream) return null;
-  const tracks = stream.getAudioTracks ? stream.getAudioTracks() : (stream.getTracks ? stream.getTracks().filter(track => track && track.kind === "audio") : []);
-  return tracks.find(track => track && track.kind === "audio" && track.readyState === "live") || null;
-}
-
-function showVoiceBlocked(message) {
-  voiceListening = false;
-  voiceRecognition = null;
-  if (voiceStartTimer) {
-    clearTimeout(voiceStartTimer);
-    voiceStartTimer = null;
+function cleanupVoiceCapture(stopTracks = true) {
+  clearVoiceTimers();
+  if (voiceSourceNode) {
+    try { voiceSourceNode.disconnect(); } catch (e) {}
+    voiceSourceNode = null;
   }
-  clearVoiceNoSpeechTimer();
-  stopAndroidVoiceWarmup("blocked");
+  voiceAnalyser = null;
+  if (voiceAudioContext) {
+    try { voiceAudioContext.close(); } catch (e) {}
+    voiceAudioContext = null;
+  }
+  if (stopTracks && voiceStream && voiceStream.getTracks) {
+    voiceStream.getTracks().forEach(track => {
+      try { track.stop(); } catch (e) {}
+    });
+  }
+  voiceStream = null;
+}
+
+function showVoiceProblem(message) {
+  voiceRecording = false;
+  voiceRecorder = null;
+  cleanupVoiceCapture(true);
   setVoiceButtonState("idle");
-  setStatus(message || "Micro bloqueado");
+  setStatus(message || "Micro no disponible");
 }
 
 function setQueryFromVoice(value, shared = true) {
@@ -541,6 +484,10 @@ async function resolveVoiceTitle(transcript, alternatives) {
   const seq = ++voiceResolveSeq;
   setVoiceButtonState("resolving");
   setStatus("Resolviendo titulo...");
+  sendVoiceDiagnostic("voice_resolver_start", {
+    transcript_preview: String(transcript || "").slice(0, 120),
+    alternatives_count: alternatives && alternatives.length ? alternatives.length : 0
+  });
   try {
     const evidence = [transcript, ...(alternatives || [])].map(cleanVoiceTitle).filter(Boolean);
     const response = await fetch("/api/title-resolver/resolve", {
@@ -557,14 +504,182 @@ async function resolveVoiceTitle(transcript, alternatives) {
     const resolved = bestVoiceResolvedTitle(data, transcript);
     if (response.ok && resolved) {
       setQueryFromVoice(resolved, true);
-      setStatus("Titulo listo");
+      sendVoiceDiagnostic("voice_resolver_ok", { resolved: true, response_ok: true, text_len: resolved.length });
+      setStatus("Titulo listo. Pulsa BUSCAR.");
     } else {
-      setStatus("No seguro");
+      sendVoiceDiagnostic("voice_resolver_ok", { resolved: false, response_ok: response.ok });
+      setStatus("No seguro. Revisa y pulsa BUSCAR.");
     }
   } catch (e) {
-    if (seq === voiceResolveSeq) setStatus("No seguro");
+    sendVoiceDiagnostic("voice_resolver_error", {
+      error: e && e.name ? e.name : "resolver_error",
+      message: e && e.message ? e.message : String(e || "")
+    });
+    if (seq === voiceResolveSeq) setStatus("No seguro. Revisa y pulsa BUSCAR.");
   } finally {
     if (seq === voiceResolveSeq) setVoiceButtonState("idle");
+  }
+}
+
+function bestVoiceMimeType() {
+  const candidates = [
+    "audio/webm;codecs=opus",
+    "audio/webm",
+    "audio/mp4",
+    "audio/ogg;codecs=opus",
+    "audio/wav"
+  ];
+  if (!window.MediaRecorder || !window.MediaRecorder.isTypeSupported) return "";
+  for (const item of candidates) {
+    try {
+      if (window.MediaRecorder.isTypeSupported(item)) return item;
+    } catch (e) {}
+  }
+  return "";
+}
+
+function voiceUploadName(mimeType) {
+  const type = String(mimeType || "").toLowerCase();
+  if (type.includes("mp4")) return "voice.mp4";
+  if (type.includes("ogg")) return "voice.ogg";
+  if (type.includes("wav")) return "voice.wav";
+  return "voice.webm";
+}
+
+function stopVoiceRecording(reason = "manual_stop") {
+  voicePendingStopReason = reason;
+  clearVoiceTimers();
+  if (!voiceRecorder) return;
+  try {
+    if (voiceRecorder.state !== "inactive") {
+      voiceRecorder.stop();
+      return;
+    }
+  } catch (e) {
+    sendVoiceDiagnostic("voice_recorder_error", {
+      error: e && e.name ? e.name : "stop_error",
+      message: e && e.message ? e.message : String(e || "")
+    });
+  }
+  cleanupVoiceCapture(true);
+  voiceRecording = false;
+  voiceRecorder = null;
+  setVoiceButtonState("idle");
+}
+
+function startVoiceLevelMonitor(stream) {
+  if (!stream || !(window.AudioContext || window.webkitAudioContext)) return;
+  try {
+    const AudioCtx = window.AudioContext || window.webkitAudioContext;
+    voiceAudioContext = new AudioCtx();
+    if (voiceAudioContext.state === "suspended" && voiceAudioContext.resume) {
+      voiceAudioContext.resume().catch(() => {});
+    }
+    voiceSourceNode = voiceAudioContext.createMediaStreamSource(stream);
+    voiceAnalyser = voiceAudioContext.createAnalyser();
+    voiceAnalyser.fftSize = 512;
+    voiceSourceNode.connect(voiceAnalyser);
+    const data = new Uint8Array(voiceAnalyser.fftSize);
+    let lastLoudAt = 0;
+    const startedAt = performance.now();
+    voiceMonitorTimer = setInterval(() => {
+      if (!voiceRecorder || voiceRecorder.state === "inactive" || !voiceAnalyser) return;
+      voiceAnalyser.getByteTimeDomainData(data);
+      let sum = 0;
+      for (let i = 0; i < data.length; i += 1) {
+        const centered = (data[i] - 128) / 128;
+        sum += centered * centered;
+      }
+      const level = Math.sqrt(sum / data.length);
+      const now = performance.now();
+      if (level > 0.028) {
+        if (!voiceSpeechDetected) {
+          voiceSpeechDetected = true;
+          sendVoiceDiagnostic("voice_audio_detected", { state: "voice_detected", elapsed_ms: voiceElapsedMs() });
+        }
+        lastLoudAt = now;
+      }
+      if (!voiceSpeechDetected && now - startedAt >= voiceInitialSpeechTimeoutMs) {
+        sendVoiceDiagnostic("voice_no_speech_timeout", {
+          timeout_ms: voiceInitialSpeechTimeoutMs,
+          state: "no_voice_detected"
+        });
+        stopVoiceRecording("no_speech");
+      } else if (voiceSpeechDetected && lastLoudAt && now - lastLoudAt >= voiceSilenceStopMs) {
+        sendVoiceDiagnostic("voice_silence_auto_stop", {
+          timeout_ms: voiceSilenceStopMs,
+          state: "silence_after_voice"
+        });
+        stopVoiceRecording("auto_silence");
+      }
+    }, 160);
+  } catch (e) {
+    sendVoiceDiagnostic("voice_recorder_error", {
+      error: e && e.name ? e.name : "audio_monitor_error",
+      message: e && e.message ? e.message : String(e || "")
+    });
+  }
+}
+
+async function transcribeVoiceBlob(blob) {
+  if (!blob || !blob.size) {
+    sendVoiceDiagnostic("voice_upload_error", { error: "empty_blob", audio_size: 0 });
+    showVoiceProblem("No he oido voz");
+    return;
+  }
+  setVoiceButtonState("resolving");
+  setStatus("Transcribiendo...");
+  sendVoiceDiagnostic("voice_upload_start", {
+    audio_size: blob.size,
+    mime_type: blob.type || ""
+  });
+  const form = new FormData();
+  form.append("audio", blob, voiceUploadName(blob.type));
+  form.append("lang", "es");
+  form.append("trace_id", voiceTraceId || createVoiceTraceId());
+  try {
+    const response = await fetch("/api/voice/transcribe", {
+      method: "POST",
+      body: form
+    });
+    const data = await response.json().catch(() => ({}));
+    if (!response.ok || !data || data.ok === false) {
+      const code = data && data.error_code ? String(data.error_code) : "upload_failed";
+      sendVoiceDiagnostic("voice_upload_error", {
+        error: code,
+        message: data && data.message ? data.message : "",
+        provider: data && data.provider ? data.provider : "",
+        status_code: response.status
+      });
+      if (code === "transcriber_not_configured" || code === "openai_key_missing") {
+        setStatus("Transcriptor no configurado");
+      } else {
+        setStatus("No se pudo transcribir");
+      }
+      setVoiceButtonState("idle");
+      return;
+    }
+    const transcript = cleanVoiceTitle(data.text || "");
+    sendVoiceDiagnostic("voice_upload_ok", {
+      audio_size: blob.size,
+      provider: data.provider || "",
+      text_len: transcript.length,
+      transcript_preview: transcript.slice(0, 120)
+    });
+    if (!transcript) {
+      setStatus("No he oido voz");
+      setVoiceButtonState("idle");
+      return;
+    }
+    setQueryFromVoice(transcript, true);
+    await resolveVoiceTitle(transcript, [transcript]);
+  } catch (e) {
+    sendVoiceDiagnostic("voice_upload_error", {
+      error: e && e.name ? e.name : "upload_exception",
+      message: e && e.message ? e.message : String(e || "")
+    });
+    setStatus("No se pudo transcribir");
+    setVoiceButtonState("idle");
   }
 }
 
@@ -573,24 +688,9 @@ async function startVoiceQuery(ev) {
   if (ev && ev.stopPropagation) ev.stopPropagation();
   releaseQueryKeyboardFocus();
   const clickNow = Date.now();
-  if (voiceListening && voiceRecognition) {
-    if (clickNow < voiceClickGuardUntil) {
-      sendVoiceDiagnostic("voice_busy_click", { state: "ignored_while_listening" });
-      setStatus("Escuchando...");
-      return;
-    }
-    sendVoiceDiagnostic("voice_manual_stop", { state: "manual_stop", got_result: false });
-    clearVoiceNoSpeechTimer();
-    if (voiceStartTimer) {
-      clearTimeout(voiceStartTimer);
-      voiceStartTimer = null;
-    }
-    try { voiceRecognition.stop(); } catch (e) {}
-    stopAndroidVoiceWarmup("manual_stop");
-    voiceListening = false;
-    voiceRecognition = null;
-    setVoiceButtonState("idle");
-    setStatus("Micro parado");
+  if (voiceRecording && voiceRecorder) {
+    sendVoiceDiagnostic("voice_manual_stop", { state: "manual_stop", reason: "button" });
+    stopVoiceRecording("manual_stop");
     return;
   }
   if (clickNow < voiceClickGuardUntil) {
@@ -598,172 +698,107 @@ async function startVoiceQuery(ev) {
     setStatus("Un momento...");
     return;
   }
-  voiceClickGuardUntil = clickNow + 1800;
+  voiceClickGuardUntil = clickNow + 450;
   voiceTraceId = createVoiceTraceId();
   try {
     voiceTraceStartedAt = performance.now();
   } catch (e) {
     voiceTraceStartedAt = 0;
   }
-  voiceErrorSeen = false;
-  sendVoiceDiagnostic("voice_click", {
+  voiceSpeechDetected = false;
+  voiceChunks = [];
+  voicePendingStopReason = "";
+  sendVoiceDiagnostic("voice_record_click", {
     button_disabled: !!(document.getElementById("voiceQueryBtn") || {}).disabled
-  });
-  const recognitionInfo = speechRecognitionInfo();
-  const Recognition = recognitionInfo.Ctor;
-  sendVoiceDiagnostic("voice_support_detected", {
-    has_speech_recognition: !!Recognition,
-    recognition_ctor: recognitionInfo.label || (Recognition && Recognition.name ? Recognition.name : "")
   });
   if (!window.isSecureContext) {
     sendVoiceDiagnostic("voice_insecure_context", {
       error: "insecure-context",
       message: "secure_context_required"
     });
-    showVoiceBlocked("Micro requiere HTTPS");
+    showVoiceProblem("Micro requiere HTTPS");
     return;
   }
   reportVoicePermissionState();
-  if (!Recognition) {
+  if (!(navigator.mediaDevices && navigator.mediaDevices.getUserMedia) || !window.MediaRecorder) {
     setVoiceButtonState("unsupported");
-    sendVoiceDiagnostic("voice_unsupported", { message: "speech_recognition_missing" });
-    showVoiceBlocked("Sin micro");
+    sendVoiceDiagnostic("voice_unsupported", { message: "media_recorder_missing" });
+    showVoiceProblem("Sin micro");
     setVoiceButtonState("unsupported");
     return;
   }
-  const recognition = new Recognition();
-  voiceRecognition = recognition;
-  voiceListening = true;
-  let gotResult = false;
-  let gotVoiceSignal = false;
-  let androidWarmupStatus = "skipped";
-  recognition.lang = "es-ES";
-  recognition.continuous = false;
-  recognition.interimResults = false;
-  recognition.maxAlternatives = 3;
-  recognition.onstart = () => {
-    if (voiceStartTimer) {
-      clearTimeout(voiceStartTimer);
-      voiceStartTimer = null;
-    }
-    sendVoiceDiagnostic("voice_onstart", { state: "started" });
-    setVoiceButtonState("listening");
-    setStatus("Escuchando...");
-  };
-  recognition.onaudiostart = () => {
-    sendVoiceDiagnostic("voice_audiostart", { state: "audio_started" });
-    stopAndroidVoiceWarmup("audiostart");
-    clearVoiceNoSpeechTimer();
-    voiceNoSpeechTimer = setTimeout(() => {
-      if (voiceListening && voiceRecognition === recognition && !gotResult && !gotVoiceSignal) {
-        voiceErrorSeen = true;
-        sendVoiceDiagnostic("voice_no_speech_timeout", {
-          timeout_ms: voiceNoSpeechTimeoutMs,
-          state: "audio_without_speech"
-        });
-        showVoiceBlocked("No he oido voz");
-        try { recognition.stop(); } catch (e) {}
-      }
-    }, voiceNoSpeechTimeoutMs);
-  };
-  recognition.onsoundstart = () => {
-    gotVoiceSignal = true;
-    clearVoiceNoSpeechTimer();
-    sendVoiceDiagnostic("voice_soundstart", { state: "sound_started" });
-  };
-  recognition.onspeechstart = () => {
-    gotVoiceSignal = true;
-    clearVoiceNoSpeechTimer();
-    sendVoiceDiagnostic("voice_speechstart", { state: "speech_started" });
-  };
-  recognition.onresult = ev => {
-    clearVoiceNoSpeechTimer();
-    stopAndroidVoiceWarmup("result");
-    const result = ev.results && ev.results[0];
-    if (!result || !result.length) return;
-    const alternatives = Array.from(result).map(item => cleanVoiceTitle(item && item.transcript)).filter(Boolean);
-    const transcript = alternatives[0] || "";
-    if (!transcript) return;
-    gotResult = true;
-    sendVoiceDiagnostic("voice_result", {
-      result_count: ev.results ? ev.results.length : 0,
-      alternatives_count: alternatives.length,
-      transcript_preview: transcript.slice(0, 120)
-    });
-    setQueryFromVoice(transcript, true);
-    resolveVoiceTitle(transcript, alternatives);
-  };
-  recognition.onnomatch = () => {
-    sendVoiceDiagnostic("voice_nomatch", { state: "no_match" });
-  };
-  recognition.onerror = ev => {
-    clearVoiceNoSpeechTimer();
-    const err = String((ev && ev.error) || "");
-    voiceErrorSeen = true;
-    stopAndroidVoiceWarmup(err ? "error_" + err : "error");
-    sendVoiceDiagnostic("voice_error", {
-      error: err || "unknown",
-      message: ev && ev.message ? ev.message : "",
-      event_error: err || "unknown"
-    });
-    if (err === "not-allowed" || err === "service-not-allowed") {
-      showVoiceBlocked("Micro bloqueado");
-    } else if (err === "aborted") {
-      showVoiceBlocked("Micro abortado");
-    } else if (err === "no-speech") {
-      showVoiceBlocked("Sin voz");
-    } else {
-      showVoiceBlocked("Micro bloqueado");
-    }
-  };
-  recognition.onend = () => {
-    if (voiceStartTimer) {
-      clearTimeout(voiceStartTimer);
-      voiceStartTimer = null;
-    }
-    clearVoiceNoSpeechTimer();
-    voiceListening = false;
-    if (voiceRecognition === recognition) voiceRecognition = null;
-    stopAndroidVoiceWarmup("end");
-    sendVoiceDiagnostic("voice_end", { got_result: gotResult, event_error: voiceErrorSeen ? "yes" : "" });
-    if (!gotResult) setVoiceButtonState("idle");
-  };
+  sendVoiceDiagnostic("voice_get_user_media_start", { state: "requesting_micro" });
   try {
-    if (isAndroidVoiceClient()) {
-      androidWarmupStatus = "skipped_android_direct";
-    }
-    const androidAudioTrack = isAndroidVoiceClient() ? getAndroidWarmupAudioTrack() : null;
-    const startMode = androidAudioTrack ? "audio_track" : "microphone";
-    sendVoiceDiagnostic("voice_start_called", {
-      recognition_ctor: recognitionInfo.label || (Recognition && Recognition.name ? Recognition.name : ""),
-      language: recognition.lang,
-      warmup_status: androidWarmupStatus,
-      start_mode: startMode,
-      audio_track_kind: androidAudioTrack ? androidAudioTrack.kind : "",
-      audio_track_state: androidAudioTrack ? androidAudioTrack.readyState : "",
-      state: "calling_start"
-    });
-    voiceStartTimer = setTimeout(() => {
-      if (voiceListening && !gotResult) {
-        voiceErrorSeen = true;
-        sendVoiceDiagnostic("voice_timeout_no_start", { timeout_ms: 3500, state: "no_start_event" });
-        showVoiceBlocked("Micro no arranca");
+    const stream = await navigator.mediaDevices.getUserMedia({
+      audio: {
+        echoCancellation: true,
+        noiseSuppression: true,
+        autoGainControl: true,
+        channelCount: 1
       }
-    }, 3500);
-    recognition.start(androidAudioTrack || undefined);
-  } catch (e) {
-    voiceErrorSeen = true;
-    if (voiceStartTimer) {
-      clearTimeout(voiceStartTimer);
-      voiceStartTimer = null;
-    }
-    stopAndroidVoiceWarmup("start_exception");
-    sendVoiceDiagnostic("voice_error", {
-      error: e && e.name ? e.name : "start_exception",
-      message: e && e.message ? e.message : String(e || ""),
-      event_error: "start_exception"
     });
-    showVoiceBlocked("Micro bloqueado");
+    voiceStream = stream;
+    sendVoiceDiagnostic("voice_get_user_media_ok", { state: "micro_ready" });
+    const mimeType = bestVoiceMimeType();
+    const options = mimeType ? { mimeType } : {};
+    const recorder = new MediaRecorder(stream, options);
+    voiceRecorder = recorder;
+    recorder.ondataavailable = event => {
+      if (event && event.data && event.data.size) voiceChunks.push(event.data);
+    };
+    recorder.onstart = () => {
+      voiceRecording = true;
+      setVoiceButtonState("recording");
+      setStatus("Grabando...");
+      sendVoiceDiagnostic("voice_recorder_start", { mime_type: recorder.mimeType || mimeType || "" });
+      startVoiceLevelMonitor(stream);
+      voiceMaxRecordTimer = setTimeout(() => stopVoiceRecording("max_duration"), voiceMaxRecordMs);
+    };
+    recorder.onerror = event => {
+      const err = event && event.error ? event.error : null;
+      sendVoiceDiagnostic("voice_recorder_error", {
+        error: err && err.name ? err.name : "recorder_error",
+        message: err && err.message ? err.message : ""
+      });
+      showVoiceProblem("No se pudo grabar");
+    };
+    recorder.onstop = () => {
+      clearVoiceTimers();
+      const reason = voicePendingStopReason || "stop";
+      const mime = recorder.mimeType || mimeType || "audio/webm";
+      const blob = new Blob(voiceChunks, { type: mime });
+      const duration = voiceElapsedMs();
+      voiceRecording = false;
+      voiceRecorder = null;
+      cleanupVoiceCapture(true);
+      sendVoiceDiagnostic("voice_recorder_stop", {
+        reason,
+        audio_size: blob.size,
+        duration_ms: duration,
+        mime_type: mime,
+        state: voiceSpeechDetected ? "speech_detected" : "no_speech_detected"
+      });
+      voiceChunks = [];
+      if (reason === "no_speech" || !voiceSpeechDetected) {
+        setVoiceButtonState("idle");
+        setStatus("No he oido voz");
+        return;
+      }
+      transcribeVoiceBlob(blob);
+    };
+    recorder.start(250);
+  } catch (e) {
+    const errorName = e && e.name ? e.name : "get_user_media_error";
+    sendVoiceDiagnostic("voice_get_user_media_error", {
+      error: errorName,
+      message: e && e.message ? e.message : String(e || ""),
+      state: "micro_error"
+    });
+    if (errorName === "NotAllowedError" || errorName === "PermissionDeniedError") {
+      showVoiceProblem("Micro bloqueado");
+    } else {
+      showVoiceProblem("No se pudo abrir micro");
+    }
   }
 }
 
@@ -2954,7 +2989,8 @@ async function initApp() {
   restoreFormState();
   restoreActivityState();
   restoreRdFollowState();
-  setVoiceButtonState(speechRecognitionInfo().Ctor ? "idle" : "unsupported");
+  const canAttemptVoice = !window.isSecureContext || (navigator.mediaDevices?.getUserMedia && window.MediaRecorder);
+  setVoiceButtonState(canAttemptVoice ? "idle" : "unsupported");
   const restoredShared = await loadSharedUiState(false);
   if (!restoredShared) restoreViewState();
   await loadQbitToggle();
