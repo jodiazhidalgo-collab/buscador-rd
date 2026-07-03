@@ -57,3 +57,28 @@ def test_voice_diagnostic_route_rejects_unknown_event(client):
 
     assert response.status_code == 400
     assert response.json["ok"] is False
+
+
+def test_voice_diagnostic_accepts_insecure_context(client, isolated_data_dir):
+    response = client.post(
+        "/api/voice/diagnostic",
+        json={
+            "trace_id": "voice-insecure",
+            "event": "voice_insecure_context",
+            "data": {
+                "error": "insecure-context",
+                "is_secure_context": False,
+                "message": "secure_context_required",
+            },
+        },
+    )
+
+    assert response.status_code == 200
+    assert response.json["ok"] is True
+
+    summary = list((isolated_data_dir / "diagnostics" / "btdigg" / "voice").glob("*/voice-insecure/summary.json"))
+    assert len(summary) == 1
+    data = json.loads(summary[0].read_text(encoding="utf-8"))
+    assert data["status"] == "error"
+    assert data["counts"]["warn"] == 1
+    assert data["last_event"] == "voice_insecure_context"

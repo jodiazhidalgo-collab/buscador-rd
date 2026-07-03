@@ -495,12 +495,20 @@ function startVoiceQuery(ev) {
   sendVoiceDiagnostic("voice_click", {
     button_disabled: !!(document.getElementById("voiceQueryBtn") || {}).disabled
   });
-  reportVoicePermissionState();
   const Recognition = speechRecognitionCtor();
   sendVoiceDiagnostic("voice_support_detected", {
     has_speech_recognition: !!Recognition,
     recognition_ctor: Recognition && Recognition.name ? Recognition.name : ""
   });
+  if (!window.isSecureContext) {
+    sendVoiceDiagnostic("voice_insecure_context", {
+      error: "insecure-context",
+      message: "secure_context_required"
+    });
+    showVoiceBlocked("Micro requiere HTTPS");
+    return;
+  }
+  reportVoicePermissionState();
   if (!Recognition) {
     setVoiceButtonState("unsupported");
     sendVoiceDiagnostic("voice_unsupported", { message: "speech_recognition_missing" });

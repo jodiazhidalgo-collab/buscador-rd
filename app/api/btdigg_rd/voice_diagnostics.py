@@ -23,6 +23,7 @@ ALLOWED_EVENTS = {
     "voice_end",
     "voice_timeout_no_start",
     "voice_unsupported",
+    "voice_insecure_context",
 }
 
 FINAL_STATUS = {
@@ -30,6 +31,7 @@ FINAL_STATUS = {
     "voice_error": "error",
     "voice_timeout_no_start": "error",
     "voice_unsupported": "error",
+    "voice_insecure_context": "error",
 }
 
 ALLOWED_DATA_KEYS = {
