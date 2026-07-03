@@ -24,18 +24,25 @@ class VoiceTranscriptionError(Exception):
         self.provider = provider
 
 
+def _openai_compatible_provider_label() -> str:
+    base_url = (VOICE_OPENAI_BASE_URL or "").lower()
+    if "api.openai.com" in base_url:
+        return "openai"
+    return "whisper"
+
+
 def selected_voice_transcription_provider() -> str:
     provider = (VOICE_TRANSCRIBE_PROVIDER or "auto").strip().lower()
     if provider in {"http", "custom"}:
         return "http"
     if provider == "openai":
-        return "openai"
+        return _openai_compatible_provider_label()
     if provider in {"off", "disabled", "none"}:
         return "disabled"
     if VOICE_TRANSCRIBE_URL:
         return "http"
     if VOICE_OPENAI_API_KEY:
-        return "openai"
+        return _openai_compatible_provider_label()
     return "disabled"
 
 
@@ -113,8 +120,9 @@ def _transcribe_with_http(path: Path, filename: str, content_type: str, language
 
 
 def _transcribe_with_openai(path: Path, filename: str, content_type: str, language: str) -> dict[str, Any]:
+    provider_label = _openai_compatible_provider_label()
     if not VOICE_OPENAI_API_KEY:
-        raise VoiceTranscriptionError("openai_key_missing", "Falta API key de transcripcion", 503, "openai")
+        raise VoiceTranscriptionError("openai_key_missing", "Falta API key de transcripcion", 503, provider_label)
     url = f"{VOICE_OPENAI_BASE_URL}/audio/transcriptions"
     headers = {"Authorization": f"Bearer {VOICE_OPENAI_API_KEY}"}
     data = {
@@ -132,18 +140,18 @@ def _transcribe_with_openai(path: Path, filename: str, content_type: str, langua
             timeout=max(3.0, float(VOICE_TRANSCRIBE_TIMEOUT_SEC or 20)),
         )
     if response.status_code >= 400:
-        _raise_http_error("openai", response)
+        _raise_http_error(provider_label, response)
     text = _parse_text_response(response)
     if not text:
-        raise VoiceTranscriptionError("empty_transcript", "OpenAI no devolvio texto", 502, "openai")
-    return {"text": text, "provider": "openai", "model": data["model"]}
+        raise VoiceTranscriptionError("empty_transcript", "El transcriptor no devolvio texto", 502, provider_label)
+    return {"text": text, "provider": provider_label, "model": data["model"]}
 
 
 def transcribe_audio_file(path: Path, filename: str = "", content_type: str = "", language: str = "es") -> dict[str, Any]:
     provider = selected_voice_transcription_provider()
     if provider == "http":
         return _transcribe_with_http(path, filename, content_type, language)
-    if provider == "openai":
+    if provider in {"openai", "whisper"}:
         return _transcribe_with_openai(path, filename, content_type, language)
     raise VoiceTranscriptionError(
         "transcriber_not_configured",

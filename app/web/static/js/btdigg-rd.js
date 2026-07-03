@@ -389,12 +389,23 @@ function cleanVoiceTitle(value) {
   return String(value || "")
     .trim()
     .replace(/\s+/g, " ")
+    .replace(/\b([12])\.(\d{3})\b/g, "$1$2")
     .replace(/[.,;:!?]+$/g, "")
     .trim();
 }
 
 function titleQueryWithFlatYear(value) {
   return cleanVoiceTitle(value).replace(/\s+\((\d{4})\)\s*$/, " $1").trim();
+}
+
+function voiceResolverAttempts(transcript, alternatives) {
+  const raw = String(transcript || "").trim();
+  const values = [
+    cleanVoiceTitle(raw),
+    cleanVoiceTitle(raw.replace(/\b([2-9])\.(0\d{2})\b/g, "$1 2$2")),
+    ...(alternatives || []).map(cleanVoiceTitle)
+  ];
+  return [...new Set(values.filter(Boolean))];
 }
 
 function setVoiceButtonState(state) {
@@ -484,32 +495,35 @@ async function resolveVoiceTitle(transcript, alternatives) {
   const seq = ++voiceResolveSeq;
   setVoiceButtonState("resolving");
   setStatus("Resolviendo titulo...");
+  const attempts = voiceResolverAttempts(transcript, alternatives);
   sendVoiceDiagnostic("voice_resolver_start", {
     transcript_preview: String(transcript || "").slice(0, 120),
-    alternatives_count: alternatives && alternatives.length ? alternatives.length : 0
+    alternatives_count: alternatives && alternatives.length ? alternatives.length : 0,
+    attempts_count: attempts.length
   });
   try {
-    const evidence = [transcript, ...(alternatives || [])].map(cleanVoiceTitle).filter(Boolean);
-    const response = await fetch("/api/title-resolver/resolve", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        title: transcript,
-        evidence,
-        media_hint: "movie"
-      })
-    });
-    const data = await response.json();
-    if (seq !== voiceResolveSeq) return;
-    const resolved = bestVoiceResolvedTitle(data, transcript);
-    if (response.ok && resolved) {
-      setQueryFromVoice(resolved, true);
-      sendVoiceDiagnostic("voice_resolver_ok", { resolved: true, response_ok: true, text_len: resolved.length });
-      setStatus("Titulo listo. Pulsa BUSCAR.");
-    } else {
-      sendVoiceDiagnostic("voice_resolver_ok", { resolved: false, response_ok: response.ok });
-      setStatus("No seguro. Revisa y pulsa BUSCAR.");
+    for (const attempt of attempts) {
+      const response = await fetch("/api/title-resolver/resolve", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          title: attempt,
+          evidence: attempts,
+          media_hint: "movie"
+        })
+      });
+      const data = await response.json();
+      if (seq !== voiceResolveSeq) return;
+      const resolved = bestVoiceResolvedTitle(data, attempt);
+      if (response.ok && resolved) {
+        setQueryFromVoice(resolved, true);
+        sendVoiceDiagnostic("voice_resolver_ok", { resolved: true, response_ok: true, text_len: resolved.length });
+        setStatus("Titulo listo. Pulsa BUSCAR.");
+        return;
+      }
     }
+    sendVoiceDiagnostic("voice_resolver_ok", { resolved: false, response_ok: true });
+    setStatus("No seguro. Revisa y pulsa BUSCAR.");
   } catch (e) {
     sendVoiceDiagnostic("voice_resolver_error", {
       error: e && e.name ? e.name : "resolver_error",
