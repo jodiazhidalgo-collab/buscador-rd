@@ -61,11 +61,13 @@ let voiceRecognition = null;
 let voiceListening = false;
 let voiceResolveSeq = 0;
 let voiceStartTimer = null;
+let voiceNoSpeechTimer = null;
 let voiceTraceId = "";
 let voiceTraceStartedAt = 0;
 let voiceErrorSeen = false;
 let voiceDiagnosticQueue = Promise.resolve();
 let voiceClickGuardUntil = 0;
+const voiceNoSpeechTimeoutMs = 4500;
 
 function getUiStateClientId() {
   try {
@@ -420,6 +422,13 @@ function releaseQueryKeyboardFocus() {
   if (document.activeElement === query) query.blur();
 }
 
+function clearVoiceNoSpeechTimer() {
+  if (voiceNoSpeechTimer) {
+    clearTimeout(voiceNoSpeechTimer);
+    voiceNoSpeechTimer = null;
+  }
+}
+
 function showVoiceBlocked(message) {
   voiceListening = false;
   voiceRecognition = null;
@@ -427,6 +436,7 @@ function showVoiceBlocked(message) {
     clearTimeout(voiceStartTimer);
     voiceStartTimer = null;
   }
+  clearVoiceNoSpeechTimer();
   setVoiceButtonState("idle");
   setStatus(message || "Micro bloqueado");
 }
@@ -491,8 +501,22 @@ function startVoiceQuery(ev) {
   releaseQueryKeyboardFocus();
   const clickNow = Date.now();
   if (voiceListening && voiceRecognition) {
-    sendVoiceDiagnostic("voice_busy_click", { state: "ignored_while_listening" });
-    setStatus("Escuchando...");
+    if (clickNow < voiceClickGuardUntil) {
+      sendVoiceDiagnostic("voice_busy_click", { state: "ignored_while_listening" });
+      setStatus("Escuchando...");
+      return;
+    }
+    sendVoiceDiagnostic("voice_manual_stop", { state: "manual_stop", got_result: false });
+    clearVoiceNoSpeechTimer();
+    if (voiceStartTimer) {
+      clearTimeout(voiceStartTimer);
+      voiceStartTimer = null;
+    }
+    try { voiceRecognition.stop(); } catch (e) {}
+    voiceListening = false;
+    voiceRecognition = null;
+    setVoiceButtonState("idle");
+    setStatus("Micro parado");
     return;
   }
   if (clickNow < voiceClickGuardUntil) {
@@ -537,6 +561,7 @@ function startVoiceQuery(ev) {
   voiceRecognition = recognition;
   voiceListening = true;
   let gotResult = false;
+  let gotVoiceSignal = false;
   recognition.lang = "es-ES";
   recognition.continuous = false;
   recognition.interimResults = false;
@@ -550,10 +575,33 @@ function startVoiceQuery(ev) {
     setVoiceButtonState("listening");
     setStatus("Escuchando...");
   };
-  recognition.onaudiostart = () => sendVoiceDiagnostic("voice_audiostart", { state: "audio_started" });
-  recognition.onsoundstart = () => sendVoiceDiagnostic("voice_soundstart", { state: "sound_started" });
-  recognition.onspeechstart = () => sendVoiceDiagnostic("voice_speechstart", { state: "speech_started" });
+  recognition.onaudiostart = () => {
+    sendVoiceDiagnostic("voice_audiostart", { state: "audio_started" });
+    clearVoiceNoSpeechTimer();
+    voiceNoSpeechTimer = setTimeout(() => {
+      if (voiceListening && voiceRecognition === recognition && !gotResult && !gotVoiceSignal) {
+        voiceErrorSeen = true;
+        sendVoiceDiagnostic("voice_no_speech_timeout", {
+          timeout_ms: voiceNoSpeechTimeoutMs,
+          state: "audio_without_speech"
+        });
+        showVoiceBlocked("No he oido voz");
+        try { recognition.stop(); } catch (e) {}
+      }
+    }, voiceNoSpeechTimeoutMs);
+  };
+  recognition.onsoundstart = () => {
+    gotVoiceSignal = true;
+    clearVoiceNoSpeechTimer();
+    sendVoiceDiagnostic("voice_soundstart", { state: "sound_started" });
+  };
+  recognition.onspeechstart = () => {
+    gotVoiceSignal = true;
+    clearVoiceNoSpeechTimer();
+    sendVoiceDiagnostic("voice_speechstart", { state: "speech_started" });
+  };
   recognition.onresult = ev => {
+    clearVoiceNoSpeechTimer();
     const result = ev.results && ev.results[0];
     if (!result || !result.length) return;
     const alternatives = Array.from(result).map(item => cleanVoiceTitle(item && item.transcript)).filter(Boolean);
@@ -572,6 +620,7 @@ function startVoiceQuery(ev) {
     sendVoiceDiagnostic("voice_nomatch", { state: "no_match" });
   };
   recognition.onerror = ev => {
+    clearVoiceNoSpeechTimer();
     const err = String((ev && ev.error) || "");
     voiceErrorSeen = true;
     sendVoiceDiagnostic("voice_error", {
@@ -594,6 +643,7 @@ function startVoiceQuery(ev) {
       clearTimeout(voiceStartTimer);
       voiceStartTimer = null;
     }
+    clearVoiceNoSpeechTimer();
     voiceListening = false;
     if (voiceRecognition === recognition) voiceRecognition = null;
     sendVoiceDiagnostic("voice_end", { got_result: gotResult, event_error: voiceErrorSeen ? "yes" : "" });

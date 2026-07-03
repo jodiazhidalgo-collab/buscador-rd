@@ -23,6 +23,8 @@ ALLOWED_EVENTS = {
     "voice_error",
     "voice_end",
     "voice_timeout_no_start",
+    "voice_no_speech_timeout",
+    "voice_manual_stop",
     "voice_unsupported",
     "voice_insecure_context",
 }
@@ -31,6 +33,8 @@ FINAL_STATUS = {
     "voice_result": "ok",
     "voice_error": "error",
     "voice_timeout_no_start": "error",
+    "voice_no_speech_timeout": "error",
+    "voice_manual_stop": "cancelled",
     "voice_unsupported": "error",
     "voice_insecure_context": "error",
 }

@@ -102,3 +102,49 @@ def test_voice_diagnostic_accepts_busy_click(client, isolated_data_dir):
     record = json.loads(events[0].read_text(encoding="utf-8").splitlines()[0])
     assert record["event"] == "voice_busy_click"
     assert record["data"]["state"] == "ignored_while_listening"
+
+
+def test_voice_diagnostic_accepts_no_speech_timeout(client, isolated_data_dir):
+    response = client.post(
+        "/api/voice/diagnostic",
+        json={
+            "trace_id": "voice-no-speech",
+            "event": "voice_no_speech_timeout",
+            "data": {
+                "timeout_ms": 4500,
+                "state": "audio_without_speech",
+            },
+        },
+    )
+
+    assert response.status_code == 200
+    assert response.json["ok"] is True
+
+    summary = list((isolated_data_dir / "diagnostics" / "btdigg" / "voice").glob("*/voice-no-speech/summary.json"))
+    assert len(summary) == 1
+    data = json.loads(summary[0].read_text(encoding="utf-8"))
+    assert data["status"] == "error"
+    assert data["last_event"] == "voice_no_speech_timeout"
+
+
+def test_voice_diagnostic_accepts_manual_stop(client, isolated_data_dir):
+    response = client.post(
+        "/api/voice/diagnostic",
+        json={
+            "trace_id": "voice-manual-stop",
+            "event": "voice_manual_stop",
+            "data": {
+                "state": "manual_stop",
+                "got_result": False,
+            },
+        },
+    )
+
+    assert response.status_code == 200
+    assert response.json["ok"] is True
+
+    summary = list((isolated_data_dir / "diagnostics" / "btdigg" / "voice").glob("*/voice-manual-stop/summary.json"))
+    assert len(summary) == 1
+    data = json.loads(summary[0].read_text(encoding="utf-8"))
+    assert data["status"] == "cancelled"
+    assert data["last_event"] == "voice_manual_stop"
