@@ -67,6 +67,7 @@ let voiceTraceStartedAt = 0;
 let voiceErrorSeen = false;
 let voiceDiagnosticQueue = Promise.resolve();
 let voiceClickGuardUntil = 0;
+let voiceAndroidWarmupStream = null;
 const voiceNoSpeechTimeoutMs = 4500;
 
 function isAndroidVoiceClient() {
@@ -408,18 +409,17 @@ async function warmAndroidVoiceAudio() {
   let stream = null;
   sendVoiceDiagnostic("voice_android_warmup_start", { state: "warmup_start" });
   try {
+    stopAndroidVoiceWarmup("replace");
     stream = await navigator.mediaDevices.getUserMedia({ audio: true });
     const tracks = stream && stream.getTracks ? stream.getTracks() : [];
     const audioTracks = tracks.filter(track => track && track.kind === "audio");
-    tracks.forEach(track => {
-      try { track.stop(); } catch (e) {}
-    });
+    voiceAndroidWarmupStream = stream;
     sendVoiceDiagnostic("voice_android_warmup_ok", {
       state: "warmup_ok",
       track_count: tracks.length,
       audio_track_count: audioTracks.length
     });
-    await sleepMs(160);
+    await sleepMs(80);
     return "ok";
   } catch (e) {
     if (stream && stream.getTracks) {
@@ -479,6 +479,21 @@ function clearVoiceNoSpeechTimer() {
   }
 }
 
+function stopAndroidVoiceWarmup(reason = "cleanup") {
+  if (!voiceAndroidWarmupStream) return;
+  const stream = voiceAndroidWarmupStream;
+  voiceAndroidWarmupStream = null;
+  const tracks = stream && stream.getTracks ? stream.getTracks() : [];
+  tracks.forEach(track => {
+    try { track.stop(); } catch (e) {}
+  });
+  sendVoiceDiagnostic("voice_android_warmup_stop", {
+    state: "warmup_stop",
+    reason,
+    track_count: tracks.length
+  });
+}
+
 function showVoiceBlocked(message) {
   voiceListening = false;
   voiceRecognition = null;
@@ -487,6 +502,7 @@ function showVoiceBlocked(message) {
     voiceStartTimer = null;
   }
   clearVoiceNoSpeechTimer();
+  stopAndroidVoiceWarmup("blocked");
   setVoiceButtonState("idle");
   setStatus(message || "Micro bloqueado");
 }
@@ -563,6 +579,7 @@ async function startVoiceQuery(ev) {
       voiceStartTimer = null;
     }
     try { voiceRecognition.stop(); } catch (e) {}
+    stopAndroidVoiceWarmup("manual_stop");
     voiceListening = false;
     voiceRecognition = null;
     setVoiceButtonState("idle");
@@ -628,6 +645,7 @@ async function startVoiceQuery(ev) {
   };
   recognition.onaudiostart = () => {
     sendVoiceDiagnostic("voice_audiostart", { state: "audio_started" });
+    stopAndroidVoiceWarmup("audiostart");
     clearVoiceNoSpeechTimer();
     voiceNoSpeechTimer = setTimeout(() => {
       if (voiceListening && voiceRecognition === recognition && !gotResult && !gotVoiceSignal) {
@@ -653,6 +671,7 @@ async function startVoiceQuery(ev) {
   };
   recognition.onresult = ev => {
     clearVoiceNoSpeechTimer();
+    stopAndroidVoiceWarmup("result");
     const result = ev.results && ev.results[0];
     if (!result || !result.length) return;
     const alternatives = Array.from(result).map(item => cleanVoiceTitle(item && item.transcript)).filter(Boolean);
@@ -674,6 +693,7 @@ async function startVoiceQuery(ev) {
     clearVoiceNoSpeechTimer();
     const err = String((ev && ev.error) || "");
     voiceErrorSeen = true;
+    stopAndroidVoiceWarmup(err ? "error_" + err : "error");
     sendVoiceDiagnostic("voice_error", {
       error: err || "unknown",
       message: ev && ev.message ? ev.message : "",
@@ -697,6 +717,7 @@ async function startVoiceQuery(ev) {
     clearVoiceNoSpeechTimer();
     voiceListening = false;
     if (voiceRecognition === recognition) voiceRecognition = null;
+    stopAndroidVoiceWarmup("end");
     sendVoiceDiagnostic("voice_end", { got_result: gotResult, event_error: voiceErrorSeen ? "yes" : "" });
     if (!gotResult) setVoiceButtonState("idle");
   };
@@ -732,6 +753,7 @@ async function startVoiceQuery(ev) {
       clearTimeout(voiceStartTimer);
       voiceStartTimer = null;
     }
+    stopAndroidVoiceWarmup("start_exception");
     sendVoiceDiagnostic("voice_error", {
       error: e && e.name ? e.name : "start_exception",
       message: e && e.message ? e.message : String(e || ""),

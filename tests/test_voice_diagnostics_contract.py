@@ -130,6 +130,30 @@ def test_voice_diagnostic_accepts_android_warmup(client, isolated_data_dir):
     assert record["data"]["audio_track_count"] == 1
 
 
+def test_voice_diagnostic_accepts_android_warmup_stop(client, isolated_data_dir):
+    response = client.post(
+        "/api/voice/diagnostic",
+        json={
+            "trace_id": "voice-android-warmup-stop",
+            "event": "voice_android_warmup_stop",
+            "data": {
+                "state": "warmup_stop",
+                "reason": "audiostart",
+                "track_count": 1,
+            },
+        },
+    )
+
+    assert response.status_code == 200
+    assert response.json["ok"] is True
+
+    events = list((isolated_data_dir / "diagnostics" / "btdigg" / "voice").glob("*/voice-android-warmup-stop/events.jsonl"))
+    assert len(events) == 1
+    record = json.loads(events[0].read_text(encoding="utf-8").splitlines()[0])
+    assert record["event"] == "voice_android_warmup_stop"
+    assert record["data"]["reason"] == "audiostart"
+
+
 def test_voice_diagnostic_accepts_no_speech_timeout(client, isolated_data_dir):
     response = client.post(
         "/api/voice/diagnostic",
