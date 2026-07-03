@@ -46,6 +46,8 @@ FINAL_STATUS = {
 ALLOWED_DATA_KEYS = {
     "alternatives_count",
     "audio_track_count",
+    "audio_track_kind",
+    "audio_track_state",
     "button_disabled",
     "elapsed_ms",
     "error",
@@ -65,6 +67,7 @@ ALLOWED_DATA_KEYS = {
     "reason",
     "result_count",
     "screen",
+    "start_mode",
     "state",
     "timeout_ms",
     "touch_points",

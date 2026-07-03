@@ -494,6 +494,13 @@ function stopAndroidVoiceWarmup(reason = "cleanup") {
   });
 }
 
+function getAndroidWarmupAudioTrack() {
+  const stream = voiceAndroidWarmupStream;
+  if (!stream) return null;
+  const tracks = stream.getAudioTracks ? stream.getAudioTracks() : (stream.getTracks ? stream.getTracks().filter(track => track && track.kind === "audio") : []);
+  return tracks.find(track => track && track.kind === "audio" && track.readyState === "live") || null;
+}
+
 function showVoiceBlocked(message) {
   voiceListening = false;
   voiceRecognition = null;
@@ -733,10 +740,15 @@ async function startVoiceQuery(ev) {
         return;
       }
     }
+    const androidAudioTrack = isAndroidVoiceClient() ? getAndroidWarmupAudioTrack() : null;
+    const startMode = androidAudioTrack ? "audio_track" : "microphone";
     sendVoiceDiagnostic("voice_start_called", {
       recognition_ctor: recognitionInfo.label || (Recognition && Recognition.name ? Recognition.name : ""),
       language: recognition.lang,
       warmup_status: androidWarmupStatus,
+      start_mode: startMode,
+      audio_track_kind: androidAudioTrack ? androidAudioTrack.kind : "",
+      audio_track_state: androidAudioTrack ? androidAudioTrack.readyState : "",
       state: "calling_start"
     });
     voiceStartTimer = setTimeout(() => {
@@ -746,7 +758,7 @@ async function startVoiceQuery(ev) {
         showVoiceBlocked("Micro no arranca");
       }
     }, 3500);
-    recognition.start();
+    recognition.start(androidAudioTrack || undefined);
   } catch (e) {
     voiceErrorSeen = true;
     if (voiceStartTimer) {
