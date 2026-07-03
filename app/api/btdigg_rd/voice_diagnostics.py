@@ -13,6 +13,9 @@ ALLOWED_EVENTS = {
     "voice_busy_click",
     "voice_support_detected",
     "voice_permission_state",
+    "voice_android_warmup_start",
+    "voice_android_warmup_ok",
+    "voice_android_warmup_fail",
     "voice_start_called",
     "voice_onstart",
     "voice_audiostart",
@@ -41,6 +44,7 @@ FINAL_STATUS = {
 
 ALLOWED_DATA_KEYS = {
     "alternatives_count",
+    "audio_track_count",
     "button_disabled",
     "elapsed_ms",
     "error",
@@ -62,12 +66,14 @@ ALLOWED_DATA_KEYS = {
     "state",
     "timeout_ms",
     "touch_points",
+    "track_count",
     "transcript_preview",
     "url",
     "user_agent",
     "vendor",
     "visibility",
     "viewport",
+    "warmup_status",
 }
 
 

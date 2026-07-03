@@ -69,6 +69,14 @@ let voiceDiagnosticQueue = Promise.resolve();
 let voiceClickGuardUntil = 0;
 const voiceNoSpeechTimeoutMs = 4500;
 
+function isAndroidVoiceClient() {
+  return /Android/i.test(navigator.userAgent || "");
+}
+
+function sleepMs(ms) {
+  return new Promise(resolve => setTimeout(resolve, ms));
+}
+
 function getUiStateClientId() {
   try {
     let id = localStorage.getItem(uiStateClientStoreKey);
@@ -388,6 +396,48 @@ function reportVoicePermissionState() {
   }
 }
 
+async function warmAndroidVoiceAudio() {
+  if (!isAndroidVoiceClient()) return "skipped";
+  if (!(navigator.mediaDevices && navigator.mediaDevices.getUserMedia)) {
+    sendVoiceDiagnostic("voice_android_warmup_fail", {
+      state: "media_devices_missing",
+      error: "media_devices_missing"
+    });
+    return "failed";
+  }
+  let stream = null;
+  sendVoiceDiagnostic("voice_android_warmup_start", { state: "warmup_start" });
+  try {
+    stream = await navigator.mediaDevices.getUserMedia({ audio: true });
+    const tracks = stream && stream.getTracks ? stream.getTracks() : [];
+    const audioTracks = tracks.filter(track => track && track.kind === "audio");
+    tracks.forEach(track => {
+      try { track.stop(); } catch (e) {}
+    });
+    sendVoiceDiagnostic("voice_android_warmup_ok", {
+      state: "warmup_ok",
+      track_count: tracks.length,
+      audio_track_count: audioTracks.length
+    });
+    await sleepMs(160);
+    return "ok";
+  } catch (e) {
+    if (stream && stream.getTracks) {
+      stream.getTracks().forEach(track => {
+        try { track.stop(); } catch (ignore) {}
+      });
+    }
+    const errorName = e && e.name ? e.name : "get_user_media_error";
+    sendVoiceDiagnostic("voice_android_warmup_fail", {
+      state: "warmup_fail",
+      error: errorName,
+      message: e && e.message ? e.message : String(e || "")
+    });
+    if (errorName === "NotAllowedError" || errorName === "PermissionDeniedError") return "blocked";
+    return "failed";
+  }
+}
+
 function cleanVoiceTitle(value) {
   return String(value || "")
     .trim()
@@ -495,7 +545,7 @@ async function resolveVoiceTitle(transcript, alternatives) {
   }
 }
 
-function startVoiceQuery(ev) {
+async function startVoiceQuery(ev) {
   if (ev && ev.preventDefault) ev.preventDefault();
   if (ev && ev.stopPropagation) ev.stopPropagation();
   releaseQueryKeyboardFocus();
@@ -562,6 +612,7 @@ function startVoiceQuery(ev) {
   voiceListening = true;
   let gotResult = false;
   let gotVoiceSignal = false;
+  let androidWarmupStatus = "skipped";
   recognition.lang = "es-ES";
   recognition.continuous = false;
   recognition.interimResults = false;
@@ -650,12 +701,23 @@ function startVoiceQuery(ev) {
     if (!gotResult) setVoiceButtonState("idle");
   };
   try {
+    if (isAndroidVoiceClient()) {
+      setVoiceButtonState("listening");
+      setStatus("Preparando micro...");
+      androidWarmupStatus = await warmAndroidVoiceAudio();
+      if (!voiceListening || voiceRecognition !== recognition) return;
+      if (androidWarmupStatus === "blocked") {
+        voiceErrorSeen = true;
+        showVoiceBlocked("Micro bloqueado");
+        return;
+      }
+    }
     sendVoiceDiagnostic("voice_start_called", {
       recognition_ctor: recognitionInfo.label || (Recognition && Recognition.name ? Recognition.name : ""),
       language: recognition.lang,
+      warmup_status: androidWarmupStatus,
       state: "calling_start"
     });
-    recognition.start();
     voiceStartTimer = setTimeout(() => {
       if (voiceListening && !gotResult) {
         voiceErrorSeen = true;
@@ -663,8 +725,13 @@ function startVoiceQuery(ev) {
         showVoiceBlocked("Micro no arranca");
       }
     }, 3500);
+    recognition.start();
   } catch (e) {
     voiceErrorSeen = true;
+    if (voiceStartTimer) {
+      clearTimeout(voiceStartTimer);
+      voiceStartTimer = null;
+    }
     sendVoiceDiagnostic("voice_error", {
       error: e && e.name ? e.name : "start_exception",
       message: e && e.message ? e.message : String(e || ""),
@@ -2861,7 +2928,7 @@ async function initApp() {
   restoreFormState();
   restoreActivityState();
   restoreRdFollowState();
-  setVoiceButtonState(speechRecognitionCtor() ? "idle" : "unsupported");
+  setVoiceButtonState(speechRecognitionInfo().Ctor ? "idle" : "unsupported");
   const restoredShared = await loadSharedUiState(false);
   if (!restoredShared) restoreViewState();
   await loadQbitToggle();
