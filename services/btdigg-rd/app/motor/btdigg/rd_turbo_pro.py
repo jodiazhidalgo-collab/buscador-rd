@@ -1326,8 +1326,9 @@ def _bb_code(event, data, level):
     clean_event = re.sub(r"[^A-Z0-9]+", "_", str(event or "").upper()).strip("_")
     return f"{category}.{clean_event or 'EVENT'}"
 
-BLACKBOX_SEQ = None
 RD_MAGNETS_LIVE_FILE_NAME = "rd_magnets_live.jsonl"
+BLACKBOX_LOCK_TIMEOUT_SEC = 10.0
+BLACKBOX_LOCK_STALE_SEC = 60.0
 
 def _rd_magnets_live_file():
     explicit = os.environ.get("BTDIGG_RD_MAGNETS_FILE")
@@ -1368,26 +1369,71 @@ def record_rd_sent_magnet(r, idx=0, total=0):
     except Exception:
         pass
 
-def _blackbox_next_seq(events_file):
-    global BLACKBOX_SEQ
-    if BLACKBOX_SEQ is None:
+def _blackbox_event_count(events_file):
+    try:
+        return sum(1 for line in events_file.read_text(encoding="utf-8").splitlines() if line.strip())
+    except Exception:
+        return 0
+
+def _blackbox_acquire_event_lock(events_file):
+    lock_dir = events_file.with_name("events.lock")
+    try:
+        lock_dir.parent.mkdir(parents=True, exist_ok=True)
+    except Exception:
+        pass
+    deadline = time.monotonic() + BLACKBOX_LOCK_TIMEOUT_SEC
+    while True:
         try:
-            BLACKBOX_SEQ = sum(1 for line in events_file.read_text(encoding="utf-8").splitlines() if line.strip())
+            lock_dir.mkdir()
+            return lock_dir
+        except FileExistsError:
+            try:
+                if time.time() - lock_dir.stat().st_mtime > BLACKBOX_LOCK_STALE_SEC:
+                    lock_dir.rmdir()
+                    continue
+            except Exception:
+                pass
+            if time.monotonic() >= deadline:
+                return None
+            time.sleep(0.01)
         except Exception:
-            BLACKBOX_SEQ = 0
-    BLACKBOX_SEQ += 1
-    return BLACKBOX_SEQ
+            if time.monotonic() >= deadline:
+                return None
+            time.sleep(0.01)
+
+def _blackbox_release_event_lock(lock_dir):
+    if not lock_dir:
+        return
+    try:
+        lock_dir.rmdir()
+    except Exception:
+        pass
+
+def _blackbox_next_seq(events_file):
+    seq_file = events_file.with_name("events.seq")
+    try:
+        current = int((seq_file.read_text(encoding="utf-8").strip() or "0"))
+    except Exception:
+        current = 0
+    seq = max(current, _blackbox_event_count(events_file)) + 1
+    try:
+        seq_file.write_text(f"{seq}\n", encoding="utf-8")
+    except Exception:
+        pass
+    return seq
 
 def _blackbox_diag(event, data):
     events_path = os.environ.get("BTDIGG_BLACKBOX_EVENTS")
     if not events_path:
         return
+    lock_dir = None
     try:
         events_file = Path(events_path)
         events_file.parent.mkdir(parents=True, exist_ok=True)
         clean_data = _bb_clean(data or {})
         level = _bb_level(event, clean_data)
         phase = _bb_phase(event)
+        lock_dir = _blackbox_acquire_event_lock(events_file)
         seq = _blackbox_next_seq(events_file)
         trace_kind = os.environ.get("BTDIGG_BLACKBOX_KIND", "job")
         trace_id = os.environ.get("BTDIGG_BLACKBOX_TRACE_ID") or os.environ.get("BTDIGG_BLACKBOX_JOB_ID", "")
@@ -1436,6 +1482,8 @@ def _blackbox_diag(event, data):
         summary_file.write_text(json.dumps(summary, ensure_ascii=False, indent=2, default=str) + "\n", encoding="utf-8")
     except Exception:
         pass
+    finally:
+        _blackbox_release_event_lock(lock_dir)
 
 def diag(event, **data):
     with DIAG_LOCK:

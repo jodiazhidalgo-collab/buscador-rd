@@ -13,6 +13,8 @@ SECRET_MARKERS = ("token", "pass", "password", "authorization", "auth", "apikey"
 PRIVATE_VALUE_MARKERS = ("magnet", "link", "url", "unrestricted", "download_url")
 TEXT_LIMIT = 600
 LIST_LIMIT = 40
+TRACE_LOCK_TIMEOUT_SEC = 10.0
+TRACE_LOCK_STALE_SEC = 60.0
 
 CONFIG_SNAPSHOT_KEYS = (
     "version",
@@ -138,14 +140,70 @@ def _collection_for_kind(kind: str) -> str:
     return "jobs"
 
 
-def _next_seq(folder: Path) -> int:
-    path = folder / "events.jsonl"
-    if not path.exists():
-        return 1
+def _event_count(path: Path) -> int:
     try:
-        return sum(1 for line in path.read_text(encoding="utf-8").splitlines() if line.strip()) + 1
+        return sum(1 for line in path.read_text(encoding="utf-8").splitlines() if line.strip())
     except Exception:
-        return int(time.time() * 1000)
+        return 0
+
+
+def _acquire_event_lock(events_path: Path) -> Path | None:
+    lock_dir = events_path.with_name("events.lock")
+    try:
+        lock_dir.parent.mkdir(parents=True, exist_ok=True)
+    except Exception:
+        pass
+    deadline = time.monotonic() + TRACE_LOCK_TIMEOUT_SEC
+    while True:
+        try:
+            lock_dir.mkdir()
+            return lock_dir
+        except FileExistsError:
+            try:
+                if time.time() - lock_dir.stat().st_mtime > TRACE_LOCK_STALE_SEC:
+                    lock_dir.rmdir()
+                    continue
+            except Exception:
+                pass
+            if time.monotonic() >= deadline:
+                return None
+            time.sleep(0.01)
+        except Exception:
+            if time.monotonic() >= deadline:
+                return None
+            time.sleep(0.01)
+
+
+def _release_event_lock(lock_dir: Path | None) -> None:
+    if not lock_dir:
+        return
+    try:
+        lock_dir.rmdir()
+    except Exception:
+        pass
+
+
+def _next_seq_locked(events_path: Path) -> int:
+    seq_path = events_path.with_name("events.seq")
+    try:
+        current = int((seq_path.read_text(encoding="utf-8").strip() or "0"))
+    except Exception:
+        current = 0
+    seq = max(current, _event_count(events_path)) + 1
+    try:
+        seq_path.write_text(f"{seq}\n", encoding="utf-8")
+    except Exception:
+        pass
+    return seq
+
+
+def _next_seq(folder: Path) -> int:
+    events_path = folder / "events.jsonl"
+    lock_dir = _acquire_event_lock(events_path)
+    try:
+        return _next_seq_locked(events_path)
+    finally:
+        _release_event_lock(lock_dir)
 
 
 def _redact(key: str, value: Any) -> Any:
@@ -606,31 +664,36 @@ def _update_summary(folder: Path, record: dict[str, Any], updates: dict[str, Any
 def _record(folder: Path, event: str, data: dict[str, Any] | None = None, updates: dict[str, Any] | None = None) -> dict[str, Any]:
     clean_data = _clean(data or {})
     level = _level(event, clean_data)
-    seq = _next_seq(folder)
-    trace_kind = _kind_from_folder(folder)
-    trace_id = folder.name
-    ts = _now()
-    record = {
-        "ts": ts,
-        "observed_ts": ts,
-        "event_id": f"E{seq:06d}",
-        "seq": seq,
-        "trace_kind": trace_kind,
-        "trace_id": trace_id,
-        "event": event,
-        "level": level,
-        "phase": _phase(event),
-        "code": _code(event, clean_data, level),
-        "data": clean_data,
-    }
-    _append_jsonl(folder / "events.jsonl", record)
-    if level == "warn":
-        _append_jsonl(folder / "warnings.jsonl", record)
-    elif level == "error":
-        _append_jsonl(folder / "errors.jsonl", record)
-    _append_timeline(folder / "timeline.md", record)
-    _update_summary(folder, record, updates)
-    return record
+    events_path = folder / "events.jsonl"
+    lock_dir = _acquire_event_lock(events_path)
+    try:
+        seq = _next_seq_locked(events_path)
+        trace_kind = _kind_from_folder(folder)
+        trace_id = folder.name
+        ts = _now()
+        record = {
+            "ts": ts,
+            "observed_ts": ts,
+            "event_id": f"E{seq:06d}",
+            "seq": seq,
+            "trace_kind": trace_kind,
+            "trace_id": trace_id,
+            "event": event,
+            "level": level,
+            "phase": _phase(event),
+            "code": _code(event, clean_data, level),
+            "data": clean_data,
+        }
+        _append_jsonl(events_path, record)
+        if level == "warn":
+            _append_jsonl(folder / "warnings.jsonl", record)
+        elif level == "error":
+            _append_jsonl(folder / "errors.jsonl", record)
+        _append_timeline(folder / "timeline.md", record)
+        _update_summary(folder, record, updates)
+        return record
+    finally:
+        _release_event_lock(lock_dir)
 
 
 def trace_folder(kind: str, trace_id: str, day: str | None = None) -> Path:
