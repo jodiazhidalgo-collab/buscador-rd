@@ -22,9 +22,9 @@ La tanda se cerro aplicando el camino preferido para las piezas de bajo-medio ri
 
 ## Archivos creados
 
-- `docs/tanda-final-plan.md`
-- `docs/tanda-final-informe.md`
-- `docs/evidencia-pytest-y-validacion-local.md`
+- `docs/btdigg-rd/tanda-final-plan.md`
+- `docs/btdigg-rd/tanda-final-informe.md`
+- `docs/btdigg-rd/evidencia-pytest-y-validacion-local.md`
 - `app/motor/btdigg/_motor_rd_retry.py`
 - `app/motor/btdigg/_motor_qbt_probe.py`
 - `app/motor/btdigg/_motor_exports.py`
@@ -119,7 +119,7 @@ Motivo: scraping, navegador y addMagnet tienen alto acoplamiento con red, runtim
 - `python -m pytest -q`: 64 passed.
 - `python -m unittest discover -s tests -v`: 22 tests OK.
 - Auditoria encoding/BOM/LF en archivos tocados: OK, sin `\u00c3`, sin `\u00c2`, sin BOM, sin CRLF.
-- Evidencia reproducible de pytest y validacion local: `docs/evidencia-pytest-y-validacion-local.md`.
+- Evidencia reproducible de pytest y validacion local: `docs/btdigg-rd/evidencia-pytest-y-validacion-local.md`.
 
 ## Rebuild y smokes
 

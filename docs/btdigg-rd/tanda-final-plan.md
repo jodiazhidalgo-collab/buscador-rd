@@ -14,8 +14,8 @@ Cerrar el saneo interno de BTDigg + RD reduciendo el riesgo principal pendiente 
 
 ## Archivos previstos
 
-- `docs/tanda-final-plan.md`
-- `docs/tanda-final-informe.md`
+- `docs/btdigg-rd/tanda-final-plan.md`
+- `docs/btdigg-rd/tanda-final-informe.md`
 - `app/motor/btdigg/rd_turbo_pro.py`
 - `app/motor/btdigg/_motor_rd_retry.py`
 - `app/motor/btdigg/_motor_qbt_probe.py`

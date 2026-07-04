@@ -6,8 +6,8 @@ TANDA 2A ejecutada como extraccion interna conservadora. No se han cambiado ruta
 
 ## Archivos creados
 
-- `docs/tanda-2a-plan.md`
-- `docs/tanda-2a-informe.md`
+- `docs/btdigg-rd/tanda-2a-plan.md`
+- `docs/btdigg-rd/tanda-2a-informe.md`
 - `app/api/btdigg_rd/_runtime_dirs.py`
 - `app/api/btdigg_rd/_job_artifacts.py`
 - `app/api/btdigg_rd/_send_tracking.py`

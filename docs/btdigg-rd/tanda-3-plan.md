@@ -24,7 +24,7 @@ Cerrar defectos residuales de TANDA 2A, reducir riesgo interno en `send.py` y pr
 - `tests/test_send_contract.py`
 - `tests/test_routes_contract.py`
 - `tests/test_motor_characterization.py`
-- `docs/tanda-3-informe.md`
+- `docs/btdigg-rd/tanda-3-informe.md`
 
 ## Riesgos
 
