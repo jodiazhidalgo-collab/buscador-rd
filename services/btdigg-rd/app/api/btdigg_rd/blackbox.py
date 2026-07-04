@@ -7,7 +7,7 @@ from datetime import datetime
 from pathlib import Path
 from typing import Any
 
-from .config import BTDIGG_DIR, DIAGNOSTICS_DIR, RD_TEST_DIAGNOSTICS_DIR
+from .config import BTDIGG_CONFIG_FILE, DIAGNOSTICS_DIR, RD_TEST_DIAGNOSTICS_DIR
 
 SECRET_MARKERS = ("token", "pass", "password", "authorization", "auth", "apikey", "api_key")
 PRIVATE_VALUE_MARKERS = ("magnet", "link", "url", "unrestricted", "download_url")
@@ -233,7 +233,7 @@ def _clean(value: Any) -> Any:
 
 
 def _config_snapshot() -> dict[str, Any]:
-    path = BTDIGG_DIR / "config.json"
+    path = BTDIGG_CONFIG_FILE
     try:
         cfg = json.loads(path.read_text(encoding="utf-8")) if path.exists() else {}
     except Exception as exc:

@@ -22,10 +22,13 @@ from pathlib import Path
 
 APP_DIR = Path(__file__).resolve().parent
 ENGINE_FILE_DEFAULT = APP_DIR / "rd_turbo_pro.py"
-SHOWN_FILE = Path(os.environ.get("EDITOR_MAESTRO_SHOWN_FILE", str(APP_DIR / "exports" / "EDITOR_MAESTRO_SHOWN.json")))
+DEFAULT_DATA_DIR = Path(os.environ.get("DATA_DIR", str(APP_DIR.parents[2] / "data")))
+MOTOR_RUNTIME_DIR = Path(os.environ.get("BTDIGG_RUNTIME_DIR", str(DEFAULT_DATA_DIR / "motor")))
+DEFAULT_EXPORT_DIR = Path(os.environ.get("BTDIGG_EXPORT_DIR", str(MOTOR_RUNTIME_DIR / "exports")))
+SHOWN_FILE = Path(os.environ.get("EDITOR_MAESTRO_SHOWN_FILE", str(DEFAULT_EXPORT_DIR / "EDITOR_MAESTRO_SHOWN.json")))
 SAFEOUT_FILE = Path(os.environ.get("EDITOR_MAESTRO_SAFEOUT", str(Path(tempfile.gettempdir()) / "btdigg_rd_safeout.log")))
 
-ORDERED_LINKS_FILE = Path(os.environ.get("EDITOR_MAESTRO_ORDERED_LINKS_FILE", str(APP_DIR / "last_links_ordenado.txt")))
+ORDERED_LINKS_FILE = Path(os.environ.get("EDITOR_MAESTRO_ORDERED_LINKS_FILE", str(MOTOR_RUNTIME_DIR / "last_links_ordenado.txt")))
 
 
 def _clean_one_line(value):

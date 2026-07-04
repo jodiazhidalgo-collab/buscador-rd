@@ -5,7 +5,7 @@ import re
 from typing import Any
 
 from ._runtime_config_service import load_effective_runtime_config
-from .config import BTDIGG_DIR
+from .config import BTDIGG_CONFIG_FILE
 
 
 TV_SERIES_TEMPLATES_KEY = "tv_series_templates"
@@ -79,7 +79,7 @@ def normalize_tv_rules(raw: Any) -> dict[str, list[str]]:
 
 
 def load_tv_rules() -> dict[str, list[str]]:
-    cfg = load_effective_runtime_config(BTDIGG_DIR / "config.json")
+    cfg = load_effective_runtime_config(BTDIGG_CONFIG_FILE)
     return normalize_tv_rules(
         {
             "series_templates": cfg.get(TV_SERIES_TEMPLATES_KEY),
@@ -90,7 +90,7 @@ def load_tv_rules() -> dict[str, list[str]]:
 
 def save_tv_rules(raw: Any) -> dict[str, list[str]]:
     rules = normalize_tv_rules(raw)
-    path = BTDIGG_DIR / "config.json"
+    path = BTDIGG_CONFIG_FILE
     cfg = load_effective_runtime_config(path)
 
     cfg[TV_SERIES_TEMPLATES_KEY] = rules["series_templates"]

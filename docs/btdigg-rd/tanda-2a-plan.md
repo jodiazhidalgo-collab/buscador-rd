@@ -26,7 +26,7 @@ Reducir riesgo interno en `jobs.py`, `send.py` y `routes.py` con extracciones pe
 ## Riesgos
 
 - `send.py` mezcla endpoint, clientes externos, tracking y decisiones RD/qB; las extracciones deben ser mecanicas y con wrappers.
-- `jobs.py` comparte runtime, cancelacion, subproceso y promocion de artefactos; no se debe alterar la estructura real de `data/` ni `app/motor/btdigg/exports/`.
+- `jobs.py` comparte runtime, cancelacion, subproceso y promocion de artefactos; no se debe alterar la estructura real de `data/` sin tanda propia.
 - `routes.py` contiene configuracion publica; cualquier cambio en claves JSON o metodos HTTP seria regresion.
 - `rd_turbo_pro.py` queda fuera de alcance salvo documentar riesgos.
 

@@ -31,7 +31,7 @@ Cerrar el saneo interno de BTDigg + RD reduciendo el riesgo principal pendiente 
 - `rd_turbo_pro.py` es monolitico y depende de globals de runtime, configuracion, RD, qB y diagnosticos.
 - `prepare_results` y `rd_check_availability` tienen acoplamiento alto; si sacarlas crea fragilidad, se mantendran como wrappers/helpers internos.
 - Las ramas de RD/qB deben testearse con stubs, sin red real y sin tocar `data/`.
-- No se deben tocar `data/`, `config.json`, `rd_token.txt` ni `exports/` reales.
+- No se deben tocar `data/`, `config.json`, `rd_token.txt` ni `exports/` reales salvo tanda propia con backup.
 
 ## Rollback
 

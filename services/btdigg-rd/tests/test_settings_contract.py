@@ -6,9 +6,10 @@ import json
 def _patch_motor_config(tmp_path, monkeypatch):
     from api.btdigg_rd import classification, routes
 
-    motor_dir = tmp_path / "motor" / "btdigg"
-    motor_dir.mkdir(parents=True)
-    (motor_dir / "config.json").write_text(
+    motor_runtime_dir = tmp_path / "runtime" / "motor"
+    motor_runtime_dir.mkdir(parents=True)
+    config_file = motor_runtime_dir / "config.json"
+    config_file.write_text(
         json.dumps(
             {
                 "default_mode": 0,
@@ -20,9 +21,9 @@ def _patch_motor_config(tmp_path, monkeypatch):
         ),
         encoding="utf-8",
     )
-    monkeypatch.setattr(routes, "BTDIGG_DIR", motor_dir)
-    monkeypatch.setattr(classification, "BTDIGG_DIR", motor_dir)
-    return motor_dir
+    monkeypatch.setattr(routes, "BTDIGG_RUNTIME_DIR", motor_runtime_dir)
+    monkeypatch.setattr(classification, "BTDIGG_CONFIG_FILE", config_file)
+    return motor_runtime_dir
 
 
 def test_settings_get_post_contract(client, tmp_path, monkeypatch):

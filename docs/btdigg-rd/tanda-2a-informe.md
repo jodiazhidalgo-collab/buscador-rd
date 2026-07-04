@@ -31,7 +31,7 @@ TANDA 2A ejecutada como extraccion interna conservadora. No se han cambiado ruta
 
 ## Logica extraida
 
-- `jobs.py`: runtime de job, `RunScope`, `JobRuntime`, creacion de rutas runtime, `cancel.json` y promocion legacy de artefactos a `app/motor/btdigg/exports`.
+- `jobs.py`: runtime de job, `RunScope`, `JobRuntime`, creacion de rutas runtime, `cancel.json` y promocion de artefactos a `config/btdigg-rd/data/motor/exports`.
 - `send.py`: tracking de descarga, helpers de texto/enlace, cliente qBittorrent, cliente Real-Debrid basico y helpers puros de RDT native.
 - `routes.py`: settings, qbit-toggle, reglas TV y UI state a servicios internos pequenos.
 
@@ -45,9 +45,9 @@ TANDA 2A ejecutada como extraccion interna conservadora. No se han cambiado ruta
 
 - `app/motor/btdigg/rd_turbo_pro.py`
 - `data/`
-- `app/motor/btdigg/config.json`
-- `app/motor/btdigg/rd_token.txt`
-- `app/motor/btdigg/exports/`
+- `config/btdigg-rd/data/motor/config.json`
+- `config/btdigg-rd/data/motor/rd_token.txt`
+- `config/btdigg-rd/data/motor/exports/`
 - UI y assets frontend
 - Dockerfile y compose
 
@@ -66,5 +66,5 @@ TANDA 2A ejecutada como extraccion interna conservadora. No se han cambiado ruta
 
 - `rd_turbo_pro.py` sigue siendo el monolito principal y no se ha partido.
 - La parte RDT native de `send.py` aun mezcla cliente y flujo de decision; queda preparada para extraer mas, pero no conviene forzarlo sin mas tests.
-- El runtime acoplado en `app/motor/btdigg/config.json`, `rd_token.txt` y `exports/` sigue documentado como runtime existente y no debe moverse sin tanda propia.
+- Nota actual: el runtime del motor fue migrado a `config/btdigg-rd/data/motor/` en una tanda posterior.
 - El proximo zip de handoff debe excluir `_codex_runtime/`, `.git/`, `_backups/`, handoffs, capturas y secretos runtime.

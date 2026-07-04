@@ -9,7 +9,7 @@ import urllib.request
 from typing import Any
 
 from ._send_tracking import log_download, trace_download
-from .config import BTDIGG_DIR, DATA, REAL_DEBRID_API
+from .config import BTDIGG_TOKEN_FILE, DATA, REAL_DEBRID_API
 
 
 def rd_token() -> str:
@@ -17,7 +17,7 @@ def rd_token() -> str:
         value = str(os.environ.get(key) or "").strip()
         if value:
             return value
-    for path in (DATA / "rd_token.txt", DATA / "real_debrid_token.txt", BTDIGG_DIR / "rd_token.txt"):
+    for path in (BTDIGG_TOKEN_FILE, DATA / "rd_token.txt", DATA / "real_debrid_token.txt"):
         try:
             if path.exists():
                 value = path.read_text(encoding="utf-8", errors="ignore").strip()

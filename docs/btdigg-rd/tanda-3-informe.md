@@ -40,9 +40,7 @@
 
 - No se modifico `app/motor/btdigg/rd_turbo_pro.py`.
 - No se movio `data/`.
-- No se movio `app/motor/btdigg/config.json`.
-- No se movio `app/motor/btdigg/rd_token.txt`.
-- No se movio `app/motor/btdigg/exports/`.
+- Nota actual: `config.json`, `rd_token.txt` y `exports/` del motor fueron migrados despues a `config/btdigg-rd/data/motor/`.
 - No se tocaron rutas HTTP publicas, nombres de endpoint Flask ni claves JSON publicas.
 - No se toco frontend.
 

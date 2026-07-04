@@ -84,7 +84,9 @@ def _load_backup_candidate_config(path: Path | None) -> dict[str, Any]:
                 names = [
                     name
                     for name in archive.namelist()
-                    if name.replace("\\", "/").endswith("app/motor/btdigg/config.json")
+                    if name.replace("\\", "/").endswith(
+                        ("config/btdigg-rd/data/motor/config.json", "app/motor/btdigg/config.json")
+                    )
                 ]
                 if not names:
                     return {}

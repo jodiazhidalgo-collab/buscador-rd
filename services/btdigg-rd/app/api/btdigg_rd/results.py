@@ -4,7 +4,7 @@ import re
 from pathlib import Path
 from typing import Any
 
-from .config import BTDIGG_DIR
+from .config import BTDIGG_EXPORTS_DIR
 from .utils import read_json
 
 
@@ -154,7 +154,7 @@ def load_results(path: Path | str | None = None, export_dir: Path | str | None =
     if path:
         data = read_json(Path(path))
     if data is None:
-        base = Path(export_dir) if export_dir else BTDIGG_DIR / "exports"
+        base = Path(export_dir) if export_dir else BTDIGG_EXPORTS_DIR
         data = read_json(base / "EDITOR_MAESTRO_SHOWN.json")
         if data is None:
             data = read_json(base / "ULTIMOS_RESULTADOS.json")

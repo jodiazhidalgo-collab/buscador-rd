@@ -35,13 +35,19 @@ def test_start_job_public_flow_creates_queued_runtime(
     isolated_data_dir, reload_data_dir_modules, tmp_path, monkeypatch
 ):
     jobs = _load_jobs(isolated_data_dir, reload_data_dir_modules)
-    motor_dir = tmp_path / "motor" / "btdigg"
-    motor_dir.mkdir(parents=True)
-    (motor_dir / "config.json").write_text(
+    motor_code_dir = tmp_path / "code" / "motor" / "btdigg"
+    motor_runtime_dir = tmp_path / "runtime" / "motor"
+    motor_code_dir.mkdir(parents=True)
+    motor_runtime_dir.mkdir(parents=True)
+    config_file = motor_runtime_dir / "config.json"
+    config_file.write_text(
         json.dumps({"default_pages": "2", "default_mode": "0", "min_size_gb": "1"}),
         encoding="utf-8",
     )
-    monkeypatch.setattr(jobs, "BTDIGG_DIR", motor_dir)
+    monkeypatch.setattr(jobs, "BTDIGG_CODE_DIR", motor_code_dir)
+    monkeypatch.setattr(jobs, "BTDIGG_RUNTIME_DIR", motor_runtime_dir)
+    monkeypatch.setattr(jobs, "BTDIGG_CONFIG_FILE", config_file)
+    monkeypatch.setattr(jobs, "BTDIGG_TOKEN_FILE", motor_runtime_dir / "rd_token.txt")
     monkeypatch.setattr(jobs, "sync_rd_token_for_motor", lambda: None)
     monkeypatch.setattr(jobs, "cleanup_job_runs", lambda: None)
     monkeypatch.setattr(jobs.uuid, "uuid4", lambda: type("Uuid", (), {"hex": "abcdef1234567890"})())
@@ -68,7 +74,7 @@ def test_start_job_public_flow_creates_queued_runtime(
     assert target is jobs.run_process
     assert daemon is True
     assert args[0] == job_id
-    assert args[2] == motor_dir
+    assert args[2] == motor_code_dir
     cmd = args[1]
     assert cmd[cmd.index("--pages") + 1] == "2"
     assert cmd[cmd.index("--mode") + 1] == "0"
@@ -92,13 +98,19 @@ def test_start_job_uses_effective_config_when_runtime_config_is_trimmed(
     isolated_data_dir, reload_data_dir_modules, tmp_path, monkeypatch
 ):
     jobs = _load_jobs(isolated_data_dir, reload_data_dir_modules)
-    motor_dir = tmp_path / "motor" / "btdigg"
-    motor_dir.mkdir(parents=True)
-    (motor_dir / "config.json").write_text(
+    motor_code_dir = tmp_path / "code" / "motor" / "btdigg"
+    motor_runtime_dir = tmp_path / "runtime" / "motor"
+    motor_code_dir.mkdir(parents=True)
+    motor_runtime_dir.mkdir(parents=True)
+    config_file = motor_runtime_dir / "config.json"
+    config_file.write_text(
         json.dumps({"tmdb_api_token": "secret", "qbit_probe_enabled": True, "verify_wait_attempts": 1}),
         encoding="utf-8",
     )
-    monkeypatch.setattr(jobs, "BTDIGG_DIR", motor_dir)
+    monkeypatch.setattr(jobs, "BTDIGG_CODE_DIR", motor_code_dir)
+    monkeypatch.setattr(jobs, "BTDIGG_RUNTIME_DIR", motor_runtime_dir)
+    monkeypatch.setattr(jobs, "BTDIGG_CONFIG_FILE", config_file)
+    monkeypatch.setattr(jobs, "BTDIGG_TOKEN_FILE", motor_runtime_dir / "rd_token.txt")
     monkeypatch.setattr(jobs, "sync_rd_token_for_motor", lambda: None)
     monkeypatch.setattr(jobs, "cleanup_job_runs", lambda: None)
     monkeypatch.setattr(jobs.uuid, "uuid4", lambda: type("Uuid", (), {"hex": "fedcba9876543210"})())
@@ -130,13 +142,19 @@ def test_start_rd_test_uses_effective_pages_when_runtime_config_is_trimmed(
     isolated_data_dir, reload_data_dir_modules, tmp_path, monkeypatch
 ):
     jobs = _load_jobs(isolated_data_dir, reload_data_dir_modules)
-    motor_dir = tmp_path / "motor" / "btdigg"
-    motor_dir.mkdir(parents=True)
-    (motor_dir / "config.json").write_text(
+    motor_code_dir = tmp_path / "code" / "motor" / "btdigg"
+    motor_runtime_dir = tmp_path / "runtime" / "motor"
+    motor_code_dir.mkdir(parents=True)
+    motor_runtime_dir.mkdir(parents=True)
+    config_file = motor_runtime_dir / "config.json"
+    config_file.write_text(
         json.dumps({"tmdb_api_token": "secret", "qbit_probe_enabled": True, "verify_wait_attempts": 1}),
         encoding="utf-8",
     )
-    monkeypatch.setattr(jobs, "BTDIGG_DIR", motor_dir)
+    monkeypatch.setattr(jobs, "BTDIGG_CODE_DIR", motor_code_dir)
+    monkeypatch.setattr(jobs, "BTDIGG_RUNTIME_DIR", motor_runtime_dir)
+    monkeypatch.setattr(jobs, "BTDIGG_CONFIG_FILE", config_file)
+    monkeypatch.setattr(jobs, "BTDIGG_TOKEN_FILE", motor_runtime_dir / "rd_token.txt")
     monkeypatch.setattr(jobs, "sync_rd_token_for_motor", lambda: None)
     monkeypatch.setattr(jobs, "cleanup_rd_test_runs", lambda: None)
     monkeypatch.setattr(jobs.uuid, "uuid4", lambda: type("Uuid", (), {"hex": "0123456789abcdef"})())
@@ -162,13 +180,13 @@ def test_start_rd_test_uses_effective_pages_when_runtime_config_is_trimmed(
     assert cmd[cmd.index("--pages") + 1] == "1-3"
 
 
-def test_successful_artifact_promotion_keeps_legacy_targets(
+def test_successful_artifact_promotion_uses_motor_runtime_targets(
     isolated_data_dir, reload_data_dir_modules, tmp_path, monkeypatch
 ):
     jobs = _load_jobs(isolated_data_dir, reload_data_dir_modules)
-    motor_dir = tmp_path / "motor" / "btdigg"
-    motor_dir.mkdir(parents=True)
-    monkeypatch.setattr(jobs, "BTDIGG_DIR", motor_dir)
+    motor_runtime_dir = tmp_path / "runtime" / "motor"
+    motor_runtime_dir.mkdir(parents=True)
+    monkeypatch.setattr(jobs, "BTDIGG_RUNTIME_DIR", motor_runtime_dir)
 
     runtime = jobs.create_job_runtime("contract_promotion", jobs.SEARCH_SCOPE)
     runtime.shown_file.write_text('{"ok": true}', encoding="utf-8")
@@ -178,7 +196,7 @@ def test_successful_artifact_promotion_keeps_legacy_targets(
 
     jobs._promote_successful_artifacts(runtime)
 
-    assert (motor_dir / "exports" / "EDITOR_MAESTRO_SHOWN.json").read_text(encoding="utf-8") == '{"ok": true}'
-    assert (motor_dir / "exports" / "one.txt").read_text(encoding="utf-8") == "exported"
-    assert (motor_dir / "last_links.txt").exists()
-    assert (motor_dir / "last_links_ordenado.txt").read_text(encoding="utf-8") == "ordered"
+    assert (motor_runtime_dir / "exports" / "EDITOR_MAESTRO_SHOWN.json").read_text(encoding="utf-8") == '{"ok": true}'
+    assert (motor_runtime_dir / "exports" / "one.txt").read_text(encoding="utf-8") == "exported"
+    assert (motor_runtime_dir / "last_links.txt").exists()
+    assert (motor_runtime_dir / "last_links_ordenado.txt").read_text(encoding="utf-8") == "ordered"

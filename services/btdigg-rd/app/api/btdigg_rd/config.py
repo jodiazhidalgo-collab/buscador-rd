@@ -9,8 +9,12 @@ from pathlib import Path
 APP_DIR = Path(__file__).resolve().parents[2]
 PROJECT_ROOT = APP_DIR.parent
 
-BTDIGG_DIR = APP_DIR / "motor" / "btdigg"
 DATA = Path(os.environ.get("DATA_DIR", PROJECT_ROOT / "data"))
+BTDIGG_CODE_DIR = APP_DIR / "motor" / "btdigg"
+BTDIGG_RUNTIME_DIR = Path(os.environ.get("BTDIGG_RUNTIME_DIR", DATA / "motor"))
+BTDIGG_CONFIG_FILE = Path(os.environ.get("BTDIGG_CONFIG_FILE", BTDIGG_RUNTIME_DIR / "config.json"))
+BTDIGG_TOKEN_FILE = Path(os.environ.get("BTDIGG_TOKEN_FILE", BTDIGG_RUNTIME_DIR / "rd_token.txt"))
+BTDIGG_EXPORTS_DIR = Path(os.environ.get("BTDIGG_EXPORT_DIR", BTDIGG_RUNTIME_DIR / "exports"))
 HISTORY_DIR = DATA / "history"
 HISTORY_FILE = HISTORY_DIR / "btdigg_history.json"
 DIAGNOSTICS_DIR = DATA / "diagnostics" / "btdigg"
@@ -71,13 +75,14 @@ def ensure_runtime_dirs() -> None:
         RD_TEST_EXPORTS_DIR,
         VOICE_DIAGNOSTICS_DIR,
         JOB_RUNS_DIR,
-        BTDIGG_DIR / "exports",
+        BTDIGG_RUNTIME_DIR,
+        BTDIGG_EXPORTS_DIR,
     ):
         path.mkdir(parents=True, exist_ok=True)
 
 
 def _read_config_value(*keys: str) -> str:
-    path = BTDIGG_DIR / "config.json"
+    path = BTDIGG_CONFIG_FILE
     try:
         if not path.exists():
             return ""

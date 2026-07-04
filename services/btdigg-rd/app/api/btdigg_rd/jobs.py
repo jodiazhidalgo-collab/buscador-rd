@@ -28,7 +28,7 @@ from .blackbox import (
     start_job as blackbox_start_job,
     start_rd_test as blackbox_start_rd_test,
 )
-from .config import BTDIGG_DIR, JOB_RUNS_DIR
+from .config import BTDIGG_CODE_DIR, BTDIGG_CONFIG_FILE, BTDIGG_RUNTIME_DIR, BTDIGG_TOKEN_FILE, JOB_RUNS_DIR
 from .history import record_search
 from .retention import cleanup_job_runs, cleanup_rd_test_runs
 from .results import load_results
@@ -245,7 +245,7 @@ def _escalate_cancel_if_needed(job_id: str, runtime: JobRuntime, scope: RunScope
 
 
 def _promote_successful_artifacts(runtime: JobRuntime) -> None:
-    promote_successful_artifacts(runtime, BTDIGG_DIR)
+    promote_successful_artifacts(runtime, BTDIGG_RUNTIME_DIR)
 
 
 def _finalize_cancelled(job_id: str, scope: RunScope, runtime: JobRuntime, exit_code: int | None, started_monotonic: float) -> None:
@@ -282,13 +282,14 @@ def sync_rd_token_for_motor() -> None:
     token = rd_token()
     if not token:
         return
-    token_file = BTDIGG_DIR / "rd_token.txt"
+    token_file = BTDIGG_TOKEN_FILE
     try:
         current = token_file.read_text(encoding="utf-8", errors="ignore").strip() if token_file.exists() else ""
     except Exception:
         current = ""
     if current and not current.upper().startswith("PON_AQUI"):
         return
+    token_file.parent.mkdir(parents=True, exist_ok=True)
     token_file.write_text(token, encoding="utf-8")
 
 
@@ -324,6 +325,9 @@ def run_process(job_id: str, cmd: list[str], cwd: Path, safeout: Path | None = N
         env["BTDIGG_BLACKBOX_TRACE_ID"] = job_id
         env["BTDIGG_BLACKBOX_JOB_ID"] = job_id
         env["BTDIGG_BLACKBOX_EVENTS"] = str(_bb_events_file(scope, job_id))
+        env["BTDIGG_RUNTIME_DIR"] = str(BTDIGG_RUNTIME_DIR)
+        env["BTDIGG_CONFIG_FILE"] = str(BTDIGG_CONFIG_FILE)
+        env["BTDIGG_TOKEN_FILE"] = str(BTDIGG_TOKEN_FILE)
         env["BTDIGG_CANCEL_FILE"] = str(runtime.cancel_file)
         env["BTDIGG_EXPORT_DIR"] = str(runtime.exports_dir)
         env["EDITOR_MAESTRO_SAFEOUT"] = str(runtime.safeout_file)
@@ -513,7 +517,7 @@ def start_job(payload: dict[str, Any]) -> str:
             **_public_runtime_flags(runtime),
         }
 
-    cfg = load_effective_runtime_config(BTDIGG_DIR / "config.json")
+    cfg = load_effective_runtime_config(BTDIGG_CONFIG_FILE)
 
     query = str(payload.get("query") or "").strip()
     pages = _payload_or_config(payload, "pages", cfg, "default_pages", "1")
@@ -537,7 +541,7 @@ def start_job(payload: dict[str, Any]) -> str:
         min_gb,
     ]
 
-    thread = threading.Thread(target=run_process, args=(job_id, cmd, BTDIGG_DIR, runtime.safeout_file, SEARCH_SCOPE), daemon=True)
+    thread = threading.Thread(target=run_process, args=(job_id, cmd, BTDIGG_CODE_DIR, runtime.safeout_file, SEARCH_SCOPE), daemon=True)
     thread.start()
     return job_id
 
@@ -570,7 +574,7 @@ def start_rd_test(payload: dict[str, Any]) -> str:
             **_public_runtime_flags(runtime),
         }
 
-    cfg = load_effective_runtime_config(BTDIGG_DIR / "config.json")
+    cfg = load_effective_runtime_config(BTDIGG_CONFIG_FILE)
 
     query = str(test_payload.get("query") or "").strip()
     pages = _payload_or_config(test_payload, "pages", cfg, "default_pages", "1")
@@ -589,6 +593,6 @@ def start_rd_test(payload: dict[str, Any]) -> str:
         "0",
     ]
 
-    thread = threading.Thread(target=run_process, args=(run_id, cmd, BTDIGG_DIR, runtime.safeout_file, RD_TEST_SCOPE), daemon=True)
+    thread = threading.Thread(target=run_process, args=(run_id, cmd, BTDIGG_CODE_DIR, runtime.safeout_file, RD_TEST_SCOPE), daemon=True)
     thread.start()
     return run_id

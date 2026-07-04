@@ -10,7 +10,7 @@ Cerrar defectos residuales de TANDA 2A, reducir riesgo interno en `send.py` y pr
 - Anadir guardarrailes de test para cadenas publicas criticas sin mojibake.
 - Extraer piezas internas de `send.py` a modulos pequenos del mismo paquete, manteniendo `send.py` como fachada compatible.
 - Caracterizar el motor con pruebas observables sin red real y documentar zonas candidatas de TANDA 4.
-- Mantener intactos endpoints, nombres Flask, payloads JSON, `data/`, `app/motor/btdigg/config.json`, `app/motor/btdigg/rd_token.txt` y `app/motor/btdigg/exports/`.
+- Mantener intactos endpoints, nombres Flask, payloads JSON y `data/` salvo tanda propia.
 
 ## Archivos previstos
 

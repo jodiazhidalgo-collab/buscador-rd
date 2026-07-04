@@ -28,7 +28,7 @@ from ._tv_rules_service import (
 )
 from ._ui_state_service import save_ui_state_payload, ui_state_payload
 from .blackbox import trace_folder
-from .config import BTDIGG_DIR, RD_TEST_EXPORTS_DIR, VOICE_TRANSCRIBE_MAX_AUDIO_MB, ensure_runtime_dirs
+from .config import BTDIGG_RUNTIME_DIR, RD_TEST_EXPORTS_DIR, VOICE_TRANSCRIBE_MAX_AUDIO_MB, ensure_runtime_dirs
 from .history import load_history
 from .jobs import TERMINAL_STATUSES, cancel_job, jobs, lock, running_job, start_job, start_rd_test
 from .retention import cleanup_rd_test_runs, list_rd_test_runs
@@ -439,13 +439,13 @@ def api_title_resolver_resolve():
 bp.add_url_rule("/api/rdt/send", view_func=api_rdt_send, methods=["POST"])
 @bp.get("/api/qbit-toggle")
 def api_qbit_toggle():
-    return jsonify(qbit_toggle_payload(BTDIGG_DIR))
+    return jsonify(qbit_toggle_payload(BTDIGG_RUNTIME_DIR))
 
 
 @bp.post("/api/qbit-toggle")
 def api_qbit_toggle_save():
     data = request.get_json(force=True, silent=True) or {}
-    payload, status = save_qbit_toggle(BTDIGG_DIR, data)
+    payload, status = save_qbit_toggle(BTDIGG_RUNTIME_DIR, data)
     return jsonify(payload), status
 
 
@@ -475,11 +475,11 @@ def api_tv_rules_classify():
 
 @bp.get("/api/settings")
 def api_settings():
-    return jsonify(load_settings_payload(BTDIGG_DIR))
+    return jsonify(load_settings_payload(BTDIGG_RUNTIME_DIR))
 
 
 @bp.post("/api/settings")
 def api_settings_save():
     data = request.get_json(force=True, silent=True) or {}
-    payload, status = save_settings_values(BTDIGG_DIR, data)
+    payload, status = save_settings_values(BTDIGG_RUNTIME_DIR, data)
     return jsonify(payload), status

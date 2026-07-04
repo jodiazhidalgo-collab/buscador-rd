@@ -10,8 +10,9 @@ import pytest
 
 
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
+UNIFIED_ROOT = PROJECT_ROOT.parents[1]
 APP_DIR = PROJECT_ROOT / "app"
-PYTEST_DATA_DIR = PROJECT_ROOT / "_codex_runtime" / "test-data" / "pytest-session"
+PYTEST_DATA_DIR = UNIFIED_ROOT / "_codex_runtime" / "test-data" / "pytest-session"
 
 if str(APP_DIR) not in sys.path:
     sys.path.insert(0, str(APP_DIR))
@@ -27,6 +28,7 @@ DATA_DIR_SENSITIVE_MODULES = (
     "api.btdigg_rd.voice_diagnostics",
     "api.btdigg_rd.voice_transcription",
     "api.btdigg_rd.results",
+    "api.btdigg_rd.classification",
     "api.btdigg_rd.ui_state",
     "api.btdigg_rd._rd_client",
     "api.btdigg_rd._ui_state_service",

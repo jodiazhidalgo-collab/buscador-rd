@@ -47,6 +47,10 @@ services:
       - QBIT_PASS=CAMBIAR_EN_COMPOSE_REAL
       - ARR_TORRENT_INBOX=/watch/torrents/inbox
       - DATA_DIR=/app/data
+      - BTDIGG_RUNTIME_DIR=/app/data/motor
+      - BTDIGG_CONFIG_FILE=/app/data/motor/config.json
+      - BTDIGG_TOKEN_FILE=/app/data/motor/rd_token.txt
+      - BTDIGG_EXPORT_DIR=/app/data/motor/exports
       - BTDIGG_VOICE_TRANSCRIBE_PROVIDER=openai
       - BTDIGG_VOICE_OPENAI_BASE_URL=http://whisper:9000/v1
       - BTDIGG_VOICE_OPENAI_API_KEY=CAMBIAR_EN_COMPOSE_REAL
@@ -54,7 +58,6 @@ services:
       - BTDIGG_VOICE_TRANSCRIBE_TIMEOUT_SEC=60
     volumes:
       - ./config/btdigg-rd/data:/app/data
-      - ./services/btdigg-rd/app/motor/btdigg:/app/app/motor/btdigg
       - /data/torrents/watch/inbox:/watch/torrents/inbox:rw
 
   cloudflared:

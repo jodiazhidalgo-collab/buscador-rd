@@ -158,9 +158,7 @@ Blackbox posterior final:
 No se movio ni modifico:
 
 - `data/`
-- `app/motor/btdigg/config.json`
-- `app/motor/btdigg/rd_token.txt`
-- `app/motor/btdigg/exports/`
+- Nota actual: `config.json`, `rd_token.txt` y `exports/` del motor fueron migrados despues a `config/btdigg-rd/data/motor/`.
 - rutas HTTP publicas
 - nombres de endpoint Flask
 - claves JSON publicas

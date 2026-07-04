@@ -4,8 +4,9 @@ r"""
 RD Turbo Pro v2.4
 Motor local: BTDigg / magnet / Real-Debrid / JDownloader.
 
-Carpeta recomendada: C:\RD_Turbo_Pro
-Token: rd_token.txt
+Codigo del motor: app/motor/btdigg
+Runtime recomendado: DATA_DIR/motor
+Token: DATA_DIR/motor/rd_token.txt
 """
 
 import os
@@ -48,17 +49,20 @@ except Exception:
     pass
 
 APP_DIR = Path(__file__).resolve().parent
-CONFIG_FILE = APP_DIR / "config.json"
-TOKEN_FILE = APP_DIR / "rd_token.txt"
+DEFAULT_DATA_DIR = Path(os.environ.get("DATA_DIR", str(APP_DIR.parents[2] / "data")))
+MOTOR_RUNTIME_DIR = Path(os.environ.get("BTDIGG_RUNTIME_DIR", str(DEFAULT_DATA_DIR / "motor")))
+CONFIG_FILE = Path(os.environ.get("BTDIGG_CONFIG_FILE", str(MOTOR_RUNTIME_DIR / "config.json")))
+TOKEN_FILE = Path(os.environ.get("BTDIGG_TOKEN_FILE", str(MOTOR_RUNTIME_DIR / "rd_token.txt")))
 LOG_DIR = Path(os.environ.get("BTDIGG_LEGACY_LOG_DIR", str(Path(tempfile.gettempdir()) / "btdigg_rd_legacy_logs")))
-LAST_LINKS_FILE = Path(os.environ.get("BTDIGG_LAST_LINKS_FILE", str(APP_DIR / "last_links.txt")))
-EXPORT_DIR = Path(os.environ.get("BTDIGG_EXPORT_DIR", str(APP_DIR / "exports")))
+LAST_LINKS_FILE = Path(os.environ.get("BTDIGG_LAST_LINKS_FILE", str(MOTOR_RUNTIME_DIR / "last_links.txt")))
+EXPORT_DIR = Path(os.environ.get("BTDIGG_EXPORT_DIR", str(MOTOR_RUNTIME_DIR / "exports")))
 CANCEL_FILE = Path(os.environ["BTDIGG_CANCEL_FILE"]) if os.environ.get("BTDIGG_CANCEL_FILE") else None
 _CANCEL_LOCAL = threading.local()
 LEGACY_MOTOR_LOGS = str(os.environ.get("BTDIGG_LEGACY_MOTOR_LOGS", "")).strip().lower() in {"1", "true", "yes", "on", "si", "sí"}
 
 if LEGACY_MOTOR_LOGS:
     LOG_DIR.mkdir(exist_ok=True)
+MOTOR_RUNTIME_DIR.mkdir(parents=True, exist_ok=True)
 EXPORT_DIR.mkdir(parents=True, exist_ok=True)
 
 RUN_STAMP = time.strftime("%Y-%m-%d_%H-%M-%S")
@@ -342,6 +346,7 @@ DEFAULT_CONFIG = {
 
 def load_config():
     if not CONFIG_FILE.exists():
+        CONFIG_FILE.parent.mkdir(parents=True, exist_ok=True)
         CONFIG_FILE.write_text(json.dumps(DEFAULT_CONFIG, indent=2, ensure_ascii=False), encoding="utf-8")
     try:
         data = json.loads(CONFIG_FILE.read_text(encoding="utf-8"))
@@ -1536,6 +1541,7 @@ def banner():
 
 def read_token():
     if not TOKEN_FILE.exists():
+        TOKEN_FILE.parent.mkdir(parents=True, exist_ok=True)
         TOKEN_FILE.write_text("PON_AQUI_TU_TOKEN_REAL_DEBRID", encoding="utf-8")
     token = TOKEN_FILE.read_text(encoding="utf-8").strip()
     if not token or token.startswith("PON_AQUI"):

@@ -179,9 +179,9 @@ Zonas congeladas intencionalmente:
 
 Runtime real no trackeado ni movido:
 - data/
-- app/motor/btdigg/config.json
-- app/motor/btdigg/rd_token.txt
-- app/motor/btdigg/exports/
+- config/btdigg-rd/data/motor/config.json
+- config/btdigg-rd/data/motor/rd_token.txt
+- config/btdigg-rd/data/motor/exports/
 - app/motor/btdigg/temp/
 ```
 

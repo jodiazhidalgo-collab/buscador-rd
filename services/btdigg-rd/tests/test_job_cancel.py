@@ -10,7 +10,8 @@ from unittest.mock import patch
 
 APP_DIR = Path(__file__).resolve().parents[1] / "app"
 PROJECT_ROOT = APP_DIR.parent
-TEST_DATA_DIR = PROJECT_ROOT / "_codex_runtime" / "test-data" / "test_job_cancel"
+UNIFIED_ROOT = PROJECT_ROOT.parents[1]
+TEST_DATA_DIR = UNIFIED_ROOT / "_codex_runtime" / "test-data" / "test_job_cancel"
 TEST_DATA_DIR = TEST_DATA_DIR.with_name(f"{TEST_DATA_DIR.name}_{os.getpid()}")
 os.environ["DATA_DIR"] = str(TEST_DATA_DIR)
 
@@ -92,7 +93,7 @@ class JobCancelTests(unittest.TestCase):
         jobmod.cancel_job(job_id)
 
         with patch.object(jobmod.subprocess, "Popen", side_effect=AssertionError("Popen should not start")):
-            jobmod.run_process(job_id, [sys.executable, "-c", "print('no')"], jobmod.BTDIGG_DIR)
+            jobmod.run_process(job_id, [sys.executable, "-c", "print('no')"], jobmod.BTDIGG_CODE_DIR)
 
         with jobmod.lock:
             job = dict(jobmod.jobs[job_id])
@@ -126,7 +127,7 @@ class JobCancelTests(unittest.TestCase):
         fake_process = FakeProcess()
         with patch.object(jobmod.subprocess, "Popen", return_value=fake_process):
             with patch.object(jobmod, "_promote_successful_artifacts") as promote:
-                jobmod.run_process(job_id, [sys.executable, "-c", "print('x')"], jobmod.BTDIGG_DIR)
+                jobmod.run_process(job_id, [sys.executable, "-c", "print('x')"], jobmod.BTDIGG_CODE_DIR)
 
         with jobmod.lock:
             job = dict(jobmod.jobs[job_id])
