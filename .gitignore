@@ -1,34 +1,62 @@
-# Git local para BTDigg + RD: no subir runtime, backups ni secretos.
+# Proyecto unificado Buscador RD: no subir runtime, backups ni credenciales reales.
 
 _backups/
-.playwright-mcp/
 _codex_runtime/
+.playwright-mcp/
 test-results/
 
-data/
-logs/
-handoff-conversacion-anterior.md
+# Compose real con credenciales locales. Versionar solo docker-compose.example.yaml.
+docker-compose.yaml
 
-app/motor/btdigg/rd_token.txt
-app/motor/btdigg/config.json
-app/motor/btdigg/exports/
-app/motor/btdigg/temp/
-app/motor/btdigg/logs/
-app/motor/btdigg/Links qB RD/
-app/motor/btdigg/historial_*.txt
-app/motor/btdigg/EDITOR_*.log
+# Runtime de BTDigg + RD.
+config/btdigg-rd/data/
 
+# Runtime y credenciales de Cloudflared.
+config/cloudflared/data/
+config/cloudflared/logs/
+config/cloudflared/config/public.env
+config/cloudflared/config/secrets.env
+
+# Runtime, modelos y clave local de Whisper.
+config/whisper/data/
+config/whisper/logs/
+config/whisper/config/*.env
+config/whisper/config/*secret*
+config/whisper/config/*token*
+config/whisper/config/*key*
+
+# Residuos dentro de servicios.
+services/**/_backups/
+services/**/.agents/
+services/**/.codex/
+services/**/.playwright-mcp/
+services/**/_codex_runtime/
+services/**/data/
+services/**/logs/
+services/**/test-results/
+
+# Configuracion sensible historica del motor.
+services/**/app/motor/btdigg/rd_token.txt
+services/**/app/motor/btdigg/config.json
+services/**/app/motor/btdigg/exports/
+services/**/app/motor/btdigg/temp/
+services/**/app/motor/btdigg/logs/
+services/**/app/motor/btdigg/Links qB RD/
+services/**/app/motor/btdigg/historial_*.txt
+services/**/app/motor/btdigg/EDITOR_*.log
+
+# Python/cache/logs/entregables.
 **/__pycache__/
 *.pyc
 .pytest_cache/
-
 *.log
 *.tmp
 *.part
-
-# ZIPs grandes o entregables externos.
 *.zip
-!_backups/.gitkeep
+*.lnk
 
 # Capturas de comprobacion local.
-btdigg-rd-final-mobile.png
+*.png
+*.jpg
+*.jpeg
+*.webp

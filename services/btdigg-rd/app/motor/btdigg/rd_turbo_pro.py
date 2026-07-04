@@ -252,8 +252,8 @@ DEFAULT_CONFIG = {
     "qbit_probe_enabled": True,
     "qbit_probe_only_non_rd_working": True,
     "qbit_host": "http://qbittorrent:8080",
-    "qbit_user": "admin",
-    "qbit_pass": "CAMBIAR_EN_ENTORNO_REAL",
+    "qbit_user": "",
+    "qbit_pass": "",
     "qbit_probe_save_path": "/data/downloads/torrents/incomplete/rd_turbo_probe",
     "qbit_probe_category": "manual",
     "qbit_probe_max_candidates": 15,
@@ -352,6 +352,14 @@ def load_config():
     return merged
 
 CONFIG = load_config()
+for _env_key, _config_key in (
+    ("QBIT_BASE", "qbit_host"),
+    ("QBIT_USER", "qbit_user"),
+    ("QBIT_PASS", "qbit_pass"),
+):
+    _env_value = os.environ.get(_env_key)
+    if _env_value:
+        CONFIG[_config_key] = _env_value
 if str(os.environ.get("BTDIGG_DISABLE_EXPORTS", "")).strip().lower() in {"1", "true", "yes", "on", "si", "sí"}:
     CONFIG["write_exports"] = False
 if str(os.environ.get("BTDIGG_DISABLE_LAST_LINKS", "")).strip().lower() in {"1", "true", "yes", "on", "si", "sí"}:
@@ -1689,8 +1697,11 @@ def qbt_login():
         return None
     cj = http.cookiejar.CookieJar()
     opener = build_opener(HTTPCookieProcessor(cj))
-    user = str(CONFIG.get("qbit_user", "admin"))
-    password = str(CONFIG.get("qbit_pass", "CAMBIAR_EN_ENTORNO_REAL"))
+    user = str(CONFIG.get("qbit_user") or "")
+    password = str(CONFIG.get("qbit_pass") or "")
+    if not user or not password:
+        diag("qbt_login_skipped", host=str(CONFIG.get("qbit_host", "")), reason="missing_credentials")
+        return None
     try:
         resp = qbt_request(opener, "POST", "/api/v2/auth/login", {"username": user, "password": password}, timeout=12)
         response_text = str(resp).strip()

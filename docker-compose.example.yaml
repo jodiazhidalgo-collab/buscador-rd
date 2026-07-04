@@ -1,0 +1,81 @@
+name: buscador-rd
+
+services:
+  whisper:
+    image: hwdsl2/whisper-server:latest
+    container_name: whisper
+    restart: unless-stopped
+    ports:
+      - "9017:9000"
+    environment:
+      - TZ=Europe/Madrid
+      - WHISPER_MODEL=base
+      - WHISPER_LANGUAGE=es
+      - WHISPER_DEVICE=cpu
+      - WHISPER_COMPUTE_TYPE=int8
+      - WHISPER_THREADS=2
+      - WHISPER_BEAM=1
+      - WHISPER_API_KEY=CAMBIAR_EN_COMPOSE_REAL
+      - WHISPER_LOG_LEVEL=INFO
+    volumes:
+      - ./config/whisper/data:/var/lib/whisper
+      - ./config/whisper/logs:/app/logs
+
+  btdigg-rd:
+    build:
+      context: ./services/btdigg-rd
+    container_name: btdigg-rd
+    restart: unless-stopped
+    dns:
+      - 8.8.8.8
+      - 1.1.1.1
+    ports:
+      - "9007:9007"
+    environment:
+      - PORT=9007
+      - TZ=Europe/Madrid
+      - BROWSER_BIN=/usr/bin/chromium
+      - PYTHONUNBUFFERED=1
+      - PYTHONDONTWRITEBYTECODE=1
+      - REAL_DEBRID_TOKEN=CAMBIAR_EN_COMPOSE_REAL
+      - REAL_DEBRID_API=https://api.real-debrid.com/rest/1.0
+      - RDT_BASE=http://rdtclient:6500
+      - RDT_USER=CAMBIAR_EN_COMPOSE_REAL
+      - RDT_PASS=CAMBIAR_EN_COMPOSE_REAL
+      - QBIT_BASE=http://qbittorrent:8080
+      - QBIT_USER=CAMBIAR_EN_COMPOSE_REAL
+      - QBIT_PASS=CAMBIAR_EN_COMPOSE_REAL
+      - ARR_TORRENT_INBOX=/watch/torrents/inbox
+      - DATA_DIR=/app/data
+      - BTDIGG_VOICE_TRANSCRIBE_PROVIDER=openai
+      - BTDIGG_VOICE_OPENAI_BASE_URL=http://whisper:9000/v1
+      - BTDIGG_VOICE_OPENAI_API_KEY=CAMBIAR_EN_COMPOSE_REAL
+      - BTDIGG_VOICE_OPENAI_MODEL=whisper-1
+      - BTDIGG_VOICE_TRANSCRIBE_TIMEOUT_SEC=60
+    volumes:
+      - ./config/btdigg-rd/data:/app/data
+      - ./services/btdigg-rd/app/motor/btdigg:/app/app/motor/btdigg
+      - /data/torrents/watch/inbox:/watch/torrents/inbox:rw
+
+  cloudflared:
+    build:
+      context: ./services/cloudflared
+      dockerfile: Dockerfile
+    container_name: cloudflared
+    restart: unless-stopped
+    env_file:
+      - ./config/cloudflared/config/public.env
+      - ./config/cloudflared/config/secrets.env
+    environment:
+      - TZ=Europe/Madrid
+      - TUNNEL_TARGET=http://localhost:9007
+      - CLOUDFLARED_LOG=/app/logs/cloudflared/cloudflared.log
+      - STATE_FILE=/app/data/estado/tunnel_state.json
+      - LINK_FILE=/app/data/estado/enlace_usuario.txt
+      - WORKER_SOURCE=/app/worker/gateway_worker.js
+      - WATCHER_LOG=/app/logs/watcher/watcher.log
+      - POLL_SECONDS=4
+    volumes:
+      - ./config/cloudflared/logs:/app/logs:rw
+      - ./config/cloudflared/data:/app/data:rw
+      - ./services/cloudflared/worker:/app/worker:ro
