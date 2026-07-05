@@ -50,3 +50,26 @@ def test_openai_compatible_transcription_sends_movie_context(tmp_path, monkeypat
         "prompt": "Titulos de peliculas: John Wick 4.",
         "temperature": "0",
     }
+
+
+def test_transcription_collapses_repeated_whisper_loop(tmp_path, monkeypatch):
+    audio = tmp_path / "voice.webm"
+    audio.write_bytes(b"fake-audio")
+
+    monkeypatch.setattr(voice, "VOICE_OPENAI_API_KEY", "local-whisper")
+    monkeypatch.setattr(voice, "VOICE_OPENAI_BASE_URL", "http://whisper:9000/v1")
+    monkeypatch.setattr(voice, "VOICE_OPENAI_MODEL", "whisper-1")
+    monkeypatch.setattr(voice, "VOICE_OPENAI_PROMPT", "Titulo de pelicula dictado por voz.")
+    monkeypatch.setattr(voice, "VOICE_OPENAI_TEMPERATURE", "0")
+
+    class LoopResponse(FakeResponse):
+        text = '{"text": "John Will 3, John Will 3, John Will 3, John Will 3"}'
+
+        def json(self):
+            return {"text": "John Will 3, John Will 3, John Will 3, John Will 3"}
+
+    monkeypatch.setattr(voice.requests, "post", lambda *args, **kwargs: LoopResponse())
+
+    result = voice.transcribe_audio_file(audio, filename="voice.webm", content_type="audio/webm", language="es")
+
+    assert result["text"] == "John Will 3"

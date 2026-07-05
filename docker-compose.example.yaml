@@ -55,7 +55,7 @@ services:
       - BTDIGG_VOICE_OPENAI_BASE_URL=http://whisper:9000/v1
       - BTDIGG_VOICE_OPENAI_API_KEY=CAMBIAR_EN_COMPOSE_REAL
       - BTDIGG_VOICE_OPENAI_MODEL=whisper-1
-      - "BTDIGG_VOICE_OPENAI_PROMPT=Titulos de peliculas en espanol con algunos titulos originales en ingles: Gladiator 2, Enola Holmes 3, John Wick 4, Torrente Presidente, El senor de los anillos, Fast and Furious, Mision imposible, Oppenheimer, Dune, Avatar, Jurassic World."
+      - BTDIGG_VOICE_OPENAI_PROMPT=Titulo de pelicula dictado por voz.
       - BTDIGG_VOICE_OPENAI_TEMPERATURE=0
       - BTDIGG_VOICE_TRANSCRIBE_TIMEOUT_SEC=120
     volumes:

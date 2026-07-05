@@ -1,5 +1,7 @@
 from __future__ import annotations
 
+import re
+import unicodedata
 from pathlib import Path
 from typing import Any
 
@@ -78,6 +80,60 @@ def _parse_text_response(response: requests.Response) -> str:
     return text
 
 
+def _clean_transcript_text(text: str) -> str:
+    clean = re.sub(r"\s+", " ", str(text or "")).strip(" \t\r\n\"'")
+    if not clean:
+        return ""
+    clean = _trim_prompt_leak(clean)
+    clean = _collapse_repeated_chunks(clean)
+    return clean.strip(" \t\r\n\"'")
+
+
+def _trim_prompt_leak(text: str) -> str:
+    chunks = _list_chunks(text)
+    if len(chunks) < 3:
+        return text
+    prompt_markers = _prompt_markers()
+    if not prompt_markers:
+        return text
+    later_chunks = {_fold(chunk) for chunk in chunks[1:]}
+    if prompt_markers & later_chunks:
+        return chunks[0]
+    return text
+
+
+def _collapse_repeated_chunks(text: str) -> str:
+    chunks = _list_chunks(text)
+    if len(chunks) < 4:
+        return text
+    folded = [_fold(chunk) for chunk in chunks if _fold(chunk)]
+    if not folded:
+        return text
+    first = folded[0]
+    repeats = sum(1 for item in folded if item == first)
+    if repeats >= 3 and len(set(folded)) <= 3:
+        return chunks[0]
+    return text
+
+
+def _list_chunks(text: str) -> list[str]:
+    return [chunk.strip(" \t\r\n.?!¡¿\"'") for chunk in re.split(r"[,;\n]+", text) if chunk.strip(" \t\r\n.?!¡¿\"'")]
+
+
+def _prompt_markers() -> set[str]:
+    prompt = VOICE_OPENAI_PROMPT
+    if ":" in prompt:
+        prompt = prompt.split(":", 1)[1]
+    markers = {_fold(chunk) for chunk in _list_chunks(prompt)}
+    return {marker for marker in markers if len(marker) >= 4}
+
+
+def _fold(value: str) -> str:
+    normalized = unicodedata.normalize("NFKD", value or "")
+    ascii_text = "".join(char for char in normalized if not unicodedata.combining(char))
+    return " ".join(re.findall(r"[a-z0-9]+", ascii_text.casefold()))
+
+
 def _raise_http_error(provider: str, response: requests.Response) -> None:
     detail = ""
     try:
@@ -115,7 +171,7 @@ def _transcribe_with_http(path: Path, filename: str, content_type: str, language
         )
     if response.status_code >= 400:
         _raise_http_error("http", response)
-    text = _parse_text_response(response)
+    text = _clean_transcript_text(_parse_text_response(response))
     if not text:
         raise VoiceTranscriptionError("empty_transcript", "El transcriptor no devolvio texto", 502, "http")
     return {"text": text, "provider": "http"}
@@ -147,7 +203,7 @@ def _transcribe_with_openai(path: Path, filename: str, content_type: str, langua
         )
     if response.status_code >= 400:
         _raise_http_error(provider_label, response)
-    text = _parse_text_response(response)
+    text = _clean_transcript_text(_parse_text_response(response))
     if not text:
         raise VoiceTranscriptionError("empty_transcript", "El transcriptor no devolvio texto", 502, provider_label)
     return {"text": text, "provider": provider_label, "model": data["model"]}
