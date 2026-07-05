@@ -24,7 +24,7 @@ TEXT_GUARDRAIL_FILES = [
 MOJIBAKE_MARKERS = ("\u00c3", "\u00c2")
 
 
-def test_tanda3_touched_files_have_no_mojibake_markers():
+def test_guarded_text_files_have_no_mojibake_markers():
     offenders: dict[str, list[str]] = {}
 
     for relative_path in TEXT_GUARDRAIL_FILES:
