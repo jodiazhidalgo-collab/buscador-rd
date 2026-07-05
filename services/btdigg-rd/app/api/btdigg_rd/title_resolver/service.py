@@ -58,6 +58,7 @@ def resolve_movie_title(
     title: str,
     evidence: Sequence[str] | None = None,
     media_hint: str = "movie",
+    strict_short: bool = False,
     client: TmdbClient | None = None,
     cache: TitleResolverCache | None = None,
 ) -> dict[str, Any]:
@@ -72,6 +73,10 @@ def resolve_movie_title(
         return _not_sure("tv_detected", parsed)
     if parsed.weak_reason:
         return _not_sure(parsed.weak_reason, parsed)
+    if strict_short:
+        voice_short_reason = _voice_short_reason(parsed)
+        if voice_short_reason:
+            return _not_sure(voice_short_reason, parsed)
 
     token = title_resolver_token()
     if not token and client is None:
@@ -296,6 +301,34 @@ def _score_candidate(
         score += 15
         reasons.append("evidencia de origen")
     return round(score, 2), reasons
+
+
+VOICE_AMBIGUOUS_SHORT_WORDS = {
+    "adios",
+    "dios",
+    "eh",
+    "ey",
+    "hola",
+    "no",
+    "ok",
+    "okay",
+    "oye",
+    "si",
+    "vale",
+    "ya",
+    "yo",
+}
+
+
+def _voice_short_reason(parsed: ParsedName) -> str:
+    normalized = _normalize_title(parsed.display_title or parsed.cleaned)
+    tokens = normalized.split()
+    if len(tokens) != 1:
+        return ""
+    token = tokens[0]
+    if len(token) <= 2 or token in VOICE_AMBIGUOUS_SHORT_WORDS:
+        return "short_ambiguous_voice_title"
+    return ""
 
 
 def _resolved(parsed: ParsedName, candidate: ResolverCandidate, margin: float) -> dict[str, Any]:

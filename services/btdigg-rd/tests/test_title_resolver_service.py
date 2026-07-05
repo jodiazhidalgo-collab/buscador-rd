@@ -124,6 +124,15 @@ class TitleResolverServiceTests(unittest.TestCase):
         self.assertEqual(result["status"], "not_sure")
         self.assertEqual(client.calls, [])
 
+    def test_voice_strict_short_blocks_ambiguous_words_without_tmdb_call(self):
+        client = FakeTmdbClient([movie_payload(1, "Dios", "Dios", 2026)])
+
+        result = resolve_movie_title("Dios", strict_short=True, client=client, cache=self.cache)
+
+        self.assertEqual(result["status"], "not_sure")
+        self.assertEqual(result["reason_code"], "short_ambiguous_voice_title")
+        self.assertEqual(client.calls, [])
+
 
 if __name__ == "__main__":
     unittest.main()

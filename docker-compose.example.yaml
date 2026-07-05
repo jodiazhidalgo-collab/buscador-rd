@@ -9,12 +9,12 @@ services:
       - "9017:9000"
     environment:
       - TZ=Europe/Madrid
-      - WHISPER_MODEL=base
+      - WHISPER_MODEL=large-v3-turbo
       - WHISPER_LANGUAGE=es
       - WHISPER_DEVICE=cpu
       - WHISPER_COMPUTE_TYPE=int8
-      - WHISPER_THREADS=2
-      - WHISPER_BEAM=1
+      - WHISPER_THREADS=5
+      - WHISPER_BEAM=5
       - WHISPER_API_KEY=CAMBIAR_EN_COMPOSE_REAL
       - WHISPER_LOG_LEVEL=INFO
     volumes:
@@ -55,7 +55,9 @@ services:
       - BTDIGG_VOICE_OPENAI_BASE_URL=http://whisper:9000/v1
       - BTDIGG_VOICE_OPENAI_API_KEY=CAMBIAR_EN_COMPOSE_REAL
       - BTDIGG_VOICE_OPENAI_MODEL=whisper-1
-      - BTDIGG_VOICE_TRANSCRIBE_TIMEOUT_SEC=60
+      - "BTDIGG_VOICE_OPENAI_PROMPT=Titulos de peliculas en espanol con algunos titulos originales en ingles: Gladiator 2, Enola Holmes 3, John Wick 4, Torrente Presidente, El senor de los anillos, Fast and Furious, Mision imposible, Oppenheimer, Dune, Avatar, Jurassic World."
+      - BTDIGG_VOICE_OPENAI_TEMPERATURE=0
+      - BTDIGG_VOICE_TRANSCRIBE_TIMEOUT_SEC=120
     volumes:
       - ./config/btdigg-rd/data:/app/data
       - /data/torrents/watch/inbox:/watch/torrents/inbox:rw

@@ -9,6 +9,8 @@ from .config import (
     VOICE_OPENAI_API_KEY,
     VOICE_OPENAI_BASE_URL,
     VOICE_OPENAI_MODEL,
+    VOICE_OPENAI_PROMPT,
+    VOICE_OPENAI_TEMPERATURE,
     VOICE_TRANSCRIBE_PROVIDER,
     VOICE_TRANSCRIBE_TIMEOUT_SEC,
     VOICE_TRANSCRIBE_TOKEN,
@@ -131,6 +133,10 @@ def _transcribe_with_openai(path: Path, filename: str, content_type: str, langua
     }
     if language:
         data["language"] = language
+    if VOICE_OPENAI_PROMPT:
+        data["prompt"] = VOICE_OPENAI_PROMPT
+    if VOICE_OPENAI_TEMPERATURE:
+        data["temperature"] = VOICE_OPENAI_TEMPERATURE
     with path.open("rb") as fh:
         response = requests.post(
             url,

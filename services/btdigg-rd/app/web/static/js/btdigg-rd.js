@@ -73,9 +73,9 @@ let voicePendingStopReason = "";
 let voiceAudioContext = null;
 let voiceAnalyser = null;
 let voiceSourceNode = null;
-const voiceInitialSpeechTimeoutMs = 3500;
-const voiceSilenceStopMs = 900;
-const voiceMaxRecordMs = 10000;
+const voiceInitialSpeechTimeoutMs = 5000;
+const voiceSilenceStopMs = 1700;
+const voiceMaxRecordMs = 15000;
 
 function getUiStateClientId() {
   try {
@@ -509,7 +509,8 @@ async function resolveVoiceTitle(transcript, alternatives) {
         body: JSON.stringify({
           title: attempt,
           evidence: attempts,
-          media_hint: "movie"
+          media_hint: "movie",
+          strict_short: true
         })
       });
       const data = await response.json();

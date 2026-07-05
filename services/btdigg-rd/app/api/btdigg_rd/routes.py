@@ -426,6 +426,7 @@ def api_title_resolver_resolve():
             title=title,
             evidence=clean_evidence,
             media_hint=str(data.get("media_hint") or "movie"),
+            strict_short=str(data.get("strict_short") or "").strip().lower() in {"1", "true", "yes", "on"},
         )
         return jsonify(payload)
     except TmdbUnavailable as exc:
