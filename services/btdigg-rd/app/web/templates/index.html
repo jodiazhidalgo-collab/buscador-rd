@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>BTDigg + RD</title>
-  <link rel="stylesheet" href="{{ url_for('static', filename='css/btdigg-rd.css') }}?v=34">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/btdigg-rd.css') }}?v=35">
 </head>
 <body>
   <main class="shell">
@@ -48,6 +48,7 @@
           <button id="stopBTBtn" class="btn stop-btn" type="button" onclick="stopBT()" disabled>Detener</button>
         </div>
       </section>
+      <section id="voiceChoicesPanel" class="voice-choices hidden" aria-live="polite"></section>
 
       <section class="live-area">
         <div class="panel">
@@ -233,6 +234,6 @@
     </div>
   </div>
 
-  <script src="{{ url_for('static', filename='js/btdigg-rd.js') }}?v=31"></script>
+  <script src="{{ url_for('static', filename='js/btdigg-rd.js') }}?v=32"></script>
 </body>
 </html>

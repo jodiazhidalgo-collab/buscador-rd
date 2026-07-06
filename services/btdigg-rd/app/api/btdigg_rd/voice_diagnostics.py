@@ -30,6 +30,7 @@ ALLOWED_EVENTS = {
     "voice_transcribe_ok",
     "voice_transcribe_error",
     "voice_resolver_start",
+    "voice_resolver_choices",
     "voice_resolver_ok",
     "voice_resolver_error",
     "voice_unsupported",
@@ -52,9 +53,13 @@ FINAL_STATUS = {
 
 ALLOWED_DATA_KEYS = {
     "alternatives_count",
+    "attempts_count",
     "audio_size",
     "button_disabled",
     "content_type",
+    "choices",
+    "choices_count",
+    "decision",
     "duration_ms",
     "elapsed_ms",
     "error",

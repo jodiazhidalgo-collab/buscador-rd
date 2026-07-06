@@ -35,6 +35,7 @@ from .retention import cleanup_rd_test_runs, list_rd_test_runs
 from .results import load_results
 from .rd_follow import build_rd_event_detail, build_rd_follow
 from .send import api_rdt_send
+from .spoken_title_resolver import resolve_spoken_movie_title
 from .title_resolver import resolve_movie_title
 from .title_resolver.service import TitleResolverError
 from .title_resolver.tmdb_client import TmdbUnavailable
@@ -435,6 +436,27 @@ def api_title_resolver_resolve():
         return jsonify({"ok": False, "status": "error", "error_code": exc.error_code, "message": str(exc)}), exc.status_code
     except Exception as exc:
         return jsonify({"ok": False, "status": "error", "error_code": "title_resolver_error", "message": str(exc)}), 500
+
+
+@bp.post("/api/spoken-title-resolver/resolve")
+def api_spoken_title_resolver_resolve():
+    data = request.get_json(force=True, silent=True) or {}
+    transcript = str(data.get("transcript") or data.get("title") or "").strip()
+    if not transcript:
+        return jsonify({"ok": False, "status": "error", "error_code": "missing_transcript", "message": "Falta transcripcion"}), 400
+    try:
+        payload = resolve_spoken_movie_title(
+            transcript=transcript,
+            locale=str(data.get("locale") or "es-ES"),
+            region=str(data.get("region") or "ES"),
+        )
+        return jsonify(payload)
+    except TmdbUnavailable as exc:
+        return jsonify({"ok": False, "status": "error", "error_code": "tmdb_unavailable", "message": str(exc)}), 503
+    except TitleResolverError as exc:
+        return jsonify({"ok": False, "status": "error", "error_code": exc.error_code, "message": str(exc)}), exc.status_code
+    except Exception as exc:
+        return jsonify({"ok": False, "status": "error", "error_code": "spoken_title_resolver_error", "message": str(exc)}), 500
 
 
 bp.add_url_rule("/api/rdt/send", view_func=api_rdt_send, methods=["POST"])

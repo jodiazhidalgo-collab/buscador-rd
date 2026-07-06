@@ -89,6 +89,27 @@ def test_voice_diagnostic_accepts_mediarecorder_lifecycle(client, isolated_data_
     ]
 
 
+def test_voice_diagnostic_accepts_resolver_choice_events(client, isolated_data_dir):
+    trace_id = "voice-resolver-choices"
+    for event, data in (
+        ("voice_resolver_start", {"attempts_count": 2, "alternatives_count": 1}),
+        ("voice_resolver_choices", {"choices_count": 2, "transcript_preview": "Mortal Kombat dos"}),
+        ("voice_resolver_ok", {"resolved": False, "choices": 2, "decision": "needs_confirmation"}),
+    ):
+        response = client.post("/api/voice/diagnostic", json={"trace_id": trace_id, "event": event, "data": data})
+        assert response.status_code == 200
+        assert response.json["ok"] is True
+
+    events = _voice_events(isolated_data_dir, trace_id)
+    assert [item["event"] for item in events] == [
+        "voice_resolver_start",
+        "voice_resolver_choices",
+        "voice_resolver_ok",
+    ]
+    assert events[1]["data"]["choices_count"] == 2
+    assert events[2]["data"]["decision"] == "needs_confirmation"
+
+
 def test_voice_transcribe_route_rejects_missing_audio(client, isolated_data_dir):
     response = client.post("/api/voice/transcribe", data={"trace_id": "voice-missing"})
 

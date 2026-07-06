@@ -42,6 +42,14 @@ h2{margin:0;font-size:15px;letter-spacing:0}
 .btn.voice-btn.is-listening{background:#183224;border-color:var(--green);color:#eafff3;box-shadow:0 0 0 2px rgba(57,217,138,.18)}
 .btn.voice-btn.is-resolving{background:#30291b;border-color:var(--amber);color:#fff1d3}
 .btn.voice-btn.is-unsupported{opacity:.58}
+.voice-choices{max-width:1180px;margin:0 auto 14px;padding:10px 12px;border-top:1px solid rgba(85,199,217,.28);border-bottom:1px solid rgba(85,199,217,.18);background:#101719}
+.voice-choices-head{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:8px}
+.voice-choices-title{font-size:13px;font-weight:900;color:#dff9ff}
+.voice-choices-list{display:flex;flex-wrap:wrap;gap:8px}
+.voice-choice-btn{min-height:34px;border:1px solid rgba(85,199,217,.35);border-radius:7px;background:#142127;color:#eef8f7;padding:7px 10px;font-weight:800;cursor:pointer}
+.voice-choice-btn:hover{border-color:var(--cyan);background:#172b32}
+.voice-choice-meta{display:block;margin-top:2px;color:var(--muted);font-size:11px;font-weight:700}
+.voice-choice-close{width:30px;height:30px;border:1px solid #344247;border-radius:7px;background:#0c1113;color:#dce8e4;cursor:pointer}
 .btn{height:40px;border:1px solid #465056;border-radius:7px;background:#242a2e;color:var(--text);padding:0 13px;font-weight:800;cursor:pointer;transition:transform .12s ease,background .12s ease,border-color .12s ease}
 .btn:hover{background:#2c3338;border-color:#5b6971}
 .btn:active{transform:translateY(1px)}
@@ -248,6 +256,10 @@ h2{margin:0;font-size:15px;letter-spacing:0}
   .search-actions{display:grid;grid-template-columns:40px repeat(3,minmax(0,1fr));gap:6px;width:100%}
   .search-actions .btn{min-width:0;padding:0 5px;font-size:12px}
   .search-actions .voice-btn{width:40px;min-width:40px;padding:0;font-size:17px}
+  .voice-choices{margin:0 10px 12px}
+  .voice-choices-head{align-items:flex-start}
+  .voice-choices-list{display:grid;grid-template-columns:1fr}
+  .voice-choice-btn{text-align:left;width:100%}
   .gear-title{gap:6px;flex-wrap:wrap}
   .settings-actions .btn,.modal-actions .btn{flex:1}
   .settings-section-head{min-height:54px;padding:10px 12px}
