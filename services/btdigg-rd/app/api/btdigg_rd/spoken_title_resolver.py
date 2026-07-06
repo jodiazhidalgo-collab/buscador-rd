@@ -114,6 +114,9 @@ _JOINED_TITLE_TOKENS = {
     "topgun": "top gun",
     "wonderwoman": "wonder woman",
 }
+_SHORT_TAIL_PHONETIC_TOKENS = {
+    "wick": {"wic", "wik", "week", "weak", "will", "wilk", "wit"},
+}
 
 
 @dataclass
@@ -282,7 +285,7 @@ def _collect_candidates(
                 if query not in candidate.searched_queries:
                     candidate.searched_queries.append(query)
                 by_id[tmdb_id] = candidate
-    initial = sorted(by_id.values(), key=lambda item: len(item.searched_queries), reverse=True)[:5]
+    initial = sorted(by_id.values(), key=lambda item: len(item.searched_queries), reverse=True)[:12]
     for candidate in initial:
         if time.monotonic() >= deadline:
             break
@@ -443,6 +446,9 @@ def _phonetic_queries(value: str) -> list[tuple[str, str]]:
             options.append(token[:-5] + "runner")
         if token in _JOINED_TITLE_TOKENS:
             options.append(_JOINED_TITLE_TOKENS[token])
+        for target, sources in _SHORT_TAIL_PHONETIC_TOKENS.items():
+            if token in sources:
+                options.append(target)
         if token == "togeter":
             options.append("together")
         converted_tokens.append(_unique(options))

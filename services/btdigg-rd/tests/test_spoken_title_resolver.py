@@ -63,6 +63,7 @@ def test_generates_general_spoken_variants():
     assert not any("ii025" in item for item in surfer)
     assert "blade runner" in runner
     assert "blade runner 2049" in [item.query for item in generate_spoken_variants("Bladerunner 2049")]
+    assert "john wick" in [item.query for item in generate_spoken_variants("John Will")]
     assert "thunderbolts" in thunder
     assert "mortal kombat ii" in [item.query for item in generate_spoken_variants("Mortal Kombat 2")]
     assert "mortal kombat 2" in [item.query for item in generate_spoken_variants("Mortal Kombat II")]
@@ -98,6 +99,18 @@ def test_resolves_number_that_is_part_of_movie_title_not_release_year():
     assert result["copy"]["es_with_year"] == "Blade Runner 2049 (2017)"
     assert joined_result["decision"] == "auto_accept"
     assert joined_result["copy"]["es_with_year"] == "Blade Runner 2049 (2017)"
+
+
+def test_resolves_short_english_tail_transcription_error():
+    wick = movie_payload(10, "John Wick", "John Wick", 2014)
+    noisy = movie_payload(11, "What Will You Do Now, John?", "What Will You Do Now, John?", 2019)
+    client = FakeTmdbClient([noisy, wick])
+
+    result = resolve_spoken_movie_title("John Will", client=client)
+
+    assert any(call[1] == "john wick" for call in client.calls if call[0] == "search")
+    assert result["decision"] == "auto_accept"
+    assert result["copy"]["es_with_year"] == "John Wick (2014)"
 
 
 def test_resolves_spoken_number_words():

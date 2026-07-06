@@ -73,7 +73,6 @@ let voicePendingStopReason = "";
 let voiceAudioContext = null;
 let voiceAnalyser = null;
 let voiceSourceNode = null;
-let voiceChoiceCache = [];
 const voiceInitialSpeechTimeoutMs = 5000;
 const voiceSilenceStopMs = 1700;
 const voiceMaxRecordMs = 15000;
@@ -409,62 +408,6 @@ function voiceResolverAttempts(transcript, alternatives) {
   return [...new Set(values.filter(Boolean))];
 }
 
-function clearVoiceChoices() {
-  voiceChoiceCache = [];
-  const panel = document.getElementById("voiceChoicesPanel");
-  if (!panel) return;
-  panel.classList.add("hidden");
-  panel.innerHTML = "";
-}
-
-function candidateVoiceTitle(candidate) {
-  const year = candidate && candidate.year ? String(candidate.year) : "";
-  const title = candidate && (candidate.title || candidate.original_title || candidate.english_title || "");
-  return title ? titleQueryWithFlatYear(year ? title + " (" + year + ")" : title) : "";
-}
-
-function renderVoiceChoices(data, fallback) {
-  const panel = document.getElementById("voiceChoicesPanel");
-  if (!panel) return false;
-  const candidates = Array.isArray(data && data.candidates) ? data.candidates.slice(0, 5) : [];
-  voiceChoiceCache = candidates
-    .map(candidate => ({
-      title: candidateVoiceTitle(candidate),
-      score: candidate && candidate.score ? Math.round(candidate.score) : 0
-    }))
-    .filter(item => item.title);
-  if (!voiceChoiceCache.length) {
-    clearVoiceChoices();
-    return false;
-  }
-  panel.innerHTML =
-    '<div class="voice-choices-head">' +
-      '<div class="voice-choices-title">Elige titulo</div>' +
-      '<button class="voice-choice-close" type="button" title="Cerrar" onclick="clearVoiceChoices()">×</button>' +
-    '</div>' +
-    '<div class="voice-choices-list">' +
-      voiceChoiceCache.map((item, index) =>
-        '<button class="voice-choice-btn" type="button" onclick="chooseVoiceCandidate(' + index + ')">' +
-          esc(item.title) +
-          '<span class="voice-choice-meta">Confianza ' + esc(String(item.score)) + '</span>' +
-        '</button>'
-      ).join("") +
-    '</div>';
-  panel.classList.remove("hidden");
-  sendVoiceDiagnostic("voice_resolver_choices", {
-    transcript_preview: String(fallback || "").slice(0, 120),
-    choices_count: voiceChoiceCache.length
-  });
-  return true;
-}
-
-function chooseVoiceCandidate(index) {
-  const item = voiceChoiceCache[index];
-  if (!item || !item.title) return;
-  setQueryFromVoice(item.title, true);
-  setStatus("Titulo listo. Pulsa BUSCAR.");
-}
-
 function setVoiceButtonState(state) {
   const btn = document.getElementById("voiceQueryBtn");
   if (!btn) return;
@@ -531,7 +474,6 @@ function setQueryFromVoice(value, shared = true) {
   query.value = cleanVoiceTitle(value);
   query.dispatchEvent(new Event("input", { bubbles: true }));
   saveFormState(shared);
-  clearVoiceChoices();
 }
 
 function bestVoiceResolvedTitle(data, fallback) {
@@ -579,19 +521,14 @@ async function resolveVoiceTitle(transcript, alternatives) {
       setStatus("Titulo listo. Pulsa BUSCAR.");
       return;
     }
-    if (response.ok && renderVoiceChoices(data, attempts[0] || transcript)) {
-      sendVoiceDiagnostic("voice_resolver_ok", { resolved: false, response_ok: true, choices: voiceChoiceCache.length, decision: data.decision || "" });
-      setStatus("Elige titulo");
-      return;
-    }
-    sendVoiceDiagnostic("voice_resolver_ok", { resolved: false, response_ok: true });
-    setStatus("No seguro. Revisa y pulsa BUSCAR.");
+    sendVoiceDiagnostic("voice_resolver_ok", { resolved: false, response_ok: true, decision: data && data.decision ? data.decision : "" });
+    setStatus("Texto listo. Revisa y pulsa BUSCAR.");
   } catch (e) {
     sendVoiceDiagnostic("voice_resolver_error", {
       error: e && e.name ? e.name : "resolver_error",
       message: e && e.message ? e.message : String(e || "")
     });
-    if (seq === voiceResolveSeq) setStatus("No seguro. Revisa y pulsa BUSCAR.");
+    if (seq === voiceResolveSeq) setStatus("Texto listo. Revisa y pulsa BUSCAR.");
   } finally {
     if (seq === voiceResolveSeq) setVoiceButtonState("idle");
   }
