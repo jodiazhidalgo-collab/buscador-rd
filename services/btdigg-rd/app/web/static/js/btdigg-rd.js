@@ -25,7 +25,8 @@ const finishSoundUrl = "/static/sounds/applepay.mp3";
 const voiceStartSoundUrl = "/static/sounds/micro_inicio.mp3";
 const voiceDoneSoundUrl = "/static/sounds/micro_terminado.mp3";
 const finishSoundVolume = 0.55;
-const voiceSoundVolume = 0.7;
+const voiceStartSoundVolume = 0.7;
+const voiceDoneSoundVolume = 0.5;
 const notifiedJobs = {};
 let qbitSearchEnabled = true;
 const searchModeValues = new Set(["0", "1", "3"]);
@@ -273,12 +274,12 @@ function getFinishSound() {
 }
 
 function getVoiceStartSound() {
-  if (!voiceStartSound) voiceStartSound = buildUiSound(voiceStartSoundUrl, voiceSoundVolume);
+  if (!voiceStartSound) voiceStartSound = buildUiSound(voiceStartSoundUrl, voiceStartSoundVolume);
   return voiceStartSound;
 }
 
 function getVoiceDoneSound() {
-  if (!voiceDoneSound) voiceDoneSound = buildUiSound(voiceDoneSoundUrl, voiceSoundVolume);
+  if (!voiceDoneSound) voiceDoneSound = buildUiSound(voiceDoneSoundUrl, voiceDoneSoundVolume);
   return voiceDoneSound;
 }
 
@@ -332,17 +333,17 @@ function playFinishSound(jobId) {
 }
 
 function prepareVoiceDoneSound() {
-  prepareUiSound(getVoiceDoneSound, voiceSoundVolume);
+  prepareUiSound(getVoiceDoneSound, voiceDoneSoundVolume);
 }
 
 function playVoiceStartSound() {
-  playUiSound(getVoiceStartSound, voiceSoundVolume);
+  playUiSound(getVoiceStartSound, voiceStartSoundVolume);
 }
 
 function playVoiceDoneSoundOnce() {
   if (voiceDoneSoundPlayed) return;
   voiceDoneSoundPlayed = true;
-  playUiSound(getVoiceDoneSound, voiceSoundVolume);
+  playUiSound(getVoiceDoneSound, voiceDoneSoundVolume);
 }
 
 function createVoiceTraceId() {
