@@ -83,7 +83,6 @@ let voiceDoneSoundPlayed = false;
 const voiceInitialSpeechTimeoutMs = 5000;
 const voiceSilenceStopMs = 1700;
 const voiceMaxRecordMs = 15000;
-const voiceStartCueDelayMs = 1150;
 
 function getUiStateClientId() {
   try {
@@ -259,10 +258,6 @@ async function loadSharedUiState(remote = false) {
     }
   } catch (e) {}
   return localApplied;
-}
-
-function waitMs(ms) {
-  return new Promise(resolve => setTimeout(resolve, ms));
 }
 
 function buildUiSound(url, volume) {
@@ -770,7 +765,7 @@ async function startVoiceQuery(ev) {
     setStatus("Un momento...");
     return;
   }
-  voiceClickGuardUntil = clickNow + voiceStartCueDelayMs + 600;
+  voiceClickGuardUntil = clickNow + 450;
   voiceTraceId = createVoiceTraceId();
   try {
     voiceTraceStartedAt = performance.now();
@@ -802,9 +797,7 @@ async function startVoiceQuery(ev) {
   }
   voiceStartPending = true;
   prepareVoiceDoneSound();
-  playVoiceStartSound();
   setStatus("Preparando micro...");
-  await waitMs(voiceStartCueDelayMs);
   sendVoiceDiagnostic("voice_get_user_media_start", { state: "requesting_micro" });
   try {
     const stream = await navigator.mediaDevices.getUserMedia({
@@ -829,6 +822,7 @@ async function startVoiceQuery(ev) {
       voiceRecording = true;
       setVoiceButtonState("recording");
       setStatus("Grabando...");
+      playVoiceStartSound();
       sendVoiceDiagnostic("voice_recorder_start", { mime_type: recorder.mimeType || mimeType || "" });
       startVoiceLevelMonitor(stream);
       voiceMaxRecordTimer = setTimeout(() => stopVoiceRecording("max_duration"), voiceMaxRecordMs);
