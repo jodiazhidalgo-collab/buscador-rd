@@ -19,8 +19,13 @@ let tvRulesCache = null;
 let tvRulesDefaults = null;
 let formStateRestored = false;
 let finishSound = null;
+let voiceStartSound = null;
+let voiceDoneSound = null;
 const finishSoundUrl = "/static/sounds/applepay.mp3";
+const voiceStartSoundUrl = "/static/sounds/micro_inicio.mp3";
+const voiceDoneSoundUrl = "/static/sounds/micro_terminado.mp3";
 const finishSoundVolume = 0.55;
+const voiceSoundVolume = 0.7;
 const notifiedJobs = {};
 let qbitSearchEnabled = true;
 const searchModeValues = new Set(["0", "1", "3"]);
@@ -73,9 +78,12 @@ let voicePendingStopReason = "";
 let voiceAudioContext = null;
 let voiceAnalyser = null;
 let voiceSourceNode = null;
+let voiceStartPending = false;
+let voiceDoneSoundPlayed = false;
 const voiceInitialSpeechTimeoutMs = 5000;
 const voiceSilenceStopMs = 1700;
 const voiceMaxRecordMs = 15000;
+const voiceStartCueDelayMs = 1150;
 
 function getUiStateClientId() {
   try {
@@ -253,18 +261,35 @@ async function loadSharedUiState(remote = false) {
   return localApplied;
 }
 
+function waitMs(ms) {
+  return new Promise(resolve => setTimeout(resolve, ms));
+}
+
+function buildUiSound(url, volume) {
+  const audio = new Audio(url);
+  audio.preload = "auto";
+  audio.volume = volume;
+  return audio;
+}
+
 function getFinishSound() {
-  if (!finishSound) {
-    finishSound = new Audio(finishSoundUrl);
-    finishSound.preload = "auto";
-    finishSound.volume = finishSoundVolume;
-  }
+  if (!finishSound) finishSound = buildUiSound(finishSoundUrl, finishSoundVolume);
   return finishSound;
 }
 
-function prepareFinishSound() {
+function getVoiceStartSound() {
+  if (!voiceStartSound) voiceStartSound = buildUiSound(voiceStartSoundUrl, voiceSoundVolume);
+  return voiceStartSound;
+}
+
+function getVoiceDoneSound() {
+  if (!voiceDoneSound) voiceDoneSound = buildUiSound(voiceDoneSoundUrl, voiceSoundVolume);
+  return voiceDoneSound;
+}
+
+function prepareUiSound(getAudio, volume) {
   try {
-    const audio = getFinishSound();
+    const audio = getAudio();
     audio.pause();
     audio.currentTime = 0;
     audio.muted = true;
@@ -274,33 +299,55 @@ function prepareFinishSound() {
         audio.pause();
         audio.currentTime = 0;
         audio.muted = false;
-        audio.volume = finishSoundVolume;
+        audio.volume = volume;
       }).catch(() => {
         audio.muted = false;
-        audio.volume = finishSoundVolume;
+        audio.volume = volume;
         audio.load();
       });
     } else {
       audio.pause();
       audio.currentTime = 0;
       audio.muted = false;
-      audio.volume = finishSoundVolume;
+      audio.volume = volume;
     }
   } catch (e) {}
+}
+
+function playUiSound(getAudio, volume) {
+  try {
+    const audio = getAudio();
+    audio.pause();
+    audio.currentTime = 0;
+    audio.muted = false;
+    audio.volume = volume;
+    const promise = audio.play();
+    if (promise && promise.catch) promise.catch(() => {});
+  } catch (e) {}
+}
+
+function prepareFinishSound() {
+  prepareUiSound(getFinishSound, finishSoundVolume);
 }
 
 function playFinishSound(jobId) {
   if (jobId && notifiedJobs[jobId]) return;
   if (jobId) notifiedJobs[jobId] = true;
-  try {
-    const audio = getFinishSound();
-    audio.pause();
-    audio.currentTime = 0;
-    audio.muted = false;
-    audio.volume = finishSoundVolume;
-    const promise = audio.play();
-    if (promise && promise.catch) promise.catch(() => {});
-  } catch (e) {}
+  playUiSound(getFinishSound, finishSoundVolume);
+}
+
+function prepareVoiceDoneSound() {
+  prepareUiSound(getVoiceDoneSound, voiceSoundVolume);
+}
+
+function playVoiceStartSound() {
+  playUiSound(getVoiceStartSound, voiceSoundVolume);
+}
+
+function playVoiceDoneSoundOnce() {
+  if (voiceDoneSoundPlayed) return;
+  voiceDoneSoundPlayed = true;
+  playUiSound(getVoiceDoneSound, voiceSoundVolume);
 }
 
 function createVoiceTraceId() {
@@ -530,7 +577,10 @@ async function resolveVoiceTitle(transcript, alternatives) {
     });
     if (seq === voiceResolveSeq) setStatus("Texto listo. Revisa y pulsa BUSCAR.");
   } finally {
-    if (seq === voiceResolveSeq) setVoiceButtonState("idle");
+    if (seq === voiceResolveSeq) {
+      setVoiceButtonState("idle");
+      playVoiceDoneSoundOnce();
+    }
   }
 }
 
@@ -638,6 +688,7 @@ async function transcribeVoiceBlob(blob) {
   if (!blob || !blob.size) {
     sendVoiceDiagnostic("voice_upload_error", { error: "empty_blob", audio_size: 0 });
     showVoiceProblem("No he oido voz");
+    playVoiceDoneSoundOnce();
     return;
   }
   setVoiceButtonState("resolving");
@@ -670,6 +721,7 @@ async function transcribeVoiceBlob(blob) {
         setStatus("No se pudo transcribir");
       }
       setVoiceButtonState("idle");
+      playVoiceDoneSoundOnce();
       return;
     }
     const transcript = cleanVoiceTitle(data.text || "");
@@ -682,6 +734,7 @@ async function transcribeVoiceBlob(blob) {
     if (!transcript) {
       setStatus("No he oido voz");
       setVoiceButtonState("idle");
+      playVoiceDoneSoundOnce();
       return;
     }
     setQueryFromVoice(transcript, true);
@@ -693,6 +746,7 @@ async function transcribeVoiceBlob(blob) {
     });
     setStatus("No se pudo transcribir");
     setVoiceButtonState("idle");
+    playVoiceDoneSoundOnce();
   }
 }
 
@@ -706,12 +760,17 @@ async function startVoiceQuery(ev) {
     stopVoiceRecording("manual_stop");
     return;
   }
+  if (voiceStartPending) {
+    sendVoiceDiagnostic("voice_busy_click", { state: "ignored_while_starting" });
+    setStatus("Preparando micro...");
+    return;
+  }
   if (clickNow < voiceClickGuardUntil) {
     sendVoiceDiagnostic("voice_busy_click", { state: "ignored_by_guard" });
     setStatus("Un momento...");
     return;
   }
-  voiceClickGuardUntil = clickNow + 450;
+  voiceClickGuardUntil = clickNow + voiceStartCueDelayMs + 600;
   voiceTraceId = createVoiceTraceId();
   try {
     voiceTraceStartedAt = performance.now();
@@ -721,6 +780,7 @@ async function startVoiceQuery(ev) {
   voiceSpeechDetected = false;
   voiceChunks = [];
   voicePendingStopReason = "";
+  voiceDoneSoundPlayed = false;
   sendVoiceDiagnostic("voice_record_click", {
     button_disabled: !!(document.getElementById("voiceQueryBtn") || {}).disabled
   });
@@ -740,6 +800,11 @@ async function startVoiceQuery(ev) {
     setVoiceButtonState("unsupported");
     return;
   }
+  voiceStartPending = true;
+  prepareVoiceDoneSound();
+  playVoiceStartSound();
+  setStatus("Preparando micro...");
+  await waitMs(voiceStartCueDelayMs);
   sendVoiceDiagnostic("voice_get_user_media_start", { state: "requesting_micro" });
   try {
     const stream = await navigator.mediaDevices.getUserMedia({
@@ -760,6 +825,7 @@ async function startVoiceQuery(ev) {
       if (event && event.data && event.data.size) voiceChunks.push(event.data);
     };
     recorder.onstart = () => {
+      voiceStartPending = false;
       voiceRecording = true;
       setVoiceButtonState("recording");
       setStatus("Grabando...");
@@ -795,12 +861,14 @@ async function startVoiceQuery(ev) {
       if (reason === "no_speech" || !voiceSpeechDetected) {
         setVoiceButtonState("idle");
         setStatus("No he oido voz");
+        playVoiceDoneSoundOnce();
         return;
       }
       transcribeVoiceBlob(blob);
     };
     recorder.start(250);
   } catch (e) {
+    voiceStartPending = false;
     const errorName = e && e.name ? e.name : "get_user_media_error";
     sendVoiceDiagnostic("voice_get_user_media_error", {
       error: errorName,
@@ -812,6 +880,7 @@ async function startVoiceQuery(ev) {
     } else {
       showVoiceProblem("No se pudo abrir micro");
     }
+    playVoiceDoneSoundOnce();
   }
 }
 
