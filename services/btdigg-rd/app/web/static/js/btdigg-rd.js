@@ -2270,12 +2270,6 @@ function startSharedRefresh() {
 
 function pushLog(module, line) {
   if (!moduleLogs[module]) moduleLogs[module] = [];
-  if (
-    moduleLogs[module].length === 1 &&
-    ["Conectando actividad LIVE...", "Reconectando actividad LIVE..."].includes(String(moduleLogs[module][0] || ""))
-  ) {
-    moduleLogs[module] = [];
-  }
   moduleLogs[module].push(line);
   if (moduleLogs[module].length > 650) moduleLogs[module] = moduleLogs[module].slice(-650);
   renderLog(module);
@@ -2329,34 +2323,16 @@ async function start(payload) {
 function openLive(id, module) {
   saveActiveJob(id, module);
   if (!window.EventSource) {
+    pushLog(module, "Aviso: navegador sin LIVE real. Uso modo seguro.");
     poll(id, module);
     return;
   }
   let finished = false;
-  let liveLogReceived = false;
-  let fallbackStarted = false;
-  let liveFallbackTimer = null;
-  const clearLiveFallback = () => {
-    if (liveFallbackTimer) clearTimeout(liveFallbackTimer);
-    liveFallbackTimer = null;
-  };
-  const startPollingFallback = () => {
-    if (finished || fallbackStarted) return;
-    fallbackStarted = true;
-    clearLiveFallback();
-    closeLive(module);
-    poll(id, module);
-  };
   const es = new EventSource("/api/job/" + encodeURIComponent(id) + "/stream");
   liveStreams[module] = es;
-  liveFallbackTimer = setTimeout(() => {
-    if (!liveLogReceived) startPollingFallback();
-  }, 2500);
 
   es.addEventListener("log", ev => {
     try {
-      liveLogReceived = true;
-      clearLiveFallback();
       const data = JSON.parse(ev.data || "{}");
       if (data.line) pushLog(module, data.line);
     } catch (e) {}
@@ -2370,7 +2346,6 @@ function openLive(id, module) {
   });
   es.addEventListener("done", ev => {
     finished = true;
-    clearLiveFallback();
     let data = {};
     try { data = JSON.parse(ev.data || "{}"); } catch (e) {}
     closeLive(module);
@@ -2388,7 +2363,10 @@ function openLive(id, module) {
   });
   es.onerror = () => {
     if (finished) return;
-    startPollingFallback();
+    closeLive(module);
+    pushLog(module, "Aviso: canal LIVE cortado. Sigo por modo seguro.");
+    setStatus("Modo seguro...");
+    poll(id, module);
   };
 }
 
