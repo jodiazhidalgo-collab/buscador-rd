@@ -1,10 +1,10 @@
 {
   "summary": {
-    "generated_at": "2026-07-07T23:23:01.280665+00:00",
+    "generated_at": "2026-07-07T23:26:23.627147+00:00",
     "trigger": "web-push",
     "current_run_id": "",
     "exported_files": 2827,
-    "skipped_files": 2,
+    "skipped_files": 4,
     "redactions": 95,
     "sqlite_rows": 87,
     "sources": [
@@ -22624,6 +22624,22 @@
       "exported": true,
       "redacted": true,
       "note": "sqlite_exported_as_jsonl"
+    },
+    {
+      "source": "btdigg",
+      "path": "title_resolver.sqlite3-shm",
+      "bytes": 32768,
+      "exported": false,
+      "redacted": false,
+      "note": "binary_or_unknown_extension_listed_only"
+    },
+    {
+      "source": "btdigg",
+      "path": "title_resolver.sqlite3-wal",
+      "bytes": 0,
+      "exported": false,
+      "redacted": false,
+      "note": "binary_or_unknown_extension_listed_only"
     },
     {
       "source": "btdigg",
