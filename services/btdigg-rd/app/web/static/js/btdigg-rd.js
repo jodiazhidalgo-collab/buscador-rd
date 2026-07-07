@@ -28,7 +28,6 @@ const finishSoundVolume = 0.55;
 const voiceStartSoundVolume = 0.7;
 const voiceDoneSoundVolume = 0.5;
 const notifiedJobs = {};
-const silentFinishJobs = {};
 let qbitSearchEnabled = true;
 let queueQbitEnabled = true;
 let searchQueueDraftItems = [];
@@ -334,16 +333,7 @@ function prepareFinishSound() {
   prepareUiSound(getFinishSound, finishSoundVolume);
 }
 
-function markSilentFinishJob(jobId) {
-  if (jobId) silentFinishJobs[String(jobId)] = true;
-}
-
 function playFinishSound(jobId) {
-  if (jobId && silentFinishJobs[String(jobId)]) {
-    delete silentFinishJobs[String(jobId)];
-    notifiedJobs[jobId] = true;
-    return;
-  }
   if (jobId && notifiedJobs[jobId]) return;
   if (jobId) notifiedJobs[jobId] = true;
   playUiSound(getFinishSound, finishSoundVolume);
@@ -1342,7 +1332,6 @@ function applySearchQueueState(state) {
   searchQueueServerState = state && Array.isArray(state.items) && state.items.length ? state : null;
   if (searchQueueServerState && searchQueueServerState.current_job_id && queueIsActive(searchQueueServerState)) {
     const currentId = String(searchQueueServerState.current_job_id || "");
-    markSilentFinishJob(currentId);
     if (currentId && activeJobIds.btdigg !== currentId) {
       resumeJob(currentId, "btdigg");
     }
