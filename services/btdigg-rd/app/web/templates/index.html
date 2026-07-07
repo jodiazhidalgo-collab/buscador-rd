@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>BTDigg + RD</title>
-  <link rel="stylesheet" href="{{ url_for('static', filename='css/btdigg-rd.css') }}?v=42">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/btdigg-rd.css') }}?v=43">
 </head>
 <body>
   <main class="shell">
@@ -221,35 +221,30 @@
       </div>
     </section>
 
-    <section id="queueMockView" class="view hidden">
-      <div class="panel queue-page">
-        <div class="queue-page-head">
-          <div>
-            <h2>Lista</h2>
-            <p id="queueStatus" class="sub">Cola de b&uacute;squedas.</p>
-          </div>
-          <div class="queue-top-actions" aria-label="Acciones de lista">
-            <button id="queueStartBtn" class="btn primary" type="button" onclick="startSearchQueue()">Ejecutar lista</button>
-            <button id="queueClearBtn" class="btn" type="button" onclick="clearSearchQueue()">Limpiar</button>
-            <button id="queueStopBtn" class="btn stop-btn" type="button" onclick="stopSearchQueue()">Detener</button>
-          </div>
-        </div>
-
-        <div class="queue-designs">
-          <div class="queue-form queue-form-stacked">
-            <label class="field grow"><span>T&iacute;tulo</span><input id="queueTitle" type="text" autocomplete="off" placeholder="Ejemplo: Blade Runner 2049"></label>
-            <div class="queue-mini-grid">
-              <label class="field small"><span>P&aacute;ginas</span><input id="queuePages" type="text" value="1"></label>
-              <label class="field small"><span>GB</span><input id="queueMinGb" type="text" inputmode="decimal" placeholder="0"></label>
-              <label class="field medium"><span>Modo</span><select id="queueMode"><option value="1">Calidad pura</option><option value="3" selected>Castellano obligatorio</option><option value="0">Sin filtro</option></select></label>
-              <button id="queueQbitToggle" class="queue-switch is-on" type="button" aria-pressed="true" onclick="toggleQueueQbit()">qB ON</button>
-            </div>
-            <button id="queueAddBtn" class="btn primary" type="button" onclick="addSearchQueueItem()">A&ntilde;adir a la lista</button>
-          </div>
-
-          <div id="queueCardList" class="queue-card-list"></div>
-        </div>
+    <section id="queueMockView" class="view hidden queue-page">
+      <p id="queueStatus" class="queue-status-hidden" aria-live="polite">Cola de b&uacute;squedas.</p>
+      <div class="queue-top-actions" aria-label="Acciones de lista">
+        <button id="queueStartBtn" class="btn primary" type="button" onclick="startSearchQueue()">Ejecutar lista</button>
+        <button id="queueClearBtn" class="btn" type="button" onclick="clearSearchQueue()">Limpiar</button>
+        <button id="queueStopBtn" class="btn stop-btn" type="button" onclick="stopSearchQueue()">Detener</button>
       </div>
+
+      <section class="panel queue-form-panel">
+        <div class="queue-form queue-form-stacked">
+          <label class="field grow"><span>T&iacute;tulo o b&uacute;squeda</span><input id="queueTitle" type="text" autocomplete="off" placeholder="Ejemplo: Blade Runner 2049"></label>
+          <div class="queue-mini-grid">
+            <label class="field small"><span>P&aacute;ginas</span><input id="queuePages" type="text" value="1"></label>
+            <label class="field medium"><span>Modo</span><select id="queueMode"><option value="1">Calidad pura</option><option value="3" selected>Castellano obligatorio</option><option value="0">Sin filtro</option></select></label>
+            <label class="field small"><span>GB m&iacute;nimo</span><input id="queueMinGb" type="text" inputmode="decimal" placeholder="0"></label>
+            <button id="queueQbitToggle" class="queue-switch is-on" type="button" aria-pressed="true" onclick="toggleQueueQbit()">qB ON</button>
+          </div>
+          <button id="queueAddBtn" class="btn primary" type="button" onclick="addSearchQueueItem()">A&ntilde;adir lista</button>
+        </div>
+      </section>
+
+      <section class="panel queue-list-panel">
+        <div id="queueCardList" class="queue-card-list"></div>
+      </section>
     </section>
   </main>
 
