@@ -54,6 +54,7 @@ services/**/app/motor/btdigg/EDITOR_*.log
 *.part
 *.zip
 *.lnk
+Thumbs.db
 
 # Capturas de comprobacion local.
 *.png
