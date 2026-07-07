@@ -1,0 +1,26 @@
+#!/usr/bin/env sh
+set -eu
+
+echo "Buscador RD pre-commit: git diff --check"
+git diff --cached --check
+
+if [ -n "${PYTHON:-}" ]; then
+  PYTHON_BIN="$PYTHON"
+elif [ -x "_codex_runtime/tmp/venv-btdigg-rd/Scripts/python.exe" ]; then
+  PYTHON_BIN="_codex_runtime/tmp/venv-btdigg-rd/Scripts/python.exe"
+elif [ -x "_codex_runtime/tmp/venv-buscador-rd/Scripts/python.exe" ]; then
+  PYTHON_BIN="_codex_runtime/tmp/venv-buscador-rd/Scripts/python.exe"
+else
+  PYTHON_BIN="python"
+fi
+
+echo "Buscador RD pre-commit: compileall"
+"$PYTHON_BIN" -m compileall -q services/btdigg-rd services/cloudflared
+
+echo "Buscador RD pre-commit: contratos rapidos"
+"$PYTHON_BIN" -m pytest -q \
+  services/btdigg-rd/tests/test_project_governance.py \
+  services/btdigg-rd/tests/test_pytest_contracts.py \
+  services/btdigg-rd/tests/test_blackbox_sequence_contract.py \
+  services/btdigg-rd/tests/test_routes_contract.py \
+  services/btdigg-rd/tests/test_search_queue_contract.py
