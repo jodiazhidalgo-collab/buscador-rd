@@ -9,7 +9,7 @@ from pathlib import Path
 ROOT = Path("/app")
 LOG_DIR = ROOT / "logs"
 CLOUDFLARED_LOG = Path(os.getenv("CLOUDFLARED_LOG", str(LOG_DIR / "cloudflared" / "cloudflared.log")))
-TUNNEL_TARGET = os.getenv("TUNNEL_TARGET", "http://localhost:9007")
+TUNNEL_TARGET = os.getenv("TUNNEL_TARGET", "http://btdigg-rd:9007")
 
 
 def ensure_dirs():

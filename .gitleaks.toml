@@ -1,0 +1,7 @@
+[allowlist]
+description = "Falsos positivos publicos del frontend: claves de estado local y marcadores internos sin secretos."
+regexes = [
+  '''btdiggRd\.[A-Za-z0-9.]+\.v1''',
+  '''__RD_OK_VERIFY_TITLE__''',
+  '''/static/sounds/[a-z_]+\.mp3''',
+]

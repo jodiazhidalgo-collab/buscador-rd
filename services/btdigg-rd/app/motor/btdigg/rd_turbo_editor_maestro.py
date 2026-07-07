@@ -287,7 +287,7 @@ def send_selected_to_rdt_client(selected):
         print("RDT-Client: no hay magnets para enviar.")
         return False
 
-    api_url = "http://rdtclient:6500/api/v2/torrents/add"
+    api_url = os.environ.get("RDT_ADD_URL", "http://rdtclient:6500/api/v2/torrents/add")
     data = urlparse.urlencode({
         "urls": "\n".join(magnets),
         "category": "movies",

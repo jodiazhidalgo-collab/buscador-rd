@@ -15,7 +15,7 @@ services:
       - WHISPER_COMPUTE_TYPE=int8
       - WHISPER_THREADS=5
       - WHISPER_BEAM=5
-      - WHISPER_API_KEY=CAMBIAR_EN_COMPOSE_REAL
+      - WHISPER_API_KEY=${WHISPER_API_KEY}
       - WHISPER_LOG_LEVEL=INFO
     volumes:
       - ./config/whisper/data:/var/lib/whisper
@@ -37,14 +37,14 @@ services:
       - BROWSER_BIN=/usr/bin/chromium
       - PYTHONUNBUFFERED=1
       - PYTHONDONTWRITEBYTECODE=1
-      - REAL_DEBRID_TOKEN=CAMBIAR_EN_COMPOSE_REAL
-      - REAL_DEBRID_API=https://api.real-debrid.com/rest/1.0
-      - RDT_BASE=http://rdtclient:6500
-      - RDT_USER=CAMBIAR_EN_COMPOSE_REAL
-      - RDT_PASS=CAMBIAR_EN_COMPOSE_REAL
-      - QBIT_BASE=http://qbittorrent:8080
-      - QBIT_USER=CAMBIAR_EN_COMPOSE_REAL
-      - QBIT_PASS=CAMBIAR_EN_COMPOSE_REAL
+      - REAL_DEBRID_TOKEN=${REAL_DEBRID_TOKEN}
+      - REAL_DEBRID_API=${REAL_DEBRID_API}
+      - RDT_BASE=${RDT_BASE}
+      - RDT_USER=${RDT_USER}
+      - RDT_PASS=${RDT_PASS}
+      - QBIT_BASE=${QBIT_BASE}
+      - QBIT_USER=${QBIT_USER}
+      - QBIT_PASS=${QBIT_PASS}
       - ARR_TORRENT_INBOX=/watch/torrents/inbox
       - DATA_DIR=/app/data
       - BTDIGG_RUNTIME_DIR=/app/data/motor
@@ -53,14 +53,14 @@ services:
       - BTDIGG_EXPORT_DIR=/app/data/motor/exports
       - BTDIGG_VOICE_TRANSCRIBE_PROVIDER=openai
       - BTDIGG_VOICE_OPENAI_BASE_URL=http://whisper:9000/v1
-      - BTDIGG_VOICE_OPENAI_API_KEY=CAMBIAR_EN_COMPOSE_REAL
+      - BTDIGG_VOICE_OPENAI_API_KEY=${BTDIGG_VOICE_OPENAI_API_KEY}
       - BTDIGG_VOICE_OPENAI_MODEL=whisper-1
       - BTDIGG_VOICE_OPENAI_PROMPT=Titulo de pelicula dictado por voz.
       - BTDIGG_VOICE_OPENAI_TEMPERATURE=0
       - BTDIGG_VOICE_TRANSCRIBE_TIMEOUT_SEC=120
     volumes:
       - ./config/btdigg-rd/data:/app/data
-      - /data/torrents/watch/inbox:/watch/torrents/inbox:rw
+      - ${ARR_TORRENT_INBOX_HOST}:/watch/torrents/inbox:rw
 
   cloudflared:
     build:
@@ -73,7 +73,7 @@ services:
       - ./config/cloudflared/config/secrets.env
     environment:
       - TZ=Europe/Madrid
-      - TUNNEL_TARGET=http://localhost:9007
+      - TUNNEL_TARGET=${TUNNEL_TARGET}
       - CLOUDFLARED_LOG=/app/logs/cloudflared/cloudflared.log
       - STATE_FILE=/app/data/estado/tunnel_state.json
       - LINK_FILE=/app/data/estado/enlace_usuario.txt

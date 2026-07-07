@@ -1,9 +1,15 @@
 # Proyecto unificado Buscador RD: no subir runtime, backups ni credenciales reales.
 
 _backups/
+.agents/
+.codex/
+AGENTS.md
 _codex_runtime/
 .playwright-mcp/
 test-results/
+.env
+.env.*
+!.env.example
 
 # Compose real con credenciales locales. Versionar solo docker-compose.example.yaml.
 docker-compose.yaml
