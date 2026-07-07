@@ -1,6 +1,0 @@
-RD Turbo Pro - lista extra qBittorrent vivos
-================================================================================
-[Q01] QBT:QBT_VIVO   SIZE:   2.4 GB HASH:cf8bb75d860e2bb20eb00d1023c418d6a4709649
-      TORRENT: Cenicienta [BluRay 720p X264 MKV][AC3 5.1 Castellano][2015][www.descargas2020.ORG][www.pctnew.ORG]
-      MOTIVO: qBittorrent con seed conectado: seeds=1, peers=1, state=stalleddl
-      MAGNET: magnet:?xt=urn:btih:cf8bb75d860e2bb20eb00d1023c418d6a4709649&dn=Cenicienta+%5BBluRay+720p+X264+MKV%5D%5BAC3+5.1+Castellano%5D%5B2015%5D%5Bwww.descargas2020.ORG%5D%5Bwww.pctnew.ORG%5D&tr=udp://tracker.openbittorrent.com:80&tr=udp://tracker.opentrackr.org:1337/announce

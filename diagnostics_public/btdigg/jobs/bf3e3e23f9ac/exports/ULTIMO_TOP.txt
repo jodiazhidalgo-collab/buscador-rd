@@ -1,9 +1,0 @@
-RD Turbo Pro - último TOP
-================================================================================
-[01] RD:RD_ERROR     SCORE:   0 SIZE:   8.0 GB HASH:7d7158c4cb7d709f03a93b83c761e8a2678fd090
-     John Wick 2014 BluRay 1080p DTS AC3 x264-MgB
-     QBIT: QBT_VIVO | seeds=3 peers=7 | qBittorrent descargando: 2.03 MB/s, seeds=3, peers=7
-     MOTIVO: Real-Debrid HTTP 404: [7 unknown_ressource] {
-	"error": "unknown_ressource",
-	"error_code": 7
-}

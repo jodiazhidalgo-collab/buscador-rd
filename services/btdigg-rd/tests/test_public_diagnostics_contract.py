@@ -117,3 +117,28 @@ def test_public_diagnostics_extra_roots_are_included(
     assert "https://example.trycloudflare.com" in exported
     assert "secret-token" not in exported
     assert "CLOUDFLARE_API_TOKEN=***REDACTED***" in exported
+
+
+def test_public_diagnostics_cleans_mounted_output_contents(
+    isolated_data_dir, reload_data_dir_modules, monkeypatch, tmp_path
+):
+    public_diagnostics, public_dir = _load_public_diagnostics(
+        isolated_data_dir, reload_data_dir_modules, monkeypatch, tmp_path
+    )
+    public_dir.mkdir(parents=True)
+    old_dir = public_dir / "old"
+    old_dir.mkdir()
+    (old_dir / "old.txt").write_text("old", encoding="utf-8")
+
+    real_rmtree = public_diagnostics.shutil.rmtree
+
+    def guarded_rmtree(path):
+        assert path != public_dir
+        return real_rmtree(path)
+
+    monkeypatch.setattr(public_diagnostics.shutil, "rmtree", guarded_rmtree)
+    public_diagnostics.export_public_diagnostics(trigger="pytest")
+
+    assert public_dir.exists()
+    assert not old_dir.exists()
+    assert (public_dir / "manifest.json").exists()

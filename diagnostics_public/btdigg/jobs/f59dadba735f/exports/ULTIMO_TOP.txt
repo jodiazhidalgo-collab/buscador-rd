@@ -1,6 +1,0 @@
-RD Turbo Pro - último TOP
-================================================================================
-[01] RD:PACK_SIN_COINCIDENCIA SCORE:   0 SIZE:   2.4 GB HASH:cf8bb75d860e2bb20eb00d1023c418d6a4709649
-     Cenicienta [BluRay 720p X264 MKV][AC3 5.1 Castellano][2015][www.descargas2020.ORG][www.pctnew.ORG]
-     QBIT: QBT_VIVO | seeds=1 peers=1 | qBittorrent con seed conectado: seeds=1, peers=1, state=stalleddl
-     MOTIVO: Pack/torrent sin archivo interno seguro: sin_candidato_video_pack files=5 terms=cenicienta

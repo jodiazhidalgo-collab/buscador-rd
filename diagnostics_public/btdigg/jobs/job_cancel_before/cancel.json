@@ -1,0 +1,6 @@
+{
+  "cancel_requested": true,
+  "job_id": "job_cancel_before",
+  "reason": "before_start",
+  "updated_at": 1783466428.806
+}

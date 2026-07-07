@@ -1,2 +1,0 @@
-- 2026-07-01T11:16:20+02:00 [info] download::DOWNLOAD_CLICK_RECEIVED - descarga
-- 2026-07-01T11:16:20+02:00 [warn] download::DOWNLOAD_REJECTED - sin enlace

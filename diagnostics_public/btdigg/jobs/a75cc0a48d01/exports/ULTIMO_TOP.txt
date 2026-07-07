@@ -1,6 +1,0 @@
-RD Turbo Pro - último TOP
-================================================================================
-[01] RD:PACK_SIN_COINCIDENCIA SCORE:   0 SIZE:4099.2 GB HASH:2e51e0cf62c3febd44e8405fee6260d1da12663a
-     Blacked-Entire-Site-2024-[titflix.ca]
-     QBIT: QBT_VIVO | seeds=0 peers=5 | qBittorrent ya tiene progreso real: progress=0.000, availability=0.00, state=stalleddl
-     MOTIVO: Pack/torrent sin archivo interno seguro: sin_candidato_video_pack files=1990 terms=blacked,entire,site,2024,titflix

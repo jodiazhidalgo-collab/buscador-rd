@@ -1,2 +1,0 @@
-- 2026-07-01T10:45:38+02:00 [info] download::DOWNLOAD_CLICK_RECEIVED - Smoke sin link
-- 2026-07-01T10:45:38+02:00 [warn] download::DOWNLOAD_REJECTED - sin enlace

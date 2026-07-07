@@ -1,1 +1,0 @@
-{"code": "DOWNLOAD.DOWNLOAD_REJECTED", "data": {"reason": "sin enlace"}, "event": "DOWNLOAD_REJECTED", "event_id": "E000002", "level": "warn", "observed_ts": "2026-07-01T10:51:41+02:00", "phase": "download", "seq": 2, "trace_id": "b7f2de87e7", "trace_kind": "download", "ts": "2026-07-01T10:51:41+02:00"}

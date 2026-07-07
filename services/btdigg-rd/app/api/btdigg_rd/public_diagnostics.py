@@ -288,8 +288,13 @@ def _prepare_output_dir(path: Path, sources: list[tuple[str, Path]]) -> Path:
     if len(output.parts) < 3:
         raise RuntimeError(f"Directorio publico demasiado amplio: {output}")
     if output.exists():
-        shutil.rmtree(output)
-    output.mkdir(parents=True, exist_ok=True)
+        for child in output.iterdir():
+            if child.is_dir() and not child.is_symlink():
+                shutil.rmtree(child)
+            else:
+                child.unlink()
+    else:
+        output.mkdir(parents=True, exist_ok=True)
     return output
 
 

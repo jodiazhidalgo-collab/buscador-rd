@@ -1,7 +1,0 @@
-- 2026-07-06T06:14:39+02:00 [info] voice::voice_record_click
-- 2026-07-06T06:14:39+02:00 [info] voice::voice_permission_state
-- 2026-07-06T06:14:40+02:00 [info] voice::voice_get_user_media_start
-- 2026-07-06T06:14:40+02:00 [info] voice::voice_get_user_media_ok
-- 2026-07-06T06:14:40+02:00 [info] voice::voice_recorder_start
-- 2026-07-06T06:14:45+02:00 [warn] voice::voice_no_speech_timeout
-- 2026-07-06T06:14:45+02:00 [info] voice::voice_recorder_stop - no_speech

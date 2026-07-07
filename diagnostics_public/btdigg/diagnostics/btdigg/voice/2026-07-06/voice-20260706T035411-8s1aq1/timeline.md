@@ -1,2 +1,0 @@
-- 2026-07-06T05:54:11+02:00 [info] voice::voice_resolver_start
-- 2026-07-06T05:54:11+02:00 [info] voice::voice_resolver_ok
