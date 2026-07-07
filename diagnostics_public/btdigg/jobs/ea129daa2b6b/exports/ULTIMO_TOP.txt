@@ -1,0 +1,16 @@
+RD Turbo Pro - último TOP
+================================================================================
+[01] RD:RD_FAIL      SCORE:  65 SIZE:   1.0 GB HASH:5f64e53aea43e6f3cc55d28d61a0419a33dbda05
+     www.UIndex.org    -    Pillion (2025) 720p WEBRip-LAMA
+     QBIT: QBT_VIVO | seeds=3 peers=6 | qBittorrent descargando: 0.00 MB/s, seeds=3, peers=6
+     MOTIVO: Real-Debrid rechaza este torrent por infraccion o bloqueo legal
+
+[02] RD:RD_FAIL      SCORE:  62 SIZE:   1.7 GB HASH:42b868e0a376007d776c36365e8521e9c9d282b0
+     www.UIndex.org    -    Pillion 2025 1080p 10bit WEBRip 6CH X265 HEVC-PSA
+     QBIT: QBT_VIVO | seeds=1 peers=5 | qBittorrent con seed conectado: seeds=1, peers=5, state=stalleddl
+     MOTIVO: Real-Debrid rechaza este torrent por infraccion o bloqueo legal
+
+[03] RD:RD_FAIL      SCORE:  36 SIZE:   6.2 GB HASH:e9e8e653d1abb30bb7d95dcfeea41304dbd661be
+     www.UIndex.org    -    Pillion 2025 1080p WEB EN-RGB
+     QBIT: QBT_VIVO | seeds=1 peers=0 | qBittorrent con seed conectado: seeds=1, peers=0, state=stalleddl
+     MOTIVO: Real-Debrid rechaza este torrent por infraccion o bloqueo legal

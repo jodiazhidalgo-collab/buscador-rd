@@ -1,0 +1,92 @@
+
+--- ARRANQUE MOTOR BTDIGG RD ---
+BTDigg + RD - opción 1 limpia
+Búsqueda: Atrapado en el tiempo
+Páginas: 1-3
+Modo: 0
+
+
+Navegador automático página 1 (1/3):
+  https://en.btdig.com/search?q=atrapado%20en%20el%20tiempo&p=0
+  Rescate DOM: 10 magnets encontrados
+
+Navegador automático página 2 (2/3):
+  https://en.btdig.com/search?q=atrapado%20en%20el%20tiempo&p=1
+  Rescate DOM: 10 magnets encontrados
+
+Navegador automático página 3 (3/3):
+  https://en.btdig.com/search?q=atrapado%20en%20el%20tiempo&p=2
+  Rescate DOM: 10 magnets encontrados
+
+Encontrados 30 resultados brutos. Filtrando...
+
+Aspiradora terminada: 30 resultados únicos encontrados.
+Modo sin filtro: no descarto por idioma/calidad y no ordeno por calidad/tamano; solo penalizo basura.
+Criba búsqueda seria: 29/30 coinciden en el mismo título/archivo.
+Rescate RD pendiente por titulo/pack dudoso: 1
+
+Comprobando token Real-Debrid...
+Token Real-Debrid OK: exmelenas
+
+Consultando Real-Debrid cache/instantáneo...
+
+Aviso: Real-Debrid tiene desactivada instantAvailability.
+Paso serio: verifico de verdad con addMagnet los 29 mejores candidatos.
+  Verificando 20/29: Atrapado En El Tiempo El Dia De La Marmota [DVDRIP][Spanish][www.newpct.com]
+  Verificando 1/29: Atrapado en el tiempo 1x13 .mkv
+  Verificando 24/29: Atrapado en el Tiempo MicroHD 1080.mkv
+  Verificando 21/29: Atrapado en el tiempo.avi
+  Verificando 10/29: Atrapado en el tiempo - El dia de la marmota BY NEMO.mkv
+  Verificando 18/29: Atrapado.En.El.Tiempo.El.Dia.De.La.Marmota.DVDRip.Xvid.Mp3.Spanish.[SpaTorrent.com]
+  Verificando 25/29: Atrapado en el Tiempo 1[HDRip][EspaTT.com].rar
+  Verificando 28/29: atrapado-en-el-tiempo-microhd-1080-px.torrent.vbe
+  Verificando 3/29: Atrapado en el tiempo 1x05 .mkv
+  Verificando 26/29: Atrapado en el tiempo DVDrip XviD www.DivxTotaL.com.avi
+  Verificando 16/29: Atrapado en el tiempo (1993 Comedia romántica) HDrip
+  RD OK 14/29: Atrapado en el tiempo BD1080.www.pctnew.com.mkv
+  Verificando 29/29: Atrapado.en.el.Tiempo.HDRip.Spanish.byzepol_sotram.avi
+  Verificando 17/29: Atrapado en el tiempo (1993 Comedia romántica) HDrip XviD Castellano
+  RD OK 12/29: Atrapado en el tiempo 4Kremux2160.www.atomohd.nl.mkv
+  Verificando 8/29: Atrapado En El Tiempo [DVDRIP][Spanish]
+  Verificando 23/29: Atrapado En El Tiempo.iso
+  Verificando 15/29: Atrapado en el tiempo [4K UHDrip][2160p][HDR][AC3 5.1 Castellano-AC3 5.1-Ingles Subs][ES-EN]
+  Verificando 13/29: Atrapado en el tiempo 4Kmicro2160.www.pctnew.com.mkv
+  RD OK 19/29: Atrapado en el Tiempo 4K2160.www.newpct1.com.mkv
+  Verificando 5/29: Atrapado en el tiempo 1x05 .avi
+  Verificando 9/29: Atrapado en el tiempo[DVDrip][Spanish][www.lokotorrents.com]
+  Verificando 11/29: Atrapado en el tiempo (Day Break) 1x01 (720p)
+  Verificando 6/29: Atrapado en el tiempo 1x04 .mkv
+  RD OK 22/29: AtrapadoTiempoM1080.www.newpct.com.mkv
+  Verificando 7/29: atrapado-en-el-tiempo_202306
+  Verificando 4/29: Atrapado en el tiempo 1x04 .avi
+  Verificando 2/29: Atrapado en el tiempo 1x13 .avi
+  Verificando 27/29: Atrapado En El Tiempo[www.MoviesDVDR.com][Johnnygan].ISO
+
+Resumen RD: NO_INSTANT=15 | PACK_SIN_COINCIDENCIA=1 | RD_FAIL=9 | RD_OK=4
+
+qBit: probando 25 candidatos extra (5 a la vez, 35s máximo).
+qBit progreso: 5/25 comprobados | vivos 0
+qBit progreso: 10/25 comprobados | vivos 0
+qBit progreso: 15/25 comprobados | vivos 0
+qBit progreso: 20/25 comprobados | vivos 0
+qBit progreso: 25/25 comprobados | vivos 0
+Resultados válidos para JDownloader/RD: 4/29
+Lista extra qBittorrent vivos reales: 0
+
+========================================================================
+ TOP LIMPIO
+========================================================================
+[01] RD:OK           SCORE:   0 SIZE:  60.5 GB  Atrapado en el tiempo [4K UHDremux 2160p][HDR10][Castellano DTS 5.1-Ingles TrueHD 7.1 Subs][ES-
+     archivo RD: /Atrapado en el tiempo 4Kremux2160.www.atomohd.nl.mkv (60.5 GB)
+[02] RD:OK           SCORE:   0 SIZE:  11.0 GB  Atrapado en el tiempo [BluRay 1080p][TrueHD 5.1 Castellano DTS 5.1-Ingles Subs][ES-EN]  ==>  /A
+     archivo RD: /Atrapado en el tiempo BD1080.www.pctnew.com.mkv (11.0 GB)
+[03] RD:OK           SCORE:   0 SIZE:  46.3 GB  Atrapado en el Tiempo [4K Remux][2160p][HDR][AC3 5.1 Castellano True HD 7.1-Ingles Subs][ES-EN]
+     archivo RD: /Atrapado en el Tiempo 4K2160.www.newpct1.com.mkv (46.3 GB)
+[04] RD:OK           SCORE:   0 SIZE:   2.7 GB  Atrapado en el tiempo [MicroHD][1080 px][AC3 5.1-Castellano-Ingles Subs]  ==>  /AtrapadoTiempoM
+     archivo RD: /AtrapadoTiempoM1080.www.newpct.com.mkv (2.7 GB)
+========================================================================
+Elige: 1 | 1,4,7 | A=todos los válidos RD | T=todos mostrados RD/qBit | S=salir
+Resultados guardados para el Editor: 4
+Real-Debrid temporal limpio: 4 id(s) revisado(s).
+
+RESULTADOS LISTOS. Escribe abajo 1, 1,3, A, T o S y pulsa Enviar.

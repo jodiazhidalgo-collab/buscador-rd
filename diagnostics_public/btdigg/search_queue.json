@@ -1,0 +1,12 @@
+{
+  "current_index": -1,
+  "current_job_id": "",
+  "error": "",
+  "finished": "",
+  "id": "",
+  "items": [],
+  "restore_qbit_enabled": null,
+  "started": "",
+  "status": "idle",
+  "stop_requested": false
+}

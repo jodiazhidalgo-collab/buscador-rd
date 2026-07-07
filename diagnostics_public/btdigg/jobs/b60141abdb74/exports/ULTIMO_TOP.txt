@@ -1,0 +1,41 @@
+RD Turbo Pro - último TOP
+================================================================================
+[01] RD:PACK_SIN_COINCIDENCIA SCORE:  40 SIZE:  15.9 GB HASH:651d20e7f757763350dcd162981ff7bd5294c37e
+     Enola.Holmes.3.2026.MULTi.VF2.HDR.DV.2160p.WEB.H265-SUPPLY.mkv
+     QBIT: QBT_VIVO | seeds=1 peers=22 | qBittorrent con seed conectado: seeds=1, peers=22, state=stalleddl
+     MOTIVO: Pack/torrent sin archivo interno seguro: sin_candidato_video_pack files=1 terms=enola,holmes,3
+
+[02] RD:RD_FAIL      SCORE:  40 SIZE:  15.9 GB HASH:73e62cff594ef65d5dbbe6629576cbcb4fef2d07
+     Enola.Holmes.3.2026.MULTi.VF2.HDR.2160p.WEB.H265-FW.mkv
+     QBIT: QBT_VIVO | seeds=1 peers=0 | qBittorrent con seed conectado: seeds=1, peers=0, state=stalleddl
+     MOTIVO: Real-Debrid rechaza este torrent por infraccion o bloqueo legal
+
+[03] RD:RD_FAIL      SCORE:  39 SIZE:  15.0 GB HASH:833a383a8e7b8507eeed7b3f9d7083b888ef3fd9
+     Enola.Holmes.3.2026.2160p.NF.WEB-DL.DV.HDR.DDP5.1.Atmos.H265.MP4-BEN.THE.MEN
+     QBIT: QBT_VIVO | seeds=3 peers=1 | qBittorrent con seed conectado: seeds=3, peers=1, state=stalleddl
+     MOTIVO: Real-Debrid rechaza este torrent por infraccion o bloqueo legal
+
+[04] RD:RD_FAIL      SCORE:  39 SIZE:  14.8 GB HASH:dc47bca049f983abc92e303804e54342876f7545
+     Enola.Holmes.3.2026.2160p.NF.WEB-DL.DDP5.1.Atmos.DV.HDR.H.265-KHN.mkv
+     QBIT: QBT_VIVO | seeds=1 peers=1 | qBittorrent con seed conectado: seeds=1, peers=1, state=stalleddl
+     MOTIVO: Real-Debrid rechaza este torrent por infraccion o bloqueo legal
+
+[05] RD:RD_FAIL      SCORE:  39 SIZE:  14.8 GB HASH:715bbdb685c287667dcfdcd25f6def1d7e3f749d
+     [DEVIL-TORRENTS.PL] Enola.Holmes.3.2026.MULTi.2160p.NF.WEB-DL.HDR.H265.DDP5.1.Atmos-K83
+     QBIT: QBT_VIVO | seeds=1 peers=0 | qBittorrent descargando: 0.62 MB/s, seeds=1, peers=0
+     MOTIVO: Real-Debrid rechaza este torrent por infraccion o bloqueo legal
+
+[06] RD:NO_INSTANT   SCORE:  39 SIZE:  14.3 GB HASH:f4a304d7feb0d8a395f59f408d030566bc44619d
+     Enola.Holmes.3.2026.2160p.NF.WEB-DL.DDP5.1.Atmos.DV.HDR.H.265-BYNDR
+     QBIT: QBT_VIVO | seeds=1 peers=2 | qBittorrent con seed conectado: seeds=1, peers=2, state=stalleddl
+     MOTIVO: No entrega link instantáneo. Estado: magnet_conversion, progreso: 0
+
+[07] RD:RD_FAIL      SCORE:  39 SIZE:  14.3 GB HASH:713202131be257a3d3bc0face9cecd335383c3d4
+     Enola.Holmes.3.2026.x265.WEB-DL.2160p.HDR-DV.mkv
+     QBIT: QBT_VIVO | seeds=2 peers=2 | qBittorrent con seed conectado: seeds=2, peers=2, state=stalleddl
+     MOTIVO: Real-Debrid rechaza este torrent por infraccion o bloqueo legal
+
+[08] RD:PACK_SIN_COINCIDENCIA SCORE:  39 SIZE:  14.2 GB HASH:df7f922a299f19604c69153ebb62426b0dba06f5
+     Enola.Holmes.3.2026.HDR.2160p.WEB.h265-ETHEL.mkv
+     QBIT: QBT_VIVO | seeds=2 peers=2 | qBittorrent con seed conectado: seeds=2, peers=2, state=stalleddl
+     MOTIVO: Pack/torrent sin archivo interno seguro: sin_candidato_video_pack files=1 terms=enola,holmes,3

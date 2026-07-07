@@ -1,0 +1,48 @@
+2026-07-03 04:41:50,395 INFO Vigilante arrancando
+2026-07-03 04:41:50,395 ERROR Falta CLOUDFLARE_API_TOKEN. El vigilante seguira leyendo el tunel, pero no puede publicar Cloudflare.
+2026-07-03 04:41:58,396 INFO Nueva URL de tunel detectada: https://enhancements-license-dolls-walls.trycloudflare.com
+2026-07-03 08:01:25,761 INFO Vigilante arrancando
+2026-07-03 08:01:25,761 ERROR Falta CLOUDFLARE_API_TOKEN. El vigilante seguira leyendo el tunel, pero no puede publicar Cloudflare.
+2026-07-03 08:01:33,763 INFO Nueva URL de tunel detectada: https://round-pgp-begun-gaming.trycloudflare.com
+2026-07-04 03:46:46,797 INFO Vigilante arrancando
+2026-07-04 03:46:46,906 WARNING No se pudo leer workers.dev subdomain: Cloudflare fallo GET /accounts/89663cacc71ef900d5a686a7c647cd92/workers/subdomain: HTTP 401 [{'code': 10000, 'message': 'Authentication error'}]
+2026-07-04 03:46:47,019 ERROR No se pudo preparar Cloudflare: Cloudflare fallo PUT /accounts/89663cacc71ef900d5a686a7c647cd92/workers/subdomain: HTTP 401 [{'code': 10000, 'message': 'Authentication error'}]
+Traceback (most recent call last):
+  File "/app/watcher/watcher.py", line 241, in main
+    namespace_id, worker_url = bootstrap_cloudflare()
+                               ^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/watcher/watcher.py", line 213, in bootstrap_cloudflare
+    subdomain = ensure_workers_dev_subdomain()
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/watcher/watcher.py", line 91, in ensure_workers_dev_subdomain
+    result = cf_request(
+             ^^^^^^^^^^^
+  File "/app/watcher/watcher.py", line 76, in cf_request
+    raise RuntimeError(f"Cloudflare fallo {method} {path}: HTTP {response.status_code} {errors or text}")
+RuntimeError: Cloudflare fallo PUT /accounts/89663cacc71ef900d5a686a7c647cd92/workers/subdomain: HTTP 401 [{'code': 10000, 'message': 'Authentication error'}]
+2026-07-04 03:46:55,024 INFO Nueva URL de tunel detectada: https://amplifier-identify-shoot-geo.trycloudflare.com
+2026-07-04 03:51:43,470 INFO Vigilante arrancando
+2026-07-04 03:51:43,470 ERROR Falta CLOUDFLARE_API_TOKEN. El vigilante seguira leyendo el tunel, pero no puede publicar Cloudflare.
+2026-07-04 03:51:51,472 INFO Nueva URL de tunel detectada: https://semiconductor-faculty-affiliate-mid.trycloudflare.com
+2026-07-04 04:17:42,368 INFO Vigilante arrancando
+2026-07-04 04:17:43,117 WARNING No se pudo leer workers.dev subdomain: Cloudflare fallo GET /accounts/89663cacc71ef900d5a686a7c647cd92/workers/subdomain: HTTP 404 [{'code': 10007, 'message': 'You do not have a workers.dev subdomain. Please go to https://dash.cloudflare.com/?to=/:account/workers/workers-and-pages. Opening the Workers & Pages landing page for the first time will create a workers.dev subdomain automatically.'}]
+2026-07-04 04:17:44,877 INFO workers.dev subdomain creado: lacabraesmia-cloudflared
+2026-07-04 04:17:46,179 INFO KV creado: cloudflared_tunnel_state
+2026-07-04 04:17:47,614 INFO Worker desplegado: cloudflared
+2026-07-04 04:17:48,408 INFO workers.dev habilitado para Worker: cloudflared
+2026-07-04 04:17:48,411 INFO Nueva URL de tunel detectada: https://tables-mode-slight-nextel.trycloudflare.com
+2026-07-04 04:17:48,764 INFO Tunel publicado: https://cloudflared.lacabraesmia-cloudflared.workers.dev -> https://tables-mode-slight-nextel.trycloudflare.com
+2026-07-04 07:05:56,866 INFO Vigilante arrancando
+2026-07-04 07:05:57,666 INFO workers.dev subdomain activo: lacabraesmia-cloudflared
+2026-07-04 07:05:58,053 INFO KV existente: cloudflared_tunnel_state
+2026-07-04 07:05:59,163 INFO Worker desplegado: cloudflared
+2026-07-04 07:05:59,962 INFO workers.dev habilitado para Worker: cloudflared
+2026-07-04 07:06:03,965 INFO Nueva URL de tunel detectada: https://findings-reporters-photo-llc.trycloudflare.com
+2026-07-04 07:06:04,285 INFO Tunel publicado: https://cloudflared.lacabraesmia-cloudflared.workers.dev -> https://findings-reporters-photo-llc.trycloudflare.com
+2026-07-07 21:23:28,019 INFO Vigilante arrancando
+2026-07-07 21:23:29,510 INFO workers.dev subdomain activo: lacabraesmia-cloudflared
+2026-07-07 21:23:29,944 INFO KV existente: cloudflared_tunnel_state
+2026-07-07 21:23:31,226 INFO Worker desplegado: cloudflared
+2026-07-07 21:23:32,681 INFO workers.dev habilitado para Worker: cloudflared
+2026-07-07 21:23:36,687 INFO Nueva URL de tunel detectada: https://threshold-posted-former-demands.trycloudflare.com
+2026-07-07 21:23:37,097 INFO Tunel publicado: https://cloudflared.lacabraesmia-cloudflared.workers.dev -> https://threshold-posted-former-demands.trycloudflare.com

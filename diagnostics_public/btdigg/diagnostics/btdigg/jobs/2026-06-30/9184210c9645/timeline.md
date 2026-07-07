@@ -1,0 +1,436 @@
+- 2026-06-30T19:08:52+02:00 [info] web::JOB_STARTED
+- 2026-06-30T19:08:52+02:00 [info] general::CONFIG_SNAPSHOT
+- 2026-06-30T19:08:52+02:00 [info] web::COMMAND_PREPARED
+- 2026-06-30T19:08:52+02:00 [info] web::PROCESS_STARTED
+- 2026-06-30T19:08:53+0200 [info] search::editor_clean_search_start
+- 2026-06-30T19:08:53+0200 [info] btdigg::browser_auto_search_start_dom
+- 2026-06-30T19:08:59+0200 [info] btdigg::extract_magnets
+- 2026-06-30T19:08:59+0200 [info] btdigg::btdigg_dump_dom_fallback
+- 2026-06-30T19:09:06+0200 [info] btdigg::extract_magnets
+- 2026-06-30T19:09:06+0200 [info] btdigg::btdigg_dump_dom_fallback
+- 2026-06-30T19:09:16+0200 [info] btdigg::extract_magnets
+- 2026-06-30T19:09:16+0200 [info] btdigg::btdigg_dump_dom_fallback
+- 2026-06-30T19:09:23+0200 [info] btdigg::extract_magnets
+- 2026-06-30T19:09:23+0200 [info] btdigg::btdigg_dump_dom_fallback
+- 2026-06-30T19:09:32+0200 [info] btdigg::extract_magnets
+- 2026-06-30T19:09:32+0200 [info] btdigg::btdigg_dump_dom_fallback
+- 2026-06-30T19:09:38+0200 [info] btdigg::extract_magnets
+- 2026-06-30T19:09:38+0200 [info] btdigg::btdigg_dump_dom_fallback
+- 2026-06-30T19:09:45+0200 [info] btdigg::extract_magnets
+- 2026-06-30T19:09:45+0200 [info] btdigg::btdigg_dump_dom_fallback
+- 2026-06-30T19:09:51+0200 [info] btdigg::extract_magnets
+- 2026-06-30T19:09:51+0200 [info] btdigg::btdigg_dump_dom_fallback
+- 2026-06-30T19:09:58+0200 [info] btdigg::extract_magnets
+- 2026-06-30T19:09:58+0200 [info] btdigg::btdigg_dump_dom_fallback
+- 2026-06-30T19:10:05+0200 [info] btdigg::extract_magnets
+- 2026-06-30T19:10:05+0200 [info] btdigg::btdigg_dump_dom_fallback
+- 2026-06-30T19:10:10+0200 [info] btdigg::extract_magnets
+- 2026-06-30T19:10:10+0200 [info] btdigg::btdigg_dump_dom_fallback
+- 2026-06-30T19:10:16+0200 [info] btdigg::extract_magnets
+- 2026-06-30T19:10:16+0200 [info] btdigg::btdigg_dump_dom_fallback
+- 2026-06-30T19:10:23+0200 [info] btdigg::extract_magnets
+- 2026-06-30T19:10:23+0200 [info] btdigg::btdigg_dump_dom_fallback
+- 2026-06-30T19:10:29+0200 [info] btdigg::extract_magnets
+- 2026-06-30T19:10:29+0200 [info] btdigg::btdigg_dump_dom_fallback
+- 2026-06-30T19:10:36+0200 [info] btdigg::extract_magnets
+- 2026-06-30T19:10:36+0200 [info] btdigg::btdigg_dump_dom_fallback
+- 2026-06-30T19:10:42+0200 [info] btdigg::extract_magnets
+- 2026-06-30T19:10:42+0200 [info] btdigg::btdigg_dump_dom_fallback
+- 2026-06-30T19:10:48+0200 [info] btdigg::extract_magnets
+- 2026-06-30T19:10:48+0200 [info] btdigg::btdigg_dump_dom_fallback
+- 2026-06-30T19:10:55+0200 [info] btdigg::extract_magnets
+- 2026-06-30T19:10:55+0200 [info] btdigg::btdigg_dump_dom_fallback
+- 2026-06-30T19:11:01+0200 [info] btdigg::extract_magnets
+- 2026-06-30T19:11:01+0200 [info] btdigg::btdigg_dump_dom_fallback
+- 2026-06-30T19:11:08+0200 [info] btdigg::extract_magnets
+- 2026-06-30T19:11:08+0200 [info] btdigg::btdigg_dump_dom_fallback
+- 2026-06-30T19:11:15+0200 [info] btdigg::extract_magnets
+- 2026-06-30T19:11:15+0200 [info] btdigg::btdigg_dump_dom_fallback
+- 2026-06-30T19:11:22+0200 [info] btdigg::extract_magnets
+- 2026-06-30T19:11:22+0200 [info] btdigg::btdigg_dump_dom_fallback
+- 2026-06-30T19:11:28+0200 [info] btdigg::extract_magnets
+- 2026-06-30T19:11:28+0200 [info] btdigg::btdigg_dump_dom_fallback
+- 2026-06-30T19:11:35+0200 [info] btdigg::extract_magnets
+- 2026-06-30T19:11:35+0200 [info] btdigg::btdigg_dump_dom_fallback
+- 2026-06-30T19:11:43+0200 [info] btdigg::extract_magnets
+- 2026-06-30T19:11:43+0200 [info] btdigg::btdigg_dump_dom_fallback
+- 2026-06-30T19:11:49+0200 [info] btdigg::extract_magnets
+- 2026-06-30T19:11:49+0200 [info] btdigg::btdigg_dump_dom_fallback
+- 2026-06-30T19:11:56+0200 [info] btdigg::extract_magnets
+- 2026-06-30T19:11:56+0200 [info] btdigg::btdigg_dump_dom_fallback
+- 2026-06-30T19:12:02+0200 [info] btdigg::extract_magnets
+- 2026-06-30T19:12:02+0200 [info] btdigg::btdigg_dump_dom_fallback
+- 2026-06-30T19:12:09+0200 [info] btdigg::extract_magnets
+- 2026-06-30T19:12:09+0200 [info] btdigg::btdigg_dump_dom_fallback
+- 2026-06-30T19:12:15+0200 [info] btdigg::extract_magnets
+- 2026-06-30T19:12:15+0200 [info] btdigg::btdigg_dump_dom_fallback
+- 2026-06-30T19:12:17+0200 [info] btdigg::browser_auto_search_end_dom
+- 2026-06-30T19:12:17+0200 [info] btdigg::browser_quality_rescue_start
+- 2026-06-30T19:12:17+0200 [info] btdigg::browser_auto_search_start_dom
+- 2026-06-30T19:12:21+0200 [info] btdigg::extract_magnets
+- 2026-06-30T19:12:21+0200 [info] btdigg::btdigg_dump_dom_fallback
+- 2026-06-30T19:12:23+0200 [info] btdigg::browser_auto_search_end_dom
+- 2026-06-30T19:12:23+0200 [info] btdigg::browser_quality_rescue_results
+- 2026-06-30T19:12:23+0200 [info] btdigg::browser_quality_rescue_end
+- 2026-06-30T19:12:23+0200 [info] motor::prepare_results_start
+- 2026-06-30T19:12:23+0200 [info] motor::prepare_after_scoring
+- 2026-06-30T19:12:23+0200 [info] motor::prepare_after_filter
+- 2026-06-30T19:12:23+0200 [info] motor::prepare_after_query_prefilter
+- 2026-06-30T19:12:23+0200 [info] real-debrid::rd_account_check_ok
+- 2026-06-30T19:12:23+0200 [info] real-debrid::rd_check_start
+- 2026-06-30T19:12:23+0200 [info] real-debrid::rd_api_http_error - disabled_endpoint
+- 2026-06-30T19:12:23+0200 [info] real-debrid::rd_cache_api_disabled_cached_set - Real-Debrid HTTP 403: [37 disabled_endpoint] {
+	"error": "disabled_endpoint",
+	"error_code": 37
+}
+- 2026-06-30T19:12:23+0200 [info] real-debrid::rd_cache_api_disabled - Real-Debrid HTTP 403: [37 disabled_endpoint] {
+	"error": "disabled_endpoint",
+	"error_code": 37
+}
+- 2026-06-30T19:12:23+0200 [info] real-debrid::rd_verify_batch_start
+- 2026-06-30T19:12:24+0200 [info] real-debrid::rd_slots_refresh
+- 2026-06-30T19:12:24+0200 [info] real-debrid::rd_active_count_before
+- 2026-06-30T19:12:24+0200 [info] real-debrid::rd_existing_preload_done
+- 2026-06-30T19:12:24+0200 [info] real-debrid::rd_verify_queue_start
+- 2026-06-30T19:12:24+0200 [info] real-debrid::rd_verify_add_start - El diablo viste de Prada 2 (2026) [Bluray 1080p][Esp]
+- 2026-06-30T19:12:24+0200 [info] real-debrid::rd_slots_reserve
+- 2026-06-30T19:12:24+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-30T19:12:24+0200 [info] real-debrid::rd_verify_queue_submit - El diablo viste de Prada 2 (2026) [Bluray 1080p][Esp]
+- 2026-06-30T19:12:24+0200 [info] real-debrid::rd_verify_add_start - El diablo viste de Prada 2 Castellano-Ingles-Español Latinoamericano Subt Castellano-Ingles-Español Latinoamericano H264 E-AC3 5.1 BD-Rip hd 1080p
+- 2026-06-30T19:12:24+0200 [info] real-debrid::rd_verify_queue_submit - El diablo viste de Prada 2 Castellano-Ingles-Español Latinoamericano Subt Castellano-Ingles-Español Latinoamericano H264
+- 2026-06-30T19:12:24+0200 [info] real-debrid::rd_slots_reserve
+- 2026-06-30T19:12:24+0200 [debug] real-debrid::rd_endpoint_pace_wait
+- 2026-06-30T19:12:24+0200 [info] real-debrid::rd_verify_queue_submit - El diablo viste de Prada 2 (2026) [Bluray][Esp]
+- 2026-06-30T19:12:24+0200 [info] real-debrid::rd_verify_add_start - El diablo viste de Prada 2 (2026) [Bluray][Esp]
+- 2026-06-30T19:12:24+0200 [info] real-debrid::rd_verify_add_start - Weisberger, Lauren - [El diablo viste de Prada 2] La venganza viste de Prada [20663] (r1.0).epub
+- 2026-06-30T19:12:24+0200 [info] real-debrid::rd_verify_queue_submit - Weisberger, Lauren - [El diablo viste de Prada 2] La venganza viste de Prada [20663] (r1.0).epub
+- 2026-06-30T19:12:24+0200 [info] real-debrid::rd_slots_reserve
+- 2026-06-30T19:12:24+0200 [info] real-debrid::rd_verify_add_start - El Diablo Viste De Prada 1 y 2 (2026) HdTScr Lat
+- 2026-06-30T19:12:24+0200 [info] real-debrid::rd_slots_reserve
+- 2026-06-30T19:12:24+0200 [info] real-debrid::rd_verify_queue_submit - El Diablo Viste De Prada 1 y 2 (2026) HdTScr Lat
+- 2026-06-30T19:12:24+0200 [info] real-debrid::rd_slots_reserve
+- 2026-06-30T19:12:24+0200 [info] real-debrid::rd_verify_add_start - El diablo viste de Prada 2 BDrip XviD Castellano
+- 2026-06-30T19:12:24+0200 [info] real-debrid::rd_slots_reserve
+- 2026-06-30T19:12:24+0200 [info] real-debrid::rd_verify_queue_submit - El diablo viste de Prada 2 BDrip XviD Castellano
+- 2026-06-30T19:12:24+0200 [info] real-debrid::rd_verify_add_start - El Diablo Viste De Prada 1 y 2 (O.S.T.) Soundtrack
+- 2026-06-30T19:12:24+0200 [info] real-debrid::rd_verify_queue_submit - El Diablo Viste De Prada 1 y 2 (O.S.T.) Soundtrack
+- 2026-06-30T19:12:24+0200 [info] real-debrid::rd_slots_reserve
+- 2026-06-30T19:12:24+0200 [info] real-debrid::rd_verify_add_start - El Diablo viste de Prada 2 (2026) TS-Onlyflix 1080p LATINO [CLYON].mp4
+- 2026-06-30T19:12:24+0200 [info] real-debrid::rd_slots_reserve
+- 2026-06-30T19:12:24+0200 [info] real-debrid::rd_verify_queue_submit - El Diablo viste de Prada 2 (2026) TS-Onlyflix 1080p LATINO [CLYON].mp4
+- 2026-06-30T19:12:24+0200 [info] real-debrid::rd_verify_add_start - El diablo viste de Prada 2 (2026)[HDTS Screener 1080p][Cast.Mic] [CLYON].part2.rar
+- 2026-06-30T19:12:24+0200 [info] real-debrid::rd_slots_reserve
+- 2026-06-30T19:12:24+0200 [info] real-debrid::rd_verify_queue_submit - El diablo viste de Prada 2 (2026)[HDTS Screener 1080p][Cast.Mic] [CLYON].part2.rar
+- 2026-06-30T19:12:24+0200 [info] real-debrid::rd_verify_add_start - El diablo viste de Prada 2 (2026)[HDTS Screener 1080p][Cast.Mic] [CLYON].part6.rar
+- 2026-06-30T19:12:24+0200 [info] real-debrid::rd_slots_reserve
+- 2026-06-30T19:12:24+0200 [info] real-debrid::rd_verify_queue_submit - El diablo viste de Prada 2 (2026)[HDTS Screener 1080p][Cast.Mic] [CLYON].part6.rar
+- 2026-06-30T19:12:24+0200 [info] real-debrid::rd_verify_add_start - El diablo viste de Prada 2 (2026)[HDTS Screener 1080p][Cast.Mic] [CLYON].part1.rar
+- 2026-06-30T19:12:24+0200 [info] real-debrid::rd_slots_reserve
+- 2026-06-30T19:12:24+0200 [info] real-debrid::rd_verify_queue_submit - El diablo viste de Prada 2 (2026)[HDTS Screener 1080p][Cast.Mic] [CLYON].part1.rar
+- 2026-06-30T19:12:24+0200 [info] real-debrid::rd_verify_add_start - El diablo viste de Prada 2 (2026)[HDTS Screener 1080p][Cast.Mic] [CLYON].part3.rar
+- 2026-06-30T19:12:24+0200 [info] real-debrid::rd_slots_reserve
+- 2026-06-30T19:12:24+0200 [info] real-debrid::rd_verify_queue_submit - El diablo viste de Prada 2 (2026)[HDTS Screener 1080p][Cast.Mic] [CLYON].part3.rar
+- 2026-06-30T19:12:24+0200 [info] real-debrid::rd_verify_add_start - El diablo viste de Prada 2 (2026)[HDTS Screener 1080p][Cast.Mic] [CLYON].part4.rar
+- 2026-06-30T19:12:24+0200 [info] real-debrid::rd_verify_queue_submit - El diablo viste de Prada 2 (2026)[HDTS Screener 1080p][Cast.Mic] [CLYON].part4.rar
+- 2026-06-30T19:12:24+0200 [info] real-debrid::rd_slots_reserve
+- 2026-06-30T19:12:24+0200 [info] real-debrid::rd_verify_add_start - El diablo viste de Prada 2 (2026)[HDTS Screener 1080p][Cast.Mic] [CLYON].part5.rar
+- 2026-06-30T19:12:24+0200 [info] real-debrid::rd_slots_reserve
+- 2026-06-30T19:12:24+0200 [info] real-debrid::rd_verify_queue_submit - El diablo viste de Prada 2 (2026)[HDTS Screener 1080p][Cast.Mic] [CLYON].part5.rar
+- 2026-06-30T19:12:24+0200 [info] real-debrid::rd_verify_add_start - El diablo viste de Prada 2 (2026)[HDTS Screener 1080p][Cast.Mic] [CLYON].part7.rar
+- 2026-06-30T19:12:24+0200 [info] real-debrid::rd_verify_queue_submit - El diablo viste de Prada 2 (2026)[HDTS Screener 1080p][Cast.Mic] [CLYON].part7.rar
+- 2026-06-30T19:12:24+0200 [info] real-debrid::rd_slots_reserve
+- 2026-06-30T19:12:24+0200 [info] real-debrid::rd_verify_added
+- 2026-06-30T19:12:24+0200 [debug] real-debrid::rd_verify_poll - El diablo viste de Prada 2 (2026) [Bluray 1080p][Esp]
+- 2026-06-30T19:12:25+0200 [info] real-debrid::rd_verify_select_files
+- 2026-06-30T19:12:25+0200 [debug] real-debrid::rd_verify_post_select_poll - El diablo viste de Prada 2 (2026) [Bluray 1080p][Esp]
+- 2026-06-30T19:12:25+0200 [info] real-debrid::rd_verify_ok - El diablo viste de Prada 2 (2026) [Bluray 1080p][Esp]  ==>  /El diablo viste de Prada 2 (2026) [Bluray 1080p][Esp].mkv
+- 2026-06-30T19:12:25+0200 [info] real-debrid::rd_verify_queue_done_item - El diablo viste de Prada 2 (2026) [Bluray 1080p][Esp]  ==>  /El diablo viste de Prada 2 (2026) [Bluray 1080p][Esp].mkv
+- 2026-06-30T19:12:26+0200 [info] real-debrid::rd_verify_added
+- 2026-06-30T19:12:26+0200 [debug] real-debrid::rd_verify_poll - El diablo viste de Prada 2 (2026)[HDTS Screener 1080p][Cast.Mic] [CLYON].part6.rar
+- 2026-06-30T19:12:26+0200 [info] real-debrid::rd_verify_pack_skip - El diablo viste de Prada 2 (2026)[HDTS Screener 1080p][Cast.Mic] [CLYON].part6.rar
+- 2026-06-30T19:12:26+0200 [info] real-debrid::rd_fast_discard - waiting_files_no_match
+- 2026-06-30T19:12:26+0200 [info] real-debrid::rd_fast_discard_reason - waiting_files_no_match
+- 2026-06-30T19:12:26+0200 [info] real-debrid::rd_fast_discard_delete - waiting_files_no_match
+- 2026-06-30T19:12:26+0200 [debug] real-debrid::rd_waiting_files_no_match_fast_delete - El diablo viste de Prada 2 (2026)[HDTS Screener 1080p][Cast.Mic] [CLYON].part6.rar
+- 2026-06-30T19:12:27+0200 [info] real-debrid::rd_delete_torrent
+- 2026-06-30T19:12:27+0200 [info] real-debrid::rd_slots_release
+- 2026-06-30T19:12:27+0200 [info] real-debrid::rd_verify_queue_done_item - El diablo viste de Prada 2 (2026)[HDTS Screener 1080p][Cast.Mic] [CLYON].part6.rar
+- 2026-06-30T19:12:28+0200 [info] real-debrid::rd_verify_added
+- 2026-06-30T19:12:28+0200 [debug] real-debrid::rd_verify_poll - El diablo viste de Prada 2 (2026) [Bluray][Esp]
+- 2026-06-30T19:12:28+0200 [info] real-debrid::rd_verify_added
+- 2026-06-30T19:12:28+0200 [info] real-debrid::rd_verify_select_files
+- 2026-06-30T19:12:28+0200 [debug] real-debrid::rd_verify_poll - El diablo viste de Prada 2 (2026)[HDTS Screener 1080p][Cast.Mic] [CLYON].part2.rar
+- 2026-06-30T19:12:29+0200 [debug] real-debrid::rd_endpoint_pace_wait
+- 2026-06-30T19:12:29+0200 [info] real-debrid::rd_delete_torrent
+- 2026-06-30T19:12:29+0200 [info] real-debrid::rd_slots_release
+- 2026-06-30T19:12:29+0200 [info] real-debrid::rd_verify_not_instant - El diablo viste de Prada 2 (2026)[HDTS Screener 1080p][Cast.Mic] [CLYON].part2.rar
+- 2026-06-30T19:12:29+0200 [info] real-debrid::rd_verify_queue_done_item - El diablo viste de Prada 2 (2026)[HDTS Screener 1080p][Cast.Mic] [CLYON].part2.rar
+- 2026-06-30T19:12:29+0200 [debug] real-debrid::rd_verify_post_select_poll - El diablo viste de Prada 2 (2026) [Bluray][Esp]
+- 2026-06-30T19:12:29+0200 [info] real-debrid::rd_fast_discard - zero_progress_post_select
+- 2026-06-30T19:12:29+0200 [info] real-debrid::rd_fast_discard_reason - zero_progress_post_select
+- 2026-06-30T19:12:29+0200 [info] real-debrid::rd_fast_discard_delete - zero_progress_post_select
+- 2026-06-30T19:12:29+0200 [info] real-debrid::rd_zero_progress_fast_delete - El diablo viste de Prada 2 (2026) [Bluray][Esp]
+- 2026-06-30T19:12:29+0200 [debug] real-debrid::rd_endpoint_pace_wait
+- 2026-06-30T19:12:29+0200 [info] real-debrid::rd_delete_torrent
+- 2026-06-30T19:12:29+0200 [info] real-debrid::rd_slots_release
+- 2026-06-30T19:12:29+0200 [info] real-debrid::rd_verify_queue_done_item - El diablo viste de Prada 2 (2026) [Bluray][Esp]
+- 2026-06-30T19:12:31+0200 [info] real-debrid::rd_verify_added
+- 2026-06-30T19:12:31+0200 [debug] real-debrid::rd_verify_poll - El diablo viste de Prada 2 (2026)[HDTS Screener 1080p][Cast.Mic] [CLYON].part7.rar
+- 2026-06-30T19:12:31+0200 [info] real-debrid::rd_verify_pack_skip - El diablo viste de Prada 2 (2026)[HDTS Screener 1080p][Cast.Mic] [CLYON].part7.rar
+- 2026-06-30T19:12:31+0200 [info] real-debrid::rd_fast_discard - waiting_files_no_match
+- 2026-06-30T19:12:31+0200 [info] real-debrid::rd_fast_discard_reason - waiting_files_no_match
+- 2026-06-30T19:12:31+0200 [info] real-debrid::rd_fast_discard_delete - waiting_files_no_match
+- 2026-06-30T19:12:31+0200 [debug] real-debrid::rd_waiting_files_no_match_fast_delete - El diablo viste de Prada 2 (2026)[HDTS Screener 1080p][Cast.Mic] [CLYON].part7.rar
+- 2026-06-30T19:12:31+0200 [info] real-debrid::rd_delete_torrent
+- 2026-06-30T19:12:31+0200 [info] real-debrid::rd_slots_release
+- 2026-06-30T19:12:31+0200 [info] real-debrid::rd_verify_queue_done_item - El diablo viste de Prada 2 (2026)[HDTS Screener 1080p][Cast.Mic] [CLYON].part7.rar
+- 2026-06-30T19:12:32+0200 [info] real-debrid::rd_verify_added
+- 2026-06-30T19:12:32+0200 [debug] real-debrid::rd_verify_poll - El diablo viste de Prada 2 (2026)[HDTS Screener 1080p][Cast.Mic] [CLYON].part5.rar
+- 2026-06-30T19:12:32+0200 [info] real-debrid::rd_verify_pack_skip - El diablo viste de Prada 2 (2026)[HDTS Screener 1080p][Cast.Mic] [CLYON].part5.rar
+- 2026-06-30T19:12:32+0200 [info] real-debrid::rd_api_http_error - infringing_file
+- 2026-06-30T19:12:32+0200 [info] real-debrid::rd_fast_discard - waiting_files_no_match
+- 2026-06-30T19:12:32+0200 [info] real-debrid::rd_fast_discard_reason - waiting_files_no_match
+- 2026-06-30T19:12:32+0200 [info] real-debrid::rd_fast_discard_delete - waiting_files_no_match
+- 2026-06-30T19:12:32+0200 [debug] real-debrid::rd_waiting_files_no_match_fast_delete - El diablo viste de Prada 2 (2026)[HDTS Screener 1080p][Cast.Mic] [CLYON].part5.rar
+- 2026-06-30T19:12:32+0200 [info] real-debrid::rd_call_terminal_error - infringing_file
+- 2026-06-30T19:12:32+0200 [info] real-debrid::rd_verify_infringing - El diablo viste de Prada 2 BDrip XviD Castellano
+- 2026-06-30T19:12:32+0200 [info] real-debrid::rd_verify_queue_done_item - El diablo viste de Prada 2 BDrip XviD Castellano
+- 2026-06-30T19:12:32+0200 [info] real-debrid::rd_delete_torrent
+- 2026-06-30T19:12:32+0200 [info] real-debrid::rd_slots_release
+- 2026-06-30T19:12:32+0200 [info] real-debrid::rd_verify_queue_done_item - El diablo viste de Prada 2 (2026)[HDTS Screener 1080p][Cast.Mic] [CLYON].part5.rar
+- 2026-06-30T19:12:33+0200 [info] real-debrid::rd_verify_added
+- 2026-06-30T19:12:33+0200 [debug] real-debrid::rd_verify_poll - El diablo viste de Prada 2 Castellano-Ingles-Español Latinoamericano Subt Castellano-Ingles-Español Latinoamericano H264
+- 2026-06-30T19:12:34+0200 [info] real-debrid::rd_verify_select_files
+- 2026-06-30T19:12:34+0200 [debug] real-debrid::rd_endpoint_pace_wait
+- 2026-06-30T19:12:34+0200 [debug] real-debrid::rd_verify_post_select_poll - El diablo viste de Prada 2 Castellano-Ingles-Español Latinoamericano Subt Castellano-Ingles-Español Latinoamericano H264
+- 2026-06-30T19:12:34+0200 [info] real-debrid::rd_verify_ok - El diablo viste de Prada 2 Castellano-Ingles-Español Latinoamericano Subt Castellano-Ingles-Español Latinoamericano H264 E-AC3 5.1 BD-Rip hd 1080p  ==>  /El diablo viste de Prada 2 Castellano-Ingles-Español Latinoamerica
+- 2026-06-30T19:12:34+0200 [info] real-debrid::rd_verify_queue_done_item - El diablo viste de Prada 2 Castellano-Ingles-Español Latinoamericano Subt Castellano-Ingles-Español Latinoamericano H264
+- 2026-06-30T19:12:36+0200 [info] real-debrid::rd_verify_added
+- 2026-06-30T19:12:36+0200 [debug] real-debrid::rd_verify_poll - El Diablo viste de Prada 2 (2026) TS-Onlyflix 1080p LATINO [CLYON].mp4
+- 2026-06-30T19:12:36+0200 [info] real-debrid::rd_verify_added
+- 2026-06-30T19:12:36+0200 [debug] real-debrid::rd_verify_poll - El Diablo Viste De Prada 1 y 2 (2026) HdTScr Lat
+- 2026-06-30T19:12:36+0200 [debug] real-debrid::rd_endpoint_pace_wait
+- 2026-06-30T19:12:36+0200 [info] real-debrid::rd_verify_select_files
+- 2026-06-30T19:12:37+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-30T19:12:37+0200 [info] real-debrid::rd_verify_added
+- 2026-06-30T19:12:37+0200 [debug] real-debrid::rd_verify_poll - Weisberger, Lauren - [El diablo viste de Prada 2] La venganza viste de Prada [20663] (r1.0).epub
+- 2026-06-30T19:12:37+0200 [info] real-debrid::rd_verify_pack_skip - Weisberger, Lauren - [El diablo viste de Prada 2] La venganza viste de Prada [20663] (r1.0).epub
+- 2026-06-30T19:12:37+0200 [info] real-debrid::rd_fast_discard - waiting_files_no_match
+- 2026-06-30T19:12:37+0200 [info] real-debrid::rd_fast_discard_reason - waiting_files_no_match
+- 2026-06-30T19:12:37+0200 [info] real-debrid::rd_fast_discard_delete - waiting_files_no_match
+- 2026-06-30T19:12:37+0200 [debug] real-debrid::rd_waiting_files_no_match_fast_delete - Weisberger, Lauren - [El diablo viste de Prada 2] La venganza viste de Prada [20663] (r1.0).epub
+- 2026-06-30T19:12:37+0200 [debug] real-debrid::rd_verify_post_select_poll - El Diablo viste de Prada 2 (2026) TS-Onlyflix 1080p LATINO [CLYON].mp4
+- 2026-06-30T19:12:37+0200 [info] real-debrid::rd_fast_discard - zero_progress_post_select
+- 2026-06-30T19:12:37+0200 [info] real-debrid::rd_fast_discard_reason - zero_progress_post_select
+- 2026-06-30T19:12:37+0200 [info] real-debrid::rd_fast_discard_delete - zero_progress_post_select
+- 2026-06-30T19:12:37+0200 [info] real-debrid::rd_zero_progress_fast_delete - El Diablo viste de Prada 2 (2026) TS-Onlyflix 1080p LATINO [CLYON].mp4
+- 2026-06-30T19:12:37+0200 [debug] real-debrid::rd_endpoint_pace_wait
+- 2026-06-30T19:12:38+0200 [info] real-debrid::rd_verify_select_files
+- 2026-06-30T19:12:38+0200 [info] real-debrid::rd_delete_torrent
+- 2026-06-30T19:12:38+0200 [info] real-debrid::rd_slots_release
+- 2026-06-30T19:12:38+0200 [info] real-debrid::rd_verify_queue_done_item - Weisberger, Lauren - [El diablo viste de Prada 2] La venganza viste de Prada [20663] (r1.0).epub
+- 2026-06-30T19:12:38+0200 [info] real-debrid::rd_delete_torrent
+- 2026-06-30T19:12:38+0200 [info] real-debrid::rd_verify_added
+- 2026-06-30T19:12:38+0200 [info] real-debrid::rd_slots_release
+- 2026-06-30T19:12:38+0200 [info] real-debrid::rd_verify_queue_done_item - El Diablo viste de Prada 2 (2026) TS-Onlyflix 1080p LATINO [CLYON].mp4
+- 2026-06-30T19:12:38+0200 [debug] real-debrid::rd_endpoint_pace_wait
+- 2026-06-30T19:12:38+0200 [debug] real-debrid::rd_verify_poll - El Diablo Viste De Prada 1 y 2 (O.S.T.) Soundtrack
+- 2026-06-30T19:12:39+0200 [debug] real-debrid::rd_endpoint_pace_wait
+- 2026-06-30T19:12:39+0200 [debug] real-debrid::rd_verify_post_select_poll - El Diablo Viste De Prada 1 y 2 (2026) HdTScr Lat
+- 2026-06-30T19:12:39+0200 [info] real-debrid::rd_verify_ok - El Diablo Viste De Prada 1 y 2 (2026) HdTScr Lat  ==>  /El Diablo Viste De Prada 2 (2026) HdTScr Lat.mp4
+- 2026-06-30T19:12:39+0200 [info] real-debrid::rd_verify_queue_done_item - El Diablo Viste De Prada 1 y 2 (2026) HdTScr Lat  ==>  /El Diablo Viste De Prada 2 (2026) HdTScr Lat.mp4
+- 2026-06-30T19:12:39+0200 [info] real-debrid::rd_delete_torrent
+- 2026-06-30T19:12:39+0200 [info] real-debrid::rd_slots_release
+- 2026-06-30T19:12:39+0200 [info] real-debrid::rd_verify_not_instant - El Diablo Viste De Prada 1 y 2 (O.S.T.) Soundtrack
+- 2026-06-30T19:12:39+0200 [info] real-debrid::rd_verify_queue_done_item - El Diablo Viste De Prada 1 y 2 (O.S.T.) Soundtrack
+- 2026-06-30T19:12:40+0200 [info] real-debrid::rd_verify_added
+- 2026-06-30T19:12:40+0200 [debug] real-debrid::rd_verify_poll - El diablo viste de Prada 2 (2026)[HDTS Screener 1080p][Cast.Mic] [CLYON].part1.rar
+- 2026-06-30T19:12:40+0200 [info] real-debrid::rd_verify_pack_skip - El diablo viste de Prada 2 (2026)[HDTS Screener 1080p][Cast.Mic] [CLYON].part1.rar
+- 2026-06-30T19:12:40+0200 [info] real-debrid::rd_fast_discard - waiting_files_no_match
+- 2026-06-30T19:12:40+0200 [info] real-debrid::rd_fast_discard_reason - waiting_files_no_match
+- 2026-06-30T19:12:40+0200 [info] real-debrid::rd_fast_discard_delete - waiting_files_no_match
+- 2026-06-30T19:12:40+0200 [debug] real-debrid::rd_waiting_files_no_match_fast_delete - El diablo viste de Prada 2 (2026)[HDTS Screener 1080p][Cast.Mic] [CLYON].part1.rar
+- 2026-06-30T19:12:41+0200 [info] real-debrid::rd_delete_torrent
+- 2026-06-30T19:12:41+0200 [info] real-debrid::rd_slots_release
+- 2026-06-30T19:12:41+0200 [info] real-debrid::rd_verify_queue_done_item - El diablo viste de Prada 2 (2026)[HDTS Screener 1080p][Cast.Mic] [CLYON].part1.rar
+- 2026-06-30T19:12:42+0200 [info] real-debrid::rd_verify_added
+- 2026-06-30T19:12:42+0200 [debug] real-debrid::rd_verify_poll - El diablo viste de Prada 2 (2026)[HDTS Screener 1080p][Cast.Mic] [CLYON].part3.rar
+- 2026-06-30T19:12:42+0200 [info] real-debrid::rd_verify_pack_skip - El diablo viste de Prada 2 (2026)[HDTS Screener 1080p][Cast.Mic] [CLYON].part3.rar
+- 2026-06-30T19:12:42+0200 [info] real-debrid::rd_fast_discard - waiting_files_no_match
+- 2026-06-30T19:12:42+0200 [info] real-debrid::rd_fast_discard_reason - waiting_files_no_match
+- 2026-06-30T19:12:42+0200 [info] real-debrid::rd_fast_discard_delete - waiting_files_no_match
+- 2026-06-30T19:12:42+0200 [debug] real-debrid::rd_waiting_files_no_match_fast_delete - El diablo viste de Prada 2 (2026)[HDTS Screener 1080p][Cast.Mic] [CLYON].part3.rar
+- 2026-06-30T19:12:42+0200 [info] real-debrid::rd_delete_torrent
+- 2026-06-30T19:12:42+0200 [info] real-debrid::rd_slots_release
+- 2026-06-30T19:12:42+0200 [info] real-debrid::rd_verify_queue_done_item - El diablo viste de Prada 2 (2026)[HDTS Screener 1080p][Cast.Mic] [CLYON].part3.rar
+- 2026-06-30T19:12:43+0200 [info] real-debrid::rd_verify_added
+- 2026-06-30T19:12:43+0200 [debug] real-debrid::rd_verify_poll - El diablo viste de Prada 2 (2026)[HDTS Screener 1080p][Cast.Mic] [CLYON].part4.rar
+- 2026-06-30T19:12:43+0200 [info] real-debrid::rd_verify_pack_skip - El diablo viste de Prada 2 (2026)[HDTS Screener 1080p][Cast.Mic] [CLYON].part4.rar
+- 2026-06-30T19:12:43+0200 [info] real-debrid::rd_fast_discard - waiting_files_no_match
+- 2026-06-30T19:12:43+0200 [info] real-debrid::rd_fast_discard_reason - waiting_files_no_match
+- 2026-06-30T19:12:43+0200 [info] real-debrid::rd_fast_discard_delete - waiting_files_no_match
+- 2026-06-30T19:12:43+0200 [debug] real-debrid::rd_waiting_files_no_match_fast_delete - El diablo viste de Prada 2 (2026)[HDTS Screener 1080p][Cast.Mic] [CLYON].part4.rar
+- 2026-06-30T19:12:43+0200 [info] real-debrid::rd_delete_torrent
+- 2026-06-30T19:12:43+0200 [info] real-debrid::rd_slots_release
+- 2026-06-30T19:12:43+0200 [info] real-debrid::rd_verify_queue_done_item - El diablo viste de Prada 2 (2026)[HDTS Screener 1080p][Cast.Mic] [CLYON].part4.rar
+- 2026-06-30T19:12:43+0200 [info] real-debrid::rd_verify_queue_end
+- 2026-06-30T19:12:43+0200 [info] real-debrid::rd_rate_summary
+- 2026-06-30T19:12:43+0200 [info] real-debrid::rd_endpoint_pacer_summary
+- 2026-06-30T19:12:43+0200 [info] real-debrid::rd_cleanup_final_start
+- 2026-06-30T19:12:44+0200 [info] real-debrid::rd_slots_refresh
+- 2026-06-30T19:12:44+0200 [info] real-debrid::rd_active_count_after
+- 2026-06-30T19:12:44+0200 [info] real-debrid::rd_cleanup_final_end
+- 2026-06-30T19:12:44+0200 [info] real-debrid::rd_rate_summary
+- 2026-06-30T19:12:44+0200 [info] real-debrid::rd_endpoint_pacer_summary
+- 2026-06-30T19:12:44+0200 [info] real-debrid::rd_verify_batch_end
+- 2026-06-30T19:12:44+0200 [info] real-debrid::rd_check_summary
+- 2026-06-30T19:12:44+0200 [info] qbittorrent::qbt_relevance_filter
+- 2026-06-30T19:12:44+0200 [info] qbittorrent::qbt_probe_batch_start
+- 2026-06-30T19:12:44+0200 [info] qbittorrent::qbt_login
+- 2026-06-30T19:12:44+0200 [info] qbittorrent::qbt_login
+- 2026-06-30T19:12:44+0200 [info] qbittorrent::qbt_login
+- 2026-06-30T19:12:44+0200 [info] qbittorrent::qbt_login
+- 2026-06-30T19:12:44+0200 [info] qbittorrent::qbt_probe_add - El diablo viste de Prada 2 (2026) [Bluray][Esp]
+- 2026-06-30T19:12:44+0200 [info] qbittorrent::qbt_probe_add - El diablo viste de Prada 2 BDrip XviD Castellano
+- 2026-06-30T19:12:44+0200 [info] qbittorrent::qbt_probe_add - El Diablo Viste De Prada 1 y 2 (O.S.T.) Soundtrack
+- 2026-06-30T19:12:44+0200 [info] qbittorrent::qbt_probe_add - Weisberger, Lauren - [El diablo viste de Prada 2] La venganza viste de Prada [20663] (r1.0).epub
+- 2026-06-30T19:12:46+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-30T19:12:46+0200 [info] qbittorrent::qbt_probe_result - qBittorrent con seed conectado: seeds=3, peers=2, state=stalleddl
+- 2026-06-30T19:12:46+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-30T19:12:46+0200 [info] qbittorrent::qbt_delete_probe
+- 2026-06-30T19:12:46+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-30T19:12:46+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-30T19:12:46+0200 [info] qbittorrent::qbt_login
+- 2026-06-30T19:12:46+0200 [info] qbittorrent::qbt_probe_add - El Diablo viste de Prada 2 (2026) TS-Onlyflix 1080p LATINO [CLYON].mp4
+- 2026-06-30T19:12:48+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-30T19:12:48+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-30T19:12:48+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-30T19:12:48+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-30T19:12:50+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-30T19:12:50+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-30T19:12:50+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-30T19:12:50+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-30T19:12:52+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-30T19:12:52+0200 [info] qbittorrent::qbt_probe_result - qBittorrent con seed conectado: seeds=5, peers=0, state=stalleddl
+- 2026-06-30T19:12:52+0200 [info] qbittorrent::qbt_delete_probe
+- 2026-06-30T19:12:52+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-30T19:12:52+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-30T19:12:52+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-30T19:12:52+0200 [info] qbittorrent::qbt_login
+- 2026-06-30T19:12:52+0200 [info] qbittorrent::qbt_probe_add - El diablo viste de Prada 2 (2026)[HDTS Screener 1080p][Cast.Mic] [CLYON].part2.rar
+- 2026-06-30T19:12:54+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-30T19:12:54+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-30T19:12:54+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-30T19:12:54+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-30T19:12:56+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-30T19:12:56+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-30T19:12:56+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-30T19:12:56+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-30T19:12:58+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-30T19:12:58+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-30T19:12:58+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-30T19:12:58+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-30T19:13:00+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-30T19:13:00+0200 [info] qbittorrent::qbt_probe_result - Sin vida clara en qBittorrent: state=metadl, seeds=0, peers=0, progress=0.000
+- 2026-06-30T19:13:00+0200 [info] qbittorrent::qbt_delete_probe
+- 2026-06-30T19:13:00+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-30T19:13:00+0200 [info] qbittorrent::qbt_probe_result - Sin vida clara en qBittorrent: state=metadl, seeds=0, peers=2, progress=0.000
+- 2026-06-30T19:13:00+0200 [info] qbittorrent::qbt_login
+- 2026-06-30T19:13:00+0200 [info] qbittorrent::qbt_delete_probe
+- 2026-06-30T19:13:00+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-30T19:13:00+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-30T19:13:00+0200 [info] qbittorrent::qbt_login
+- 2026-06-30T19:13:00+0200 [info] qbittorrent::qbt_probe_add - El diablo viste de Prada 2 (2026)[HDTS Screener 1080p][Cast.Mic] [CLYON].part6.rar
+- 2026-06-30T19:13:00+0200 [info] qbittorrent::qbt_probe_add - El diablo viste de Prada 2 (2026)[HDTS Screener 1080p][Cast.Mic] [CLYON].part1.rar
+- 2026-06-30T19:13:02+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-30T19:13:02+0200 [info] qbittorrent::qbt_probe_result - Sin vida clara en qBittorrent: state=metadl, seeds=0, peers=2, progress=0.000
+- 2026-06-30T19:13:02+0200 [info] qbittorrent::qbt_delete_probe
+- 2026-06-30T19:13:02+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-30T19:13:02+0200 [info] qbittorrent::qbt_login
+- 2026-06-30T19:13:02+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-30T19:13:02+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-30T19:13:02+0200 [info] qbittorrent::qbt_probe_add - El diablo viste de Prada 2 (2026)[HDTS Screener 1080p][Cast.Mic] [CLYON].part3.rar
+- 2026-06-30T19:13:04+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-30T19:13:04+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-30T19:13:04+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-30T19:13:04+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-30T19:13:06+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-30T19:13:06+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-30T19:13:06+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-30T19:13:06+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-30T19:13:08+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-30T19:13:08+0200 [info] qbittorrent::qbt_probe_result - Sin vida clara en qBittorrent: state=metadl, seeds=0, peers=3, progress=0.000
+- 2026-06-30T19:13:08+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-30T19:13:08+0200 [info] qbittorrent::qbt_delete_probe
+- 2026-06-30T19:13:08+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-30T19:13:08+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-30T19:13:08+0200 [info] qbittorrent::qbt_login
+- 2026-06-30T19:13:08+0200 [info] qbittorrent::qbt_probe_add - El diablo viste de Prada 2 (2026)[HDTS Screener 1080p][Cast.Mic] [CLYON].part4.rar
+- 2026-06-30T19:13:10+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-30T19:13:10+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-30T19:13:10+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-30T19:13:10+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-30T19:13:12+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-30T19:13:12+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-30T19:13:12+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-30T19:13:12+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-30T19:13:14+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-30T19:13:14+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-30T19:13:14+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-30T19:13:14+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-30T19:13:16+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-30T19:13:16+0200 [info] qbittorrent::qbt_probe_result - Tracker indica posibles seeds (2), pero qBittorrent no conecto ni obtuvo vida real: state=metadl, seeds=0, peers=3, availability=0.00
+- 2026-06-30T19:13:16+0200 [info] qbittorrent::qbt_delete_probe
+- 2026-06-30T19:13:16+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-30T19:13:16+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-30T19:13:16+0200 [info] qbittorrent::qbt_probe_result - Tracker indica posibles seeds (2), pero qBittorrent no conecto ni obtuvo vida real: state=metadl, seeds=0, peers=2, availability=0.00
+- 2026-06-30T19:13:16+0200 [info] qbittorrent::qbt_login
+- 2026-06-30T19:13:16+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-30T19:13:16+0200 [info] qbittorrent::qbt_delete_probe
+- 2026-06-30T19:13:16+0200 [info] qbittorrent::qbt_probe_add - El diablo viste de Prada 2 (2026)[HDTS Screener 1080p][Cast.Mic] [CLYON].part5.rar
+- 2026-06-30T19:13:16+0200 [info] qbittorrent::qbt_login
+- 2026-06-30T19:13:16+0200 [info] qbittorrent::qbt_probe_add - El diablo viste de Prada 2 (2026)[HDTS Screener 1080p][Cast.Mic] [CLYON].part7.rar
+- 2026-06-30T19:13:18+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-30T19:13:18+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-30T19:13:18+0200 [info] qbittorrent::qbt_probe_result - Tracker indica posibles seeds (2), pero qBittorrent no conecto ni obtuvo vida real: state=metadl, seeds=0, peers=4, availability=0.00
+- 2026-06-30T19:13:18+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-30T19:13:18+0200 [info] qbittorrent::qbt_delete_probe
+- 2026-06-30T19:13:18+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-30T19:13:20+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-30T19:13:20+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-30T19:13:20+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-30T19:13:22+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-30T19:13:22+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-30T19:13:22+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-30T19:13:24+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-30T19:13:24+0200 [info] qbittorrent::qbt_probe_result - Tracker indica posibles seeds (2), pero qBittorrent no conecto ni obtuvo vida real: state=metadl, seeds=0, peers=1, availability=0.00
+- 2026-06-30T19:13:24+0200 [info] qbittorrent::qbt_delete_probe
+- 2026-06-30T19:13:24+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-30T19:13:24+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-30T19:13:26+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-30T19:13:26+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-30T19:13:28+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-30T19:13:28+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-30T19:13:30+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-30T19:13:30+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-30T19:13:32+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-30T19:13:32+0200 [info] qbittorrent::qbt_probe_result - Tracker indica posibles seeds (2), pero qBittorrent no conecto ni obtuvo vida real: state=metadl, seeds=0, peers=0, availability=0.00
+- 2026-06-30T19:13:32+0200 [info] qbittorrent::qbt_delete_probe
+- 2026-06-30T19:13:32+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-30T19:13:32+0200 [info] qbittorrent::qbt_probe_result - Tracker indica posibles seeds (3), pero qBittorrent no conecto ni obtuvo vida real: state=metadl, seeds=0, peers=0, availability=0.00
+- 2026-06-30T19:13:33+0200 [info] qbittorrent::qbt_delete_probe
+- 2026-06-30T19:13:33+0200 [info] qbittorrent::qbt_probe_batch_end
+- 2026-06-30T19:13:33+0200 [info] motor::prepare_qbit_extras
+- 2026-06-30T19:13:33+0200 [info] motor::prepare_rd_temp_errors
+- 2026-06-30T19:13:33+0200 [info] motor::prepare_after_working_filter
+- 2026-06-30T19:13:33+0200 [info] search::export_results
+- 2026-06-30T19:13:33+0200 [info] search::export_results
+- 2026-06-30T19:13:33+0200 [info] real-debrid::rd_delete_torrent
+- 2026-06-30T19:13:33+0200 [debug] real-debrid::rd_endpoint_pace_wait
+- 2026-06-30T19:13:33+0200 [info] real-debrid::rd_delete_torrent
+- 2026-06-30T19:13:34+0200 [info] real-debrid::rd_delete_torrent
+- 2026-06-30T19:13:35+0200 [info] real-debrid::rd_api_http_error - unknown_ressource
+- 2026-06-30T19:13:35+0200 [info] real-debrid::rd_delete_torrent_missing
+- 2026-06-30T19:13:35+0200 [info] search::editor_clean_search_rd_cleanup
+- 2026-06-30T19:13:35+0200 [info] search::editor_clean_search_end
+- 2026-06-30T19:13:35+02:00 [info] web::JOB_FINISHED_OK

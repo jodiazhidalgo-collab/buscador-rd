@@ -1,0 +1,3 @@
+- 2026-07-06T03:43:41+02:00 [info] voice::voice_transcribe_request
+- 2026-07-06T03:43:41+02:00 [info] voice::voice_transcribe_provider_start
+- 2026-07-06T03:43:53+02:00 [info] voice::voice_transcribe_ok

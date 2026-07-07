@@ -1,0 +1,61 @@
+{
+  "already_present": false,
+  "card": {
+    "hash": "68bff855164128dd1d490c816454dd93fb1922e9",
+    "source": "RD",
+    "status": "RD OK",
+    "title": "Enola Holmes 3 (2026) [Bluray][Esp].avi"
+  },
+  "counts": {
+    "debug": 3,
+    "error": 0,
+    "info": 35,
+    "warn": 0
+  },
+  "destination": {
+    "destino": "movies",
+    "inbox": "/watch/torrents/inbox/movies",
+    "qbt_savepath": "/data/downloads/torrents/complete/movies",
+    "rdt_savepath": "/data/downloads/movies"
+  },
+  "diagnostic_status": "ok",
+  "elapsed": "3.31s",
+  "engine": "RDT-Client",
+  "event_count": 38,
+  "hash": "68bff855164128dd1d490c816454dd93fb1922e9",
+  "id": "50c00ef93d",
+  "index": 8,
+  "kind": "download",
+  "last_event": "RDT_FOLLOWUP_DONE",
+  "link_ref": "***",
+  "link_type": "***",
+  "module": "btdigg",
+  "operation_status": "ok",
+  "phases": {
+    "btdigg": 4,
+    "download": 9,
+    "general": 1,
+    "rdt-client": 13,
+    "real-debrid": 10
+  },
+  "rdt_id": "f4d534f2-f9a5-463f-b494-5ab4d17ecd23",
+  "read_order": [
+    "summary.json",
+    "timeline.md",
+    "warnings.jsonl",
+    "errors.jsonl",
+    "events.jsonl"
+  ],
+  "remote": "172.28.0.1",
+  "route": "RD_VERIFIED_MAGNET_NATIVE",
+  "started_at": "2026-07-03T23:12:59+02:00",
+  "status": "ok",
+  "title": "Enola Holmes 3 (2026) [Bluray][Esp].avi",
+  "tracking": {
+    "destino": "movies",
+    "hash": "68bff855164128dd1d490c816454dd93fb1922e9",
+    "record_id": "14b259ff254e028f",
+    "tracking_file": "/app/data/seguimiento_actual.json"
+  },
+  "updated_at": "2026-07-03T23:13:03+02:00"
+}

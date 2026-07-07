@@ -32,6 +32,7 @@ from .config import BTDIGG_CODE_DIR, BTDIGG_CONFIG_FILE, BTDIGG_RUNTIME_DIR, BTD
 from .history import record_search
 from .retention import cleanup_job_runs, cleanup_rd_test_runs
 from .results import load_results
+from .public_diagnostics import export_public_diagnostics
 from .send import rd_token
 from .utils import read_text
 
@@ -246,6 +247,19 @@ def _escalate_cancel_if_needed(job_id: str, runtime: JobRuntime, scope: RunScope
 
 def _promote_successful_artifacts(runtime: JobRuntime) -> None:
     promote_successful_artifacts(runtime, BTDIGG_RUNTIME_DIR)
+
+
+def _refresh_public_diagnostics(scope: RunScope, job_id: str) -> None:
+    try:
+        summary = export_public_diagnostics(trigger=f"{scope.kind}:{scope.action}", current_run_id=job_id)
+        append_job(
+            job_id,
+            "Diagnostico publico actualizado: "
+            f"{summary.get('exported_files', 0)} ficheros, "
+            f"{summary.get('redactions', 0)} secretos tapados.",
+        )
+    except Exception as exc:
+        append_job(job_id, f"Aviso diagnostico publico: {type(exc).__name__}: {exc}")
 
 
 def _finalize_cancelled(job_id: str, scope: RunScope, runtime: JobRuntime, exit_code: int | None, started_monotonic: float) -> None:
@@ -492,6 +506,8 @@ def run_process(job_id: str, cmd: list[str], cwd: Path, safeout: Path | None = N
             elapsed_sec=round(time.monotonic() - started_monotonic, 3),
         )
         set_job(job_id, status="error", error=f"{type(exc).__name__}: {exc}", finished=time.strftime("%H:%M:%S"), results=[])
+    finally:
+        _refresh_public_diagnostics(scope, job_id)
 
 
 def start_job(payload: dict[str, Any]) -> str:

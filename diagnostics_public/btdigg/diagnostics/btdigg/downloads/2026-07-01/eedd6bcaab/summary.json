@@ -1,0 +1,32 @@
+{
+  "counts": {
+    "debug": 0,
+    "error": 0,
+    "info": 1,
+    "warn": 1
+  },
+  "diagnostic_status": "warning",
+  "event_count": 2,
+  "hash": "sin_hash",
+  "id": "eedd6bcaab",
+  "kind": "download",
+  "last_event": "DOWNLOAD_REJECTED",
+  "link_type": "***",
+  "module": "manual",
+  "operation_status": "rejected",
+  "phases": {
+    "download": 2
+  },
+  "read_order": [
+    "summary.json",
+    "timeline.md",
+    "warnings.jsonl",
+    "errors.jsonl",
+    "events.jsonl"
+  ],
+  "remote": "192.168.1.199",
+  "started_at": "2026-07-01T10:55:22+02:00",
+  "status": "rejected",
+  "title": "Smoke sin link",
+  "updated_at": "2026-07-01T10:55:22+02:00"
+}

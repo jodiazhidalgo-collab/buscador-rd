@@ -1,0 +1,1682 @@
+- 2026-06-28T23:53:14+02:00 [info] web::JOB_STARTED
+- 2026-06-28T23:53:14+02:00 [info] general::CONFIG_SNAPSHOT
+- 2026-06-28T23:53:14+02:00 [info] web::COMMAND_PREPARED
+- 2026-06-28T23:53:14+02:00 [info] web::PROCESS_STARTED
+- 2026-06-28T23:53:14+0200 [info] search::editor_clean_search_start
+- 2026-06-28T23:53:14+0200 [info] btdigg::browser_auto_search_start_dom
+- 2026-06-28T23:53:17+0200 [info] btdigg::extract_magnets
+- 2026-06-28T23:53:17+0200 [info] btdigg::btdigg_dump_dom_fallback
+- 2026-06-28T23:53:23+0200 [info] btdigg::extract_magnets
+- 2026-06-28T23:53:23+0200 [info] btdigg::btdigg_dump_dom_fallback
+- 2026-06-28T23:53:28+0200 [info] btdigg::extract_magnets
+- 2026-06-28T23:53:28+0200 [info] btdigg::btdigg_dump_dom_fallback
+- 2026-06-28T23:53:33+0200 [info] btdigg::extract_magnets
+- 2026-06-28T23:53:33+0200 [info] btdigg::btdigg_dump_dom_fallback
+- 2026-06-28T23:53:39+0200 [info] btdigg::extract_magnets
+- 2026-06-28T23:53:39+0200 [info] btdigg::btdigg_dump_dom_fallback
+- 2026-06-28T23:53:44+0200 [info] btdigg::extract_magnets
+- 2026-06-28T23:53:44+0200 [info] btdigg::btdigg_dump_dom_fallback
+- 2026-06-28T23:53:51+0200 [info] btdigg::extract_magnets
+- 2026-06-28T23:53:51+0200 [info] btdigg::btdigg_dump_dom_fallback
+- 2026-06-28T23:53:57+0200 [info] btdigg::extract_magnets
+- 2026-06-28T23:53:57+0200 [info] btdigg::btdigg_dump_dom_fallback
+- 2026-06-28T23:54:02+0200 [info] btdigg::extract_magnets
+- 2026-06-28T23:54:02+0200 [info] btdigg::btdigg_dump_dom_fallback
+- 2026-06-28T23:54:08+0200 [info] btdigg::extract_magnets
+- 2026-06-28T23:54:08+0200 [info] btdigg::btdigg_dump_dom_fallback
+- 2026-06-28T23:54:10+0200 [info] btdigg::browser_auto_search_end_dom
+- 2026-06-28T23:54:10+0200 [info] motor::prepare_results_start
+- 2026-06-28T23:54:10+0200 [info] motor::prepare_after_scoring
+- 2026-06-28T23:54:10+0200 [info] motor::prepare_after_filter
+- 2026-06-28T23:54:11+0200 [info] motor::prepare_after_query_prefilter
+- 2026-06-28T23:54:11+0200 [info] real-debrid::rd_api_call_count
+- 2026-06-28T23:54:11+0200 [info] real-debrid::rd_account_check_ok
+- 2026-06-28T23:54:11+0200 [info] real-debrid::rd_check_start
+- 2026-06-28T23:54:11+0200 [info] real-debrid::rd_api_call_count
+- 2026-06-28T23:54:11+0200 [warn] real-debrid::rd_api_http_error - disabled_endpoint
+- 2026-06-28T23:54:11+0200 [warn] real-debrid::rd_cache_api_disabled_cached_set - Real-Debrid HTTP 403: [37 disabled_endpoint] {
+	"error": "disabled_endpoint",
+	"error_code": 37
+}
+- 2026-06-28T23:54:11+0200 [warn] real-debrid::rd_cache_api_disabled - Real-Debrid HTTP 403: [37 disabled_endpoint] {
+	"error": "disabled_endpoint",
+	"error_code": 37
+}
+- 2026-06-28T23:54:11+0200 [info] real-debrid::rd_verify_batch_start
+- 2026-06-28T23:54:11+0200 [info] real-debrid::rd_api_call_count
+- 2026-06-28T23:54:11+0200 [info] real-debrid::rd_slots_refresh
+- 2026-06-28T23:54:11+0200 [info] real-debrid::rd_api_call_count
+- 2026-06-28T23:54:11+0200 [info] real-debrid::rd_existing_preload_done
+- 2026-06-28T23:54:11+0200 [info] real-debrid::rd_verify_queue_start
+- 2026-06-28T23:54:11+0200 [info] real-debrid::rd_verify_add_start - El hombre contra la abeja - Temporada 1 [WEB-DL 1080p][Cap.101][Dual DDP5.1   Subs][www.atomixHQ.ONE]
+- 2026-06-28T23:54:11+0200 [info] real-debrid::rd_verify_queue_submit - El hombre contra la abeja - Temporada 1 [WEB-DL 1080p][Cap.101][Dual DDP5.1   Subs][www.atomixHQ.ONE]
+- 2026-06-28T23:54:11+0200 [info] real-debrid::rd_slots_reserve
+- 2026-06-28T23:54:11+0200 [info] real-debrid::rd_verify_add_start - El hombre contra la abeja - Temporada 1 [WEB-DL 1080p][Cap.103][Dual DDP5.1   Subs][www.atomixHQ.ONE]
+- 2026-06-28T23:54:11+0200 [info] real-debrid::rd_verify_queue_submit - El hombre contra la abeja - Temporada 1 [WEB-DL 1080p][Cap.103][Dual DDP5.1   Subs][www.atomixHQ.ONE]
+- 2026-06-28T23:54:11+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:11+0200 [info] real-debrid::rd_slots_reserve
+- 2026-06-28T23:54:11+0200 [info] real-debrid::rd_verify_add_start - El hombre contra la abeja - Temporada 1 [WEB-DL 1080p][Cap.108][Dual DDP5.1   Subs][www.atomixHQ.ONE]
+- 2026-06-28T23:54:11+0200 [info] real-debrid::rd_slots_reserve
+- 2026-06-28T23:54:11+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:11+0200 [info] real-debrid::rd_verify_queue_submit - El hombre contra la abeja - Temporada 1 [WEB-DL 1080p][Cap.108][Dual DDP5.1   Subs][www.atomixHQ.ONE]
+- 2026-06-28T23:54:11+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:11+0200 [info] real-debrid::rd_verify_add_start - El hombre contra la abeja - Temporada 1 [WEB-DL 1080p][Cap.102][Dual DDP5.1   Subs][www.atomixHQ.ONE]
+- 2026-06-28T23:54:11+0200 [info] real-debrid::rd_slots_reserve
+- 2026-06-28T23:54:11+0200 [info] real-debrid::rd_verify_queue_submit - El hombre contra la abeja - Temporada 1 [WEB-DL 1080p][Cap.102][Dual DDP5.1   Subs][www.atomixHQ.ONE]
+- 2026-06-28T23:54:11+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:11+0200 [info] real-debrid::rd_verify_add_start - El hombre contra la abeja - Temporada 1 [WEB-DL 1080p][Cap.109][Dual DDP5.1   Subs][www.atomixHQ.ONE]
+- 2026-06-28T23:54:11+0200 [info] real-debrid::rd_verify_queue_submit - El hombre contra la abeja - Temporada 1 [WEB-DL 1080p][Cap.109][Dual DDP5.1   Subs][www.atomixHQ.ONE]
+- 2026-06-28T23:54:11+0200 [info] real-debrid::rd_slots_reserve
+- 2026-06-28T23:54:11+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:11+0200 [info] real-debrid::rd_verify_add_start - El hombre contra la abeja - Temporada 1 [WEB-DL 1080p][Cap.105][Dual DDP5.1   Subs][www.atomixHQ.ONE]
+- 2026-06-28T23:54:11+0200 [info] real-debrid::rd_verify_queue_submit - El hombre contra la abeja - Temporada 1 [WEB-DL 1080p][Cap.105][Dual DDP5.1   Subs][www.atomixHQ.ONE]
+- 2026-06-28T23:54:11+0200 [info] real-debrid::rd_slots_reserve
+- 2026-06-28T23:54:11+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:11+0200 [info] real-debrid::rd_verify_queue_submit - El hombre contra la abeja - Temporada 1 [WEB-DL 1080p][Cap.104][Dual DDP5.1   Subs][www.atomixHQ.ONE]
+- 2026-06-28T23:54:11+0200 [info] real-debrid::rd_verify_add_start - El hombre contra la abeja - Temporada 1 [WEB-DL 1080p][Cap.104][Dual DDP5.1   Subs][www.atomixHQ.ONE]
+- 2026-06-28T23:54:11+0200 [info] real-debrid::rd_slots_reserve
+- 2026-06-28T23:54:11+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:11+0200 [info] real-debrid::rd_verify_add_start - El hombre contra la abeja - Temporada 1 [WEB-DL 1080p][Cap.107][Dual DDP5.1   Subs][www.atomixHQ.ONE]
+- 2026-06-28T23:54:11+0200 [info] real-debrid::rd_verify_queue_submit - El hombre contra la abeja - Temporada 1 [WEB-DL 1080p][Cap.107][Dual DDP5.1   Subs][www.atomixHQ.ONE]
+- 2026-06-28T23:54:11+0200 [info] real-debrid::rd_slots_reserve
+- 2026-06-28T23:54:11+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:11+0200 [info] real-debrid::rd_verify_add_start - El hombre contra la abeja - Temporada 1 [WEB-DL 1080p][Cap.106][Dual DDP5.1   Subs][www.atomixHQ.ONE]
+- 2026-06-28T23:54:11+0200 [info] real-debrid::rd_verify_queue_submit - El hombre contra la abeja - Temporada 1 [WEB-DL 1080p][Cap.106][Dual DDP5.1   Subs][www.atomixHQ.ONE]
+- 2026-06-28T23:54:11+0200 [info] real-debrid::rd_slots_reserve
+- 2026-06-28T23:54:11+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:11+0200 [info] real-debrid::rd_verify_add_start - El hombre contra la abeja - Temporada 1 [HDTV 720p][Cap.106][AC3 5.1 Castellano][www.AtomoHD.one]
+- 2026-06-28T23:54:11+0200 [info] real-debrid::rd_slots_reserve
+- 2026-06-28T23:54:11+0200 [info] real-debrid::rd_verify_queue_submit - El hombre contra la abeja - Temporada 1 [HDTV 720p][Cap.106][AC3 5.1 Castellano][www.AtomoHD.one]
+- 2026-06-28T23:54:11+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:11+0200 [info] real-debrid::rd_verify_add_start - El hombre contra la abeja - Temporada 1 [HDTV 720p][Cap.108][AC3 5.1 Castellano][www.AtomoHD.one]
+- 2026-06-28T23:54:11+0200 [info] real-debrid::rd_slots_reserve
+- 2026-06-28T23:54:11+0200 [info] real-debrid::rd_verify_queue_submit - El hombre contra la abeja - Temporada 1 [HDTV 720p][Cap.108][AC3 5.1 Castellano][www.AtomoHD.one]
+- 2026-06-28T23:54:11+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:11+0200 [info] real-debrid::rd_verify_add_start - El hombre contra la abeja - Temporada 1 [HDTV 720p][Cap.109][AC3 5.1 Castellano][www.AtomoHD.one]
+- 2026-06-28T23:54:11+0200 [info] real-debrid::rd_verify_queue_submit - El hombre contra la abeja - Temporada 1 [HDTV 720p][Cap.109][AC3 5.1 Castellano][www.AtomoHD.one]
+- 2026-06-28T23:54:11+0200 [info] real-debrid::rd_slots_reserve
+- 2026-06-28T23:54:11+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:11+0200 [info] real-debrid::rd_verify_queue_submit - El hombre contra la abeja - Temporada 1 [HDTV 720p][Cap.101][AC3 5.1 Castellano][www.AtomoHD.one]
+- 2026-06-28T23:54:11+0200 [info] real-debrid::rd_verify_add_start - El hombre contra la abeja - Temporada 1 [HDTV 720p][Cap.101][AC3 5.1 Castellano][www.AtomoHD.one]
+- 2026-06-28T23:54:11+0200 [info] real-debrid::rd_slots_reserve
+- 2026-06-28T23:54:11+0200 [info] real-debrid::rd_verify_add_start - El hombre contra la abeja - Temporada 1 [HDTV 720p][Cap.105][AC3 5.1 Castellano][www.AtomoHD.one]
+- 2026-06-28T23:54:11+0200 [info] real-debrid::rd_slots_reserve
+- 2026-06-28T23:54:11+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:11+0200 [info] real-debrid::rd_verify_queue_submit - El hombre contra la abeja - Temporada 1 [HDTV 720p][Cap.105][AC3 5.1 Castellano][www.AtomoHD.one]
+- 2026-06-28T23:54:11+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:11+0200 [info] real-debrid::rd_verify_add_start - El hombre contra la abeja - Temporada 1 [HDTV 720p][Cap.104][AC3 5.1 Castellano][www.AtomoHD.one]
+- 2026-06-28T23:54:11+0200 [info] real-debrid::rd_verify_queue_submit - El hombre contra la abeja - Temporada 1 [HDTV 720p][Cap.104][AC3 5.1 Castellano][www.AtomoHD.one]
+- 2026-06-28T23:54:11+0200 [info] real-debrid::rd_slots_reserve
+- 2026-06-28T23:54:11+0200 [info] real-debrid::rd_verify_add_start - El hombre contra la abeja - Temporada 1 [HDTV 720p][Cap.107][AC3 5.1 Castellano][www.AtomoHD.one]
+- 2026-06-28T23:54:11+0200 [info] real-debrid::rd_slots_reserve
+- 2026-06-28T23:54:11+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:11+0200 [info] real-debrid::rd_verify_queue_submit - El hombre contra la abeja - Temporada 1 [HDTV 720p][Cap.107][AC3 5.1 Castellano][www.AtomoHD.one]
+- 2026-06-28T23:54:11+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:11+0200 [info] real-debrid::rd_verify_add_start - El hombre contra la abeja - Temporada 1 [HDTV 720p][Cap.103][AC3 5.1 Castellano][www.AtomoHD.one]
+- 2026-06-28T23:54:11+0200 [info] real-debrid::rd_slots_reserve
+- 2026-06-28T23:54:11+0200 [info] real-debrid::rd_verify_queue_submit - El hombre contra la abeja - Temporada 1 [HDTV 720p][Cap.103][AC3 5.1 Castellano][www.AtomoHD.one]
+- 2026-06-28T23:54:11+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:11+0200 [info] real-debrid::rd_verify_add_start - El hombre contra la abeja - Temporada 1 [HDTV 720p][Cap.102][AC3 5.1 Castellano][www.AtomoHD.one]
+- 2026-06-28T23:54:11+0200 [info] real-debrid::rd_verify_queue_submit - El hombre contra la abeja - Temporada 1 [HDTV 720p][Cap.102][AC3 5.1 Castellano][www.AtomoHD.one]
+- 2026-06-28T23:54:11+0200 [info] real-debrid::rd_slots_reserve
+- 2026-06-28T23:54:12+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:12+0200 [info] real-debrid::rd_verify_add_start - El hombre contra la abeja - Temporada 1 [HDTV][Cap.101][Castellano][www.AtomoHD.one]
+- 2026-06-28T23:54:12+0200 [info] real-debrid::rd_verify_queue_submit - El hombre contra la abeja - Temporada 1 [HDTV][Cap.101][Castellano][www.AtomoHD.one]
+- 2026-06-28T23:54:12+0200 [info] real-debrid::rd_slots_reserve
+- 2026-06-28T23:54:12+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:12+0200 [info] real-debrid::rd_verify_add_start - El hombre contra la abeja - Temporada 1 [HDTV][Cap.109][Castellano][www.AtomoHD.one]
+- 2026-06-28T23:54:12+0200 [info] real-debrid::rd_slots_reserve
+- 2026-06-28T23:54:12+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:12+0200 [info] real-debrid::rd_verify_queue_submit - El hombre contra la abeja - Temporada 1 [HDTV][Cap.109][Castellano][www.AtomoHD.one]
+- 2026-06-28T23:54:12+0200 [info] real-debrid::rd_verify_add_start - El hombre contra la abeja - Temporada 1 [HDTV][Cap.108][Castellano][www.AtomoHD.one]
+- 2026-06-28T23:54:12+0200 [info] real-debrid::rd_verify_queue_submit - El hombre contra la abeja - Temporada 1 [HDTV][Cap.108][Castellano][www.AtomoHD.one]
+- 2026-06-28T23:54:12+0200 [info] real-debrid::rd_slots_reserve
+- 2026-06-28T23:54:12+0200 [info] real-debrid::rd_verify_add_start - El hombre contra la abeja 1X4X5X6 HDTV Castellano
+- 2026-06-28T23:54:12+0200 [info] real-debrid::rd_verify_queue_submit - El hombre contra la abeja 1X4X5X6 HDTV Castellano
+- 2026-06-28T23:54:12+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:12+0200 [info] real-debrid::rd_slots_reserve
+- 2026-06-28T23:54:12+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:12+0200 [info] real-debrid::rd_verify_add_start - El hombre contra la abeja - Temporada 1 [HDTV][Cap.104][Castellano][www.AtomoHD.one]
+- 2026-06-28T23:54:12+0200 [info] real-debrid::rd_slots_reserve
+- 2026-06-28T23:54:12+0200 [info] real-debrid::rd_verify_queue_submit - El hombre contra la abeja - Temporada 1 [HDTV][Cap.104][Castellano][www.AtomoHD.one]
+- 2026-06-28T23:54:12+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:12+0200 [info] real-debrid::rd_verify_add_start - El hombre contra la abeja - Temporada 1 [HDTV][Cap.103][Castellano][www.AtomoHD.one]
+- 2026-06-28T23:54:12+0200 [info] real-debrid::rd_verify_queue_submit - El hombre contra la abeja - Temporada 1 [HDTV][Cap.103][Castellano][www.AtomoHD.one]
+- 2026-06-28T23:54:12+0200 [info] real-debrid::rd_slots_reserve
+- 2026-06-28T23:54:12+0200 [info] real-debrid::rd_verify_add_start - El hombre contra la abeja - Temporada 1 [HDTV][Cap.107][Castellano][www.AtomoHD.one]
+- 2026-06-28T23:54:12+0200 [info] real-debrid::rd_slots_reserve
+- 2026-06-28T23:54:12+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:12+0200 [info] real-debrid::rd_verify_queue_submit - El hombre contra la abeja - Temporada 1 [HDTV][Cap.107][Castellano][www.AtomoHD.one]
+- 2026-06-28T23:54:12+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:12+0200 [info] real-debrid::rd_verify_add_start - El hombre contra la abeja - Temporada 1 [HDTV][Cap.102][Castellano][www.AtomoHD.one]
+- 2026-06-28T23:54:12+0200 [info] real-debrid::rd_verify_queue_submit - El hombre contra la abeja - Temporada 1 [HDTV][Cap.102][Castellano][www.AtomoHD.one]
+- 2026-06-28T23:54:12+0200 [info] real-debrid::rd_slots_reserve
+- 2026-06-28T23:54:12+0200 [info] real-debrid::rd_verify_add_start - El hombre contra la abeja - Temporada 1 [HDTV][Cap.105][Castellano][www.AtomoHD.one]
+- 2026-06-28T23:54:12+0200 [info] real-debrid::rd_verify_queue_submit - El hombre contra la abeja - Temporada 1 [HDTV][Cap.105][Castellano][www.AtomoHD.one]
+- 2026-06-28T23:54:12+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:12+0200 [info] real-debrid::rd_slots_reserve
+- 2026-06-28T23:54:12+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:12+0200 [info] real-debrid::rd_verify_queue_submit - El hombre contra la abeja - Temporada 1 [HDTV][Cap.106][Castellano][www.AtomoHD.one]
+- 2026-06-28T23:54:12+0200 [info] real-debrid::rd_verify_add_start - El hombre contra la abeja - Temporada 1 [HDTV][Cap.106][Castellano][www.AtomoHD.one]
+- 2026-06-28T23:54:12+0200 [info] real-debrid::rd_verify_add_start - El hombre contra la abeja 1X1X2X3 HDTV XviD Castellano
+- 2026-06-28T23:54:12+0200 [info] real-debrid::rd_verify_queue_submit - El hombre contra la abeja 1X1X2X3 HDTV XviD Castellano
+- 2026-06-28T23:54:12+0200 [info] real-debrid::rd_slots_reserve
+- 2026-06-28T23:54:12+0200 [info] real-debrid::rd_verify_add_start - El hombre contra la abeja 1X7X8X9 HDTV XviD Castellano
+- 2026-06-28T23:54:12+0200 [info] real-debrid::rd_verify_queue_submit - El hombre contra la abeja 1X7X8X9 HDTV XviD Castellano
+- 2026-06-28T23:54:12+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:12+0200 [info] real-debrid::rd_slots_reserve
+- 2026-06-28T23:54:12+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:12+0200 [info] real-debrid::rd_slots_reserve
+- 2026-06-28T23:54:12+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:12+0200 [info] real-debrid::rd_api_call_count
+- 2026-06-28T23:54:12+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:12+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:12+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:12+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:12+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:12+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:12+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:12+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:12+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:12+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:12+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:12+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:12+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:12+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:12+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:12+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:12+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:12+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:12+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:12+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:12+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:12+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:12+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:12+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:12+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:12+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:12+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:12+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:12+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:12+0200 [info] real-debrid::rd_api_call_count
+- 2026-06-28T23:54:12+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:12+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:12+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:12+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:12+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:12+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:12+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:12+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:12+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:12+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:12+0200 [info] real-debrid::rd_verify_added
+- 2026-06-28T23:54:12+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:12+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:12+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:12+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:12+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:12+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:12+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:12+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:12+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:12+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:12+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:12+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:12+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:12+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:12+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:12+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:12+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:12+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:12+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:12+0200 [info] real-debrid::rd_api_call_count
+- 2026-06-28T23:54:12+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:12+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:12+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:12+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:12+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:12+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:12+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:12+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:12+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:12+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:12+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:12+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:12+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:12+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:12+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:12+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:12+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:12+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:12+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:12+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:12+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:12+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:12+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:12+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:12+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:12+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:12+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:12+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:12+0200 [info] real-debrid::rd_verify_added
+- 2026-06-28T23:54:12+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:12+0200 [info] real-debrid::rd_api_call_count
+- 2026-06-28T23:54:12+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:12+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:12+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:12+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:12+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:12+0200 [info] real-debrid::rd_verify_added
+- 2026-06-28T23:54:12+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:12+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:12+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:12+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:12+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:12+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:12+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:12+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:12+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:12+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:12+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:12+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:12+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:12+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:12+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:12+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:12+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:12+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:12+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:12+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:12+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:12+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:12+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:12+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:12+0200 [info] real-debrid::rd_verify_added
+- 2026-06-28T23:54:12+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:13+0200 [info] real-debrid::rd_api_call_count
+- 2026-06-28T23:54:13+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:13+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:13+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:13+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:13+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:13+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:13+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:13+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:13+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:13+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:13+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:13+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:13+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:13+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:13+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:13+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:13+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:13+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:13+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:13+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:13+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:13+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:13+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:13+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:13+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:13+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:13+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:13+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:13+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:13+0200 [info] real-debrid::rd_api_call_count
+- 2026-06-28T23:54:13+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:13+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:13+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:13+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:13+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:13+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:13+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:13+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:13+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:13+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:13+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:13+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:13+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:13+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:13+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:13+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:13+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:13+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:13+0200 [info] real-debrid::rd_verify_added
+- 2026-06-28T23:54:13+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:13+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:13+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:13+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:13+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:13+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:13+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:13+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:13+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:13+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:13+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:13+0200 [info] real-debrid::rd_api_call_count
+- 2026-06-28T23:54:13+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:13+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:13+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:13+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:13+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:13+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:13+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:13+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:13+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:13+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:13+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:13+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:13+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:13+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:13+0200 [info] real-debrid::rd_verify_added
+- 2026-06-28T23:54:13+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:13+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:13+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:13+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:13+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:13+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:13+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:13+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:13+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:13+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:13+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:13+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:13+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:13+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:13+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:13+0200 [info] real-debrid::rd_api_call_count
+- 2026-06-28T23:54:13+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:13+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:13+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:13+0200 [debug] real-debrid::rd_verify_poll - El hombre contra la abeja - Temporada 1 [HDTV 720p][Cap.108][AC3 5.1 Castellano][www.AtomoHD.one]
+- 2026-06-28T23:54:13+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:13+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:13+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:13+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:13+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:13+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:13+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:13+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:13+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:13+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:13+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:13+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:13+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:13+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:13+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:13+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:13+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:13+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:13+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:13+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:13+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:13+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:13+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:13+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:13+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:13+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:13+0200 [info] real-debrid::rd_verify_added
+- 2026-06-28T23:54:13+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:14+0200 [info] real-debrid::rd_api_call_count
+- 2026-06-28T23:54:14+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:14+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:14+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:14+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:14+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:14+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:14+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:14+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:14+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:14+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:14+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:14+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:14+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:14+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:14+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:14+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:14+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:14+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:14+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:14+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:14+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:14+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:14+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:14+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:14+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:14+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:14+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:14+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:14+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:14+0200 [info] real-debrid::rd_api_call_count
+- 2026-06-28T23:54:14+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:14+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:14+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:14+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:14+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:14+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:14+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:14+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:14+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:14+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:14+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:14+0200 [debug] real-debrid::rd_verify_poll - El hombre contra la abeja - Temporada 1 [HDTV][Cap.104][Castellano][www.AtomoHD.one]
+- 2026-06-28T23:54:14+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:14+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:14+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:14+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:14+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:14+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:14+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:14+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:14+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:14+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:14+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:14+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:14+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:14+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:14+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:14+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:14+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:14+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:14+0200 [info] real-debrid::rd_api_call_count
+- 2026-06-28T23:54:14+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:14+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:14+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:14+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:14+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:14+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:14+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:14+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:14+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:14+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:14+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:14+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:14+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:14+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:14+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:14+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:14+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:14+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:14+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:14+0200 [info] real-debrid::rd_verify_added
+- 2026-06-28T23:54:14+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:14+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:14+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:14+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:14+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:14+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:14+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:14+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:14+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:14+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:14+0200 [info] real-debrid::rd_api_call_count
+- 2026-06-28T23:54:14+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:14+0200 [debug] real-debrid::rd_verify_poll - El hombre contra la abeja - Temporada 1 [HDTV][Cap.109][Castellano][www.AtomoHD.one]
+- 2026-06-28T23:54:14+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:14+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:14+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:14+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:14+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:14+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:14+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:14+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:14+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:14+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:14+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:14+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:14+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:14+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:14+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:14+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:14+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:14+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:14+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:14+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:14+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:14+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:14+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:14+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:14+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:14+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:14+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:14+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:14+0200 [info] real-debrid::rd_verify_added
+- 2026-06-28T23:54:14+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:15+0200 [info] real-debrid::rd_api_call_count
+- 2026-06-28T23:54:15+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:15+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:15+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:15+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:15+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:15+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:15+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:15+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:15+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:15+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:15+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:15+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:15+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:15+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:15+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:15+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:15+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:15+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:15+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:15+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:15+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:15+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:15+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:15+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:15+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:15+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:15+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:15+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:15+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:15+0200 [info] real-debrid::rd_api_call_count
+- 2026-06-28T23:54:15+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:15+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:15+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:15+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:15+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:15+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:15+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:15+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:15+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:15+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:15+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:15+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:15+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:15+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:15+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:15+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:15+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:15+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:15+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:15+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:15+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:15+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:15+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:15+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:15+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:15+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:15+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:15+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:15+0200 [info] real-debrid::rd_api_call_count
+- 2026-06-28T23:54:15+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:15+0200 [info] real-debrid::rd_verify_added
+- 2026-06-28T23:54:15+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:15+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:15+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:15+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:15+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:15+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:15+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:15+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:15+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:15+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:15+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:15+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:15+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:15+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:15+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:15+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:15+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:15+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:15+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:15+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:15+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:15+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:15+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:15+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:15+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:15+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:15+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:15+0200 [info] real-debrid::rd_api_call_count
+- 2026-06-28T23:54:15+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:15+0200 [warn] real-debrid::rd_api_http_error - infringing_file
+- 2026-06-28T23:54:15+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:15+0200 [warn] real-debrid::rd_verify_infringing - El hombre contra la abeja - Temporada 1 [WEB-DL 1080p][Cap.106][Dual DDP5.1   Subs][www.atomixHQ.ONE]
+- 2026-06-28T23:54:15+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:15+0200 [info] real-debrid::rd_verify_queue_done_item - El hombre contra la abeja - Temporada 1 [WEB-DL 1080p][Cap.106][Dual DDP5.1   Subs][www.atomixHQ.ONE]
+- 2026-06-28T23:54:15+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:15+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:15+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:15+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:15+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:15+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:15+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:15+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:15+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:15+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:15+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:15+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:15+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:15+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:15+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:15+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:15+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:15+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:15+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:15+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:15+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:15+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:15+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:15+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:15+0200 [info] real-debrid::rd_verify_added
+- 2026-06-28T23:54:15+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:16+0200 [info] real-debrid::rd_api_call_count
+- 2026-06-28T23:54:16+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:16+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:16+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:16+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:16+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:16+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:16+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:16+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:16+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:16+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:16+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:16+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:16+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:16+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:16+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:16+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:16+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:16+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:16+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:16+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:16+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:16+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:16+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:16+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:16+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:16+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:16+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:16+0200 [info] real-debrid::rd_api_call_count
+- 2026-06-28T23:54:16+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:16+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:16+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:16+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:16+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:16+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:16+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:16+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:16+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:16+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:16+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:16+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:16+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:16+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:16+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:16+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:16+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:16+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:16+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:16+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:16+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:16+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:16+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:16+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:16+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:16+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:16+0200 [info] real-debrid::rd_verify_select_files
+- 2026-06-28T23:54:16+0200 [info] real-debrid::rd_api_call_count
+- 2026-06-28T23:54:16+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:16+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:16+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:16+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:16+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:16+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:16+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:16+0200 [info] real-debrid::rd_verify_added
+- 2026-06-28T23:54:16+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:16+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:16+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:16+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:16+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:16+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:16+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:16+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:16+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:16+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:16+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:16+0200 [warn] real-debrid::rd_api_http_error - infringing_file
+- 2026-06-28T23:54:16+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:16+0200 [warn] real-debrid::rd_verify_infringing - El hombre contra la abeja - Temporada 1 [WEB-DL 1080p][Cap.107][Dual DDP5.1   Subs][www.atomixHQ.ONE]
+- 2026-06-28T23:54:16+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:16+0200 [info] real-debrid::rd_verify_queue_done_item - El hombre contra la abeja - Temporada 1 [WEB-DL 1080p][Cap.107][Dual DDP5.1   Subs][www.atomixHQ.ONE]
+- 2026-06-28T23:54:16+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:16+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:16+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:16+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:16+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:16+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:16+0200 [info] real-debrid::rd_api_call_count
+- 2026-06-28T23:54:16+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:16+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:16+0200 [debug] real-debrid::rd_verify_poll - El hombre contra la abeja - Temporada 1 [HDTV 720p][Cap.105][AC3 5.1 Castellano][www.AtomoHD.one]
+- 2026-06-28T23:54:16+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:16+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:16+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:16+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:16+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:16+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:16+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:16+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:16+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:16+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:16+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:16+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:16+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:16+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:16+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:16+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:16+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:16+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:16+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:16+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:16+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:16+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:16+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:16+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:16+0200 [debug] real-debrid::rd_verify_poll - El hombre contra la abeja - Temporada 1 [HDTV 720p][Cap.106][AC3 5.1 Castellano][www.AtomoHD.one]
+- 2026-06-28T23:54:16+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:17+0200 [info] real-debrid::rd_api_call_count
+- 2026-06-28T23:54:17+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:17+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:17+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:17+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:17+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:17+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:17+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:17+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:17+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:17+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:17+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:17+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:17+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:17+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:17+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:17+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:17+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:17+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:17+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:17+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:17+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:17+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:17+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:17+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:17+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:17+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:17+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:17+0200 [info] real-debrid::rd_api_call_count
+- 2026-06-28T23:54:17+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:17+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:17+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:17+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:17+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:17+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:17+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:17+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:17+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:17+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:17+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:17+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:17+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:17+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:17+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:17+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:17+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:17+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:17+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:17+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:17+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:17+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:17+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:17+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:17+0200 [info] real-debrid::rd_verify_added
+- 2026-06-28T23:54:17+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:17+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:17+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:17+0200 [warn] real-debrid::rd_api_http_error - infringing_file
+- 2026-06-28T23:54:17+0200 [warn] real-debrid::rd_verify_infringing - El hombre contra la abeja - Temporada 1 [WEB-DL 1080p][Cap.108][Dual DDP5.1   Subs][www.atomixHQ.ONE]
+- 2026-06-28T23:54:17+0200 [info] real-debrid::rd_verify_queue_done_item - El hombre contra la abeja - Temporada 1 [WEB-DL 1080p][Cap.108][Dual DDP5.1   Subs][www.atomixHQ.ONE]
+- 2026-06-28T23:54:17+0200 [info] real-debrid::rd_api_call_count
+- 2026-06-28T23:54:17+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:17+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:17+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:17+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:17+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:17+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:17+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:17+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:17+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:17+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:17+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:17+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:17+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:17+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:17+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:17+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:17+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:17+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:17+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:17+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:17+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:17+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:17+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:17+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:17+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:17+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:17+0200 [info] real-debrid::rd_api_call_count
+- 2026-06-28T23:54:17+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:17+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:17+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:17+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:17+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:17+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:17+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:17+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:17+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:17+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:17+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:17+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:17+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:17+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:17+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:17+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:17+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:17+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:17+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:17+0200 [info] real-debrid::rd_delete_torrent
+- 2026-06-28T23:54:17+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:17+0200 [info] real-debrid::rd_slots_release
+- 2026-06-28T23:54:17+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:17+0200 [info] real-debrid::rd_verify_pack_skip - El hombre contra la abeja - Temporada 1 [HDTV][Cap.109][Castellano][www.AtomoHD.one]
+- 2026-06-28T23:54:17+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:17+0200 [info] real-debrid::rd_verify_queue_done_item - El hombre contra la abeja - Temporada 1 [HDTV][Cap.109][Castellano][www.AtomoHD.one]
+- 2026-06-28T23:54:17+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:17+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:17+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:17+0200 [info] real-debrid::rd_delete_torrent
+- 2026-06-28T23:54:17+0200 [info] real-debrid::rd_slots_release
+- 2026-06-28T23:54:17+0200 [info] real-debrid::rd_verify_pack_skip - El hombre contra la abeja - Temporada 1 [HDTV][Cap.104][Castellano][www.AtomoHD.one]
+- 2026-06-28T23:54:17+0200 [info] real-debrid::rd_verify_queue_done_item - El hombre contra la abeja - Temporada 1 [HDTV][Cap.104][Castellano][www.AtomoHD.one]
+- 2026-06-28T23:54:18+0200 [info] real-debrid::rd_api_call_count
+- 2026-06-28T23:54:18+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:18+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:18+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:18+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:18+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:18+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:18+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:18+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:18+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:18+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:18+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:18+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:18+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:18+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:18+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:18+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:18+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:18+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:18+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:18+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:18+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:18+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:18+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:18+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:18+0200 [info] real-debrid::rd_api_call_count
+- 2026-06-28T23:54:18+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:18+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:18+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:18+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:18+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:18+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:18+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:18+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:18+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:18+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:18+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:18+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:18+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:18+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:18+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:18+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:18+0200 [warn] real-debrid::rd_api_http_error - infringing_file
+- 2026-06-28T23:54:18+0200 [warn] real-debrid::rd_verify_infringing - El hombre contra la abeja - Temporada 1 [WEB-DL 1080p][Cap.101][Dual DDP5.1   Subs][www.atomixHQ.ONE]
+- 2026-06-28T23:54:18+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:18+0200 [info] real-debrid::rd_verify_queue_done_item - El hombre contra la abeja - Temporada 1 [WEB-DL 1080p][Cap.101][Dual DDP5.1   Subs][www.atomixHQ.ONE]
+- 2026-06-28T23:54:18+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:18+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:18+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:18+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:18+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:18+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:18+0200 [info] real-debrid::rd_api_call_count
+- 2026-06-28T23:54:18+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:18+0200 [debug] real-debrid::rd_verify_poll - El hombre contra la abeja - Temporada 1 [HDTV 720p][Cap.108][AC3 5.1 Castellano][www.AtomoHD.one]
+- 2026-06-28T23:54:18+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:18+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:18+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:18+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:18+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:18+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:18+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:18+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:18+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:18+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:18+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:18+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:18+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:18+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:18+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:18+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:18+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:18+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:18+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:18+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:18+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:18+0200 [debug] real-debrid::rd_verify_poll - El hombre contra la abeja - Temporada 1 [HDTV 720p][Cap.104][AC3 5.1 Castellano][www.AtomoHD.one]
+- 2026-06-28T23:54:18+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:18+0200 [info] real-debrid::rd_api_call_count
+- 2026-06-28T23:54:18+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:18+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:18+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:18+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:18+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:18+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:18+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:18+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:18+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:18+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:18+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:18+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:18+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:18+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:18+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:18+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:18+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:18+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:18+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:18+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:18+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:18+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:18+0200 [warn] real-debrid::rd_api_http_error - infringing_file
+- 2026-06-28T23:54:18+0200 [warn] real-debrid::rd_verify_infringing - El hombre contra la abeja - Temporada 1 [WEB-DL 1080p][Cap.109][Dual DDP5.1   Subs][www.atomixHQ.ONE]
+- 2026-06-28T23:54:18+0200 [info] real-debrid::rd_verify_queue_done_item - El hombre contra la abeja - Temporada 1 [WEB-DL 1080p][Cap.109][Dual DDP5.1   Subs][www.atomixHQ.ONE]
+- 2026-06-28T23:54:19+0200 [info] real-debrid::rd_api_call_count
+- 2026-06-28T23:54:19+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:19+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:19+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:19+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:19+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:19+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:19+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:19+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:19+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:19+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:19+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:19+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:19+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:19+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:19+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:19+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:19+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:19+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:19+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:19+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:19+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:19+0200 [warn] real-debrid::rd_api_http_error - infringing_file
+- 2026-06-28T23:54:19+0200 [warn] real-debrid::rd_verify_infringing - El hombre contra la abeja - Temporada 1 [WEB-DL 1080p][Cap.104][Dual DDP5.1   Subs][www.atomixHQ.ONE]
+- 2026-06-28T23:54:19+0200 [info] real-debrid::rd_verify_queue_done_item - El hombre contra la abeja - Temporada 1 [WEB-DL 1080p][Cap.104][Dual DDP5.1   Subs][www.atomixHQ.ONE]
+- 2026-06-28T23:54:19+0200 [info] real-debrid::rd_api_call_count
+- 2026-06-28T23:54:19+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:19+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:19+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:19+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:19+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:19+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:19+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:19+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:19+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:19+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:19+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:19+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:19+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:19+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:19+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:19+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:19+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:19+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:19+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:19+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:19+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:19+0200 [info] real-debrid::rd_api_call_count
+- 2026-06-28T23:54:19+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:19+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:19+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:19+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:19+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:19+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:19+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:19+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:19+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:19+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:19+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:19+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:19+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:19+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:19+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:19+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:19+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:19+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:19+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:19+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:19+0200 [info] real-debrid::rd_api_call_count
+- 2026-06-28T23:54:19+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:19+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:19+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:19+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:19+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:19+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:19+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:19+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:19+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:19+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:19+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:19+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:19+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:19+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:19+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:19+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:19+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:19+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:19+0200 [info] real-debrid::rd_verify_added
+- 2026-06-28T23:54:19+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:19+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:19+0200 [warn] real-debrid::rd_api_http_error - too_many_requests
+- 2026-06-28T23:54:19+0200 [warn] real-debrid::rd_rate_429_cooldown
+- 2026-06-28T23:54:19+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:19+0200 [warn] real-debrid::rd_verify_retry_temp - Real-Debrid HTTP 429: [34 too_many_requests] {"error": "too_many_requests", "error_code": 34, "src": "front-1"}
+- 2026-06-28T23:54:19+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:19+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:19+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:19+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:19+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:19+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:19+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:19+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:19+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:19+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:19+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:19+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:19+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:19+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:19+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:19+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:19+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:19+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:19+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:20+0200 [info] real-debrid::rd_verify_added
+- 2026-06-28T23:54:20+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:21+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:21+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:21+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:21+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:21+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:21+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:21+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:21+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:21+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:21+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:21+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:21+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:21+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:21+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:21+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:21+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:21+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:21+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:21+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:21+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:21+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:22+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:23+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:23+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:23+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:23+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:23+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:23+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:23+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:23+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:23+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:23+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:23+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:23+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:23+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:23+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:23+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:23+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:23+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:23+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:23+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:23+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:23+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:24+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:25+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:25+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:25+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:25+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:25+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:25+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:25+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:25+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:25+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:25+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:25+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:25+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:25+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:25+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:25+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:25+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:25+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:25+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:25+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:25+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:25+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:26+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:27+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:27+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:27+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:27+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:27+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:27+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:27+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:27+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:27+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:27+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:27+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:27+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:27+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:27+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:27+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:27+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:27+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:27+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:27+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:27+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:27+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:28+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:29+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:29+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:29+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:29+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:29+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:29+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:29+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:29+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:29+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:29+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:29+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:29+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:29+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:29+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:29+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:29+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:29+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:29+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:29+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:29+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:29+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:30+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:31+0200 [info] real-debrid::rd_api_call_count
+- 2026-06-28T23:54:31+0200 [info] real-debrid::rd_api_call_count
+- 2026-06-28T23:54:31+0200 [info] real-debrid::rd_api_call_count
+- 2026-06-28T23:54:31+0200 [info] real-debrid::rd_api_call_count
+- 2026-06-28T23:54:31+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:31+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:31+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:31+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:31+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:31+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:31+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:31+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:31+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:31+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:31+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:31+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:31+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:31+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:31+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:31+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:31+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:31+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:32+0200 [debug] real-debrid::rd_verify_poll - El hombre contra la abeja - Temporada 1 [HDTV 720p][Cap.102][AC3 5.1 Castellano][www.AtomoHD.one]
+- 2026-06-28T23:54:32+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:32+0200 [warn] real-debrid::rd_api_http_error - infringing_file
+- 2026-06-28T23:54:32+0200 [warn] real-debrid::rd_verify_infringing - El hombre contra la abeja - Temporada 1 [WEB-DL 1080p][Cap.103][Dual DDP5.1   Subs][www.atomixHQ.ONE]
+- 2026-06-28T23:54:32+0200 [info] real-debrid::rd_verify_queue_done_item - El hombre contra la abeja - Temporada 1 [WEB-DL 1080p][Cap.103][Dual DDP5.1   Subs][www.atomixHQ.ONE]
+- 2026-06-28T23:54:32+0200 [info] real-debrid::rd_verify_added
+- 2026-06-28T23:54:32+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:32+0200 [info] real-debrid::rd_verify_added
+- 2026-06-28T23:54:32+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:32+0200 [info] real-debrid::rd_api_call_count
+- 2026-06-28T23:54:32+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:32+0200 [info] real-debrid::rd_api_call_count
+- 2026-06-28T23:54:32+0200 [info] real-debrid::rd_api_call_count
+- 2026-06-28T23:54:32+0200 [info] real-debrid::rd_api_call_count
+- 2026-06-28T23:54:32+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:32+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:32+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:32+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:32+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:32+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:32+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:32+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:32+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:32+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:32+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:32+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:32+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:32+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:32+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:32+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:32+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:33+0200 [warn] real-debrid::rd_api_http_error - infringing_file
+- 2026-06-28T23:54:33+0200 [warn] real-debrid::rd_verify_infringing - El hombre contra la abeja - Temporada 1 [WEB-DL 1080p][Cap.102][Dual DDP5.1   Subs][www.atomixHQ.ONE]
+- 2026-06-28T23:54:33+0200 [info] real-debrid::rd_verify_queue_done_item - El hombre contra la abeja - Temporada 1 [WEB-DL 1080p][Cap.102][Dual DDP5.1   Subs][www.atomixHQ.ONE]
+- 2026-06-28T23:54:33+0200 [info] real-debrid::rd_delete_torrent
+- 2026-06-28T23:54:33+0200 [debug] real-debrid::rd_verify_poll - El hombre contra la abeja - Temporada 1 [HDTV][Cap.105][Castellano][www.AtomoHD.one]
+- 2026-06-28T23:54:33+0200 [info] real-debrid::rd_slots_release
+- 2026-06-28T23:54:33+0200 [info] real-debrid::rd_verify_pack_skip - El hombre contra la abeja - Temporada 1 [HDTV 720p][Cap.102][AC3 5.1 Castellano][www.AtomoHD.one]
+- 2026-06-28T23:54:33+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:33+0200 [info] real-debrid::rd_verify_queue_done_item - El hombre contra la abeja - Temporada 1 [HDTV 720p][Cap.102][AC3 5.1 Castellano][www.AtomoHD.one]
+- 2026-06-28T23:54:33+0200 [debug] real-debrid::rd_verify_poll - El hombre contra la abeja - Temporada 1 [HDTV][Cap.102][Castellano][www.AtomoHD.one]
+- 2026-06-28T23:54:33+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:33+0200 [info] real-debrid::rd_api_call_count
+- 2026-06-28T23:54:33+0200 [info] real-debrid::rd_api_call_count
+- 2026-06-28T23:54:33+0200 [info] real-debrid::rd_api_call_count
+- 2026-06-28T23:54:33+0200 [info] real-debrid::rd_api_call_count
+- 2026-06-28T23:54:33+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:33+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:33+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:33+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:33+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:33+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:33+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:33+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:33+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:33+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:33+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:33+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:33+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:33+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:33+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:34+0200 [debug] real-debrid::rd_verify_poll - El hombre contra la abeja - Temporada 1 [HDTV 720p][Cap.108][AC3 5.1 Castellano][www.AtomoHD.one]
+- 2026-06-28T23:54:34+0200 [debug] real-debrid::rd_verify_poll - El hombre contra la abeja - Temporada 1 [HDTV][Cap.101][Castellano][www.AtomoHD.one]
+- 2026-06-28T23:54:34+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:34+0200 [info] real-debrid::rd_verify_added
+- 2026-06-28T23:54:34+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:34+0200 [info] real-debrid::rd_delete_torrent
+- 2026-06-28T23:54:34+0200 [info] real-debrid::rd_slots_release
+- 2026-06-28T23:54:34+0200 [info] real-debrid::rd_verify_pack_skip - El hombre contra la abeja - Temporada 1 [HDTV][Cap.102][Castellano][www.AtomoHD.one]
+- 2026-06-28T23:54:34+0200 [info] real-debrid::rd_verify_queue_done_item - El hombre contra la abeja - Temporada 1 [HDTV][Cap.102][Castellano][www.AtomoHD.one]
+- 2026-06-28T23:54:34+0200 [info] real-debrid::rd_api_call_count
+- 2026-06-28T23:54:34+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:34+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:34+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:34+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:34+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:34+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:34+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:34+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:34+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:34+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:34+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:34+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:34+0200 [info] real-debrid::rd_api_call_count
+- 2026-06-28T23:54:34+0200 [info] real-debrid::rd_api_call_count
+- 2026-06-28T23:54:34+0200 [info] real-debrid::rd_api_call_count
+- 2026-06-28T23:54:34+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:34+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:34+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:34+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:34+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:34+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:34+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:34+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:34+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:34+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:34+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:34+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:34+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:35+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:35+0200 [warn] real-debrid::rd_api_http_error - infringing_file
+- 2026-06-28T23:54:35+0200 [warn] real-debrid::rd_verify_infringing - El hombre contra la abeja - Temporada 1 [WEB-DL 1080p][Cap.105][Dual DDP5.1   Subs][www.atomixHQ.ONE]
+- 2026-06-28T23:54:35+0200 [info] real-debrid::rd_verify_queue_done_item - El hombre contra la abeja - Temporada 1 [WEB-DL 1080p][Cap.105][Dual DDP5.1   Subs][www.atomixHQ.ONE]
+- 2026-06-28T23:54:35+0200 [debug] real-debrid::rd_verify_poll - El hombre contra la abeja - Temporada 1 [HDTV][Cap.106][Castellano][www.AtomoHD.one]
+- 2026-06-28T23:54:35+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:35+0200 [debug] real-debrid::rd_verify_poll - El hombre contra la abeja - Temporada 1 [HDTV][Cap.108][Castellano][www.AtomoHD.one]
+- 2026-06-28T23:54:35+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:35+0200 [info] real-debrid::rd_verify_select_files
+- 2026-06-28T23:54:35+0200 [info] real-debrid::rd_api_call_count
+- 2026-06-28T23:54:35+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:35+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:35+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:35+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:35+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:35+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:35+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:35+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:35+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:35+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:35+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:35+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:35+0200 [info] real-debrid::rd_api_call_count
+- 2026-06-28T23:54:35+0200 [info] real-debrid::rd_api_call_count
+- 2026-06-28T23:54:35+0200 [info] real-debrid::rd_api_call_count
+- 2026-06-28T23:54:35+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:35+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:35+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:35+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:35+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:35+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:35+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:35+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:35+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:35+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:35+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:35+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:36+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:36+0200 [debug] real-debrid::rd_verify_poll - El hombre contra la abeja 1X4X5X6 HDTV Castellano
+- 2026-06-28T23:54:36+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:36+0200 [debug] real-debrid::rd_verify_poll - El hombre contra la abeja - Temporada 1 [HDTV 720p][Cap.101][AC3 5.1 Castellano][www.AtomoHD.one]
+- 2026-06-28T23:54:36+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:36+0200 [info] real-debrid::rd_delete_torrent
+- 2026-06-28T23:54:36+0200 [info] real-debrid::rd_slots_release
+- 2026-06-28T23:54:36+0200 [info] real-debrid::rd_verify_pack_skip - El hombre contra la abeja - Temporada 1 [HDTV][Cap.108][Castellano][www.AtomoHD.one]
+- 2026-06-28T23:54:36+0200 [info] real-debrid::rd_verify_queue_done_item - El hombre contra la abeja - Temporada 1 [HDTV][Cap.108][Castellano][www.AtomoHD.one]
+- 2026-06-28T23:54:36+0200 [info] real-debrid::rd_verify_added
+- 2026-06-28T23:54:36+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:36+0200 [info] real-debrid::rd_api_call_count
+- 2026-06-28T23:54:36+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:36+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:36+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:36+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:36+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:36+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:36+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:36+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:36+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:36+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:36+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:36+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:36+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:36+0200 [info] real-debrid::rd_api_call_count
+- 2026-06-28T23:54:36+0200 [info] real-debrid::rd_api_call_count
+- 2026-06-28T23:54:36+0200 [info] real-debrid::rd_api_call_count
+- 2026-06-28T23:54:36+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:36+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:36+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:36+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:36+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:36+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:36+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:36+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:36+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:36+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:36+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:36+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:37+0200 [debug] real-debrid::rd_verify_poll - El hombre contra la abeja 1X1X2X3 HDTV XviD Castellano
+- 2026-06-28T23:54:37+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:37+0200 [debug] real-debrid::rd_verify_poll - El hombre contra la abeja - Temporada 1 [HDTV 720p][Cap.104][AC3 5.1 Castellano][www.AtomoHD.one]
+- 2026-06-28T23:54:37+0200 [info] real-debrid::rd_verify_ok - El hombre contra la abeja - Temporada 1 [HDTV 720p][Cap.104][AC3 5.1 Castellano][www.AtomoHD.one]  ==>  /El hombre contra la abeja - Temporada 1 [HDTV 720p][Cap.104][AC3 5.1 Castellano][www.AtomoHD.one].mkv
+- 2026-06-28T23:54:37+0200 [info] real-debrid::rd_verify_queue_done_item - El hombre contra la abeja - Temporada 1 [HDTV 720p][Cap.104][AC3 5.1 Castellano][www.AtomoHD.one]  ==>  /El hombre contr
+- 2026-06-28T23:54:37+0200 [debug] real-debrid::rd_verify_poll - El hombre contra la abeja - Temporada 1 [HDTV 720p][Cap.109][AC3 5.1 Castellano][www.AtomoHD.one]
+- 2026-06-28T23:54:37+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:37+0200 [info] real-debrid::rd_verify_added
+- 2026-06-28T23:54:37+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:37+0200 [info] real-debrid::rd_api_call_count
+- 2026-06-28T23:54:37+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:37+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:37+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:37+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:37+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:37+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:37+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:37+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:37+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:37+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:37+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:37+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:37+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:37+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:37+0200 [info] real-debrid::rd_api_call_count
+- 2026-06-28T23:54:37+0200 [info] real-debrid::rd_api_call_count
+- 2026-06-28T23:54:37+0200 [info] real-debrid::rd_api_call_count
+- 2026-06-28T23:54:37+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:37+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:37+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:37+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:37+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:37+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:37+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:37+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:37+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:37+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:37+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:38+0200 [debug] real-debrid::rd_verify_poll - El hombre contra la abeja - Temporada 1 [HDTV][Cap.107][Castellano][www.AtomoHD.one]
+- 2026-06-28T23:54:38+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:38+0200 [debug] real-debrid::rd_verify_poll - El hombre contra la abeja - Temporada 1 [HDTV 720p][Cap.103][AC3 5.1 Castellano][www.AtomoHD.one]
+- 2026-06-28T23:54:38+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:38+0200 [info] real-debrid::rd_delete_torrent
+- 2026-06-28T23:54:38+0200 [info] real-debrid::rd_slots_release
+- 2026-06-28T23:54:38+0200 [info] real-debrid::rd_verify_pack_skip - El hombre contra la abeja 1X1X2X3 HDTV XviD Castellano
+- 2026-06-28T23:54:38+0200 [info] real-debrid::rd_verify_queue_done_item - El hombre contra la abeja 1X1X2X3 HDTV XviD Castellano
+- 2026-06-28T23:54:38+0200 [info] real-debrid::rd_verify_select_files
+- 2026-06-28T23:54:38+0200 [info] real-debrid::rd_api_call_count
+- 2026-06-28T23:54:38+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:38+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:38+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:38+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:38+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:38+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:38+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:38+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:38+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:38+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:38+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:38+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:38+0200 [info] real-debrid::rd_api_call_count
+- 2026-06-28T23:54:38+0200 [info] real-debrid::rd_api_call_count
+- 2026-06-28T23:54:38+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:38+0200 [info] real-debrid::rd_api_call_count
+- 2026-06-28T23:54:38+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:38+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:38+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:38+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:38+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:38+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:38+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:38+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:39+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:39+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:39+0200 [info] real-debrid::rd_delete_torrent
+- 2026-06-28T23:54:39+0200 [info] real-debrid::rd_slots_release
+- 2026-06-28T23:54:39+0200 [info] real-debrid::rd_verify_not_instant - El hombre contra la abeja - Temporada 1 [HDTV 720p][Cap.108][AC3 5.1 Castellano][www.AtomoHD.one]
+- 2026-06-28T23:54:39+0200 [info] real-debrid::rd_verify_queue_done_item - El hombre contra la abeja - Temporada 1 [HDTV 720p][Cap.108][AC3 5.1 Castellano][www.AtomoHD.one]
+- 2026-06-28T23:54:39+0200 [debug] real-debrid::rd_verify_poll - El hombre contra la abeja - Temporada 1 [HDTV 720p][Cap.107][AC3 5.1 Castellano][www.AtomoHD.one]
+- 2026-06-28T23:54:39+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:39+0200 [info] real-debrid::rd_delete_torrent
+- 2026-06-28T23:54:39+0200 [info] real-debrid::rd_slots_release
+- 2026-06-28T23:54:39+0200 [info] real-debrid::rd_verify_pack_skip - El hombre contra la abeja - Temporada 1 [HDTV][Cap.105][Castellano][www.AtomoHD.one]
+- 2026-06-28T23:54:39+0200 [info] real-debrid::rd_verify_queue_done_item - El hombre contra la abeja - Temporada 1 [HDTV][Cap.105][Castellano][www.AtomoHD.one]
+- 2026-06-28T23:54:39+0200 [info] real-debrid::rd_verify_select_files
+- 2026-06-28T23:54:39+0200 [info] real-debrid::rd_api_call_count
+- 2026-06-28T23:54:39+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:39+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:39+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:39+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:39+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:39+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:39+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:39+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:39+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:39+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:39+0200 [info] real-debrid::rd_api_call_count
+- 2026-06-28T23:54:39+0200 [info] real-debrid::rd_api_call_count
+- 2026-06-28T23:54:39+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:39+0200 [info] real-debrid::rd_api_call_count
+- 2026-06-28T23:54:39+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:39+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:39+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:39+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:39+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:39+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:40+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:40+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:40+0200 [debug] real-debrid::rd_verify_poll - El hombre contra la abeja - Temporada 1 [HDTV 720p][Cap.101][AC3 5.1 Castellano][www.AtomoHD.one]
+- 2026-06-28T23:54:40+0200 [info] real-debrid::rd_verify_ok - El hombre contra la abeja - Temporada 1 [HDTV 720p][Cap.101][AC3 5.1 Castellano][www.AtomoHD.one]  ==>  /El hombre contra la abeja - Temporada 1 [HDTV 720p][Cap.101][AC3 5.1 Castellano][www.AtomoHD.one].mkv
+- 2026-06-28T23:54:40+0200 [info] real-debrid::rd_verify_queue_done_item - El hombre contra la abeja - Temporada 1 [HDTV 720p][Cap.101][AC3 5.1 Castellano][www.AtomoHD.one]  ==>  /El hombre contr
+- 2026-06-28T23:54:40+0200 [info] real-debrid::rd_delete_torrent
+- 2026-06-28T23:54:40+0200 [info] real-debrid::rd_slots_release
+- 2026-06-28T23:54:40+0200 [info] real-debrid::rd_verify_pack_skip - El hombre contra la abeja - Temporada 1 [HDTV][Cap.107][Castellano][www.AtomoHD.one]
+- 2026-06-28T23:54:40+0200 [info] real-debrid::rd_verify_queue_done_item - El hombre contra la abeja - Temporada 1 [HDTV][Cap.107][Castellano][www.AtomoHD.one]
+- 2026-06-28T23:54:40+0200 [info] real-debrid::rd_delete_torrent
+- 2026-06-28T23:54:40+0200 [info] real-debrid::rd_slots_release
+- 2026-06-28T23:54:40+0200 [info] real-debrid::rd_verify_pack_skip - El hombre contra la abeja 1X4X5X6 HDTV Castellano
+- 2026-06-28T23:54:40+0200 [info] real-debrid::rd_verify_queue_done_item - El hombre contra la abeja 1X4X5X6 HDTV Castellano
+- 2026-06-28T23:54:40+0200 [info] real-debrid::rd_verify_select_files
+- 2026-06-28T23:54:40+0200 [info] real-debrid::rd_api_call_count
+- 2026-06-28T23:54:40+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:40+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:40+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:40+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:40+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:40+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:40+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:40+0200 [info] real-debrid::rd_api_call_count
+- 2026-06-28T23:54:40+0200 [info] real-debrid::rd_api_call_count
+- 2026-06-28T23:54:40+0200 [info] real-debrid::rd_api_call_count
+- 2026-06-28T23:54:40+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:40+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:40+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:40+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:41+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:41+0200 [debug] real-debrid::rd_verify_poll - El hombre contra la abeja - Temporada 1 [HDTV 720p][Cap.106][AC3 5.1 Castellano][www.AtomoHD.one]
+- 2026-06-28T23:54:41+0200 [info] real-debrid::rd_slots_refresh
+- 2026-06-28T23:54:41+0200 [info] real-debrid::rd_slots_reserve
+- 2026-06-28T23:54:41+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:41+0200 [info] real-debrid::rd_delete_torrent
+- 2026-06-28T23:54:41+0200 [info] real-debrid::rd_slots_release
+- 2026-06-28T23:54:41+0200 [info] real-debrid::rd_verify_pack_skip - El hombre contra la abeja - Temporada 1 [HDTV][Cap.101][Castellano][www.AtomoHD.one]
+- 2026-06-28T23:54:41+0200 [info] real-debrid::rd_verify_queue_done_item - El hombre contra la abeja - Temporada 1 [HDTV][Cap.101][Castellano][www.AtomoHD.one]
+- 2026-06-28T23:54:41+0200 [info] real-debrid::rd_verify_select_files
+- 2026-06-28T23:54:41+0200 [info] real-debrid::rd_api_call_count
+- 2026-06-28T23:54:41+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:41+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:41+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:41+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:41+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:41+0200 [info] real-debrid::rd_api_call_count
+- 2026-06-28T23:54:41+0200 [info] real-debrid::rd_api_call_count
+- 2026-06-28T23:54:41+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:41+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:41+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:42+0200 [info] real-debrid::rd_api_call_count
+- 2026-06-28T23:54:42+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:42+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:42+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:42+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:42+0200 [debug] real-debrid::rd_verify_poll - El hombre contra la abeja - Temporada 1 [HDTV 720p][Cap.105][AC3 5.1 Castellano][www.AtomoHD.one]
+- 2026-06-28T23:54:42+0200 [info] real-debrid::rd_delete_torrent
+- 2026-06-28T23:54:42+0200 [info] real-debrid::rd_slots_release
+- 2026-06-28T23:54:42+0200 [info] real-debrid::rd_verify_pack_skip - El hombre contra la abeja - Temporada 1 [HDTV 720p][Cap.103][AC3 5.1 Castellano][www.AtomoHD.one]
+- 2026-06-28T23:54:42+0200 [info] real-debrid::rd_verify_added
+- 2026-06-28T23:54:42+0200 [info] real-debrid::rd_verify_queue_done_item - El hombre contra la abeja - Temporada 1 [HDTV 720p][Cap.103][AC3 5.1 Castellano][www.AtomoHD.one]
+- 2026-06-28T23:54:42+0200 [debug] real-debrid::rd_verify_poll - El hombre contra la abeja - Temporada 1 [HDTV][Cap.103][Castellano][www.AtomoHD.one]
+- 2026-06-28T23:54:42+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:42+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:42+0200 [info] real-debrid::rd_api_call_count
+- 2026-06-28T23:54:42+0200 [info] real-debrid::rd_api_call_count
+- 2026-06-28T23:54:42+0200 [info] real-debrid::rd_api_call_count
+- 2026-06-28T23:54:42+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:42+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:42+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:42+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:43+0200 [info] real-debrid::rd_api_call_count
+- 2026-06-28T23:54:43+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:43+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:43+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:43+0200 [debug] real-debrid::rd_verify_poll - El hombre contra la abeja - Temporada 1 [HDTV 720p][Cap.106][AC3 5.1 Castellano][www.AtomoHD.one]
+- 2026-06-28T23:54:43+0200 [info] real-debrid::rd_delete_torrent
+- 2026-06-28T23:54:43+0200 [info] real-debrid::rd_slots_release
+- 2026-06-28T23:54:43+0200 [info] real-debrid::rd_verify_pack_skip - El hombre contra la abeja - Temporada 1 [HDTV][Cap.106][Castellano][www.AtomoHD.one]
+- 2026-06-28T23:54:43+0200 [info] real-debrid::rd_delete_torrent
+- 2026-06-28T23:54:43+0200 [info] real-debrid::rd_verify_queue_done_item - El hombre contra la abeja - Temporada 1 [HDTV][Cap.106][Castellano][www.AtomoHD.one]
+- 2026-06-28T23:54:43+0200 [info] real-debrid::rd_slots_release
+- 2026-06-28T23:54:43+0200 [info] real-debrid::rd_verify_pack_skip - El hombre contra la abeja - Temporada 1 [HDTV][Cap.103][Castellano][www.AtomoHD.one]
+- 2026-06-28T23:54:43+0200 [info] real-debrid::rd_verify_queue_done_item - El hombre contra la abeja - Temporada 1 [HDTV][Cap.103][Castellano][www.AtomoHD.one]
+- 2026-06-28T23:54:43+0200 [info] real-debrid::rd_verify_select_files
+- 2026-06-28T23:54:43+0200 [info] real-debrid::rd_api_call_count
+- 2026-06-28T23:54:43+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:43+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:43+0200 [info] real-debrid::rd_api_call_count
+- 2026-06-28T23:54:43+0200 [info] real-debrid::rd_api_call_count
+- 2026-06-28T23:54:44+0200 [info] real-debrid::rd_api_call_count
+- 2026-06-28T23:54:44+0200 [debug] real-debrid::rd_verify_poll - El hombre contra la abeja 1X7X8X9 HDTV XviD Castellano
+- 2026-06-28T23:54:44+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:44+0200 [debug] real-debrid::rd_verify_poll - El hombre contra la abeja - Temporada 1 [HDTV 720p][Cap.105][AC3 5.1 Castellano][www.AtomoHD.one]
+- 2026-06-28T23:54:44+0200 [debug] real-debrid::rd_verify_poll - El hombre contra la abeja - Temporada 1 [HDTV 720p][Cap.107][AC3 5.1 Castellano][www.AtomoHD.one]
+- 2026-06-28T23:54:44+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:44+0200 [info] real-debrid::rd_delete_torrent
+- 2026-06-28T23:54:44+0200 [info] real-debrid::rd_slots_release
+- 2026-06-28T23:54:44+0200 [info] real-debrid::rd_verify_not_instant - El hombre contra la abeja - Temporada 1 [HDTV 720p][Cap.106][AC3 5.1 Castellano][www.AtomoHD.one]
+- 2026-06-28T23:54:44+0200 [info] real-debrid::rd_verify_queue_done_item - El hombre contra la abeja - Temporada 1 [HDTV 720p][Cap.106][AC3 5.1 Castellano][www.AtomoHD.one]
+- 2026-06-28T23:54:44+0200 [info] real-debrid::rd_api_call_count
+- 2026-06-28T23:54:44+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:44+0200 [info] real-debrid::rd_api_call_count
+- 2026-06-28T23:54:44+0200 [info] real-debrid::rd_api_call_count
+- 2026-06-28T23:54:44+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:54:45+0200 [info] real-debrid::rd_api_call_count
+- 2026-06-28T23:54:45+0200 [debug] real-debrid::rd_verify_poll - El hombre contra la abeja - Temporada 1 [HDTV 720p][Cap.109][AC3 5.1 Castellano][www.AtomoHD.one]
+- 2026-06-28T23:54:45+0200 [info] real-debrid::rd_delete_torrent
+- 2026-06-28T23:54:45+0200 [info] real-debrid::rd_slots_release
+- 2026-06-28T23:54:45+0200 [info] real-debrid::rd_verify_pack_skip - El hombre contra la abeja 1X7X8X9 HDTV XviD Castellano
+- 2026-06-28T23:54:45+0200 [info] real-debrid::rd_verify_queue_done_item - El hombre contra la abeja 1X7X8X9 HDTV XviD Castellano
+- 2026-06-28T23:54:45+0200 [info] real-debrid::rd_delete_torrent
+- 2026-06-28T23:54:45+0200 [info] real-debrid::rd_slots_release
+- 2026-06-28T23:54:45+0200 [info] real-debrid::rd_verify_not_instant - El hombre contra la abeja - Temporada 1 [HDTV 720p][Cap.105][AC3 5.1 Castellano][www.AtomoHD.one]
+- 2026-06-28T23:54:45+0200 [info] real-debrid::rd_verify_queue_done_item - El hombre contra la abeja - Temporada 1 [HDTV 720p][Cap.105][AC3 5.1 Castellano][www.AtomoHD.one]
+- 2026-06-28T23:54:45+0200 [debug] real-debrid::rd_verify_poll - El hombre contra la abeja - Temporada 1 [HDTV 720p][Cap.107][AC3 5.1 Castellano][www.AtomoHD.one]
+- 2026-06-28T23:54:45+0200 [info] real-debrid::rd_api_call_count
+- 2026-06-28T23:54:46+0200 [info] real-debrid::rd_api_call_count
+- 2026-06-28T23:54:46+0200 [debug] real-debrid::rd_verify_poll - El hombre contra la abeja - Temporada 1 [HDTV 720p][Cap.109][AC3 5.1 Castellano][www.AtomoHD.one]
+- 2026-06-28T23:54:46+0200 [info] real-debrid::rd_delete_torrent
+- 2026-06-28T23:54:46+0200 [info] real-debrid::rd_slots_release
+- 2026-06-28T23:54:46+0200 [info] real-debrid::rd_verify_not_instant - El hombre contra la abeja - Temporada 1 [HDTV 720p][Cap.107][AC3 5.1 Castellano][www.AtomoHD.one]
+- 2026-06-28T23:54:46+0200 [info] real-debrid::rd_verify_queue_done_item - El hombre contra la abeja - Temporada 1 [HDTV 720p][Cap.107][AC3 5.1 Castellano][www.AtomoHD.one]
+- 2026-06-28T23:54:46+0200 [info] real-debrid::rd_api_call_count
+- 2026-06-28T23:54:47+0200 [info] real-debrid::rd_delete_torrent
+- 2026-06-28T23:54:47+0200 [info] real-debrid::rd_slots_release
+- 2026-06-28T23:54:47+0200 [info] real-debrid::rd_verify_not_instant - El hombre contra la abeja - Temporada 1 [HDTV 720p][Cap.109][AC3 5.1 Castellano][www.AtomoHD.one]
+- 2026-06-28T23:54:47+0200 [info] real-debrid::rd_verify_queue_done_item - El hombre contra la abeja - Temporada 1 [HDTV 720p][Cap.109][AC3 5.1 Castellano][www.AtomoHD.one]
+- 2026-06-28T23:54:47+0200 [info] real-debrid::rd_verify_queue_end
+- 2026-06-28T23:54:47+0200 [warn] real-debrid::rd_verify_batch_end
+- 2026-06-28T23:54:47+0200 [warn] real-debrid::rd_check_summary
+- 2026-06-28T23:54:47+0200 [info] qbittorrent::qbt_probe_skipped - disabled
+- 2026-06-28T23:54:47+0200 [info] motor::prepare_qbit_extras
+- 2026-06-28T23:54:47+0200 [info] motor::prepare_rd_temp_errors
+- 2026-06-28T23:54:47+0200 [info] motor::prepare_after_working_filter
+- 2026-06-28T23:54:47+0200 [info] search::export_results
+- 2026-06-28T23:54:47+0200 [info] search::export_results
+- 2026-06-28T23:54:47+0200 [info] real-debrid::rd_api_call_count
+- 2026-06-28T23:54:47+0200 [info] real-debrid::rd_delete_torrent
+- 2026-06-28T23:54:47+0200 [info] real-debrid::rd_api_call_count
+- 2026-06-28T23:54:47+0200 [info] real-debrid::rd_delete_torrent
+- 2026-06-28T23:54:47+0200 [info] search::editor_clean_search_rd_cleanup
+- 2026-06-28T23:54:47+0200 [info] search::editor_clean_search_end
+- 2026-06-28T23:54:48+02:00 [info] web::JOB_FINISHED_OK

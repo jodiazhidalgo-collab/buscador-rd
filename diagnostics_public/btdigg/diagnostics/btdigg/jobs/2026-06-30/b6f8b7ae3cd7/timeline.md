@@ -1,0 +1,206 @@
+- 2026-06-30T02:51:40+02:00 [info] web::JOB_STARTED
+- 2026-06-30T02:51:40+02:00 [info] general::CONFIG_SNAPSHOT
+- 2026-06-30T02:51:40+02:00 [info] web::COMMAND_PREPARED
+- 2026-06-30T02:51:40+02:00 [info] web::PROCESS_STARTED
+- 2026-06-30T02:51:40+0200 [info] search::editor_clean_search_start
+- 2026-06-30T02:51:40+0200 [info] btdigg::browser_auto_search_start_dom
+- 2026-06-30T02:52:19+0200 [info] btdigg::extract_magnets
+- 2026-06-30T02:52:19+0200 [info] btdigg::btdigg_dump_dom_fallback
+- 2026-06-30T02:52:21+0200 [info] btdigg::browser_auto_search_end_dom
+- 2026-06-30T02:52:21+0200 [info] motor::prepare_results_start
+- 2026-06-30T02:52:21+0200 [info] motor::prepare_after_scoring
+- 2026-06-30T02:52:21+0200 [info] motor::prepare_after_filter
+- 2026-06-30T02:52:21+0200 [info] motor::prepare_after_query_prefilter
+- 2026-06-30T02:52:22+0200 [info] real-debrid::rd_account_check_ok
+- 2026-06-30T02:52:22+0200 [info] real-debrid::rd_check_start
+- 2026-06-30T02:52:22+0200 [info] real-debrid::rd_api_http_error - disabled_endpoint
+- 2026-06-30T02:52:22+0200 [info] real-debrid::rd_cache_api_disabled_cached_set - Real-Debrid HTTP 403: [37 disabled_endpoint] {
+	"error": "disabled_endpoint",
+	"error_code": 37
+}
+- 2026-06-30T02:52:22+0200 [info] real-debrid::rd_cache_api_disabled - Real-Debrid HTTP 403: [37 disabled_endpoint] {
+	"error": "disabled_endpoint",
+	"error_code": 37
+}
+- 2026-06-30T02:52:22+0200 [info] real-debrid::rd_verify_batch_start
+- 2026-06-30T02:52:22+0200 [info] real-debrid::rd_slots_refresh
+- 2026-06-30T02:52:22+0200 [info] real-debrid::rd_active_count_before
+- 2026-06-30T02:52:22+0200 [info] real-debrid::rd_existing_preload_done
+- 2026-06-30T02:52:22+0200 [info] real-debrid::rd_verify_queue_start
+- 2026-06-30T02:52:22+0200 [info] real-debrid::rd_verify_add_start - Pillion (2025) [2160p] [4K] [WEB] [5.1] [YTS.BZ]
+- 2026-06-30T02:52:22+0200 [info] real-debrid::rd_slots_reserve
+- 2026-06-30T02:52:22+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-30T02:52:22+0200 [info] real-debrid::rd_verify_queue_submit - Pillion (2025) [2160p] [4K] [WEB] [5.1] [YTS.BZ]
+- 2026-06-30T02:52:22+0200 [info] real-debrid::rd_verify_add_start - Pillion (2025) WEB-DL 2160p HDR Ukr Eng [Hurtom].mkv
+- 2026-06-30T02:52:22+0200 [info] real-debrid::rd_verify_queue_submit - Pillion (2025) WEB-DL 2160p HDR Ukr Eng [Hurtom].mkv
+- 2026-06-30T02:52:22+0200 [info] real-debrid::rd_slots_reserve
+- 2026-06-30T02:52:22+0200 [debug] real-debrid::rd_endpoint_pace_wait
+- 2026-06-30T02:52:22+0200 [info] real-debrid::rd_verify_queue_submit - Pillion.2025.2160p.iT.WEB-DL.Hybrid.H.265.DV.HDR10..DDP.5.1.English-HONE[PianYuan]
+- 2026-06-30T02:52:22+0200 [info] real-debrid::rd_verify_add_start - Pillion.2025.2160p.iT.WEB-DL.Hybrid.H.265.DV.HDR10..DDP.5.1.English-HONE[PianYuan]
+- 2026-06-30T02:52:22+0200 [info] real-debrid::rd_verify_add_start - Pillion.2025.x265.WEB-DL.2160p.HDR-DV.mkv
+- 2026-06-30T02:52:22+0200 [info] real-debrid::rd_slots_reserve
+- 2026-06-30T02:52:22+0200 [info] real-debrid::rd_verify_queue_submit - Pillion.2025.x265.WEB-DL.2160p.HDR-DV.mkv
+- 2026-06-30T02:52:22+0200 [info] real-debrid::rd_slots_reserve
+- 2026-06-30T02:52:22+0200 [info] real-debrid::rd_verify_add_start - Pillion.Amore.Senza.Freni.2025.iTA-ENG.WEBDL.2160p.HEVC.x265-CYBER.mkv
+- 2026-06-30T02:52:22+0200 [info] real-debrid::rd_slots_reserve
+- 2026-06-30T02:52:22+0200 [info] real-debrid::rd_verify_queue_submit - Pillion.Amore.Senza.Freni.2025.iTA-ENG.WEBDL.2160p.HEVC.x265-CYBER.mkv
+- 2026-06-30T02:52:22+0200 [info] real-debrid::rd_verify_add_start - Pillion (2025) [4k 2160p][Esp]
+- 2026-06-30T02:52:22+0200 [info] real-debrid::rd_verify_queue_submit - Pillion (2025) [4k 2160p][Esp]
+- 2026-06-30T02:52:22+0200 [info] real-debrid::rd_slots_reserve
+- 2026-06-30T02:52:22+0200 [info] real-debrid::rd_verify_add_start - Pillion.2025.2160p.iT.WEB-DL.Hybrid.H265.DV.HDR10 DDP.5.1.English-HONE
+- 2026-06-30T02:52:22+0200 [info] real-debrid::rd_verify_queue_submit - Pillion.2025.2160p.iT.WEB-DL.Hybrid.H265.DV.HDR10 DDP.5.1.English-HONE
+- 2026-06-30T02:52:22+0200 [info] real-debrid::rd_slots_reserve
+- 2026-06-30T02:52:22+0200 [info] real-debrid::rd_verify_add_start - Pillion.2025.REPACK.2160p.iT.WEB-DL.Hybrid.H265.DV.HDR10 .DDP.5.1.English-HONE
+- 2026-06-30T02:52:22+0200 [info] real-debrid::rd_verify_queue_submit - Pillion.2025.REPACK.2160p.iT.WEB-DL.Hybrid.H265.DV.HDR10 .DDP.5.1.English-HONE
+- 2026-06-30T02:52:22+0200 [info] real-debrid::rd_slots_reserve
+- 2026-06-30T02:52:22+0200 [info] real-debrid::rd_verify_add_start - Pillion 2025 2160p IT WEB-DL Hybrid H265 DV HDR10 DDP 5 1 English-HONE
+- 2026-06-30T02:52:22+0200 [info] real-debrid::rd_verify_queue_submit - Pillion 2025 2160p IT WEB-DL Hybrid H265 DV HDR10 DDP 5 1 English-HONE
+- 2026-06-30T02:52:22+0200 [info] real-debrid::rd_slots_reserve
+- 2026-06-30T02:52:22+0200 [info] real-debrid::rd_verify_add_start - Pillion (2025) WEB-DL 2160p SDR Ukr Eng [Hurtom].mkv
+- 2026-06-30T02:52:22+0200 [info] real-debrid::rd_slots_reserve
+- 2026-06-30T02:52:22+0200 [info] real-debrid::rd_verify_queue_submit - Pillion (2025) WEB-DL 2160p SDR Ukr Eng [Hurtom].mkv
+- 2026-06-30T02:52:23+0200 [info] real-debrid::rd_verify_added
+- 2026-06-30T02:52:23+0200 [debug] real-debrid::rd_verify_poll - Pillion (2025) [2160p] [4K] [WEB] [5.1] [YTS.BZ]
+- 2026-06-30T02:52:23+0200 [info] real-debrid::rd_verify_select_files
+- 2026-06-30T02:52:23+0200 [info] real-debrid::rd_api_http_error - infringing_file
+- 2026-06-30T02:52:23+0200 [info] real-debrid::rd_call_terminal_error - infringing_file
+- 2026-06-30T02:52:23+0200 [info] real-debrid::rd_verify_infringing - Pillion 2025 2160p IT WEB-DL Hybrid H265 DV HDR10 DDP 5 1 English-HONE
+- 2026-06-30T02:52:23+0200 [info] real-debrid::rd_verify_queue_done_item - Pillion 2025 2160p IT WEB-DL Hybrid H265 DV HDR10 DDP 5 1 English-HONE
+- 2026-06-30T02:52:24+0200 [debug] real-debrid::rd_verify_post_select_poll - Pillion (2025) [2160p] [4K] [WEB] [5.1] [YTS.BZ]
+- 2026-06-30T02:52:24+0200 [info] real-debrid::rd_verify_ok - Pillion (2025) [2160p] [4K] [WEB] [5.1] [YTS.BZ]  ==>  /Pillion.2025.2160p.4K.WEB.x265.10bit.AAC5.1-[YTS.BZ].mkv
+- 2026-06-30T02:52:24+0200 [info] real-debrid::rd_verify_queue_done_item - Pillion (2025) [2160p] [4K] [WEB] [5.1] [YTS.BZ]  ==>  /Pillion.2025.2160p.4K.WEB.x265.10bit.AAC5.1-[YTS.BZ].mkv
+- 2026-06-30T02:52:24+0200 [info] real-debrid::rd_verify_added
+- 2026-06-30T02:52:25+0200 [debug] real-debrid::rd_verify_poll - Pillion (2025) [4k 2160p][Esp]
+- 2026-06-30T02:52:25+0200 [info] real-debrid::rd_verify_select_files
+- 2026-06-30T02:52:25+0200 [info] real-debrid::rd_api_http_error - infringing_file
+- 2026-06-30T02:52:25+0200 [info] real-debrid::rd_call_terminal_error - infringing_file
+- 2026-06-30T02:52:25+0200 [info] real-debrid::rd_verify_infringing - Pillion.2025.REPACK.2160p.iT.WEB-DL.Hybrid.H265.DV.HDR10 .DDP.5.1.English-HONE
+- 2026-06-30T02:52:25+0200 [info] real-debrid::rd_verify_queue_done_item - Pillion.2025.REPACK.2160p.iT.WEB-DL.Hybrid.H265.DV.HDR10 .DDP.5.1.English-HONE
+- 2026-06-30T02:52:26+0200 [debug] real-debrid::rd_verify_post_select_poll - Pillion (2025) [4k 2160p][Esp]
+- 2026-06-30T02:52:26+0200 [info] real-debrid::rd_verify_ok - Pillion (2025) [4k 2160p][Esp]  ==>  /Pillion (2025) [4k 2160p][Esp].mkv
+- 2026-06-30T02:52:26+0200 [info] real-debrid::rd_verify_queue_done_item - Pillion (2025) [4k 2160p][Esp]  ==>  /Pillion (2025) [4k 2160p][Esp].mkv
+- 2026-06-30T02:52:26+0200 [info] real-debrid::rd_api_http_error - infringing_file
+- 2026-06-30T02:52:26+0200 [info] real-debrid::rd_call_terminal_error - infringing_file
+- 2026-06-30T02:52:26+0200 [info] real-debrid::rd_verify_infringing - Pillion.2025.2160p.iT.WEB-DL.Hybrid.H265.DV.HDR10 DDP.5.1.English-HONE
+- 2026-06-30T02:52:26+0200 [info] real-debrid::rd_verify_queue_done_item - Pillion.2025.2160p.iT.WEB-DL.Hybrid.H265.DV.HDR10 DDP.5.1.English-HONE
+- 2026-06-30T02:52:27+0200 [debug] real-debrid::rd_endpoint_pace_wait
+- 2026-06-30T02:52:27+0200 [info] real-debrid::rd_api_http_error - infringing_file
+- 2026-06-30T02:52:27+0200 [info] real-debrid::rd_call_terminal_error - infringing_file
+- 2026-06-30T02:52:27+0200 [info] real-debrid::rd_verify_infringing - Pillion.2025.x265.WEB-DL.2160p.HDR-DV.mkv
+- 2026-06-30T02:52:27+0200 [info] real-debrid::rd_verify_queue_done_item - Pillion.2025.x265.WEB-DL.2160p.HDR-DV.mkv
+- 2026-06-30T02:52:28+0200 [info] real-debrid::rd_api_http_error - infringing_file
+- 2026-06-30T02:52:28+0200 [info] real-debrid::rd_call_terminal_error - infringing_file
+- 2026-06-30T02:52:28+0200 [info] real-debrid::rd_verify_infringing - Pillion (2025) WEB-DL 2160p SDR Ukr Eng [Hurtom].mkv
+- 2026-06-30T02:52:28+0200 [info] real-debrid::rd_verify_queue_done_item - Pillion (2025) WEB-DL 2160p SDR Ukr Eng [Hurtom].mkv
+- 2026-06-30T02:52:29+0200 [info] real-debrid::rd_verify_added
+- 2026-06-30T02:52:30+0200 [debug] real-debrid::rd_verify_poll - Pillion.Amore.Senza.Freni.2025.iTA-ENG.WEBDL.2160p.HEVC.x265-CYBER.mkv
+- 2026-06-30T02:52:30+0200 [info] real-debrid::rd_verify_select_files
+- 2026-06-30T02:52:30+0200 [debug] real-debrid::rd_verify_post_select_poll - Pillion.Amore.Senza.Freni.2025.iTA-ENG.WEBDL.2160p.HEVC.x265-CYBER.mkv
+- 2026-06-30T02:52:30+0200 [info] real-debrid::rd_verify_ok - Pillion.Amore.Senza.Freni.2025.iTA-ENG.WEBDL.2160p.HEVC.x265-CYBER.mkv  ==>  /Pillion.Amore.Senza.Freni.2025.iTA-ENG.WEBDL.2160p.HEVC.x265-CYBER.mkv
+- 2026-06-30T02:52:30+0200 [info] real-debrid::rd_verify_queue_done_item - Pillion.Amore.Senza.Freni.2025.iTA-ENG.WEBDL.2160p.HEVC.x265-CYBER.mkv  ==>  /Pillion.Amore.Senza.Freni.2025.iTA-ENG.WEB
+- 2026-06-30T02:52:30+0200 [info] real-debrid::rd_api_http_error - infringing_file
+- 2026-06-30T02:52:30+0200 [info] real-debrid::rd_call_terminal_error - infringing_file
+- 2026-06-30T02:52:30+0200 [info] real-debrid::rd_verify_infringing - Pillion (2025) WEB-DL 2160p HDR Ukr Eng [Hurtom].mkv
+- 2026-06-30T02:52:30+0200 [info] real-debrid::rd_verify_queue_done_item - Pillion (2025) WEB-DL 2160p HDR Ukr Eng [Hurtom].mkv
+- 2026-06-30T02:52:31+0200 [info] real-debrid::rd_api_http_error - infringing_file
+- 2026-06-30T02:52:31+0200 [info] real-debrid::rd_call_terminal_error - infringing_file
+- 2026-06-30T02:52:31+0200 [info] real-debrid::rd_verify_infringing - Pillion.2025.2160p.iT.WEB-DL.Hybrid.H.265.DV.HDR10..DDP.5.1.English-HONE[PianYuan]
+- 2026-06-30T02:52:31+0200 [info] real-debrid::rd_verify_queue_done_item - Pillion.2025.2160p.iT.WEB-DL.Hybrid.H.265.DV.HDR10..DDP.5.1.English-HONE[PianYuan]
+- 2026-06-30T02:52:31+0200 [info] real-debrid::rd_verify_queue_end
+- 2026-06-30T02:52:31+0200 [info] real-debrid::rd_rate_summary
+- 2026-06-30T02:52:31+0200 [info] real-debrid::rd_endpoint_pacer_summary
+- 2026-06-30T02:52:31+0200 [info] real-debrid::rd_cleanup_final_start
+- 2026-06-30T02:52:32+0200 [info] real-debrid::rd_slots_refresh
+- 2026-06-30T02:52:32+0200 [info] real-debrid::rd_active_count_after
+- 2026-06-30T02:52:32+0200 [info] real-debrid::rd_cleanup_final_end
+- 2026-06-30T02:52:32+0200 [info] real-debrid::rd_rate_summary
+- 2026-06-30T02:52:32+0200 [info] real-debrid::rd_endpoint_pacer_summary
+- 2026-06-30T02:52:32+0200 [info] real-debrid::rd_verify_batch_end
+- 2026-06-30T02:52:32+0200 [info] real-debrid::rd_check_summary
+- 2026-06-30T02:52:32+0200 [info] qbittorrent::qbt_relevance_filter
+- 2026-06-30T02:52:32+0200 [info] qbittorrent::qbt_probe_batch_start
+- 2026-06-30T02:52:32+0200 [info] qbittorrent::qbt_login
+- 2026-06-30T02:52:32+0200 [info] qbittorrent::qbt_login
+- 2026-06-30T02:52:32+0200 [info] qbittorrent::qbt_login
+- 2026-06-30T02:52:32+0200 [info] qbittorrent::qbt_login
+- 2026-06-30T02:52:32+0200 [info] qbittorrent::qbt_probe_add - Pillion.2025.x265.WEB-DL.2160p.HDR-DV.mkv
+- 2026-06-30T02:52:32+0200 [info] qbittorrent::qbt_probe_add - Pillion.2025.2160p.iT.WEB-DL.Hybrid.H265.DV.HDR10 DDP.5.1.English-HONE
+- 2026-06-30T02:52:32+0200 [info] qbittorrent::qbt_probe_add - Pillion (2025) WEB-DL 2160p HDR Ukr Eng [Hurtom].mkv
+- 2026-06-30T02:52:32+0200 [info] qbittorrent::qbt_probe_add - Pillion.2025.2160p.iT.WEB-DL.Hybrid.H.265.DV.HDR10..DDP.5.1.English-HONE[PianYuan]
+- 2026-06-30T02:52:34+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-30T02:52:34+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-30T02:52:34+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-30T02:52:34+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-30T02:52:36+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-30T02:52:36+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-30T02:52:36+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-30T02:52:36+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-30T02:52:38+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-30T02:52:38+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-30T02:52:38+0200 [info] qbittorrent::qbt_probe_result - qBittorrent con seed conectado: seeds=1, peers=0, state=stalleddl
+- 2026-06-30T02:52:38+0200 [info] qbittorrent::qbt_delete_probe
+- 2026-06-30T02:52:38+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-30T02:52:38+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-30T02:52:38+0200 [info] qbittorrent::qbt_login
+- 2026-06-30T02:52:38+0200 [info] qbittorrent::qbt_probe_add - Pillion.2025.REPACK.2160p.iT.WEB-DL.Hybrid.H265.DV.HDR10 .DDP.5.1.English-HONE
+- 2026-06-30T02:52:40+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-30T02:52:40+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-30T02:52:40+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-30T02:52:40+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-30T02:52:42+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-30T02:52:42+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-30T02:52:42+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-30T02:52:42+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-30T02:52:44+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-30T02:52:44+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-30T02:52:44+0200 [info] qbittorrent::qbt_probe_result - qBittorrent con seed conectado: seeds=1, peers=4, state=stalleddl
+- 2026-06-30T02:52:44+0200 [info] qbittorrent::qbt_delete_probe
+- 2026-06-30T02:52:44+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-30T02:52:44+0200 [info] qbittorrent::qbt_login
+- 2026-06-30T02:52:44+0200 [info] qbittorrent::qbt_probe_add - Pillion 2025 2160p IT WEB-DL Hybrid H265 DV HDR10 DDP 5 1 English-HONE
+- 2026-06-30T02:52:44+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-30T02:52:46+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-30T02:52:46+0200 [info] qbittorrent::qbt_probe_result - qBittorrent con seed conectado: seeds=1, peers=4, state=stalleddl
+- 2026-06-30T02:52:46+0200 [info] qbittorrent::qbt_delete_probe
+- 2026-06-30T02:52:46+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-30T02:52:46+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-30T02:52:46+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-30T02:52:46+0200 [info] qbittorrent::qbt_probe_result - qBittorrent con seed conectado: seeds=2, peers=0, state=stalleddl
+- 2026-06-30T02:52:46+0200 [info] qbittorrent::qbt_login
+- 2026-06-30T02:52:46+0200 [info] qbittorrent::qbt_delete_probe
+- 2026-06-30T02:52:46+0200 [info] qbittorrent::qbt_probe_add - Pillion (2025) WEB-DL 2160p SDR Ukr Eng [Hurtom].mkv
+- 2026-06-30T02:52:48+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-30T02:52:48+0200 [info] qbittorrent::qbt_probe_result - Tracker indica posibles seeds (1), pero qBittorrent no conecto ni obtuvo vida real: state=metadl, seeds=0, peers=8, availability=0.00
+- 2026-06-30T02:52:48+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-30T02:52:48+0200 [info] qbittorrent::qbt_delete_probe
+- 2026-06-30T02:52:48+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-30T02:52:50+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-30T02:52:50+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-30T02:52:52+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-30T02:52:52+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-30T02:52:54+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-30T02:52:54+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-30T02:52:56+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-30T02:52:56+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-30T02:52:58+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-30T02:52:58+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-30T02:53:00+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-30T02:53:00+0200 [info] qbittorrent::qbt_probe_result - Sin vida clara en qBittorrent: state=metadl, seeds=0, peers=2, progress=0.000
+- 2026-06-30T02:53:00+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-30T02:53:00+0200 [info] qbittorrent::qbt_delete_probe
+- 2026-06-30T02:53:02+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-30T02:53:02+0200 [info] qbittorrent::qbt_probe_result - Sin vida clara en qBittorrent: state=checkingresumedata, seeds=0, peers=0, progress=0.000
+- 2026-06-30T02:53:02+0200 [info] qbittorrent::qbt_delete_probe
+- 2026-06-30T02:53:02+0200 [info] qbittorrent::qbt_probe_batch_end
+- 2026-06-30T02:53:02+0200 [info] motor::prepare_qbit_extras
+- 2026-06-30T02:53:02+0200 [info] motor::prepare_rd_temp_errors
+- 2026-06-30T02:53:02+0200 [info] motor::prepare_after_working_filter
+- 2026-06-30T02:53:02+0200 [info] search::export_results
+- 2026-06-30T02:53:02+0200 [info] search::export_results
+- 2026-06-30T02:53:02+0200 [info] real-debrid::rd_delete_torrent
+- 2026-06-30T02:53:02+0200 [debug] real-debrid::rd_endpoint_pace_wait
+- 2026-06-30T02:53:03+0200 [info] real-debrid::rd_delete_torrent
+- 2026-06-30T02:53:04+0200 [info] real-debrid::rd_delete_torrent
+- 2026-06-30T02:53:04+0200 [info] search::editor_clean_search_rd_cleanup
+- 2026-06-30T02:53:04+0200 [info] search::editor_clean_search_end
+- 2026-06-30T02:53:04+02:00 [info] web::JOB_FINISHED_OK

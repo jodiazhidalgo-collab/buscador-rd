@@ -1,0 +1,824 @@
+- 2026-06-30T04:55:12+02:00 [info] web::JOB_STARTED
+- 2026-06-30T04:55:12+02:00 [info] general::CONFIG_SNAPSHOT
+- 2026-06-30T04:55:12+02:00 [info] web::COMMAND_PREPARED
+- 2026-06-30T04:55:12+02:00 [info] web::PROCESS_STARTED
+- 2026-06-30T04:55:13+0200 [info] search::editor_clean_search_start
+- 2026-06-30T04:55:13+0200 [info] btdigg::browser_auto_search_start_dom
+- 2026-06-30T04:55:16+0200 [info] btdigg::extract_magnets
+- 2026-06-30T04:55:16+0200 [info] btdigg::btdigg_dump_dom_fallback
+- 2026-06-30T04:55:22+0200 [info] btdigg::extract_magnets
+- 2026-06-30T04:55:22+0200 [info] btdigg::btdigg_dump_dom_fallback
+- 2026-06-30T04:55:28+0200 [info] btdigg::extract_magnets
+- 2026-06-30T04:55:28+0200 [info] btdigg::btdigg_dump_dom_fallback
+- 2026-06-30T04:55:33+0200 [info] btdigg::extract_magnets
+- 2026-06-30T04:55:33+0200 [info] btdigg::btdigg_dump_dom_fallback
+- 2026-06-30T04:55:38+0200 [info] btdigg::extract_magnets
+- 2026-06-30T04:55:38+0200 [info] btdigg::btdigg_dump_dom_fallback
+- 2026-06-30T04:55:44+0200 [info] btdigg::extract_magnets
+- 2026-06-30T04:55:44+0200 [info] btdigg::btdigg_dump_dom_fallback
+- 2026-06-30T04:55:50+0200 [info] btdigg::extract_magnets
+- 2026-06-30T04:55:50+0200 [info] btdigg::btdigg_dump_dom_fallback
+- 2026-06-30T04:55:55+0200 [info] btdigg::extract_magnets
+- 2026-06-30T04:55:55+0200 [info] btdigg::btdigg_dump_dom_fallback
+- 2026-06-30T04:56:01+0200 [info] btdigg::extract_magnets
+- 2026-06-30T04:56:01+0200 [info] btdigg::btdigg_dump_dom_fallback
+- 2026-06-30T04:56:07+0200 [info] btdigg::extract_magnets
+- 2026-06-30T04:56:07+0200 [info] btdigg::btdigg_dump_dom_fallback
+- 2026-06-30T04:56:13+0200 [info] btdigg::extract_magnets
+- 2026-06-30T04:56:13+0200 [info] btdigg::btdigg_dump_dom_fallback
+- 2026-06-30T04:56:19+0200 [info] btdigg::extract_magnets
+- 2026-06-30T04:56:19+0200 [info] btdigg::btdigg_dump_dom_fallback
+- 2026-06-30T04:56:25+0200 [info] btdigg::extract_magnets
+- 2026-06-30T04:56:25+0200 [info] btdigg::btdigg_dump_dom_fallback
+- 2026-06-30T04:56:31+0200 [info] btdigg::extract_magnets
+- 2026-06-30T04:56:31+0200 [info] btdigg::btdigg_dump_dom_fallback
+- 2026-06-30T04:56:38+0200 [info] btdigg::extract_magnets
+- 2026-06-30T04:56:38+0200 [info] btdigg::btdigg_dump_dom_fallback
+- 2026-06-30T04:56:43+0200 [info] btdigg::extract_magnets
+- 2026-06-30T04:56:43+0200 [info] btdigg::btdigg_dump_dom_fallback
+- 2026-06-30T04:56:50+0200 [info] btdigg::extract_magnets
+- 2026-06-30T04:56:50+0200 [info] btdigg::btdigg_dump_dom_fallback
+- 2026-06-30T04:56:56+0200 [info] btdigg::extract_magnets
+- 2026-06-30T04:56:56+0200 [info] btdigg::btdigg_dump_dom_fallback
+- 2026-06-30T04:57:02+0200 [info] btdigg::extract_magnets
+- 2026-06-30T04:57:02+0200 [info] btdigg::btdigg_dump_dom_fallback
+- 2026-06-30T04:57:07+0200 [info] btdigg::extract_magnets
+- 2026-06-30T04:57:07+0200 [info] btdigg::btdigg_dump_dom_fallback
+- 2026-06-30T04:57:12+0200 [info] btdigg::extract_magnets
+- 2026-06-30T04:57:13+0200 [info] btdigg::btdigg_dump_dom_fallback
+- 2026-06-30T04:57:18+0200 [info] btdigg::extract_magnets
+- 2026-06-30T04:57:18+0200 [info] btdigg::btdigg_dump_dom_fallback
+- 2026-06-30T04:57:24+0200 [info] btdigg::extract_magnets
+- 2026-06-30T04:57:24+0200 [info] btdigg::btdigg_dump_dom_fallback
+- 2026-06-30T04:57:29+0200 [info] btdigg::extract_magnets
+- 2026-06-30T04:57:29+0200 [info] btdigg::btdigg_dump_dom_fallback
+- 2026-06-30T04:57:36+0200 [info] btdigg::extract_magnets
+- 2026-06-30T04:57:36+0200 [info] btdigg::btdigg_dump_dom_fallback
+- 2026-06-30T04:57:42+0200 [info] btdigg::extract_magnets
+- 2026-06-30T04:57:42+0200 [info] btdigg::btdigg_dump_dom_fallback
+- 2026-06-30T04:57:48+0200 [info] btdigg::extract_magnets
+- 2026-06-30T04:57:48+0200 [info] btdigg::btdigg_dump_dom_fallback
+- 2026-06-30T04:57:53+0200 [info] btdigg::extract_magnets
+- 2026-06-30T04:57:53+0200 [info] btdigg::btdigg_dump_dom_fallback
+- 2026-06-30T04:57:59+0200 [info] btdigg::extract_magnets
+- 2026-06-30T04:57:59+0200 [info] btdigg::btdigg_dump_dom_fallback
+- 2026-06-30T04:58:04+0200 [info] btdigg::extract_magnets
+- 2026-06-30T04:58:04+0200 [info] btdigg::btdigg_dump_dom_fallback
+- 2026-06-30T04:58:06+0200 [info] btdigg::browser_auto_search_end_dom
+- 2026-06-30T04:58:06+0200 [info] btdigg::browser_quality_rescue_start
+- 2026-06-30T04:58:06+0200 [info] btdigg::browser_auto_search_start_dom
+- 2026-06-30T04:58:12+0200 [info] btdigg::extract_magnets
+- 2026-06-30T04:58:12+0200 [info] btdigg::btdigg_dump_dom_fallback
+- 2026-06-30T04:58:14+0200 [info] btdigg::browser_auto_search_end_dom
+- 2026-06-30T04:58:14+0200 [info] btdigg::browser_quality_rescue_results
+- 2026-06-30T04:58:14+0200 [info] btdigg::browser_quality_rescue_end
+- 2026-06-30T04:58:14+0200 [info] motor::prepare_results_start
+- 2026-06-30T04:58:14+0200 [info] motor::prepare_after_scoring
+- 2026-06-30T04:58:14+0200 [info] motor::prepare_after_filter
+- 2026-06-30T04:58:14+0200 [info] motor::prepare_after_query_prefilter
+- 2026-06-30T04:58:15+0200 [info] real-debrid::rd_account_check_ok
+- 2026-06-30T04:58:15+0200 [info] real-debrid::rd_check_start
+- 2026-06-30T04:58:15+0200 [info] real-debrid::rd_api_http_error - disabled_endpoint
+- 2026-06-30T04:58:15+0200 [info] real-debrid::rd_cache_api_disabled_cached_set - Real-Debrid HTTP 403: [37 disabled_endpoint] {
+	"error": "disabled_endpoint",
+	"error_code": 37
+}
+- 2026-06-30T04:58:15+0200 [info] real-debrid::rd_cache_api_disabled - Real-Debrid HTTP 403: [37 disabled_endpoint] {
+	"error": "disabled_endpoint",
+	"error_code": 37
+}
+- 2026-06-30T04:58:15+0200 [info] real-debrid::rd_verify_batch_start
+- 2026-06-30T04:58:15+0200 [info] real-debrid::rd_slots_refresh
+- 2026-06-30T04:58:15+0200 [info] real-debrid::rd_active_count_before
+- 2026-06-30T04:58:15+0200 [info] real-debrid::rd_existing_preload_done
+- 2026-06-30T04:58:15+0200 [info] real-debrid::rd_verify_queue_start
+- 2026-06-30T04:58:15+0200 [info] real-debrid::rd_verify_add_start - Johnny English 2003 Johnny English Reborn 2011 (Rowan Atkinson) 4K 2160p HEVC DTS-HD MA 5.1 s24
+- 2026-06-30T04:58:15+0200 [info] real-debrid::rd_verify_queue_submit - Johnny English 2003 Johnny English Reborn 2011 (Rowan Atkinson) 4K 2160p HEVC DTS-HD MA 5.1 s24
+- 2026-06-30T04:58:15+0200 [info] real-debrid::rd_slots_reserve
+- 2026-06-30T04:58:15+0200 [info] real-debrid::rd_verify_add_start - Johnny.English.Duology.2003-2011.1080p.Blu-ray.Remux.VC-1.DTS-HD.MA.5.1-HDRemuX
+- 2026-06-30T04:58:15+0200 [info] real-debrid::rd_slots_reserve
+- 2026-06-30T04:58:15+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-30T04:58:15+0200 [info] real-debrid::rd_verify_queue_submit - Johnny.English.Duology.2003-2011.1080p.Blu-ray.Remux.VC-1.DTS-HD.MA.5.1-HDRemuX
+- 2026-06-30T04:58:15+0200 [debug] real-debrid::rd_endpoint_pace_wait
+- 2026-06-30T04:58:15+0200 [info] real-debrid::rd_verify_add_start - Johnny.English.Reborn.2011.1080p.MKV.AC3.DTS.Eng.NL.Subs
+- 2026-06-30T04:58:15+0200 [info] real-debrid::rd_verify_queue_submit - Johnny.English.Reborn.2011.1080p.MKV.AC3.DTS.Eng.NL.Subs
+- 2026-06-30T04:58:15+0200 [info] real-debrid::rd_slots_reserve
+- 2026-06-30T04:58:15+0200 [info] real-debrid::rd_verify_add_start - Johnny English 2003 Johnny English Reborn 2011 Murder by Death 1976 PADDINGTON 2014 4K 2160p HEVC
+- 2026-06-30T04:58:15+0200 [info] real-debrid::rd_verify_queue_submit - Johnny English 2003 Johnny English Reborn 2011 Murder by Death 1976 PADDINGTON 2014 4K 2160p HEVC
+- 2026-06-30T04:58:15+0200 [info] real-debrid::rd_slots_reserve
+- 2026-06-30T04:58:15+0200 [info] real-debrid::rd_verify_add_start - Johnny.English.Dilogie.German.DTS.DL.1080p.BluRay.VC1.Remux-iNCEPTiON
+- 2026-06-30T04:58:15+0200 [info] real-debrid::rd_verify_queue_submit - Johnny.English.Dilogie.German.DTS.DL.1080p.BluRay.VC1.Remux-iNCEPTiON
+- 2026-06-30T04:58:15+0200 [info] real-debrid::rd_slots_reserve
+- 2026-06-30T04:58:15+0200 [info] real-debrid::rd_verify_add_start - Johnny English Reaktywacja - Johnny English Reborn 2011[TsRip.RMVB-Starky] [Napisy PL] [TnTTorrenT] [www.tnt24.info]
+- 2026-06-30T04:58:15+0200 [info] real-debrid::rd_slots_reserve
+- 2026-06-30T04:58:15+0200 [info] real-debrid::rd_verify_queue_submit - Johnny English Reaktywacja - Johnny English Reborn 2011[TsRip.RMVB-Starky] [Napisy PL] [TnTTorrenT] [www.tnt24.info]
+- 2026-06-30T04:58:15+0200 [info] real-debrid::rd_verify_add_start - Kolekcja Johnny English 2003-2018 [10Bit SDR UPSCALING] [2160p.BluRay.H265.AC3-AS76-FT] [Lektor PL] [Alusia]
+- 2026-06-30T04:58:15+0200 [info] real-debrid::rd_slots_reserve
+- 2026-06-30T04:58:15+0200 [info] real-debrid::rd_verify_queue_submit - Kolekcja Johnny English 2003-2018 [10Bit SDR UPSCALING] [2160p.BluRay.H265.AC3-AS76-FT] [Lektor PL] [Alusia]
+- 2026-06-30T04:58:15+0200 [info] real-debrid::rd_verify_add_start - johnny.-english.-reborn.-2011.1080p.-blu-ray.x-264.ano-xmous
+- 2026-06-30T04:58:15+0200 [info] real-debrid::rd_verify_queue_submit - johnny.-english.-reborn.-2011.1080p.-blu-ray.x-264.ano-xmous
+- 2026-06-30T04:58:15+0200 [info] real-debrid::rd_slots_reserve
+- 2026-06-30T04:58:15+0200 [info] real-debrid::rd_verify_add_start - Johnny.English.Reborn.2011.1080p.BluRay.x264.DTS-HDChina
+- 2026-06-30T04:58:15+0200 [info] real-debrid::rd_verify_queue_submit - Johnny.English.Reborn.2011.1080p.BluRay.x264.DTS-HDChina
+- 2026-06-30T04:58:15+0200 [info] real-debrid::rd_slots_reserve
+- 2026-06-30T04:58:15+0200 [info] real-debrid::rd_verify_add_start - Johnny English Duology 2003 2011 BluRay 720p x264 ac3 jbr
+- 2026-06-30T04:58:15+0200 [info] real-debrid::rd_slots_reserve
+- 2026-06-30T04:58:15+0200 [info] real-debrid::rd_verify_queue_submit - Johnny English Duology 2003 2011 BluRay 720p x264 ac3 jbr
+- 2026-06-30T04:58:15+0200 [info] real-debrid::rd_verify_add_start - Johnny English Reborn - Rowan Atkinson 2011 BluRay 1080p x264 Rip ENG - Dutch Engels Subs
+- 2026-06-30T04:58:15+0200 [info] real-debrid::rd_verify_queue_submit - Johnny English Reborn - Rowan Atkinson 2011 BluRay 1080p x264 Rip ENG - Dutch Engels Subs
+- 2026-06-30T04:58:15+0200 [info] real-debrid::rd_slots_reserve
+- 2026-06-30T04:58:15+0200 [info] real-debrid::rd_verify_add_start - www.UIndex.org    -    Johnny English Reborn 2011 1080p BluRay DTS x264-DON
+- 2026-06-30T04:58:15+0200 [info] real-debrid::rd_verify_queue_submit - www.UIndex.org    -    Johnny English Reborn 2011 1080p BluRay DTS x264-DON
+- 2026-06-30T04:58:15+0200 [info] real-debrid::rd_slots_reserve
+- 2026-06-30T04:58:15+0200 [info] real-debrid::rd_verify_add_start - Johnny English Reborn - Rowan Atkinson 2011 BluRay 1080p x264 Rip ENG - Dutch Engels Subs
+- 2026-06-30T04:58:15+0200 [info] real-debrid::rd_verify_queue_submit - Johnny English Reborn - Rowan Atkinson 2011 BluRay 1080p x264 Rip ENG - Dutch Engels Subs
+- 2026-06-30T04:58:15+0200 [info] real-debrid::rd_slots_reserve
+- 2026-06-30T04:58:15+0200 [info] real-debrid::rd_verify_add_start - Johnny.English.1-3.2003-2018.1080p.mHD.BluRay.x264.Hun-AlexBox
+- 2026-06-30T04:58:15+0200 [info] real-debrid::rd_verify_queue_submit - Johnny.English.1-3.2003-2018.1080p.mHD.BluRay.x264.Hun-AlexBox
+- 2026-06-30T04:58:15+0200 [info] real-debrid::rd_slots_reserve
+- 2026-06-30T04:58:15+0200 [info] real-debrid::rd_verify_add_start - Johnny.English.Reborn.2011.720p.BRRip.x264.AAC-ViSiON
+- 2026-06-30T04:58:15+0200 [info] real-debrid::rd_verify_queue_submit - Johnny.English.Reborn.2011.720p.BRRip.x264.AAC-ViSiON
+- 2026-06-30T04:58:15+0200 [info] real-debrid::rd_slots_reserve
+- 2026-06-30T04:58:15+0200 [info] real-debrid::rd_verify_add_start - Johnny English & Johnny English Reborn (2003-2011) BDRip 1080p
+- 2026-06-30T04:58:15+0200 [info] real-debrid::rd_verify_queue_submit - Johnny English & Johnny English Reborn (2003-2011) BDRip 1080p
+- 2026-06-30T04:58:15+0200 [info] real-debrid::rd_slots_reserve
+- 2026-06-30T04:58:15+0200 [info] real-debrid::rd_verify_add_start - www.UIndex.org    -    Johnny English Reborn 2011 1080p BluRay x264-OFT
+- 2026-06-30T04:58:15+0200 [info] real-debrid::rd_verify_queue_submit - www.UIndex.org    -    Johnny English Reborn 2011 1080p BluRay x264-OFT
+- 2026-06-30T04:58:15+0200 [info] real-debrid::rd_slots_reserve
+- 2026-06-30T04:58:15+0200 [info] real-debrid::rd_verify_add_start - Johnny.English.Duology.1080p.BluRay.H264.AAC-RARBG
+- 2026-06-30T04:58:15+0200 [info] real-debrid::rd_verify_queue_submit - Johnny.English.Duology.1080p.BluRay.H264.AAC-RARBG
+- 2026-06-30T04:58:15+0200 [info] real-debrid::rd_slots_reserve
+- 2026-06-30T04:58:15+0200 [info] real-debrid::rd_verify_add_start - Johnny.English.Trilogy.2003-2018.1080p.BluRay.x264.AAC.5.1-ZiTO
+- 2026-06-30T04:58:15+0200 [info] real-debrid::rd_verify_queue_submit - Johnny.English.Trilogy.2003-2018.1080p.BluRay.x264.AAC.5.1-ZiTO
+- 2026-06-30T04:58:15+0200 [info] real-debrid::rd_slots_reserve
+- 2026-06-30T04:58:15+0200 [info] real-debrid::rd_verify_add_start - Johnny.English.Reborn.2011.1080p.BluRay.x264.anoXmous
+- 2026-06-30T04:58:15+0200 [info] real-debrid::rd_verify_queue_submit - Johnny.English.Reborn.2011.1080p.BluRay.x264.anoXmous
+- 2026-06-30T04:58:15+0200 [info] real-debrid::rd_slots_reserve
+- 2026-06-30T04:58:15+0200 [info] real-debrid::rd_verify_add_start - Johnny.English.Reborn.2011.1080p.BluRay.x264.anoXmous
+- 2026-06-30T04:58:15+0200 [info] real-debrid::rd_verify_queue_submit - Johnny.English.Reborn.2011.1080p.BluRay.x264.anoXmous
+- 2026-06-30T04:58:15+0200 [info] real-debrid::rd_slots_reserve
+- 2026-06-30T04:58:15+0200 [info] real-debrid::rd_verify_add_start - O.Retorno.de.Johnny.English.2011.1080p.BluRay.6ch.x264.DUAL
+- 2026-06-30T04:58:15+0200 [info] real-debrid::rd_verify_queue_submit - O.Retorno.de.Johnny.English.2011.1080p.BluRay.6ch.x264.DUAL
+- 2026-06-30T04:58:15+0200 [info] real-debrid::rd_slots_reserve
+- 2026-06-30T04:58:15+0200 [info] real-debrid::rd_verify_add_start - Johnny English 2 Reborn 2011 PROPER 720p BRRIP x264 AC3-26K
+- 2026-06-30T04:58:15+0200 [info] real-debrid::rd_verify_queue_submit - Johnny English 2 Reborn 2011 PROPER 720p BRRIP x264 AC3-26K
+- 2026-06-30T04:58:15+0200 [info] real-debrid::rd_slots_reserve
+- 2026-06-30T04:58:15+0200 [info] real-debrid::rd_verify_add_start - Johnny English-2-Reborn-(2011)-Brrip 720p Dual Audio{Hindi-Eng} By hemal77
+- 2026-06-30T04:58:15+0200 [info] real-debrid::rd_verify_queue_submit - Johnny English-2-Reborn-(2011)-Brrip 720p Dual Audio{Hindi-Eng} By hemal77
+- 2026-06-30T04:58:15+0200 [info] real-debrid::rd_slots_reserve
+- 2026-06-30T04:58:15+0200 [info] real-debrid::rd_verify_add_start - O Retorno De Johnny English (2011) BDrip 720p Dublado
+- 2026-06-30T04:58:15+0200 [info] real-debrid::rd_verify_queue_submit - O Retorno De Johnny English (2011) BDrip 720p Dublado
+- 2026-06-30T04:58:15+0200 [info] real-debrid::rd_slots_reserve
+- 2026-06-30T04:58:15+0200 [info] real-debrid::rd_verify_add_start - Johnny English Reborn (2011) 720p BrRip x264 YIFY
+- 2026-06-30T04:58:15+0200 [info] real-debrid::rd_verify_queue_submit - Johnny English Reborn (2011) 720p BrRip x264 YIFY
+- 2026-06-30T04:58:15+0200 [info] real-debrid::rd_slots_reserve
+- 2026-06-30T04:58:15+0200 [info] real-debrid::rd_verify_add_start - Johnny English & Johnny English Reborn (2003-2011) BDRip 1080p
+- 2026-06-30T04:58:15+0200 [info] real-debrid::rd_verify_queue_submit - Johnny English & Johnny English Reborn (2003-2011) BDRip 1080p
+- 2026-06-30T04:58:15+0200 [info] real-debrid::rd_slots_reserve
+- 2026-06-30T04:58:15+0200 [info] real-debrid::rd_verify_add_start - Johnny English Reborn [2011] - BDRip - 1080p - [Eng-Hindi]-[AC3 - 6CH]-{{JaY S Xclusive}}
+- 2026-06-30T04:58:15+0200 [info] real-debrid::rd_verify_queue_submit - Johnny English Reborn [2011] - BDRip - 1080p - [Eng-Hindi]-[AC3 - 6CH]-{{JaY S Xclusive}}
+- 2026-06-30T04:58:15+0200 [info] real-debrid::rd_slots_reserve
+- 2026-06-30T04:58:15+0200 [info] real-debrid::rd_verify_add_start - Johnny.English.Reborn.2011.x264.DTS-WAF
+- 2026-06-30T04:58:15+0200 [info] real-debrid::rd_verify_queue_submit - Johnny.English.Reborn.2011.x264.DTS-WAF
+- 2026-06-30T04:58:15+0200 [info] real-debrid::rd_slots_reserve
+- 2026-06-30T04:58:15+0200 [info] real-debrid::rd_verify_add_start - Johnny English Returns (2011) [BluRay 720p X264 MKV][AC3 5.1 Castellano][www.atomixHQ.ONE]
+- 2026-06-30T04:58:15+0200 [info] real-debrid::rd_verify_queue_submit - Johnny English Returns (2011) [BluRay 720p X264 MKV][AC3 5.1 Castellano][www.atomixHQ.ONE]
+- 2026-06-30T04:58:15+0200 [info] real-debrid::rd_slots_reserve
+- 2026-06-30T04:58:15+0200 [info] real-debrid::rd_verify_add_start - Johnny English Reborn 2011 BluRay 720p AC3 x264-3Li
+- 2026-06-30T04:58:15+0200 [info] real-debrid::rd_slots_reserve
+- 2026-06-30T04:58:15+0200 [info] real-debrid::rd_verify_queue_submit - Johnny English Reborn 2011 BluRay 720p AC3 x264-3Li
+- 2026-06-30T04:58:15+0200 [info] real-debrid::rd_verify_add_start - O Retorno de Johnny English 2011 (720p) WWW.LAPUMiAFiLMES.COM
+- 2026-06-30T04:58:15+0200 [info] real-debrid::rd_verify_queue_submit - O Retorno de Johnny English 2011 (720p) WWW.LAPUMiAFiLMES.COM
+- 2026-06-30T04:58:15+0200 [info] real-debrid::rd_slots_reserve
+- 2026-06-30T04:58:15+0200 [info] real-debrid::rd_verify_add_start - Johnny English Duology (2003 2011) BluRay Rip 720p Dual Audio
+- 2026-06-30T04:58:15+0200 [info] real-debrid::rd_slots_reserve
+- 2026-06-30T04:58:15+0200 [info] real-debrid::rd_verify_queue_submit - Johnny English Duology (2003 2011) BluRay Rip 720p Dual Audio
+- 2026-06-30T04:58:15+0200 [info] real-debrid::rd_verify_add_start - O.Retorno.de.Johnny.English.2011.1080p.BluRay.x264-WEST.DUAL-BKZ
+- 2026-06-30T04:58:15+0200 [info] real-debrid::rd_verify_queue_submit - O.Retorno.de.Johnny.English.2011.1080p.BluRay.x264-WEST.DUAL-BKZ
+- 2026-06-30T04:58:15+0200 [info] real-debrid::rd_slots_reserve
+- 2026-06-30T04:58:15+0200 [info] real-debrid::rd_verify_add_start - Johnny English Reborn 2011 BluRay 2160p Ai-Enhanced_prob4 HEVC DTS-HD MA 5.1 EN.PT.CZ.HU.ES.PL.RU.TH.TU Subtitles
+- 2026-06-30T04:58:15+0200 [info] real-debrid::rd_slots_reserve
+- 2026-06-30T04:58:15+0200 [info] real-debrid::rd_verify_queue_submit - Johnny English Reborn 2011 BluRay 2160p Ai-Enhanced_prob4 HEVC DTS-HD MA 5.1 EN.PT.CZ.HU.ES.PL.RU.TH.TU Subtitles
+- 2026-06-30T04:58:15+0200 [info] real-debrid::rd_verify_add_start - Johnny.English.MOViE.PACK.SLOSubs.1080p.BluRay.x264-INFIRE
+- 2026-06-30T04:58:15+0200 [info] real-debrid::rd_slots_reserve
+- 2026-06-30T04:58:15+0200 [info] real-debrid::rd_verify_queue_submit - Johnny.English.MOViE.PACK.SLOSubs.1080p.BluRay.x264-INFIRE
+- 2026-06-30T04:58:15+0200 [info] real-debrid::rd_verify_add_start - johnny-english-reborn-2011
+- 2026-06-30T04:58:15+0200 [info] real-debrid::rd_verify_queue_submit - johnny-english-reborn-2011
+- 2026-06-30T04:58:15+0200 [info] real-debrid::rd_slots_reserve
+- 2026-06-30T04:58:15+0200 [info] real-debrid::rd_verify_add_start - Johnny.English.Reborn.2011.1080p.BluRay.x264.DTS-WiKi
+- 2026-06-30T04:58:15+0200 [info] real-debrid::rd_verify_queue_submit - Johnny.English.Reborn.2011.1080p.BluRay.x264.DTS-WiKi
+- 2026-06-30T04:58:15+0200 [info] real-debrid::rd_slots_reserve
+- 2026-06-30T04:58:15+0200 [info] real-debrid::rd_verify_add_start - O Retorno de Johnny English 2011 (1080p) WWW.LAPUMiAFiLMES.COM.1.torrent.loaded
+- 2026-06-30T04:58:15+0200 [info] real-debrid::rd_verify_queue_submit - O Retorno de Johnny English 2011 (1080p) WWW.LAPUMiAFiLMES.COM.1.torrent.loaded
+- 2026-06-30T04:58:15+0200 [info] real-debrid::rd_slots_reserve
+- 2026-06-30T04:58:15+0200 [info] real-debrid::rd_verify_add_start - Johnny English Reborn (2011)(Hindi-English)-19o21996
+- 2026-06-30T04:58:15+0200 [info] real-debrid::rd_verify_queue_submit - Johnny English Reborn (2011)(Hindi-English)-19o21996
+- 2026-06-30T04:58:15+0200 [info] real-debrid::rd_slots_reserve
+- 2026-06-30T04:58:15+0200 [info] real-debrid::rd_verify_add_start - O Retorno de Johnny English (2011) 5.1 BluRay x264 Dual Áudio 1080p By-LuanHarper
+- 2026-06-30T04:58:15+0200 [info] real-debrid::rd_verify_queue_submit - O Retorno de Johnny English (2011) 5.1 BluRay x264 Dual Áudio 1080p By-LuanHarper
+- 2026-06-30T04:58:15+0200 [info] real-debrid::rd_verify_add_start - Johnny English Reborn (2011) [Rowan Atkinson] 1080p BluRay H264 DolbyD 5.1   nickarad
+- 2026-06-30T04:58:15+0200 [info] real-debrid::rd_verify_queue_submit - Johnny English Reborn (2011) [Rowan Atkinson] 1080p BluRay H264 DolbyD 5.1   nickarad
+- 2026-06-30T04:58:15+0200 [info] real-debrid::rd_slots_reserve
+- 2026-06-30T04:58:15+0200 [info] real-debrid::rd_verify_add_start - O Retorno de Johnny English 2011 (1080p) WWW.LAPUMiAFiLMES.COM
+- 2026-06-30T04:58:15+0200 [info] real-debrid::rd_verify_queue_submit - O Retorno de Johnny English 2011 (1080p) WWW.LAPUMiAFiLMES.COM
+- 2026-06-30T04:58:15+0200 [info] real-debrid::rd_slots_reserve
+- 2026-06-30T04:58:15+0200 [info] real-debrid::rd_verify_add_start - Johnny English Reborn 2011 1080p BDRip x264 AAC-26K
+- 2026-06-30T04:58:15+0200 [info] real-debrid::rd_verify_queue_submit - Johnny English Reborn 2011 1080p BDRip x264 AAC-26K
+- 2026-06-30T04:58:15+0200 [info] real-debrid::rd_slots_reserve
+- 2026-06-30T04:58:15+0200 [info] real-debrid::rd_verify_add_start - Johnny English Reborn (2011) -niCkol
+- 2026-06-30T04:58:15+0200 [info] real-debrid::rd_verify_queue_submit - Johnny English Reborn (2011) -niCkol
+- 2026-06-30T04:58:15+0200 [info] real-debrid::rd_slots_reserve
+- 2026-06-30T04:58:15+0200 [info] real-debrid::rd_verify_add_start - Johnny English Reborn 2011 1080p BDRip x264 AAC-26K
+- 2026-06-30T04:58:15+0200 [info] real-debrid::rd_verify_queue_submit - Johnny English Reborn 2011 1080p BDRip x264 AAC-26K
+- 2026-06-30T04:58:15+0200 [info] real-debrid::rd_slots_reserve
+- 2026-06-30T04:58:15+0200 [info] real-debrid::rd_verify_add_start - [US Funny] Johnny English Reborn 2011  [720p BRRip][HGBit.com][Sub Eng Vie]
+- 2026-06-30T04:58:15+0200 [info] real-debrid::rd_verify_queue_submit - [US Funny] Johnny English Reborn 2011  [720p BRRip][HGBit.com][Sub Eng Vie]
+- 2026-06-30T04:58:15+0200 [info] real-debrid::rd_slots_reserve
+- 2026-06-30T04:58:15+0200 [info] real-debrid::rd_verify_add_start - O.Retorno.de.Johnny.English.2011.720p.BluRay.x264-HAiDEAF.DUAL-BKZ
+- 2026-06-30T04:58:15+0200 [info] real-debrid::rd_verify_queue_submit - O.Retorno.de.Johnny.English.2011.720p.BluRay.x264-HAiDEAF.DUAL-BKZ
+- 2026-06-30T04:58:15+0200 [info] real-debrid::rd_slots_reserve
+- 2026-06-30T04:58:15+0200 [info] real-debrid::rd_verify_add_start - Johnny.English.Reborn.2011.720p.BRRip.XviD.AC3-PRESTiGE
+- 2026-06-30T04:58:15+0200 [info] real-debrid::rd_slots_reserve
+- 2026-06-30T04:58:15+0200 [info] real-debrid::rd_verify_queue_submit - Johnny.English.Reborn.2011.720p.BRRip.XviD.AC3-PRESTiGE
+- 2026-06-30T04:58:15+0200 [info] real-debrid::rd_slots_reserve
+- 2026-06-30T04:58:15+0200 [info] real-debrid::rd_verify_add_start - Agent.Johnny.English.2011.Ukr.D.HDRip (by sstonecold).avi
+- 2026-06-30T04:58:15+0200 [info] real-debrid::rd_slots_reserve
+- 2026-06-30T04:58:15+0200 [info] real-debrid::rd_verify_queue_submit - Agent.Johnny.English.2011.Ukr.D.HDRip (by sstonecold).avi
+- 2026-06-30T04:58:15+0200 [info] real-debrid::rd_verify_add_start - Johnny.English.Reborn.2011.MULTi.720p.BluRay.x264-presa
+- 2026-06-30T04:58:15+0200 [info] real-debrid::rd_verify_queue_submit - Johnny.English.Reborn.2011.MULTi.720p.BluRay.x264-presa
+- 2026-06-30T04:58:15+0200 [info] real-debrid::rd_slots_reserve
+- 2026-06-30T04:58:15+0200 [info] real-debrid::rd_verify_add_start - Johnny English 2011 Reborn BDRip XviD AbSurdiTy
+- 2026-06-30T04:58:15+0200 [info] real-debrid::rd_slots_reserve
+- 2026-06-30T04:58:15+0200 [info] real-debrid::rd_verify_queue_submit - Johnny English 2011 Reborn BDRip XviD AbSurdiTy
+- 2026-06-30T04:58:15+0200 [info] real-debrid::rd_verify_add_start - Johnny.English.Reborn.2011.DVD9.PAL.Retail.DD5.1.Multi.DVDR
+- 2026-06-30T04:58:15+0200 [info] real-debrid::rd_verify_queue_submit - Johnny.English.Reborn.2011.DVD9.PAL.Retail.DD5.1.Multi.DVDR
+- 2026-06-30T04:58:15+0200 [info] real-debrid::rd_slots_reserve
+- 2026-06-30T04:58:15+0200 [info] real-debrid::rd_verify_add_start - Johnny.English.se.vraci.2011.NTSC.CUSTOM.DVDR.CZ-CiBULATOR679
+- 2026-06-30T04:58:15+0200 [info] real-debrid::rd_slots_reserve
+- 2026-06-30T04:58:15+0200 [info] real-debrid::rd_verify_queue_submit - Johnny.English.se.vraci.2011.NTSC.CUSTOM.DVDR.CZ-CiBULATOR679
+- 2026-06-30T04:58:15+0200 [info] real-debrid::rd_verify_add_start - Johnny.English.Reborn.2011.PAL.Retail.Rental.DD5.1.MultiSubs
+- 2026-06-30T04:58:15+0200 [info] real-debrid::rd_slots_reserve
+- 2026-06-30T04:58:15+0200 [info] real-debrid::rd_verify_queue_submit - Johnny.English.Reborn.2011.PAL.Retail.Rental.DD5.1.MultiSubs
+- 2026-06-30T04:58:15+0200 [info] real-debrid::rd_verify_add_start - Johnny.English.Reborn.2011.DVDRip.XviD-RiZAL
+- 2026-06-30T04:58:15+0200 [info] real-debrid::rd_slots_reserve
+- 2026-06-30T04:58:15+0200 [info] real-debrid::rd_verify_queue_submit - Johnny.English.Reborn.2011.DVDRip.XviD-RiZAL
+- 2026-06-30T04:58:15+0200 [info] real-debrid::rd_verify_add_start - Johnny English- Duology
+- 2026-06-30T04:58:15+0200 [info] real-debrid::rd_verify_queue_submit - Johnny English- Duology
+- 2026-06-30T04:58:15+0200 [info] real-debrid::rd_slots_reserve
+- 2026-06-30T04:58:15+0200 [info] real-debrid::rd_verify_add_start - Johnny English - La rinascita (2011).ita.eng.sub.ita.iCV-MIRCrew
+- 2026-06-30T04:58:15+0200 [info] real-debrid::rd_slots_reserve
+- 2026-06-30T04:58:15+0200 [info] real-debrid::rd_verify_queue_submit - Johnny English - La rinascita (2011).ita.eng.sub.ita.iCV-MIRCrew
+- 2026-06-30T04:58:15+0200 [info] real-debrid::rd_verify_add_start - Johnny.English.2.Reborn.2011.720p.BRRIP.x264.AC3
+- 2026-06-30T04:58:15+0200 [info] real-debrid::rd_slots_reserve
+- 2026-06-30T04:58:15+0200 [info] real-debrid::rd_verify_queue_submit - Johnny.English.2.Reborn.2011.720p.BRRIP.x264.AC3
+- 2026-06-30T04:58:15+0200 [info] real-debrid::rd_verify_add_start - Johnny English
+- 2026-06-30T04:58:15+0200 [info] real-debrid::rd_verify_queue_submit - Johnny English
+- 2026-06-30T04:58:15+0200 [info] real-debrid::rd_slots_reserve
+- 2026-06-30T04:58:16+0200 [info] real-debrid::rd_verify_added
+- 2026-06-30T04:58:16+0200 [debug] real-debrid::rd_verify_poll - Johnny English 2003 Johnny English Reborn 2011 (Rowan Atkinson) 4K 2160p HEVC DTS-HD MA 5.1 s24
+- 2026-06-30T04:58:16+0200 [info] real-debrid::rd_fast_discard - magnet_error
+- 2026-06-30T04:58:16+0200 [info] real-debrid::rd_fast_discard_reason - magnet_error
+- 2026-06-30T04:58:16+0200 [info] real-debrid::rd_fast_discard_delete - magnet_error
+- 2026-06-30T04:58:16+0200 [info] real-debrid::rd_delete_torrent
+- 2026-06-30T04:58:16+0200 [info] real-debrid::rd_slots_release
+- 2026-06-30T04:58:16+0200 [info] real-debrid::rd_verify_queue_done_item - Johnny English 2003 Johnny English Reborn 2011 (Rowan Atkinson) 4K 2160p HEVC DTS-HD MA 5.1 s24
+- 2026-06-30T04:58:17+0200 [info] real-debrid::rd_verify_added
+- 2026-06-30T04:58:17+0200 [debug] real-debrid::rd_verify_poll - Johnny English
+- 2026-06-30T04:58:17+0200 [info] real-debrid::rd_delete_torrent
+- 2026-06-30T04:58:17+0200 [info] real-debrid::rd_slots_release
+- 2026-06-30T04:58:17+0200 [info] real-debrid::rd_verify_not_instant - Johnny English
+- 2026-06-30T04:58:17+0200 [info] real-debrid::rd_verify_queue_done_item - Johnny English
+- 2026-06-30T04:58:17+0200 [info] real-debrid::rd_verify_added
+- 2026-06-30T04:58:18+0200 [debug] real-debrid::rd_verify_poll - Johnny English Reborn (2011) [Rowan Atkinson] 1080p BluRay H264 DolbyD 5.1   nickarad
+- 2026-06-30T04:58:18+0200 [info] real-debrid::rd_verify_select_files
+- 2026-06-30T04:58:18+0200 [debug] real-debrid::rd_verify_post_select_poll - Johnny English Reborn (2011) [Rowan Atkinson] 1080p BluRay H264 DolbyD 5.1   nickarad
+- 2026-06-30T04:58:18+0200 [info] real-debrid::rd_verify_ok - Johnny English Reborn (2011) [Rowan Atkinson] 1080p BluRay H264 DolbyD 5.1   nickarad  ==>  /Johnny English Reborn (2011) 1080p BluRay H264 DolbyD 5.1 + nickarad.mp4
+- 2026-06-30T04:58:18+0200 [info] real-debrid::rd_verify_queue_done_item - Johnny English Reborn (2011) [Rowan Atkinson] 1080p BluRay H264 DolbyD 5.1   nickarad  ==>  /Johnny English Reborn (2011
+- 2026-06-30T04:58:18+0200 [info] real-debrid::rd_verify_added
+- 2026-06-30T04:58:19+0200 [debug] real-debrid::rd_verify_poll - Johnny English Reborn - Rowan Atkinson 2011 BluRay 1080p x264 Rip ENG - Dutch Engels Subs
+- 2026-06-30T04:58:19+0200 [info] real-debrid::rd_verify_select_files
+- 2026-06-30T04:58:19+0200 [debug] real-debrid::rd_verify_post_select_poll - Johnny English Reborn - Rowan Atkinson 2011 BluRay 1080p x264 Rip ENG - Dutch Engels Subs
+- 2026-06-30T04:58:19+0200 [info] real-debrid::rd_fast_discard - zero_progress_post_select
+- 2026-06-30T04:58:19+0200 [info] real-debrid::rd_fast_discard_reason - zero_progress_post_select
+- 2026-06-30T04:58:19+0200 [info] real-debrid::rd_fast_discard_delete - zero_progress_post_select
+- 2026-06-30T04:58:19+0200 [info] real-debrid::rd_zero_progress_fast_delete - Johnny English Reborn - Rowan Atkinson 2011 BluRay 1080p x264 Rip ENG - Dutch Engels Subs
+- 2026-06-30T04:58:20+0200 [info] real-debrid::rd_verify_added
+- 2026-06-30T04:58:20+0200 [info] real-debrid::rd_delete_torrent
+- 2026-06-30T04:58:20+0200 [info] real-debrid::rd_slots_release
+- 2026-06-30T04:58:20+0200 [info] real-debrid::rd_verify_queue_done_item - Johnny English Reborn - Rowan Atkinson 2011 BluRay 1080p x264 Rip ENG - Dutch Engels Subs
+- 2026-06-30T04:58:20+0200 [debug] real-debrid::rd_verify_poll - Johnny.English.Reborn.2011.720p.BRRip.XviD.AC3-PRESTiGE
+- 2026-06-30T04:58:20+0200 [debug] real-debrid::rd_endpoint_pace_wait
+- 2026-06-30T04:58:20+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-30T04:58:20+0200 [debug] real-debrid::rd_endpoint_pace_wait
+- 2026-06-30T04:58:20+0200 [info] real-debrid::rd_verify_added
+- 2026-06-30T04:58:20+0200 [info] real-debrid::rd_delete_torrent
+- 2026-06-30T04:58:20+0200 [info] real-debrid::rd_slots_release
+- 2026-06-30T04:58:20+0200 [info] real-debrid::rd_verify_not_instant - Johnny.English.Reborn.2011.720p.BRRip.XviD.AC3-PRESTiGE
+- 2026-06-30T04:58:20+0200 [info] real-debrid::rd_verify_queue_done_item - Johnny.English.Reborn.2011.720p.BRRip.XviD.AC3-PRESTiGE
+- 2026-06-30T04:58:21+0200 [debug] real-debrid::rd_verify_poll - Johnny English 2 Reborn 2011 PROPER 720p BRRIP x264 AC3-26K
+- 2026-06-30T04:58:21+0200 [info] real-debrid::rd_verify_select_files
+- 2026-06-30T04:58:21+0200 [info] real-debrid::rd_verify_added
+- 2026-06-30T04:58:21+0200 [debug] real-debrid::rd_verify_post_select_poll - Johnny English 2 Reborn 2011 PROPER 720p BRRIP x264 AC3-26K
+- 2026-06-30T04:58:21+0200 [info] real-debrid::rd_fast_discard - zero_progress_post_select
+- 2026-06-30T04:58:21+0200 [info] real-debrid::rd_fast_discard_reason - zero_progress_post_select
+- 2026-06-30T04:58:21+0200 [info] real-debrid::rd_fast_discard_delete - zero_progress_post_select
+- 2026-06-30T04:58:21+0200 [info] real-debrid::rd_zero_progress_fast_delete - Johnny English 2 Reborn 2011 PROPER 720p BRRIP x264 AC3-26K
+- 2026-06-30T04:58:22+0200 [debug] real-debrid::rd_verify_poll - O Retorno de Johnny English 2011 (720p) WWW.LAPUMiAFiLMES.COM
+- 2026-06-30T04:58:22+0200 [info] real-debrid::rd_delete_torrent
+- 2026-06-30T04:58:22+0200 [info] real-debrid::rd_slots_release
+- 2026-06-30T04:58:22+0200 [info] real-debrid::rd_verify_queue_done_item - Johnny English 2 Reborn 2011 PROPER 720p BRRIP x264 AC3-26K
+- 2026-06-30T04:58:23+0200 [info] real-debrid::rd_verify_select_files
+- 2026-06-30T04:58:23+0200 [debug] real-debrid::rd_verify_post_select_poll - O Retorno de Johnny English 2011 (720p) WWW.LAPUMiAFiLMES.COM
+- 2026-06-30T04:58:23+0200 [info] real-debrid::rd_fast_discard - zero_progress_post_select
+- 2026-06-30T04:58:23+0200 [info] real-debrid::rd_fast_discard_reason - zero_progress_post_select
+- 2026-06-30T04:58:23+0200 [info] real-debrid::rd_fast_discard_delete - zero_progress_post_select
+- 2026-06-30T04:58:23+0200 [info] real-debrid::rd_zero_progress_fast_delete - O Retorno de Johnny English 2011 (720p) WWW.LAPUMiAFiLMES.COM
+- 2026-06-30T04:58:23+0200 [info] real-debrid::rd_delete_torrent
+- 2026-06-30T04:58:23+0200 [info] real-debrid::rd_slots_release
+- 2026-06-30T04:58:23+0200 [info] real-debrid::rd_verify_queue_done_item - O Retorno de Johnny English 2011 (720p) WWW.LAPUMiAFiLMES.COM
+- 2026-06-30T04:58:24+0200 [info] real-debrid::rd_verify_added
+- 2026-06-30T04:58:24+0200 [debug] real-debrid::rd_verify_poll - Johnny English - La rinascita (2011).ita.eng.sub.ita.iCV-MIRCrew
+- 2026-06-30T04:58:24+0200 [info] real-debrid::rd_api_http_error - infringing_file
+- 2026-06-30T04:58:24+0200 [info] real-debrid::rd_call_terminal_error - infringing_file
+- 2026-06-30T04:58:24+0200 [info] real-debrid::rd_verify_infringing - Johnny English Reborn 2011 1080p BDRip x264 AAC-26K
+- 2026-06-30T04:58:24+0200 [info] real-debrid::rd_verify_queue_done_item - Johnny English Reborn 2011 1080p BDRip x264 AAC-26K
+- 2026-06-30T04:58:25+0200 [info] real-debrid::rd_verify_select_files
+- 2026-06-30T04:58:25+0200 [debug] real-debrid::rd_verify_post_select_poll - Johnny English - La rinascita (2011).ita.eng.sub.ita.iCV-MIRCrew
+- 2026-06-30T04:58:25+0200 [info] real-debrid::rd_fast_discard - zero_progress_post_select
+- 2026-06-30T04:58:25+0200 [info] real-debrid::rd_fast_discard_reason - zero_progress_post_select
+- 2026-06-30T04:58:25+0200 [info] real-debrid::rd_fast_discard_delete - zero_progress_post_select
+- 2026-06-30T04:58:25+0200 [info] real-debrid::rd_zero_progress_fast_delete - Johnny English - La rinascita (2011).ita.eng.sub.ita.iCV-MIRCrew
+- 2026-06-30T04:58:25+0200 [info] real-debrid::rd_verify_added
+- 2026-06-30T04:58:25+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-30T04:58:25+0200 [info] real-debrid::rd_delete_torrent
+- 2026-06-30T04:58:25+0200 [info] real-debrid::rd_slots_release
+- 2026-06-30T04:58:25+0200 [info] real-debrid::rd_verify_queue_done_item - Johnny English - La rinascita (2011).ita.eng.sub.ita.iCV-MIRCrew
+- 2026-06-30T04:58:25+0200 [debug] real-debrid::rd_verify_poll - Johnny English Returns (2011) [BluRay 720p X264 MKV][AC3 5.1 Castellano][www.atomixHQ.ONE]
+- 2026-06-30T04:58:25+0200 [info] real-debrid::rd_verify_pack_skip - Johnny English Returns (2011) [BluRay 720p X264 MKV][AC3 5.1 Castellano][www.atomixHQ.ONE]
+- 2026-06-30T04:58:25+0200 [info] real-debrid::rd_fast_discard - waiting_files_no_match
+- 2026-06-30T04:58:25+0200 [debug] real-debrid::rd_endpoint_pace_wait
+- 2026-06-30T04:58:25+0200 [info] real-debrid::rd_fast_discard_reason - waiting_files_no_match
+- 2026-06-30T04:58:25+0200 [info] real-debrid::rd_fast_discard_delete - waiting_files_no_match
+- 2026-06-30T04:58:25+0200 [debug] real-debrid::rd_waiting_files_no_match_fast_delete - Johnny English Returns (2011) [BluRay 720p X264 MKV][AC3 5.1 Castellano][www.atomixHQ.ONE]
+- 2026-06-30T04:58:25+0200 [debug] real-debrid::rd_endpoint_pace_wait
+- 2026-06-30T04:58:26+0200 [info] real-debrid::rd_delete_torrent
+- 2026-06-30T04:58:26+0200 [info] real-debrid::rd_slots_release
+- 2026-06-30T04:58:26+0200 [info] real-debrid::rd_verify_queue_done_item - Johnny English Returns (2011) [BluRay 720p X264 MKV][AC3 5.1 Castellano][www.atomixHQ.ONE]
+- 2026-06-30T04:58:26+0200 [info] real-debrid::rd_verify_added
+- 2026-06-30T04:58:26+0200 [debug] real-debrid::rd_verify_poll - Johnny.English.Reborn.2011.720p.BRRip.x264.AAC-ViSiON
+- 2026-06-30T04:58:27+0200 [info] real-debrid::rd_verify_select_files
+- 2026-06-30T04:58:27+0200 [debug] real-debrid::rd_verify_post_select_poll - Johnny.English.Reborn.2011.720p.BRRip.x264.AAC-ViSiON
+- 2026-06-30T04:58:27+0200 [info] real-debrid::rd_fast_discard - zero_progress_post_select
+- 2026-06-30T04:58:27+0200 [info] real-debrid::rd_fast_discard_reason - zero_progress_post_select
+- 2026-06-30T04:58:27+0200 [info] real-debrid::rd_fast_discard_delete - zero_progress_post_select
+- 2026-06-30T04:58:27+0200 [info] real-debrid::rd_zero_progress_fast_delete - Johnny.English.Reborn.2011.720p.BRRip.x264.AAC-ViSiON
+- 2026-06-30T04:58:27+0200 [info] real-debrid::rd_api_http_error - infringing_file
+- 2026-06-30T04:58:27+0200 [info] real-debrid::rd_call_terminal_error - infringing_file
+- 2026-06-30T04:58:27+0200 [info] real-debrid::rd_verify_infringing - Johnny English Reborn [2011] - BDRip - 1080p - [Eng-Hindi]-[AC3 - 6CH]-{{JaY S Xclusive}}
+- 2026-06-30T04:58:27+0200 [info] real-debrid::rd_verify_queue_done_item - Johnny English Reborn [2011] - BDRip - 1080p - [Eng-Hindi]-[AC3 - 6CH]-{{JaY S Xclusive}}
+- 2026-06-30T04:58:27+0200 [info] real-debrid::rd_delete_torrent
+- 2026-06-30T04:58:27+0200 [info] real-debrid::rd_slots_release
+- 2026-06-30T04:58:27+0200 [info] real-debrid::rd_verify_queue_done_item - Johnny.English.Reborn.2011.720p.BRRip.x264.AAC-ViSiON
+- 2026-06-30T04:58:28+0200 [info] real-debrid::rd_api_http_error - infringing_file
+- 2026-06-30T04:58:28+0200 [info] real-debrid::rd_call_terminal_error - infringing_file
+- 2026-06-30T04:58:28+0200 [info] real-debrid::rd_verify_infringing - Johnny English & Johnny English Reborn (2003-2011) BDRip 1080p
+- 2026-06-30T04:58:28+0200 [info] real-debrid::rd_verify_queue_done_item - Johnny English & Johnny English Reborn (2003-2011) BDRip 1080p
+- 2026-06-30T04:58:30+0200 [info] real-debrid::rd_verify_added
+- 2026-06-30T04:58:30+0200 [debug] real-debrid::rd_endpoint_pace_wait
+- 2026-06-30T04:58:31+0200 [info] real-debrid::rd_verify_added
+- 2026-06-30T04:58:31+0200 [debug] real-debrid::rd_verify_poll - Johnny.English.Duology.1080p.BluRay.H264.AAC-RARBG
+- 2026-06-30T04:58:31+0200 [debug] real-debrid::rd_verify_poll - O.Retorno.de.Johnny.English.2011.1080p.BluRay.6ch.x264.DUAL
+- 2026-06-30T04:58:31+0200 [debug] real-debrid::rd_endpoint_pace_wait
+- 2026-06-30T04:58:31+0200 [info] real-debrid::rd_verify_select_files
+- 2026-06-30T04:58:31+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-30T04:58:32+0200 [info] real-debrid::rd_verify_select_files
+- 2026-06-30T04:58:32+0200 [debug] real-debrid::rd_verify_post_select_poll - Johnny.English.Duology.1080p.BluRay.H264.AAC-RARBG
+- 2026-06-30T04:58:32+0200 [info] real-debrid::rd_fast_discard - zero_progress_post_select
+- 2026-06-30T04:58:32+0200 [info] real-debrid::rd_fast_discard_reason - zero_progress_post_select
+- 2026-06-30T04:58:32+0200 [info] real-debrid::rd_fast_discard_delete - zero_progress_post_select
+- 2026-06-30T04:58:32+0200 [info] real-debrid::rd_zero_progress_fast_delete - Johnny.English.Duology.1080p.BluRay.H264.AAC-RARBG
+- 2026-06-30T04:58:32+0200 [info] real-debrid::rd_delete_torrent
+- 2026-06-30T04:58:32+0200 [info] real-debrid::rd_slots_release
+- 2026-06-30T04:58:32+0200 [info] real-debrid::rd_verify_queue_done_item - Johnny.English.Duology.1080p.BluRay.H264.AAC-RARBG
+- 2026-06-30T04:58:33+0200 [debug] real-debrid::rd_verify_post_select_poll - O.Retorno.de.Johnny.English.2011.1080p.BluRay.6ch.x264.DUAL
+- 2026-06-30T04:58:33+0200 [info] real-debrid::rd_fast_discard - zero_progress_post_select
+- 2026-06-30T04:58:33+0200 [info] real-debrid::rd_fast_discard_reason - zero_progress_post_select
+- 2026-06-30T04:58:33+0200 [info] real-debrid::rd_fast_discard_delete - zero_progress_post_select
+- 2026-06-30T04:58:33+0200 [info] real-debrid::rd_zero_progress_fast_delete - O.Retorno.de.Johnny.English.2011.1080p.BluRay.6ch.x264.DUAL
+- 2026-06-30T04:58:33+0200 [info] real-debrid::rd_delete_torrent
+- 2026-06-30T04:58:33+0200 [info] real-debrid::rd_slots_release
+- 2026-06-30T04:58:33+0200 [info] real-debrid::rd_verify_queue_done_item - O.Retorno.de.Johnny.English.2011.1080p.BluRay.6ch.x264.DUAL
+- 2026-06-30T04:58:33+0200 [info] real-debrid::rd_verify_added
+- 2026-06-30T04:58:33+0200 [debug] real-debrid::rd_verify_poll - Johnny.English.2.Reborn.2011.720p.BRRIP.x264.AC3
+- 2026-06-30T04:58:33+0200 [info] real-debrid::rd_verify_pack_skip - Johnny.English.2.Reborn.2011.720p.BRRIP.x264.AC3
+- 2026-06-30T04:58:33+0200 [info] real-debrid::rd_fast_discard - waiting_files_no_match
+- 2026-06-30T04:58:33+0200 [info] real-debrid::rd_fast_discard_reason - waiting_files_no_match
+- 2026-06-30T04:58:33+0200 [info] real-debrid::rd_fast_discard_delete - waiting_files_no_match
+- 2026-06-30T04:58:33+0200 [debug] real-debrid::rd_waiting_files_no_match_fast_delete - Johnny.English.2.Reborn.2011.720p.BRRIP.x264.AC3
+- 2026-06-30T04:58:33+0200 [debug] real-debrid::rd_endpoint_pace_wait
+- 2026-06-30T04:58:34+0200 [info] real-debrid::rd_delete_torrent
+- 2026-06-30T04:58:34+0200 [info] real-debrid::rd_slots_release
+- 2026-06-30T04:58:34+0200 [info] real-debrid::rd_verify_queue_done_item - Johnny.English.2.Reborn.2011.720p.BRRIP.x264.AC3
+- 2026-06-30T04:58:34+0200 [info] real-debrid::rd_verify_added
+- 2026-06-30T04:58:34+0200 [debug] real-debrid::rd_verify_poll - O Retorno de Johnny English 2011 (1080p) WWW.LAPUMiAFiLMES.COM.1.torrent.loaded
+- 2026-06-30T04:58:35+0200 [info] real-debrid::rd_delete_torrent
+- 2026-06-30T04:58:35+0200 [info] real-debrid::rd_slots_release
+- 2026-06-30T04:58:35+0200 [info] real-debrid::rd_verify_not_instant - O Retorno de Johnny English 2011 (1080p) WWW.LAPUMiAFiLMES.COM.1.torrent.loaded
+- 2026-06-30T04:58:35+0200 [info] real-debrid::rd_verify_queue_done_item - O Retorno de Johnny English 2011 (1080p) WWW.LAPUMiAFiLMES.COM.1.torrent.loaded
+- 2026-06-30T04:58:35+0200 [info] real-debrid::rd_verify_added
+- 2026-06-30T04:58:35+0200 [debug] real-debrid::rd_verify_poll - Johnny.English.Reborn.2011.MULTi.720p.BluRay.x264-presa
+- 2026-06-30T04:58:35+0200 [debug] real-debrid::rd_endpoint_pace_wait
+- 2026-06-30T04:58:36+0200 [info] real-debrid::rd_delete_torrent
+- 2026-06-30T04:58:36+0200 [info] real-debrid::rd_slots_release
+- 2026-06-30T04:58:36+0200 [info] real-debrid::rd_verify_not_instant - Johnny.English.Reborn.2011.MULTi.720p.BluRay.x264-presa
+- 2026-06-30T04:58:36+0200 [info] real-debrid::rd_verify_queue_done_item - Johnny.English.Reborn.2011.MULTi.720p.BluRay.x264-presa
+- 2026-06-30T04:58:37+0200 [info] real-debrid::rd_api_http_error - infringing_file
+- 2026-06-30T04:58:37+0200 [info] real-debrid::rd_call_terminal_error - infringing_file
+- 2026-06-30T04:58:37+0200 [info] real-debrid::rd_verify_infringing - Agent.Johnny.English.2011.Ukr.D.HDRip (by sstonecold).avi
+- 2026-06-30T04:58:37+0200 [info] real-debrid::rd_verify_queue_done_item - Agent.Johnny.English.2011.Ukr.D.HDRip (by sstonecold).avi
+- 2026-06-30T04:58:38+0200 [info] real-debrid::rd_verify_added
+- 2026-06-30T04:58:38+0200 [debug] real-debrid::rd_verify_poll - Johnny English 2011 Reborn BDRip XviD AbSurdiTy
+- 2026-06-30T04:58:38+0200 [info] real-debrid::rd_api_http_error - infringing_file
+- 2026-06-30T04:58:38+0200 [info] real-debrid::rd_call_terminal_error - infringing_file
+- 2026-06-30T04:58:38+0200 [info] real-debrid::rd_verify_infringing - Johnny.English.Reborn.2011.1080p.BluRay.x264.anoXmous
+- 2026-06-30T04:58:38+0200 [info] real-debrid::rd_verify_queue_done_item - Johnny.English.Reborn.2011.1080p.BluRay.x264.anoXmous
+- 2026-06-30T04:58:39+0200 [info] real-debrid::rd_delete_torrent
+- 2026-06-30T04:58:39+0200 [info] real-debrid::rd_slots_release
+- 2026-06-30T04:58:39+0200 [info] real-debrid::rd_verify_not_instant - Johnny English 2011 Reborn BDRip XviD AbSurdiTy
+- 2026-06-30T04:58:39+0200 [info] real-debrid::rd_verify_queue_done_item - Johnny English 2011 Reborn BDRip XviD AbSurdiTy
+- 2026-06-30T04:58:40+0200 [info] real-debrid::rd_verify_added
+- 2026-06-30T04:58:40+0200 [debug] real-debrid::rd_endpoint_pace_wait
+- 2026-06-30T04:58:41+0200 [debug] real-debrid::rd_verify_poll - Johnny.English.Reborn.2011.1080p.BluRay.x264.DTS-HDChina
+- 2026-06-30T04:58:41+0200 [info] real-debrid::rd_delete_torrent
+- 2026-06-30T04:58:41+0200 [info] real-debrid::rd_slots_release
+- 2026-06-30T04:58:41+0200 [info] real-debrid::rd_verify_not_instant - Johnny.English.Reborn.2011.1080p.BluRay.x264.DTS-HDChina
+- 2026-06-30T04:58:41+0200 [info] real-debrid::rd_verify_queue_done_item - Johnny.English.Reborn.2011.1080p.BluRay.x264.DTS-HDChina
+- 2026-06-30T04:58:42+0200 [info] real-debrid::rd_verify_added
+- 2026-06-30T04:58:42+0200 [debug] real-debrid::rd_verify_poll - Johnny.English.se.vraci.2011.NTSC.CUSTOM.DVDR.CZ-CiBULATOR679
+- 2026-06-30T04:58:42+0200 [info] real-debrid::rd_verify_pack_skip - Johnny.English.se.vraci.2011.NTSC.CUSTOM.DVDR.CZ-CiBULATOR679
+- 2026-06-30T04:58:42+0200 [info] real-debrid::rd_fast_discard - waiting_files_no_match
+- 2026-06-30T04:58:42+0200 [info] real-debrid::rd_fast_discard_reason - waiting_files_no_match
+- 2026-06-30T04:58:42+0200 [info] real-debrid::rd_fast_discard_delete - waiting_files_no_match
+- 2026-06-30T04:58:42+0200 [debug] real-debrid::rd_waiting_files_no_match_fast_delete - Johnny.English.se.vraci.2011.NTSC.CUSTOM.DVDR.CZ-CiBULATOR679
+- 2026-06-30T04:58:43+0200 [info] real-debrid::rd_delete_torrent
+- 2026-06-30T04:58:43+0200 [info] real-debrid::rd_slots_release
+- 2026-06-30T04:58:43+0200 [info] real-debrid::rd_verify_queue_done_item - Johnny.English.se.vraci.2011.NTSC.CUSTOM.DVDR.CZ-CiBULATOR679
+- 2026-06-30T04:58:43+0200 [info] real-debrid::rd_verify_added
+- 2026-06-30T04:58:44+0200 [debug] real-debrid::rd_verify_poll - Johnny.English.Reborn.2011.x264.DTS-WAF
+- 2026-06-30T04:58:44+0200 [info] real-debrid::rd_verify_added
+- 2026-06-30T04:58:44+0200 [debug] real-debrid::rd_verify_poll - Johnny English 2003 Johnny English Reborn 2011 Murder by Death 1976 PADDINGTON 2014 4K 2160p HEVC
+- 2026-06-30T04:58:44+0200 [info] real-debrid::rd_fast_discard - magnet_error
+- 2026-06-30T04:58:44+0200 [info] real-debrid::rd_fast_discard_reason - magnet_error
+- 2026-06-30T04:58:44+0200 [info] real-debrid::rd_fast_discard_delete - magnet_error
+- 2026-06-30T04:58:44+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-30T04:58:44+0200 [info] real-debrid::rd_verify_select_files
+- 2026-06-30T04:58:45+0200 [debug] real-debrid::rd_verify_post_select_poll - Johnny.English.Reborn.2011.x264.DTS-WAF
+- 2026-06-30T04:58:45+0200 [info] real-debrid::rd_fast_discard - zero_progress_post_select
+- 2026-06-30T04:58:45+0200 [info] real-debrid::rd_fast_discard_reason - zero_progress_post_select
+- 2026-06-30T04:58:45+0200 [info] real-debrid::rd_fast_discard_delete - zero_progress_post_select
+- 2026-06-30T04:58:45+0200 [info] real-debrid::rd_zero_progress_fast_delete - Johnny.English.Reborn.2011.x264.DTS-WAF
+- 2026-06-30T04:58:45+0200 [debug] real-debrid::rd_endpoint_pace_wait
+- 2026-06-30T04:58:45+0200 [info] real-debrid::rd_delete_torrent
+- 2026-06-30T04:58:45+0200 [info] real-debrid::rd_slots_release
+- 2026-06-30T04:58:45+0200 [info] real-debrid::rd_verify_queue_done_item - Johnny English 2003 Johnny English Reborn 2011 Murder by Death 1976 PADDINGTON 2014 4K 2160p HEVC
+- 2026-06-30T04:58:45+0200 [info] real-debrid::rd_delete_torrent
+- 2026-06-30T04:58:45+0200 [info] real-debrid::rd_slots_release
+- 2026-06-30T04:58:45+0200 [info] real-debrid::rd_verify_queue_done_item - Johnny.English.Reborn.2011.x264.DTS-WAF
+- 2026-06-30T04:58:46+0200 [debug] real-debrid::rd_endpoint_pace_wait
+- 2026-06-30T04:58:46+0200 [info] real-debrid::rd_verify_added
+- 2026-06-30T04:58:46+0200 [info] real-debrid::rd_api_http_error - too_many_requests
+- 2026-06-30T04:58:46+0200 [info] real-debrid::rd_endpoint_429_backoff
+- 2026-06-30T04:58:46+0200 [info] real-debrid::rd_rate_429_cooldown
+- 2026-06-30T04:58:46+0200 [debug] real-debrid::rd_verify_poll - Johnny English Reborn (2011) 720p BrRip x264 YIFY
+- 2026-06-30T04:58:47+0200 [info] real-debrid::rd_call_retry_429 - Real-Debrid HTTP 429: [34 too_many_requests] {"error": "too_many_requests", "error_code": 34, "src": "front-1"}
+- 2026-06-30T04:58:49+0200 [info] real-debrid::rd_verify_select_files
+- 2026-06-30T04:58:50+0200 [debug] real-debrid::rd_verify_post_select_poll - Johnny English Reborn (2011) 720p BrRip x264 YIFY
+- 2026-06-30T04:58:50+0200 [info] real-debrid::rd_fast_discard - zero_progress_post_select
+- 2026-06-30T04:58:50+0200 [info] real-debrid::rd_fast_discard_reason - zero_progress_post_select
+- 2026-06-30T04:58:50+0200 [info] real-debrid::rd_fast_discard_delete - zero_progress_post_select
+- 2026-06-30T04:58:50+0200 [info] real-debrid::rd_zero_progress_fast_delete - Johnny English Reborn (2011) 720p BrRip x264 YIFY
+- 2026-06-30T04:58:50+0200 [info] real-debrid::rd_delete_torrent
+- 2026-06-30T04:58:50+0200 [info] real-debrid::rd_slots_release
+- 2026-06-30T04:58:50+0200 [info] real-debrid::rd_verify_queue_done_item - Johnny English Reborn (2011) 720p BrRip x264 YIFY
+- 2026-06-30T04:58:51+0200 [debug] real-debrid::rd_endpoint_pace_wait
+- 2026-06-30T04:58:52+0200 [info] real-debrid::rd_verify_added
+- 2026-06-30T04:58:52+0200 [debug] real-debrid::rd_verify_poll - Johnny English Duology 2003 2011 BluRay 720p x264 ac3 jbr
+- 2026-06-30T04:58:52+0200 [info] real-debrid::rd_verify_select_files
+- 2026-06-30T04:58:53+0200 [debug] real-debrid::rd_verify_post_select_poll - Johnny English Duology 2003 2011 BluRay 720p x264 ac3 jbr
+- 2026-06-30T04:58:53+0200 [info] real-debrid::rd_fast_discard - zero_progress_post_select
+- 2026-06-30T04:58:53+0200 [info] real-debrid::rd_fast_discard_reason - zero_progress_post_select
+- 2026-06-30T04:58:53+0200 [info] real-debrid::rd_fast_discard_delete - zero_progress_post_select
+- 2026-06-30T04:58:53+0200 [info] real-debrid::rd_zero_progress_fast_delete - Johnny English Duology 2003 2011 BluRay 720p x264 ac3 jbr
+- 2026-06-30T04:58:53+0200 [info] real-debrid::rd_delete_torrent
+- 2026-06-30T04:58:53+0200 [info] real-debrid::rd_slots_release
+- 2026-06-30T04:58:53+0200 [info] real-debrid::rd_verify_queue_done_item - Johnny English Duology 2003 2011 BluRay 720p x264 ac3 jbr
+- 2026-06-30T04:58:53+0200 [info] real-debrid::rd_verify_added
+- 2026-06-30T04:58:53+0200 [debug] real-debrid::rd_verify_poll - Johnny English Reborn (2011)(Hindi-English)-19o21996
+- 2026-06-30T04:58:53+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-30T04:58:54+0200 [info] real-debrid::rd_verify_select_files
+- 2026-06-30T04:58:55+0200 [debug] real-debrid::rd_verify_post_select_poll - Johnny English Reborn (2011)(Hindi-English)-19o21996
+- 2026-06-30T04:58:55+0200 [info] real-debrid::rd_fast_discard - zero_progress_post_select
+- 2026-06-30T04:58:55+0200 [info] real-debrid::rd_fast_discard_reason - zero_progress_post_select
+- 2026-06-30T04:58:55+0200 [info] real-debrid::rd_fast_discard_delete - zero_progress_post_select
+- 2026-06-30T04:58:55+0200 [info] real-debrid::rd_zero_progress_fast_delete - Johnny English Reborn (2011)(Hindi-English)-19o21996
+- 2026-06-30T04:58:55+0200 [info] real-debrid::rd_verify_added
+- 2026-06-30T04:58:55+0200 [info] real-debrid::rd_delete_torrent
+- 2026-06-30T04:58:55+0200 [info] real-debrid::rd_slots_release
+- 2026-06-30T04:58:55+0200 [info] real-debrid::rd_verify_queue_done_item - Johnny English Reborn (2011)(Hindi-English)-19o21996
+- 2026-06-30T04:58:55+0200 [debug] real-debrid::rd_verify_poll - Johnny.English.Reborn.2011.DVDRip.XviD-RiZAL
+- 2026-06-30T04:58:55+0200 [info] real-debrid::rd_fast_discard - magnet_error
+- 2026-06-30T04:58:55+0200 [info] real-debrid::rd_fast_discard_reason - magnet_error
+- 2026-06-30T04:58:55+0200 [info] real-debrid::rd_fast_discard_delete - magnet_error
+- 2026-06-30T04:58:55+0200 [debug] real-debrid::rd_endpoint_pace_wait
+- 2026-06-30T04:58:56+0200 [info] real-debrid::rd_delete_torrent
+- 2026-06-30T04:58:56+0200 [info] real-debrid::rd_slots_release
+- 2026-06-30T04:58:56+0200 [info] real-debrid::rd_verify_queue_done_item - Johnny.English.Reborn.2011.DVDRip.XviD-RiZAL
+- 2026-06-30T04:58:56+0200 [debug] real-debrid::rd_endpoint_pace_wait
+- 2026-06-30T04:58:56+0200 [info] real-debrid::rd_verify_added
+- 2026-06-30T04:58:56+0200 [debug] real-debrid::rd_verify_poll - Johnny English- Duology
+- 2026-06-30T04:58:57+0200 [info] real-debrid::rd_verify_select_files
+- 2026-06-30T04:58:57+0200 [debug] real-debrid::rd_verify_post_select_poll - Johnny English- Duology
+- 2026-06-30T04:58:57+0200 [info] real-debrid::rd_fast_discard - zero_progress_post_select
+- 2026-06-30T04:58:57+0200 [info] real-debrid::rd_fast_discard_reason - zero_progress_post_select
+- 2026-06-30T04:58:57+0200 [info] real-debrid::rd_fast_discard_delete - zero_progress_post_select
+- 2026-06-30T04:58:57+0200 [info] real-debrid::rd_zero_progress_fast_delete - Johnny English- Duology
+- 2026-06-30T04:58:57+0200 [info] real-debrid::rd_delete_torrent
+- 2026-06-30T04:58:57+0200 [info] real-debrid::rd_slots_release
+- 2026-06-30T04:58:57+0200 [info] real-debrid::rd_verify_queue_done_item - Johnny English- Duology
+- 2026-06-30T04:59:00+0200 [info] real-debrid::rd_verify_added
+- 2026-06-30T04:59:00+0200 [debug] real-debrid::rd_verify_poll - Johnny.English.Reborn.2011.1080p.BluRay.x264.DTS-WiKi
+- 2026-06-30T04:59:01+0200 [info] real-debrid::rd_delete_torrent
+- 2026-06-30T04:59:01+0200 [info] real-debrid::rd_slots_release
+- 2026-06-30T04:59:01+0200 [info] real-debrid::rd_verify_not_instant - Johnny.English.Reborn.2011.1080p.BluRay.x264.DTS-WiKi
+- 2026-06-30T04:59:01+0200 [info] real-debrid::rd_verify_queue_done_item - Johnny.English.Reborn.2011.1080p.BluRay.x264.DTS-WiKi
+- 2026-06-30T04:59:01+0200 [debug] real-debrid::rd_endpoint_pace_wait
+- 2026-06-30T04:59:01+0200 [info] real-debrid::rd_verify_added
+- 2026-06-30T04:59:01+0200 [debug] real-debrid::rd_verify_poll - Johnny.English.Reborn.2011.PAL.Retail.Rental.DD5.1.MultiSubs
+- 2026-06-30T04:59:01+0200 [info] real-debrid::rd_verify_pack_skip - Johnny.English.Reborn.2011.PAL.Retail.Rental.DD5.1.MultiSubs
+- 2026-06-30T04:59:01+0200 [info] real-debrid::rd_fast_discard - waiting_files_no_match
+- 2026-06-30T04:59:01+0200 [info] real-debrid::rd_fast_discard_reason - waiting_files_no_match
+- 2026-06-30T04:59:01+0200 [info] real-debrid::rd_fast_discard_delete - waiting_files_no_match
+- 2026-06-30T04:59:01+0200 [debug] real-debrid::rd_waiting_files_no_match_fast_delete - Johnny.English.Reborn.2011.PAL.Retail.Rental.DD5.1.MultiSubs
+- 2026-06-30T04:59:02+0200 [info] real-debrid::rd_delete_torrent
+- 2026-06-30T04:59:02+0200 [info] real-debrid::rd_slots_release
+- 2026-06-30T04:59:02+0200 [info] real-debrid::rd_verify_queue_done_item - Johnny.English.Reborn.2011.PAL.Retail.Rental.DD5.1.MultiSubs
+- 2026-06-30T04:59:02+0200 [info] real-debrid::rd_verify_added
+- 2026-06-30T04:59:03+0200 [debug] real-debrid::rd_verify_poll - [US Funny] Johnny English Reborn 2011  [720p BRRip][HGBit.com][Sub Eng Vie]
+- 2026-06-30T04:59:03+0200 [info] real-debrid::rd_verify_added
+- 2026-06-30T04:59:03+0200 [info] real-debrid::rd_delete_torrent
+- 2026-06-30T04:59:03+0200 [info] real-debrid::rd_slots_release
+- 2026-06-30T04:59:03+0200 [info] real-debrid::rd_verify_not_instant - [US Funny] Johnny English Reborn 2011  [720p BRRip][HGBit.com][Sub Eng Vie]
+- 2026-06-30T04:59:03+0200 [info] real-debrid::rd_verify_queue_done_item - [US Funny] Johnny English Reborn 2011  [720p BRRip][HGBit.com][Sub Eng Vie]
+- 2026-06-30T04:59:03+0200 [debug] real-debrid::rd_verify_poll - Johnny.English.Reborn.2011.DVD9.PAL.Retail.DD5.1.Multi.DVDR
+- 2026-06-30T04:59:03+0200 [info] real-debrid::rd_verify_pack_skip - Johnny.English.Reborn.2011.DVD9.PAL.Retail.DD5.1.Multi.DVDR
+- 2026-06-30T04:59:03+0200 [info] real-debrid::rd_fast_discard - waiting_files_no_match
+- 2026-06-30T04:59:03+0200 [info] real-debrid::rd_fast_discard_reason - waiting_files_no_match
+- 2026-06-30T04:59:03+0200 [info] real-debrid::rd_fast_discard_delete - waiting_files_no_match
+- 2026-06-30T04:59:03+0200 [debug] real-debrid::rd_waiting_files_no_match_fast_delete - Johnny.English.Reborn.2011.DVD9.PAL.Retail.DD5.1.Multi.DVDR
+- 2026-06-30T04:59:03+0200 [debug] real-debrid::rd_endpoint_pace_wait
+- 2026-06-30T04:59:04+0200 [info] real-debrid::rd_delete_torrent
+- 2026-06-30T04:59:04+0200 [info] real-debrid::rd_slots_release
+- 2026-06-30T04:59:04+0200 [info] real-debrid::rd_verify_queue_done_item - Johnny.English.Reborn.2011.DVD9.PAL.Retail.DD5.1.Multi.DVDR
+- 2026-06-30T04:59:04+0200 [info] real-debrid::rd_verify_added
+- 2026-06-30T04:59:05+0200 [debug] real-debrid::rd_verify_poll - johnny.-english.-reborn.-2011.1080p.-blu-ray.x-264.ano-xmous
+- 2026-06-30T04:59:05+0200 [info] real-debrid::rd_delete_torrent
+- 2026-06-30T04:59:05+0200 [info] real-debrid::rd_slots_release
+- 2026-06-30T04:59:05+0200 [info] real-debrid::rd_verify_not_instant - johnny.-english.-reborn.-2011.1080p.-blu-ray.x-264.ano-xmous
+- 2026-06-30T04:59:05+0200 [info] real-debrid::rd_verify_queue_done_item - johnny.-english.-reborn.-2011.1080p.-blu-ray.x-264.ano-xmous
+- 2026-06-30T04:59:06+0200 [info] real-debrid::rd_verify_added
+- 2026-06-30T04:59:06+0200 [debug] real-debrid::rd_verify_poll - Johnny English Reborn (2011) -niCkol
+- 2026-06-30T04:59:06+0200 [info] real-debrid::rd_verify_pack_skip - Johnny English Reborn (2011) -niCkol
+- 2026-06-30T04:59:06+0200 [info] real-debrid::rd_fast_discard - waiting_files_no_match
+- 2026-06-30T04:59:06+0200 [info] real-debrid::rd_fast_discard_reason - waiting_files_no_match
+- 2026-06-30T04:59:06+0200 [info] real-debrid::rd_fast_discard_delete - waiting_files_no_match
+- 2026-06-30T04:59:06+0200 [debug] real-debrid::rd_waiting_files_no_match_fast_delete - Johnny English Reborn (2011) -niCkol
+- 2026-06-30T04:59:06+0200 [info] real-debrid::rd_delete_torrent
+- 2026-06-30T04:59:06+0200 [debug] real-debrid::rd_endpoint_pace_wait
+- 2026-06-30T04:59:06+0200 [info] real-debrid::rd_slots_release
+- 2026-06-30T04:59:06+0200 [info] real-debrid::rd_verify_queue_done_item - Johnny English Reborn (2011) -niCkol
+- 2026-06-30T04:59:07+0200 [info] real-debrid::rd_verify_added
+- 2026-06-30T04:59:07+0200 [debug] real-debrid::rd_verify_poll - Johnny.English.Duology.2003-2011.1080p.Blu-ray.Remux.VC-1.DTS-HD.MA.5.1-HDRemuX
+- 2026-06-30T04:59:08+0200 [info] real-debrid::rd_verify_select_files
+- 2026-06-30T04:59:08+0200 [debug] real-debrid::rd_verify_post_select_poll - Johnny.English.Duology.2003-2011.1080p.Blu-ray.Remux.VC-1.DTS-HD.MA.5.1-HDRemuX
+- 2026-06-30T04:59:08+0200 [info] real-debrid::rd_fast_discard - zero_progress_post_select
+- 2026-06-30T04:59:08+0200 [info] real-debrid::rd_fast_discard_reason - zero_progress_post_select
+- 2026-06-30T04:59:08+0200 [info] real-debrid::rd_fast_discard_delete - zero_progress_post_select
+- 2026-06-30T04:59:08+0200 [info] real-debrid::rd_zero_progress_fast_delete - Johnny.English.Duology.2003-2011.1080p.Blu-ray.Remux.VC-1.DTS-HD.MA.5.1-HDRemuX
+- 2026-06-30T04:59:08+0200 [info] real-debrid::rd_api_http_error - too_many_requests
+- 2026-06-30T04:59:08+0200 [info] real-debrid::rd_endpoint_429_backoff
+- 2026-06-30T04:59:08+0200 [info] real-debrid::rd_rate_429_cooldown
+- 2026-06-30T04:59:08+0200 [info] real-debrid::rd_delete_torrent
+- 2026-06-30T04:59:08+0200 [info] real-debrid::rd_slots_release
+- 2026-06-30T04:59:08+0200 [info] real-debrid::rd_verify_queue_done_item - Johnny.English.Duology.2003-2011.1080p.Blu-ray.Remux.VC-1.DTS-HD.MA.5.1-HDRemuX
+- 2026-06-30T04:59:09+0200 [info] real-debrid::rd_call_retry_429 - Real-Debrid HTTP 429: [34 too_many_requests] {"error": "too_many_requests", "error_code": 34, "src": "front-2"}
+- 2026-06-30T04:59:12+0200 [debug] real-debrid::rd_endpoint_pace_wait
+- 2026-06-30T04:59:15+0200 [info] real-debrid::rd_verify_added
+- 2026-06-30T04:59:15+0200 [debug] real-debrid::rd_verify_poll - Kolekcja Johnny English 2003-2018 [10Bit SDR UPSCALING] [2160p.BluRay.H265.AC3-AS76-FT] [Lektor PL] [Alusia]
+- 2026-06-30T04:59:15+0200 [info] real-debrid::rd_verify_select_files
+- 2026-06-30T04:59:16+0200 [debug] real-debrid::rd_verify_post_select_poll - Kolekcja Johnny English 2003-2018 [10Bit SDR UPSCALING] [2160p.BluRay.H265.AC3-AS76-FT] [Lektor PL] [Alusia]
+- 2026-06-30T04:59:16+0200 [info] real-debrid::rd_fast_discard - zero_progress_post_select
+- 2026-06-30T04:59:16+0200 [info] real-debrid::rd_fast_discard_reason - zero_progress_post_select
+- 2026-06-30T04:59:16+0200 [info] real-debrid::rd_fast_discard_delete - zero_progress_post_select
+- 2026-06-30T04:59:16+0200 [info] real-debrid::rd_zero_progress_fast_delete - Kolekcja Johnny English 2003-2018 [10Bit SDR UPSCALING] [2160p.BluRay.H265.AC3-AS76-FT] [Lektor PL] [Alusia]
+- 2026-06-30T04:59:16+0200 [info] real-debrid::rd_delete_torrent
+- 2026-06-30T04:59:16+0200 [info] real-debrid::rd_slots_release
+- 2026-06-30T04:59:16+0200 [info] real-debrid::rd_verify_queue_done_item - Kolekcja Johnny English 2003-2018 [10Bit SDR UPSCALING] [2160p.BluRay.H265.AC3-AS76-FT] [Lektor PL] [Alusia]
+- 2026-06-30T04:59:16+0200 [info] real-debrid::rd_api_http_error - infringing_file
+- 2026-06-30T04:59:16+0200 [info] real-debrid::rd_call_terminal_error - infringing_file
+- 2026-06-30T04:59:16+0200 [info] real-debrid::rd_verify_infringing - Johnny English Reborn 2011 BluRay 720p AC3 x264-3Li
+- 2026-06-30T04:59:16+0200 [info] real-debrid::rd_verify_queue_done_item - Johnny English Reborn 2011 BluRay 720p AC3 x264-3Li
+- 2026-06-30T04:59:17+0200 [debug] real-debrid::rd_endpoint_pace_wait
+- 2026-06-30T04:59:18+0200 [info] real-debrid::rd_verify_added
+- 2026-06-30T04:59:18+0200 [debug] real-debrid::rd_verify_poll - Johnny.English.Dilogie.German.DTS.DL.1080p.BluRay.VC1.Remux-iNCEPTiON
+- 2026-06-30T04:59:18+0200 [info] real-debrid::rd_fast_discard - magnet_error
+- 2026-06-30T04:59:18+0200 [info] real-debrid::rd_fast_discard_reason - magnet_error
+- 2026-06-30T04:59:18+0200 [info] real-debrid::rd_fast_discard_delete - magnet_error
+- 2026-06-30T04:59:19+0200 [info] real-debrid::rd_delete_torrent
+- 2026-06-30T04:59:19+0200 [info] real-debrid::rd_slots_release
+- 2026-06-30T04:59:19+0200 [info] real-debrid::rd_verify_queue_done_item - Johnny.English.Dilogie.German.DTS.DL.1080p.BluRay.VC1.Remux-iNCEPTiON
+- 2026-06-30T04:59:20+0200 [info] real-debrid::rd_verify_added
+- 2026-06-30T04:59:20+0200 [debug] real-debrid::rd_verify_poll - www.UIndex.org    -    Johnny English Reborn 2011 1080p BluRay DTS x264-DON
+- 2026-06-30T04:59:21+0200 [info] real-debrid::rd_verify_select_files
+- 2026-06-30T04:59:21+0200 [debug] real-debrid::rd_verify_post_select_poll - www.UIndex.org    -    Johnny English Reborn 2011 1080p BluRay DTS x264-DON
+- 2026-06-30T04:59:21+0200 [info] real-debrid::rd_verify_ok - www.UIndex.org    -    Johnny English Reborn 2011 1080p BluRay DTS x264-DON  ==>  /Johnny English Reborn 2011 1080p BluRay DTS x264-DON.mkv
+- 2026-06-30T04:59:21+0200 [info] real-debrid::rd_verify_queue_done_item - www.UIndex.org    -    Johnny English Reborn 2011 1080p BluRay DTS x264-DON  ==>  /Johnny English Reborn 2011 1080p BluR
+- 2026-06-30T04:59:22+0200 [info] real-debrid::rd_api_http_error - too_many_requests
+- 2026-06-30T04:59:22+0200 [info] real-debrid::rd_endpoint_429_backoff
+- 2026-06-30T04:59:22+0200 [info] real-debrid::rd_rate_429_cooldown
+- 2026-06-30T04:59:23+0200 [info] real-debrid::rd_call_retry_429 - Real-Debrid HTTP 429: [34 too_many_requests] {"error": "too_many_requests", "error_code": 34, "src": "front-1"}
+- 2026-06-30T04:59:23+0200 [debug] real-debrid::rd_endpoint_pace_wait
+- 2026-06-30T04:59:28+0200 [debug] real-debrid::rd_endpoint_pace_wait
+- 2026-06-30T04:59:28+0200 [info] real-debrid::rd_api_http_error - infringing_file
+- 2026-06-30T04:59:28+0200 [info] real-debrid::rd_call_terminal_error - infringing_file
+- 2026-06-30T04:59:28+0200 [info] real-debrid::rd_verify_infringing - O Retorno De Johnny English (2011) BDrip 720p Dublado
+- 2026-06-30T04:59:28+0200 [info] real-debrid::rd_verify_queue_done_item - O Retorno De Johnny English (2011) BDrip 720p Dublado
+- 2026-06-30T04:59:31+0200 [info] real-debrid::rd_api_http_error - infringing_file
+- 2026-06-30T04:59:31+0200 [info] real-debrid::rd_call_terminal_error - infringing_file
+- 2026-06-30T04:59:31+0200 [info] real-debrid::rd_verify_infringing - O.Retorno.de.Johnny.English.2011.1080p.BluRay.x264-WEST.DUAL-BKZ
+- 2026-06-30T04:59:31+0200 [info] real-debrid::rd_verify_queue_done_item - O.Retorno.de.Johnny.English.2011.1080p.BluRay.x264-WEST.DUAL-BKZ
+- 2026-06-30T04:59:33+0200 [debug] real-debrid::rd_endpoint_pace_wait
+- 2026-06-30T04:59:33+0200 [info] real-debrid::rd_api_http_error - infringing_file
+- 2026-06-30T04:59:33+0200 [info] real-debrid::rd_call_terminal_error - infringing_file
+- 2026-06-30T04:59:33+0200 [info] real-debrid::rd_verify_infringing - Johnny English & Johnny English Reborn (2003-2011) BDRip 1080p
+- 2026-06-30T04:59:33+0200 [info] real-debrid::rd_verify_queue_done_item - Johnny English & Johnny English Reborn (2003-2011) BDRip 1080p
+- 2026-06-30T04:59:36+0200 [info] real-debrid::rd_verify_added
+- 2026-06-30T04:59:36+0200 [debug] real-debrid::rd_verify_poll - Johnny.English.MOViE.PACK.SLOSubs.1080p.BluRay.x264-INFIRE
+- 2026-06-30T04:59:36+0200 [info] real-debrid::rd_fast_discard - magnet_error
+- 2026-06-30T04:59:36+0200 [info] real-debrid::rd_fast_discard_reason - magnet_error
+- 2026-06-30T04:59:36+0200 [info] real-debrid::rd_fast_discard_delete - magnet_error
+- 2026-06-30T04:59:36+0200 [info] real-debrid::rd_delete_torrent
+- 2026-06-30T04:59:36+0200 [info] real-debrid::rd_slots_release
+- 2026-06-30T04:59:36+0200 [info] real-debrid::rd_verify_queue_done_item - Johnny.English.MOViE.PACK.SLOSubs.1080p.BluRay.x264-INFIRE
+- 2026-06-30T04:59:38+0200 [debug] real-debrid::rd_endpoint_pace_wait
+- 2026-06-30T04:59:39+0200 [info] real-debrid::rd_verify_added
+- 2026-06-30T04:59:39+0200 [debug] real-debrid::rd_verify_poll - Johnny English Reborn - Rowan Atkinson 2011 BluRay 1080p x264 Rip ENG - Dutch Engels Subs
+- 2026-06-30T04:59:40+0200 [info] real-debrid::rd_verify_select_files
+- 2026-06-30T04:59:40+0200 [debug] real-debrid::rd_verify_post_select_poll - Johnny English Reborn - Rowan Atkinson 2011 BluRay 1080p x264 Rip ENG - Dutch Engels Subs
+- 2026-06-30T04:59:40+0200 [info] real-debrid::rd_fast_discard - zero_progress_post_select
+- 2026-06-30T04:59:40+0200 [info] real-debrid::rd_fast_discard_reason - zero_progress_post_select
+- 2026-06-30T04:59:40+0200 [info] real-debrid::rd_fast_discard_delete - zero_progress_post_select
+- 2026-06-30T04:59:40+0200 [info] real-debrid::rd_zero_progress_fast_delete - Johnny English Reborn - Rowan Atkinson 2011 BluRay 1080p x264 Rip ENG - Dutch Engels Subs
+- 2026-06-30T04:59:40+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-30T04:59:40+0200 [info] real-debrid::rd_verify_added
+- 2026-06-30T04:59:41+0200 [info] real-debrid::rd_delete_torrent
+- 2026-06-30T04:59:41+0200 [info] real-debrid::rd_slots_release
+- 2026-06-30T04:59:41+0200 [info] real-debrid::rd_verify_queue_done_item - Johnny English Reborn - Rowan Atkinson 2011 BluRay 1080p x264 Rip ENG - Dutch Engels Subs
+- 2026-06-30T04:59:41+0200 [debug] real-debrid::rd_verify_poll - Johnny.English.Reborn.2011.1080p.MKV.AC3.DTS.Eng.NL.Subs
+- 2026-06-30T04:59:41+0200 [info] real-debrid::rd_verify_select_files
+- 2026-06-30T04:59:42+0200 [debug] real-debrid::rd_verify_post_select_poll - Johnny.English.Reborn.2011.1080p.MKV.AC3.DTS.Eng.NL.Subs
+- 2026-06-30T04:59:42+0200 [info] real-debrid::rd_fast_discard - zero_progress_post_select
+- 2026-06-30T04:59:42+0200 [info] real-debrid::rd_fast_discard_reason - zero_progress_post_select
+- 2026-06-30T04:59:42+0200 [info] real-debrid::rd_fast_discard_delete - zero_progress_post_select
+- 2026-06-30T04:59:42+0200 [info] real-debrid::rd_zero_progress_fast_delete - Johnny.English.Reborn.2011.1080p.MKV.AC3.DTS.Eng.NL.Subs
+- 2026-06-30T04:59:42+0200 [info] real-debrid::rd_delete_torrent
+- 2026-06-30T04:59:42+0200 [info] real-debrid::rd_slots_release
+- 2026-06-30T04:59:42+0200 [info] real-debrid::rd_verify_queue_done_item - Johnny.English.Reborn.2011.1080p.MKV.AC3.DTS.Eng.NL.Subs
+- 2026-06-30T04:59:43+0200 [debug] real-debrid::rd_endpoint_pace_wait
+- 2026-06-30T04:59:48+0200 [debug] real-debrid::rd_endpoint_pace_wait
+- 2026-06-30T04:59:49+0200 [info] real-debrid::rd_verify_added
+- 2026-06-30T04:59:49+0200 [debug] real-debrid::rd_verify_poll - johnny-english-reborn-2011
+- 2026-06-30T04:59:49+0200 [info] real-debrid::rd_verify_added
+- 2026-06-30T04:59:50+0200 [debug] real-debrid::rd_verify_poll - Johnny English Reborn 2011 BluRay 2160p Ai-Enhanced_prob4 HEVC DTS-HD MA 5.1 EN.PT.CZ.HU.ES.PL.RU.TH.TU Subtitles
+- 2026-06-30T04:59:50+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-30T04:59:50+0200 [info] real-debrid::rd_delete_torrent
+- 2026-06-30T04:59:50+0200 [info] real-debrid::rd_slots_release
+- 2026-06-30T04:59:50+0200 [info] real-debrid::rd_verify_not_instant - johnny-english-reborn-2011
+- 2026-06-30T04:59:50+0200 [info] real-debrid::rd_verify_queue_done_item - johnny-english-reborn-2011
+- 2026-06-30T04:59:50+0200 [info] real-debrid::rd_verify_select_files
+- 2026-06-30T04:59:51+0200 [debug] real-debrid::rd_verify_post_select_poll - Johnny English Reborn 2011 BluRay 2160p Ai-Enhanced_prob4 HEVC DTS-HD MA 5.1 EN.PT.CZ.HU.ES.PL.RU.TH.TU Subtitles
+- 2026-06-30T04:59:51+0200 [info] real-debrid::rd_fast_discard - zero_progress_post_select
+- 2026-06-30T04:59:51+0200 [info] real-debrid::rd_fast_discard_reason - zero_progress_post_select
+- 2026-06-30T04:59:51+0200 [info] real-debrid::rd_fast_discard_delete - zero_progress_post_select
+- 2026-06-30T04:59:51+0200 [info] real-debrid::rd_zero_progress_fast_delete - Johnny English Reborn 2011 BluRay 2160p Ai-Enhanced_prob4 HEVC DTS-HD MA 5.1 EN.PT.CZ.HU.ES.PL.RU.TH.TU Subtitles
+- 2026-06-30T04:59:51+0200 [info] real-debrid::rd_delete_torrent
+- 2026-06-30T04:59:51+0200 [info] real-debrid::rd_slots_release
+- 2026-06-30T04:59:51+0200 [info] real-debrid::rd_verify_queue_done_item - Johnny English Reborn 2011 BluRay 2160p Ai-Enhanced_prob4 HEVC DTS-HD MA 5.1 EN.PT.CZ.HU.ES.PL.RU.TH.TU Subtitles
+- 2026-06-30T04:59:52+0200 [info] real-debrid::rd_verify_added
+- 2026-06-30T04:59:52+0200 [debug] real-debrid::rd_verify_poll - Johnny.English.Trilogy.2003-2018.1080p.BluRay.x264.AAC.5.1-ZiTO
+- 2026-06-30T04:59:52+0200 [info] real-debrid::rd_fast_discard - magnet_error
+- 2026-06-30T04:59:52+0200 [info] real-debrid::rd_fast_discard_reason - magnet_error
+- 2026-06-30T04:59:52+0200 [info] real-debrid::rd_fast_discard_delete - magnet_error
+- 2026-06-30T04:59:52+0200 [info] real-debrid::rd_delete_torrent
+- 2026-06-30T04:59:52+0200 [info] real-debrid::rd_slots_release
+- 2026-06-30T04:59:52+0200 [info] real-debrid::rd_verify_queue_done_item - Johnny.English.Trilogy.2003-2018.1080p.BluRay.x264.AAC.5.1-ZiTO
+- 2026-06-30T04:59:53+0200 [debug] real-debrid::rd_endpoint_pace_wait
+- 2026-06-30T04:59:54+0200 [info] real-debrid::rd_verify_added
+- 2026-06-30T04:59:54+0200 [debug] real-debrid::rd_verify_poll - O Retorno de Johnny English 2011 (1080p) WWW.LAPUMiAFiLMES.COM
+- 2026-06-30T04:59:55+0200 [info] real-debrid::rd_verify_select_files
+- 2026-06-30T04:59:55+0200 [debug] real-debrid::rd_verify_post_select_poll - O Retorno de Johnny English 2011 (1080p) WWW.LAPUMiAFiLMES.COM
+- 2026-06-30T04:59:55+0200 [info] real-debrid::rd_verify_ok - O Retorno de Johnny English 2011 (1080p) WWW.LAPUMiAFiLMES.COM  ==>  /O.Retorno.de.Johnny.English.2011.1080p.BluRay.6ch.x264.DUAL-WWW.LAPUMiAFiLMES.COM.mkv
+- 2026-06-30T04:59:55+0200 [info] real-debrid::rd_verify_queue_done_item - O Retorno de Johnny English 2011 (1080p) WWW.LAPUMiAFiLMES.COM  ==>  /O.Retorno.de.Johnny.English.2011.1080p.BluRay.6ch.
+- 2026-06-30T04:59:57+0200 [info] real-debrid::rd_api_http_error - infringing_file
+- 2026-06-30T04:59:57+0200 [info] real-debrid::rd_call_terminal_error - infringing_file
+- 2026-06-30T04:59:57+0200 [info] real-debrid::rd_verify_infringing - Johnny English Reborn 2011 1080p BDRip x264 AAC-26K
+- 2026-06-30T04:59:57+0200 [info] real-debrid::rd_verify_queue_done_item - Johnny English Reborn 2011 1080p BDRip x264 AAC-26K
+- 2026-06-30T04:59:59+0200 [debug] real-debrid::rd_endpoint_pace_wait
+- 2026-06-30T04:59:59+0200 [info] real-debrid::rd_verify_added
+- 2026-06-30T04:59:59+0200 [debug] real-debrid::rd_verify_poll - O.Retorno.de.Johnny.English.2011.720p.BluRay.x264-HAiDEAF.DUAL-BKZ
+- 2026-06-30T04:59:59+0200 [info] real-debrid::rd_fast_discard - magnet_error
+- 2026-06-30T04:59:59+0200 [info] real-debrid::rd_fast_discard_reason - magnet_error
+- 2026-06-30T04:59:59+0200 [info] real-debrid::rd_fast_discard_delete - magnet_error
+- 2026-06-30T05:00:00+0200 [info] real-debrid::rd_delete_torrent
+- 2026-06-30T05:00:00+0200 [info] real-debrid::rd_slots_release
+- 2026-06-30T05:00:00+0200 [info] real-debrid::rd_verify_queue_done_item - O.Retorno.de.Johnny.English.2011.720p.BluRay.x264-HAiDEAF.DUAL-BKZ
+- 2026-06-30T05:00:02+0200 [info] real-debrid::rd_verify_added
+- 2026-06-30T05:00:02+0200 [debug] real-debrid::rd_verify_poll - Johnny English Reaktywacja - Johnny English Reborn 2011[TsRip.RMVB-Starky] [Napisy PL] [TnTTorrenT] [www.tnt24.info]
+- 2026-06-30T05:00:02+0200 [info] real-debrid::rd_delete_torrent
+- 2026-06-30T05:00:02+0200 [info] real-debrid::rd_slots_release
+- 2026-06-30T05:00:02+0200 [info] real-debrid::rd_verify_not_instant - Johnny English Reaktywacja - Johnny English Reborn 2011[TsRip.RMVB-Starky] [Napisy PL] [TnTTorrenT] [www.tnt24.info]
+- 2026-06-30T05:00:02+0200 [info] real-debrid::rd_verify_queue_done_item - Johnny English Reaktywacja - Johnny English Reborn 2011[TsRip.RMVB-Starky] [Napisy PL] [TnTTorrenT] [www.tnt24.info]
+- 2026-06-30T05:00:04+0200 [debug] real-debrid::rd_endpoint_pace_wait
+- 2026-06-30T05:00:04+0200 [info] real-debrid::rd_verify_added
+- 2026-06-30T05:00:04+0200 [debug] real-debrid::rd_verify_poll - O Retorno de Johnny English (2011) 5.1 BluRay x264 Dual Áudio 1080p By-LuanHarper
+- 2026-06-30T05:00:05+0200 [info] real-debrid::rd_verify_select_files
+- 2026-06-30T05:00:05+0200 [debug] real-debrid::rd_verify_post_select_poll - O Retorno de Johnny English (2011) 5.1 BluRay x264 Dual Áudio 1080p By-LuanHarper
+- 2026-06-30T05:00:05+0200 [info] real-debrid::rd_fast_discard - zero_progress_post_select
+- 2026-06-30T05:00:05+0200 [info] real-debrid::rd_fast_discard_reason - zero_progress_post_select
+- 2026-06-30T05:00:05+0200 [info] real-debrid::rd_fast_discard_delete - zero_progress_post_select
+- 2026-06-30T05:00:05+0200 [info] real-debrid::rd_zero_progress_fast_delete - O Retorno de Johnny English (2011) 5.1 BluRay x264 Dual Áudio 1080p By-LuanHarper
+- 2026-06-30T05:00:05+0200 [info] real-debrid::rd_delete_torrent
+- 2026-06-30T05:00:05+0200 [info] real-debrid::rd_slots_release
+- 2026-06-30T05:00:05+0200 [info] real-debrid::rd_verify_queue_done_item - O Retorno de Johnny English (2011) 5.1 BluRay x264 Dual Áudio 1080p By-LuanHarper
+- 2026-06-30T05:00:07+0200 [info] real-debrid::rd_verify_added
+- 2026-06-30T05:00:07+0200 [debug] real-debrid::rd_verify_poll - Johnny English-2-Reborn-(2011)-Brrip 720p Dual Audio{Hindi-Eng} By hemal77
+- 2026-06-30T05:00:07+0200 [info] real-debrid::rd_verify_select_files
+- 2026-06-30T05:00:07+0200 [debug] real-debrid::rd_verify_post_select_poll - Johnny English-2-Reborn-(2011)-Brrip 720p Dual Audio{Hindi-Eng} By hemal77
+- 2026-06-30T05:00:07+0200 [info] real-debrid::rd_fast_discard - zero_progress_post_select
+- 2026-06-30T05:00:07+0200 [info] real-debrid::rd_fast_discard_reason - zero_progress_post_select
+- 2026-06-30T05:00:07+0200 [info] real-debrid::rd_fast_discard_delete - zero_progress_post_select
+- 2026-06-30T05:00:07+0200 [info] real-debrid::rd_zero_progress_fast_delete - Johnny English-2-Reborn-(2011)-Brrip 720p Dual Audio{Hindi-Eng} By hemal77
+- 2026-06-30T05:00:08+0200 [info] real-debrid::rd_delete_torrent
+- 2026-06-30T05:00:08+0200 [info] real-debrid::rd_slots_release
+- 2026-06-30T05:00:08+0200 [info] real-debrid::rd_verify_queue_done_item - Johnny English-2-Reborn-(2011)-Brrip 720p Dual Audio{Hindi-Eng} By hemal77
+- 2026-06-30T05:00:09+0200 [debug] real-debrid::rd_endpoint_pace_wait
+- 2026-06-30T05:00:09+0200 [info] real-debrid::rd_api_http_error - infringing_file
+- 2026-06-30T05:00:09+0200 [info] real-debrid::rd_call_terminal_error - infringing_file
+- 2026-06-30T05:00:09+0200 [info] real-debrid::rd_verify_infringing - Johnny.English.1-3.2003-2018.1080p.mHD.BluRay.x264.Hun-AlexBox
+- 2026-06-30T05:00:09+0200 [info] real-debrid::rd_verify_queue_done_item - Johnny.English.1-3.2003-2018.1080p.mHD.BluRay.x264.Hun-AlexBox
+- 2026-06-30T05:00:11+0200 [info] real-debrid::rd_api_http_error - infringing_file
+- 2026-06-30T05:00:11+0200 [info] real-debrid::rd_call_terminal_error - infringing_file
+- 2026-06-30T05:00:11+0200 [info] real-debrid::rd_verify_infringing - Johnny.English.Reborn.2011.1080p.BluRay.x264.anoXmous
+- 2026-06-30T05:00:11+0200 [info] real-debrid::rd_verify_queue_done_item - Johnny.English.Reborn.2011.1080p.BluRay.x264.anoXmous
+- 2026-06-30T05:00:14+0200 [debug] real-debrid::rd_endpoint_pace_wait
+- 2026-06-30T05:00:14+0200 [info] real-debrid::rd_verify_added
+- 2026-06-30T05:00:14+0200 [debug] real-debrid::rd_verify_poll - Johnny English Duology (2003 2011) BluRay Rip 720p Dual Audio
+- 2026-06-30T05:00:14+0200 [info] real-debrid::rd_verify_select_files
+- 2026-06-30T05:00:15+0200 [debug] real-debrid::rd_verify_post_select_poll - Johnny English Duology (2003 2011) BluRay Rip 720p Dual Audio
+- 2026-06-30T05:00:15+0200 [info] real-debrid::rd_fast_discard - zero_progress_post_select
+- 2026-06-30T05:00:15+0200 [info] real-debrid::rd_fast_discard_reason - zero_progress_post_select
+- 2026-06-30T05:00:15+0200 [info] real-debrid::rd_fast_discard_delete - zero_progress_post_select
+- 2026-06-30T05:00:15+0200 [info] real-debrid::rd_zero_progress_fast_delete - Johnny English Duology (2003 2011) BluRay Rip 720p Dual Audio
+- 2026-06-30T05:00:15+0200 [info] real-debrid::rd_delete_torrent
+- 2026-06-30T05:00:15+0200 [info] real-debrid::rd_slots_release
+- 2026-06-30T05:00:15+0200 [info] real-debrid::rd_verify_queue_done_item - Johnny English Duology (2003 2011) BluRay Rip 720p Dual Audio
+- 2026-06-30T05:00:16+0200 [info] real-debrid::rd_verify_added
+- 2026-06-30T05:00:17+0200 [debug] real-debrid::rd_verify_poll - www.UIndex.org    -    Johnny English Reborn 2011 1080p BluRay x264-OFT
+- 2026-06-30T05:00:17+0200 [info] real-debrid::rd_verify_select_files
+- 2026-06-30T05:00:17+0200 [debug] real-debrid::rd_verify_post_select_poll - www.UIndex.org    -    Johnny English Reborn 2011 1080p BluRay x264-OFT
+- 2026-06-30T05:00:17+0200 [info] real-debrid::rd_verify_ok - www.UIndex.org    -    Johnny English Reborn 2011 1080p BluRay x264-OFT  ==>  /Johnny English Reborn 2011 1080p BluRay x264-OFT.mkv
+- 2026-06-30T05:00:17+0200 [info] real-debrid::rd_verify_queue_done_item - www.UIndex.org    -    Johnny English Reborn 2011 1080p BluRay x264-OFT  ==>  /Johnny English Reborn 2011 1080p BluRay x
+- 2026-06-30T05:00:17+0200 [info] real-debrid::rd_verify_queue_end
+- 2026-06-30T05:00:17+0200 [info] real-debrid::rd_rate_summary
+- 2026-06-30T05:00:17+0200 [info] real-debrid::rd_endpoint_pacer_summary
+- 2026-06-30T05:00:17+0200 [info] real-debrid::rd_cleanup_final_start
+- 2026-06-30T05:00:18+0200 [info] real-debrid::rd_slots_refresh
+- 2026-06-30T05:00:18+0200 [info] real-debrid::rd_active_count_after
+- 2026-06-30T05:00:18+0200 [info] real-debrid::rd_cleanup_final_end
+- 2026-06-30T05:00:18+0200 [info] real-debrid::rd_rate_summary
+- 2026-06-30T05:00:18+0200 [info] real-debrid::rd_endpoint_pacer_summary
+- 2026-06-30T05:00:18+0200 [info] real-debrid::rd_verify_batch_end
+- 2026-06-30T05:00:18+0200 [info] real-debrid::rd_check_summary
+- 2026-06-30T05:00:18+0200 [info] qbittorrent::qbt_probe_skipped - disabled
+- 2026-06-30T05:00:18+0200 [info] motor::prepare_qbit_extras
+- 2026-06-30T05:00:18+0200 [info] motor::prepare_rd_temp_errors
+- 2026-06-30T05:00:18+0200 [info] motor::prepare_after_working_filter
+- 2026-06-30T05:00:18+0200 [info] search::export_results
+- 2026-06-30T05:00:18+0200 [info] search::export_results
+- 2026-06-30T05:00:18+0200 [info] real-debrid::rd_delete_torrent
+- 2026-06-30T05:00:18+0200 [debug] real-debrid::rd_endpoint_pace_wait
+- 2026-06-30T05:00:19+0200 [info] real-debrid::rd_delete_torrent
+- 2026-06-30T05:00:19+0200 [info] real-debrid::rd_delete_torrent
+- 2026-06-30T05:00:20+0200 [info] real-debrid::rd_delete_torrent
+- 2026-06-30T05:00:20+0200 [info] search::editor_clean_search_rd_cleanup
+- 2026-06-30T05:00:20+0200 [info] search::editor_clean_search_end
+- 2026-06-30T05:00:20+02:00 [info] web::JOB_FINISHED_OK

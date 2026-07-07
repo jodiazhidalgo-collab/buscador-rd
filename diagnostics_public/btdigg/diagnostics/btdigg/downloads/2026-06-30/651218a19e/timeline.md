@@ -1,0 +1,19 @@
+- 2026-06-30T04:08:30+02:00 [info] download::DOWNLOAD_CLICK_RECEIVED - Johnny English De nuevo en accion (2018) [BluRay 720p X264 MKV][AC3 5.1 Castellano][www.atomixHQ.ONE]
+- 2026-06-30T04:08:30+02:00 [info] btdigg::BTDIGG_CLIENT_CARD
+- 2026-06-30T04:08:30+02:00 [info] btdigg::BTDIGG_SERVER_CARD_OK - Johnny English De nuevo en accion (2018) [BluRay 720p X264 MKV][AC3 5.1 Castellano][www.atomixHQ.ONE]
+- 2026-06-30T04:08:30+02:00 [info] download::CLIENT_CONTRACT_HINT
+- 2026-06-30T04:08:30+02:00 [info] download::CONTRACT_SUMMARY
+- 2026-06-30T04:08:30+02:00 [info] general::DESTINATION_SELECTED
+- 2026-06-30T04:08:30+02:00 [info] btdigg::BTDIGG_RESOLVE_START - Johnny English De nuevo en accion (2018) [BluRay 720p X264 MKV][AC3 5.1 Castellano][www.atomixHQ.ONE]
+- 2026-06-30T04:08:30+02:00 [info] btdigg::BTDIGG_RESOLVE_OK
+- 2026-06-30T04:08:30+02:00 [info] download::ROUTE_DECIDED - qbt_status=QBT_VIVO
+- 2026-06-30T04:08:30+02:00 [info] download::CONTRACT_SUMMARY - qbt_status=QBT_VIVO
+- 2026-06-30T04:08:30+02:00 [info] download::ROUTE_SELECTED
+- 2026-06-30T04:08:30+02:00 [info] qbittorrent::qBittorrent_INFO_BY_HASH_OK
+- 2026-06-30T04:08:30+02:00 [info] qbittorrent::qBittorrent_ADD_URL_START
+- 2026-06-30T04:08:30+02:00 [info] qbittorrent::qBittorrent_LOGIN_OK
+- 2026-06-30T04:08:30+02:00 [info] qbittorrent::qBittorrent_POST_ADD_ATTEMPT
+- 2026-06-30T04:08:30+02:00 [info] qbittorrent::qBittorrent_ADD_URL_OK
+- 2026-06-30T04:08:30+02:00 [info] download::TRACKING_REGISTERED
+- 2026-06-30T04:08:30+02:00 [info] download::CLEANUP_FINAL - qbit_target
+- 2026-06-30T04:08:30+02:00 [info] download::DOWNLOAD_END_OK

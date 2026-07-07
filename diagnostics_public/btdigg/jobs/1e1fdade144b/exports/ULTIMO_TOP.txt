@@ -1,0 +1,21 @@
+RD Turbo Pro - último TOP
+================================================================================
+[01] RD:RD_OK        SCORE:  36 SIZE:   6.1 GB HASH:e9e8e653d1abb30bb7d95dcfeea41304dbd661be
+     www.UIndex.org    -    Pillion 2025 1080p WEB EN-RGB  ==>  /Pillion 2025 1080p WEB EN-RGB.mkv
+     ARCHIVO: /Pillion 2025 1080p WEB EN-RGB.mkv (6.1 GB)
+     MOTIVO: Verificado con addMagnet: 1 link(s). Archivo interno: /Pillion 2025 1080p WEB EN-RGB.mkv (6.1 GB)
+
+[02] RD:RD_FAIL      SCORE:  65 SIZE:   1.0 GB HASH:5f64e53aea43e6f3cc55d28d61a0419a33dbda05
+     www.UIndex.org    -    Pillion (2025) 720p WEBRip-LAMA
+     QBIT: QBT_VIVO | seeds=1 peers=1 | qBittorrent con seed conectado: seeds=1, peers=1, state=stalleddl
+     MOTIVO: Real-Debrid rechaza este torrent por infraccion o bloqueo legal
+
+[03] RD:RD_FAIL      SCORE:  62 SIZE:   1.7 GB HASH:42b868e0a376007d776c36365e8521e9c9d282b0
+     www.UIndex.org    -    Pillion 2025 1080p 10bit WEBRip 6CH X265 HEVC-PSA
+     QBIT: QBT_VIVO | seeds=1 peers=9 | qBittorrent con seed conectado: seeds=1, peers=9, state=stalleddl
+     MOTIVO: Real-Debrid rechaza este torrent por infraccion o bloqueo legal
+
+[04] RD:RD_FAIL      SCORE:  61 SIZE:   4.9 GB HASH:d2ee2ec4517b6ee1593a4f1d50cde26a560b00f7
+     www.UIndex.org    -    Pillion 2025 1080p WEBRip x265-DH
+     QBIT: QBT_VIVO | seeds=1 peers=9 | qBittorrent descargando: 0.02 MB/s, seeds=1, peers=9
+     MOTIVO: Real-Debrid rechaza este torrent por infraccion o bloqueo legal

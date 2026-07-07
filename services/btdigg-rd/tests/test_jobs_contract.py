@@ -200,3 +200,23 @@ def test_successful_artifact_promotion_uses_motor_runtime_targets(
     assert (motor_runtime_dir / "exports" / "one.txt").read_text(encoding="utf-8") == "exported"
     assert (motor_runtime_dir / "last_links.txt").exists()
     assert (motor_runtime_dir / "last_links_ordenado.txt").read_text(encoding="utf-8") == "ordered"
+
+
+def test_job_refreshes_public_diagnostics_after_terminal_state(
+    isolated_data_dir, reload_data_dir_modules, monkeypatch
+):
+    jobs = _load_jobs(isolated_data_dir, reload_data_dir_modules)
+    calls: list[dict[str, object]] = []
+
+    def fake_export(**kwargs):
+        calls.append(kwargs)
+        return {"exported_files": 7, "redactions": 2}
+
+    monkeypatch.setattr(jobs, "export_public_diagnostics", fake_export)
+    jobs.jobs["job_public"] = {"id": "job_public", "log": []}
+
+    jobs._refresh_public_diagnostics(jobs.SEARCH_SCOPE, "job_public")
+
+    assert calls == [{"trigger": "job:search", "current_run_id": "job_public"}]
+    assert "7 ficheros" in jobs.jobs["job_public"]["log"][-1]
+    assert "2 secretos tapados" in jobs.jobs["job_public"]["log"][-1]

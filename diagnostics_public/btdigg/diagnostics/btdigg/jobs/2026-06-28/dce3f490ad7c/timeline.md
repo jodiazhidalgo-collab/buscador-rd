@@ -1,0 +1,834 @@
+- 2026-06-28T22:06:01+02:00 [info] web::JOB_STARTED
+- 2026-06-28T22:06:01+02:00 [info] general::CONFIG_SNAPSHOT
+- 2026-06-28T22:06:01+02:00 [info] web::COMMAND_PREPARED
+- 2026-06-28T22:06:01+02:00 [info] web::PROCESS_STARTED
+- 2026-06-28T22:06:02+0200 [info] search::editor_clean_search_start
+- 2026-06-28T22:06:02+0200 [info] btdigg::browser_auto_search_start_dom
+- 2026-06-28T22:06:05+0200 [info] btdigg::extract_magnets
+- 2026-06-28T22:06:05+0200 [info] btdigg::btdigg_dump_dom_fallback
+- 2026-06-28T22:06:12+0200 [info] btdigg::extract_magnets
+- 2026-06-28T22:06:12+0200 [info] btdigg::btdigg_dump_dom_fallback
+- 2026-06-28T22:06:18+0200 [info] btdigg::extract_magnets
+- 2026-06-28T22:06:18+0200 [info] btdigg::btdigg_dump_dom_fallback
+- 2026-06-28T22:06:23+0200 [info] btdigg::extract_magnets
+- 2026-06-28T22:06:23+0200 [info] btdigg::btdigg_dump_dom_fallback
+- 2026-06-28T22:06:29+0200 [info] btdigg::extract_magnets
+- 2026-06-28T22:06:29+0200 [info] btdigg::btdigg_dump_dom_fallback
+- 2026-06-28T22:06:34+0200 [info] btdigg::extract_magnets
+- 2026-06-28T22:06:34+0200 [info] btdigg::btdigg_dump_dom_fallback
+- 2026-06-28T22:06:40+0200 [info] btdigg::extract_magnets
+- 2026-06-28T22:06:40+0200 [info] btdigg::btdigg_dump_dom_fallback
+- 2026-06-28T22:06:46+0200 [info] btdigg::extract_magnets
+- 2026-06-28T22:06:46+0200 [info] btdigg::btdigg_dump_dom_fallback
+- 2026-06-28T22:06:53+0200 [info] btdigg::extract_magnets
+- 2026-06-28T22:06:53+0200 [info] btdigg::btdigg_dump_dom_fallback
+- 2026-06-28T22:07:00+0200 [info] btdigg::extract_magnets
+- 2026-06-28T22:07:00+0200 [info] btdigg::btdigg_dump_dom_fallback
+- 2026-06-28T22:07:02+0200 [info] btdigg::browser_auto_search_end_dom
+- 2026-06-28T22:07:02+0200 [info] motor::prepare_results_start
+- 2026-06-28T22:07:02+0200 [info] motor::prepare_after_scoring
+- 2026-06-28T22:07:02+0200 [info] motor::prepare_after_filter
+- 2026-06-28T22:07:02+0200 [info] motor::prepare_after_query_prefilter
+- 2026-06-28T22:07:02+0200 [info] real-debrid::rd_account_check_ok
+- 2026-06-28T22:07:02+0200 [info] real-debrid::rd_check_start
+- 2026-06-28T22:07:02+0200 [warn] real-debrid::rd_api_http_error
+- 2026-06-28T22:07:02+0200 [warn] real-debrid::rd_cache_api_disabled - Real-Debrid HTTP 403: {
+	"error": "disabled_endpoint",
+	"error_code": 37
+}
+- 2026-06-28T22:07:02+0200 [info] real-debrid::rd_verify_batch_start
+- 2026-06-28T22:07:02+0200 [info] real-debrid::rd_verify_add_start - El hombre contra la abeja - Temporada 1 [WEB-DL 1080p][Cap.101][Dual DDP5.1   Subs][www.atomixHQ.ONE]
+- 2026-06-28T22:07:03+0200 [info] real-debrid::rd_existing_list
+- 2026-06-28T22:07:03+0200 [warn] real-debrid::rd_api_http_error
+- 2026-06-28T22:07:03+0200 [warn] real-debrid::rd_verify_error - Real-Debrid HTTP 451: {
+	"error": "infringing_file",
+	"error_code": 35
+}
+- 2026-06-28T22:07:03+0200 [info] real-debrid::rd_verify_add_start - El hombre contra la abeja - Temporada 1 [WEB-DL 1080p][Cap.103][Dual DDP5.1   Subs][www.atomixHQ.ONE]
+- 2026-06-28T22:07:03+0200 [warn] real-debrid::rd_api_http_error
+- 2026-06-28T22:07:03+0200 [warn] real-debrid::rd_verify_error - Real-Debrid HTTP 451: {
+	"error": "infringing_file",
+	"error_code": 35
+}
+- 2026-06-28T22:07:04+0200 [info] real-debrid::rd_verify_add_start - El hombre contra la abeja - Temporada 1 [WEB-DL 1080p][Cap.108][Dual DDP5.1   Subs][www.atomixHQ.ONE]
+- 2026-06-28T22:07:04+0200 [warn] real-debrid::rd_api_http_error
+- 2026-06-28T22:07:04+0200 [warn] real-debrid::rd_verify_error - Real-Debrid HTTP 451: {
+	"error": "infringing_file",
+	"error_code": 35
+}
+- 2026-06-28T22:07:04+0200 [info] real-debrid::rd_verify_add_start - El hombre contra la abeja - Temporada 1 [WEB-DL 1080p][Cap.102][Dual DDP5.1   Subs][www.atomixHQ.ONE]
+- 2026-06-28T22:07:04+0200 [warn] real-debrid::rd_api_http_error
+- 2026-06-28T22:07:04+0200 [warn] real-debrid::rd_verify_error - Real-Debrid HTTP 451: {
+	"error": "infringing_file",
+	"error_code": 35
+}
+- 2026-06-28T22:07:05+0200 [info] real-debrid::rd_verify_add_start - El hombre contra la abeja - Temporada 1 [WEB-DL 1080p][Cap.109][Dual DDP5.1   Subs][www.atomixHQ.ONE]
+- 2026-06-28T22:07:05+0200 [warn] real-debrid::rd_api_http_error
+- 2026-06-28T22:07:05+0200 [warn] real-debrid::rd_verify_error - Real-Debrid HTTP 451: {
+	"error": "infringing_file",
+	"error_code": 35
+}
+- 2026-06-28T22:07:05+0200 [info] real-debrid::rd_verify_add_start - El hombre contra la abeja - Temporada 1 [WEB-DL 1080p][Cap.105][Dual DDP5.1   Subs][www.atomixHQ.ONE]
+- 2026-06-28T22:07:05+0200 [warn] real-debrid::rd_api_http_error
+- 2026-06-28T22:07:05+0200 [warn] real-debrid::rd_verify_error - Real-Debrid HTTP 451: {
+	"error": "infringing_file",
+	"error_code": 35
+}
+- 2026-06-28T22:07:06+0200 [info] real-debrid::rd_verify_add_start - El hombre contra la abeja - Temporada 1 [WEB-DL 1080p][Cap.104][Dual DDP5.1   Subs][www.atomixHQ.ONE]
+- 2026-06-28T22:07:06+0200 [warn] real-debrid::rd_api_http_error
+- 2026-06-28T22:07:06+0200 [warn] real-debrid::rd_verify_error - Real-Debrid HTTP 451: {
+	"error": "infringing_file",
+	"error_code": 35
+}
+- 2026-06-28T22:07:06+0200 [info] real-debrid::rd_verify_add_start - El hombre contra la abeja - Temporada 1 [WEB-DL 1080p][Cap.107][Dual DDP5.1   Subs][www.atomixHQ.ONE]
+- 2026-06-28T22:07:06+0200 [warn] real-debrid::rd_api_http_error
+- 2026-06-28T22:07:06+0200 [warn] real-debrid::rd_verify_error - Real-Debrid HTTP 451: {
+	"error": "infringing_file",
+	"error_code": 35
+}
+- 2026-06-28T22:07:07+0200 [info] real-debrid::rd_verify_add_start - El hombre contra la abeja - Temporada 1 [WEB-DL 1080p][Cap.106][Dual DDP5.1   Subs][www.atomixHQ.ONE]
+- 2026-06-28T22:07:07+0200 [warn] real-debrid::rd_api_http_error
+- 2026-06-28T22:07:07+0200 [warn] real-debrid::rd_verify_error - Real-Debrid HTTP 451: {
+	"error": "infringing_file",
+	"error_code": 35
+}
+- 2026-06-28T22:07:07+0200 [info] real-debrid::rd_verify_add_start - El hombre contra la abeja - Temporada 1 [HDTV 720p][Cap.106][AC3 5.1 Castellano][www.AtomoHD.one]
+- 2026-06-28T22:07:07+0200 [info] real-debrid::rd_verify_added
+- 2026-06-28T22:07:07+0200 [debug] real-debrid::rd_verify_poll - El hombre contra la abeja - Temporada 1 [HDTV 720p][Cap.106][AC3 5.1 Castellano][www.AtomoHD.one]
+- 2026-06-28T22:07:08+0200 [info] real-debrid::rd_verify_select_files
+- 2026-06-28T22:07:09+0200 [debug] real-debrid::rd_verify_poll - El hombre contra la abeja - Temporada 1 [HDTV 720p][Cap.106][AC3 5.1 Castellano][www.AtomoHD.one]
+- 2026-06-28T22:07:10+0200 [debug] real-debrid::rd_verify_poll - El hombre contra la abeja - Temporada 1 [HDTV 720p][Cap.106][AC3 5.1 Castellano][www.AtomoHD.one]
+- 2026-06-28T22:07:11+0200 [info] real-debrid::rd_delete_torrent
+- 2026-06-28T22:07:11+0200 [info] real-debrid::rd_verify_not_instant - El hombre contra la abeja - Temporada 1 [HDTV 720p][Cap.106][AC3 5.1 Castellano][www.AtomoHD.one]
+- 2026-06-28T22:07:12+0200 [info] real-debrid::rd_verify_add_start - El hombre contra la abeja - Temporada 1 [HDTV 720p][Cap.108][AC3 5.1 Castellano][www.AtomoHD.one]
+- 2026-06-28T22:07:12+0200 [info] real-debrid::rd_verify_added
+- 2026-06-28T22:07:12+0200 [debug] real-debrid::rd_verify_poll - El hombre contra la abeja - Temporada 1 [HDTV 720p][Cap.108][AC3 5.1 Castellano][www.AtomoHD.one]
+- 2026-06-28T22:07:12+0200 [info] real-debrid::rd_verify_select_files
+- 2026-06-28T22:07:13+0200 [debug] real-debrid::rd_verify_poll - El hombre contra la abeja - Temporada 1 [HDTV 720p][Cap.108][AC3 5.1 Castellano][www.AtomoHD.one]
+- 2026-06-28T22:07:15+0200 [debug] real-debrid::rd_verify_poll - El hombre contra la abeja - Temporada 1 [HDTV 720p][Cap.108][AC3 5.1 Castellano][www.AtomoHD.one]
+- 2026-06-28T22:07:16+0200 [info] real-debrid::rd_delete_torrent
+- 2026-06-28T22:07:16+0200 [info] real-debrid::rd_verify_not_instant - El hombre contra la abeja - Temporada 1 [HDTV 720p][Cap.108][AC3 5.1 Castellano][www.AtomoHD.one]
+- 2026-06-28T22:07:16+0200 [info] real-debrid::rd_verify_add_start - El hombre contra la abeja - Temporada 1 [HDTV 720p][Cap.109][AC3 5.1 Castellano][www.AtomoHD.one]
+- 2026-06-28T22:07:16+0200 [info] real-debrid::rd_verify_added
+- 2026-06-28T22:07:17+0200 [debug] real-debrid::rd_verify_poll - El hombre contra la abeja - Temporada 1 [HDTV 720p][Cap.109][AC3 5.1 Castellano][www.AtomoHD.one]
+- 2026-06-28T22:07:17+0200 [info] real-debrid::rd_verify_select_files
+- 2026-06-28T22:07:18+0200 [debug] real-debrid::rd_verify_poll - El hombre contra la abeja - Temporada 1 [HDTV 720p][Cap.109][AC3 5.1 Castellano][www.AtomoHD.one]
+- 2026-06-28T22:07:19+0200 [debug] real-debrid::rd_verify_poll - El hombre contra la abeja - Temporada 1 [HDTV 720p][Cap.109][AC3 5.1 Castellano][www.AtomoHD.one]
+- 2026-06-28T22:07:20+0200 [info] real-debrid::rd_delete_torrent
+- 2026-06-28T22:07:20+0200 [info] real-debrid::rd_verify_not_instant - El hombre contra la abeja - Temporada 1 [HDTV 720p][Cap.109][AC3 5.1 Castellano][www.AtomoHD.one]
+- 2026-06-28T22:07:21+0200 [info] real-debrid::rd_verify_add_start - El hombre contra la abeja - Temporada 1 [HDTV 720p][Cap.101][AC3 5.1 Castellano][www.AtomoHD.one]
+- 2026-06-28T22:07:21+0200 [info] real-debrid::rd_verify_added
+- 2026-06-28T22:07:21+0200 [debug] real-debrid::rd_verify_poll - El hombre contra la abeja - Temporada 1 [HDTV 720p][Cap.101][AC3 5.1 Castellano][www.AtomoHD.one]
+- 2026-06-28T22:07:21+0200 [info] real-debrid::rd_verify_select_files
+- 2026-06-28T22:07:23+0200 [debug] real-debrid::rd_verify_poll - El hombre contra la abeja - Temporada 1 [HDTV 720p][Cap.101][AC3 5.1 Castellano][www.AtomoHD.one]
+- 2026-06-28T22:07:23+0200 [info] real-debrid::rd_verify_ok - El hombre contra la abeja - Temporada 1 [HDTV 720p][Cap.101][AC3 5.1 Castellano][www.AtomoHD.one]  ==>  /El hombre contra la abeja - Temporada 1 [HDTV 720p][Cap.101][AC3 5.1 Castellano][www.AtomoHD.one].mkv
+- 2026-06-28T22:07:23+0200 [info] real-debrid::rd_verify_add_start - El hombre contra la abeja - Temporada 1 [HDTV 720p][Cap.105][AC3 5.1 Castellano][www.AtomoHD.one]
+- 2026-06-28T22:07:23+0200 [info] real-debrid::rd_verify_added
+- 2026-06-28T22:07:23+0200 [debug] real-debrid::rd_verify_poll - El hombre contra la abeja - Temporada 1 [HDTV 720p][Cap.105][AC3 5.1 Castellano][www.AtomoHD.one]
+- 2026-06-28T22:07:24+0200 [info] real-debrid::rd_verify_select_files
+- 2026-06-28T22:07:25+0200 [debug] real-debrid::rd_verify_poll - El hombre contra la abeja - Temporada 1 [HDTV 720p][Cap.105][AC3 5.1 Castellano][www.AtomoHD.one]
+- 2026-06-28T22:07:26+0200 [debug] real-debrid::rd_verify_poll - El hombre contra la abeja - Temporada 1 [HDTV 720p][Cap.105][AC3 5.1 Castellano][www.AtomoHD.one]
+- 2026-06-28T22:07:27+0200 [info] real-debrid::rd_delete_torrent
+- 2026-06-28T22:07:27+0200 [info] real-debrid::rd_verify_not_instant - El hombre contra la abeja - Temporada 1 [HDTV 720p][Cap.105][AC3 5.1 Castellano][www.AtomoHD.one]
+- 2026-06-28T22:07:27+0200 [info] real-debrid::rd_verify_add_start - El hombre contra la abeja - Temporada 1 [HDTV 720p][Cap.104][AC3 5.1 Castellano][www.AtomoHD.one]
+- 2026-06-28T22:07:28+0200 [info] real-debrid::rd_verify_added
+- 2026-06-28T22:07:28+0200 [debug] real-debrid::rd_verify_poll - El hombre contra la abeja - Temporada 1 [HDTV 720p][Cap.104][AC3 5.1 Castellano][www.AtomoHD.one]
+- 2026-06-28T22:07:28+0200 [info] real-debrid::rd_verify_select_files
+- 2026-06-28T22:07:29+0200 [debug] real-debrid::rd_verify_poll - El hombre contra la abeja - Temporada 1 [HDTV 720p][Cap.104][AC3 5.1 Castellano][www.AtomoHD.one]
+- 2026-06-28T22:07:29+0200 [info] real-debrid::rd_verify_ok - El hombre contra la abeja - Temporada 1 [HDTV 720p][Cap.104][AC3 5.1 Castellano][www.AtomoHD.one]  ==>  /El hombre contra la abeja - Temporada 1 [HDTV 720p][Cap.104][AC3 5.1 Castellano][www.AtomoHD.one].mkv
+- 2026-06-28T22:07:30+0200 [info] real-debrid::rd_verify_add_start - El hombre contra la abeja - Temporada 1 [HDTV 720p][Cap.107][AC3 5.1 Castellano][www.AtomoHD.one]
+- 2026-06-28T22:07:30+0200 [info] real-debrid::rd_verify_added
+- 2026-06-28T22:07:30+0200 [debug] real-debrid::rd_verify_poll - El hombre contra la abeja - Temporada 1 [HDTV 720p][Cap.107][AC3 5.1 Castellano][www.AtomoHD.one]
+- 2026-06-28T22:07:30+0200 [info] real-debrid::rd_verify_select_files
+- 2026-06-28T22:07:32+0200 [debug] real-debrid::rd_verify_poll - El hombre contra la abeja - Temporada 1 [HDTV 720p][Cap.107][AC3 5.1 Castellano][www.AtomoHD.one]
+- 2026-06-28T22:07:33+0200 [debug] real-debrid::rd_verify_poll - El hombre contra la abeja - Temporada 1 [HDTV 720p][Cap.107][AC3 5.1 Castellano][www.AtomoHD.one]
+- 2026-06-28T22:07:34+0200 [info] real-debrid::rd_delete_torrent
+- 2026-06-28T22:07:34+0200 [info] real-debrid::rd_verify_not_instant - El hombre contra la abeja - Temporada 1 [HDTV 720p][Cap.107][AC3 5.1 Castellano][www.AtomoHD.one]
+- 2026-06-28T22:07:34+0200 [info] real-debrid::rd_verify_add_start - El hombre contra la abeja - Temporada 1 [HDTV 720p][Cap.103][AC3 5.1 Castellano][www.AtomoHD.one]
+- 2026-06-28T22:07:35+0200 [info] real-debrid::rd_verify_added
+- 2026-06-28T22:07:35+0200 [debug] real-debrid::rd_verify_poll - El hombre contra la abeja - Temporada 1 [HDTV 720p][Cap.103][AC3 5.1 Castellano][www.AtomoHD.one]
+- 2026-06-28T22:07:36+0200 [info] real-debrid::rd_delete_torrent
+- 2026-06-28T22:07:36+0200 [info] real-debrid::rd_verify_pack_skip - El hombre contra la abeja - Temporada 1 [HDTV 720p][Cap.103][AC3 5.1 Castellano][www.AtomoHD.one]
+- 2026-06-28T22:07:36+0200 [info] real-debrid::rd_verify_add_start - El hombre contra la abeja - Temporada 1 [HDTV 720p][Cap.102][AC3 5.1 Castellano][www.AtomoHD.one]
+- 2026-06-28T22:07:36+0200 [info] real-debrid::rd_verify_added
+- 2026-06-28T22:07:36+0200 [debug] real-debrid::rd_verify_poll - El hombre contra la abeja - Temporada 1 [HDTV 720p][Cap.102][AC3 5.1 Castellano][www.AtomoHD.one]
+- 2026-06-28T22:07:36+0200 [info] real-debrid::rd_delete_torrent
+- 2026-06-28T22:07:36+0200 [info] real-debrid::rd_verify_pack_skip - El hombre contra la abeja - Temporada 1 [HDTV 720p][Cap.102][AC3 5.1 Castellano][www.AtomoHD.one]
+- 2026-06-28T22:07:37+0200 [info] real-debrid::rd_verify_add_start - El hombre contra la abeja - Temporada 1 [HDTV][Cap.101][Castellano][www.AtomoHD.one]
+- 2026-06-28T22:07:37+0200 [info] real-debrid::rd_verify_added
+- 2026-06-28T22:07:37+0200 [debug] real-debrid::rd_verify_poll - El hombre contra la abeja - Temporada 1 [HDTV][Cap.101][Castellano][www.AtomoHD.one]
+- 2026-06-28T22:07:37+0200 [info] real-debrid::rd_delete_torrent
+- 2026-06-28T22:07:37+0200 [info] real-debrid::rd_verify_pack_skip - El hombre contra la abeja - Temporada 1 [HDTV][Cap.101][Castellano][www.AtomoHD.one]
+- 2026-06-28T22:07:38+0200 [info] real-debrid::rd_verify_add_start - El hombre contra la abeja - Temporada 1 [HDTV][Cap.109][Castellano][www.AtomoHD.one]
+- 2026-06-28T22:07:38+0200 [info] real-debrid::rd_verify_added
+- 2026-06-28T22:07:38+0200 [debug] real-debrid::rd_verify_poll - El hombre contra la abeja - Temporada 1 [HDTV][Cap.109][Castellano][www.AtomoHD.one]
+- 2026-06-28T22:07:38+0200 [info] real-debrid::rd_delete_torrent
+- 2026-06-28T22:07:38+0200 [info] real-debrid::rd_verify_pack_skip - El hombre contra la abeja - Temporada 1 [HDTV][Cap.109][Castellano][www.AtomoHD.one]
+- 2026-06-28T22:07:39+0200 [info] real-debrid::rd_verify_add_start - El hombre contra la abeja - Temporada 1 [HDTV][Cap.108][Castellano][www.AtomoHD.one]
+- 2026-06-28T22:07:39+0200 [info] real-debrid::rd_verify_added
+- 2026-06-28T22:07:39+0200 [debug] real-debrid::rd_verify_poll - El hombre contra la abeja - Temporada 1 [HDTV][Cap.108][Castellano][www.AtomoHD.one]
+- 2026-06-28T22:07:39+0200 [info] real-debrid::rd_delete_torrent
+- 2026-06-28T22:07:39+0200 [info] real-debrid::rd_verify_pack_skip - El hombre contra la abeja - Temporada 1 [HDTV][Cap.108][Castellano][www.AtomoHD.one]
+- 2026-06-28T22:07:40+0200 [info] real-debrid::rd_verify_add_start - El hombre contra la abeja 1X4X5X6 HDTV Castellano
+- 2026-06-28T22:07:42+0200 [info] real-debrid::rd_verify_added
+- 2026-06-28T22:07:42+0200 [debug] real-debrid::rd_verify_poll - El hombre contra la abeja 1X4X5X6 HDTV Castellano
+- 2026-06-28T22:07:42+0200 [info] real-debrid::rd_delete_torrent
+- 2026-06-28T22:07:42+0200 [info] real-debrid::rd_verify_pack_skip - El hombre contra la abeja 1X4X5X6 HDTV Castellano
+- 2026-06-28T22:07:43+0200 [info] real-debrid::rd_verify_add_start - El hombre contra la abeja - Temporada 1 [HDTV][Cap.104][Castellano][www.AtomoHD.one]
+- 2026-06-28T22:07:43+0200 [info] real-debrid::rd_verify_added
+- 2026-06-28T22:07:43+0200 [debug] real-debrid::rd_verify_poll - El hombre contra la abeja - Temporada 1 [HDTV][Cap.104][Castellano][www.AtomoHD.one]
+- 2026-06-28T22:07:43+0200 [info] real-debrid::rd_delete_torrent
+- 2026-06-28T22:07:43+0200 [info] real-debrid::rd_verify_pack_skip - El hombre contra la abeja - Temporada 1 [HDTV][Cap.104][Castellano][www.AtomoHD.one]
+- 2026-06-28T22:07:44+0200 [info] real-debrid::rd_verify_add_start - El hombre contra la abeja - Temporada 1 [HDTV][Cap.103][Castellano][www.AtomoHD.one]
+- 2026-06-28T22:07:44+0200 [info] real-debrid::rd_verify_added
+- 2026-06-28T22:07:44+0200 [debug] real-debrid::rd_verify_poll - El hombre contra la abeja - Temporada 1 [HDTV][Cap.103][Castellano][www.AtomoHD.one]
+- 2026-06-28T22:07:44+0200 [info] real-debrid::rd_delete_torrent
+- 2026-06-28T22:07:44+0200 [info] real-debrid::rd_verify_pack_skip - El hombre contra la abeja - Temporada 1 [HDTV][Cap.103][Castellano][www.AtomoHD.one]
+- 2026-06-28T22:07:45+0200 [info] real-debrid::rd_verify_add_start - El hombre contra la abeja - Temporada 1 [HDTV][Cap.107][Castellano][www.AtomoHD.one]
+- 2026-06-28T22:07:45+0200 [info] real-debrid::rd_verify_added
+- 2026-06-28T22:07:45+0200 [debug] real-debrid::rd_verify_poll - El hombre contra la abeja - Temporada 1 [HDTV][Cap.107][Castellano][www.AtomoHD.one]
+- 2026-06-28T22:07:45+0200 [info] real-debrid::rd_delete_torrent
+- 2026-06-28T22:07:45+0200 [info] real-debrid::rd_verify_pack_skip - El hombre contra la abeja - Temporada 1 [HDTV][Cap.107][Castellano][www.AtomoHD.one]
+- 2026-06-28T22:07:45+0200 [info] real-debrid::rd_verify_add_start - El hombre contra la abeja - Temporada 1 [HDTV][Cap.102][Castellano][www.AtomoHD.one]
+- 2026-06-28T22:07:47+0200 [info] real-debrid::rd_verify_added
+- 2026-06-28T22:07:47+0200 [debug] real-debrid::rd_verify_poll - El hombre contra la abeja - Temporada 1 [HDTV][Cap.102][Castellano][www.AtomoHD.one]
+- 2026-06-28T22:07:47+0200 [info] real-debrid::rd_delete_torrent
+- 2026-06-28T22:07:47+0200 [info] real-debrid::rd_verify_pack_skip - El hombre contra la abeja - Temporada 1 [HDTV][Cap.102][Castellano][www.AtomoHD.one]
+- 2026-06-28T22:07:47+0200 [info] real-debrid::rd_verify_add_start - El hombre contra la abeja - Temporada 1 [HDTV][Cap.105][Castellano][www.AtomoHD.one]
+- 2026-06-28T22:07:48+0200 [info] real-debrid::rd_verify_added
+- 2026-06-28T22:07:49+0200 [debug] real-debrid::rd_verify_poll - El hombre contra la abeja - Temporada 1 [HDTV][Cap.105][Castellano][www.AtomoHD.one]
+- 2026-06-28T22:07:49+0200 [info] real-debrid::rd_delete_torrent
+- 2026-06-28T22:07:49+0200 [info] real-debrid::rd_verify_pack_skip - El hombre contra la abeja - Temporada 1 [HDTV][Cap.105][Castellano][www.AtomoHD.one]
+- 2026-06-28T22:07:49+0200 [info] real-debrid::rd_verify_add_start - El hombre contra la abeja - Temporada 1 [HDTV][Cap.106][Castellano][www.AtomoHD.one]
+- 2026-06-28T22:07:50+0200 [info] real-debrid::rd_verify_added
+- 2026-06-28T22:07:50+0200 [debug] real-debrid::rd_verify_poll - El hombre contra la abeja - Temporada 1 [HDTV][Cap.106][Castellano][www.AtomoHD.one]
+- 2026-06-28T22:07:51+0200 [info] real-debrid::rd_delete_torrent
+- 2026-06-28T22:07:51+0200 [info] real-debrid::rd_verify_pack_skip - El hombre contra la abeja - Temporada 1 [HDTV][Cap.106][Castellano][www.AtomoHD.one]
+- 2026-06-28T22:07:51+0200 [info] real-debrid::rd_verify_add_start - El hombre contra la abeja 1X1X2X3 HDTV XviD Castellano
+- 2026-06-28T22:07:51+0200 [info] real-debrid::rd_verify_added
+- 2026-06-28T22:07:51+0200 [debug] real-debrid::rd_verify_poll - El hombre contra la abeja 1X1X2X3 HDTV XviD Castellano
+- 2026-06-28T22:07:51+0200 [info] real-debrid::rd_delete_torrent
+- 2026-06-28T22:07:51+0200 [info] real-debrid::rd_verify_pack_skip - El hombre contra la abeja 1X1X2X3 HDTV XviD Castellano
+- 2026-06-28T22:07:52+0200 [info] real-debrid::rd_verify_add_start - El hombre contra la abeja 1X7X8X9 HDTV XviD Castellano
+- 2026-06-28T22:07:52+0200 [info] real-debrid::rd_verify_added
+- 2026-06-28T22:07:52+0200 [debug] real-debrid::rd_verify_poll - El hombre contra la abeja 1X7X8X9 HDTV XviD Castellano
+- 2026-06-28T22:07:52+0200 [info] real-debrid::rd_delete_torrent
+- 2026-06-28T22:07:52+0200 [info] real-debrid::rd_verify_pack_skip - El hombre contra la abeja 1X7X8X9 HDTV XviD Castellano
+- 2026-06-28T22:07:53+0200 [warn] real-debrid::rd_verify_batch_end
+- 2026-06-28T22:07:53+0200 [warn] real-debrid::rd_check_summary
+- 2026-06-28T22:07:53+0200 [info] qbittorrent::qbt_relevance_filter
+- 2026-06-28T22:07:53+0200 [info] qbittorrent::qbt_probe_batch_start
+- 2026-06-28T22:07:53+0200 [info] qbittorrent::qbt_login
+- 2026-06-28T22:07:53+0200 [info] qbittorrent::qbt_login
+- 2026-06-28T22:07:53+0200 [info] qbittorrent::qbt_login
+- 2026-06-28T22:07:53+0200 [info] qbittorrent::qbt_login
+- 2026-06-28T22:07:53+0200 [info] qbittorrent::qbt_login
+- 2026-06-28T22:07:53+0200 [info] qbittorrent::qbt_probe_add - El hombre contra la abeja - Temporada 1 [WEB-DL 1080p][Cap.103][Dual DDP5.1   Subs][www.atomixHQ.ONE]
+- 2026-06-28T22:07:53+0200 [info] qbittorrent::qbt_probe_add - El hombre contra la abeja - Temporada 1 [WEB-DL 1080p][Cap.101][Dual DDP5.1   Subs][www.atomixHQ.ONE]
+- 2026-06-28T22:07:53+0200 [info] qbittorrent::qbt_probe_add - El hombre contra la abeja - Temporada 1 [WEB-DL 1080p][Cap.108][Dual DDP5.1   Subs][www.atomixHQ.ONE]
+- 2026-06-28T22:07:53+0200 [info] qbittorrent::qbt_probe_add - El hombre contra la abeja - Temporada 1 [WEB-DL 1080p][Cap.109][Dual DDP5.1   Subs][www.atomixHQ.ONE]
+- 2026-06-28T22:07:53+0200 [info] qbittorrent::qbt_probe_add - El hombre contra la abeja - Temporada 1 [WEB-DL 1080p][Cap.102][Dual DDP5.1   Subs][www.atomixHQ.ONE]
+- 2026-06-28T22:07:55+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:07:55+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:07:55+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:07:55+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:07:55+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:07:57+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:07:57+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:07:57+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:07:57+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:07:57+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:07:59+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:07:59+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:07:59+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:07:59+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:07:59+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:08:01+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:08:01+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:08:01+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:08:01+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:08:01+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:08:03+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:08:03+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:08:03+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:08:03+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:08:03+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:08:05+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:08:05+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:08:05+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:08:05+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:08:05+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:08:07+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:08:07+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:08:07+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:08:07+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:08:07+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:08:09+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:08:09+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:08:09+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:08:09+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:08:09+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:08:11+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:08:11+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:08:11+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:08:11+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:08:11+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:08:13+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:08:13+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:08:13+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:08:13+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:08:13+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:08:15+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:08:15+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:08:15+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:08:15+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:08:15+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:08:17+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:08:17+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:08:17+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:08:17+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:08:17+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:08:19+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:08:19+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:08:19+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:08:19+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:08:19+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:08:21+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:08:21+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:08:21+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:08:21+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:08:21+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:08:23+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:08:23+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:08:23+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:08:23+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:08:23+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:08:25+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:08:25+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:08:25+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:08:25+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:08:25+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:08:27+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:08:27+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:08:27+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:08:27+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:08:27+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:08:29+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:08:29+0200 [info] qbittorrent::qbt_probe_result - Sin vida clara en qBittorrent: state=metadl, seeds=0, peers=0, progress=0.000
+- 2026-06-28T22:08:29+0200 [info] qbittorrent::qbt_delete_probe
+- 2026-06-28T22:08:29+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:08:29+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:08:29+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:08:29+0200 [info] qbittorrent::qbt_probe_result - Sin vida clara en qBittorrent: state=metadl, seeds=0, peers=0, progress=0.000
+- 2026-06-28T22:08:29+0200 [info] qbittorrent::qbt_probe_result - Sin vida clara en qBittorrent: state=metadl, seeds=0, peers=0, progress=0.000
+- 2026-06-28T22:08:29+0200 [info] qbittorrent::qbt_probe_result - Sin vida clara en qBittorrent: state=metadl, seeds=0, peers=0, progress=0.000
+- 2026-06-28T22:08:29+0200 [info] qbittorrent::qbt_delete_probe
+- 2026-06-28T22:08:29+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:08:29+0200 [info] qbittorrent::qbt_login
+- 2026-06-28T22:08:29+0200 [info] qbittorrent::qbt_delete_probe
+- 2026-06-28T22:08:29+0200 [info] qbittorrent::qbt_probe_result - Sin vida clara en qBittorrent: state=metadl, seeds=0, peers=0, progress=0.000
+- 2026-06-28T22:08:30+0200 [info] qbittorrent::qbt_delete_probe
+- 2026-06-28T22:08:30+0200 [info] qbittorrent::qbt_login
+- 2026-06-28T22:08:30+0200 [info] qbittorrent::qbt_login
+- 2026-06-28T22:08:30+0200 [info] qbittorrent::qbt_delete_probe
+- 2026-06-28T22:08:30+0200 [info] qbittorrent::qbt_probe_add - El hombre contra la abeja - Temporada 1 [WEB-DL 1080p][Cap.105][Dual DDP5.1   Subs][www.atomixHQ.ONE]
+- 2026-06-28T22:08:30+0200 [info] qbittorrent::qbt_login
+- 2026-06-28T22:08:30+0200 [info] qbittorrent::qbt_probe_add - El hombre contra la abeja - Temporada 1 [WEB-DL 1080p][Cap.104][Dual DDP5.1   Subs][www.atomixHQ.ONE]
+- 2026-06-28T22:08:30+0200 [info] qbittorrent::qbt_probe_add - El hombre contra la abeja - Temporada 1 [WEB-DL 1080p][Cap.107][Dual DDP5.1   Subs][www.atomixHQ.ONE]
+- 2026-06-28T22:08:30+0200 [info] qbittorrent::qbt_login
+- 2026-06-28T22:08:30+0200 [info] qbittorrent::qbt_probe_add - El hombre contra la abeja - Temporada 1 [WEB-DL 1080p][Cap.106][Dual DDP5.1   Subs][www.atomixHQ.ONE]
+- 2026-06-28T22:08:30+0200 [info] qbittorrent::qbt_probe_add - El hombre contra la abeja - Temporada 1 [HDTV 720p][Cap.106][AC3 5.1 Castellano][www.AtomoHD.one]
+- 2026-06-28T22:08:32+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:08:32+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:08:32+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:08:32+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:08:32+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:08:34+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:08:34+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:08:34+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:08:34+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:08:34+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:08:36+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:08:36+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:08:36+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:08:36+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:08:36+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:08:38+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:08:38+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:08:38+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:08:38+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:08:38+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:08:40+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:08:40+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:08:40+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:08:40+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:08:40+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:08:42+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:08:42+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:08:42+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:08:42+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:08:42+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:08:44+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:08:44+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:08:44+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:08:44+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:08:44+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:08:46+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:08:46+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:08:46+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:08:46+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:08:46+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:08:48+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:08:48+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:08:48+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:08:48+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:08:48+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:08:50+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:08:50+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:08:50+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:08:50+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:08:50+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:08:52+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:08:52+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:08:52+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:08:52+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:08:52+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:08:54+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:08:54+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:08:54+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:08:54+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:08:54+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:08:56+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:08:56+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:08:56+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:08:56+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:08:56+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:08:58+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:08:58+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:08:58+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:08:58+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:08:58+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:09:00+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:09:00+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:09:00+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:09:00+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:09:00+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:09:02+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:09:02+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:09:02+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:09:02+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:09:02+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:09:04+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:09:04+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:09:04+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:09:04+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:09:04+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:09:06+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:09:06+0200 [info] qbittorrent::qbt_probe_result - Sin vida clara en qBittorrent: state=metadl, seeds=0, peers=0, progress=0.000
+- 2026-06-28T22:09:06+0200 [info] qbittorrent::qbt_delete_probe
+- 2026-06-28T22:09:06+0200 [info] qbittorrent::qbt_login
+- 2026-06-28T22:09:06+0200 [info] qbittorrent::qbt_probe_add - El hombre contra la abeja - Temporada 1 [HDTV 720p][Cap.108][AC3 5.1 Castellano][www.AtomoHD.one]
+- 2026-06-28T22:09:06+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:09:06+0200 [info] qbittorrent::qbt_probe_result - Sin vida clara en qBittorrent: state=metadl, seeds=0, peers=0, progress=0.000
+- 2026-06-28T22:09:06+0200 [info] qbittorrent::qbt_delete_probe
+- 2026-06-28T22:09:06+0200 [info] qbittorrent::qbt_login
+- 2026-06-28T22:09:06+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:09:06+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:09:06+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:09:06+0200 [info] qbittorrent::qbt_probe_result - Sin vida clara en qBittorrent: state=metadl, seeds=0, peers=0, progress=0.000
+- 2026-06-28T22:09:06+0200 [info] qbittorrent::qbt_probe_result - Sin vida clara en qBittorrent: state=metadl, seeds=0, peers=0, progress=0.000
+- 2026-06-28T22:09:06+0200 [info] qbittorrent::qbt_probe_result - Sin vida clara en qBittorrent: state=metadl, seeds=0, peers=0, progress=0.000
+- 2026-06-28T22:09:06+0200 [info] qbittorrent::qbt_delete_probe
+- 2026-06-28T22:09:06+0200 [info] qbittorrent::qbt_delete_probe
+- 2026-06-28T22:09:06+0200 [info] qbittorrent::qbt_delete_probe
+- 2026-06-28T22:09:06+0200 [info] qbittorrent::qbt_probe_add - El hombre contra la abeja - Temporada 1 [HDTV 720p][Cap.109][AC3 5.1 Castellano][www.AtomoHD.one]
+- 2026-06-28T22:09:06+0200 [info] qbittorrent::qbt_login
+- 2026-06-28T22:09:06+0200 [info] qbittorrent::qbt_login
+- 2026-06-28T22:09:06+0200 [info] qbittorrent::qbt_login
+- 2026-06-28T22:09:06+0200 [info] qbittorrent::qbt_probe_add - El hombre contra la abeja - Temporada 1 [HDTV 720p][Cap.107][AC3 5.1 Castellano][www.AtomoHD.one]
+- 2026-06-28T22:09:06+0200 [info] qbittorrent::qbt_probe_add - El hombre contra la abeja - Temporada 1 [HDTV 720p][Cap.105][AC3 5.1 Castellano][www.AtomoHD.one]
+- 2026-06-28T22:09:06+0200 [info] qbittorrent::qbt_probe_add - El hombre contra la abeja - Temporada 1 [HDTV 720p][Cap.103][AC3 5.1 Castellano][www.AtomoHD.one]
+- 2026-06-28T22:09:08+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:09:08+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:09:08+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:09:08+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:09:08+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:09:10+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:09:10+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:09:10+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:09:10+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:09:10+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:09:12+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:09:12+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:09:12+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:09:12+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:09:12+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:09:14+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:09:14+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:09:14+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:09:14+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:09:14+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:09:16+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:09:16+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:09:16+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:09:16+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:09:16+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:09:18+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:09:18+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:09:18+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:09:18+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:09:18+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:09:20+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:09:20+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:09:20+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:09:20+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:09:20+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:09:22+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:09:22+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:09:22+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:09:22+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:09:22+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:09:24+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:09:24+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:09:24+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:09:24+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:09:24+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:09:26+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:09:26+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:09:26+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:09:26+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:09:26+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:09:28+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:09:28+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:09:28+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:09:28+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:09:28+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:09:30+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:09:30+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:09:30+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:09:30+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:09:30+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:09:32+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:09:32+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:09:32+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:09:32+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:09:32+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:09:34+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:09:34+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:09:34+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:09:34+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:09:34+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:09:36+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:09:36+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:09:36+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:09:36+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:09:36+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:09:38+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:09:38+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:09:38+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:09:38+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:09:38+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:09:40+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:09:40+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:09:40+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:09:40+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:09:40+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:09:42+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:09:42+0200 [info] qbittorrent::qbt_probe_result - Sin vida clara en qBittorrent: state=metadl, seeds=0, peers=0, progress=0.000
+- 2026-06-28T22:09:42+0200 [info] qbittorrent::qbt_delete_probe
+- 2026-06-28T22:09:42+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:09:42+0200 [info] qbittorrent::qbt_probe_result - Sin vida clara en qBittorrent: state=metadl, seeds=0, peers=0, progress=0.000
+- 2026-06-28T22:09:42+0200 [info] qbittorrent::qbt_login
+- 2026-06-28T22:09:42+0200 [info] qbittorrent::qbt_delete_probe
+- 2026-06-28T22:09:42+0200 [info] qbittorrent::qbt_probe_add - El hombre contra la abeja - Temporada 1 [HDTV 720p][Cap.102][AC3 5.1 Castellano][www.AtomoHD.one]
+- 2026-06-28T22:09:42+0200 [info] qbittorrent::qbt_login
+- 2026-06-28T22:09:42+0200 [info] qbittorrent::qbt_probe_add - El hombre contra la abeja - Temporada 1 [HDTV][Cap.101][Castellano][www.AtomoHD.one]
+- 2026-06-28T22:09:42+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:09:42+0200 [info] qbittorrent::qbt_probe_result - Sin vida clara en qBittorrent: state=metadl, seeds=0, peers=0, progress=0.000
+- 2026-06-28T22:09:42+0200 [info] qbittorrent::qbt_delete_probe
+- 2026-06-28T22:09:42+0200 [info] qbittorrent::qbt_login
+- 2026-06-28T22:09:42+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:09:42+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:09:42+0200 [info] qbittorrent::qbt_probe_result - Sin vida clara en qBittorrent: state=metadl, seeds=0, peers=0, progress=0.000
+- 2026-06-28T22:09:42+0200 [info] qbittorrent::qbt_probe_result - Sin vida clara en qBittorrent: state=metadl, seeds=0, peers=0, progress=0.000
+- 2026-06-28T22:09:42+0200 [info] qbittorrent::qbt_delete_probe
+- 2026-06-28T22:09:42+0200 [info] qbittorrent::qbt_delete_probe
+- 2026-06-28T22:09:42+0200 [info] qbittorrent::qbt_probe_add - El hombre contra la abeja - Temporada 1 [HDTV][Cap.109][Castellano][www.AtomoHD.one]
+- 2026-06-28T22:09:42+0200 [info] qbittorrent::qbt_login
+- 2026-06-28T22:09:42+0200 [info] qbittorrent::qbt_login
+- 2026-06-28T22:09:42+0200 [info] qbittorrent::qbt_probe_add - El hombre contra la abeja 1X4X5X6 HDTV Castellano
+- 2026-06-28T22:09:42+0200 [info] qbittorrent::qbt_probe_add - El hombre contra la abeja - Temporada 1 [HDTV][Cap.108][Castellano][www.AtomoHD.one]
+- 2026-06-28T22:09:44+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:09:44+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:09:44+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:09:44+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:09:44+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:09:46+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:09:46+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:09:46+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:09:46+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:09:46+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:09:48+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:09:48+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:09:48+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:09:48+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:09:48+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:09:50+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:09:50+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:09:50+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:09:50+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:09:51+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:09:52+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:09:52+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:09:52+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:09:52+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:09:53+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:09:54+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:09:54+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:09:54+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:09:54+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:09:55+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:09:56+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:09:56+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:09:56+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:09:56+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:09:57+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:09:58+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:09:58+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:09:58+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:09:58+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:09:59+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:10:00+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:10:00+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:10:00+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:10:00+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:10:01+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:10:02+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:10:02+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:10:02+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:10:02+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:10:03+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:10:04+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:10:04+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:10:04+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:10:04+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:10:05+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:10:06+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:10:06+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:10:06+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:10:06+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:10:07+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:10:08+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:10:08+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:10:08+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:10:08+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:10:09+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:10:10+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:10:10+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:10:10+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:10:11+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:10:11+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:10:12+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:10:12+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:10:12+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:10:13+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:10:13+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:10:14+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:10:14+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:10:14+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:10:15+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:10:15+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:10:16+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:10:16+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:10:16+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:10:17+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:10:17+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:10:18+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:10:18+0200 [info] qbittorrent::qbt_probe_result - Sin vida clara en qBittorrent: state=metadl, seeds=0, peers=0, progress=0.000
+- 2026-06-28T22:10:18+0200 [info] qbittorrent::qbt_delete_probe
+- 2026-06-28T22:10:18+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:10:18+0200 [info] qbittorrent::qbt_login
+- 2026-06-28T22:10:18+0200 [info] qbittorrent::qbt_probe_result - Sin vida clara en qBittorrent: state=metadl, seeds=0, peers=0, progress=0.000
+- 2026-06-28T22:10:18+0200 [info] qbittorrent::qbt_delete_probe
+- 2026-06-28T22:10:18+0200 [info] qbittorrent::qbt_probe_add - El hombre contra la abeja - Temporada 1 [HDTV][Cap.104][Castellano][www.AtomoHD.one]
+- 2026-06-28T22:10:18+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:10:18+0200 [info] qbittorrent::qbt_login
+- 2026-06-28T22:10:18+0200 [info] qbittorrent::qbt_probe_result - Sin vida clara en qBittorrent: state=metadl, seeds=0, peers=0, progress=0.000
+- 2026-06-28T22:10:18+0200 [info] qbittorrent::qbt_delete_probe
+- 2026-06-28T22:10:18+0200 [info] qbittorrent::qbt_probe_add - El hombre contra la abeja - Temporada 1 [HDTV][Cap.103][Castellano][www.AtomoHD.one]
+- 2026-06-28T22:10:18+0200 [info] qbittorrent::qbt_login
+- 2026-06-28T22:10:18+0200 [info] qbittorrent::qbt_probe_add - El hombre contra la abeja - Temporada 1 [HDTV][Cap.107][Castellano][www.AtomoHD.one]
+- 2026-06-28T22:10:19+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:10:19+0200 [info] qbittorrent::qbt_probe_result - Sin vida clara en qBittorrent: state=metadl, seeds=0, peers=0, progress=0.000
+- 2026-06-28T22:10:19+0200 [info] qbittorrent::qbt_delete_probe
+- 2026-06-28T22:10:19+0200 [info] qbittorrent::qbt_login
+- 2026-06-28T22:10:19+0200 [info] qbittorrent::qbt_probe_add - El hombre contra la abeja - Temporada 1 [HDTV][Cap.102][Castellano][www.AtomoHD.one]
+- 2026-06-28T22:10:19+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:10:19+0200 [info] qbittorrent::qbt_probe_result - Sin vida clara en qBittorrent: state=metadl, seeds=0, peers=0, progress=0.000
+- 2026-06-28T22:10:19+0200 [info] qbittorrent::qbt_delete_probe
+- 2026-06-28T22:10:19+0200 [info] qbittorrent::qbt_login
+- 2026-06-28T22:10:19+0200 [info] qbittorrent::qbt_probe_add - El hombre contra la abeja - Temporada 1 [HDTV][Cap.105][Castellano][www.AtomoHD.one]
+- 2026-06-28T22:10:20+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:10:20+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:10:20+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:10:21+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:10:21+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:10:22+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:10:22+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:10:22+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:10:23+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:10:23+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:10:24+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:10:24+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:10:24+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:10:24+0200 [info] qbittorrent::qbt_probe_result - qBittorrent con seed conectado: seeds=1, peers=0, state=stalleddl
+- 2026-06-28T22:10:24+0200 [info] qbittorrent::qbt_delete_probe
+- 2026-06-28T22:10:25+0200 [info] qbittorrent::qbt_login
+- 2026-06-28T22:10:25+0200 [info] qbittorrent::qbt_probe_add - El hombre contra la abeja - Temporada 1 [HDTV][Cap.106][Castellano][www.AtomoHD.one]
+- 2026-06-28T22:10:25+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:10:25+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:10:26+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:10:26+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:10:27+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:10:27+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:10:27+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:10:28+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:10:28+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:10:29+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:10:29+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:10:29+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:10:30+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:10:30+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:10:31+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:10:31+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:10:31+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:10:32+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:10:32+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:10:33+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:10:33+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:10:33+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:10:34+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:10:34+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:10:35+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:10:35+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:10:35+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:10:36+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:10:36+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:10:37+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:10:37+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:10:37+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:10:38+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:10:38+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:10:39+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:10:39+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:10:39+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:10:39+0200 [info] qbittorrent::qbt_probe_result - qBittorrent descargando: 0.03 MB/s, seeds=1, peers=3
+- 2026-06-28T22:10:39+0200 [info] qbittorrent::qbt_delete_probe
+- 2026-06-28T22:10:39+0200 [info] qbittorrent::qbt_login
+- 2026-06-28T22:10:39+0200 [info] qbittorrent::qbt_probe_add - El hombre contra la abeja 1X1X2X3 HDTV XviD Castellano
+- 2026-06-28T22:10:40+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:10:40+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:10:41+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:10:41+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:10:41+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:10:42+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:10:42+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:10:43+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:10:43+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:10:43+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:10:44+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:10:44+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:10:45+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:10:45+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:10:45+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:10:46+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:10:46+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:10:47+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:10:47+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:10:47+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:10:48+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:10:48+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:10:49+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:10:49+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:10:49+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:10:50+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:10:50+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:10:51+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:10:51+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:10:51+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:10:52+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:10:52+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:10:53+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:10:53+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:10:53+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:10:54+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:10:54+0200 [info] qbittorrent::qbt_probe_result - Tracker indica posibles seeds (1), pero qBittorrent no conecto ni obtuvo vida real: state=metadl, seeds=0, peers=0, availability=0.00
+- 2026-06-28T22:10:54+0200 [info] qbittorrent::qbt_delete_probe
+- 2026-06-28T22:10:54+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:10:54+0200 [info] qbittorrent::qbt_login
+- 2026-06-28T22:10:54+0200 [info] qbittorrent::qbt_probe_result - Tracker indica posibles seeds (1), pero qBittorrent no conecto ni obtuvo vida real: state=metadl, seeds=0, peers=2, availability=0.00
+- 2026-06-28T22:10:54+0200 [info] qbittorrent::qbt_delete_probe
+- 2026-06-28T22:10:54+0200 [info] qbittorrent::qbt_probe_add - El hombre contra la abeja 1X7X8X9 HDTV XviD Castellano
+- 2026-06-28T22:10:55+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:10:55+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:10:55+0200 [info] qbittorrent::qbt_probe_result - Tracker indica posibles seeds (1), pero qBittorrent no conecto ni obtuvo vida real: state=metadl, seeds=0, peers=0, availability=0.00
+- 2026-06-28T22:10:55+0200 [info] qbittorrent::qbt_delete_probe
+- 2026-06-28T22:10:55+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:10:56+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:10:57+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:10:57+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:10:58+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:10:59+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:10:59+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:11:00+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:11:01+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:11:01+0200 [info] qbittorrent::qbt_probe_result - qBittorrent tiene metadatos pero sin vida clara: state=stalleddl, seeds=0, peers=0
+- 2026-06-28T22:11:01+0200 [info] qbittorrent::qbt_delete_probe
+- 2026-06-28T22:11:01+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:11:02+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:11:03+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:11:04+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:11:05+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:11:06+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:11:07+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:11:08+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:11:09+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:11:10+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:11:11+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:11:12+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:11:13+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:11:14+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:11:15+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:11:15+0200 [info] qbittorrent::qbt_probe_result - Sin vida clara en qBittorrent: state=metadl, seeds=0, peers=1, progress=0.000
+- 2026-06-28T22:11:15+0200 [info] qbittorrent::qbt_delete_probe
+- 2026-06-28T22:11:17+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:11:19+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:11:21+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:11:23+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:11:25+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:11:27+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:11:29+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:11:31+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T22:11:31+0200 [info] qbittorrent::qbt_probe_result - Sin vida clara en qBittorrent: state=metadl, seeds=0, peers=0, progress=0.000
+- 2026-06-28T22:11:31+0200 [info] qbittorrent::qbt_delete_probe
+- 2026-06-28T22:11:31+0200 [info] qbittorrent::qbt_probe_batch_end
+- 2026-06-28T22:11:31+0200 [info] motor::prepare_qbit_extras
+- 2026-06-28T22:11:31+0200 [info] motor::prepare_rd_temp_errors
+- 2026-06-28T22:11:31+0200 [info] motor::prepare_after_working_filter
+- 2026-06-28T22:11:31+0200 [info] search::export_results
+- 2026-06-28T22:11:31+0200 [info] search::export_results
+- 2026-06-28T22:11:31+0200 [info] real-debrid::rd_delete_torrent
+- 2026-06-28T22:11:31+0200 [info] real-debrid::rd_delete_torrent
+- 2026-06-28T22:11:31+0200 [warn] real-debrid::rd_api_http_error
+- 2026-06-28T22:11:31+0200 [warn] real-debrid::rd_delete_torrent_error - Real-Debrid HTTP 404: {
+	"error": "unknown_ressource",
+	"error_code": 7
+}
+- 2026-06-28T22:11:32+0200 [warn] real-debrid::rd_api_http_error
+- 2026-06-28T22:11:32+0200 [warn] real-debrid::rd_delete_torrent_error - Real-Debrid HTTP 404: {
+	"error": "unknown_ressource",
+	"error_code": 7
+}
+- 2026-06-28T22:11:32+0200 [info] search::editor_clean_search_rd_cleanup
+- 2026-06-28T22:11:32+0200 [info] search::editor_clean_search_end
+- 2026-06-28T22:11:32+02:00 [info] web::JOB_FINISHED_OK

@@ -1,0 +1,4018 @@
+- 2026-07-07T23:04:08+02:00 [info] web::JOB_STARTED
+- 2026-07-07T23:04:08+02:00 [info] general::CONFIG_SNAPSHOT
+- 2026-07-07T23:04:08+02:00 [info] web::COMMAND_PREPARED
+- 2026-07-07T23:04:08+02:00 [info] web::PROCESS_STARTED
+- 2026-07-07T23:04:08+0200 [info] search::editor_clean_search_start
+- 2026-07-07T23:04:08+0200 [info] btdigg::browser_auto_search_start_dom
+- 2026-07-07T23:04:10+0200 [info] btdigg::extract_magnets
+- 2026-07-07T23:04:10+0200 [info] btdigg::btdigg_curl_cffi_fetch
+- 2026-07-07T23:04:13+0200 [info] btdigg::extract_magnets
+- 2026-07-07T23:04:13+0200 [info] btdigg::btdigg_curl_cffi_fetch
+- 2026-07-07T23:04:16+0200 [info] btdigg::extract_magnets
+- 2026-07-07T23:04:16+0200 [info] btdigg::btdigg_curl_cffi_fetch
+- 2026-07-07T23:04:19+0200 [info] btdigg::extract_magnets
+- 2026-07-07T23:04:19+0200 [info] btdigg::btdigg_curl_cffi_fetch
+- 2026-07-07T23:04:22+0200 [info] btdigg::extract_magnets
+- 2026-07-07T23:04:22+0200 [info] btdigg::btdigg_curl_cffi_fetch
+- 2026-07-07T23:04:24+0200 [info] btdigg::browser_auto_search_end_dom
+- 2026-07-07T23:04:24+0200 [info] motor::prepare_results_start
+- 2026-07-07T23:04:24+0200 [info] motor::prepare_after_scoring
+- 2026-07-07T23:04:24+0200 [info] motor::prepare_after_filter
+- 2026-07-07T23:04:24+0200 [info] motor::prepare_after_query_prefilter
+- 2026-07-07T23:04:25+0200 [info] real-debrid::rd_account_check_ok
+- 2026-07-07T23:04:25+0200 [info] real-debrid::rd_check_start
+- 2026-07-07T23:04:25+0200 [info] real-debrid::rd_api_http_error - disabled_endpoint
+- 2026-07-07T23:04:25+0200 [info] real-debrid::rd_cache_api_disabled_cached_set - Real-Debrid HTTP 403: [37 disabled_endpoint] {
+	"error": "disabled_endpoint",
+	"error_code": 37
+}
+- 2026-07-07T23:04:25+0200 [info] real-debrid::rd_cache_api_disabled - Real-Debrid HTTP 403: [37 disabled_endpoint] {
+	"error": "disabled_endpoint",
+	"error_code": 37
+}
+- 2026-07-07T23:04:25+0200 [info] real-debrid::rd_verify_batch_start
+- 2026-07-07T23:04:25+0200 [info] real-debrid::rd_slots_refresh
+- 2026-07-07T23:04:25+0200 [info] real-debrid::rd_active_count_before
+- 2026-07-07T23:04:25+0200 [info] real-debrid::rd_existing_preload_done
+- 2026-07-07T23:04:25+0200 [info] real-debrid::rd_verify_queue_start
+- 2026-07-07T23:04:25+0200 [info] real-debrid::rd_verify_queue_submit - Max.Payne.3-SKIDROW
+- 2026-07-07T23:04:25+0200 [info] real-debrid::rd_verify_add_start - Max.Payne.3-SKIDROW
+- 2026-07-07T23:04:25+0200 [info] real-debrid::rd_verify_add_start - Max.Payne.3.RF.XBOX360-XPG
+- 2026-07-07T23:04:25+0200 [info] real-debrid::rd_verify_queue_submit - Max.Payne.3.RF.XBOX360-XPG
+- 2026-07-07T23:04:25+0200 [info] real-debrid::rd_slots_reserve
+- 2026-07-07T23:04:25+0200 [info] real-debrid::rd_verify_queue_submit - Max.Payne.3.RF.XBOX360-XPG
+- 2026-07-07T23:04:25+0200 [info] real-debrid::rd_verify_add_start - Max.Payne.3.RF.XBOX360-XPG
+- 2026-07-07T23:04:25+0200 [info] real-debrid::rd_slots_reserve
+- 2026-07-07T23:04:25+0200 [info] real-debrid::rd_verify_queue_submit - Max.Payne.3.RF.XBOX360-XPG
+- 2026-07-07T23:04:25+0200 [info] real-debrid::rd_verify_add_start - Max.Payne.3.RF.XBOX360-XPG
+- 2026-07-07T23:04:25+0200 [info] real-debrid::rd_slots_reserve
+- 2026-07-07T23:04:25+0200 [debug] real-debrid::rd_rate_wait
+- 2026-07-07T23:04:25+0200 [info] real-debrid::rd_verify_queue_submit - Max.Payne.3.RF.XBOX360-XPG
+- 2026-07-07T23:04:25+0200 [info] real-debrid::rd_verify_add_start - Max.Payne.3.RF.XBOX360-XPG
+- 2026-07-07T23:04:25+0200 [info] real-debrid::rd_slots_reserve
+- 2026-07-07T23:04:25+0200 [debug] real-debrid::rd_endpoint_pace_wait
+- 2026-07-07T23:04:25+0200 [info] real-debrid::rd_verify_queue_submit - Max.Payne.3.RF.XBOX360-XPG
+- 2026-07-07T23:04:25+0200 [info] real-debrid::rd_verify_add_start - Max.Payne.3.RF.XBOX360-XPG
+- 2026-07-07T23:04:25+0200 [info] real-debrid::rd_slots_reserve
+- 2026-07-07T23:04:25+0200 [info] real-debrid::rd_verify_queue_submit - Max.Payne.3.RF.XBOX360-XPG
+- 2026-07-07T23:04:25+0200 [info] real-debrid::rd_verify_add_start - Max.Payne.3.RF.XBOX360-XPG
+- 2026-07-07T23:04:25+0200 [info] real-debrid::rd_slots_reserve
+- 2026-07-07T23:04:25+0200 [info] real-debrid::rd_verify_queue_submit - Max.Payne.3.RF.XBOX360-XPG
+- 2026-07-07T23:04:25+0200 [info] real-debrid::rd_verify_add_start - Max.Payne.3.RF.XBOX360-XPG
+- 2026-07-07T23:04:25+0200 [info] real-debrid::rd_slots_reserve
+- 2026-07-07T23:04:25+0200 [info] real-debrid::rd_verify_add_start - Max.Payne.3.RF.XBOX360-XPG
+- 2026-07-07T23:04:25+0200 [info] real-debrid::rd_verify_queue_submit - Max.Payne.3.RF.XBOX360-XPG
+- 2026-07-07T23:04:25+0200 [info] real-debrid::rd_slots_reserve
+- 2026-07-07T23:04:25+0200 [info] real-debrid::rd_verify_queue_submit - Max.Payne.3.RF.XBOX360-ALI213
+- 2026-07-07T23:04:25+0200 [info] real-debrid::rd_verify_add_start - Max.Payne.3.RF.XBOX360-ALI213
+- 2026-07-07T23:04:25+0200 [info] real-debrid::rd_slots_reserve
+- 2026-07-07T23:04:25+0200 [info] real-debrid::rd_verify_queue_submit - Max.Payne.3.RF.XBOX360-XPG
+- 2026-07-07T23:04:25+0200 [info] real-debrid::rd_verify_add_start - Max.Payne.3.RF.XBOX360-XPG
+- 2026-07-07T23:04:25+0200 [info] real-debrid::rd_slots_reserve
+- 2026-07-07T23:04:25+0200 [info] real-debrid::rd_verify_add_start - Max.Payne.3.RF.XBOX360-XPG
+- 2026-07-07T23:04:25+0200 [info] real-debrid::rd_verify_queue_submit - Max.Payne.3.RF.XBOX360-XPG
+- 2026-07-07T23:04:25+0200 [info] real-debrid::rd_slots_reserve
+- 2026-07-07T23:04:25+0200 [info] real-debrid::rd_verify_queue_submit - Max.Payne.3.RF.XBOX360-XPG
+- 2026-07-07T23:04:25+0200 [info] real-debrid::rd_verify_add_start - Max.Payne.3.RF.XBOX360-XPG
+- 2026-07-07T23:04:25+0200 [info] real-debrid::rd_slots_reserve
+- 2026-07-07T23:04:25+0200 [info] real-debrid::rd_verify_queue_submit - Max.Payne.3.RF.XBOX360-XPG
+- 2026-07-07T23:04:25+0200 [info] real-debrid::rd_verify_add_start - Max.Payne.3.RF.XBOX360-XPG
+- 2026-07-07T23:04:25+0200 [info] real-debrid::rd_slots_reserve
+- 2026-07-07T23:04:25+0200 [info] real-debrid::rd_verify_queue_submit - Max.Payne.3.RF.XBOX360
+- 2026-07-07T23:04:25+0200 [info] real-debrid::rd_verify_add_start - Max.Payne.3.RF.XBOX360
+- 2026-07-07T23:04:25+0200 [info] real-debrid::rd_slots_reserve
+- 2026-07-07T23:04:25+0200 [info] real-debrid::rd_verify_queue_submit - Max Payne 3
+- 2026-07-07T23:04:25+0200 [info] real-debrid::rd_verify_add_start - Max Payne 3
+- 2026-07-07T23:04:25+0200 [info] real-debrid::rd_slots_reserve
+- 2026-07-07T23:04:25+0200 [info] real-debrid::rd_verify_queue_submit - Max.Payne.3.RF.XBOX360-XPG
+- 2026-07-07T23:04:25+0200 [info] real-debrid::rd_verify_add_start - Max.Payne.3.RF.XBOX360-XPG
+- 2026-07-07T23:04:25+0200 [info] real-debrid::rd_slots_reserve
+- 2026-07-07T23:04:25+0200 [info] real-debrid::rd_verify_queue_submit - Max.Payne.3.RF.XBOX360-XPG
+- 2026-07-07T23:04:25+0200 [info] real-debrid::rd_verify_add_start - Max.Payne.3.RF.XBOX360-XPG
+- 2026-07-07T23:04:25+0200 [info] real-debrid::rd_slots_reserve
+- 2026-07-07T23:04:25+0200 [info] real-debrid::rd_verify_queue_submit - Max.Payne.3.RF.XBOX360-XPG
+- 2026-07-07T23:04:25+0200 [info] real-debrid::rd_verify_add_start - Max.Payne.3.RF.XBOX360-XPG
+- 2026-07-07T23:04:25+0200 [info] real-debrid::rd_slots_reserve
+- 2026-07-07T23:04:25+0200 [info] real-debrid::rd_verify_queue_submit - Max Payne3
+- 2026-07-07T23:04:25+0200 [info] real-debrid::rd_verify_add_start - Max Payne3
+- 2026-07-07T23:04:25+0200 [info] real-debrid::rd_slots_reserve
+- 2026-07-07T23:04:25+0200 [info] real-debrid::rd_verify_queue_submit - Max.Payne.2008.R5.PROPER.CUSTOM.SWESUB.DVDR-iNjECT
+- 2026-07-07T23:04:26+0200 [info] real-debrid::rd_verify_add_start - Max.Payne.2008.R5.PROPER.CUSTOM.SWESUB.DVDR-iNjECT
+- 2026-07-07T23:04:26+0200 [info] real-debrid::rd_slots_reserve
+- 2026-07-07T23:04:26+0200 [info] real-debrid::rd_verify_queue_submit - Max.Payne.2008.UNRATED.CUSTOM.SWESUB.DVDR-iNjECT
+- 2026-07-07T23:04:26+0200 [info] real-debrid::rd_verify_add_start - Max.Payne.2008.UNRATED.CUSTOM.SWESUB.DVDR-iNjECT
+- 2026-07-07T23:04:26+0200 [info] real-debrid::rd_slots_reserve
+- 2026-07-07T23:04:26+0200 [info] real-debrid::rd_slots_reserve
+- 2026-07-07T23:04:26+0200 [info] real-debrid::rd_verify_queue_submit - Max Payne 2 The Fall of Max Payne
+- 2026-07-07T23:04:26+0200 [info] real-debrid::rd_verify_add_start - Max Payne 2 The Fall of Max Payne
+- 2026-07-07T23:04:26+0200 [info] real-debrid::rd_verify_queue_submit - Max Payne - Triple Pack
+- 2026-07-07T23:04:26+0200 [info] real-debrid::rd_verify_add_start - Max Payne - Triple Pack
+- 2026-07-07T23:04:26+0200 [info] real-debrid::rd_slots_reserve
+- 2026-07-07T23:04:26+0200 [info] real-debrid::rd_slots_reserve
+- 2026-07-07T23:04:26+0200 [info] real-debrid::rd_verify_add_start - Max Payne 2 The Fall Of Max Payne v1.01 Manuel Pc Fr Eng
+- 2026-07-07T23:04:26+0200 [info] real-debrid::rd_verify_queue_submit - Max Payne 2 The Fall Of Max Payne v1.01 Manuel Pc Fr Eng
+- 2026-07-07T23:04:26+0200 [info] real-debrid::rd_slots_reserve
+- 2026-07-07T23:04:26+0200 [info] real-debrid::rd_verify_queue_submit - Max.Payne.2008.HUN.DVDRip.XviD-Bithorlo
+- 2026-07-07T23:04:26+0200 [info] real-debrid::rd_verify_add_start - Max.Payne.2008.HUN.DVDRip.XviD-Bithorlo
+- 2026-07-07T23:04:26+0200 [info] real-debrid::rd_verify_queue_submit - Max.Payne
+- 2026-07-07T23:04:26+0200 [info] real-debrid::rd_verify_add_start - Max.Payne
+- 2026-07-07T23:04:26+0200 [info] real-debrid::rd_slots_reserve
+- 2026-07-07T23:04:26+0200 [info] real-debrid::rd_verify_queue_submit - Max.Payne
+- 2026-07-07T23:04:26+0200 [info] real-debrid::rd_verify_add_start - Max.Payne
+- 2026-07-07T23:04:26+0200 [info] real-debrid::rd_slots_reserve
+- 2026-07-07T23:04:26+0200 [info] real-debrid::rd_verify_queue_submit - www.ubb.to...Max.Payne.German.720p.BluRay.x264-DEFUSED
+- 2026-07-07T23:04:26+0200 [info] real-debrid::rd_verify_add_start - www.ubb.to...Max.Payne.German.720p.BluRay.x264-DEFUSED
+- 2026-07-07T23:04:26+0200 [info] real-debrid::rd_slots_reserve
+- 2026-07-07T23:04:26+0200 [info] real-debrid::rd_verify_queue_submit - Max.Payne.Expansion.Chinese.GB2312_马克思佩恩之英雄本色功夫加强版简体中文版
+- 2026-07-07T23:04:26+0200 [info] real-debrid::rd_verify_add_start - Max.Payne.Expansion.Chinese.GB2312_马克思佩恩之英雄本色功夫加强版简体中文版
+- 2026-07-07T23:04:26+0200 [info] real-debrid::rd_slots_reserve
+- 2026-07-07T23:04:26+0200 [info] real-debrid::rd_verify_queue_submit - Max.Payne.Expansion.Chinese.GB2312_马克思佩恩之英雄本色功夫加强版简体中文版
+- 2026-07-07T23:04:26+0200 [info] real-debrid::rd_verify_add_start - Max.Payne.Expansion.Chinese.GB2312_马克思佩恩之英雄本色功夫加强版简体中文版
+- 2026-07-07T23:04:26+0200 [info] real-debrid::rd_slots_reserve
+- 2026-07-07T23:04:26+0200 [info] real-debrid::rd_verify_queue_submit - max payne
+- 2026-07-07T23:04:26+0200 [info] real-debrid::rd_verify_add_start - max payne
+- 2026-07-07T23:04:26+0200 [info] real-debrid::rd_slots_reserve
+- 2026-07-07T23:04:26+0200 [info] real-debrid::rd_verify_queue_submit - Max.Payne.3.RF.XBOX360-XPG
+- 2026-07-07T23:04:26+0200 [info] real-debrid::rd_verify_add_start - Max.Payne.3.RF.XBOX360-XPG
+- 2026-07-07T23:04:26+0200 [info] real-debrid::rd_slots_reserve
+- 2026-07-07T23:04:26+0200 [info] real-debrid::rd_verify_add_start - Max.Payne.3.RF.XBOX360-XPG
+- 2026-07-07T23:04:26+0200 [info] real-debrid::rd_verify_queue_submit - Max.Payne.3.RF.XBOX360-XPG
+- 2026-07-07T23:04:26+0200 [info] real-debrid::rd_slots_reserve
+- 2026-07-07T23:04:26+0200 [info] real-debrid::rd_verify_add_start - Max Payne 3 [MULTI][XBOX360][Region Free][2DVDs][XDG3][XPG][WwW.GamesTorrents.CoM]
+- 2026-07-07T23:04:26+0200 [info] real-debrid::rd_verify_queue_submit - Max Payne 3 [MULTI][XBOX360][Region Free][2DVDs][XDG3][XPG][WwW.GamesTorrents.CoM]
+- 2026-07-07T23:04:26+0200 [info] real-debrid::rd_slots_reserve
+- 2026-07-07T23:04:26+0200 [info] real-debrid::rd_verify_add_start - Max.Payne.3.RF.XBOX360-XPG
+- 2026-07-07T23:04:26+0200 [info] real-debrid::rd_verify_queue_submit - Max.Payne.3.RF.XBOX360-XPG
+- 2026-07-07T23:04:26+0200 [info] real-debrid::rd_slots_reserve
+- 2026-07-07T23:04:26+0200 [info] real-debrid::rd_verify_queue_submit - Max.Payne.2.the.Fall.of.Max.Payne.MULTi2.PAL-Thrombozyt
+- 2026-07-07T23:04:26+0200 [info] real-debrid::rd_verify_add_start - Max.Payne.2.the.Fall.of.Max.Payne.MULTi2.PAL-Thrombozyt
+- 2026-07-07T23:04:26+0200 [info] real-debrid::rd_slots_reserve
+- 2026-07-07T23:04:26+0200 [info] real-debrid::rd_verify_queue_submit - Max Payne 2 - The Fall Of Max Payne
+- 2026-07-07T23:04:26+0200 [info] real-debrid::rd_verify_add_start - Max Payne 2 - The Fall Of Max Payne
+- 2026-07-07T23:04:26+0200 [info] real-debrid::rd_slots_reserve
+- 2026-07-07T23:04:26+0200 [info] real-debrid::rd_verify_add_start - Max.Payne.2.The.Fall.Of.Max.Payne_Conversione.ENG.to.ITA
+- 2026-07-07T23:04:26+0200 [info] real-debrid::rd_verify_queue_submit - Max.Payne.2.The.Fall.Of.Max.Payne_Conversione.ENG.to.ITA
+- 2026-07-07T23:04:26+0200 [info] real-debrid::rd_slots_reserve
+- 2026-07-07T23:04:26+0200 [info] real-debrid::rd_slots_reserve
+- 2026-07-07T23:04:26+0200 [info] real-debrid::rd_verify_queue_submit - Max.Payne.3.STEAM.UNLOCKED-ALI213
+- 2026-07-07T23:04:26+0200 [info] real-debrid::rd_verify_add_start - Max.Payne.3.STEAM.UNLOCKED-ALI213
+- 2026-07-07T23:04:26+0200 [info] real-debrid::rd_slots_reserve
+- 2026-07-07T23:04:26+0200 [info] real-debrid::rd_verify_queue_submit - Max Payne 1 & 2 (The Collector
+- 2026-07-07T23:04:26+0200 [info] real-debrid::rd_verify_add_start - Max Payne 1 & 2 (The Collector
+- 2026-07-07T23:04:26+0200 [info] real-debrid::rd_verify_queue_submit - Max Payne 1&2-zetoo
+- 2026-07-07T23:04:26+0200 [info] real-debrid::rd_verify_add_start - Max Payne 1&2-zetoo
+- 2026-07-07T23:04:26+0200 [info] real-debrid::rd_slots_reserve
+- 2026-07-07T23:04:26+0200 [info] real-debrid::rd_verify_queue_submit - Max Payne 1 & 2 (The Collector
+- 2026-07-07T23:04:26+0200 [info] real-debrid::rd_verify_add_start - Max Payne 1 & 2 (The Collector
+- 2026-07-07T23:04:26+0200 [info] real-debrid::rd_slots_reserve
+- 2026-07-07T23:04:26+0200 [info] real-debrid::rd_verify_queue_submit - Max Payne 1 & 2 (The Collector
+- 2026-07-07T23:04:26+0200 [info] real-debrid::rd_verify_add_start - Max Payne 1 & 2 (The Collector
+- 2026-07-07T23:04:26+0200 [info] real-debrid::rd_slots_reserve
+- 2026-07-07T23:04:26+0200 [info] real-debrid::rd_verify_queue_submit - Max Payne 1 & 2 (The Collector
+- 2026-07-07T23:04:26+0200 [info] real-debrid::rd_verify_add_start - Max Payne 1 & 2 (The Collector
+- 2026-07-07T23:04:26+0200 [info] real-debrid::rd_slots_reserve
+- 2026-07-07T23:04:26+0200 [info] real-debrid::rd_verify_queue_submit - Max Payne 1 & 2 (The Collector
+- 2026-07-07T23:04:26+0200 [info] real-debrid::rd_verify_add_start - Max Payne 1 & 2 (The Collector
+- 2026-07-07T23:04:26+0200 [info] real-debrid::rd_slots_reserve
+- 2026-07-07T23:04:26+0200 [info] real-debrid::rd_verify_queue_submit - Max Payne 1 & 2 (The Collector
+- 2026-07-07T23:04:26+0200 [info] real-debrid::rd_verify_add_start - Max Payne 1 & 2 (The Collector
+- 2026-07-07T23:04:26+0200 [info] real-debrid::rd_slots_reserve
+- 2026-07-07T23:04:26+0200 [info] real-debrid::rd_verify_add_start - Max Payne 1 & 2 (The Collector
+- 2026-07-07T23:04:26+0200 [info] real-debrid::rd_verify_queue_submit - Max Payne 1 & 2 (The Collector
+- 2026-07-07T23:04:26+0200 [info] real-debrid::rd_slots_reserve
+- 2026-07-07T23:04:26+0200 [info] real-debrid::rd_verify_queue_submit - Max Payne 1 & 2 (The Collector
+- 2026-07-07T23:04:26+0200 [info] real-debrid::rd_verify_add_start - Max Payne 1 & 2 (The Collector
+- 2026-07-07T23:04:26+0200 [info] real-debrid::rd_slots_reserve
+- 2026-07-07T23:04:26+0200 [info] real-debrid::rd_slots_reserve
+- 2026-07-07T23:04:26+0200 [info] real-debrid::rd_verify_added
+- 2026-07-07T23:04:26+0200 [debug] real-debrid::rd_verify_poll - Max.Payne.3-SKIDROW
+- 2026-07-07T23:04:26+0200 [info] real-debrid::rd_fast_discard - error
+- 2026-07-07T23:04:26+0200 [info] real-debrid::rd_fast_discard_reason - error
+- 2026-07-07T23:04:26+0200 [info] real-debrid::rd_fast_discard_delete - error
+- 2026-07-07T23:04:26+0200 [info] real-debrid::rd_delete_torrent
+- 2026-07-07T23:04:26+0200 [info] real-debrid::rd_slots_release
+- 2026-07-07T23:04:26+0200 [info] real-debrid::rd_verify_queue_done_item - Max.Payne.3-SKIDROW
+- 2026-07-07T23:04:27+0200 [info] real-debrid::rd_verify_added
+- 2026-07-07T23:04:27+0200 [debug] real-debrid::rd_verify_poll - Max Payne 2 The Fall of Max Payne
+- 2026-07-07T23:04:27+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:27+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:27+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:27+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:27+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:27+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:27+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:27+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:27+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:27+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:27+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:27+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:27+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:27+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:27+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:27+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:27+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:27+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:27+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:27+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:27+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:27+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:27+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:27+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:27+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:27+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:27+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:27+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:27+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:27+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:27+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:27+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:27+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:27+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:27+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:27+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:27+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:27+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:27+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:27+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:27+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:27+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:27+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:27+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:27+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:27+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:27+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:27+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:27+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:27+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:27+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:27+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:27+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:27+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:27+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:27+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:27+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:27+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:27+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:27+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:27+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:27+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:27+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:27+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:27+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:27+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:27+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:27+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:27+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:27+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:27+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:27+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:27+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:27+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:27+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:27+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:27+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:27+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:27+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:27+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:27+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:27+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:27+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:27+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:27+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:27+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:27+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:27+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:27+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:27+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:27+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:27+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:27+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:27+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:27+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:27+0200 [info] real-debrid::rd_verify_pack_skip - Max Payne 2 The Fall of Max Payne
+- 2026-07-07T23:04:27+0200 [info] real-debrid::rd_fast_discard - waiting_files_no_match
+- 2026-07-07T23:04:27+0200 [info] real-debrid::rd_fast_discard_reason - waiting_files_no_match
+- 2026-07-07T23:04:27+0200 [info] real-debrid::rd_fast_discard_delete - waiting_files_no_match
+- 2026-07-07T23:04:27+0200 [debug] real-debrid::rd_waiting_files_no_match_fast_delete - Max Payne 2 The Fall of Max Payne
+- 2026-07-07T23:04:27+0200 [info] real-debrid::rd_delete_torrent
+- 2026-07-07T23:04:27+0200 [info] real-debrid::rd_slots_release
+- 2026-07-07T23:04:27+0200 [info] real-debrid::rd_verify_queue_done_item - Max Payne 2 The Fall of Max Payne
+- 2026-07-07T23:04:29+0200 [info] real-debrid::rd_verify_added
+- 2026-07-07T23:04:30+0200 [debug] real-debrid::rd_verify_poll - Max Payne 1 & 2 (The Collector
+- 2026-07-07T23:04:30+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:30+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:30+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:30+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:30+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:30+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:30+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:30+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:30+0200 [info] real-debrid::rd_verify_added
+- 2026-07-07T23:04:30+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:30+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:30+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:30+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:30+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:30+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:30+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:30+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:30+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:30+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:30+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:30+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:30+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:30+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:30+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:30+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:30+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:30+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:30+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:30+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:30+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:30+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:30+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:30+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:30+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:30+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:30+0200 [info] real-debrid::rd_verify_pack_skip - Max Payne 1 & 2 (The Collector
+- 2026-07-07T23:04:30+0200 [info] real-debrid::rd_fast_discard - waiting_files_no_match
+- 2026-07-07T23:04:30+0200 [info] real-debrid::rd_fast_discard_reason - waiting_files_no_match
+- 2026-07-07T23:04:30+0200 [info] real-debrid::rd_fast_discard_delete - waiting_files_no_match
+- 2026-07-07T23:04:30+0200 [debug] real-debrid::rd_waiting_files_no_match_fast_delete - Max Payne 1 & 2 (The Collector
+- 2026-07-07T23:04:30+0200 [debug] real-debrid::rd_verify_poll - Max Payne3
+- 2026-07-07T23:04:30+0200 [info] real-debrid::rd_fast_discard - error
+- 2026-07-07T23:04:30+0200 [info] real-debrid::rd_fast_discard_reason - error
+- 2026-07-07T23:04:30+0200 [info] real-debrid::rd_fast_discard_delete - error
+- 2026-07-07T23:04:30+0200 [debug] real-debrid::rd_endpoint_pace_wait
+- 2026-07-07T23:04:30+0200 [info] real-debrid::rd_delete_torrent
+- 2026-07-07T23:04:30+0200 [info] real-debrid::rd_slots_release
+- 2026-07-07T23:04:30+0200 [info] real-debrid::rd_verify_queue_done_item - Max Payne 1 & 2 (The Collector
+- 2026-07-07T23:04:31+0200 [debug] real-debrid::rd_endpoint_pace_wait
+- 2026-07-07T23:04:31+0200 [info] real-debrid::rd_delete_torrent
+- 2026-07-07T23:04:31+0200 [info] real-debrid::rd_slots_release
+- 2026-07-07T23:04:31+0200 [info] real-debrid::rd_verify_queue_done_item - Max Payne3
+- 2026-07-07T23:04:31+0200 [info] real-debrid::rd_verify_added
+- 2026-07-07T23:04:31+0200 [debug] real-debrid::rd_verify_poll - Max.Payne.3.RF.XBOX360-XPG
+- 2026-07-07T23:04:31+0200 [info] real-debrid::rd_fast_discard - error
+- 2026-07-07T23:04:31+0200 [info] real-debrid::rd_fast_discard_reason - error
+- 2026-07-07T23:04:31+0200 [info] real-debrid::rd_fast_discard_delete - error
+- 2026-07-07T23:04:32+0200 [info] real-debrid::rd_delete_torrent
+- 2026-07-07T23:04:32+0200 [info] real-debrid::rd_slots_release
+- 2026-07-07T23:04:32+0200 [info] real-debrid::rd_verify_queue_done_item - Max.Payne.3.RF.XBOX360-XPG
+- 2026-07-07T23:04:32+0200 [info] real-debrid::rd_verify_added
+- 2026-07-07T23:04:32+0200 [debug] real-debrid::rd_verify_poll - Max.Payne.3.RF.XBOX360-XPG
+- 2026-07-07T23:04:32+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:32+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:32+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:32+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:32+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:32+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:32+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:32+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:32+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:32+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:32+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:32+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:32+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:32+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:32+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:32+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:32+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:32+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:32+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:32+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:32+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:32+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:32+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:32+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:32+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:32+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:32+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:32+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:32+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:32+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:32+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:32+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:32+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:32+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:32+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:32+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:32+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:32+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:32+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:32+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:32+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:32+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:32+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:32+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:32+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:32+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:32+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:32+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:32+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:32+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:32+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:32+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:32+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:32+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:32+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:32+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:32+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:32+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:32+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:32+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:32+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:32+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:32+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:32+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:32+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:32+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:32+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:32+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:32+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:32+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:32+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:32+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:32+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:32+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:32+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:32+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:32+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:32+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:32+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:32+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:32+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:32+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:32+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:32+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:32+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:32+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:32+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:32+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:32+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:32+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:32+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:32+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:32+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:32+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:32+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:32+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:32+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:32+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:32+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:32+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:32+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:32+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:32+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:32+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:32+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:32+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:32+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:32+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:32+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:32+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:32+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:32+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:32+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:32+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:32+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:32+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:32+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:32+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:32+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:32+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:32+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:32+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:32+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:32+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:32+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:32+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:32+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:32+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:32+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:32+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:32+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:32+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:32+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:32+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:32+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:32+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:32+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:32+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:32+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:32+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:32+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:32+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:32+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:32+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:32+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:32+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:32+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:32+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:32+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:32+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:32+0200 [info] real-debrid::rd_verify_pack_skip - Max.Payne.3.RF.XBOX360-XPG
+- 2026-07-07T23:04:32+0200 [info] real-debrid::rd_fast_discard - waiting_files_no_match
+- 2026-07-07T23:04:32+0200 [info] real-debrid::rd_fast_discard_reason - waiting_files_no_match
+- 2026-07-07T23:04:32+0200 [info] real-debrid::rd_fast_discard_delete - waiting_files_no_match
+- 2026-07-07T23:04:32+0200 [debug] real-debrid::rd_waiting_files_no_match_fast_delete - Max.Payne.3.RF.XBOX360-XPG
+- 2026-07-07T23:04:33+0200 [info] real-debrid::rd_delete_torrent
+- 2026-07-07T23:04:33+0200 [info] real-debrid::rd_slots_release
+- 2026-07-07T23:04:33+0200 [info] real-debrid::rd_verify_queue_done_item - Max.Payne.3.RF.XBOX360-XPG
+- 2026-07-07T23:04:33+0200 [info] real-debrid::rd_verify_added
+- 2026-07-07T23:04:33+0200 [debug] real-debrid::rd_verify_poll - Max.Payne.3.RF.XBOX360-XPG
+- 2026-07-07T23:04:33+0200 [info] real-debrid::rd_fast_discard - error
+- 2026-07-07T23:04:33+0200 [info] real-debrid::rd_fast_discard_reason - error
+- 2026-07-07T23:04:33+0200 [info] real-debrid::rd_fast_discard_delete - error
+- 2026-07-07T23:04:34+0200 [info] real-debrid::rd_delete_torrent
+- 2026-07-07T23:04:34+0200 [info] real-debrid::rd_slots_release
+- 2026-07-07T23:04:34+0200 [info] real-debrid::rd_verify_queue_done_item - Max.Payne.3.RF.XBOX360-XPG
+- 2026-07-07T23:04:34+0200 [info] real-debrid::rd_verify_added
+- 2026-07-07T23:04:35+0200 [debug] real-debrid::rd_verify_poll - Max.Payne
+- 2026-07-07T23:04:35+0200 [info] real-debrid::rd_fast_discard - error
+- 2026-07-07T23:04:35+0200 [info] real-debrid::rd_fast_discard_reason - error
+- 2026-07-07T23:04:35+0200 [info] real-debrid::rd_fast_discard_delete - error
+- 2026-07-07T23:04:35+0200 [info] real-debrid::rd_delete_torrent
+- 2026-07-07T23:04:35+0200 [info] real-debrid::rd_slots_release
+- 2026-07-07T23:04:35+0200 [info] real-debrid::rd_verify_queue_done_item - Max.Payne
+- 2026-07-07T23:04:36+0200 [debug] real-debrid::rd_endpoint_pace_wait
+- 2026-07-07T23:04:36+0200 [info] real-debrid::rd_verify_added
+- 2026-07-07T23:04:36+0200 [debug] real-debrid::rd_verify_poll - Max.Payne.2008.R5.PROPER.CUSTOM.SWESUB.DVDR-iNjECT
+- 2026-07-07T23:04:36+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:36+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:36+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:36+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:36+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:36+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:36+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:36+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:36+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:36+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:36+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:36+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:36+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:36+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:36+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:36+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:36+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:36+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:36+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:36+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:36+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:36+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:36+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:36+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:36+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:36+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:36+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:36+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:36+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:36+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:36+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:36+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:36+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:36+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:36+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:36+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:36+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:36+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:36+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:36+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:36+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:36+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:36+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:36+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:36+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:36+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:36+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:36+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:36+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:36+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:36+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:36+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:36+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:36+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:36+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:36+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:36+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:36+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:36+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:36+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:36+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:36+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:36+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:36+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:36+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:36+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:36+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:36+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:36+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:36+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:36+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:36+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:36+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:36+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:36+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:36+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:36+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:36+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:36+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:36+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:36+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:36+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:36+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:36+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:36+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:36+0200 [info] real-debrid::rd_verify_pack_skip - Max.Payne.2008.R5.PROPER.CUSTOM.SWESUB.DVDR-iNjECT
+- 2026-07-07T23:04:36+0200 [info] real-debrid::rd_fast_discard - waiting_files_no_match
+- 2026-07-07T23:04:36+0200 [info] real-debrid::rd_fast_discard_reason - waiting_files_no_match
+- 2026-07-07T23:04:36+0200 [info] real-debrid::rd_fast_discard_delete - waiting_files_no_match
+- 2026-07-07T23:04:36+0200 [debug] real-debrid::rd_waiting_files_no_match_fast_delete - Max.Payne.2008.R5.PROPER.CUSTOM.SWESUB.DVDR-iNjECT
+- 2026-07-07T23:04:36+0200 [info] real-debrid::rd_delete_torrent
+- 2026-07-07T23:04:36+0200 [info] real-debrid::rd_slots_release
+- 2026-07-07T23:04:36+0200 [info] real-debrid::rd_verify_queue_done_item - Max.Payne.2008.R5.PROPER.CUSTOM.SWESUB.DVDR-iNjECT
+- 2026-07-07T23:04:37+0200 [info] real-debrid::rd_verify_added
+- 2026-07-07T23:04:37+0200 [debug] real-debrid::rd_verify_poll - Max.Payne
+- 2026-07-07T23:04:37+0200 [info] real-debrid::rd_fast_discard - error
+- 2026-07-07T23:04:37+0200 [info] real-debrid::rd_fast_discard_reason - error
+- 2026-07-07T23:04:37+0200 [info] real-debrid::rd_fast_discard_delete - error
+- 2026-07-07T23:04:37+0200 [info] real-debrid::rd_delete_torrent
+- 2026-07-07T23:04:37+0200 [info] real-debrid::rd_slots_release
+- 2026-07-07T23:04:37+0200 [info] real-debrid::rd_verify_queue_done_item - Max.Payne
+- 2026-07-07T23:04:38+0200 [info] real-debrid::rd_verify_added
+- 2026-07-07T23:04:38+0200 [debug] real-debrid::rd_verify_poll - Max Payne - Triple Pack
+- 2026-07-07T23:04:38+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:38+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:38+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:38+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:38+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:38+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:38+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:38+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:38+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:38+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:38+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:38+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:38+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:38+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:38+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:38+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:38+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:38+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:38+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:38+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:38+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:38+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:38+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:38+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:38+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:38+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:38+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:38+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:38+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:38+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:38+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:38+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:38+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:38+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:38+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:38+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:38+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:38+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:38+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:38+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:38+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:38+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:38+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:38+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:38+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:38+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:38+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:38+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:38+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:38+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:38+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:38+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:38+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:38+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:38+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:38+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:38+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:38+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:38+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:38+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:38+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:38+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:38+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:38+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:38+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:38+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:38+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:38+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:38+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:38+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:38+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:38+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:38+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:38+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:38+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:38+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:38+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:38+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:38+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:38+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:38+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:38+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:38+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:38+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:38+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:38+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:38+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:38+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:38+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:39+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:39+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:39+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:39+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:39+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:39+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:39+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:39+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:39+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:39+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:39+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:39+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:39+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:39+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:39+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:39+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:39+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:39+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:39+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:39+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:39+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:39+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:39+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:39+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:39+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:39+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:39+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:39+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:39+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:39+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:39+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:39+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:39+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:39+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:39+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:39+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:39+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:39+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:39+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:39+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:39+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:39+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:39+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:39+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:39+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:39+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:39+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:39+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:39+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:39+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:39+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:39+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:39+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:39+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:39+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:39+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:39+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:39+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:39+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:39+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:39+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:39+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:39+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:39+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:39+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:39+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:39+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:39+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:39+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:39+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:39+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:39+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:39+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:39+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:39+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:39+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:39+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:39+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:39+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:39+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:39+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:39+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:39+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:39+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:39+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:39+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:39+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:39+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:39+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:39+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:39+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:39+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:39+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:39+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:39+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:39+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:39+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:39+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:39+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:39+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:39+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:39+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:39+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:39+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:39+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:39+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:39+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:39+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:39+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:39+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:39+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:39+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:39+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:39+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:39+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:39+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:39+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:39+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:39+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:39+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:39+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:39+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:39+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:39+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:39+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:39+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:39+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:39+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:39+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:39+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:39+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:39+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:39+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:39+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:39+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:39+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:39+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:39+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:39+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:39+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:39+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:39+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:39+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:39+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:39+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:39+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:39+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:39+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:39+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:39+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:39+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:39+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:39+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:39+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:39+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:39+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:39+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:39+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:39+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:39+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:39+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:39+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:39+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:39+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:39+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:39+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:39+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:39+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:39+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:39+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:39+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:39+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:39+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:39+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:39+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:39+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:39+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:39+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:39+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:39+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:39+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:39+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:39+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:39+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:39+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:39+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:39+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:39+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:39+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:39+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:39+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:39+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:39+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:39+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:39+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:39+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:39+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:39+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:39+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:39+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:39+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:39+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:39+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:39+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:39+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:39+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:39+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:39+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:39+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:39+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:39+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:39+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:39+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:39+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:39+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:39+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:39+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:39+0200 [info] real-debrid::rd_verify_pack_skip - Max Payne - Triple Pack
+- 2026-07-07T23:04:39+0200 [info] real-debrid::rd_fast_discard - waiting_files_no_match
+- 2026-07-07T23:04:39+0200 [info] real-debrid::rd_fast_discard_reason - waiting_files_no_match
+- 2026-07-07T23:04:39+0200 [info] real-debrid::rd_fast_discard_delete - waiting_files_no_match
+- 2026-07-07T23:04:39+0200 [debug] real-debrid::rd_waiting_files_no_match_fast_delete - Max Payne - Triple Pack
+- 2026-07-07T23:04:39+0200 [info] real-debrid::rd_delete_torrent
+- 2026-07-07T23:04:39+0200 [info] real-debrid::rd_slots_release
+- 2026-07-07T23:04:39+0200 [info] real-debrid::rd_verify_queue_done_item - Max Payne - Triple Pack
+- 2026-07-07T23:04:39+0200 [info] real-debrid::rd_verify_added
+- 2026-07-07T23:04:39+0200 [debug] real-debrid::rd_verify_poll - Max.Payne.3.RF.XBOX360
+- 2026-07-07T23:04:39+0200 [info] real-debrid::rd_fast_discard - error
+- 2026-07-07T23:04:39+0200 [info] real-debrid::rd_fast_discard_reason - error
+- 2026-07-07T23:04:39+0200 [info] real-debrid::rd_fast_discard_delete - error
+- 2026-07-07T23:04:39+0200 [debug] real-debrid::rd_endpoint_pace_wait
+- 2026-07-07T23:04:40+0200 [info] real-debrid::rd_delete_torrent
+- 2026-07-07T23:04:40+0200 [info] real-debrid::rd_slots_release
+- 2026-07-07T23:04:40+0200 [info] real-debrid::rd_verify_queue_done_item - Max.Payne.3.RF.XBOX360
+- 2026-07-07T23:04:40+0200 [info] real-debrid::rd_verify_added
+- 2026-07-07T23:04:41+0200 [debug] real-debrid::rd_verify_poll - Max.Payne.3.RF.XBOX360-XPG
+- 2026-07-07T23:04:41+0200 [debug] real-debrid::rd_endpoint_pace_wait
+- 2026-07-07T23:04:41+0200 [info] real-debrid::rd_fast_discard - error
+- 2026-07-07T23:04:41+0200 [info] real-debrid::rd_fast_discard_reason - error
+- 2026-07-07T23:04:41+0200 [info] real-debrid::rd_fast_discard_delete - error
+- 2026-07-07T23:04:41+0200 [info] real-debrid::rd_delete_torrent
+- 2026-07-07T23:04:41+0200 [info] real-debrid::rd_slots_release
+- 2026-07-07T23:04:41+0200 [info] real-debrid::rd_verify_queue_done_item - Max.Payne.3.RF.XBOX360-XPG
+- 2026-07-07T23:04:42+0200 [info] real-debrid::rd_verify_added
+- 2026-07-07T23:04:42+0200 [debug] real-debrid::rd_verify_poll - Max.Payne.3.RF.XBOX360-XPG
+- 2026-07-07T23:04:42+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:42+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:42+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:42+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:42+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:42+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:42+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:42+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:42+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:42+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:42+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:42+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:42+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:42+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:42+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:42+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:42+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:42+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:42+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:42+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:42+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:42+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:42+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:42+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:42+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:42+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:42+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:42+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:42+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:42+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:42+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:42+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:42+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:42+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:42+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:42+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:42+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:42+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:42+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:42+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:42+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:42+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:42+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:42+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:42+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:42+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:42+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:42+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:42+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:42+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:42+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:42+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:42+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:42+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:42+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:42+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:42+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:42+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:42+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:42+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:42+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:42+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:42+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:42+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:42+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:42+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:42+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:42+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:42+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:42+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:42+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:42+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:42+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:42+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:42+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:42+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:42+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:42+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:42+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:42+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:42+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:42+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:42+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:42+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:42+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:42+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:42+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:42+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:42+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:42+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:42+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:42+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:42+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:42+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:42+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:42+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:42+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:42+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:42+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:42+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:42+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:42+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:42+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:42+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:42+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:42+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:42+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:42+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:42+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:42+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:42+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:42+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:42+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:42+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:42+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:42+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:42+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:42+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:42+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:42+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:42+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:42+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:42+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:42+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:42+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:42+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:42+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:42+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:42+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:42+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:42+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:42+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:42+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:42+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:42+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:42+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:42+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:42+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:42+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:42+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:42+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:42+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:42+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:42+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:42+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:42+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:42+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:42+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:42+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:42+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:42+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:42+0200 [info] real-debrid::rd_verify_pack_skip - Max.Payne.3.RF.XBOX360-XPG
+- 2026-07-07T23:04:42+0200 [info] real-debrid::rd_fast_discard - waiting_files_no_match
+- 2026-07-07T23:04:42+0200 [info] real-debrid::rd_fast_discard_reason - waiting_files_no_match
+- 2026-07-07T23:04:42+0200 [info] real-debrid::rd_fast_discard_delete - waiting_files_no_match
+- 2026-07-07T23:04:42+0200 [debug] real-debrid::rd_waiting_files_no_match_fast_delete - Max.Payne.3.RF.XBOX360-XPG
+- 2026-07-07T23:04:43+0200 [info] real-debrid::rd_delete_torrent
+- 2026-07-07T23:04:43+0200 [info] real-debrid::rd_slots_release
+- 2026-07-07T23:04:43+0200 [info] real-debrid::rd_verify_queue_done_item - Max.Payne.3.RF.XBOX360-XPG
+- 2026-07-07T23:04:43+0200 [info] real-debrid::rd_verify_added
+- 2026-07-07T23:04:43+0200 [debug] real-debrid::rd_verify_poll - Max.Payne.3.RF.XBOX360-XPG
+- 2026-07-07T23:04:43+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:43+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:43+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:43+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:43+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:43+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:43+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:43+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:43+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:43+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:43+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:43+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:43+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:43+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:43+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:43+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:43+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:43+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:43+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:43+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:43+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:43+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:43+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:43+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:43+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:43+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:43+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:43+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:43+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:43+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:43+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:43+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:43+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:43+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:43+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:43+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:43+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:43+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:43+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:43+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:43+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:43+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:43+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:43+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:43+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:43+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:43+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:43+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:43+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:43+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:43+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:43+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:43+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:43+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:43+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:43+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:43+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:43+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:43+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:43+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:43+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:43+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:43+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:43+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:43+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:43+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:43+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:43+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:43+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:43+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:43+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:43+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:43+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:43+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:43+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:43+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:43+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:43+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:43+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:43+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:43+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:43+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:43+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:43+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:43+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:43+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:43+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:43+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:43+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:43+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:43+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:43+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:43+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:43+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:43+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:43+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:43+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:43+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:43+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:43+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:43+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:43+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:43+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:43+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:43+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:43+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:43+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:43+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:43+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:43+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:43+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:43+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:43+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:43+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:43+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:43+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:43+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:43+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:43+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:43+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:43+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:43+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:43+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:43+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:43+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:43+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:43+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:43+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:43+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:43+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:43+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:43+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:43+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:43+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:43+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:43+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:43+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:43+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:43+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:43+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:43+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:43+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:43+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:43+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:43+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:43+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:43+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:43+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:43+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:43+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:43+0200 [info] real-debrid::rd_verify_pack_skip - Max.Payne.3.RF.XBOX360-XPG
+- 2026-07-07T23:04:43+0200 [info] real-debrid::rd_fast_discard - waiting_files_no_match
+- 2026-07-07T23:04:43+0200 [info] real-debrid::rd_fast_discard_reason - waiting_files_no_match
+- 2026-07-07T23:04:43+0200 [info] real-debrid::rd_fast_discard_delete - waiting_files_no_match
+- 2026-07-07T23:04:43+0200 [debug] real-debrid::rd_waiting_files_no_match_fast_delete - Max.Payne.3.RF.XBOX360-XPG
+- 2026-07-07T23:04:44+0200 [info] real-debrid::rd_delete_torrent
+- 2026-07-07T23:04:44+0200 [info] real-debrid::rd_slots_release
+- 2026-07-07T23:04:44+0200 [info] real-debrid::rd_verify_queue_done_item - Max.Payne.3.RF.XBOX360-XPG
+- 2026-07-07T23:04:44+0200 [info] real-debrid::rd_verify_added
+- 2026-07-07T23:04:44+0200 [debug] real-debrid::rd_verify_poll - Max Payne 1 & 2 (The Collector
+- 2026-07-07T23:04:45+0200 [info] real-debrid::rd_delete_torrent
+- 2026-07-07T23:04:45+0200 [info] real-debrid::rd_slots_release
+- 2026-07-07T23:04:45+0200 [info] real-debrid::rd_verify_not_instant - Max Payne 1 & 2 (The Collector
+- 2026-07-07T23:04:45+0200 [info] real-debrid::rd_verify_queue_done_item - Max Payne 1 & 2 (The Collector
+- 2026-07-07T23:04:45+0200 [info] real-debrid::rd_verify_added
+- 2026-07-07T23:04:45+0200 [debug] real-debrid::rd_verify_poll - Max.Payne.3.RF.XBOX360-XPG
+- 2026-07-07T23:04:45+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:45+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:45+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:45+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:45+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:45+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:45+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:45+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:45+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:45+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:45+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:45+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:45+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:45+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:46+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:46+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:46+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:46+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:46+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:46+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:46+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:46+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:46+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:46+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:46+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:46+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:46+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:46+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:46+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:46+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:46+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:46+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:46+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:46+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:46+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:46+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:46+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:46+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:46+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:46+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:46+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:46+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:46+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:46+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:46+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:46+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:46+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:46+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:46+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:46+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:46+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:46+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:46+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:46+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:46+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:46+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:46+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:46+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:46+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:46+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:46+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:46+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:46+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:46+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:46+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:46+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:46+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:46+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:46+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:46+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:46+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:46+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:46+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:46+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:46+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:46+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:46+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:46+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:46+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:46+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:46+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:46+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:46+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:46+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:46+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:46+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:46+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:46+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:46+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:46+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:46+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:46+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:46+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:46+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:46+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:46+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:46+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:46+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:46+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:46+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:46+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:46+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:46+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:46+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:46+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:46+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:46+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:46+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:46+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:46+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:46+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:46+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:46+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:46+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:46+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:46+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:46+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:46+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:46+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:46+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:46+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:46+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:46+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:46+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:46+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:46+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:46+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:46+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:46+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:46+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:46+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:46+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:46+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:46+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:46+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:46+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:46+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:46+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:46+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:46+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:46+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:46+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:46+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:46+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:46+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:46+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:46+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:46+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:46+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:46+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:46+0200 [info] real-debrid::rd_verify_pack_skip - Max.Payne.3.RF.XBOX360-XPG
+- 2026-07-07T23:04:46+0200 [info] real-debrid::rd_fast_discard - waiting_files_no_match
+- 2026-07-07T23:04:46+0200 [info] real-debrid::rd_fast_discard_reason - waiting_files_no_match
+- 2026-07-07T23:04:46+0200 [info] real-debrid::rd_fast_discard_delete - waiting_files_no_match
+- 2026-07-07T23:04:46+0200 [debug] real-debrid::rd_waiting_files_no_match_fast_delete - Max.Payne.3.RF.XBOX360-XPG
+- 2026-07-07T23:04:46+0200 [info] real-debrid::rd_delete_torrent
+- 2026-07-07T23:04:46+0200 [debug] real-debrid::rd_endpoint_pace_wait
+- 2026-07-07T23:04:46+0200 [info] real-debrid::rd_slots_release
+- 2026-07-07T23:04:46+0200 [info] real-debrid::rd_verify_queue_done_item - Max.Payne.3.RF.XBOX360-XPG
+- 2026-07-07T23:04:48+0200 [info] real-debrid::rd_verify_added
+- 2026-07-07T23:04:48+0200 [debug] real-debrid::rd_verify_poll - Max Payne 2 - The Fall Of Max Payne
+- 2026-07-07T23:04:48+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:48+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:48+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:48+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:48+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:48+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:48+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:48+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:48+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:48+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:48+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:48+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:48+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:48+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:48+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:48+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:48+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:48+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:48+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:48+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:48+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:48+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:48+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:48+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:48+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:48+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:48+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:48+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:48+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:48+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:48+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:48+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:48+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:48+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:48+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:48+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:48+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:48+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:48+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:48+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:48+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:48+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:48+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:48+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:48+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:48+0200 [info] real-debrid::rd_verify_pack_skip - Max Payne 2 - The Fall Of Max Payne
+- 2026-07-07T23:04:48+0200 [info] real-debrid::rd_fast_discard - waiting_files_no_match
+- 2026-07-07T23:04:48+0200 [info] real-debrid::rd_fast_discard_reason - waiting_files_no_match
+- 2026-07-07T23:04:48+0200 [info] real-debrid::rd_fast_discard_delete - waiting_files_no_match
+- 2026-07-07T23:04:48+0200 [debug] real-debrid::rd_waiting_files_no_match_fast_delete - Max Payne 2 - The Fall Of Max Payne
+- 2026-07-07T23:04:48+0200 [info] real-debrid::rd_delete_torrent
+- 2026-07-07T23:04:48+0200 [info] real-debrid::rd_slots_release
+- 2026-07-07T23:04:49+0200 [info] real-debrid::rd_verify_queue_done_item - Max Payne 2 - The Fall Of Max Payne
+- 2026-07-07T23:04:50+0200 [info] real-debrid::rd_verify_added
+- 2026-07-07T23:04:50+0200 [debug] real-debrid::rd_verify_poll - Max Payne 2 The Fall Of Max Payne v1.01 Manuel Pc Fr Eng
+- 2026-07-07T23:04:50+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:50+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:50+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:50+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:50+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:50+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:50+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:50+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:50+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:50+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:50+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:50+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:50+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:50+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:50+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:50+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:50+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:50+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:50+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:50+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:50+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:50+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:50+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:50+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:50+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:50+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:50+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:50+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:50+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:50+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:50+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:50+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:50+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:50+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:50+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:50+0200 [info] real-debrid::rd_verify_pack_skip - Max Payne 2 The Fall Of Max Payne v1.01 Manuel Pc Fr Eng
+- 2026-07-07T23:04:50+0200 [info] real-debrid::rd_fast_discard - waiting_files_no_match
+- 2026-07-07T23:04:50+0200 [info] real-debrid::rd_fast_discard_reason - waiting_files_no_match
+- 2026-07-07T23:04:50+0200 [info] real-debrid::rd_fast_discard_delete - waiting_files_no_match
+- 2026-07-07T23:04:50+0200 [debug] real-debrid::rd_waiting_files_no_match_fast_delete - Max Payne 2 The Fall Of Max Payne v1.01 Manuel Pc Fr Eng
+- 2026-07-07T23:04:50+0200 [info] real-debrid::rd_delete_torrent
+- 2026-07-07T23:04:50+0200 [info] real-debrid::rd_slots_release
+- 2026-07-07T23:04:50+0200 [info] real-debrid::rd_verify_queue_done_item - Max Payne 2 The Fall Of Max Payne v1.01 Manuel Pc Fr Eng
+- 2026-07-07T23:04:51+0200 [debug] real-debrid::rd_endpoint_pace_wait
+- 2026-07-07T23:04:51+0200 [info] real-debrid::rd_verify_added
+- 2026-07-07T23:04:52+0200 [debug] real-debrid::rd_verify_poll - Max Payne 1 & 2 (The Collector
+- 2026-07-07T23:04:52+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:52+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:52+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:52+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:52+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:52+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:52+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:52+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:52+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:52+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:52+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:52+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:52+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:52+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:52+0200 [info] real-debrid::rd_verify_added
+- 2026-07-07T23:04:52+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:52+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:52+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:52+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:52+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:52+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:52+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:52+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:52+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:52+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:52+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:52+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:52+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:52+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:52+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:52+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:52+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:52+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:52+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:52+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:52+0200 [info] real-debrid::rd_verify_pack_skip - Max Payne 1 & 2 (The Collector
+- 2026-07-07T23:04:52+0200 [info] real-debrid::rd_fast_discard - waiting_files_no_match
+- 2026-07-07T23:04:52+0200 [info] real-debrid::rd_fast_discard_reason - waiting_files_no_match
+- 2026-07-07T23:04:52+0200 [info] real-debrid::rd_fast_discard_delete - waiting_files_no_match
+- 2026-07-07T23:04:52+0200 [debug] real-debrid::rd_waiting_files_no_match_fast_delete - Max Payne 1 & 2 (The Collector
+- 2026-07-07T23:04:52+0200 [debug] real-debrid::rd_verify_poll - Max.Payne.3.RF.XBOX360-XPG
+- 2026-07-07T23:04:52+0200 [info] real-debrid::rd_fast_discard - error
+- 2026-07-07T23:04:52+0200 [info] real-debrid::rd_fast_discard_reason - error
+- 2026-07-07T23:04:52+0200 [info] real-debrid::rd_fast_discard_delete - error
+- 2026-07-07T23:04:52+0200 [debug] real-debrid::rd_endpoint_pace_wait
+- 2026-07-07T23:04:52+0200 [info] real-debrid::rd_delete_torrent
+- 2026-07-07T23:04:52+0200 [info] real-debrid::rd_slots_release
+- 2026-07-07T23:04:52+0200 [info] real-debrid::rd_verify_queue_done_item - Max Payne 1 & 2 (The Collector
+- 2026-07-07T23:04:53+0200 [info] real-debrid::rd_delete_torrent
+- 2026-07-07T23:04:53+0200 [info] real-debrid::rd_slots_release
+- 2026-07-07T23:04:53+0200 [info] real-debrid::rd_verify_queue_done_item - Max.Payne.3.RF.XBOX360-XPG
+- 2026-07-07T23:04:54+0200 [info] real-debrid::rd_verify_added
+- 2026-07-07T23:04:54+0200 [debug] real-debrid::rd_verify_poll - Max.Payne.3.STEAM.UNLOCKED-ALI213
+- 2026-07-07T23:04:54+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:54+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:54+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:54+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:54+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:54+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:54+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:54+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:54+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:54+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:54+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:54+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:54+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:54+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:54+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:54+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:54+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:54+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:54+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:54+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:54+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:54+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:54+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:54+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:54+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:54+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:54+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:54+0200 [info] real-debrid::rd_verify_added
+- 2026-07-07T23:04:54+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:54+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:54+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:54+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:54+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:54+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:54+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:54+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:54+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:54+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:54+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:54+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:54+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:54+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:54+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:54+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:54+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:54+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:54+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:54+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:54+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:54+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:54+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:54+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:54+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:54+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:54+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:54+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:54+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:54+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:54+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:54+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:54+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:54+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:54+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:54+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:54+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:54+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:54+0200 [info] real-debrid::rd_verify_pack_skip - Max.Payne.3.STEAM.UNLOCKED-ALI213
+- 2026-07-07T23:04:54+0200 [info] real-debrid::rd_fast_discard - waiting_files_no_match
+- 2026-07-07T23:04:54+0200 [info] real-debrid::rd_fast_discard_reason - waiting_files_no_match
+- 2026-07-07T23:04:54+0200 [info] real-debrid::rd_fast_discard_delete - waiting_files_no_match
+- 2026-07-07T23:04:54+0200 [debug] real-debrid::rd_waiting_files_no_match_fast_delete - Max.Payne.3.STEAM.UNLOCKED-ALI213
+- 2026-07-07T23:04:54+0200 [debug] real-debrid::rd_verify_poll - Max.Payne.3.RF.XBOX360-XPG
+- 2026-07-07T23:04:54+0200 [info] real-debrid::rd_fast_discard - error
+- 2026-07-07T23:04:54+0200 [info] real-debrid::rd_fast_discard_reason - error
+- 2026-07-07T23:04:54+0200 [info] real-debrid::rd_fast_discard_delete - error
+- 2026-07-07T23:04:54+0200 [info] real-debrid::rd_delete_torrent
+- 2026-07-07T23:04:54+0200 [info] real-debrid::rd_slots_release
+- 2026-07-07T23:04:54+0200 [info] real-debrid::rd_verify_queue_done_item - Max.Payne.3.STEAM.UNLOCKED-ALI213
+- 2026-07-07T23:04:55+0200 [info] real-debrid::rd_delete_torrent
+- 2026-07-07T23:04:55+0200 [info] real-debrid::rd_slots_release
+- 2026-07-07T23:04:55+0200 [info] real-debrid::rd_verify_queue_done_item - Max.Payne.3.RF.XBOX360-XPG
+- 2026-07-07T23:04:56+0200 [debug] real-debrid::rd_endpoint_pace_wait
+- 2026-07-07T23:04:57+0200 [info] real-debrid::rd_verify_added
+- 2026-07-07T23:04:57+0200 [debug] real-debrid::rd_verify_poll - Max Payne 1 & 2 (The Collector
+- 2026-07-07T23:04:57+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:57+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:57+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:57+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:57+0200 [info] real-debrid::rd_verify_added
+- 2026-07-07T23:04:57+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:57+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:57+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:57+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:57+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:57+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:57+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:57+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:57+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:57+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:57+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:57+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:57+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:57+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:57+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:57+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:57+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:57+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:57+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:57+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:57+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:57+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:57+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:57+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:57+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:57+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:57+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:57+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:57+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:57+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:57+0200 [info] real-debrid::rd_verify_pack_skip - Max Payne 1 & 2 (The Collector
+- 2026-07-07T23:04:57+0200 [info] real-debrid::rd_fast_discard - waiting_files_no_match
+- 2026-07-07T23:04:57+0200 [info] real-debrid::rd_fast_discard_reason - waiting_files_no_match
+- 2026-07-07T23:04:57+0200 [info] real-debrid::rd_fast_discard_delete - waiting_files_no_match
+- 2026-07-07T23:04:57+0200 [debug] real-debrid::rd_waiting_files_no_match_fast_delete - Max Payne 1 & 2 (The Collector
+- 2026-07-07T23:04:57+0200 [debug] real-debrid::rd_verify_poll - Max Payne 1 & 2 (The Collector
+- 2026-07-07T23:04:57+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:57+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:57+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:57+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:57+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:57+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:57+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:57+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:57+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:57+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:57+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:57+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:57+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:57+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:57+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:57+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:57+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:57+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:57+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:57+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:57+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:57+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:57+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:57+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:57+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:57+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:57+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:57+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:57+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:57+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:57+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:57+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:57+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:57+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:04:57+0200 [info] real-debrid::rd_verify_pack_skip - Max Payne 1 & 2 (The Collector
+- 2026-07-07T23:04:57+0200 [info] real-debrid::rd_fast_discard - waiting_files_no_match
+- 2026-07-07T23:04:57+0200 [info] real-debrid::rd_fast_discard_reason - waiting_files_no_match
+- 2026-07-07T23:04:57+0200 [info] real-debrid::rd_fast_discard_delete - waiting_files_no_match
+- 2026-07-07T23:04:57+0200 [debug] real-debrid::rd_waiting_files_no_match_fast_delete - Max Payne 1 & 2 (The Collector
+- 2026-07-07T23:04:57+0200 [debug] real-debrid::rd_endpoint_pace_wait
+- 2026-07-07T23:04:57+0200 [info] real-debrid::rd_delete_torrent
+- 2026-07-07T23:04:57+0200 [info] real-debrid::rd_slots_release
+- 2026-07-07T23:04:57+0200 [info] real-debrid::rd_verify_queue_done_item - Max Payne 1 & 2 (The Collector
+- 2026-07-07T23:04:58+0200 [info] real-debrid::rd_delete_torrent
+- 2026-07-07T23:04:58+0200 [info] real-debrid::rd_slots_release
+- 2026-07-07T23:04:58+0200 [info] real-debrid::rd_verify_queue_done_item - Max Payne 1 & 2 (The Collector
+- 2026-07-07T23:04:58+0200 [info] real-debrid::rd_api_http_error - too_many_requests
+- 2026-07-07T23:04:58+0200 [info] real-debrid::rd_endpoint_429_backoff
+- 2026-07-07T23:04:58+0200 [info] real-debrid::rd_rate_429_cooldown
+- 2026-07-07T23:04:59+0200 [info] real-debrid::rd_call_retry_429 - Real-Debrid HTTP 429: [34 too_many_requests] {"error": "too_many_requests", "error_code": 34, "src": "front-1"}
+- 2026-07-07T23:05:02+0200 [debug] real-debrid::rd_endpoint_pace_wait
+- 2026-07-07T23:05:05+0200 [info] real-debrid::rd_verify_added
+- 2026-07-07T23:05:05+0200 [debug] real-debrid::rd_verify_poll - Max Payne 1 & 2 (The Collector
+- 2026-07-07T23:05:05+0200 [info] real-debrid::rd_delete_torrent
+- 2026-07-07T23:05:05+0200 [info] real-debrid::rd_slots_release
+- 2026-07-07T23:05:05+0200 [info] real-debrid::rd_verify_not_instant - Max Payne 1 & 2 (The Collector
+- 2026-07-07T23:05:06+0200 [info] real-debrid::rd_verify_queue_done_item - Max Payne 1 & 2 (The Collector
+- 2026-07-07T23:05:06+0200 [info] real-debrid::rd_verify_added
+- 2026-07-07T23:05:06+0200 [debug] real-debrid::rd_verify_poll - Max Payne 1&2-zetoo
+- 2026-07-07T23:05:06+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:06+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:06+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:06+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:06+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:06+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:06+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:06+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:06+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:06+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:06+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:06+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:06+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:06+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:06+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:06+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:06+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:06+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:06+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:06+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:06+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:06+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:06+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:06+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:06+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:06+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:06+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:06+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:06+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:06+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:06+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:06+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:06+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:06+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:06+0200 [info] real-debrid::rd_verify_pack_skip - Max Payne 1&2-zetoo
+- 2026-07-07T23:05:06+0200 [info] real-debrid::rd_fast_discard - waiting_files_no_match
+- 2026-07-07T23:05:06+0200 [info] real-debrid::rd_fast_discard_reason - waiting_files_no_match
+- 2026-07-07T23:05:06+0200 [info] real-debrid::rd_fast_discard_delete - waiting_files_no_match
+- 2026-07-07T23:05:06+0200 [debug] real-debrid::rd_waiting_files_no_match_fast_delete - Max Payne 1&2-zetoo
+- 2026-07-07T23:05:06+0200 [info] real-debrid::rd_delete_torrent
+- 2026-07-07T23:05:06+0200 [info] real-debrid::rd_slots_release
+- 2026-07-07T23:05:06+0200 [info] real-debrid::rd_verify_queue_done_item - Max Payne 1&2-zetoo
+- 2026-07-07T23:05:07+0200 [debug] real-debrid::rd_endpoint_pace_wait
+- 2026-07-07T23:05:07+0200 [info] real-debrid::rd_verify_added
+- 2026-07-07T23:05:08+0200 [debug] real-debrid::rd_verify_poll - Max.Payne.3.RF.XBOX360-XPG
+- 2026-07-07T23:05:08+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:08+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:08+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:08+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:08+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:08+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:08+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:08+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:08+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:08+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:08+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:08+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:08+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:08+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:08+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:08+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:08+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:08+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:08+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:08+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:08+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:08+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:08+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:08+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:08+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:08+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:08+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:08+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:08+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:08+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:08+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:08+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:08+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:08+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:08+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:08+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:08+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:08+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:08+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:08+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:08+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:08+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:08+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:08+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:08+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:08+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:08+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:08+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:08+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:08+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:08+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:08+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:08+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:08+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:08+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:08+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:08+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:08+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:08+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:08+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:08+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:08+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:08+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:08+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:08+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:08+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:08+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:08+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:08+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:08+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:08+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:08+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:08+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:08+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:08+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:08+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:08+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:08+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:08+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:08+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:08+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:08+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:08+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:08+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:08+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:08+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:08+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:08+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:08+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:08+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:08+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:08+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:08+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:08+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:08+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:08+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:08+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:08+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:08+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:08+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:08+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:08+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:08+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:08+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:08+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:08+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:08+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:08+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:08+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:08+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:08+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:08+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:08+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:08+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:08+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:08+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:08+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:08+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:08+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:08+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:08+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:08+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:08+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:08+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:08+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:08+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:08+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:08+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:08+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:08+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:08+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:08+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:08+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:08+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:08+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:08+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:08+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:08+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:08+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:08+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:08+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:08+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:08+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:08+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:08+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:08+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:08+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:08+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:08+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:08+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:08+0200 [info] real-debrid::rd_verify_pack_skip - Max.Payne.3.RF.XBOX360-XPG
+- 2026-07-07T23:05:08+0200 [info] real-debrid::rd_fast_discard - waiting_files_no_match
+- 2026-07-07T23:05:08+0200 [info] real-debrid::rd_fast_discard_reason - waiting_files_no_match
+- 2026-07-07T23:05:08+0200 [info] real-debrid::rd_fast_discard_delete - waiting_files_no_match
+- 2026-07-07T23:05:08+0200 [debug] real-debrid::rd_waiting_files_no_match_fast_delete - Max.Payne.3.RF.XBOX360-XPG
+- 2026-07-07T23:05:08+0200 [info] real-debrid::rd_delete_torrent
+- 2026-07-07T23:05:08+0200 [info] real-debrid::rd_slots_release
+- 2026-07-07T23:05:09+0200 [info] real-debrid::rd_verify_queue_done_item - Max.Payne.3.RF.XBOX360-XPG
+- 2026-07-07T23:05:09+0200 [info] real-debrid::rd_verify_added
+- 2026-07-07T23:05:09+0200 [debug] real-debrid::rd_verify_poll - Max.Payne.3.RF.XBOX360-XPG
+- 2026-07-07T23:05:09+0200 [info] real-debrid::rd_fast_discard - error
+- 2026-07-07T23:05:09+0200 [info] real-debrid::rd_fast_discard_reason - error
+- 2026-07-07T23:05:09+0200 [info] real-debrid::rd_fast_discard_delete - error
+- 2026-07-07T23:05:09+0200 [info] real-debrid::rd_delete_torrent
+- 2026-07-07T23:05:10+0200 [info] real-debrid::rd_slots_release
+- 2026-07-07T23:05:10+0200 [info] real-debrid::rd_verify_queue_done_item - Max.Payne.3.RF.XBOX360-XPG
+- 2026-07-07T23:05:11+0200 [info] real-debrid::rd_api_http_error - too_many_requests
+- 2026-07-07T23:05:11+0200 [info] real-debrid::rd_endpoint_429_backoff
+- 2026-07-07T23:05:11+0200 [info] real-debrid::rd_rate_429_cooldown
+- 2026-07-07T23:05:12+0200 [info] real-debrid::rd_call_retry_429 - Real-Debrid HTTP 429: [34 too_many_requests] {"error": "too_many_requests", "error_code": 34, "src": "front-1"}
+- 2026-07-07T23:05:13+0200 [debug] real-debrid::rd_endpoint_pace_wait
+- 2026-07-07T23:05:17+0200 [info] real-debrid::rd_verify_added
+- 2026-07-07T23:05:17+0200 [debug] real-debrid::rd_verify_poll - Max.Payne.3.RF.XBOX360-XPG
+- 2026-07-07T23:05:17+0200 [info] real-debrid::rd_fast_discard - error
+- 2026-07-07T23:05:17+0200 [info] real-debrid::rd_fast_discard_reason - error
+- 2026-07-07T23:05:17+0200 [info] real-debrid::rd_fast_discard_delete - error
+- 2026-07-07T23:05:17+0200 [info] real-debrid::rd_delete_torrent
+- 2026-07-07T23:05:17+0200 [info] real-debrid::rd_slots_release
+- 2026-07-07T23:05:17+0200 [info] real-debrid::rd_verify_queue_done_item - Max.Payne.3.RF.XBOX360-XPG
+- 2026-07-07T23:05:18+0200 [debug] real-debrid::rd_endpoint_pace_wait
+- 2026-07-07T23:05:19+0200 [info] real-debrid::rd_verify_added
+- 2026-07-07T23:05:19+0200 [debug] real-debrid::rd_verify_poll - max payne
+- 2026-07-07T23:05:19+0200 [info] real-debrid::rd_fast_discard - error
+- 2026-07-07T23:05:19+0200 [info] real-debrid::rd_fast_discard_reason - error
+- 2026-07-07T23:05:19+0200 [info] real-debrid::rd_fast_discard_delete - error
+- 2026-07-07T23:05:19+0200 [info] real-debrid::rd_delete_torrent
+- 2026-07-07T23:05:19+0200 [info] real-debrid::rd_slots_release
+- 2026-07-07T23:05:19+0200 [info] real-debrid::rd_verify_queue_done_item - max payne
+- 2026-07-07T23:05:21+0200 [info] real-debrid::rd_api_http_error - too_many_requests
+- 2026-07-07T23:05:21+0200 [info] real-debrid::rd_endpoint_429_backoff
+- 2026-07-07T23:05:21+0200 [info] real-debrid::rd_rate_429_cooldown
+- 2026-07-07T23:05:22+0200 [info] real-debrid::rd_call_retry_429 - Real-Debrid HTTP 429: [34 too_many_requests] {"error": "too_many_requests", "error_code": 34, "src": "front-1"}
+- 2026-07-07T23:05:24+0200 [debug] real-debrid::rd_endpoint_pace_wait
+- 2026-07-07T23:05:27+0200 [info] real-debrid::rd_verify_added
+- 2026-07-07T23:05:28+0200 [debug] real-debrid::rd_verify_poll - Max Payne 3
+- 2026-07-07T23:05:28+0200 [info] real-debrid::rd_fast_discard - error
+- 2026-07-07T23:05:28+0200 [info] real-debrid::rd_fast_discard_reason - error
+- 2026-07-07T23:05:28+0200 [info] real-debrid::rd_fast_discard_delete - error
+- 2026-07-07T23:05:28+0200 [info] real-debrid::rd_delete_torrent
+- 2026-07-07T23:05:28+0200 [info] real-debrid::rd_slots_release
+- 2026-07-07T23:05:28+0200 [info] real-debrid::rd_verify_queue_done_item - Max Payne 3
+- 2026-07-07T23:05:30+0200 [debug] real-debrid::rd_endpoint_pace_wait
+- 2026-07-07T23:05:30+0200 [info] real-debrid::rd_verify_added
+- 2026-07-07T23:05:30+0200 [debug] real-debrid::rd_verify_poll - Max.Payne.3.RF.XBOX360-XPG
+- 2026-07-07T23:05:30+0200 [info] real-debrid::rd_fast_discard - error
+- 2026-07-07T23:05:30+0200 [info] real-debrid::rd_fast_discard_reason - error
+- 2026-07-07T23:05:30+0200 [info] real-debrid::rd_fast_discard_delete - error
+- 2026-07-07T23:05:30+0200 [info] real-debrid::rd_delete_torrent
+- 2026-07-07T23:05:30+0200 [info] real-debrid::rd_slots_release
+- 2026-07-07T23:05:30+0200 [info] real-debrid::rd_verify_queue_done_item - Max.Payne.3.RF.XBOX360-XPG
+- 2026-07-07T23:05:33+0200 [info] real-debrid::rd_verify_added
+- 2026-07-07T23:05:33+0200 [debug] real-debrid::rd_verify_poll - Max.Payne.2.The.Fall.Of.Max.Payne_Conversione.ENG.to.ITA
+- 2026-07-07T23:05:33+0200 [info] real-debrid::rd_delete_torrent
+- 2026-07-07T23:05:33+0200 [info] real-debrid::rd_slots_release
+- 2026-07-07T23:05:33+0200 [info] real-debrid::rd_verify_not_instant - Max.Payne.2.The.Fall.Of.Max.Payne_Conversione.ENG.to.ITA
+- 2026-07-07T23:05:33+0200 [info] real-debrid::rd_verify_queue_done_item - Max.Payne.2.The.Fall.Of.Max.Payne_Conversione.ENG.to.ITA
+- 2026-07-07T23:05:35+0200 [debug] real-debrid::rd_endpoint_pace_wait
+- 2026-07-07T23:05:37+0200 [info] real-debrid::rd_verify_added
+- 2026-07-07T23:05:37+0200 [debug] real-debrid::rd_verify_poll - Max.Payne.Expansion.Chinese.GB2312_马克思佩恩之英雄本色功夫加强版简体中文版
+- 2026-07-07T23:05:37+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:37+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:37+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:37+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:37+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:37+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:37+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:37+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:37+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:37+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:37+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:37+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:37+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:37+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:37+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:37+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:37+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:37+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:37+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:37+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:37+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:37+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:37+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:37+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:37+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:37+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:37+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:37+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:37+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:37+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:37+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:37+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:37+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:37+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:37+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:37+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:37+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:37+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:37+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:37+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:37+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:37+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:37+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:37+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:37+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:37+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:37+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:37+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:37+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:37+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:37+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:37+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:37+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:37+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:37+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:37+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:37+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:37+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:37+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:37+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:37+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:37+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:37+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:37+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:37+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:37+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:37+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:37+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:37+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:37+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:37+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:37+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:37+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:37+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:37+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:37+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:37+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:37+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:37+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:37+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:37+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:37+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:37+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:37+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:37+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:37+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:37+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:37+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:37+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:37+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:37+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:37+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:37+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:37+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:37+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:37+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:37+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:37+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:37+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:37+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:37+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:37+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:37+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:37+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:37+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:37+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:37+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:37+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:37+0200 [info] real-debrid::rd_verify_added
+- 2026-07-07T23:05:37+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:37+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:37+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:37+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:37+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:37+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:37+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:37+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:37+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:37+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:37+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:37+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:37+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:37+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:37+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:37+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:37+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:37+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:37+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:37+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:37+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:37+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:37+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:38+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:38+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:38+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:38+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:38+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:38+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:38+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:38+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:38+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:38+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:38+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:38+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:38+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:38+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:38+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:38+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:38+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:38+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:38+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:38+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:38+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:38+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:38+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:38+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:38+0200 [debug] real-debrid::rd_verify_poll - Max.Payne.3.RF.XBOX360-XPG
+- 2026-07-07T23:05:38+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:38+0200 [info] real-debrid::rd_fast_discard - error
+- 2026-07-07T23:05:38+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:38+0200 [info] real-debrid::rd_fast_discard_reason - error
+- 2026-07-07T23:05:38+0200 [info] real-debrid::rd_fast_discard_delete - error
+- 2026-07-07T23:05:38+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:38+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:38+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:38+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:38+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:38+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:38+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:38+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:38+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:38+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:38+0200 [info] real-debrid::rd_verify_pack_skip - Max.Payne.Expansion.Chinese.GB2312_马克思佩恩之英雄本色功夫加强版简体中文版
+- 2026-07-07T23:05:38+0200 [info] real-debrid::rd_fast_discard - waiting_files_no_match
+- 2026-07-07T23:05:38+0200 [info] real-debrid::rd_fast_discard_reason - waiting_files_no_match
+- 2026-07-07T23:05:38+0200 [info] real-debrid::rd_fast_discard_delete - waiting_files_no_match
+- 2026-07-07T23:05:38+0200 [debug] real-debrid::rd_waiting_files_no_match_fast_delete - Max.Payne.Expansion.Chinese.GB2312_马克思佩恩之英雄本色功夫加强版简体中文版
+- 2026-07-07T23:05:38+0200 [debug] real-debrid::rd_endpoint_pace_wait
+- 2026-07-07T23:05:38+0200 [info] real-debrid::rd_delete_torrent
+- 2026-07-07T23:05:38+0200 [info] real-debrid::rd_slots_release
+- 2026-07-07T23:05:38+0200 [info] real-debrid::rd_verify_queue_done_item - Max.Payne.3.RF.XBOX360-XPG
+- 2026-07-07T23:05:38+0200 [info] real-debrid::rd_delete_torrent
+- 2026-07-07T23:05:39+0200 [info] real-debrid::rd_slots_release
+- 2026-07-07T23:05:39+0200 [info] real-debrid::rd_verify_queue_done_item - Max.Payne.Expansion.Chinese.GB2312_马克思佩恩之英雄本色功夫加强版简体中文版
+- 2026-07-07T23:05:40+0200 [debug] real-debrid::rd_endpoint_pace_wait
+- 2026-07-07T23:05:40+0200 [info] real-debrid::rd_verify_added
+- 2026-07-07T23:05:40+0200 [debug] real-debrid::rd_verify_poll - Max Payne 1 & 2 (The Collector
+- 2026-07-07T23:05:40+0200 [info] real-debrid::rd_fast_discard - error
+- 2026-07-07T23:05:40+0200 [info] real-debrid::rd_fast_discard_reason - error
+- 2026-07-07T23:05:40+0200 [info] real-debrid::rd_fast_discard_delete - error
+- 2026-07-07T23:05:40+0200 [info] real-debrid::rd_delete_torrent
+- 2026-07-07T23:05:40+0200 [info] real-debrid::rd_slots_release
+- 2026-07-07T23:05:40+0200 [info] real-debrid::rd_verify_queue_done_item - Max Payne 1 & 2 (The Collector
+- 2026-07-07T23:05:42+0200 [info] real-debrid::rd_verify_added
+- 2026-07-07T23:05:43+0200 [debug] real-debrid::rd_verify_poll - www.ubb.to...Max.Payne.German.720p.BluRay.x264-DEFUSED
+- 2026-07-07T23:05:43+0200 [info] real-debrid::rd_fast_discard - error
+- 2026-07-07T23:05:43+0200 [info] real-debrid::rd_fast_discard_reason - error
+- 2026-07-07T23:05:43+0200 [info] real-debrid::rd_fast_discard_delete - error
+- 2026-07-07T23:05:43+0200 [info] real-debrid::rd_delete_torrent
+- 2026-07-07T23:05:43+0200 [info] real-debrid::rd_slots_release
+- 2026-07-07T23:05:43+0200 [info] real-debrid::rd_verify_queue_done_item - www.ubb.to...Max.Payne.German.720p.BluRay.x264-DEFUSED
+- 2026-07-07T23:05:45+0200 [debug] real-debrid::rd_endpoint_pace_wait
+- 2026-07-07T23:05:46+0200 [info] real-debrid::rd_verify_added
+- 2026-07-07T23:05:46+0200 [debug] real-debrid::rd_verify_poll - Max Payne 1 & 2 (The Collector
+- 2026-07-07T23:05:46+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:46+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:46+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:46+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:46+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:46+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:46+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:46+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:46+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:46+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:46+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:47+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:47+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:47+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:47+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:47+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:47+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:47+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:47+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:47+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:47+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:47+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:47+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:47+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:47+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:47+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:47+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:47+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:47+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:47+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:47+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:47+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:47+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:47+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:47+0200 [info] real-debrid::rd_verify_pack_skip - Max Payne 1 & 2 (The Collector
+- 2026-07-07T23:05:47+0200 [info] real-debrid::rd_fast_discard - waiting_files_no_match
+- 2026-07-07T23:05:47+0200 [info] real-debrid::rd_fast_discard_reason - waiting_files_no_match
+- 2026-07-07T23:05:47+0200 [info] real-debrid::rd_fast_discard_delete - waiting_files_no_match
+- 2026-07-07T23:05:47+0200 [debug] real-debrid::rd_waiting_files_no_match_fast_delete - Max Payne 1 & 2 (The Collector
+- 2026-07-07T23:05:47+0200 [info] real-debrid::rd_delete_torrent
+- 2026-07-07T23:05:47+0200 [info] real-debrid::rd_slots_release
+- 2026-07-07T23:05:47+0200 [info] real-debrid::rd_verify_queue_done_item - Max Payne 1 & 2 (The Collector
+- 2026-07-07T23:05:47+0200 [info] real-debrid::rd_api_http_error - too_many_requests
+- 2026-07-07T23:05:47+0200 [info] real-debrid::rd_endpoint_429_backoff
+- 2026-07-07T23:05:47+0200 [info] real-debrid::rd_rate_429_cooldown
+- 2026-07-07T23:05:48+0200 [info] real-debrid::rd_call_retry_429 - Real-Debrid HTTP 429: [34 too_many_requests] {"error": "too_many_requests", "error_code": 34, "src": "front-1"}
+- 2026-07-07T23:05:50+0200 [debug] real-debrid::rd_endpoint_pace_wait
+- 2026-07-07T23:05:54+0200 [info] real-debrid::rd_verify_added
+- 2026-07-07T23:05:54+0200 [debug] real-debrid::rd_verify_poll - Max Payne 3 [MULTI][XBOX360][Region Free][2DVDs][XDG3][XPG][WwW.GamesTorrents.CoM]
+- 2026-07-07T23:05:54+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:54+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:54+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:54+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:54+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:54+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:54+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:54+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:54+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:54+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:54+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:54+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:54+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:54+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:54+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:54+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:54+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:54+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:54+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:54+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:54+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:54+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:54+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:54+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:54+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:54+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:54+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:54+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:54+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:54+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:54+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:54+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:54+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:54+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:54+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:54+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:54+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:54+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:54+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:54+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:54+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:54+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:54+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:54+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:54+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:54+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:54+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:54+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:54+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:54+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:54+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:54+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:54+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:54+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:54+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:54+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:54+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:54+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:54+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:54+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:54+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:54+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:54+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:54+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:54+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:54+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:54+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:54+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:54+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:54+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:54+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:54+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:54+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:54+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:54+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:54+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:54+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:54+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:54+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:54+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:54+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:54+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:54+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:54+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:54+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:54+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:54+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:54+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:54+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:54+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:54+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:54+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:54+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:54+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:54+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:54+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:54+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:54+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:54+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:54+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:54+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:54+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:54+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:54+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:54+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:54+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:54+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:54+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:54+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:54+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:54+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:54+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:54+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:54+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:54+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:54+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:54+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:54+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:54+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:54+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:54+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:54+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:54+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:54+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:54+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:54+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:55+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:55+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:55+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:55+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:55+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:55+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:55+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:55+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:55+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:55+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:55+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:55+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:55+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:55+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:55+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:55+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:55+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:55+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:55+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:55+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:55+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:55+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:55+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:55+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:55+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:55+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:55+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:55+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:55+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:55+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:05:55+0200 [info] real-debrid::rd_verify_pack_skip - Max Payne 3 [MULTI][XBOX360][Region Free][2DVDs][XDG3][XPG][WwW.GamesTorrents.CoM]
+- 2026-07-07T23:05:55+0200 [info] real-debrid::rd_fast_discard - waiting_files_no_match
+- 2026-07-07T23:05:55+0200 [info] real-debrid::rd_fast_discard_reason - waiting_files_no_match
+- 2026-07-07T23:05:55+0200 [info] real-debrid::rd_fast_discard_delete - waiting_files_no_match
+- 2026-07-07T23:05:55+0200 [debug] real-debrid::rd_waiting_files_no_match_fast_delete - Max Payne 3 [MULTI][XBOX360][Region Free][2DVDs][XDG3][XPG][WwW.GamesTorrents.CoM]
+- 2026-07-07T23:05:55+0200 [debug] real-debrid::rd_endpoint_pace_wait
+- 2026-07-07T23:05:55+0200 [info] real-debrid::rd_delete_torrent
+- 2026-07-07T23:05:55+0200 [info] real-debrid::rd_slots_release
+- 2026-07-07T23:05:55+0200 [info] real-debrid::rd_verify_queue_done_item - Max Payne 3 [MULTI][XBOX360][Region Free][2DVDs][XDG3][XPG][WwW.GamesTorrents.CoM]
+- 2026-07-07T23:05:56+0200 [info] real-debrid::rd_verify_added
+- 2026-07-07T23:05:57+0200 [debug] real-debrid::rd_verify_poll - Max.Payne.Expansion.Chinese.GB2312_马克思佩恩之英雄本色功夫加强版简体中文版
+- 2026-07-07T23:05:57+0200 [info] real-debrid::rd_delete_torrent
+- 2026-07-07T23:05:57+0200 [info] real-debrid::rd_slots_release
+- 2026-07-07T23:05:57+0200 [info] real-debrid::rd_verify_not_instant - Max.Payne.Expansion.Chinese.GB2312_马克思佩恩之英雄本色功夫加强版简体中文版
+- 2026-07-07T23:05:57+0200 [info] real-debrid::rd_verify_queue_done_item - Max.Payne.Expansion.Chinese.GB2312_马克思佩恩之英雄本色功夫加强版简体中文版
+- 2026-07-07T23:05:59+0200 [info] real-debrid::rd_verify_added
+- 2026-07-07T23:05:59+0200 [debug] real-debrid::rd_verify_poll - Max.Payne.2.the.Fall.of.Max.Payne.MULTi2.PAL-Thrombozyt
+- 2026-07-07T23:05:59+0200 [info] real-debrid::rd_fast_discard - error
+- 2026-07-07T23:05:59+0200 [info] real-debrid::rd_fast_discard_reason - error
+- 2026-07-07T23:05:59+0200 [info] real-debrid::rd_fast_discard_delete - error
+- 2026-07-07T23:05:59+0200 [info] real-debrid::rd_delete_torrent
+- 2026-07-07T23:05:59+0200 [info] real-debrid::rd_slots_release
+- 2026-07-07T23:05:59+0200 [info] real-debrid::rd_verify_queue_done_item - Max.Payne.2.the.Fall.of.Max.Payne.MULTi2.PAL-Thrombozyt
+- 2026-07-07T23:06:00+0200 [debug] real-debrid::rd_endpoint_pace_wait
+- 2026-07-07T23:06:01+0200 [info] real-debrid::rd_verify_added
+- 2026-07-07T23:06:01+0200 [debug] real-debrid::rd_verify_poll - Max.Payne.3.RF.XBOX360-ALI213
+- 2026-07-07T23:06:01+0200 [info] real-debrid::rd_fast_discard - error
+- 2026-07-07T23:06:01+0200 [info] real-debrid::rd_fast_discard_reason - error
+- 2026-07-07T23:06:01+0200 [info] real-debrid::rd_fast_discard_delete - error
+- 2026-07-07T23:06:01+0200 [info] real-debrid::rd_delete_torrent
+- 2026-07-07T23:06:01+0200 [info] real-debrid::rd_slots_release
+- 2026-07-07T23:06:01+0200 [info] real-debrid::rd_verify_queue_done_item - Max.Payne.3.RF.XBOX360-ALI213
+- 2026-07-07T23:06:03+0200 [info] real-debrid::rd_api_http_error - too_many_requests
+- 2026-07-07T23:06:04+0200 [info] real-debrid::rd_endpoint_429_backoff
+- 2026-07-07T23:06:04+0200 [info] real-debrid::rd_rate_429_cooldown
+- 2026-07-07T23:06:05+0200 [info] real-debrid::rd_call_retry_429 - Real-Debrid HTTP 429: [34 too_many_requests] {"error": "too_many_requests", "error_code": 34, "src": "front-1"}
+- 2026-07-07T23:06:06+0200 [debug] real-debrid::rd_endpoint_pace_wait
+- 2026-07-07T23:06:10+0200 [info] real-debrid::rd_verify_added
+- 2026-07-07T23:06:10+0200 [debug] real-debrid::rd_verify_poll - Max.Payne.3.RF.XBOX360-XPG
+- 2026-07-07T23:06:10+0200 [info] real-debrid::rd_fast_discard - error
+- 2026-07-07T23:06:10+0200 [info] real-debrid::rd_fast_discard_reason - error
+- 2026-07-07T23:06:10+0200 [info] real-debrid::rd_fast_discard_delete - error
+- 2026-07-07T23:06:10+0200 [info] real-debrid::rd_delete_torrent
+- 2026-07-07T23:06:10+0200 [info] real-debrid::rd_slots_release
+- 2026-07-07T23:06:10+0200 [info] real-debrid::rd_verify_queue_done_item - Max.Payne.3.RF.XBOX360-XPG
+- 2026-07-07T23:06:11+0200 [debug] real-debrid::rd_endpoint_pace_wait
+- 2026-07-07T23:06:13+0200 [info] real-debrid::rd_verify_added
+- 2026-07-07T23:06:13+0200 [debug] real-debrid::rd_verify_poll - Max.Payne.2008.UNRATED.CUSTOM.SWESUB.DVDR-iNjECT
+- 2026-07-07T23:06:13+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:13+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:13+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:13+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:13+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:13+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:13+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:13+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:13+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:13+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:13+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:13+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:13+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:13+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:13+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:13+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:13+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:13+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:13+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:13+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:13+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:13+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:13+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:13+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:13+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:13+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:13+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:13+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:14+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:14+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:14+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:14+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:14+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:14+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:14+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:14+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:14+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:14+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:14+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:14+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:14+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:14+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:14+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:14+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:14+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:14+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:14+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:14+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:14+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:14+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:14+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:14+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:14+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:14+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:14+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:14+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:14+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:14+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:14+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:14+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:14+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:14+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:14+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:14+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:14+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:14+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:14+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:14+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:14+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:14+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:14+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:14+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:14+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:14+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:14+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:14+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:14+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:14+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:14+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:14+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:14+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:14+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:14+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:14+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:14+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:14+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:14+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:14+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:14+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:14+0200 [info] real-debrid::rd_verify_pack_skip - Max.Payne.2008.UNRATED.CUSTOM.SWESUB.DVDR-iNjECT
+- 2026-07-07T23:06:14+0200 [info] real-debrid::rd_fast_discard - waiting_files_no_match
+- 2026-07-07T23:06:14+0200 [info] real-debrid::rd_fast_discard_reason - waiting_files_no_match
+- 2026-07-07T23:06:14+0200 [info] real-debrid::rd_fast_discard_delete - waiting_files_no_match
+- 2026-07-07T23:06:14+0200 [debug] real-debrid::rd_waiting_files_no_match_fast_delete - Max.Payne.2008.UNRATED.CUSTOM.SWESUB.DVDR-iNjECT
+- 2026-07-07T23:06:14+0200 [info] real-debrid::rd_delete_torrent
+- 2026-07-07T23:06:14+0200 [info] real-debrid::rd_slots_release
+- 2026-07-07T23:06:14+0200 [info] real-debrid::rd_verify_queue_done_item - Max.Payne.2008.UNRATED.CUSTOM.SWESUB.DVDR-iNjECT
+- 2026-07-07T23:06:16+0200 [info] real-debrid::rd_verify_added
+- 2026-07-07T23:06:16+0200 [debug] real-debrid::rd_verify_poll - Max.Payne.2008.HUN.DVDRip.XviD-Bithorlo
+- 2026-07-07T23:06:17+0200 [info] real-debrid::rd_delete_torrent
+- 2026-07-07T23:06:17+0200 [info] real-debrid::rd_slots_release
+- 2026-07-07T23:06:17+0200 [info] real-debrid::rd_verify_not_instant - Max.Payne.2008.HUN.DVDRip.XviD-Bithorlo
+- 2026-07-07T23:06:17+0200 [debug] real-debrid::rd_endpoint_pace_wait
+- 2026-07-07T23:06:17+0200 [info] real-debrid::rd_verify_queue_done_item - Max.Payne.2008.HUN.DVDRip.XviD-Bithorlo
+- 2026-07-07T23:06:17+0200 [info] real-debrid::rd_api_http_error - too_many_requests
+- 2026-07-07T23:06:17+0200 [info] real-debrid::rd_endpoint_429_backoff
+- 2026-07-07T23:06:17+0200 [info] real-debrid::rd_rate_429_cooldown
+- 2026-07-07T23:06:18+0200 [info] real-debrid::rd_call_retry_429 - Real-Debrid HTTP 429: [34 too_many_requests] {"error": "too_many_requests", "error_code": 34, "src": "front-1"}
+- 2026-07-07T23:06:22+0200 [debug] real-debrid::rd_endpoint_pace_wait
+- 2026-07-07T23:06:23+0200 [info] real-debrid::rd_verify_added
+- 2026-07-07T23:06:24+0200 [debug] real-debrid::rd_verify_poll - Max.Payne.3.RF.XBOX360-XPG
+- 2026-07-07T23:06:24+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:24+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:24+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:24+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:24+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:24+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:24+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:24+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:24+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:24+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:24+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:24+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:24+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:24+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:24+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:24+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:24+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:24+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:24+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:24+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:24+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:24+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:24+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:24+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:24+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:24+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:24+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:24+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:24+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:24+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:24+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:24+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:24+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:24+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:24+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:24+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:24+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:24+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:24+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:24+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:24+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:24+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:24+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:24+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:24+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:24+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:24+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:24+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:24+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:24+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:24+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:24+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:24+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:24+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:24+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:24+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:24+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:24+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:24+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:24+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:24+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:24+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:24+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:24+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:24+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:24+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:24+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:24+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:24+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:24+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:24+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:24+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:24+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:24+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:24+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:24+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:24+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:24+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:24+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:24+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:24+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:24+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:24+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:24+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:24+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:24+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:24+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:24+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:24+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:24+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:24+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:24+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:24+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:24+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:24+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:24+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:24+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:24+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:24+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:24+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:24+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:24+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:24+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:24+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:24+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:24+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:24+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:24+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:24+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:24+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:24+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:24+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:24+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:24+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:24+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:24+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:24+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:24+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:24+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:24+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:24+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:24+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:24+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:24+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:24+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:24+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:24+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:24+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:24+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:24+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:24+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:24+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:24+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:24+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:24+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:25+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:25+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:25+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:25+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:25+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:25+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:25+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:25+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:25+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:25+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:25+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:25+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:25+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:25+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:25+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:25+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:25+0200 [info] real-debrid::rd_verify_pack_skip - Max.Payne.3.RF.XBOX360-XPG
+- 2026-07-07T23:06:25+0200 [info] real-debrid::rd_fast_discard - waiting_files_no_match
+- 2026-07-07T23:06:25+0200 [info] real-debrid::rd_fast_discard_reason - waiting_files_no_match
+- 2026-07-07T23:06:25+0200 [info] real-debrid::rd_fast_discard_delete - waiting_files_no_match
+- 2026-07-07T23:06:25+0200 [debug] real-debrid::rd_waiting_files_no_match_fast_delete - Max.Payne.3.RF.XBOX360-XPG
+- 2026-07-07T23:06:25+0200 [info] real-debrid::rd_delete_torrent
+- 2026-07-07T23:06:25+0200 [info] real-debrid::rd_slots_release
+- 2026-07-07T23:06:25+0200 [info] real-debrid::rd_verify_queue_done_item - Max.Payne.3.RF.XBOX360-XPG
+- 2026-07-07T23:06:26+0200 [info] real-debrid::rd_verify_added
+- 2026-07-07T23:06:26+0200 [debug] real-debrid::rd_verify_poll - Max.Payne.3.RF.XBOX360-XPG
+- 2026-07-07T23:06:26+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:26+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:26+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:26+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:26+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:26+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:26+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:26+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:26+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:26+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:26+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:26+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:26+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:26+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:26+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:26+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:26+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:26+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:26+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:26+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:26+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:26+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:26+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:26+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:26+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:26+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:26+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:26+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:26+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:26+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:26+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:26+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:26+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:26+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:26+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:26+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:26+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:26+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:26+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:26+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:26+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:26+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:26+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:26+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:26+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:26+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:26+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:27+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:27+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:27+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:27+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:27+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:27+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:27+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:27+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:27+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:27+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:27+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:27+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:27+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:27+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:27+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:27+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:27+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:27+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:27+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:27+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:27+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:27+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:27+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:27+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:27+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:27+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:27+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:27+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:27+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:27+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:27+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:27+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:27+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:27+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:27+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:27+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:27+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:27+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:27+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:27+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:27+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:27+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:27+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:27+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:27+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:27+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:27+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:27+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:27+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:27+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:27+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:27+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:27+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:27+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:27+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:27+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:27+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:27+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:27+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:27+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:27+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:27+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:27+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:27+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:27+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:27+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:27+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:27+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:27+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:27+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:27+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:27+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:27+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:27+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:27+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:27+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:27+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:27+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:27+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:27+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:27+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:27+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:27+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:27+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:27+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:27+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:27+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:27+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:27+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:27+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:27+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:27+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:27+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:27+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:27+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:27+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:27+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:27+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:27+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:27+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:27+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:27+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:27+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:27+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:27+0200 [info] real-debrid::rd_verify_pack_skip - Max.Payne.3.RF.XBOX360-XPG
+- 2026-07-07T23:06:27+0200 [info] real-debrid::rd_fast_discard - waiting_files_no_match
+- 2026-07-07T23:06:27+0200 [info] real-debrid::rd_fast_discard_reason - waiting_files_no_match
+- 2026-07-07T23:06:27+0200 [debug] real-debrid::rd_endpoint_pace_wait
+- 2026-07-07T23:06:27+0200 [info] real-debrid::rd_fast_discard_delete - waiting_files_no_match
+- 2026-07-07T23:06:27+0200 [debug] real-debrid::rd_waiting_files_no_match_fast_delete - Max.Payne.3.RF.XBOX360-XPG
+- 2026-07-07T23:06:27+0200 [info] real-debrid::rd_delete_torrent
+- 2026-07-07T23:06:27+0200 [info] real-debrid::rd_slots_release
+- 2026-07-07T23:06:27+0200 [info] real-debrid::rd_verify_queue_done_item - Max.Payne.3.RF.XBOX360-XPG
+- 2026-07-07T23:06:28+0200 [info] real-debrid::rd_verify_added
+- 2026-07-07T23:06:29+0200 [debug] real-debrid::rd_verify_poll - Max.Payne.3.RF.XBOX360-XPG
+- 2026-07-07T23:06:29+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:29+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:29+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:29+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:29+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:29+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:29+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:29+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:29+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:29+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:29+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:29+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:29+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:29+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:29+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:29+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:29+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:29+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:29+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:29+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:29+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:29+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:29+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:29+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:29+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:29+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:29+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:29+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:29+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:29+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:29+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:29+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:29+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:29+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:29+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:29+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:29+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:29+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:29+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:29+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:29+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:29+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:29+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:29+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:29+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:29+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:29+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:29+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:29+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:29+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:29+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:29+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:29+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:29+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:29+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:29+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:29+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:29+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:29+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:29+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:29+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:29+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:29+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:29+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:29+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:29+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:29+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:29+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:29+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:29+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:29+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:29+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:29+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:29+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:29+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:29+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:29+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:29+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:29+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:29+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:29+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:29+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:29+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:29+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:29+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:29+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:29+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:29+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:29+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:29+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:29+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:29+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:29+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:29+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:29+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:29+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:29+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:29+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:29+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:29+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:29+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:29+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:29+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:29+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:29+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:29+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:29+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:29+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:29+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:29+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:29+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:29+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:29+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:29+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:29+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:29+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:29+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:29+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:29+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:29+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:29+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:29+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:29+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:29+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:29+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:29+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:29+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:29+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:29+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:29+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:29+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:29+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:30+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:30+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:30+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:30+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:30+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:30+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:30+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:30+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:30+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:30+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:30+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:30+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:30+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:30+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:30+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:30+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:30+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:30+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T23:06:30+0200 [info] real-debrid::rd_verify_pack_skip - Max.Payne.3.RF.XBOX360-XPG
+- 2026-07-07T23:06:30+0200 [info] real-debrid::rd_fast_discard - waiting_files_no_match
+- 2026-07-07T23:06:30+0200 [info] real-debrid::rd_fast_discard_reason - waiting_files_no_match
+- 2026-07-07T23:06:30+0200 [info] real-debrid::rd_fast_discard_delete - waiting_files_no_match
+- 2026-07-07T23:06:30+0200 [debug] real-debrid::rd_waiting_files_no_match_fast_delete - Max.Payne.3.RF.XBOX360-XPG
+- 2026-07-07T23:06:30+0200 [info] real-debrid::rd_delete_torrent
+- 2026-07-07T23:06:30+0200 [info] real-debrid::rd_slots_release
+- 2026-07-07T23:06:30+0200 [info] real-debrid::rd_verify_queue_done_item - Max.Payne.3.RF.XBOX360-XPG
+- 2026-07-07T23:06:30+0200 [info] real-debrid::rd_verify_queue_end
+- 2026-07-07T23:06:30+0200 [info] real-debrid::rd_rate_summary
+- 2026-07-07T23:06:30+0200 [info] real-debrid::rd_endpoint_pacer_summary
+- 2026-07-07T23:06:30+0200 [info] real-debrid::rd_cleanup_final_start
+- 2026-07-07T23:06:30+0200 [info] real-debrid::rd_slots_refresh
+- 2026-07-07T23:06:30+0200 [info] real-debrid::rd_active_count_after
+- 2026-07-07T23:06:30+0200 [info] real-debrid::rd_cleanup_final_end
+- 2026-07-07T23:06:30+0200 [info] real-debrid::rd_rate_summary
+- 2026-07-07T23:06:30+0200 [info] real-debrid::rd_endpoint_pacer_summary
+- 2026-07-07T23:06:30+0200 [info] real-debrid::rd_verify_batch_end
+- 2026-07-07T23:06:30+0200 [info] real-debrid::rd_check_summary
+- 2026-07-07T23:06:30+0200 [info] qbittorrent::qbt_relevance_filter
+- 2026-07-07T23:06:30+0200 [info] qbittorrent::qbt_probe_batch_start
+- 2026-07-07T23:06:30+0200 [info] qbittorrent::qbt_login
+- 2026-07-07T23:06:30+0200 [info] qbittorrent::qbt_login
+- 2026-07-07T23:06:30+0200 [info] qbittorrent::qbt_login
+- 2026-07-07T23:06:30+0200 [info] qbittorrent::qbt_login
+- 2026-07-07T23:06:30+0200 [info] qbittorrent::qbt_login
+- 2026-07-07T23:06:30+0200 [info] qbittorrent::qbt_probe_add - Max.Payne.3.RF.XBOX360-XPG
+- 2026-07-07T23:06:30+0200 [info] qbittorrent::qbt_probe_add - Max.Payne.3-SKIDROW
+- 2026-07-07T23:06:30+0200 [info] qbittorrent::qbt_probe_add - Max.Payne.3.RF.XBOX360-XPG
+- 2026-07-07T23:06:30+0200 [info] qbittorrent::qbt_probe_add - Max.Payne.3.RF.XBOX360-XPG
+- 2026-07-07T23:06:30+0200 [info] qbittorrent::qbt_probe_add - Max.Payne.3.RF.XBOX360-XPG
+- 2026-07-07T23:06:32+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:06:32+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:06:33+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:06:33+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:06:33+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:06:34+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:06:35+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:06:35+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:06:35+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:06:35+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:06:37+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:06:37+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:06:37+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:06:37+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:06:37+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:06:39+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:06:39+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:06:39+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:06:39+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:06:39+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:06:41+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:06:41+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:06:41+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:06:41+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:06:41+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:06:43+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:06:43+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:06:43+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:06:43+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:06:43+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:06:45+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:06:45+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:06:45+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:06:45+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:06:45+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:06:47+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:06:47+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:06:47+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:06:47+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:06:47+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:06:49+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:06:49+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:06:49+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:06:49+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:06:49+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:06:51+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:06:51+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:06:51+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:06:51+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:06:51+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:06:53+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:06:53+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:06:53+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:06:53+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:06:53+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:06:55+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:06:55+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:06:55+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:06:55+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:06:55+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:06:57+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:06:57+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:06:57+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:06:57+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:06:57+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:06:59+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:06:59+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:06:59+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:06:59+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:06:59+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:07:01+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:07:01+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:07:01+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:07:01+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:07:01+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:07:03+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:07:03+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:07:03+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:07:03+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:07:03+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:07:05+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:07:05+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:07:05+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:07:05+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:07:05+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:07:07+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:07:07+0200 [info] qbittorrent::qbt_probe_result - Sin vida clara en qBittorrent: state=metadl, seeds=0, peers=0, progress=0.000
+- 2026-07-07T23:07:07+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:07:07+0200 [info] qbittorrent::qbt_probe_result - Sin vida clara en qBittorrent: state=metadl, seeds=0, peers=0, progress=0.000
+- 2026-07-07T23:07:07+0200 [info] qbittorrent::qbt_delete_probe
+- 2026-07-07T23:07:07+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:07:07+0200 [info] qbittorrent::qbt_probe_result - Sin vida clara en qBittorrent: state=metadl, seeds=0, peers=0, progress=0.000
+- 2026-07-07T23:07:07+0200 [info] qbittorrent::qbt_delete_probe
+- 2026-07-07T23:07:07+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:07:07+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:07:07+0200 [info] qbittorrent::qbt_probe_result - Sin vida clara en qBittorrent: state=metadl, seeds=0, peers=0, progress=0.000
+- 2026-07-07T23:07:07+0200 [info] qbittorrent::qbt_probe_result - Sin vida clara en qBittorrent: state=metadl, seeds=0, peers=0, progress=0.000
+- 2026-07-07T23:07:07+0200 [info] qbittorrent::qbt_delete_probe
+- 2026-07-07T23:07:07+0200 [info] qbittorrent::qbt_delete_probe
+- 2026-07-07T23:07:07+0200 [info] qbittorrent::qbt_delete_probe
+- 2026-07-07T23:07:07+0200 [info] qbittorrent::qbt_login
+- 2026-07-07T23:07:07+0200 [info] qbittorrent::qbt_login
+- 2026-07-07T23:07:07+0200 [info] qbittorrent::qbt_login
+- 2026-07-07T23:07:07+0200 [info] qbittorrent::qbt_login
+- 2026-07-07T23:07:07+0200 [info] qbittorrent::qbt_login
+- 2026-07-07T23:07:07+0200 [info] qbittorrent::qbt_probe_add - Max.Payne.3.RF.XBOX360-XPG
+- 2026-07-07T23:07:07+0200 [info] qbittorrent::qbt_probe_add - Max.Payne.3.RF.XBOX360-XPG
+- 2026-07-07T23:07:07+0200 [info] qbittorrent::qbt_probe_add - Max.Payne.3.RF.XBOX360-XPG
+- 2026-07-07T23:07:07+0200 [info] qbittorrent::qbt_probe_add - Max.Payne.3.RF.XBOX360-XPG
+- 2026-07-07T23:07:07+0200 [info] qbittorrent::qbt_probe_add - Max.Payne.3.RF.XBOX360-ALI213
+- 2026-07-07T23:07:09+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:07:09+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:07:09+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:07:09+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:07:09+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:07:11+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:07:11+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:07:11+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:07:11+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:07:11+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:07:13+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:07:13+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:07:13+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:07:13+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:07:13+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:07:15+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:07:15+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:07:15+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:07:15+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:07:15+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:07:17+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:07:17+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:07:17+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:07:17+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:07:17+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:07:19+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:07:19+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:07:19+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:07:19+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:07:19+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:07:21+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:07:21+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:07:21+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:07:21+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:07:21+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:07:23+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:07:23+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:07:23+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:07:23+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:07:23+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:07:25+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:07:25+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:07:25+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:07:25+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:07:25+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:07:27+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:07:27+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:07:27+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:07:27+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:07:27+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:07:29+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:07:29+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:07:29+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:07:29+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:07:29+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:07:31+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:07:31+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:07:31+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:07:31+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:07:31+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:07:33+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:07:33+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:07:33+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:07:33+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:07:33+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:07:35+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:07:35+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:07:35+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:07:35+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:07:35+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:07:37+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:07:37+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:07:37+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:07:37+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:07:37+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:07:39+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:07:39+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:07:39+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:07:39+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:07:40+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:07:41+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:07:41+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:07:41+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:07:41+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:07:42+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:07:43+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:07:43+0200 [info] qbittorrent::qbt_probe_result - Sin vida clara en qBittorrent: state=metadl, seeds=0, peers=0, progress=0.000
+- 2026-07-07T23:07:43+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:07:44+0200 [info] qbittorrent::qbt_probe_result - Sin vida clara en qBittorrent: state=metadl, seeds=0, peers=0, progress=0.000
+- 2026-07-07T23:07:44+0200 [info] qbittorrent::qbt_delete_probe
+- 2026-07-07T23:07:44+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:07:44+0200 [info] qbittorrent::qbt_probe_result - Sin vida clara en qBittorrent: state=metadl, seeds=0, peers=0, progress=0.000
+- 2026-07-07T23:07:44+0200 [info] qbittorrent::qbt_delete_probe
+- 2026-07-07T23:07:44+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:07:44+0200 [info] qbittorrent::qbt_probe_result - Sin vida clara en qBittorrent: state=metadl, seeds=0, peers=0, progress=0.000
+- 2026-07-07T23:07:44+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:07:44+0200 [info] qbittorrent::qbt_probe_result - Sin vida clara en qBittorrent: state=metadl, seeds=0, peers=0, progress=0.000
+- 2026-07-07T23:07:44+0200 [info] qbittorrent::qbt_delete_probe
+- 2026-07-07T23:07:44+0200 [info] qbittorrent::qbt_delete_probe
+- 2026-07-07T23:07:44+0200 [info] qbittorrent::qbt_delete_probe
+- 2026-07-07T23:07:44+0200 [info] qbittorrent::qbt_login
+- 2026-07-07T23:07:44+0200 [info] qbittorrent::qbt_login
+- 2026-07-07T23:07:44+0200 [info] qbittorrent::qbt_login
+- 2026-07-07T23:07:44+0200 [info] qbittorrent::qbt_login
+- 2026-07-07T23:07:44+0200 [info] qbittorrent::qbt_probe_add - Max.Payne.3.RF.XBOX360-XPG
+- 2026-07-07T23:07:44+0200 [info] qbittorrent::qbt_probe_add - Max.Payne.3.RF.XBOX360-XPG
+- 2026-07-07T23:07:44+0200 [info] qbittorrent::qbt_login
+- 2026-07-07T23:07:44+0200 [info] qbittorrent::qbt_probe_add - Max.Payne.3.RF.XBOX360-XPG
+- 2026-07-07T23:07:44+0200 [info] qbittorrent::qbt_probe_add - Max.Payne.3.RF.XBOX360-XPG
+- 2026-07-07T23:07:44+0200 [info] qbittorrent::qbt_probe_add - Max.Payne.3.RF.XBOX360
+- 2026-07-07T23:07:46+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:07:46+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:07:46+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:07:46+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:07:46+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:07:48+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:07:48+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:07:48+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:07:48+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:07:48+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:07:50+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:07:50+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:07:50+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:07:50+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:07:50+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:07:52+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:07:52+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:07:52+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:07:52+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:07:52+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:07:54+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:07:54+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:07:54+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:07:54+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:07:54+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:07:56+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:07:56+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:07:56+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:07:56+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:07:56+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:07:58+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:07:58+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:07:58+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:07:58+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:07:58+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:08:00+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:08:00+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:08:00+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:08:00+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:08:00+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:08:02+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:08:02+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:08:02+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:08:02+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:08:02+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:08:04+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:08:04+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:08:04+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:08:04+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:08:04+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:08:06+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:08:06+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:08:06+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:08:06+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:08:06+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:08:08+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:08:08+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:08:08+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:08:08+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:08:08+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:08:10+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:08:10+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:08:10+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:08:10+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:08:10+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:08:12+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:08:12+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:08:12+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:08:12+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:08:12+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:08:14+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:08:14+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:08:14+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:08:14+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:08:14+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:08:16+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:08:16+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:08:16+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:08:16+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:08:16+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:08:18+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:08:18+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:08:18+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:08:18+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:08:18+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:08:20+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:08:20+0200 [info] qbittorrent::qbt_probe_result - Sin vida clara en qBittorrent: state=metadl, seeds=0, peers=0, progress=0.000
+- 2026-07-07T23:08:20+0200 [info] qbittorrent::qbt_delete_probe
+- 2026-07-07T23:08:20+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:08:20+0200 [info] qbittorrent::qbt_probe_result - Sin vida clara en qBittorrent: state=metadl, seeds=0, peers=0, progress=0.000
+- 2026-07-07T23:08:20+0200 [info] qbittorrent::qbt_login
+- 2026-07-07T23:08:20+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:08:20+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:08:20+0200 [info] qbittorrent::qbt_probe_result - Sin vida clara en qBittorrent: state=metadl, seeds=0, peers=0, progress=0.000
+- 2026-07-07T23:08:20+0200 [info] qbittorrent::qbt_delete_probe
+- 2026-07-07T23:08:20+0200 [info] qbittorrent::qbt_probe_result - Sin vida clara en qBittorrent: state=metadl, seeds=0, peers=0, progress=0.000
+- 2026-07-07T23:08:20+0200 [info] qbittorrent::qbt_probe_add - Max Payne 3
+- 2026-07-07T23:08:20+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:08:20+0200 [info] qbittorrent::qbt_delete_probe
+- 2026-07-07T23:08:20+0200 [info] qbittorrent::qbt_probe_result - Sin vida clara en qBittorrent: state=metadl, seeds=0, peers=0, progress=0.000
+- 2026-07-07T23:08:20+0200 [info] qbittorrent::qbt_delete_probe
+- 2026-07-07T23:08:20+0200 [info] qbittorrent::qbt_login
+- 2026-07-07T23:08:20+0200 [info] qbittorrent::qbt_delete_probe
+- 2026-07-07T23:08:20+0200 [info] qbittorrent::qbt_login
+- 2026-07-07T23:08:21+0200 [info] qbittorrent::qbt_login
+- 2026-07-07T23:08:21+0200 [info] qbittorrent::qbt_probe_add - Max.Payne.3.RF.XBOX360-XPG
+- 2026-07-07T23:08:21+0200 [info] qbittorrent::qbt_probe_add - Max.Payne.3.RF.XBOX360-XPG
+- 2026-07-07T23:08:21+0200 [info] qbittorrent::qbt_login
+- 2026-07-07T23:08:21+0200 [info] qbittorrent::qbt_probe_add - Max.Payne.3.RF.XBOX360-XPG
+- 2026-07-07T23:08:21+0200 [info] qbittorrent::qbt_probe_add - Max Payne3
+- 2026-07-07T23:08:22+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:08:23+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:08:23+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:08:23+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:08:23+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:08:24+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:08:25+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:08:25+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:08:25+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:08:25+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:08:26+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:08:27+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:08:27+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:08:27+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:08:27+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:08:28+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:08:29+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:08:29+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:08:29+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:08:29+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:08:30+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:08:31+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:08:31+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:08:31+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:08:31+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:08:32+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:08:33+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:08:33+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:08:33+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:08:33+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:08:34+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:08:35+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:08:35+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:08:35+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:08:35+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:08:36+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:08:37+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:08:37+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:08:37+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:08:37+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:08:39+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:08:39+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:08:39+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:08:39+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:08:39+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:08:41+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:08:41+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:08:41+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:08:41+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:08:41+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:08:43+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:08:43+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:08:43+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:08:43+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:08:43+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:08:45+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:08:45+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:08:45+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:08:45+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:08:45+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:08:47+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:08:47+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:08:47+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:08:47+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:08:47+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:08:49+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:08:49+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:08:49+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:08:49+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:08:49+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:08:51+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:08:51+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:08:51+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:08:51+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:08:51+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:08:53+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:08:53+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:08:53+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:08:53+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:08:53+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:08:55+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:08:55+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:08:55+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:08:55+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:08:55+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:08:57+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:08:57+0200 [info] qbittorrent::qbt_probe_result - Sin vida clara en qBittorrent: state=metadl, seeds=0, peers=0, progress=0.000
+- 2026-07-07T23:08:57+0200 [info] qbittorrent::qbt_delete_probe
+- 2026-07-07T23:08:57+0200 [info] qbittorrent::qbt_login
+- 2026-07-07T23:08:57+0200 [info] qbittorrent::qbt_probe_add - Max.Payne.2008.R5.PROPER.CUSTOM.SWESUB.DVDR-iNjECT
+- 2026-07-07T23:08:57+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:08:57+0200 [info] qbittorrent::qbt_probe_result - Sin vida clara en qBittorrent: state=metadl, seeds=0, peers=0, progress=0.000
+- 2026-07-07T23:08:57+0200 [info] qbittorrent::qbt_delete_probe
+- 2026-07-07T23:08:57+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:08:57+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:08:57+0200 [info] qbittorrent::qbt_probe_result - Sin vida clara en qBittorrent: state=metadl, seeds=0, peers=0, progress=0.000
+- 2026-07-07T23:08:57+0200 [info] qbittorrent::qbt_login
+- 2026-07-07T23:08:57+0200 [info] qbittorrent::qbt_probe_result - Sin vida clara en qBittorrent: state=metadl, seeds=0, peers=0, progress=0.000
+- 2026-07-07T23:08:57+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:08:57+0200 [info] qbittorrent::qbt_probe_result - Sin vida clara en qBittorrent: state=metadl, seeds=0, peers=0, progress=0.000
+- 2026-07-07T23:08:57+0200 [info] qbittorrent::qbt_probe_add - Max.Payne.2008.UNRATED.CUSTOM.SWESUB.DVDR-iNjECT
+- 2026-07-07T23:08:57+0200 [info] qbittorrent::qbt_delete_probe
+- 2026-07-07T23:08:57+0200 [info] qbittorrent::qbt_delete_probe
+- 2026-07-07T23:08:57+0200 [info] qbittorrent::qbt_delete_probe
+- 2026-07-07T23:08:57+0200 [info] qbittorrent::qbt_login
+- 2026-07-07T23:08:57+0200 [info] qbittorrent::qbt_login
+- 2026-07-07T23:08:57+0200 [info] qbittorrent::qbt_login
+- 2026-07-07T23:08:57+0200 [info] qbittorrent::qbt_probe_add - Max Payne 2 The Fall of Max Payne
+- 2026-07-07T23:08:57+0200 [info] qbittorrent::qbt_probe_add - Max Payne 2 The Fall Of Max Payne v1.01 Manuel Pc Fr Eng
+- 2026-07-07T23:08:57+0200 [info] qbittorrent::qbt_probe_add - Max Payne - Triple Pack
+- 2026-07-07T23:08:59+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:08:59+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:08:59+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:08:59+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:08:59+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:09:01+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:09:01+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:09:01+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:09:01+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:09:01+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:09:03+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:09:03+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:09:03+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:09:03+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:09:03+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:09:05+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:09:05+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:09:05+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:09:05+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:09:05+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:09:07+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:09:07+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:09:07+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:09:07+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:09:07+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:09:09+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:09:09+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:09:09+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:09:09+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:09:09+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:09:11+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:09:11+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:09:11+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:09:11+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:09:11+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:09:13+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:09:13+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:09:13+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:09:13+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:09:13+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:09:15+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:09:15+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:09:15+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:09:15+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:09:15+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:09:17+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:09:17+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:09:17+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:09:17+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:09:17+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:09:19+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:09:19+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:09:19+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:09:19+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:09:20+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:09:21+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:09:21+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:09:21+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:09:22+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:09:22+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:09:23+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:09:23+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:09:23+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:09:24+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:09:24+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:09:25+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:09:25+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:09:26+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:09:26+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:09:26+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:09:27+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:09:27+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:09:28+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:09:28+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:09:28+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:09:29+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:09:29+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:09:30+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:09:30+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:09:30+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:09:31+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:09:31+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:09:32+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:09:32+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:09:32+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:09:33+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:09:33+0200 [info] qbittorrent::qbt_probe_result - Sin vida clara en qBittorrent: state=metadl, seeds=0, peers=0, progress=0.000
+- 2026-07-07T23:09:33+0200 [info] qbittorrent::qbt_delete_probe
+- 2026-07-07T23:09:33+0200 [info] qbittorrent::qbt_login
+- 2026-07-07T23:09:33+0200 [info] qbittorrent::qbt_probe_add - Max.Payne.2008.HUN.DVDRip.XviD-Bithorlo
+- 2026-07-07T23:09:33+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:09:33+0200 [info] qbittorrent::qbt_probe_result - Sin vida clara en qBittorrent: state=metadl, seeds=0, peers=0, progress=0.000
+- 2026-07-07T23:09:33+0200 [info] qbittorrent::qbt_delete_probe
+- 2026-07-07T23:09:33+0200 [info] qbittorrent::qbt_login
+- 2026-07-07T23:09:34+0200 [info] qbittorrent::qbt_probe_add - Max.Payne
+- 2026-07-07T23:09:34+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:09:34+0200 [info] qbittorrent::qbt_probe_result - Sin vida clara en qBittorrent: state=metadl, seeds=0, peers=0, progress=0.000
+- 2026-07-07T23:09:34+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:09:34+0200 [info] qbittorrent::qbt_delete_probe
+- 2026-07-07T23:09:34+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:09:34+0200 [info] qbittorrent::qbt_probe_result - Sin vida clara en qBittorrent: state=metadl, seeds=0, peers=0, progress=0.000
+- 2026-07-07T23:09:34+0200 [info] qbittorrent::qbt_probe_result - Sin vida clara en qBittorrent: state=metadl, seeds=0, peers=0, progress=0.000
+- 2026-07-07T23:09:34+0200 [info] qbittorrent::qbt_delete_probe
+- 2026-07-07T23:09:34+0200 [info] qbittorrent::qbt_delete_probe
+- 2026-07-07T23:09:34+0200 [info] qbittorrent::qbt_login
+- 2026-07-07T23:09:34+0200 [info] qbittorrent::qbt_login
+- 2026-07-07T23:09:34+0200 [info] qbittorrent::qbt_probe_add - Max.Payne
+- 2026-07-07T23:09:34+0200 [info] qbittorrent::qbt_login
+- 2026-07-07T23:09:34+0200 [info] qbittorrent::qbt_probe_add - www.ubb.to...Max.Payne.German.720p.BluRay.x264-DEFUSED
+- 2026-07-07T23:09:34+0200 [info] qbittorrent::qbt_probe_add - Max.Payne.Expansion.Chinese.GB2312_马克思佩恩之英雄本色功夫加强版简体中文版
+- 2026-07-07T23:09:35+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:09:36+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:09:36+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:09:36+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:09:36+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:09:37+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:09:38+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:09:38+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:09:38+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:09:38+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:09:39+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:09:40+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:09:40+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:09:40+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:09:40+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:09:41+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:09:42+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:09:42+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:09:42+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:09:42+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:09:43+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:09:44+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:09:44+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:09:44+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:09:44+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:09:45+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:09:46+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:09:46+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:09:46+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:09:46+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:09:47+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:09:48+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:09:48+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:09:48+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:09:48+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:09:49+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:09:50+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:09:50+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:09:50+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:09:50+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:09:51+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:09:52+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:09:52+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:09:52+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:09:52+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:09:53+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:09:54+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:09:54+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:09:54+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:09:54+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:09:55+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:09:56+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:09:56+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:09:56+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:09:56+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:09:57+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:09:58+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:09:58+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:09:58+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:09:58+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:09:59+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:10:00+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:10:00+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:10:00+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:10:00+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:10:01+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:10:02+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:10:02+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:10:02+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:10:02+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:10:03+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:10:04+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:10:04+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:10:04+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:10:04+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:10:05+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:10:06+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:10:06+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:10:06+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:10:06+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:10:07+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:10:08+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:10:08+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:10:08+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:10:08+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:10:10+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:10:10+0200 [info] qbittorrent::qbt_probe_result - Sin vida clara en qBittorrent: state=metadl, seeds=0, peers=0, progress=0.000
+- 2026-07-07T23:10:10+0200 [info] qbittorrent::qbt_delete_probe
+- 2026-07-07T23:10:10+0200 [info] qbittorrent::qbt_login
+- 2026-07-07T23:10:10+0200 [info] qbittorrent::qbt_probe_add - Max.Payne.Expansion.Chinese.GB2312_马克思佩恩之英雄本色功夫加强版简体中文版
+- 2026-07-07T23:10:10+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:10:10+0200 [info] qbittorrent::qbt_probe_result - Sin vida clara en qBittorrent: state=metadl, seeds=0, peers=0, progress=0.000
+- 2026-07-07T23:10:10+0200 [info] qbittorrent::qbt_delete_probe
+- 2026-07-07T23:10:10+0200 [info] qbittorrent::qbt_login
+- 2026-07-07T23:10:10+0200 [info] qbittorrent::qbt_probe_add - max payne
+- 2026-07-07T23:10:10+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:10:10+0200 [info] qbittorrent::qbt_probe_result - Sin vida clara en qBittorrent: state=metadl, seeds=0, peers=0, progress=0.000
+- 2026-07-07T23:10:10+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:10:10+0200 [info] qbittorrent::qbt_delete_probe
+- 2026-07-07T23:10:10+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:10:10+0200 [info] qbittorrent::qbt_probe_result - Sin vida clara en qBittorrent: state=metadl, seeds=0, peers=0, progress=0.000
+- 2026-07-07T23:10:10+0200 [info] qbittorrent::qbt_probe_result - Sin vida clara en qBittorrent: state=metadl, seeds=0, peers=0, progress=0.000
+- 2026-07-07T23:10:10+0200 [info] qbittorrent::qbt_delete_probe
+- 2026-07-07T23:10:10+0200 [info] qbittorrent::qbt_delete_probe
+- 2026-07-07T23:10:10+0200 [info] qbittorrent::qbt_login
+- 2026-07-07T23:10:10+0200 [info] qbittorrent::qbt_login
+- 2026-07-07T23:10:10+0200 [info] qbittorrent::qbt_login
+- 2026-07-07T23:10:10+0200 [info] qbittorrent::qbt_probe_add - Max.Payne.3.RF.XBOX360-XPG
+- 2026-07-07T23:10:10+0200 [info] qbittorrent::qbt_probe_add - Max.Payne.3.RF.XBOX360-XPG
+- 2026-07-07T23:10:10+0200 [info] qbittorrent::qbt_probe_add - Max Payne 3 [MULTI][XBOX360][Region Free][2DVDs][XDG3][XPG][WwW.GamesTorrents.CoM]
+- 2026-07-07T23:10:12+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:10:12+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:10:12+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:10:12+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:10:12+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:10:14+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:10:14+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:10:14+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:10:14+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:10:14+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:10:16+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:10:16+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:10:16+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:10:16+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:10:16+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:10:18+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:10:18+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:10:18+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:10:18+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:10:19+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:10:20+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:10:20+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:10:20+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:10:21+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:10:21+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:10:22+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:10:22+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:10:23+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:10:23+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:10:23+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:10:24+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:10:24+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:10:25+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:10:25+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:10:25+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:10:26+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:10:26+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:10:27+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:10:27+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:10:27+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:10:28+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:10:28+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:10:29+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:10:29+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:10:29+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:10:30+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:10:30+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:10:31+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:10:31+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:10:31+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:10:32+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:10:32+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:10:33+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:10:33+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:10:33+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:10:34+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:10:34+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:10:35+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:10:35+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:10:35+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:10:36+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:10:36+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:10:37+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:10:37+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:10:37+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:10:38+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:10:38+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:10:39+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:10:39+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:10:39+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:10:40+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:10:40+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:10:41+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:10:41+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:10:41+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:10:42+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:10:42+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:10:43+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:10:43+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:10:43+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:10:44+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:10:44+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:10:45+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:10:45+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:10:45+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:10:46+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:10:46+0200 [info] qbittorrent::qbt_probe_result - Sin vida clara en qBittorrent: state=metadl, seeds=0, peers=0, progress=0.000
+- 2026-07-07T23:10:46+0200 [info] qbittorrent::qbt_delete_probe
+- 2026-07-07T23:10:46+0200 [info] qbittorrent::qbt_login
+- 2026-07-07T23:10:46+0200 [info] qbittorrent::qbt_probe_add - Max.Payne.3.RF.XBOX360-XPG
+- 2026-07-07T23:10:46+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:10:46+0200 [info] qbittorrent::qbt_probe_result - Sin vida clara en qBittorrent: state=metadl, seeds=0, peers=0, progress=0.000
+- 2026-07-07T23:10:46+0200 [info] qbittorrent::qbt_delete_probe
+- 2026-07-07T23:10:46+0200 [info] qbittorrent::qbt_login
+- 2026-07-07T23:10:46+0200 [info] qbittorrent::qbt_probe_add - Max.Payne.2.the.Fall.of.Max.Payne.MULTi2.PAL-Thrombozyt
+- 2026-07-07T23:10:47+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:10:47+0200 [info] qbittorrent::qbt_probe_result - Sin vida clara en qBittorrent: state=metadl, seeds=0, peers=0, progress=0.000
+- 2026-07-07T23:10:47+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:10:47+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:10:47+0200 [info] qbittorrent::qbt_delete_probe
+- 2026-07-07T23:10:47+0200 [info] qbittorrent::qbt_probe_result - Sin vida clara en qBittorrent: state=metadl, seeds=0, peers=0, progress=0.000
+- 2026-07-07T23:10:47+0200 [info] qbittorrent::qbt_probe_result - Sin vida clara en qBittorrent: state=metadl, seeds=0, peers=0, progress=0.000
+- 2026-07-07T23:10:47+0200 [info] qbittorrent::qbt_delete_probe
+- 2026-07-07T23:10:47+0200 [info] qbittorrent::qbt_delete_probe
+- 2026-07-07T23:10:47+0200 [info] qbittorrent::qbt_login
+- 2026-07-07T23:10:47+0200 [info] qbittorrent::qbt_login
+- 2026-07-07T23:10:47+0200 [info] qbittorrent::qbt_probe_add - Max Payne 2 - The Fall Of Max Payne
+- 2026-07-07T23:10:47+0200 [info] qbittorrent::qbt_login
+- 2026-07-07T23:10:47+0200 [info] qbittorrent::qbt_probe_add - Max.Payne.2.The.Fall.Of.Max.Payne_Conversione.ENG.to.ITA
+- 2026-07-07T23:10:47+0200 [info] qbittorrent::qbt_probe_add - Max.Payne.3.STEAM.UNLOCKED-ALI213
+- 2026-07-07T23:10:48+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:10:48+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:10:49+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:10:49+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:10:49+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:10:50+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:10:50+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:10:51+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:10:51+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:10:51+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:10:52+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:10:52+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:10:53+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:10:53+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:10:53+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:10:54+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:10:54+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:10:55+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:10:55+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:10:55+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:10:56+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:10:56+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:10:57+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:10:57+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:10:57+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:10:58+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:10:58+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:10:59+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:10:59+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:10:59+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:11:00+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:11:00+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:11:01+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:11:01+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:11:01+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:11:02+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:11:02+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:11:03+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:11:03+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:11:03+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:11:04+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:11:04+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:11:05+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:11:05+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:11:05+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:11:06+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:11:06+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:11:07+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:11:07+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:11:07+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:11:08+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:11:08+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:11:09+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:11:09+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:11:09+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:11:10+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:11:11+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:11:11+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:11:11+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:11:11+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:11:12+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:11:13+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:11:13+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:11:13+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:11:13+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:11:14+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:11:15+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:11:15+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:11:15+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:11:15+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:11:16+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:11:17+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:11:17+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:11:17+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:11:17+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:11:18+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:11:19+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:11:19+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:11:19+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:11:19+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:11:20+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:11:21+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:11:21+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:11:21+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:11:21+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:11:22+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:11:22+0200 [info] qbittorrent::qbt_probe_result - Sin vida clara en qBittorrent: state=metadl, seeds=0, peers=0, progress=0.000
+- 2026-07-07T23:11:22+0200 [info] qbittorrent::qbt_delete_probe
+- 2026-07-07T23:11:23+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:11:23+0200 [info] qbittorrent::qbt_probe_result - Sin vida clara en qBittorrent: state=metadl, seeds=0, peers=0, progress=0.000
+- 2026-07-07T23:11:23+0200 [info] qbittorrent::qbt_delete_probe
+- 2026-07-07T23:11:23+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:11:23+0200 [info] qbittorrent::qbt_probe_result - Sin vida clara en qBittorrent: state=metadl, seeds=0, peers=0, progress=0.000
+- 2026-07-07T23:11:23+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:11:23+0200 [info] qbittorrent::qbt_delete_probe
+- 2026-07-07T23:11:23+0200 [info] qbittorrent::qbt_probe_result - Sin vida clara en qBittorrent: state=metadl, seeds=0, peers=0, progress=0.000
+- 2026-07-07T23:11:23+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T23:11:23+0200 [info] qbittorrent::qbt_probe_result - Sin vida clara en qBittorrent: state=metadl, seeds=0, peers=0, progress=0.000
+- 2026-07-07T23:11:23+0200 [info] qbittorrent::qbt_delete_probe
+- 2026-07-07T23:11:23+0200 [info] qbittorrent::qbt_delete_probe
+- 2026-07-07T23:11:23+0200 [info] qbittorrent::qbt_probe_batch_end
+- 2026-07-07T23:11:23+0200 [info] motor::prepare_qbit_extras
+- 2026-07-07T23:11:23+0200 [info] motor::prepare_rd_temp_errors
+- 2026-07-07T23:11:23+0200 [info] motor::prepare_after_working_filter
+- 2026-07-07T23:11:23+0200 [info] search::export_results
+- 2026-07-07T23:11:23+0200 [info] search::export_results
+- 2026-07-07T23:11:23+0200 [info] search::editor_clean_search_rd_cleanup
+- 2026-07-07T23:11:23+0200 [info] search::editor_clean_search_end
+- 2026-07-07T23:11:24+02:00 [info] web::JOB_FINISHED_OK

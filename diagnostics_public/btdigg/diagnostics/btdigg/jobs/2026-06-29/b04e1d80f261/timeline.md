@@ -1,0 +1,173 @@
+- 2026-06-29T20:35:17+02:00 [info] web::JOB_STARTED
+- 2026-06-29T20:35:17+02:00 [info] general::CONFIG_SNAPSHOT
+- 2026-06-29T20:35:17+02:00 [info] web::COMMAND_PREPARED
+- 2026-06-29T20:35:17+02:00 [info] web::PROCESS_STARTED
+- 2026-06-29T20:35:17+0200 [info] search::editor_clean_search_start
+- 2026-06-29T20:35:17+0200 [info] btdigg::browser_auto_search_start_dom
+- 2026-06-29T20:35:21+0200 [info] btdigg::extract_magnets
+- 2026-06-29T20:35:21+0200 [info] btdigg::btdigg_dump_dom_fallback
+- 2026-06-29T20:35:23+0200 [info] btdigg::browser_auto_search_end_dom
+- 2026-06-29T20:35:23+0200 [info] motor::prepare_results_start
+- 2026-06-29T20:35:23+0200 [info] motor::prepare_after_scoring
+- 2026-06-29T20:35:23+0200 [info] motor::prepare_after_filter
+- 2026-06-29T20:35:23+0200 [info] motor::prepare_after_query_prefilter
+- 2026-06-29T20:35:23+0200 [info] real-debrid::rd_account_check_ok
+- 2026-06-29T20:35:23+0200 [info] real-debrid::rd_check_start
+- 2026-06-29T20:35:23+0200 [info] real-debrid::rd_api_http_error - disabled_endpoint
+- 2026-06-29T20:35:23+0200 [info] real-debrid::rd_cache_api_disabled_cached_set - Real-Debrid HTTP 403: [37 disabled_endpoint] {
+	"error": "disabled_endpoint",
+	"error_code": 37
+}
+- 2026-06-29T20:35:23+0200 [info] real-debrid::rd_cache_api_disabled - Real-Debrid HTTP 403: [37 disabled_endpoint] {
+	"error": "disabled_endpoint",
+	"error_code": 37
+}
+- 2026-06-29T20:35:23+0200 [info] real-debrid::rd_verify_batch_start
+- 2026-06-29T20:35:23+0200 [info] real-debrid::rd_slots_refresh
+- 2026-06-29T20:35:24+0200 [info] real-debrid::rd_existing_preload_done
+- 2026-06-29T20:35:24+0200 [info] real-debrid::rd_verify_queue_start
+- 2026-06-29T20:35:24+0200 [info] real-debrid::rd_verify_add_start - 黑色五叶草
+- 2026-06-29T20:35:24+0200 [info] real-debrid::rd_verify_queue_submit - 黑色五叶草
+- 2026-06-29T20:35:24+0200 [info] real-debrid::rd_slots_reserve
+- 2026-06-29T20:35:24+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-29T20:35:24+0200 [info] real-debrid::rd_verify_add_start - Blacked-4K-Entire-Site-RIP-[titflix.ca]
+- 2026-06-29T20:35:24+0200 [info] real-debrid::rd_verify_queue_submit - Blacked-4K-Entire-Site-RIP-[titflix.ca]
+- 2026-06-29T20:35:24+0200 [info] real-debrid::rd_slots_reserve
+- 2026-06-29T20:35:24+0200 [debug] real-debrid::rd_endpoint_pace_wait
+- 2026-06-29T20:35:24+0200 [info] real-debrid::rd_verify_add_start - Blacked-4K-Entire-Site-
+- 2026-06-29T20:35:24+0200 [info] real-debrid::rd_verify_queue_submit - Blacked-4K-Entire-Site-
+- 2026-06-29T20:35:24+0200 [info] real-debrid::rd_slots_reserve
+- 2026-06-29T20:35:24+0200 [info] real-debrid::rd_verify_add_start - Blacked-4K-Entire-Site-
+- 2026-06-29T20:35:24+0200 [info] real-debrid::rd_slots_reserve
+- 2026-06-29T20:35:24+0200 [info] real-debrid::rd_verify_queue_submit - Blacked-4K-Entire-Site-
+- 2026-06-29T20:35:24+0200 [info] real-debrid::rd_verify_add_start - 型月动画合集
+- 2026-06-29T20:35:24+0200 [info] real-debrid::rd_verify_queue_submit - 型月动画合集
+- 2026-06-29T20:35:24+0200 [info] real-debrid::rd_slots_reserve
+- 2026-06-29T20:35:24+0200 [info] real-debrid::rd_verify_add_start - The.Haunting.of.Hill.House.S01.2160p.WEBRip.X265-DEFLATE
+- 2026-06-29T20:35:24+0200 [info] real-debrid::rd_verify_queue_submit - The.Haunting.of.Hill.House.S01.2160p.WEBRip.X265-DEFLATE
+- 2026-06-29T20:35:24+0200 [info] real-debrid::rd_slots_reserve
+- 2026-06-29T20:35:24+0200 [info] real-debrid::rd_verify_add_start - Shut.Eye.S01.2160p.WEB.H265-DEFLATE
+- 2026-06-29T20:35:24+0200 [info] real-debrid::rd_verify_queue_submit - Shut.Eye.S01.2160p.WEB.H265-DEFLATE
+- 2026-06-29T20:35:24+0200 [info] real-debrid::rd_slots_reserve
+- 2026-06-29T20:35:24+0200 [info] real-debrid::rd_verify_add_start - Blacked-Entire-Site-2024-[titflix.ca]
+- 2026-06-29T20:35:24+0200 [info] real-debrid::rd_verify_queue_submit - Blacked-Entire-Site-2024-[titflix.ca]
+- 2026-06-29T20:35:24+0200 [info] real-debrid::rd_slots_reserve
+- 2026-06-29T20:35:24+0200 [info] real-debrid::rd_verify_add_start - Blacked-Entire-Site-2024-[titflix.ca]
+- 2026-06-29T20:35:24+0200 [info] real-debrid::rd_verify_queue_submit - Blacked-Entire-Site-2024-[titflix.ca]
+- 2026-06-29T20:35:24+0200 [info] real-debrid::rd_slots_reserve
+- 2026-06-29T20:35:24+0200 [info] real-debrid::rd_verify_add_start - 277.Shingeki no Kyojin [MAI] [Ma10p_2160p]
+- 2026-06-29T20:35:24+0200 [info] real-debrid::rd_verify_queue_submit - 277.Shingeki no Kyojin [MAI] [Ma10p_2160p]
+- 2026-06-29T20:35:24+0200 [info] real-debrid::rd_slots_reserve
+- 2026-06-29T20:35:24+0200 [info] real-debrid::rd_verify_added
+- 2026-06-29T20:35:24+0200 [debug] real-debrid::rd_verify_poll - 黑色五叶草
+- 2026-06-29T20:35:24+0200 [info] real-debrid::rd_fast_discard - magnet_error
+- 2026-06-29T20:35:24+0200 [info] real-debrid::rd_fast_discard_reason - magnet_error
+- 2026-06-29T20:35:24+0200 [info] real-debrid::rd_fast_discard_delete - magnet_error
+- 2026-06-29T20:35:25+0200 [info] real-debrid::rd_delete_torrent
+- 2026-06-29T20:35:25+0200 [info] real-debrid::rd_slots_release
+- 2026-06-29T20:35:25+0200 [info] real-debrid::rd_verify_queue_done_item - 黑色五叶草
+- 2026-06-29T20:35:25+0200 [info] real-debrid::rd_verify_added
+- 2026-06-29T20:35:25+0200 [debug] real-debrid::rd_verify_poll - 277.Shingeki no Kyojin [MAI] [Ma10p_2160p]
+- 2026-06-29T20:35:25+0200 [info] real-debrid::rd_fast_discard - magnet_error
+- 2026-06-29T20:35:25+0200 [info] real-debrid::rd_fast_discard_reason - magnet_error
+- 2026-06-29T20:35:25+0200 [info] real-debrid::rd_fast_discard_delete - magnet_error
+- 2026-06-29T20:35:25+0200 [info] real-debrid::rd_delete_torrent
+- 2026-06-29T20:35:25+0200 [info] real-debrid::rd_slots_release
+- 2026-06-29T20:35:25+0200 [info] real-debrid::rd_verify_queue_done_item - 277.Shingeki no Kyojin [MAI] [Ma10p_2160p]
+- 2026-06-29T20:35:26+0200 [info] real-debrid::rd_verify_added
+- 2026-06-29T20:35:26+0200 [debug] real-debrid::rd_verify_poll - Shut.Eye.S01.2160p.WEB.H265-DEFLATE
+- 2026-06-29T20:35:26+0200 [info] real-debrid::rd_verify_pack_skip - Shut.Eye.S01.2160p.WEB.H265-DEFLATE
+- 2026-06-29T20:35:26+0200 [info] real-debrid::rd_fast_discard - waiting_files_no_match
+- 2026-06-29T20:35:26+0200 [info] real-debrid::rd_fast_discard_reason - waiting_files_no_match
+- 2026-06-29T20:35:26+0200 [info] real-debrid::rd_fast_discard_delete - waiting_files_no_match
+- 2026-06-29T20:35:26+0200 [debug] real-debrid::rd_waiting_files_no_match_fast_delete - Shut.Eye.S01.2160p.WEB.H265-DEFLATE
+- 2026-06-29T20:35:27+0200 [info] real-debrid::rd_delete_torrent
+- 2026-06-29T20:35:27+0200 [info] real-debrid::rd_slots_release
+- 2026-06-29T20:35:27+0200 [info] real-debrid::rd_verify_queue_done_item - Shut.Eye.S01.2160p.WEB.H265-DEFLATE
+- 2026-06-29T20:35:27+0200 [info] real-debrid::rd_verify_added
+- 2026-06-29T20:35:27+0200 [debug] real-debrid::rd_verify_poll - Blacked-4K-Entire-Site-RIP-[titflix.ca]
+- 2026-06-29T20:35:27+0200 [info] real-debrid::rd_verify_pack_skip - Blacked-4K-Entire-Site-RIP-[titflix.ca]
+- 2026-06-29T20:35:27+0200 [info] real-debrid::rd_fast_discard - waiting_files_no_match
+- 2026-06-29T20:35:27+0200 [info] real-debrid::rd_fast_discard_reason - waiting_files_no_match
+- 2026-06-29T20:35:27+0200 [info] real-debrid::rd_fast_discard_delete - waiting_files_no_match
+- 2026-06-29T20:35:27+0200 [debug] real-debrid::rd_waiting_files_no_match_fast_delete - Blacked-4K-Entire-Site-RIP-[titflix.ca]
+- 2026-06-29T20:35:28+0200 [info] real-debrid::rd_delete_torrent
+- 2026-06-29T20:35:28+0200 [info] real-debrid::rd_slots_release
+- 2026-06-29T20:35:28+0200 [info] real-debrid::rd_verify_queue_done_item - Blacked-4K-Entire-Site-RIP-[titflix.ca]
+- 2026-06-29T20:35:28+0200 [info] real-debrid::rd_verify_added
+- 2026-06-29T20:35:28+0200 [debug] real-debrid::rd_verify_poll - Blacked-Entire-Site-2024-[titflix.ca]
+- 2026-06-29T20:35:29+0200 [info] real-debrid::rd_verify_pack_skip - Blacked-Entire-Site-2024-[titflix.ca]
+- 2026-06-29T20:35:29+0200 [info] real-debrid::rd_fast_discard - waiting_files_no_match
+- 2026-06-29T20:35:29+0200 [info] real-debrid::rd_fast_discard_reason - waiting_files_no_match
+- 2026-06-29T20:35:29+0200 [info] real-debrid::rd_fast_discard_delete - waiting_files_no_match
+- 2026-06-29T20:35:29+0200 [debug] real-debrid::rd_waiting_files_no_match_fast_delete - Blacked-Entire-Site-2024-[titflix.ca]
+- 2026-06-29T20:35:29+0200 [debug] real-debrid::rd_endpoint_pace_wait
+- 2026-06-29T20:35:29+0200 [info] real-debrid::rd_delete_torrent
+- 2026-06-29T20:35:29+0200 [info] real-debrid::rd_slots_release
+- 2026-06-29T20:35:29+0200 [info] real-debrid::rd_verify_queue_done_item - Blacked-Entire-Site-2024-[titflix.ca]
+- 2026-06-29T20:35:29+0200 [info] real-debrid::rd_api_http_error - infringing_file
+- 2026-06-29T20:35:29+0200 [info] real-debrid::rd_call_terminal_error - infringing_file
+- 2026-06-29T20:35:29+0200 [info] real-debrid::rd_verify_infringing - The.Haunting.of.Hill.House.S01.2160p.WEBRip.X265-DEFLATE
+- 2026-06-29T20:35:29+0200 [info] real-debrid::rd_verify_queue_done_item - The.Haunting.of.Hill.House.S01.2160p.WEBRip.X265-DEFLATE
+- 2026-06-29T20:35:30+0200 [info] real-debrid::rd_verify_added
+- 2026-06-29T20:35:30+0200 [debug] real-debrid::rd_verify_poll - Blacked-4K-Entire-Site-
+- 2026-06-29T20:35:30+0200 [info] real-debrid::rd_verify_pack_skip - Blacked-4K-Entire-Site-
+- 2026-06-29T20:35:30+0200 [info] real-debrid::rd_fast_discard - waiting_files_no_match
+- 2026-06-29T20:35:30+0200 [info] real-debrid::rd_fast_discard_reason - waiting_files_no_match
+- 2026-06-29T20:35:30+0200 [info] real-debrid::rd_fast_discard_delete - waiting_files_no_match
+- 2026-06-29T20:35:30+0200 [debug] real-debrid::rd_waiting_files_no_match_fast_delete - Blacked-4K-Entire-Site-
+- 2026-06-29T20:35:31+0200 [info] real-debrid::rd_delete_torrent
+- 2026-06-29T20:35:31+0200 [info] real-debrid::rd_slots_release
+- 2026-06-29T20:35:31+0200 [info] real-debrid::rd_verify_queue_done_item - Blacked-4K-Entire-Site-
+- 2026-06-29T20:35:31+0200 [info] real-debrid::rd_verify_added
+- 2026-06-29T20:35:31+0200 [debug] real-debrid::rd_verify_poll - Blacked-Entire-Site-2024-[titflix.ca]
+- 2026-06-29T20:35:32+0200 [info] real-debrid::rd_verify_pack_skip - Blacked-Entire-Site-2024-[titflix.ca]
+- 2026-06-29T20:35:32+0200 [info] real-debrid::rd_fast_discard - waiting_files_no_match
+- 2026-06-29T20:35:32+0200 [info] real-debrid::rd_fast_discard_reason - waiting_files_no_match
+- 2026-06-29T20:35:32+0200 [info] real-debrid::rd_fast_discard_delete - waiting_files_no_match
+- 2026-06-29T20:35:32+0200 [debug] real-debrid::rd_waiting_files_no_match_fast_delete - Blacked-Entire-Site-2024-[titflix.ca]
+- 2026-06-29T20:35:32+0200 [info] real-debrid::rd_delete_torrent
+- 2026-06-29T20:35:32+0200 [info] real-debrid::rd_slots_release
+- 2026-06-29T20:35:32+0200 [info] real-debrid::rd_verify_queue_done_item - Blacked-Entire-Site-2024-[titflix.ca]
+- 2026-06-29T20:35:32+0200 [info] real-debrid::rd_verify_added
+- 2026-06-29T20:35:32+0200 [debug] real-debrid::rd_verify_poll - 型月动画合集
+- 2026-06-29T20:35:33+0200 [info] real-debrid::rd_verify_select_files
+- 2026-06-29T20:35:33+0200 [info] real-debrid::rd_verify_added
+- 2026-06-29T20:35:33+0200 [debug] real-debrid::rd_endpoint_pace_wait
+- 2026-06-29T20:35:33+0200 [debug] real-debrid::rd_verify_post_select_poll - 型月动画合集
+- 2026-06-29T20:35:33+0200 [info] real-debrid::rd_fast_discard - zero_progress_post_select
+- 2026-06-29T20:35:33+0200 [info] real-debrid::rd_fast_discard_reason - zero_progress_post_select
+- 2026-06-29T20:35:33+0200 [info] real-debrid::rd_fast_discard_delete - zero_progress_post_select
+- 2026-06-29T20:35:33+0200 [info] real-debrid::rd_zero_progress_fast_delete - 型月动画合集
+- 2026-06-29T20:35:33+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-29T20:35:33+0200 [debug] real-debrid::rd_verify_poll - Blacked-4K-Entire-Site-
+- 2026-06-29T20:35:33+0200 [info] real-debrid::rd_verify_pack_skip - Blacked-4K-Entire-Site-
+- 2026-06-29T20:35:33+0200 [info] real-debrid::rd_fast_discard - waiting_files_no_match
+- 2026-06-29T20:35:33+0200 [info] real-debrid::rd_fast_discard_reason - waiting_files_no_match
+- 2026-06-29T20:35:33+0200 [info] real-debrid::rd_fast_discard_delete - waiting_files_no_match
+- 2026-06-29T20:35:33+0200 [debug] real-debrid::rd_waiting_files_no_match_fast_delete - Blacked-4K-Entire-Site-
+- 2026-06-29T20:35:33+0200 [debug] real-debrid::rd_endpoint_pace_wait
+- 2026-06-29T20:35:34+0200 [info] real-debrid::rd_delete_torrent
+- 2026-06-29T20:35:34+0200 [info] real-debrid::rd_slots_release
+- 2026-06-29T20:35:34+0200 [info] real-debrid::rd_verify_queue_done_item - 型月动画合集
+- 2026-06-29T20:35:34+0200 [info] real-debrid::rd_delete_torrent
+- 2026-06-29T20:35:34+0200 [info] real-debrid::rd_slots_release
+- 2026-06-29T20:35:34+0200 [info] real-debrid::rd_verify_queue_done_item - Blacked-4K-Entire-Site-
+- 2026-06-29T20:35:34+0200 [info] real-debrid::rd_verify_queue_end
+- 2026-06-29T20:35:34+0200 [info] real-debrid::rd_rate_summary
+- 2026-06-29T20:35:34+0200 [info] real-debrid::rd_endpoint_pacer_summary
+- 2026-06-29T20:35:34+0200 [info] real-debrid::rd_cleanup_final_start
+- 2026-06-29T20:35:34+0200 [info] real-debrid::rd_cleanup_final_end
+- 2026-06-29T20:35:34+0200 [info] real-debrid::rd_rate_summary
+- 2026-06-29T20:35:34+0200 [info] real-debrid::rd_endpoint_pacer_summary
+- 2026-06-29T20:35:34+0200 [info] real-debrid::rd_verify_batch_end
+- 2026-06-29T20:35:34+0200 [info] real-debrid::rd_check_summary
+- 2026-06-29T20:35:34+0200 [info] qbittorrent::qbt_probe_skipped - disabled
+- 2026-06-29T20:35:34+0200 [info] motor::prepare_qbit_extras
+- 2026-06-29T20:35:34+0200 [info] motor::prepare_rd_temp_errors
+- 2026-06-29T20:35:34+0200 [info] motor::prepare_after_working_filter
+- 2026-06-29T20:35:34+0200 [info] search::export_results
+- 2026-06-29T20:35:34+0200 [info] search::export_results
+- 2026-06-29T20:35:34+0200 [info] search::editor_clean_search_rd_cleanup
+- 2026-06-29T20:35:34+0200 [info] search::editor_clean_search_end
+- 2026-06-29T20:35:34+02:00 [info] web::JOB_FINISHED_OK

@@ -1,0 +1,94 @@
+{
+  "action": "search",
+  "btdigg_found": 0,
+  "command": {
+    "cmd": [
+      "/usr/local/bin/python",
+      "-u",
+      "rd_turbo_editor_maestro.py",
+      "--search",
+      "--query",
+      "cenicienta",
+      "--pages",
+      "1",
+      "--mode",
+      "0",
+      "--min-gb",
+      ""
+    ],
+    "cwd": "/app/app/motor/btdigg"
+  },
+  "config_snapshot": {
+    "qbit_probe_enabled": false,
+    "source": "/app/app/motor/btdigg/config.json"
+  },
+  "counts": {
+    "debug": 0,
+    "error": 1,
+    "info": 21,
+    "warn": 0
+  },
+  "diagnostic_status": "error",
+  "elapsed_sec": 47.591,
+  "event_count": 22,
+  "exit_code": 0,
+  "export": {
+    "all_json": "/app/data/jobs/c887a62ce452/exports/ULTIMOS_RESULTADOS.json",
+    "shown": 0,
+    "top_txt": "/app/data/jobs/c887a62ce452/exports/ULTIMO_TOP.txt",
+    "total": 0
+  },
+  "id": "c887a62ce452",
+  "kind": "job",
+  "last_error_code": "BTDIGG.BTDIGG_DUMP_DOM_FALLBACK_ERROR",
+  "last_event": "JOB_FINISHED_OK",
+  "last_motor_event": "editor_clean_search_end",
+  "mode": "0",
+  "module": "btdigg",
+  "operation_status": "ok",
+  "pages": "1",
+  "payload": {
+    "action": "search",
+    "min_gb": "",
+    "mode": "0",
+    "module": "btdigg",
+    "pages": "1",
+    "query": "cenicienta"
+  },
+  "phases": {
+    "btdigg": 3,
+    "general": 1,
+    "motor": 7,
+    "qbittorrent": 1,
+    "real-debrid": 1,
+    "search": 5,
+    "web": 4
+  },
+  "query": "cenicienta",
+  "query_prefilter": {
+    "after": 0,
+    "before": 0,
+    "removed": 0,
+    "rescue": 0,
+    "terms": "cenicienta"
+  },
+  "read_order": [
+    "summary.json",
+    "timeline.md",
+    "warnings.jsonl",
+    "errors.jsonl",
+    "events.jsonl"
+  ],
+  "results_count": 0,
+  "results_shown": 0,
+  "started_at": "2026-07-01T04:51:49+02:00",
+  "status": "ok",
+  "updated_at": "2026-07-01T04:52:37+02:00",
+  "working_filter": {
+    "after": 0,
+    "before": 0,
+    "qbit_extras": 0,
+    "rd_valid": 0,
+    "removed": 0
+  }
+}

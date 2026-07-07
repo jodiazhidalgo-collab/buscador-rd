@@ -67,3 +67,17 @@ Thumbs.db
 *.jpg
 *.jpeg
 *.webp
+
+# Espejo publico saneado para ChatGPT/GitHub.
+!diagnostics_public/
+!diagnostics_public/**
+diagnostics_public/**/*.db
+diagnostics_public/**/*.sqlite
+diagnostics_public/**/*.sqlite3
+diagnostics_public/**/*.zip
+diagnostics_public/**/*.7z
+diagnostics_public/**/*.rar
+diagnostics_public/**/*.png
+diagnostics_public/**/*.jpg
+diagnostics_public/**/*.jpeg
+diagnostics_public/**/*.webp

@@ -1,0 +1,12 @@
+- 2026-07-01T02:16:55+02:00 [info] web::JOB_STARTED
+- 2026-07-01T02:16:55+02:00 [info] general::CONFIG_SNAPSHOT
+- 2026-07-01T02:16:55+02:00 [info] web::COMMAND_PREPARED
+- 2026-07-01T02:16:55+02:00 [info] web::PROCESS_STARTED
+- 2026-07-01T02:16:55+0200 [info] search::editor_clean_search_start
+- 2026-07-01T02:16:55+0200 [info] btdigg::browser_auto_search_start_dom
+- 2026-07-01T02:17:00+0200 [info] btdigg::extract_magnets
+- 2026-07-01T02:17:00+0200 [info] btdigg::btdigg_dump_dom_fallback
+- 2026-07-01T02:17:03+02:00 [info] web::JOB_CANCEL_REQUESTED
+- 2026-07-01T02:17:03+0200 [info] motor::job_cancel_checkpoint
+- 2026-07-01T02:17:03+0200 [info] search::editor_clean_cancelled - btdigg_dump_dom
+- 2026-07-01T02:17:03+02:00 [info] web::JOB_FINISHED_CANCELLED

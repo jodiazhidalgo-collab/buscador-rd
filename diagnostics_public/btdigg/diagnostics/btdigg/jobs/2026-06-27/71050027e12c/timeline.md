@@ -1,0 +1,121 @@
+- 2026-06-27T06:31:33+02:00 [info] web::JOB_STARTED
+- 2026-06-27T06:31:33+02:00 [info] general::CONFIG_SNAPSHOT
+- 2026-06-27T06:31:33+02:00 [info] web::COMMAND_PREPARED
+- 2026-06-27T06:31:33+02:00 [info] web::PROCESS_STARTED
+- 2026-06-27T06:31:34+0200 [info] search::editor_clean_search_start
+- 2026-06-27T06:31:34+0200 [info] btdigg::browser_auto_search_start_dom
+- 2026-06-27T06:31:39+0200 [info] btdigg::extract_magnets
+- 2026-06-27T06:31:39+0200 [info] btdigg::btdigg_dump_dom_fallback
+- 2026-06-27T06:31:45+0200 [info] btdigg::extract_magnets
+- 2026-06-27T06:31:45+0200 [info] btdigg::btdigg_dump_dom_fallback
+- 2026-06-27T06:31:51+0200 [info] btdigg::extract_magnets
+- 2026-06-27T06:31:51+0200 [info] btdigg::btdigg_dump_dom_fallback
+- 2026-06-27T06:31:58+0200 [info] btdigg::extract_magnets
+- 2026-06-27T06:31:58+0200 [info] btdigg::btdigg_dump_dom_fallback
+- 2026-06-27T06:32:04+0200 [info] btdigg::extract_magnets
+- 2026-06-27T06:32:04+0200 [info] btdigg::btdigg_dump_dom_fallback
+- 2026-06-27T06:32:12+0200 [info] btdigg::extract_magnets
+- 2026-06-27T06:32:12+0200 [info] btdigg::btdigg_dump_dom_fallback
+- 2026-06-27T06:32:19+0200 [info] btdigg::extract_magnets
+- 2026-06-27T06:32:19+0200 [info] btdigg::btdigg_dump_dom_fallback
+- 2026-06-27T06:32:26+0200 [info] btdigg::extract_magnets
+- 2026-06-27T06:32:26+0200 [info] btdigg::btdigg_dump_dom_fallback
+- 2026-06-27T06:32:33+0200 [info] btdigg::extract_magnets
+- 2026-06-27T06:32:33+0200 [info] btdigg::btdigg_dump_dom_fallback
+- 2026-06-27T06:32:40+0200 [info] btdigg::extract_magnets
+- 2026-06-27T06:32:40+0200 [info] btdigg::btdigg_dump_dom_fallback
+- 2026-06-27T06:32:42+0200 [info] btdigg::browser_auto_search_end_dom
+- 2026-06-27T06:32:42+0200 [info] motor::prepare_results_start
+- 2026-06-27T06:32:42+0200 [info] motor::prepare_after_scoring
+- 2026-06-27T06:32:42+0200 [info] motor::prepare_after_filter
+- 2026-06-27T06:32:42+0200 [info] motor::prepare_after_query_prefilter
+- 2026-06-27T06:32:42+0200 [info] real-debrid::rd_account_check_ok
+- 2026-06-27T06:32:42+0200 [info] real-debrid::rd_check_start
+- 2026-06-27T06:32:42+0200 [warn] real-debrid::rd_api_http_error
+- 2026-06-27T06:32:42+0200 [warn] real-debrid::rd_cache_api_disabled - Real-Debrid HTTP 403: {
+	"error": "disabled_endpoint",
+	"error_code": 37
+}
+- 2026-06-27T06:32:42+0200 [info] real-debrid::rd_verify_batch_start
+- 2026-06-27T06:32:42+0200 [info] real-debrid::rd_verify_add_start - Shelter El protector (2026) [Bluray 1080p][Esp]
+- 2026-06-27T06:32:43+0200 [info] real-debrid::rd_existing_list
+- 2026-06-27T06:32:43+0200 [info] real-debrid::rd_verify_added
+- 2026-06-27T06:32:43+0200 [debug] real-debrid::rd_verify_poll - Shelter El protector (2026) [Bluray 1080p][Esp]
+- 2026-06-27T06:32:43+0200 [info] real-debrid::rd_verify_select_files
+- 2026-06-27T06:32:45+0200 [debug] real-debrid::rd_verify_poll - Shelter El protector (2026) [Bluray 1080p][Esp]
+- 2026-06-27T06:32:45+0200 [info] real-debrid::rd_verify_ok - Shelter El protector (2026) [Bluray 1080p][Esp]  ==>  /Shelter El protector (2026) [Bluray 1080p][Esp].mkv
+- 2026-06-27T06:32:45+0200 [info] real-debrid::rd_verify_add_start - Shelter El protector (2026) [4k 2160p][Esp]
+- 2026-06-27T06:32:45+0200 [info] real-debrid::rd_existing_ok - Shelter El protector (2026) [4k 2160p][Esp]
+- 2026-06-27T06:32:45+0200 [info] real-debrid::rd_verify_add_start - Shelter El protector (2026) [Bluray][Esp]
+- 2026-06-27T06:32:46+0200 [info] real-debrid::rd_verify_added
+- 2026-06-27T06:32:46+0200 [debug] real-debrid::rd_verify_poll - Shelter El protector (2026) [Bluray][Esp]
+- 2026-06-27T06:32:46+0200 [info] real-debrid::rd_verify_select_files
+- 2026-06-27T06:32:47+0200 [debug] real-debrid::rd_verify_poll - Shelter El protector (2026) [Bluray][Esp]
+- 2026-06-27T06:32:47+0200 [info] real-debrid::rd_verify_ok - Shelter El protector (2026) [Bluray][Esp]  ==>  /Shelter El protector (2026) [Bluray][Esp].avi
+- 2026-06-27T06:32:48+0200 [info] real-debrid::rd_verify_add_start - Shelter el protector (2026) 1080p [CLYON].mkv
+- 2026-06-27T06:32:48+0200 [info] real-debrid::rd_verify_added
+- 2026-06-27T06:32:48+0200 [debug] real-debrid::rd_verify_poll - Shelter el protector (2026) 1080p [CLYON].mkv
+- 2026-06-27T06:32:48+0200 [info] real-debrid::rd_verify_select_files
+- 2026-06-27T06:32:49+0200 [debug] real-debrid::rd_verify_poll - Shelter el protector (2026) 1080p [CLYON].mkv
+- 2026-06-27T06:32:49+0200 [info] real-debrid::rd_verify_ok - Shelter el protector (2026) 1080p [CLYON].mkv  ==>  /Shelter el protector (2026) 1080p [CLYON].mkv
+- 2026-06-27T06:32:50+0200 [info] real-debrid::rd_verify_add_start - Shelter El protector (2026) [Bluray 720p][Esp]
+- 2026-06-27T06:32:50+0200 [info] real-debrid::rd_verify_added
+- 2026-06-27T06:32:50+0200 [debug] real-debrid::rd_verify_poll - Shelter El protector (2026) [Bluray 720p][Esp]
+- 2026-06-27T06:32:50+0200 [info] real-debrid::rd_verify_select_files
+- 2026-06-27T06:32:52+0200 [debug] real-debrid::rd_verify_poll - Shelter El protector (2026) [Bluray 720p][Esp]
+- 2026-06-27T06:32:52+0200 [info] real-debrid::rd_verify_ok - Shelter El protector (2026) [Bluray 720p][Esp]  ==>  /Shelter El protector (2026) [Bluray 720p][Esp].mkv
+- 2026-06-27T06:32:52+0200 [info] real-debrid::rd_verify_add_start - Shelter,El protector (2026) Web DL 720p (Español Latino-English Subt).mkv
+- 2026-06-27T06:32:52+0200 [info] real-debrid::rd_verify_added
+- 2026-06-27T06:32:52+0200 [debug] real-debrid::rd_verify_poll - Shelter,El protector (2026) Web DL 720p (Español Latino-English Subt).mkv
+- 2026-06-27T06:32:53+0200 [info] real-debrid::rd_verify_select_files
+- 2026-06-27T06:32:54+0200 [debug] real-debrid::rd_verify_poll - Shelter,El protector (2026) Web DL 720p (Español Latino-English Subt).mkv
+- 2026-06-27T06:32:54+0200 [info] real-debrid::rd_verify_ok - Shelter,El protector (2026) Web DL 720p (Español Latino-English Subt).mkv  ==>  /Shelter,El protector (2026) Web DL 720p (Español Latino-English+Subt).mkv
+- 2026-06-27T06:32:54+0200 [info] real-debrid::rd_verify_add_start - Shelter,El protector (2026).HD 1080 (Español Latino-English Subt).mkv
+- 2026-06-27T06:32:54+0200 [info] real-debrid::rd_verify_added
+- 2026-06-27T06:32:55+0200 [debug] real-debrid::rd_verify_poll - Shelter,El protector (2026).HD 1080 (Español Latino-English Subt).mkv
+- 2026-06-27T06:32:55+0200 [info] real-debrid::rd_verify_select_files
+- 2026-06-27T06:32:57+0200 [debug] real-debrid::rd_verify_poll - Shelter,El protector (2026).HD 1080 (Español Latino-English Subt).mkv
+- 2026-06-27T06:32:57+0200 [info] real-debrid::rd_verify_ok - Shelter,El protector (2026).HD 1080 (Español Latino-English Subt).mkv  ==>  /Shelter,El protector (2026).HD 1080 (Español Latino-English+Subt).mkv
+- 2026-06-27T06:32:57+0200 [info] real-debrid::rd_verify_add_start - Shelter El protector (2026).BDRip 1080p x264-EAC3 (Spanish-English Subt).mkv
+- 2026-06-27T06:32:57+0200 [warn] real-debrid::rd_api_http_error
+- 2026-06-27T06:32:57+0200 [warn] real-debrid::rd_verify_error - Real-Debrid HTTP 451: {
+	"error": "infringing_file",
+	"error_code": 35
+}
+- 2026-06-27T06:32:58+0200 [info] real-debrid::rd_verify_add_start - Shelter el protector BDrip XviD Castellano
+- 2026-06-27T06:32:58+0200 [warn] real-debrid::rd_api_http_error
+- 2026-06-27T06:32:58+0200 [warn] real-debrid::rd_verify_error - Real-Debrid HTTP 451: {
+	"error": "infringing_file",
+	"error_code": 35
+}
+- 2026-06-27T06:32:58+0200 [warn] real-debrid::rd_verify_batch_end
+- 2026-06-27T06:32:58+0200 [warn] real-debrid::rd_check_summary
+- 2026-06-27T06:32:58+0200 [info] qbittorrent::qbt_relevance_filter
+- 2026-06-27T06:32:58+0200 [info] qbittorrent::qbt_probe_batch_start
+- 2026-06-27T06:32:59+0200 [info] qbittorrent::qbt_login
+- 2026-06-27T06:32:59+0200 [info] qbittorrent::qbt_login
+- 2026-06-27T06:32:59+0200 [info] qbittorrent::qbt_probe_add - Shelter El protector (2026).BDRip 1080p x264-EAC3 (Spanish-English Subt).mkv
+- 2026-06-27T06:32:59+0200 [info] qbittorrent::qbt_probe_add - Shelter el protector BDrip XviD Castellano
+- 2026-06-27T06:33:01+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-27T06:33:01+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-27T06:33:01+0200 [info] qbittorrent::qbt_probe_result - qBittorrent con seed conectado: seeds=1, peers=0, state=stalleddl
+- 2026-06-27T06:33:01+0200 [info] qbittorrent::qbt_delete_probe
+- 2026-06-27T06:33:03+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-27T06:33:05+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-27T06:33:05+0200 [info] qbittorrent::qbt_probe_result - qBittorrent con seed conectado: seeds=2, peers=0, state=stalleddl
+- 2026-06-27T06:33:05+0200 [info] qbittorrent::qbt_delete_probe
+- 2026-06-27T06:33:05+0200 [info] qbittorrent::qbt_probe_batch_end
+- 2026-06-27T06:33:05+0200 [info] motor::prepare_qbit_extras
+- 2026-06-27T06:33:05+0200 [info] motor::prepare_rd_temp_errors
+- 2026-06-27T06:33:05+0200 [info] motor::prepare_after_working_filter
+- 2026-06-27T06:33:06+0200 [info] search::export_results
+- 2026-06-27T06:33:06+0200 [info] search::export_results
+- 2026-06-27T06:33:06+0200 [info] real-debrid::rd_delete_torrent
+- 2026-06-27T06:33:06+0200 [info] real-debrid::rd_delete_torrent
+- 2026-06-27T06:33:07+0200 [info] real-debrid::rd_delete_torrent
+- 2026-06-27T06:33:07+0200 [info] real-debrid::rd_delete_torrent
+- 2026-06-27T06:33:08+0200 [info] real-debrid::rd_delete_torrent
+- 2026-06-27T06:33:09+0200 [info] real-debrid::rd_delete_torrent
+- 2026-06-27T06:33:09+0200 [info] search::editor_clean_search_rd_cleanup
+- 2026-06-27T06:33:09+0200 [info] search::editor_clean_search_end
+- 2026-06-27T06:33:09+02:00 [info] web::JOB_FINISHED_OK

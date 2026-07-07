@@ -1,0 +1,538 @@
+- 2026-06-28T23:42:31+02:00 [info] web::JOB_STARTED
+- 2026-06-28T23:42:31+02:00 [info] general::CONFIG_SNAPSHOT
+- 2026-06-28T23:42:31+02:00 [info] web::COMMAND_PREPARED
+- 2026-06-28T23:42:31+02:00 [info] web::PROCESS_STARTED
+- 2026-06-28T23:42:31+0200 [info] search::editor_clean_search_start
+- 2026-06-28T23:42:31+0200 [info] btdigg::browser_auto_search_start_dom
+- 2026-06-28T23:42:35+0200 [info] btdigg::extract_magnets
+- 2026-06-28T23:42:35+0200 [info] btdigg::btdigg_dump_dom_fallback
+- 2026-06-28T23:42:37+0200 [info] btdigg::browser_auto_search_end_dom
+- 2026-06-28T23:42:37+0200 [info] motor::prepare_results_start
+- 2026-06-28T23:42:37+0200 [info] motor::prepare_after_scoring
+- 2026-06-28T23:42:37+0200 [info] motor::prepare_after_filter
+- 2026-06-28T23:42:37+0200 [info] motor::prepare_after_query_prefilter
+- 2026-06-28T23:42:37+0200 [info] real-debrid::rd_api_call_count
+- 2026-06-28T23:42:37+0200 [info] real-debrid::rd_account_check_ok
+- 2026-06-28T23:42:37+0200 [info] real-debrid::rd_check_start
+- 2026-06-28T23:42:37+0200 [info] real-debrid::rd_api_call_count
+- 2026-06-28T23:42:37+0200 [warn] real-debrid::rd_api_http_error - disabled_endpoint
+- 2026-06-28T23:42:37+0200 [warn] real-debrid::rd_cache_api_disabled_cached_set - Real-Debrid HTTP 403: [37 disabled_endpoint] {
+	"error": "disabled_endpoint",
+	"error_code": 37
+}
+- 2026-06-28T23:42:37+0200 [warn] real-debrid::rd_cache_api_disabled - Real-Debrid HTTP 403: [37 disabled_endpoint] {
+	"error": "disabled_endpoint",
+	"error_code": 37
+}
+- 2026-06-28T23:42:37+0200 [info] real-debrid::rd_verify_batch_start
+- 2026-06-28T23:42:37+0200 [info] real-debrid::rd_api_call_count
+- 2026-06-28T23:42:37+0200 [info] real-debrid::rd_slots_refresh
+- 2026-06-28T23:42:37+0200 [info] real-debrid::rd_api_call_count
+- 2026-06-28T23:42:38+0200 [info] real-debrid::rd_existing_preload_done
+- 2026-06-28T23:42:38+0200 [info] real-debrid::rd_verify_queue_start
+- 2026-06-28T23:42:38+0200 [info] real-debrid::rd_verify_add_start - 黑色五叶草
+- 2026-06-28T23:42:38+0200 [info] real-debrid::rd_slots_reserve
+- 2026-06-28T23:42:38+0200 [info] real-debrid::rd_api_call_count
+- 2026-06-28T23:42:38+0200 [info] real-debrid::rd_verify_queue_submit - 黑色五叶草
+- 2026-06-28T23:42:38+0200 [info] real-debrid::rd_verify_add_start - Blacked-4K-Entire-Site-RIP-[titflix.ca]
+- 2026-06-28T23:42:38+0200 [info] real-debrid::rd_verify_queue_submit - Blacked-4K-Entire-Site-RIP-[titflix.ca]
+- 2026-06-28T23:42:38+0200 [info] real-debrid::rd_slots_reserve
+- 2026-06-28T23:42:38+0200 [info] real-debrid::rd_verify_add_start - Blacked-4K-Entire-Site-
+- 2026-06-28T23:42:38+0200 [info] real-debrid::rd_verify_queue_submit - Blacked-4K-Entire-Site-
+- 2026-06-28T23:42:38+0200 [info] real-debrid::rd_api_call_count
+- 2026-06-28T23:42:38+0200 [info] real-debrid::rd_slots_reserve
+- 2026-06-28T23:42:38+0200 [info] real-debrid::rd_verify_add_start - Blacked-4K-Entire-Site-
+- 2026-06-28T23:42:38+0200 [info] real-debrid::rd_verify_queue_submit - Blacked-4K-Entire-Site-
+- 2026-06-28T23:42:38+0200 [info] real-debrid::rd_api_call_count
+- 2026-06-28T23:42:38+0200 [info] real-debrid::rd_verify_queue_submit - 型月动画合集
+- 2026-06-28T23:42:38+0200 [info] real-debrid::rd_verify_add_start - 型月动画合集
+- 2026-06-28T23:42:38+0200 [info] real-debrid::rd_slots_reserve
+- 2026-06-28T23:42:38+0200 [info] real-debrid::rd_api_call_count
+- 2026-06-28T23:42:38+0200 [info] real-debrid::rd_verify_queue_submit - The.Haunting.of.Hill.House.S01.2160p.WEBRip.X265-DEFLATE
+- 2026-06-28T23:42:38+0200 [info] real-debrid::rd_slots_reserve
+- 2026-06-28T23:42:38+0200 [info] real-debrid::rd_verify_add_start - The.Haunting.of.Hill.House.S01.2160p.WEBRip.X265-DEFLATE
+- 2026-06-28T23:42:38+0200 [info] real-debrid::rd_slots_reserve
+- 2026-06-28T23:42:38+0200 [info] real-debrid::rd_verify_add_start - Shut.Eye.S01.2160p.WEB.H265-DEFLATE
+- 2026-06-28T23:42:38+0200 [info] real-debrid::rd_slots_reserve
+- 2026-06-28T23:42:38+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:42:38+0200 [info] real-debrid::rd_verify_queue_submit - Shut.Eye.S01.2160p.WEB.H265-DEFLATE
+- 2026-06-28T23:42:38+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:42:38+0200 [info] real-debrid::rd_verify_queue_submit - Blacked-Entire-Site-2024-[titflix.ca]
+- 2026-06-28T23:42:38+0200 [info] real-debrid::rd_verify_add_start - Blacked-Entire-Site-2024-[titflix.ca]
+- 2026-06-28T23:42:38+0200 [info] real-debrid::rd_slots_reserve
+- 2026-06-28T23:42:38+0200 [info] real-debrid::rd_verify_add_start - Blacked-Entire-Site-2024-[titflix.ca]
+- 2026-06-28T23:42:38+0200 [info] real-debrid::rd_verify_queue_submit - Blacked-Entire-Site-2024-[titflix.ca]
+- 2026-06-28T23:42:38+0200 [info] real-debrid::rd_slots_reserve
+- 2026-06-28T23:42:38+0200 [info] real-debrid::rd_verify_add_start - 277.Shingeki no Kyojin [MAI] [Ma10p_2160p]
+- 2026-06-28T23:42:38+0200 [info] real-debrid::rd_verify_queue_submit - 277.Shingeki no Kyojin [MAI] [Ma10p_2160p]
+- 2026-06-28T23:42:38+0200 [info] real-debrid::rd_slots_reserve
+- 2026-06-28T23:42:38+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:42:38+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:42:38+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:42:38+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:42:38+0200 [info] real-debrid::rd_api_call_count
+- 2026-06-28T23:42:38+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:42:38+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:42:38+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:42:38+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:42:38+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:42:38+0200 [warn] real-debrid::rd_api_http_error - too_many_requests
+- 2026-06-28T23:42:38+0200 [warn] real-debrid::rd_rate_429_cooldown
+- 2026-06-28T23:42:38+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:42:38+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:42:38+0200 [warn] real-debrid::rd_verify_retry_temp - Real-Debrid HTTP 429: [34 too_many_requests] {"error": "too_many_requests", "error_code": 34, "src": "front-2"}
+- 2026-06-28T23:42:38+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:42:38+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:42:38+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:42:38+0200 [info] real-debrid::rd_verify_added
+- 2026-06-28T23:42:38+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:42:38+0200 [info] real-debrid::rd_verify_added
+- 2026-06-28T23:42:38+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:42:38+0200 [info] real-debrid::rd_verify_added
+- 2026-06-28T23:42:38+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:42:38+0200 [info] real-debrid::rd_verify_added
+- 2026-06-28T23:42:38+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:42:40+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:42:40+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:42:40+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:42:40+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:42:40+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:42:40+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:42:40+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:42:40+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:42:40+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:42:40+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:42:42+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:42:42+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:42:42+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:42:42+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:42:42+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:42:42+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:42:42+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:42:42+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:42:42+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:42:42+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:42:44+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:42:44+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:42:44+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:42:44+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:42:44+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:42:44+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:42:44+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:42:44+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:42:44+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:42:44+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:42:46+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:42:46+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:42:46+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:42:46+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:42:46+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:42:46+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:42:46+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:42:46+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:42:46+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:42:46+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:42:48+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:42:48+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:42:48+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:42:48+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:42:48+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:42:48+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:42:48+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:42:48+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:42:48+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:42:48+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:42:50+0200 [info] real-debrid::rd_api_call_count
+- 2026-06-28T23:42:50+0200 [info] real-debrid::rd_api_call_count
+- 2026-06-28T23:42:50+0200 [info] real-debrid::rd_api_call_count
+- 2026-06-28T23:42:50+0200 [info] real-debrid::rd_api_call_count
+- 2026-06-28T23:42:50+0200 [info] real-debrid::rd_api_call_count
+- 2026-06-28T23:42:50+0200 [info] real-debrid::rd_api_call_count
+- 2026-06-28T23:42:50+0200 [info] real-debrid::rd_api_call_count
+- 2026-06-28T23:42:50+0200 [info] real-debrid::rd_api_call_count
+- 2026-06-28T23:42:50+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:42:50+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:42:50+0200 [info] real-debrid::rd_slots_refresh
+- 2026-06-28T23:42:50+0200 [info] real-debrid::rd_slots_reserve
+- 2026-06-28T23:42:50+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:42:50+0200 [debug] real-debrid::rd_verify_poll - 277.Shingeki no Kyojin [MAI] [Ma10p_2160p]
+- 2026-06-28T23:42:50+0200 [debug] real-debrid::rd_verify_poll - 黑色五叶草
+- 2026-06-28T23:42:50+0200 [warn] real-debrid::rd_api_http_error - too_many_requests
+- 2026-06-28T23:42:50+0200 [warn] real-debrid::rd_rate_429_cooldown
+- 2026-06-28T23:42:50+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:42:50+0200 [warn] real-debrid::rd_verify_retry_temp - Real-Debrid HTTP 429: [34 too_many_requests] {"error": "too_many_requests", "error_code": 34, "src": "front-1"}
+- 2026-06-28T23:42:50+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:42:50+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:42:50+0200 [info] real-debrid::rd_verify_added
+- 2026-06-28T23:42:50+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:42:50+0200 [debug] real-debrid::rd_verify_poll - Blacked-4K-Entire-Site-RIP-[titflix.ca]
+- 2026-06-28T23:42:50+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:42:50+0200 [info] real-debrid::rd_verify_added
+- 2026-06-28T23:42:50+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:42:51+0200 [info] real-debrid::rd_verify_added
+- 2026-06-28T23:42:51+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:42:51+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:42:51+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:42:52+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:42:52+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:42:52+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:42:52+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:42:52+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:42:52+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:42:52+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:42:53+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:42:53+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:42:53+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:42:54+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:42:54+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:42:54+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:42:54+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:42:54+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:42:54+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:42:54+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:42:55+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:42:55+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:42:55+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:42:56+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:42:56+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:42:56+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:42:56+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:42:56+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:42:56+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:42:57+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:42:57+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:42:57+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:42:57+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:42:58+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:42:58+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:42:58+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:42:58+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:42:58+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:42:58+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:42:59+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:42:59+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:42:59+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:42:59+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:43:00+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:43:00+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:43:00+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:43:00+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:43:00+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:43:00+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:43:01+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:43:01+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:43:01+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:43:01+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:43:02+0200 [info] real-debrid::rd_api_call_count
+- 2026-06-28T23:43:02+0200 [info] real-debrid::rd_api_call_count
+- 2026-06-28T23:43:02+0200 [info] real-debrid::rd_api_call_count
+- 2026-06-28T23:43:02+0200 [info] real-debrid::rd_api_call_count
+- 2026-06-28T23:43:02+0200 [info] real-debrid::rd_api_call_count
+- 2026-06-28T23:43:02+0200 [info] real-debrid::rd_api_call_count
+- 2026-06-28T23:43:02+0200 [info] real-debrid::rd_api_call_count
+- 2026-06-28T23:43:02+0200 [info] real-debrid::rd_api_call_count
+- 2026-06-28T23:43:02+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:43:02+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:43:03+0200 [info] real-debrid::rd_delete_torrent
+- 2026-06-28T23:43:03+0200 [info] real-debrid::rd_slots_release
+- 2026-06-28T23:43:03+0200 [info] real-debrid::rd_verify_pack_skip - Blacked-4K-Entire-Site-RIP-[titflix.ca]
+- 2026-06-28T23:43:03+0200 [info] real-debrid::rd_verify_queue_done_item - Blacked-4K-Entire-Site-RIP-[titflix.ca]
+- 2026-06-28T23:43:03+0200 [info] real-debrid::rd_slots_refresh
+- 2026-06-28T23:43:03+0200 [info] real-debrid::rd_slots_reserve
+- 2026-06-28T23:43:03+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:43:03+0200 [info] real-debrid::rd_verify_added
+- 2026-06-28T23:43:03+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:43:03+0200 [debug] real-debrid::rd_verify_poll - 黑色五叶草
+- 2026-06-28T23:43:03+0200 [warn] real-debrid::rd_api_http_error - infringing_file
+- 2026-06-28T23:43:03+0200 [warn] real-debrid::rd_verify_infringing - The.Haunting.of.Hill.House.S01.2160p.WEBRip.X265-DEFLATE
+- 2026-06-28T23:43:03+0200 [info] real-debrid::rd_verify_queue_done_item - The.Haunting.of.Hill.House.S01.2160p.WEBRip.X265-DEFLATE
+- 2026-06-28T23:43:03+0200 [debug] real-debrid::rd_verify_poll - Blacked-Entire-Site-2024-[titflix.ca]
+- 2026-06-28T23:43:03+0200 [debug] real-debrid::rd_verify_poll - 型月动画合集
+- 2026-06-28T23:43:03+0200 [debug] real-debrid::rd_verify_poll - Blacked-Entire-Site-2024-[titflix.ca]
+- 2026-06-28T23:43:03+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:43:03+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:43:03+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:43:03+0200 [info] real-debrid::rd_api_call_count
+- 2026-06-28T23:43:03+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:43:03+0200 [info] real-debrid::rd_api_call_count
+- 2026-06-28T23:43:03+0200 [info] real-debrid::rd_api_call_count
+- 2026-06-28T23:43:03+0200 [info] real-debrid::rd_api_call_count
+- 2026-06-28T23:43:03+0200 [info] real-debrid::rd_api_call_count
+- 2026-06-28T23:43:03+0200 [info] real-debrid::rd_api_call_count
+- 2026-06-28T23:43:03+0200 [info] real-debrid::rd_api_call_count
+- 2026-06-28T23:43:04+0200 [info] real-debrid::rd_api_call_count
+- 2026-06-28T23:43:04+0200 [debug] real-debrid::rd_verify_poll - 277.Shingeki no Kyojin [MAI] [Ma10p_2160p]
+- 2026-06-28T23:43:04+0200 [info] real-debrid::rd_delete_torrent
+- 2026-06-28T23:43:04+0200 [info] real-debrid::rd_delete_torrent
+- 2026-06-28T23:43:04+0200 [info] real-debrid::rd_slots_release
+- 2026-06-28T23:43:04+0200 [info] real-debrid::rd_verify_pack_skip - Blacked-Entire-Site-2024-[titflix.ca]
+- 2026-06-28T23:43:04+0200 [info] real-debrid::rd_slots_release
+- 2026-06-28T23:43:04+0200 [info] real-debrid::rd_verify_queue_done_item - Blacked-Entire-Site-2024-[titflix.ca]
+- 2026-06-28T23:43:04+0200 [info] real-debrid::rd_verify_pack_skip - Blacked-Entire-Site-2024-[titflix.ca]
+- 2026-06-28T23:43:04+0200 [info] real-debrid::rd_verify_queue_done_item - Blacked-Entire-Site-2024-[titflix.ca]
+- 2026-06-28T23:43:04+0200 [debug] real-debrid::rd_verify_poll - 黑色五叶草
+- 2026-06-28T23:43:04+0200 [info] real-debrid::rd_verify_select_files
+- 2026-06-28T23:43:04+0200 [debug] real-debrid::rd_verify_poll - Blacked-4K-Entire-Site-
+- 2026-06-28T23:43:04+0200 [debug] real-debrid::rd_verify_poll - Blacked-4K-Entire-Site-
+- 2026-06-28T23:43:04+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:43:04+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:43:04+0200 [info] real-debrid::rd_verify_added
+- 2026-06-28T23:43:04+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:43:04+0200 [info] real-debrid::rd_api_call_count
+- 2026-06-28T23:43:04+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-28T23:43:04+0200 [info] real-debrid::rd_api_call_count
+- 2026-06-28T23:43:04+0200 [info] real-debrid::rd_api_call_count
+- 2026-06-28T23:43:04+0200 [info] real-debrid::rd_api_call_count
+- 2026-06-28T23:43:05+0200 [info] real-debrid::rd_delete_torrent
+- 2026-06-28T23:43:05+0200 [info] real-debrid::rd_slots_release
+- 2026-06-28T23:43:05+0200 [info] real-debrid::rd_verify_pack_skip - Blacked-4K-Entire-Site-
+- 2026-06-28T23:43:05+0200 [info] real-debrid::rd_verify_queue_done_item - Blacked-4K-Entire-Site-
+- 2026-06-28T23:43:05+0200 [info] real-debrid::rd_api_call_count
+- 2026-06-28T23:43:05+0200 [info] real-debrid::rd_api_call_count
+- 2026-06-28T23:43:05+0200 [info] real-debrid::rd_delete_torrent
+- 2026-06-28T23:43:05+0200 [info] real-debrid::rd_slots_release
+- 2026-06-28T23:43:05+0200 [info] real-debrid::rd_verify_pack_skip - Blacked-4K-Entire-Site-
+- 2026-06-28T23:43:05+0200 [info] real-debrid::rd_verify_queue_done_item - Blacked-4K-Entire-Site-
+- 2026-06-28T23:43:05+0200 [debug] real-debrid::rd_verify_poll - Shut.Eye.S01.2160p.WEB.H265-DEFLATE
+- 2026-06-28T23:43:05+0200 [info] real-debrid::rd_api_call_count
+- 2026-06-28T23:43:05+0200 [debug] real-debrid::rd_verify_poll - 277.Shingeki no Kyojin [MAI] [Ma10p_2160p]
+- 2026-06-28T23:43:05+0200 [debug] real-debrid::rd_verify_poll - 型月动画合集
+- 2026-06-28T23:43:05+0200 [info] real-debrid::rd_delete_torrent
+- 2026-06-28T23:43:05+0200 [info] real-debrid::rd_slots_release
+- 2026-06-28T23:43:05+0200 [info] real-debrid::rd_verify_not_instant - 黑色五叶草
+- 2026-06-28T23:43:05+0200 [info] real-debrid::rd_delete_torrent
+- 2026-06-28T23:43:05+0200 [info] real-debrid::rd_verify_queue_done_item - 黑色五叶草
+- 2026-06-28T23:43:05+0200 [info] real-debrid::rd_slots_release
+- 2026-06-28T23:43:05+0200 [info] real-debrid::rd_verify_pack_skip - Shut.Eye.S01.2160p.WEB.H265-DEFLATE
+- 2026-06-28T23:43:05+0200 [info] real-debrid::rd_verify_queue_done_item - Shut.Eye.S01.2160p.WEB.H265-DEFLATE
+- 2026-06-28T23:43:06+0200 [info] real-debrid::rd_api_call_count
+- 2026-06-28T23:43:06+0200 [info] real-debrid::rd_delete_torrent
+- 2026-06-28T23:43:06+0200 [info] real-debrid::rd_slots_release
+- 2026-06-28T23:43:06+0200 [info] real-debrid::rd_verify_not_instant - 277.Shingeki no Kyojin [MAI] [Ma10p_2160p]
+- 2026-06-28T23:43:06+0200 [info] real-debrid::rd_verify_queue_done_item - 277.Shingeki no Kyojin [MAI] [Ma10p_2160p]
+- 2026-06-28T23:43:06+0200 [info] real-debrid::rd_api_call_count
+- 2026-06-28T23:43:06+0200 [debug] real-debrid::rd_verify_poll - 型月动画合集
+- 2026-06-28T23:43:07+0200 [info] real-debrid::rd_api_call_count
+- 2026-06-28T23:43:07+0200 [info] real-debrid::rd_delete_torrent
+- 2026-06-28T23:43:07+0200 [info] real-debrid::rd_slots_release
+- 2026-06-28T23:43:07+0200 [info] real-debrid::rd_verify_not_instant - 型月动画合集
+- 2026-06-28T23:43:07+0200 [info] real-debrid::rd_verify_queue_done_item - 型月动画合集
+- 2026-06-28T23:43:07+0200 [info] real-debrid::rd_verify_queue_end
+- 2026-06-28T23:43:07+0200 [warn] real-debrid::rd_verify_batch_end
+- 2026-06-28T23:43:07+0200 [warn] real-debrid::rd_check_summary
+- 2026-06-28T23:43:07+0200 [info] qbittorrent::qbt_relevance_filter
+- 2026-06-28T23:43:07+0200 [info] qbittorrent::qbt_probe_batch_start
+- 2026-06-28T23:43:07+0200 [info] qbittorrent::qbt_login
+- 2026-06-28T23:43:07+0200 [info] qbittorrent::qbt_login
+- 2026-06-28T23:43:07+0200 [info] qbittorrent::qbt_login
+- 2026-06-28T23:43:07+0200 [info] qbittorrent::qbt_login
+- 2026-06-28T23:43:07+0200 [info] qbittorrent::qbt_login
+- 2026-06-28T23:43:07+0200 [info] qbittorrent::qbt_probe_add - Blacked-4K-Entire-Site-RIP-[titflix.ca]
+- 2026-06-28T23:43:07+0200 [info] qbittorrent::qbt_probe_add - Blacked-4K-Entire-Site-
+- 2026-06-28T23:43:07+0200 [info] qbittorrent::qbt_probe_add - 黑色五叶草
+- 2026-06-28T23:43:07+0200 [info] qbittorrent::qbt_probe_add - Blacked-4K-Entire-Site-
+- 2026-06-28T23:43:07+0200 [info] qbittorrent::qbt_probe_add - 型月动画合集
+- 2026-06-28T23:43:09+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T23:43:09+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T23:43:09+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T23:43:09+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T23:43:09+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T23:43:11+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T23:43:11+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T23:43:11+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T23:43:11+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T23:43:11+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T23:43:13+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T23:43:13+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T23:43:13+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T23:43:13+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T23:43:13+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T23:43:15+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T23:43:15+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T23:43:15+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T23:43:15+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T23:43:15+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T23:43:17+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T23:43:17+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T23:43:17+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T23:43:17+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T23:43:19+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T23:43:19+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T23:43:20+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T23:43:20+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T23:43:21+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T23:43:21+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T23:43:22+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T23:43:22+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T23:43:23+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T23:43:23+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T23:43:24+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T23:43:24+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T23:43:25+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T23:43:26+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T23:43:26+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T23:43:26+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T23:43:28+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T23:43:28+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T23:43:28+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T23:43:28+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T23:43:30+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T23:43:30+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T23:43:30+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T23:43:30+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T23:43:32+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T23:43:32+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T23:43:32+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T23:43:32+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T23:43:34+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T23:43:34+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T23:43:34+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T23:43:34+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T23:43:36+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T23:43:36+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T23:43:36+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T23:43:36+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T23:43:38+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T23:43:38+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T23:43:38+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T23:43:38+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T23:43:40+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T23:43:40+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T23:43:40+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T23:43:40+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T23:43:42+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T23:43:42+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T23:43:42+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T23:43:42+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T23:43:43+0200 [info] qbittorrent::qbt_probe_result - Tracker indica posibles seeds (1), pero qBittorrent no conecto ni obtuvo vida real: state=metadl, seeds=0, peers=26, availability=0.00
+- 2026-06-28T23:43:43+0200 [info] qbittorrent::qbt_delete_probe
+- 2026-06-28T23:43:44+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T23:43:44+0200 [info] qbittorrent::qbt_login
+- 2026-06-28T23:43:44+0200 [info] qbittorrent::qbt_probe_result - Sin vida clara en qBittorrent: state=metadl, seeds=0, peers=5, progress=0.000
+- 2026-06-28T23:43:44+0200 [info] qbittorrent::qbt_delete_probe
+- 2026-06-28T23:43:44+0200 [info] qbittorrent::qbt_probe_add - The.Haunting.of.Hill.House.S01.2160p.WEBRip.X265-DEFLATE
+- 2026-06-28T23:43:44+0200 [info] qbittorrent::qbt_login
+- 2026-06-28T23:43:44+0200 [info] qbittorrent::qbt_probe_add - Shut.Eye.S01.2160p.WEB.H265-DEFLATE
+- 2026-06-28T23:43:44+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T23:43:44+0200 [info] qbittorrent::qbt_probe_result - Sin vida clara en qBittorrent: state=metadl, seeds=0, peers=1, progress=0.000
+- 2026-06-28T23:43:44+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T23:43:44+0200 [info] qbittorrent::qbt_delete_probe
+- 2026-06-28T23:43:44+0200 [info] qbittorrent::qbt_probe_result - Sin vida clara en qBittorrent: state=metadl, seeds=0, peers=2, progress=0.000
+- 2026-06-28T23:43:44+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T23:43:44+0200 [info] qbittorrent::qbt_delete_probe
+- 2026-06-28T23:43:44+0200 [info] qbittorrent::qbt_login
+- 2026-06-28T23:43:44+0200 [info] qbittorrent::qbt_probe_result - Sin vida clara en qBittorrent: state=metadl, seeds=0, peers=3, progress=0.000
+- 2026-06-28T23:43:44+0200 [info] qbittorrent::qbt_delete_probe
+- 2026-06-28T23:43:44+0200 [info] qbittorrent::qbt_login
+- 2026-06-28T23:43:44+0200 [info] qbittorrent::qbt_probe_add - Blacked-Entire-Site-2024-[titflix.ca]
+- 2026-06-28T23:43:44+0200 [info] qbittorrent::qbt_login
+- 2026-06-28T23:43:44+0200 [info] qbittorrent::qbt_probe_add - Blacked-Entire-Site-2024-[titflix.ca]
+- 2026-06-28T23:43:44+0200 [info] qbittorrent::qbt_probe_add - 277.Shingeki no Kyojin [MAI] [Ma10p_2160p]
+- 2026-06-28T23:43:46+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T23:43:46+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T23:43:46+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T23:43:46+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T23:43:46+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T23:43:48+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T23:43:48+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T23:43:48+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T23:43:48+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T23:43:48+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T23:43:50+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T23:43:50+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T23:43:50+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T23:43:50+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T23:43:50+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T23:43:52+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T23:43:52+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T23:43:52+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T23:43:52+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T23:43:52+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T23:43:54+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T23:43:54+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T23:43:54+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T23:43:54+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T23:43:54+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T23:43:56+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T23:43:56+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T23:43:56+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T23:43:56+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T23:43:56+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T23:43:58+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T23:43:58+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T23:43:58+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T23:43:58+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T23:43:58+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T23:44:00+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T23:44:00+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T23:44:00+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T23:44:00+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T23:44:00+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T23:44:02+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T23:44:02+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T23:44:02+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T23:44:02+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T23:44:02+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T23:44:04+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T23:44:04+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T23:44:04+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T23:44:04+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T23:44:04+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T23:44:06+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T23:44:06+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T23:44:06+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T23:44:06+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T23:44:06+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T23:44:08+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T23:44:08+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T23:44:08+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T23:44:08+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T23:44:08+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T23:44:10+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T23:44:10+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T23:44:10+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T23:44:10+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T23:44:10+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T23:44:12+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T23:44:12+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T23:44:12+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T23:44:12+0200 [info] qbittorrent::qbt_probe_result - qBittorrent ya tiene progreso real: progress=0.000, availability=0.00, state=stalleddl
+- 2026-06-28T23:44:12+0200 [info] qbittorrent::qbt_delete_probe
+- 2026-06-28T23:44:12+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T23:44:12+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T23:44:14+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T23:44:14+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T23:44:14+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T23:44:14+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T23:44:16+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T23:44:16+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T23:44:16+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T23:44:16+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T23:44:18+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T23:44:18+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T23:44:18+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T23:44:18+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T23:44:20+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T23:44:20+0200 [info] qbittorrent::qbt_probe_result - Sin vida clara en qBittorrent: state=metadl, seeds=0, peers=2, progress=0.000
+- 2026-06-28T23:44:20+0200 [info] qbittorrent::qbt_delete_probe
+- 2026-06-28T23:44:20+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T23:44:20+0200 [info] qbittorrent::qbt_probe_result - Sin vida clara en qBittorrent: state=metadl, seeds=0, peers=0, progress=0.000
+- 2026-06-28T23:44:20+0200 [info] qbittorrent::qbt_delete_probe
+- 2026-06-28T23:44:20+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T23:44:20+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-06-28T23:44:20+0200 [info] qbittorrent::qbt_probe_result - Sin vida clara en qBittorrent: state=metadl, seeds=0, peers=1, progress=0.000
+- 2026-06-28T23:44:20+0200 [info] qbittorrent::qbt_probe_result - qBittorrent tiene metadatos pero sin vida clara: state=stalleddl, seeds=0, peers=20
+- 2026-06-28T23:44:20+0200 [info] qbittorrent::qbt_delete_probe
+- 2026-06-28T23:44:20+0200 [info] qbittorrent::qbt_delete_probe
+- 2026-06-28T23:44:20+0200 [info] qbittorrent::qbt_probe_batch_end
+- 2026-06-28T23:44:20+0200 [info] motor::prepare_qbit_extras
+- 2026-06-28T23:44:20+0200 [info] motor::prepare_rd_temp_errors
+- 2026-06-28T23:44:20+0200 [info] motor::prepare_after_working_filter
+- 2026-06-28T23:44:20+0200 [info] search::export_results
+- 2026-06-28T23:44:20+0200 [info] search::export_results
+- 2026-06-28T23:44:20+0200 [info] real-debrid::rd_api_call_count
+- 2026-06-28T23:44:20+0200 [warn] real-debrid::rd_api_http_error - unknown_ressource
+- 2026-06-28T23:44:20+0200 [info] real-debrid::rd_delete_torrent_missing
+- 2026-06-28T23:44:20+0200 [info] search::editor_clean_search_rd_cleanup
+- 2026-06-28T23:44:20+0200 [info] search::editor_clean_search_end
+- 2026-06-28T23:44:20+02:00 [info] web::JOB_FINISHED_OK

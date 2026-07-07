@@ -10,19 +10,28 @@ Buscador RD es el proyecto unificado para buscar torrents, revisar disponibilida
 - Compose publico: `docker-compose.example.yaml`
 - Configuracion publica de ejemplo: `.env.example`
 
-El compose real, tokens, datos vivos, modelos, logs y backups no forman parte del Git publico.
+El compose real, tokens, modelos, backups y runtime crudo no forman parte del Git publico. Para revision externa se publica un espejo saneado en `diagnostics_public/`, con secretos tapados y datos de diagnostico visibles.
 
 ## Verdad del flujo
 
 Para revisar un fallo, empieza por la caja negra y los artefactos del job:
 
-1. runtime definido por `DATA_DIR`
-2. jobs bajo `jobs/<job_id>/`
-3. diagnosticos bajo `diagnostics/btdigg`
-4. sidecars y artefactos de `services/btdigg-rd/app/api/btdigg_rd`
-5. solo despues, logs sueltos o codigo
+1. `diagnostics_public/` si estas revisando desde GitHub, ChatGPT o una sandbox externa.
+2. runtime local definido por `DATA_DIR` si estas dentro de la maquina.
+3. jobs bajo `jobs/<job_id>/`
+4. diagnosticos bajo `diagnostics/btdigg`
+5. sidecars y artefactos de `services/btdigg-rd/app/api/btdigg_rd`
+6. solo despues, logs sueltos o codigo
 
 La UI visible manda cuando el problema es de botones, pestanas, busqueda, voz o seguimiento.
+
+`diagnostics_public/` se regenera al terminar jobs RD/BTDigg y tambien se puede regenerar manualmente con:
+
+```powershell
+powershell -NoProfile -ExecutionPolicy Bypass -File scripts\export_public_diagnostics.ps1 -CheckSecrets
+```
+
+Para que ChatGPT lo vea desde GitHub, despues de regenerar hay que hacer commit y push.
 
 ## Revision IA
 
@@ -40,4 +49,4 @@ python -m compileall -q services/btdigg-rd services/cloudflared
 python -m pytest -q
 ```
 
-Los tests live quedan saltados salvo que se activen variables explicitas de entorno. Los datos reales, backups, diagnosticos locales, runtime y caches quedan fuera de Git por `.gitignore`.
+Los tests live quedan saltados salvo que se activen variables explicitas de entorno. Los datos reales crudos, backups, runtime y caches quedan fuera de Git por `.gitignore`; el diagnostico publico saneado vive en `diagnostics_public/`.

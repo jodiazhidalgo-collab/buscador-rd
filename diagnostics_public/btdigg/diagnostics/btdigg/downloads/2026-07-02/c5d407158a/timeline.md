@@ -1,0 +1,15 @@
+- 2026-07-02T06:58:19+02:00 [info] download::DOWNLOAD_CLICK_RECEIVED - Enola Holmes 3 (2026) [4k 2160p][Esp]
+- 2026-07-02T06:58:19+02:00 [info] btdigg::BTDIGG_CLIENT_CARD
+- 2026-07-02T06:58:19+02:00 [info] btdigg::BTDIGG_SERVER_CARD_OK - Enola Holmes 3 (2026) [4k 2160p][Esp]
+- 2026-07-02T06:58:19+02:00 [info] download::CLIENT_CONTRACT_HINT
+- 2026-07-02T06:58:19+02:00 [info] download::CONTRACT_SUMMARY
+- 2026-07-02T06:58:19+02:00 [info] general::DESTINATION_SELECTED
+- 2026-07-02T06:58:19+02:00 [info] btdigg::BTDIGG_RESOLVE_START - Enola Holmes 3 (2026) [4k 2160p][Esp]
+- 2026-07-02T06:58:19+02:00 [info] btdigg::BTDIGG_RESOLVE_OK
+- 2026-07-02T06:58:19+02:00 [info] download::ROUTE_DECIDED - qbt_status=QBT_VIVO
+- 2026-07-02T06:58:19+02:00 [info] download::CONTRACT_SUMMARY - qbt_status=QBT_VIVO
+- 2026-07-02T06:58:19+02:00 [info] download::ROUTE_SELECTED
+- 2026-07-02T06:58:19+02:00 [info] qbittorrent::qBittorrent_INFO_BY_HASH_OK
+- 2026-07-02T06:58:19+02:00 [info] qbittorrent::QBIT_REUSABLE_ALREADY_PRESENT
+- 2026-07-02T06:58:19+02:00 [info] download::CLEANUP_FINAL - qbit_already_present
+- 2026-07-02T06:58:19+02:00 [info] download::DOWNLOAD_END_OK

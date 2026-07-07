@@ -1,0 +1,62 @@
+{
+  "already_present": false,
+  "card": {
+    "hash": "67b63f8a5b1d930ca5bb74b860a51946abf5b5c8",
+    "source": "RD",
+    "status": "RD OK",
+    "title": "Torrente.presidente.2026.Pm.TS.1O8Op.mkv"
+  },
+  "counts": {
+    "debug": 3,
+    "error": 1,
+    "info": 31,
+    "warn": 0
+  },
+  "destination": {
+    "destino": "movies",
+    "inbox": "/watch/torrents/inbox/movies",
+    "qbt_savepath": "/data/downloads/torrents/complete/movies",
+    "rdt_savepath": "/data/downloads/movies"
+  },
+  "diagnostic_status": "error",
+  "elapsed": "3.25s",
+  "engine": "RDT-Client",
+  "event_count": 35,
+  "hash": "67b63f8a5b1d930ca5bb74b860a51946abf5b5c8",
+  "id": "279e39ab82",
+  "index": 1,
+  "kind": "download",
+  "last_error_code": "RDT_CLIENT.RDT_FOLLOWUP_FAIL",
+  "last_event": "RDT_FOLLOWUP_FAIL",
+  "link_ref": "***",
+  "link_type": "***",
+  "module": "btdigg",
+  "operation_status": "error",
+  "phases": {
+    "btdigg": 4,
+    "download": 9,
+    "general": 1,
+    "rdt-client": 14,
+    "real-debrid": 7
+  },
+  "rdt_id": "8bef9003-3b2c-4c4d-8d23-9f5964bcb923",
+  "read_order": [
+    "summary.json",
+    "timeline.md",
+    "warnings.jsonl",
+    "errors.jsonl",
+    "events.jsonl"
+  ],
+  "remote": "192.168.1.199",
+  "route": "RD_VERIFIED_MAGNET_NATIVE",
+  "started_at": "2026-07-02T18:42:20+02:00",
+  "status": "error",
+  "title": "Torrente.presidente.2026.Pm.TS.1O8Op.mkv",
+  "tracking": {
+    "destino": "movies",
+    "hash": "67b63f8a5b1d930ca5bb74b860a51946abf5b5c8",
+    "record_id": "692c217e5654fd30",
+    "tracking_file": "/app/data/seguimiento_actual.json"
+  },
+  "updated_at": "2026-07-02T18:42:24+02:00"
+}

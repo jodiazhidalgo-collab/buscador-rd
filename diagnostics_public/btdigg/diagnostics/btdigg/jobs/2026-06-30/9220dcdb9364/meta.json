@@ -1,0 +1,35 @@
+{
+  "action": "search",
+  "config_snapshot": {
+    "qbit_probe_enabled": false,
+    "source": "/app/app/motor/btdigg/config.json"
+  },
+  "counts": {
+    "debug": 0,
+    "error": 0,
+    "info": 0,
+    "warn": 0
+  },
+  "id": "9220dcdb9364",
+  "kind": "job",
+  "meta": {},
+  "payload": {
+    "action": "search",
+    "min_gb": "0",
+    "mode": "0",
+    "module": "btdigg",
+    "pages": "1-10",
+    "query": "2160p The Devil Wears Prada 2"
+  },
+  "read_order": [
+    "summary.json",
+    "timeline.md",
+    "warnings.jsonl",
+    "errors.jsonl",
+    "events.jsonl"
+  ],
+  "started_at": "2026-06-30T19:17:59+02:00",
+  "status": "running",
+  "trace_id": "9220dcdb9364",
+  "trace_kind": "job"
+}

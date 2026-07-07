@@ -1,0 +1,28 @@
+{
+  "counts": {
+    "debug": 0,
+    "error": 1,
+    "info": 2,
+    "warn": 0
+  },
+  "diagnostic_status": "error",
+  "event_count": 3,
+  "id": "codexrdcl2",
+  "kind": "download",
+  "last_error_code": "REAL_DEBRID.RD_DELETE_FAIL",
+  "last_event": "RD_DELETE_FAIL",
+  "operation_status": "error",
+  "phases": {
+    "real-debrid": 3
+  },
+  "read_order": [
+    "summary.json",
+    "timeline.md",
+    "warnings.jsonl",
+    "errors.jsonl",
+    "events.jsonl"
+  ],
+  "started_at": "2026-07-02T19:30:58+02:00",
+  "status": "error",
+  "updated_at": "2026-07-02T19:30:58+02:00"
+}

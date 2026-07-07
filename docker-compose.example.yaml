@@ -47,6 +47,8 @@ services:
       - QBIT_PASS=${QBIT_PASS}
       - ARR_TORRENT_INBOX=/watch/torrents/inbox
       - DATA_DIR=/app/data
+      - BTDIGG_PUBLIC_DIAGNOSTICS_DIR=/app/diagnostics_public
+      - BTDIGG_PUBLIC_DIAGNOSTICS_EXTRA_ROOTS=/app/public_sources/cloudflared_data=cloudflared/data;/app/public_sources/cloudflared_logs=cloudflared/logs;/app/public_sources/whisper_logs=whisper/logs
       - BTDIGG_RUNTIME_DIR=/app/data/motor
       - BTDIGG_CONFIG_FILE=/app/data/motor/config.json
       - BTDIGG_TOKEN_FILE=/app/data/motor/rd_token.txt
@@ -60,6 +62,10 @@ services:
       - BTDIGG_VOICE_TRANSCRIBE_TIMEOUT_SEC=120
     volumes:
       - ./config/btdigg-rd/data:/app/data
+      - ./diagnostics_public:/app/diagnostics_public:rw
+      - ./config/cloudflared/data:/app/public_sources/cloudflared_data:ro
+      - ./config/cloudflared/logs:/app/public_sources/cloudflared_logs:ro
+      - ./config/whisper/logs:/app/public_sources/whisper_logs:ro
       - ${ARR_TORRENT_INBOX_HOST}:/watch/torrents/inbox:rw
 
   cloudflared:

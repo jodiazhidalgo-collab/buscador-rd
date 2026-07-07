@@ -1,0 +1,35 @@
+{
+  "action": "search",
+  "config_snapshot": {
+    "qbit_probe_enabled": false,
+    "source": "/app/app/motor/btdigg/config.json"
+  },
+  "counts": {
+    "debug": 0,
+    "error": 0,
+    "info": 0,
+    "warn": 0
+  },
+  "id": "345db6fba47d",
+  "kind": "job",
+  "meta": {},
+  "payload": {
+    "action": "search",
+    "min_gb": "0",
+    "mode": "0",
+    "module": "btdigg",
+    "pages": "1-20",
+    "query": "Johnny english 2018 castellano"
+  },
+  "read_order": [
+    "summary.json",
+    "timeline.md",
+    "warnings.jsonl",
+    "errors.jsonl",
+    "events.jsonl"
+  ],
+  "started_at": "2026-06-30T05:20:09+02:00",
+  "status": "running",
+  "trace_id": "345db6fba47d",
+  "trace_kind": "job"
+}
