@@ -9,7 +9,7 @@ from .utils import read_json, write_json
 
 
 _LOCK = RLock()
-_VIEWS = {"main", "settings", "history"}
+_VIEWS = {"main", "settings", "history", "queue"}
 
 
 def _safe_text(value: Any, limit: int = 220) -> str:

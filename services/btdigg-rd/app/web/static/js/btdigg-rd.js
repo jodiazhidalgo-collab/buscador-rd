@@ -38,6 +38,7 @@ function normalizeSearchMode(value) {
 
 const formStoreKey = "btdiggRd.form.v1";
 const viewStoreKey = "btdiggRd.view.v1";
+const queueMockDesignStoreKey = "btdiggRd.queueMock.design.v1";
 const activityStoreKey = "btdiggRd.activity.v1";
 const activeJobStoreKey = "btdiggRd.activeJob.v1";
 const rdFollowStoreKey = "btdiggRd.rdFollow.v1";
@@ -107,6 +108,7 @@ function visibleNow() {
 function currentViewName() {
   if (settingsVisible()) return "settings";
   if (historyVisible()) return "history";
+  if (queueMockVisible()) return "queue";
   return "main";
 }
 
@@ -990,6 +992,11 @@ function historyVisible() {
   return !!view && !view.classList.contains("hidden");
 }
 
+function queueMockVisible() {
+  const view = document.getElementById("queueMockView");
+  return !!view && !view.classList.contains("hidden");
+}
+
 function setSettingsSectionCollapsed(sectionId, collapsed) {
   const section = document.getElementById(sectionId);
   if (!section) return;
@@ -1020,12 +1027,15 @@ function setSettingsView(show, persist = true) {
   const main = document.getElementById("mainView");
   const settings = document.getElementById("settingsView");
   const history = document.getElementById("historyView");
+  const queue = document.getElementById("queueMockView");
   const toggle = document.getElementById("settingsToggle");
   const historyToggle = document.getElementById("historyToggle");
+  const queueToggle = document.getElementById("queueMockToggle");
   if (!main || !settings) return;
   main.classList.toggle("hidden", show);
   settings.classList.toggle("hidden", !show);
   if (history) history.classList.add("hidden");
+  if (queue) queue.classList.add("hidden");
   if (toggle) {
     toggle.classList.toggle("is-active", show);
     toggle.title = show ? "Volver a b\u00fasqueda" : "Ajustes";
@@ -1034,6 +1044,10 @@ function setSettingsView(show, persist = true) {
   if (historyToggle) {
     historyToggle.classList.remove("is-active");
     historyToggle.setAttribute("aria-pressed", "false");
+  }
+  if (queueToggle) {
+    queueToggle.classList.remove("is-active");
+    queueToggle.setAttribute("aria-pressed", "false");
   }
   if (persist) {
     try { localStorage.setItem(viewStoreKey, show ? "settings" : "main"); } catch (e) {}
@@ -1052,12 +1066,15 @@ function setHistoryView(show, persist = true) {
   const main = document.getElementById("mainView");
   const settings = document.getElementById("settingsView");
   const history = document.getElementById("historyView");
+  const queue = document.getElementById("queueMockView");
   const toggle = document.getElementById("historyToggle");
   const settingsToggle = document.getElementById("settingsToggle");
+  const queueToggle = document.getElementById("queueMockToggle");
   if (!main || !history) return;
   main.classList.toggle("hidden", show);
   history.classList.toggle("hidden", !show);
   if (settings) settings.classList.add("hidden");
+  if (queue) queue.classList.add("hidden");
   if (toggle) {
     toggle.classList.toggle("is-active", show);
     toggle.title = show ? "Volver a b\u00fasqueda" : "Historial";
@@ -1066,6 +1083,10 @@ function setHistoryView(show, persist = true) {
   if (settingsToggle) {
     settingsToggle.classList.remove("is-active");
     settingsToggle.setAttribute("aria-pressed", "false");
+  }
+  if (queueToggle) {
+    queueToggle.classList.remove("is-active");
+    queueToggle.setAttribute("aria-pressed", "false");
   }
   if (persist) {
     try { localStorage.setItem(viewStoreKey, show ? "history" : "main"); } catch (e) {}
@@ -1076,6 +1097,64 @@ function setHistoryView(show, persist = true) {
 
 function toggleHistoryView() {
   setHistoryView(!historyVisible(), true);
+}
+
+function setQueueMockView(show, persist = true) {
+  const main = document.getElementById("mainView");
+  const settings = document.getElementById("settingsView");
+  const history = document.getElementById("historyView");
+  const queue = document.getElementById("queueMockView");
+  const toggle = document.getElementById("queueMockToggle");
+  const settingsToggle = document.getElementById("settingsToggle");
+  const historyToggle = document.getElementById("historyToggle");
+  if (!main || !queue) return;
+  main.classList.toggle("hidden", show);
+  queue.classList.toggle("hidden", !show);
+  if (settings) settings.classList.add("hidden");
+  if (history) history.classList.add("hidden");
+  if (toggle) {
+    toggle.classList.toggle("is-active", show);
+    toggle.title = show ? "Volver a b\u00fasqueda" : "Lista";
+    toggle.setAttribute("aria-pressed", show ? "true" : "false");
+  }
+  if (settingsToggle) {
+    settingsToggle.classList.remove("is-active");
+    settingsToggle.setAttribute("aria-pressed", "false");
+  }
+  if (historyToggle) {
+    historyToggle.classList.remove("is-active");
+    historyToggle.setAttribute("aria-pressed", "false");
+  }
+  if (persist) {
+    try { localStorage.setItem(viewStoreKey, show ? "queue" : "main"); } catch (e) {}
+    markUiStateChanged();
+  }
+  if (show) {
+    let savedDesign = "compact";
+    try { savedDesign = localStorage.getItem(queueMockDesignStoreKey) || "compact"; } catch (e) {}
+    showQueueMockDesign(savedDesign);
+  }
+}
+
+function toggleQueueMockView() {
+  setQueueMockView(!queueMockVisible(), true);
+}
+
+function showQueueMockDesign(designId) {
+  const wanted = String(designId || "compact");
+  const designs = Array.from(document.querySelectorAll("[data-queue-design]"));
+  if (!designs.length) return;
+  const exists = designs.some((el) => el.getAttribute("data-queue-design") === wanted);
+  const active = exists ? wanted : "compact";
+  designs.forEach((el) => {
+    el.classList.toggle("is-active", el.getAttribute("data-queue-design") === active);
+  });
+  document.querySelectorAll("[data-queue-design-tab]").forEach((btn) => {
+    const selected = btn.getAttribute("data-queue-design-tab") === active;
+    btn.classList.toggle("is-active", selected);
+    btn.setAttribute("aria-selected", selected ? "true" : "false");
+  });
+  try { localStorage.setItem(queueMockDesignStoreKey, active); } catch (e) {}
 }
 
 function restoreViewState(savedView = null) {
@@ -1089,6 +1168,10 @@ function restoreViewState(savedView = null) {
   }
   if (view === "history") {
     setHistoryView(true, false);
+    return;
+  }
+  if (view === "queue") {
+    setQueueMockView(true, false);
     return;
   }
   setSettingsView(false, false);
