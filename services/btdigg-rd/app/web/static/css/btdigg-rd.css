@@ -232,19 +232,18 @@ h2{margin:0;font-size:15px;letter-spacing:0}
   .queue-page-head{align-items:center;padding:12px 14px}
   .queue-top-actions{gap:7px}
   .queue-top-actions .btn{height:34px;min-width:86px;padding:0 12px}
-  .queue-designs{grid-template-columns:minmax(300px,356px) minmax(0,1fr);gap:12px;align-items:start;padding:12px 14px 14px}
-  .queue-form{align-content:start;gap:9px;min-height:232px;padding:12px;background:linear-gradient(180deg,#11191b,#0c1112);box-shadow:inset 0 0 0 1px rgba(255,255,255,.025),0 10px 26px rgba(0,0,0,.12)}
-  .queue-form .field input,.queue-form .field select{height:37px}
+  .queue-designs{grid-template-columns:1fr;gap:10px;align-items:start;padding:12px 14px 14px}
+  .queue-form{grid-template-columns:minmax(260px,1fr) 84px 84px minmax(220px,280px) 78px 164px;gap:8px;align-items:end;padding:10px;background:linear-gradient(180deg,#11191b,#0c1112);box-shadow:inset 0 0 0 1px rgba(255,255,255,.025)}
+  .queue-form .field input,.queue-form .field select{height:38px}
   .queue-form .field>span{font-size:11px}
-  .queue-mini-grid{grid-template-columns:1fr 1fr;gap:8px}
-  .queue-mini-grid .field.medium{grid-column:1/-1}
-  .queue-switch{width:100%;height:37px}
-  #queueAddBtn{width:100%;height:38px;margin-top:2px}
-  .queue-card-list{min-height:232px;align-content:start;border:1px solid rgba(85,199,217,.16);border-radius:8px;background:linear-gradient(180deg,#101719,#0b1011);padding:10px;box-shadow:inset 0 0 0 1px rgba(255,255,255,.018)}
-  .queue-card-list .queue-empty{min-height:210px;border:0;background:transparent}
+  .queue-mini-grid{display:contents}
+  .queue-switch{width:100%;height:38px}
+  #queueAddBtn{width:auto;height:38px;margin-top:0;white-space:nowrap}
+  .queue-card-list{min-height:94px;align-content:start;border:1px solid rgba(85,199,217,.16);border-radius:8px;background:linear-gradient(180deg,#101719,#0b1011);padding:9px;box-shadow:inset 0 0 0 1px rgba(255,255,255,.018)}
+  .queue-card-list .queue-empty{min-height:64px;border:0;background:transparent}
 }
 @media(min-width:981px) and (max-width:1180px){
-  .queue-designs{grid-template-columns:minmax(286px,328px) minmax(0,1fr)}
+  .queue-form{grid-template-columns:minmax(220px,1fr) 74px 74px minmax(190px,240px) 72px 150px}
 }
 @keyframes queueMirrorSweep{0%{left:-48%;opacity:0}18%,66%{opacity:1}100%{left:110%;opacity:0}}
 .modal-backdrop{position:fixed;inset:0;z-index:50;display:grid;place-items:center;padding:18px;background:rgba(0,0,0,.58);backdrop-filter:blur(3px)}
