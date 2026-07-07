@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>BTDigg + RD</title>
-  <link rel="stylesheet" href="{{ url_for('static', filename='css/btdigg-rd.css') }}?v=38">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/btdigg-rd.css') }}?v=39">
 </head>
 <body>
   <main class="shell">
@@ -226,141 +226,49 @@
         <div class="queue-page-head">
           <div>
             <h2>Lista</h2>
-            <p class="sub">Cuatro dise&ntilde;os visuales para preparar b&uacute;squedas en cola.</p>
+            <p class="sub">Cola de b&uacute;squedas.</p>
           </div>
-          <div class="queue-design-tabs" role="tablist" aria-label="Dise&ntilde;os de lista">
-            <button class="queue-design-tab is-active" type="button" data-queue-design-tab="compact" onclick="showQueueMockDesign('compact')">A</button>
-            <button class="queue-design-tab" type="button" data-queue-design-tab="cards" onclick="showQueueMockDesign('cards')">B</button>
-            <button class="queue-design-tab" type="button" data-queue-design-tab="board" onclick="showQueueMockDesign('board')">C</button>
-            <button class="queue-design-tab" type="button" data-queue-design-tab="playlist" onclick="showQueueMockDesign('playlist')">D</button>
+          <div class="queue-top-actions" aria-label="Acciones de lista">
+            <button class="btn primary" type="button">Ejecutar lista</button>
+            <button class="btn" type="button">Limpiar</button>
+            <button class="btn stop-btn" type="button">Detener</button>
           </div>
         </div>
 
         <div class="queue-designs">
-          <div class="queue-design is-active" data-queue-design="compact">
-            <div class="queue-form queue-form-compact">
-              <label class="field grow">
-                <span>T&iacute;tulo</span>
-                <input type="text" value="John Wick">
-              </label>
-              <label class="field small">
-                <span>P&aacute;ginas</span>
-                <input type="text" value="1">
-              </label>
-              <label class="field medium">
-                <span>Modo</span>
-                <select>
-                  <option selected>Castellano obligatorio</option>
-                  <option>Calidad pura</option>
-                  <option>Sin filtro</option>
-                </select>
-              </label>
-              <label class="field small">
-                <span>GB</span>
-                <input type="text" value="0">
-              </label>
-              <button class="queue-switch is-on" type="button">qB ON</button>
-              <button class="btn primary" type="button">A&ntilde;adir</button>
-            </div>
-            <div class="queue-table">
-              <div class="queue-table-head">
-                <span>#</span><span>T&iacute;tulo</span><span>Pag.</span><span>Modo</span><span>GB</span><span>qB</span><span>Estado</span>
-              </div>
-              <div class="queue-row is-running">
-                <span class="queue-order">1</span><strong>John Wick <em>2014</em></strong><span>1</span><span>Castellano</span><span>0</span><span class="queue-chip on">ON</span><span class="queue-chip run">Ejecutando</span>
-              </div>
-              <div class="queue-row">
-                <span class="queue-order">2</span><strong>Gladiator <em>2000</em></strong><span>2</span><span>Calidad pura</span><span>4</span><span class="queue-chip off">OFF</span><span class="queue-chip wait">Pendiente</span>
-              </div>
-              <div class="queue-row is-done">
-                <span class="queue-order">3</span><strong>Matrix <em>1999</em></strong><span>1</span><span>Sin filtro</span><span>0</span><span class="queue-chip on">ON</span><span class="queue-chip done">Hecha</span>
-              </div>
-            </div>
-            <div class="queue-actions">
-              <button class="btn primary" type="button">Ejecutar lista</button>
-              <button class="btn" type="button">Pausar</button>
-              <button class="btn" type="button">Limpiar hechas</button>
-            </div>
-          </div>
-
-          <div class="queue-design" data-queue-design="cards">
-            <div class="queue-form queue-form-stacked">
-              <label class="field grow"><span>T&iacute;tulo</span><input type="text" value="Blade Runner 2049"></label>
-              <div class="queue-mini-grid">
-                <label class="field small"><span>P&aacute;ginas</span><input type="text" value="1"></label>
-                <label class="field small"><span>GB</span><input type="text" value="8"></label>
-                <label class="field medium"><span>Modo</span><select><option>Calidad pura</option><option selected>Castellano obligatorio</option></select></label>
-                <button class="queue-switch is-on" type="button">qB ON</button>
-              </div>
-              <button class="btn primary" type="button">A&ntilde;adir a la lista</button>
-            </div>
-            <div class="queue-card-list">
-              <article class="queue-task-card is-running">
-                <div><strong>Blade Runner 2049</strong><small>Pag. 1 - Castellano - 8 GB</small></div>
-                <span class="queue-chip run">Ahora</span>
-                <div class="queue-card-actions"><button type="button">Subir</button><button type="button">Bajar</button></div>
-              </article>
-              <article class="queue-task-card">
-                <div><strong>Alien Romulus</strong><small>Pag. 2 - Calidad pura - 5 GB</small></div>
-                <span class="queue-chip wait">Pendiente</span>
-                <div class="queue-card-actions"><button type="button">Subir</button><button type="button">Bajar</button></div>
-              </article>
-              <article class="queue-task-card">
-                <div><strong>Dune Parte Dos</strong><small>Pag. 1 - Castellano - qB OFF</small></div>
-                <span class="queue-chip wait">Pendiente</span>
-                <div class="queue-card-actions"><button type="button">Subir</button><button type="button">Bajar</button></div>
-              </article>
-            </div>
-          </div>
-
-          <div class="queue-design" data-queue-design="board">
-            <div class="queue-form queue-form-band">
-              <label class="field grow"><span>T&iacute;tulo</span><input type="text" value="Mad Max Fury Road"></label>
+          <div class="queue-form queue-form-stacked">
+            <label class="field grow"><span>T&iacute;tulo</span><input type="text" value="Blade Runner 2049"></label>
+            <div class="queue-mini-grid">
               <label class="field small"><span>P&aacute;ginas</span><input type="text" value="1"></label>
-              <label class="field medium"><span>Modo</span><select><option selected>Calidad pura</option><option>Castellano obligatorio</option></select></label>
-              <label class="field small"><span>GB</span><input type="text" value="6"></label>
-              <button class="queue-switch is-off" type="button">qB OFF</button>
-              <button class="btn primary" type="button">A&ntilde;adir</button>
+              <label class="field small"><span>GB</span><input type="text" value="8"></label>
+              <label class="field medium"><span>Modo</span><select><option>Calidad pura</option><option selected>Castellano obligatorio</option><option>Sin filtro</option></select></label>
+              <button class="queue-switch is-on" type="button">qB ON</button>
             </div>
-            <div class="queue-board">
-              <section>
-                <h3>Pendientes</h3>
-                <div class="queue-board-item"><strong>Interstellar</strong><small>1 - Castellano - qB ON</small></div>
-                <div class="queue-board-item"><strong>Tenet</strong><small>2 - Calidad pura - qB OFF</small></div>
-              </section>
-              <section class="is-running">
-                <h3>Ahora</h3>
-                <div class="queue-board-item"><strong>Mad Max Fury Road</strong><small>Buscando p&aacute;gina 1 de 1</small></div>
-              </section>
-              <section>
-                <h3>Terminadas</h3>
-                <div class="queue-board-item"><strong>Heat</strong><small>Guardada en historial</small></div>
-              </section>
-            </div>
+            <button class="btn primary" type="button">A&ntilde;adir a la lista</button>
           </div>
 
-          <div class="queue-design" data-queue-design="playlist">
-            <div class="queue-playlist">
-              <div class="queue-now">
-                <span class="queue-chip run">Resolviendo ahora</span>
-                <strong>El padrino <em>1972</em></strong>
-                <small>P&aacute;gina 1 - Castellano obligatorio - qB ON</small>
-                <div class="queue-progress"><span style="width:58%"></span></div>
+          <div class="queue-card-list">
+            <article class="queue-task-card is-done" title="Completada">
+              <div class="queue-task-main"><strong>Blade Runner 2049</strong><small>Pag. 1 - Castellano - 8 GB - qB ON</small></div>
+              <div class="queue-card-actions" aria-label="Ordenar">
+                <button class="queue-order-btn" type="button" title="Subir">&#9650;</button>
+                <button class="queue-order-btn" type="button" title="Bajar">&#9660;</button>
               </div>
-              <div class="queue-next-list">
-                <div class="queue-next"><b>1</b><span>Scarface</span><small>Pag. 1 - 0 GB</small></div>
-                <div class="queue-next"><b>2</b><span>Casino</span><small>Pag. 2 - 3 GB</small></div>
-                <div class="queue-next"><b>3</b><span>Goodfellas</span><small>Pag. 1 - qB OFF</small></div>
+            </article>
+            <article class="queue-task-card is-running" title="Trabajando">
+              <div class="queue-task-main"><strong>Alien Romulus</strong><small>Pag. 2 - Calidad pura - 5 GB - qB ON</small></div>
+              <div class="queue-card-actions" aria-label="Ordenar">
+                <button class="queue-order-btn" type="button" title="Subir">&#9650;</button>
+                <button class="queue-order-btn" type="button" title="Bajar">&#9660;</button>
               </div>
-            </div>
-            <div class="queue-form queue-form-band">
-              <label class="field grow"><span>T&iacute;tulo</span><input type="text" value="Goodfellas"></label>
-              <label class="field small"><span>P&aacute;ginas</span><input type="text" value="1"></label>
-              <label class="field medium"><span>Modo</span><select><option selected>Castellano obligatorio</option><option>Sin filtro</option></select></label>
-              <label class="field small"><span>GB</span><input type="text" value="0"></label>
-              <button class="queue-switch is-on" type="button">qB ON</button>
-              <button class="btn primary" type="button">A&ntilde;adir</button>
-            </div>
+            </article>
+            <article class="queue-task-card is-pending" title="Pendiente">
+              <div class="queue-task-main"><strong>Dune Parte Dos</strong><small>Pag. 1 - Castellano - 0 GB - qB OFF</small></div>
+              <div class="queue-card-actions" aria-label="Ordenar">
+                <button class="queue-order-btn" type="button" title="Subir">&#9650;</button>
+                <button class="queue-order-btn" type="button" title="Bajar">&#9660;</button>
+              </div>
+            </article>
           </div>
         </div>
       </div>
@@ -378,6 +286,6 @@
     </div>
   </div>
 
-  <script src="{{ url_for('static', filename='js/btdigg-rd.js') }}?v=37"></script>
+  <script src="{{ url_for('static', filename='js/btdigg-rd.js') }}?v=38"></script>
 </body>
 </html>

@@ -38,7 +38,6 @@ function normalizeSearchMode(value) {
 
 const formStoreKey = "btdiggRd.form.v1";
 const viewStoreKey = "btdiggRd.view.v1";
-const queueMockDesignStoreKey = "btdiggRd.queueMock.design.v1";
 const activityStoreKey = "btdiggRd.activity.v1";
 const activeJobStoreKey = "btdiggRd.activeJob.v1";
 const rdFollowStoreKey = "btdiggRd.rdFollow.v1";
@@ -1129,32 +1128,10 @@ function setQueueMockView(show, persist = true) {
     try { localStorage.setItem(viewStoreKey, show ? "queue" : "main"); } catch (e) {}
     markUiStateChanged();
   }
-  if (show) {
-    let savedDesign = "compact";
-    try { savedDesign = localStorage.getItem(queueMockDesignStoreKey) || "compact"; } catch (e) {}
-    showQueueMockDesign(savedDesign);
-  }
 }
 
 function toggleQueueMockView() {
   setQueueMockView(!queueMockVisible(), true);
-}
-
-function showQueueMockDesign(designId) {
-  const wanted = String(designId || "compact");
-  const designs = Array.from(document.querySelectorAll("[data-queue-design]"));
-  if (!designs.length) return;
-  const exists = designs.some((el) => el.getAttribute("data-queue-design") === wanted);
-  const active = exists ? wanted : "compact";
-  designs.forEach((el) => {
-    el.classList.toggle("is-active", el.getAttribute("data-queue-design") === active);
-  });
-  document.querySelectorAll("[data-queue-design-tab]").forEach((btn) => {
-    const selected = btn.getAttribute("data-queue-design-tab") === active;
-    btn.classList.toggle("is-active", selected);
-    btn.setAttribute("aria-selected", selected ? "true" : "false");
-  });
-  try { localStorage.setItem(queueMockDesignStoreKey, active); } catch (e) {}
 }
 
 function restoreViewState(savedView = null) {
