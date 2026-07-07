@@ -261,10 +261,14 @@ def _export_sqlite(db_path: Path, dest_dir: Path) -> tuple[int, int]:
 
 
 def _repo_snapshot(root: Path) -> dict[str, Any]:
-    try:
-        repo_root = PROJECT_ROOT.parents[1]
-    except IndexError:
-        repo_root = PROJECT_ROOT
+    configured_root = os.environ.get("BTDIGG_PROJECT_ROOT", "").strip()
+    if configured_root and (Path(configured_root) / ".git").exists():
+        repo_root = Path(configured_root)
+    else:
+        try:
+            repo_root = PROJECT_ROOT.parents[1]
+        except IndexError:
+            repo_root = PROJECT_ROOT
     snapshot: dict[str, Any] = {"root": str(repo_root)}
     try:
         head = subprocess.check_output(["git", "-C", str(repo_root), "rev-parse", "HEAD"], text=True, stderr=subprocess.DEVNULL).strip()

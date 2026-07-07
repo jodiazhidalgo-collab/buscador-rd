@@ -142,3 +142,19 @@ def test_public_diagnostics_cleans_mounted_output_contents(
     assert public_dir.exists()
     assert not old_dir.exists()
     assert (public_dir / "manifest.json").exists()
+
+
+def test_public_diagnostics_manifest_uses_mounted_project_root(
+    isolated_data_dir, reload_data_dir_modules, monkeypatch, tmp_path
+):
+    mounted_root = tmp_path / "mounted_repo"
+    (mounted_root / ".git").mkdir(parents=True)
+    monkeypatch.setenv("BTDIGG_PROJECT_ROOT", str(mounted_root))
+    public_diagnostics, public_dir = _load_public_diagnostics(
+        isolated_data_dir, reload_data_dir_modules, monkeypatch, tmp_path
+    )
+
+    public_diagnostics.export_public_diagnostics(trigger="pytest")
+
+    manifest = json.loads((public_dir / "manifest.json").read_text(encoding="utf-8"))
+    assert manifest["summary"]["repo"]["root"] == str(mounted_root)
