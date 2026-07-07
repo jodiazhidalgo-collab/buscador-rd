@@ -2111,30 +2111,15 @@ function renderLogLine(div, line) {
   addLogPart(div, text);
 }
 
-function logLineCompareText(line) {
-  const text = String(line || "");
-  return text.startsWith(rdOkVerifyTitleMarker) ? text.slice(rdOkVerifyTitleMarker.length) : text;
-}
-
-function createLogLineElement(line) {
-  const div = document.createElement("div");
-  div.className = "line";
-  renderLogLine(div, line);
-  return div;
-}
-
 function renderLog(module) {
   const box = document.getElementById("log-" + module);
   if (!box) return;
-  const lines = cleanLines(moduleLogs[module] || []);
-  const displayLines = lines.map(logLineCompareText);
-  while (box.children.length > lines.length) box.removeChild(box.lastElementChild);
-  lines.forEach((line, index) => {
-    const current = box.children[index];
-    if (current && (current.textContent || "") === displayLines[index]) return;
-    const next = createLogLineElement(line);
-    if (current) box.replaceChild(next, current);
-    else box.appendChild(next);
+  box.innerHTML = "";
+  cleanLines(moduleLogs[module] || []).forEach(line => {
+    const div = document.createElement("div");
+    div.className = "line";
+    renderLogLine(div, line);
+    box.appendChild(div);
   });
   box.scrollTop = box.scrollHeight;
 }
