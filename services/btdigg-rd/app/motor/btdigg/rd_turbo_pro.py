@@ -295,6 +295,9 @@ DEFAULT_CONFIG = {
     "delay_between_rd_checks_sec": 0.0,
     "delay_between_btdigg_pages_sec": 7,
     "delay_after_btdigg_429_sec": 8,
+    "btdigg_curl_cffi_enabled": True,
+    "btdigg_curl_cffi_impersonates": ["chrome124", "chrome120", "chrome110"],
+    "btdigg_curl_cffi_timeout_sec": 25,
     "stop_btdigg_on_429": False,
     "jdownloader_clipboard_mode": True,
     "write_last_links_txt": True,
@@ -2064,11 +2067,103 @@ def extract_magnets_from_text(text, source_url=""):
     return dedupe_results(magnets)
 
 
+class BTDiggFetchError(RuntimeError):
+    pass
+
+
+def _btdigg_block_reason(text="", status_code=0, stderr=""):
+    blob = f"{text or ''}\n{stderr or ''}".lower()
+    if int(status_code or 0) == 429 or "too many requests" in blob or "http/2 429" in blob:
+        return "HTTP 429 / demasiadas peticiones desde el NAS"
+    if "trace/breakpoint trap" in blob or "dumped core" in blob:
+        return "Chromium headless se ha caido"
+    if "bloqueadaseccionsegunda.cultura.gob.es" in blob or "pagina prohibida" in blob or "página prohibida" in blob:
+        return "bloqueo DNS/ISP hacia BTDigg"
+    if "privacy error" in blob or "your connection is not private" in blob:
+        return "error de privacidad/certificado"
+    if "one more step" in blob and "captcha" in blob:
+        return "CAPTCHA de BTDigg"
+    if "error establishing a database connection" in blob:
+        return "BTDigg devuelve error de base de datos"
+    if "access denied" in blob or "forbidden" in blob:
+        return "BTDigg devuelve acceso prohibido"
+    return ""
+
+
+def _btdigg_curl_cffi_impersonates():
+    raw = CONFIG.get("btdigg_curl_cffi_impersonates", ["chrome124", "chrome120", "chrome110"])
+    if isinstance(raw, str):
+        values = [x.strip() for x in re.split(r"[,;|]+", raw) if x.strip()]
+    else:
+        values = [str(x).strip() for x in (raw or []) if str(x).strip()]
+    return values or ["chrome124"]
+
+
+def _btdigg_fetch_curl_cffi(url):
+    if not CONFIG.get("btdigg_curl_cffi_enabled", True):
+        return None
+    try:
+        from curl_cffi import requests as curl_requests
+    except Exception as e:
+        diag("btdigg_curl_cffi_unavailable", error=repr(e))
+        return None
+
+    timeout = max(5.0, float(CONFIG.get("btdigg_curl_cffi_timeout_sec", 25) or 25))
+    headers = {
+        "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
+        "accept-language": "es-ES,es;q=0.9,en;q=0.8",
+    }
+    last_failure = ""
+    for impersonate in _btdigg_curl_cffi_impersonates():
+        cancel_checkpoint("btdigg_curl_cffi.before")
+        try:
+            response = curl_requests.get(
+                url,
+                impersonate=impersonate,
+                headers=headers,
+                timeout=timeout,
+                allow_redirects=True,
+            )
+            html_text = response.text or ""
+            status_code = int(getattr(response, "status_code", 0) or 0)
+            reason = _btdigg_block_reason(html_text, status_code=status_code)
+            results = extract_magnets_from_text(html_text, source_url=url)
+            diag(
+                "btdigg_curl_cffi_fetch",
+                url=url,
+                impersonate=impersonate,
+                status_code=status_code,
+                html_chars=len(html_text),
+                magnets=len(results),
+                blocked_reason=reason,
+            )
+            if reason:
+                last_failure = reason
+                continue
+            return results
+        except Exception as e:
+            last_failure = repr(e)
+            diag("btdigg_curl_cffi_error", url=url, impersonate=impersonate, error=last_failure[:500])
+
+    raise BTDiggFetchError(last_failure or "curl_cffi no pudo obtener BTDigg")
+
+
 def _btdigg_dump_dom_fallback(url):
     """
     Fallback NAS/Docker: Chromium --dump-dom ve los magnets aunque CDP no los recoja.
     No cambia filtros ni lógica; solo alimenta al extractor con el HTML real.
     """
+    curl_error = ""
+    try:
+        curl_results = _btdigg_fetch_curl_cffi(url)
+        if curl_results is not None:
+            if curl_results:
+                print(f"  BTDigg Chrome TLS: {len(curl_results)} magnets encontrados")
+            return curl_results
+    except BTDiggFetchError as e:
+        curl_error = str(e)
+        diag("btdigg_curl_cffi_failed", url=url, error=curl_error[:500])
+
     browser = os.environ.get("BROWSER_BIN") or str(CONFIG.get("browser_bin") or "/usr/bin/chromium")
     ua = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124 Safari/537.36"
     cmd = [
@@ -2083,21 +2178,37 @@ def _btdigg_dump_dom_fallback(url):
         url,
     ]
     try:
-        rc, stdout, _stderr = run_capture_interruptible(
+        rc, stdout, stderr = run_capture_interruptible(
             cmd,
             timeout=int(CONFIG.get("btdigg_dump_dom_timeout_sec", 45) or 45),
             where="btdigg_dump_dom",
         )
         html_text = stdout or ""
         results = extract_magnets_from_text(html_text, source_url=url)
-        diag("btdigg_dump_dom_fallback", url=url, magnets=len(results), html_chars=len(html_text), rc=rc)
+        reason = _btdigg_block_reason(html_text, status_code=0, stderr=stderr)
+        if rc != 0 and not results:
+            reason = reason or f"Chromium salio con codigo {rc}"
+        diag(
+            "btdigg_dump_dom_fallback",
+            url=url,
+            magnets=len(results),
+            html_chars=len(html_text),
+            rc=rc,
+            blocked_reason=reason,
+            stderr_tail=(stderr or "")[-500:],
+        )
+        if reason and not results:
+            detail = reason
+            if curl_error:
+                detail = f"{detail}; curl_cffi: {curl_error}"
+            raise BTDiggFetchError(detail)
         if results:
             print(f"  Rescate DOM: {len(results)} magnets encontrados")
         return results
     except Exception as e:
         diag("btdigg_dump_dom_fallback_error", url=url, error=repr(e))
         print(f"  Rescate DOM falló: {e}")
-        return []
+        raise
 
 def extract_urls_from_text(text):
     found = re.findall(r"https?://[^\s\"'<>]+", text, flags=re.I)
