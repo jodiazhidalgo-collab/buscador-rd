@@ -3424,6 +3424,32 @@ async function saveSettings(btn = null) {
   }
 }
 
+async function pushProject(btn = null) {
+  const pushBtn = btn || document.getElementById("settingsPushBtn");
+  const status = document.getElementById("settingsStatus");
+  setActionButtonState(pushBtn, "loading");
+  if (status) status.textContent = "Push...";
+  try {
+    const response = await fetch("/api/project/push", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({})
+    });
+    const data = await response.json().catch(() => ({}));
+    if (!response.ok || !data.ok) throw new Error(data.error || "push");
+    if (status) status.textContent = "Push OK.";
+    setStatus("Push OK");
+    setActionButtonState(pushBtn, "done", "OK");
+    playFinishSound("project-push-" + Date.now());
+    return true;
+  } catch (e) {
+    if (status) status.textContent = "Push ERR.";
+    setStatus("Push ERR");
+    setActionButtonState(pushBtn, "error", "ERR");
+    return false;
+  }
+}
+
 function esc(s) {
   return (s === null || s === undefined ? "" : String(s)).replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
 }

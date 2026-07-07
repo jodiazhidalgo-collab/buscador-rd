@@ -49,6 +49,10 @@ h2{margin:0;font-size:15px;letter-spacing:0}
 .btn:hover{background:#2c3338;border-color:#5b6971}
 .btn:active{transform:translateY(1px)}
 .btn.primary{background:linear-gradient(180deg,#2ecc7d,#1f9b61);border-color:#43e494;color:#07120c}
+.settings-push-btn{min-width:74px;background:linear-gradient(180deg,#ffb347,#f07818);border-color:#ffca73;color:#160b02}
+.settings-push-btn:hover{background:linear-gradient(180deg,#ffc15d,#f48624);border-color:#ffda95}
+.settings-push-btn.is-done{background:#1f7f52;border-color:var(--green);color:#eefaf3}
+.settings-push-btn.is-error{background:#823338;border-color:var(--red);color:#fff0f0}
 .btn.stop-btn{background:#2b2022;border-color:rgba(255,107,107,.48);color:#ffd8d8}
 .btn.stop-btn:hover{background:#342427;border-color:rgba(255,107,107,.7)}
 .btn.stop-btn.is-stopping{background:#3a2d18;border-color:rgba(240,184,90,.65);color:#ffe2a7}
@@ -310,7 +314,10 @@ h2{margin:0;font-size:15px;letter-spacing:0}
   .search-actions .btn{min-width:0;padding:0 5px;font-size:12px}
   .search-actions .voice-btn{width:40px;min-width:40px;padding:0;font-size:17px}
   .gear-title{gap:6px;flex-wrap:wrap}
+  .settings-actions{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:6px;flex-wrap:nowrap}
   .settings-actions .btn,.modal-actions .btn{flex:1}
+  .settings-actions .btn{min-width:0;padding:0 5px;font-size:12px;white-space:nowrap}
+  .settings-push-btn{min-width:0}
   .settings-section-head{min-height:54px;padding:10px 12px}
   .settings-section-head strong{font-size:13px}
   .settings-section-head small{font-size:11px}

@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>BTDigg + RD</title>
-  <link rel="stylesheet" href="{{ url_for('static', filename='css/btdigg-rd.css') }}?v=43">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/btdigg-rd.css') }}?v=44">
 </head>
 <body>
   <main class="shell">
@@ -83,6 +83,7 @@
           <div class="settings-actions">
             <button id="settingsResetBtn" class="btn" type="button" onclick="openSettingsResetModal()">Restablecer</button>
             <button id="settingsSaveBtn" class="btn primary" type="button" onclick="saveSettings(this)">Guardar</button>
+            <button id="settingsPushBtn" class="btn settings-push-btn" type="button" title="Push a GitHub" onclick="pushProject(this)">Push</button>
           </div>
         </div>
         <div id="settingsGeneralSection" class="settings-section">
@@ -259,6 +260,6 @@
     </div>
   </div>
 
-  <script src="{{ url_for('static', filename='js/btdigg-rd.js') }}?v=39"></script>
+  <script src="{{ url_for('static', filename='js/btdigg-rd.js') }}?v=40"></script>
 </body>
 </html>

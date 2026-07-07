@@ -16,6 +16,7 @@ docker-compose.yaml
 
 # Runtime de BTDigg + RD.
 config/btdigg-rd/data/
+config/btdigg-rd/git/
 
 # Runtime y credenciales de Cloudflared.
 config/cloudflared/data/

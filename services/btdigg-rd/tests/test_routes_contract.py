@@ -17,6 +17,7 @@ def test_public_routes_stay_registered(app):
         "/api/tv-rules": {"GET", "POST"},
         "/api/title-resolver/resolve": {"POST"},
         "/api/spoken-title-resolver/resolve": {"POST"},
+        "/api/project/push": {"POST"},
         "/api/voice/diagnostic": {"POST"},
         "/api/voice/transcribe": {"POST"},
         "/api/results/btdigg": {"GET"},

@@ -1,6 +1,6 @@
 {
   "summary": {
-    "generated_at": "2026-07-07T22:37:43.063894+00:00",
+    "generated_at": "2026-07-07T23:16:23.532148+00:00",
     "trigger": "manual-script",
     "current_run_id": "",
     "exported_files": 2827,
@@ -27,7 +27,7 @@
     ],
     "repo": {
       "root": "\\\\192.168.1.159\\docker\\buscador-rd",
-      "head": "230d2cfc08e0b61dd0619aceae1312b0641411c2",
+      "head": "6bce0725ad2f12021c5f6bf62f90044c1fd05c58",
       "tracked_files_count": 2936,
       "public_dir": "\\\\192.168.1.159\\docker\\buscador-rd\\diagnostics_public"
     }
@@ -22628,7 +22628,7 @@
     {
       "source": "btdigg",
       "path": "ui_state.json",
-      "bytes": 444,
+      "bytes": 440,
       "exported": true,
       "redacted": false,
       "note": ""

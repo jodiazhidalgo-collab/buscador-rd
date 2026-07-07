@@ -37,6 +37,18 @@ powershell -NoProfile -ExecutionPolicy Bypass -File scripts\export_public_diagno
 
 Despues de regenerar, GitHub/ChatGPT solo ve los cambios si se hace commit y push.
 
+## Publicacion desde la web
+
+La pantalla de Ajustes incluye un boton `Push`. En el despliegue real, ese boton:
+
+1. regenera `diagnostics_public/`;
+2. ejecuta `gitleaks` sobre el diagnostico publico y sobre los archivos preparados para commit;
+3. respeta `.gitignore`, por lo que no fuerza runtime crudo ni secretos ignorados;
+4. crea commit automatico solo si hay cambios;
+5. hace push por SSH al repo `buscador-rd`.
+
+La credencial de escritura es una deploy key SSH local y limitada a este repositorio. La ruta local `config/btdigg-rd/git/` no debe subirse a Git.
+
 ## Pruebas seguras
 
 Desde la raiz del repo:
@@ -62,6 +74,7 @@ Por seguridad, el repositorio publico no debe incluir:
 - `_backups/`
 - `.playwright-mcp/`
 - `config/btdigg-rd/data/`
+- `config/btdigg-rd/git/`
 - `config/cloudflared/data/`
 - `config/cloudflared/logs/`
 - `config/cloudflared/config/public.env`

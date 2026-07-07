@@ -31,6 +31,7 @@ from .blackbox import trace_folder
 from .config import BTDIGG_RUNTIME_DIR, RD_TEST_EXPORTS_DIR, VOICE_TRANSCRIBE_MAX_AUDIO_MB, ensure_runtime_dirs
 from .history import load_history
 from .jobs import TERMINAL_STATUSES, cancel_job, jobs, lock, running_job, start_job, start_rd_test
+from .project_publish import PublishError, publish_project
 from .retention import cleanup_rd_test_runs, list_rd_test_runs
 from .results import load_results
 from .rd_follow import build_rd_event_detail, build_rd_follow
@@ -545,3 +546,13 @@ def api_settings_save():
     data = request.get_json(force=True, silent=True) or {}
     payload, status = save_settings_values(BTDIGG_RUNTIME_DIR, data)
     return jsonify(payload), status
+
+
+@bp.post("/api/project/push")
+def api_project_push():
+    try:
+        return jsonify(publish_project())
+    except PublishError as exc:
+        return jsonify({"ok": False, "error": str(exc)}), exc.status_code
+    except Exception as exc:
+        return jsonify({"ok": False, "error": f"No se pudo hacer push: {exc}"}), 500

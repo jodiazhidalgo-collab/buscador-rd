@@ -49,6 +49,11 @@ services:
       - DATA_DIR=/app/data
       - BTDIGG_PUBLIC_DIAGNOSTICS_DIR=/app/diagnostics_public
       - BTDIGG_PUBLIC_DIAGNOSTICS_EXTRA_ROOTS=/app/public_sources/cloudflared_data=cloudflared/data;/app/public_sources/cloudflared_logs=cloudflared/logs;/app/public_sources/whisper_logs=whisper/logs
+      - BTDIGG_PROJECT_PUSH_ENABLED=1
+      - BTDIGG_PROJECT_ROOT=/app/project
+      - "BTDIGG_PROJECT_PUSH_REMOTE=git@github.com:jodiazhidalgo-collab/buscador-rd.git"
+      - BTDIGG_PROJECT_PUSH_SSH_KEY=/app/git_key/publish_ed25519
+      - "BTDIGG_PROJECT_PUSH_MESSAGE=chore: publish diagnostics from web"
       - BTDIGG_RUNTIME_DIR=/app/data/motor
       - BTDIGG_CONFIG_FILE=/app/data/motor/config.json
       - BTDIGG_TOKEN_FILE=/app/data/motor/rd_token.txt
@@ -63,6 +68,8 @@ services:
     volumes:
       - ./config/btdigg-rd/data:/app/data
       - ./diagnostics_public:/app/diagnostics_public:rw
+      - ./:/app/project:rw
+      - ./config/btdigg-rd/git/publish_ed25519:/app/git_key/publish_ed25519:ro
       - ./config/cloudflared/data:/app/public_sources/cloudflared_data:ro
       - ./config/cloudflared/logs:/app/public_sources/cloudflared_logs:ro
       - ./config/whisper/logs:/app/public_sources/whisper_logs:ro
