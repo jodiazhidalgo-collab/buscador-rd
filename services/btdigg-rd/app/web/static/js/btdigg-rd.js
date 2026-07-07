@@ -2111,15 +2111,26 @@ function renderLogLine(div, line) {
   addLogPart(div, text);
 }
 
+function createLogLineElement(line) {
+  const div = document.createElement("div");
+  div.className = "line";
+  div.dataset.rawLine = String(line || "");
+  renderLogLine(div, line);
+  return div;
+}
+
 function renderLog(module) {
   const box = document.getElementById("log-" + module);
   if (!box) return;
-  box.innerHTML = "";
-  cleanLines(moduleLogs[module] || []).forEach(line => {
-    const div = document.createElement("div");
-    div.className = "line";
-    renderLogLine(div, line);
-    box.appendChild(div);
+  const lines = cleanLines(moduleLogs[module] || []);
+  while (box.children.length > lines.length) box.removeChild(box.lastElementChild);
+  lines.forEach((line, index) => {
+    const current = box.children[index];
+    const raw = String(line || "");
+    if (current && current.dataset.rawLine === raw) return;
+    const next = createLogLineElement(line);
+    if (current) box.replaceChild(next, current);
+    else box.appendChild(next);
   });
   box.scrollTop = box.scrollHeight;
 }
@@ -2270,6 +2281,14 @@ function startSharedRefresh() {
 
 function pushLog(module, line) {
   if (!moduleLogs[module]) moduleLogs[module] = [];
+  const nextLine = String(line || "");
+  if (
+    moduleLogs[module].length === 1 &&
+    ["Conectando actividad LIVE...", "Reconectando actividad LIVE..."].includes(String(moduleLogs[module][0] || ""))
+  ) {
+    moduleLogs[module] = [];
+  }
+  if (moduleLogs[module].length && String(moduleLogs[module][moduleLogs[module].length - 1] || "") === nextLine) return;
   moduleLogs[module].push(line);
   if (moduleLogs[module].length > 650) moduleLogs[module] = moduleLogs[module].slice(-650);
   renderLog(module);
@@ -2291,7 +2310,7 @@ async function start(payload) {
   closeLive(module);
   setStatus("Trabajando LIVE...");
   updateStopButton("running");
-  moduleLogs[module] = ["Conectando actividad LIVE..."];
+  moduleLogs[module] = ["Arrancando motor..."];
   renderLog(module);
 
   try {
@@ -2323,16 +2342,34 @@ async function start(payload) {
 function openLive(id, module) {
   saveActiveJob(id, module);
   if (!window.EventSource) {
-    pushLog(module, "Aviso: navegador sin LIVE real. Uso modo seguro.");
     poll(id, module);
     return;
   }
   let finished = false;
+  let liveLogReceived = false;
+  let fallbackStarted = false;
+  let liveFallbackTimer = null;
+  const clearLiveFallback = () => {
+    if (liveFallbackTimer) clearTimeout(liveFallbackTimer);
+    liveFallbackTimer = null;
+  };
+  const startPollingFallback = () => {
+    if (finished || fallbackStarted) return;
+    fallbackStarted = true;
+    clearLiveFallback();
+    closeLive(module);
+    poll(id, module);
+  };
   const es = new EventSource("/api/job/" + encodeURIComponent(id) + "/stream");
   liveStreams[module] = es;
+  liveFallbackTimer = setTimeout(() => {
+    if (!liveLogReceived) startPollingFallback();
+  }, 2500);
 
   es.addEventListener("log", ev => {
     try {
+      liveLogReceived = true;
+      clearLiveFallback();
       const data = JSON.parse(ev.data || "{}");
       if (data.line) pushLog(module, data.line);
     } catch (e) {}
@@ -2346,6 +2383,7 @@ function openLive(id, module) {
   });
   es.addEventListener("done", ev => {
     finished = true;
+    clearLiveFallback();
     let data = {};
     try { data = JSON.parse(ev.data || "{}"); } catch (e) {}
     closeLive(module);
@@ -2363,10 +2401,7 @@ function openLive(id, module) {
   });
   es.onerror = () => {
     if (finished) return;
-    closeLive(module);
-    pushLog(module, "Aviso: canal LIVE cortado. Sigo por modo seguro.");
-    setStatus("Modo seguro...");
-    poll(id, module);
+    startPollingFallback();
   };
 }
 
@@ -2376,8 +2411,11 @@ async function poll(id, module) {
     const response = await fetch("/api/job/" + encodeURIComponent(id));
     const data = await response.json();
     if (data.ok) {
-      moduleLogs[module] = data.job.log || [];
-      renderLog(module);
+      const nextLog = data.job.log || [];
+      if (!isActiveJobStatus(data.job.status) || nextLog.length >= (moduleLogs[module] || []).length) {
+        moduleLogs[module] = nextLog;
+        renderLog(module);
+      }
       if (isActiveJobStatus(data.job.status)) {
         setStatus(jobStatusLabel(data.job.status));
         updateStopButton(data.job.status);
