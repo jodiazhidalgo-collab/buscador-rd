@@ -2114,9 +2114,15 @@ function renderLogLine(div, line) {
 function createLogLineElement(line) {
   const div = document.createElement("div");
   div.className = "line";
-  div.dataset.rawLine = String(line || "");
-  renderLogLine(div, line);
+  updateLogLineElement(div, line);
   return div;
+}
+
+function updateLogLineElement(div, line) {
+  div.className = "line";
+  div.dataset.rawLine = String(line || "");
+  div.textContent = "";
+  renderLogLine(div, line);
 }
 
 function renderLog(module) {
@@ -2128,9 +2134,8 @@ function renderLog(module) {
     const current = box.children[index];
     const raw = String(line || "");
     if (current && current.dataset.rawLine === raw) return;
-    const next = createLogLineElement(line);
-    if (current) box.replaceChild(next, current);
-    else box.appendChild(next);
+    if (current) updateLogLineElement(current, line);
+    else box.appendChild(createLogLineElement(line));
   });
   box.scrollTop = box.scrollHeight;
 }
@@ -2218,7 +2223,7 @@ function applyJobSnapshot(job, module = "btdigg", options = {}) {
 
 async function resumeJob(id, module = "btdigg", options = {}) {
   if (!id) return false;
-  if (moduleBusy[module] && activeJobIds[module] === id && liveStreams[module]) return true;
+  if (moduleBusy[module] && activeJobIds[module] === id) return true;
   try {
     const response = await fetch("/api/job/" + encodeURIComponent(id));
     const data = await response.json();
