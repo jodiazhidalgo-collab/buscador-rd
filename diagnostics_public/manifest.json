@@ -1,6 +1,6 @@
 {
   "summary": {
-    "generated_at": "2026-07-07T23:26:23.627147+00:00",
+    "generated_at": "2026-07-07T23:29:19.950353+00:00",
     "trigger": "web-push",
     "current_run_id": "",
     "exported_files": 2827,
@@ -26,9 +26,9 @@
       }
     ],
     "repo": {
-      "root": "/app",
-      "head": "",
-      "tracked_files_count": 0,
+      "root": "/app/project",
+      "head": "ecdd83125420012b8d0290c040a0f634cb0f1309",
+      "tracked_files_count": 2938,
       "public_dir": "/app/diagnostics_public"
     }
   },
