@@ -1,0 +1,241 @@
+- 2026-07-08T01:33:46+02:00 [info] web::JOB_STARTED
+- 2026-07-08T01:33:46+02:00 [info] general::CONFIG_SNAPSHOT
+- 2026-07-08T01:33:46+02:00 [info] web::COMMAND_PREPARED
+- 2026-07-08T01:33:46+02:00 [info] web::PROCESS_STARTED
+- 2026-07-08T01:33:46+0200 [info] search::editor_clean_search_start
+- 2026-07-08T01:33:46+0200 [info] btdigg::browser_auto_search_start_dom
+- 2026-07-08T01:33:48+0200 [info] btdigg::extract_magnets
+- 2026-07-08T01:33:48+0200 [info] btdigg::btdigg_curl_cffi_fetch
+- 2026-07-08T01:33:50+0200 [info] btdigg::browser_auto_search_end_dom
+- 2026-07-08T01:33:50+0200 [info] motor::prepare_results_start
+- 2026-07-08T01:33:50+0200 [info] motor::prepare_after_scoring
+- 2026-07-08T01:33:50+0200 [info] motor::prepare_after_filter
+- 2026-07-08T01:33:50+0200 [info] motor::prepare_after_query_prefilter
+- 2026-07-08T01:33:50+0200 [info] real-debrid::rd_account_check_ok
+- 2026-07-08T01:33:50+0200 [info] real-debrid::rd_check_start
+- 2026-07-08T01:33:50+0200 [info] real-debrid::rd_api_http_error - disabled_endpoint
+- 2026-07-08T01:33:50+0200 [info] real-debrid::rd_cache_api_disabled_cached_set - Real-Debrid HTTP 403: [37 disabled_endpoint] {
+	"error": "disabled_endpoint",
+	"error_code": 37
+}
+- 2026-07-08T01:33:50+0200 [info] real-debrid::rd_cache_api_disabled - Real-Debrid HTTP 403: [37 disabled_endpoint] {
+	"error": "disabled_endpoint",
+	"error_code": 37
+}
+- 2026-07-08T01:33:50+0200 [info] real-debrid::rd_verify_batch_start
+- 2026-07-08T01:33:50+0200 [info] real-debrid::rd_slots_refresh
+- 2026-07-08T01:33:50+0200 [info] real-debrid::rd_active_count_before
+- 2026-07-08T01:33:50+0200 [info] real-debrid::rd_existing_preload_done
+- 2026-07-08T01:33:50+0200 [info] real-debrid::rd_verify_queue_start
+- 2026-07-08T01:33:50+0200 [info] real-debrid::rd_verify_queue_submit - www.UIndex.org    -    Torrente Presidente (2026) 1080p WEBRip x265 10bit 5.1-WORLD
+- 2026-07-08T01:33:50+0200 [info] real-debrid::rd_verify_add_start - www.UIndex.org    -    Torrente Presidente (2026) 1080p WEBRip x265 10bit 5.1-WORLD
+- 2026-07-08T01:33:50+0200 [info] real-debrid::rd_verify_add_start - www.UIndex.org    -    Torrente Presidente (2026) 1080p WEBRip 5.1-WORLD
+- 2026-07-08T01:33:50+0200 [info] real-debrid::rd_verify_queue_submit - www.UIndex.org    -    Torrente Presidente (2026) 1080p WEBRip 5.1-WORLD
+- 2026-07-08T01:33:50+0200 [info] real-debrid::rd_slots_reserve
+- 2026-07-08T01:33:50+0200 [info] real-debrid::rd_verify_add_start - www.UIndex.org    -    Torrente Presidente (2026) 720p WEBRip-WORLD
+- 2026-07-08T01:33:50+0200 [info] real-debrid::rd_verify_queue_submit - www.UIndex.org    -    Torrente Presidente (2026) 720p WEBRip-WORLD
+- 2026-07-08T01:33:50+0200 [info] real-debrid::rd_slots_reserve
+- 2026-07-08T01:33:50+0200 [debug] real-debrid::rd_rate_wait
+- 2026-07-08T01:33:50+0200 [info] real-debrid::rd_verify_queue_submit - www.UIndex.org    -    Torrente Presidente 2026 1080p DUAL WEB-DL HEVC x265 5 1-BONE
+- 2026-07-08T01:33:50+0200 [info] real-debrid::rd_verify_add_start - www.UIndex.org    -    Torrente Presidente 2026 1080p DUAL WEB-DL HEVC x265 5 1-BONE
+- 2026-07-08T01:33:50+0200 [info] real-debrid::rd_slots_reserve
+- 2026-07-08T01:33:50+0200 [info] real-debrid::rd_verify_queue_submit - www.UIndex.org    -    Torrente Presidente 2026 1080p NF WEB-DL DDP5 1 x264-SPWEB
+- 2026-07-08T01:33:50+0200 [info] real-debrid::rd_verify_add_start - www.UIndex.org    -    Torrente Presidente 2026 1080p NF WEB-DL DDP5 1 x264-SPWEB
+- 2026-07-08T01:33:50+0200 [info] real-debrid::rd_slots_reserve
+- 2026-07-08T01:33:50+0200 [debug] real-debrid::rd_endpoint_pace_wait
+- 2026-07-08T01:33:50+0200 [info] real-debrid::rd_verify_add_start - Torrente Presidente (2026) [1080p] [WEBRip] [5.1] [YTS.GG - YTS.BZ]
+- 2026-07-08T01:33:50+0200 [info] real-debrid::rd_verify_queue_submit - Torrente Presidente (2026) [1080p] [WEBRip] [5.1] [YTS.GG - YTS.BZ]
+- 2026-07-08T01:33:50+0200 [info] real-debrid::rd_slots_reserve
+- 2026-07-08T01:33:50+0200 [info] real-debrid::rd_verify_queue_submit - Torrente Presidente (2026) [720p] [WEBRip] [YTS.GG - YTS.BZ]
+- 2026-07-08T01:33:50+0200 [info] real-debrid::rd_verify_add_start - Torrente Presidente (2026) [720p] [WEBRip] [YTS.GG - YTS.BZ]
+- 2026-07-08T01:33:50+0200 [info] real-debrid::rd_slots_reserve
+- 2026-07-08T01:33:50+0200 [info] real-debrid::rd_verify_queue_submit - Torrente Presidente (2026) [1080p] [WEBRip] [x265] [10bit] [5.1] [YTS.GG - YTS.BZ]
+- 2026-07-08T01:33:50+0200 [info] real-debrid::rd_verify_add_start - Torrente Presidente (2026) [1080p] [WEBRip] [x265] [10bit] [5.1] [YTS.GG - YTS.BZ]
+- 2026-07-08T01:33:50+0200 [info] real-debrid::rd_slots_reserve
+- 2026-07-08T01:33:50+0200 [info] real-debrid::rd_verify_queue_submit - Torrente Presidente (DonTorrent)
+- 2026-07-08T01:33:50+0200 [info] real-debrid::rd_verify_add_start - Torrente Presidente (DonTorrent)
+- 2026-07-08T01:33:50+0200 [info] real-debrid::rd_slots_reserve
+- 2026-07-08T01:33:50+0200 [info] real-debrid::rd_verify_queue_submit - Torrente presidente (2026) [Bluray][Esp]
+- 2026-07-08T01:33:50+0200 [info] real-debrid::rd_verify_add_start - Torrente presidente (2026) [Bluray][Esp]
+- 2026-07-08T01:33:50+0200 [info] real-debrid::rd_slots_reserve
+- 2026-07-08T01:33:50+0200 [info] real-debrid::rd_slots_reserve
+- 2026-07-08T01:33:51+0200 [info] real-debrid::rd_api_http_error - infringing_file
+- 2026-07-08T01:33:51+0200 [info] real-debrid::rd_call_terminal_error - infringing_file
+- 2026-07-08T01:33:51+0200 [info] real-debrid::rd_verify_infringing - www.UIndex.org    -    Torrente Presidente (2026) 1080p WEBRip x265 10bit 5.1-WORLD
+- 2026-07-08T01:33:51+0200 [info] real-debrid::rd_verify_queue_done_item - www.UIndex.org    -    Torrente Presidente (2026) 1080p WEBRip x265 10bit 5.1-WORLD
+- 2026-07-08T01:33:52+0200 [info] real-debrid::rd_api_http_error - infringing_file
+- 2026-07-08T01:33:52+0200 [info] real-debrid::rd_call_terminal_error - infringing_file
+- 2026-07-08T01:33:52+0200 [info] real-debrid::rd_verify_infringing - www.UIndex.org    -    Torrente Presidente 2026 1080p DUAL WEB-DL HEVC x265 5 1-BONE
+- 2026-07-08T01:33:52+0200 [info] real-debrid::rd_verify_queue_done_item - www.UIndex.org    -    Torrente Presidente 2026 1080p DUAL WEB-DL HEVC x265 5 1-BONE
+- 2026-07-08T01:33:54+0200 [info] real-debrid::rd_verify_added
+- 2026-07-08T01:33:54+0200 [debug] real-debrid::rd_verify_poll - Torrente Presidente (DonTorrent)
+- 2026-07-08T01:33:54+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-08T01:33:54+0200 [info] real-debrid::rd_verify_pack_skip - Torrente Presidente (DonTorrent)
+- 2026-07-08T01:33:54+0200 [info] real-debrid::rd_fast_discard - waiting_files_no_match
+- 2026-07-08T01:33:54+0200 [info] real-debrid::rd_fast_discard_reason - waiting_files_no_match
+- 2026-07-08T01:33:54+0200 [info] real-debrid::rd_fast_discard_delete - waiting_files_no_match
+- 2026-07-08T01:33:54+0200 [debug] real-debrid::rd_waiting_files_no_match_fast_delete - Torrente Presidente (DonTorrent)
+- 2026-07-08T01:33:54+0200 [info] real-debrid::rd_delete_torrent
+- 2026-07-08T01:33:54+0200 [info] real-debrid::rd_slots_release
+- 2026-07-08T01:33:54+0200 [info] real-debrid::rd_verify_queue_done_item - Torrente Presidente (DonTorrent)
+- 2026-07-08T01:33:55+0200 [info] real-debrid::rd_api_http_error - infringing_file
+- 2026-07-08T01:33:55+0200 [info] real-debrid::rd_call_terminal_error - infringing_file
+- 2026-07-08T01:33:55+0200 [info] real-debrid::rd_verify_infringing - www.UIndex.org    -    Torrente Presidente 2026 1080p NF WEB-DL DDP5 1 x264-SPWEB
+- 2026-07-08T01:33:55+0200 [info] real-debrid::rd_verify_queue_done_item - www.UIndex.org    -    Torrente Presidente 2026 1080p NF WEB-DL DDP5 1 x264-SPWEB
+- 2026-07-08T01:33:56+0200 [debug] real-debrid::rd_endpoint_pace_wait
+- 2026-07-08T01:33:57+0200 [info] real-debrid::rd_api_http_error - infringing_file
+- 2026-07-08T01:33:57+0200 [info] real-debrid::rd_call_terminal_error - infringing_file
+- 2026-07-08T01:33:57+0200 [info] real-debrid::rd_verify_infringing - Torrente Presidente (2026) [1080p] [WEBRip] [x265] [10bit] [5.1] [YTS.GG - YTS.BZ]
+- 2026-07-08T01:33:57+0200 [info] real-debrid::rd_verify_queue_done_item - Torrente Presidente (2026) [1080p] [WEBRip] [x265] [10bit] [5.1] [YTS.GG - YTS.BZ]
+- 2026-07-08T01:33:59+0200 [info] real-debrid::rd_api_http_error - infringing_file
+- 2026-07-08T01:33:59+0200 [info] real-debrid::rd_call_terminal_error - infringing_file
+- 2026-07-08T01:33:59+0200 [info] real-debrid::rd_verify_infringing - Torrente Presidente (2026) [1080p] [WEBRip] [5.1] [YTS.GG - YTS.BZ]
+- 2026-07-08T01:33:59+0200 [info] real-debrid::rd_verify_queue_done_item - Torrente Presidente (2026) [1080p] [WEBRip] [5.1] [YTS.GG - YTS.BZ]
+- 2026-07-08T01:34:00+0200 [info] real-debrid::rd_verify_added
+- 2026-07-08T01:34:00+0200 [debug] real-debrid::rd_verify_poll - Torrente presidente (2026) [Bluray][Esp]
+- 2026-07-08T01:34:00+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-08T01:34:00+0200 [info] real-debrid::rd_verify_select_files
+- 2026-07-08T01:34:01+0200 [debug] real-debrid::rd_verify_post_select_poll - Torrente presidente (2026) [Bluray][Esp]
+- 2026-07-08T01:34:01+0200 [info] real-debrid::rd_verify_ok - Torrente presidente (2026) [Bluray][Esp]  ==>  /Torrente presidente (2026) [Bluray][Esp].avi
+- 2026-07-08T01:34:01+0200 [info] real-debrid::rd_verify_queue_done_item - Torrente presidente (2026) [Bluray][Esp]  ==>  /Torrente presidente (2026) [Bluray][Esp].avi
+- 2026-07-08T01:34:01+0200 [info] real-debrid::rd_api_http_error - infringing_file
+- 2026-07-08T01:34:01+0200 [info] real-debrid::rd_call_terminal_error - infringing_file
+- 2026-07-08T01:34:01+0200 [debug] real-debrid::rd_endpoint_pace_wait
+- 2026-07-08T01:34:01+0200 [info] real-debrid::rd_verify_infringing - www.UIndex.org    -    Torrente Presidente (2026) 720p WEBRip-WORLD
+- 2026-07-08T01:34:01+0200 [info] real-debrid::rd_verify_queue_done_item - www.UIndex.org    -    Torrente Presidente (2026) 720p WEBRip-WORLD
+- 2026-07-08T01:34:04+0200 [info] real-debrid::rd_api_http_error - infringing_file
+- 2026-07-08T01:34:04+0200 [info] real-debrid::rd_call_terminal_error - infringing_file
+- 2026-07-08T01:34:04+0200 [info] real-debrid::rd_verify_infringing - Torrente Presidente (2026) [720p] [WEBRip] [YTS.GG - YTS.BZ]
+- 2026-07-08T01:34:04+0200 [info] real-debrid::rd_verify_queue_done_item - Torrente Presidente (2026) [720p] [WEBRip] [YTS.GG - YTS.BZ]
+- 2026-07-08T01:34:04+0200 [info] real-debrid::rd_api_http_error - infringing_file
+- 2026-07-08T01:34:04+0200 [info] real-debrid::rd_call_terminal_error - infringing_file
+- 2026-07-08T01:34:04+0200 [info] real-debrid::rd_verify_infringing - www.UIndex.org    -    Torrente Presidente (2026) 1080p WEBRip 5.1-WORLD
+- 2026-07-08T01:34:04+0200 [info] real-debrid::rd_verify_queue_done_item - www.UIndex.org    -    Torrente Presidente (2026) 1080p WEBRip 5.1-WORLD
+- 2026-07-08T01:34:04+0200 [info] real-debrid::rd_verify_queue_end
+- 2026-07-08T01:34:04+0200 [info] real-debrid::rd_rate_summary
+- 2026-07-08T01:34:04+0200 [info] real-debrid::rd_endpoint_pacer_summary
+- 2026-07-08T01:34:04+0200 [info] real-debrid::rd_cleanup_final_start
+- 2026-07-08T01:34:04+0200 [info] real-debrid::rd_slots_refresh
+- 2026-07-08T01:34:04+0200 [info] real-debrid::rd_active_count_after
+- 2026-07-08T01:34:04+0200 [info] real-debrid::rd_cleanup_final_end
+- 2026-07-08T01:34:04+0200 [info] real-debrid::rd_rate_summary
+- 2026-07-08T01:34:04+0200 [info] real-debrid::rd_endpoint_pacer_summary
+- 2026-07-08T01:34:04+0200 [info] real-debrid::rd_verify_batch_end
+- 2026-07-08T01:34:04+0200 [info] real-debrid::rd_check_summary
+- 2026-07-08T01:34:04+0200 [info] qbittorrent::qbt_relevance_filter
+- 2026-07-08T01:34:04+0200 [info] qbittorrent::qbt_probe_batch_start
+- 2026-07-08T01:34:05+0200 [info] qbittorrent::qbt_login
+- 2026-07-08T01:34:05+0200 [info] qbittorrent::qbt_login
+- 2026-07-08T01:34:05+0200 [info] qbittorrent::qbt_login
+- 2026-07-08T01:34:05+0200 [info] qbittorrent::qbt_login
+- 2026-07-08T01:34:05+0200 [info] qbittorrent::qbt_login
+- 2026-07-08T01:34:05+0200 [info] qbittorrent::qbt_probe_add - www.UIndex.org    -    Torrente Presidente (2026) 1080p WEBRip 5.1-WORLD
+- 2026-07-08T01:34:05+0200 [info] qbittorrent::qbt_probe_add - www.UIndex.org    -    Torrente Presidente (2026) 1080p WEBRip x265 10bit 5.1-WORLD
+- 2026-07-08T01:34:05+0200 [info] qbittorrent::qbt_probe_add - www.UIndex.org    -    Torrente Presidente (2026) 720p WEBRip-WORLD
+- 2026-07-08T01:34:05+0200 [info] qbittorrent::qbt_probe_add - www.UIndex.org    -    Torrente Presidente 2026 1080p NF WEB-DL DDP5 1 x264-SPWEB
+- 2026-07-08T01:34:05+0200 [info] qbittorrent::qbt_probe_add - www.UIndex.org    -    Torrente Presidente 2026 1080p DUAL WEB-DL HEVC x265 5 1-BONE
+- 2026-07-08T01:34:07+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T01:34:07+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T01:34:07+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T01:34:07+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T01:34:07+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T01:34:09+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T01:34:09+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T01:34:09+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T01:34:09+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T01:34:09+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T01:34:09+0200 [info] qbittorrent::qbt_probe_result - qBittorrent con seed conectado: seeds=2, peers=0, state=stalleddl
+- 2026-07-08T01:34:09+0200 [info] qbittorrent::qbt_delete_probe
+- 2026-07-08T01:34:09+0200 [info] qbittorrent::qbt_login
+- 2026-07-08T01:34:09+0200 [info] qbittorrent::qbt_probe_add - Torrente Presidente (2026) [1080p] [WEBRip] [5.1] [YTS.GG - YTS.BZ]
+- 2026-07-08T01:34:11+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T01:34:11+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T01:34:11+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T01:34:11+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T01:34:11+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T01:34:13+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T01:34:13+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T01:34:13+0200 [info] qbittorrent::qbt_probe_result - qBittorrent descargando: 0.35 MB/s, seeds=2, peers=1
+- 2026-07-08T01:34:13+0200 [info] qbittorrent::qbt_delete_probe
+- 2026-07-08T01:34:13+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T01:34:13+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T01:34:13+0200 [info] qbittorrent::qbt_login
+- 2026-07-08T01:34:13+0200 [info] qbittorrent::qbt_probe_add - Torrente Presidente (2026) [720p] [WEBRip] [YTS.GG - YTS.BZ]
+- 2026-07-08T01:34:13+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T01:34:13+0200 [info] qbittorrent::qbt_probe_result - qBittorrent descargando: 0.03 MB/s, seeds=2, peers=0
+- 2026-07-08T01:34:13+0200 [info] qbittorrent::qbt_delete_probe
+- 2026-07-08T01:34:13+0200 [info] qbittorrent::qbt_login
+- 2026-07-08T01:34:13+0200 [info] qbittorrent::qbt_probe_add - Torrente Presidente (2026) [1080p] [WEBRip] [x265] [10bit] [5.1] [YTS.GG - YTS.BZ]
+- 2026-07-08T01:34:15+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T01:34:15+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T01:34:15+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T01:34:15+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T01:34:15+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T01:34:17+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T01:34:17+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T01:34:17+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T01:34:17+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T01:34:17+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T01:34:17+0200 [info] qbittorrent::qbt_probe_result - qBittorrent con seed conectado: seeds=2, peers=4, state=stalleddl
+- 2026-07-08T01:34:17+0200 [info] qbittorrent::qbt_delete_probe
+- 2026-07-08T01:34:17+0200 [info] qbittorrent::qbt_login
+- 2026-07-08T01:34:17+0200 [info] qbittorrent::qbt_probe_add - Torrente Presidente (DonTorrent)
+- 2026-07-08T01:34:19+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T01:34:19+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T01:34:19+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T01:34:19+0200 [info] qbittorrent::qbt_probe_result - qBittorrent con seed conectado: seeds=1, peers=1, state=stalleddl
+- 2026-07-08T01:34:19+0200 [info] qbittorrent::qbt_delete_probe
+- 2026-07-08T01:34:19+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T01:34:19+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T01:34:21+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T01:34:21+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T01:34:21+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T01:34:21+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T01:34:23+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T01:34:23+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T01:34:23+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T01:34:23+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T01:34:25+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T01:34:25+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T01:34:25+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T01:34:25+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T01:34:27+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T01:34:27+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T01:34:27+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T01:34:27+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T01:34:27+0200 [info] qbittorrent::qbt_probe_result - qBittorrent con seed conectado: seeds=1, peers=0, state=stalleddl
+- 2026-07-08T01:34:27+0200 [info] qbittorrent::qbt_delete_probe
+- 2026-07-08T01:34:29+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T01:34:29+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T01:34:29+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T01:34:29+0200 [info] qbittorrent::qbt_probe_result - qBittorrent con seed conectado: seeds=1, peers=0, state=stalleddl
+- 2026-07-08T01:34:29+0200 [info] qbittorrent::qbt_delete_probe
+- 2026-07-08T01:34:31+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T01:34:31+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T01:34:33+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T01:34:33+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T01:34:35+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T01:34:35+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T01:34:37+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T01:34:37+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T01:34:39+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T01:34:39+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T01:34:41+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T01:34:41+0200 [info] qbittorrent::qbt_probe_result - Tracker indica posibles seeds (2), pero qBittorrent no conecto ni obtuvo vida real: state=stalleddl, seeds=0, peers=12, availability=0.00
+- 2026-07-08T01:34:41+0200 [info] qbittorrent::qbt_delete_probe
+- 2026-07-08T01:34:41+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T01:34:41+0200 [info] qbittorrent::qbt_probe_result - Tracker indica posibles seeds (3), pero qBittorrent no conecto ni obtuvo vida real: state=metadl, seeds=0, peers=3, availability=0.00
+- 2026-07-08T01:34:41+0200 [info] qbittorrent::qbt_delete_probe
+- 2026-07-08T01:34:41+0200 [info] qbittorrent::qbt_probe_batch_end
+- 2026-07-08T01:34:41+0200 [info] motor::prepare_qbit_extras
+- 2026-07-08T01:34:41+0200 [info] motor::prepare_rd_temp_errors
+- 2026-07-08T01:34:41+0200 [info] motor::prepare_after_working_filter
+- 2026-07-08T01:34:41+0200 [info] search::export_results
+- 2026-07-08T01:34:41+0200 [info] search::export_results
+- 2026-07-08T01:34:41+0200 [info] real-debrid::rd_delete_torrent
+- 2026-07-08T01:34:41+0200 [debug] real-debrid::rd_endpoint_pace_wait
+- 2026-07-08T01:34:42+0200 [info] real-debrid::rd_api_http_error - unknown_ressource
+- 2026-07-08T01:34:42+0200 [info] real-debrid::rd_delete_torrent_missing
+- 2026-07-08T01:34:42+0200 [info] search::editor_clean_search_rd_cleanup
+- 2026-07-08T01:34:42+0200 [info] search::editor_clean_search_end
+- 2026-07-08T01:34:42+02:00 [info] web::JOB_FINISHED_OK
