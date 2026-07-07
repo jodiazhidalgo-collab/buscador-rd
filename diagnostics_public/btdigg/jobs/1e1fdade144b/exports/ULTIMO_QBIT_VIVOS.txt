@@ -1,0 +1,16 @@
+RD Turbo Pro - lista extra qBittorrent vivos
+================================================================================
+[Q01] QBT:QBT_VIVO   SIZE:   1.0 GB HASH:5f64e53aea43e6f3cc55d28d61a0419a33dbda05
+      TORRENT: www.UIndex.org    -    Pillion (2025) 720p WEBRip-LAMA
+      MOTIVO: qBittorrent con seed conectado: seeds=1, peers=1, state=stalleddl
+      MAGNET: magnet:?xt=urn:btih:5f64e53aea43e6f3cc55d28d61a0419a33dbda05&dn=www.UIndex.org++++-++++Pillion+(2025)+720p+WEBRip-LAMA&tr=udp://tracker.openbittorrent.com:80&tr=udp://tracker.opentrackr.org:1337/announce
+
+[Q02] QBT:QBT_VIVO   SIZE:   1.7 GB HASH:42b868e0a376007d776c36365e8521e9c9d282b0
+      TORRENT: www.UIndex.org    -    Pillion 2025 1080p 10bit WEBRip 6CH X265 HEVC-PSA
+      MOTIVO: qBittorrent con seed conectado: seeds=1, peers=9, state=stalleddl
+      MAGNET: magnet:?xt=urn:btih:42b868e0a376007d776c36365e8521e9c9d282b0&dn=www.UIndex.org++++-++++Pillion+2025+1080p+10bit+WEBRip+6CH+X265+HEVC-PSA&tr=udp://tracker.openbittorrent.com:80&tr=udp://tracker.opentrackr.org:1337/announce
+
+[Q03] QBT:QBT_VIVO   SIZE:   4.9 GB HASH:d2ee2ec4517b6ee1593a4f1d50cde26a560b00f7
+      TORRENT: www.UIndex.org    -    Pillion 2025 1080p WEBRip x265-DH
+      MOTIVO: qBittorrent descargando: 0.02 MB/s, seeds=1, peers=9
+      MAGNET: magnet:?xt=urn:btih:d2ee2ec4517b6ee1593a4f1d50cde26a560b00f7&dn=www.UIndex.org++++-++++Pillion+2025+1080p+WEBRip+x265-DH&tr=udp://tracker.openbittorrent.com:80&tr=udp://tracker.opentrackr.org:1337/announce

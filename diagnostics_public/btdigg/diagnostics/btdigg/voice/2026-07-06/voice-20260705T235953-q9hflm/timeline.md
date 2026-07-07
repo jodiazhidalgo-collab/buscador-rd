@@ -1,0 +1,15 @@
+- 2026-07-06T01:59:52+02:00 [info] voice::voice_record_click
+- 2026-07-06T01:59:53+02:00 [info] voice::voice_get_user_media_start
+- 2026-07-06T01:59:53+02:00 [info] voice::voice_permission_state
+- 2026-07-06T01:59:53+02:00 [info] voice::voice_get_user_media_ok
+- 2026-07-06T01:59:53+02:00 [info] voice::voice_recorder_start
+- 2026-07-06T01:59:54+02:00 [info] voice::voice_audio_detected
+- 2026-07-06T01:59:58+02:00 [info] voice::voice_silence_auto_stop
+- 2026-07-06T01:59:58+02:00 [info] voice::voice_transcribe_request
+- 2026-07-06T01:59:58+02:00 [info] voice::voice_transcribe_provider_start
+- 2026-07-06T01:59:58+02:00 [info] voice::voice_recorder_stop - auto_silence
+- 2026-07-06T01:59:58+02:00 [info] voice::voice_upload_start
+- 2026-07-06T02:00:09+02:00 [info] voice::voice_transcribe_ok
+- 2026-07-06T02:00:09+02:00 [info] voice::voice_upload_ok
+- 2026-07-06T02:00:10+02:00 [info] voice::voice_resolver_start
+- 2026-07-06T02:00:11+02:00 [info] voice::voice_resolver_ok

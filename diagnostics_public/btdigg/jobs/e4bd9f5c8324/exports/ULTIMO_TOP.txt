@@ -1,0 +1,106 @@
+RD Turbo Pro - último TOP
+================================================================================
+[01] RD:RD_OK        SCORE:   0 SIZE:   1.2 GB HASH:652091e218b592920b2f42a4abb85130f7b9a07a
+     Torrente presidente (2026) [Bluray][Esp]  ==>  /Torrente presidente (2026) [Bluray][Esp].avi
+     ARCHIVO: /Torrente presidente (2026) [Bluray][Esp].avi (1.2 GB)
+     MOTIVO: Verificado con addMagnet: 1 link(s). Archivo interno: /Torrente presidente (2026) [Bluray][Esp].avi (1.2 GB)
+
+[02] RD:RD_OK        SCORE:   0 SIZE:   4.5 GB HASH:5cadce74acd88357cef88f668d2cf48de2840e93
+     Torrente presidente (2026) [Bluray 720p][Esp]  ==>  /Torrente presidente (2026) [Bluray 720p][Esp].mkv
+     ARCHIVO: /Torrente presidente (2026) [Bluray 720p][Esp].mkv (4.5 GB)
+     MOTIVO: Verificado con addMagnet: 1 link(s). Archivo interno: /Torrente presidente (2026) [Bluray 720p][Esp].mkv (4.5 GB)
+
+[03] RD:RD_OK        SCORE:   0 SIZE:   4.5 GB HASH:dd76929a80542fd71bd97be6b03c3f6a052daef0
+     Torrente presidente [2026] Dual YG  ==>  /Torrente presidente.2026.1080p.WEB-DL.H.264.Dual YG.mkv
+     ARCHIVO: /Torrente presidente.2026.1080p.WEB-DL.H.264.Dual YG.mkv (4.5 GB)
+     MOTIVO: Verificado con addMagnet: 1 link(s). Archivo interno: /Torrente presidente.2026.1080p.WEB-DL.H.264.Dual YG.mkv (4.5 GB)
+
+[04] RD:RD_OK        SCORE: -70 SIZE:   2.3 GB HASH:983ce475e85a13dc3524a95705c1b9e9288df805
+     Torrente.Presidente.2026.720p.CAMRip.x264.SPANISH.AAC.mkv  ==>  /Torrente.Presidente.2026.720p.CAMRip.x264.SPANISH.AAC.mkv
+     ARCHIVO: /Torrente.Presidente.2026.720p.CAMRip.x264.SPANISH.AAC.mkv (2.3 GB)
+     MOTIVO: Verificado con addMagnet: 1 link(s). Archivo interno: /Torrente.Presidente.2026.720p.CAMRip.x264.SPANISH.AAC.mkv (2.3 GB)
+
+[05] RD:RD_OK        SCORE: -70 SIZE:   5.2 GB HASH:67b63f8a5b1d930ca5bb74b860a51946abf5b5c8
+     Torrente.presidente.2026.Pm.TS.1O8Op.mkv  ==>  /Torrente.presidente.2026.Pm.TS.1O8Op.mkv
+     ARCHIVO: /Torrente.presidente.2026.Pm.TS.1O8Op.mkv (5.2 GB)
+     MOTIVO: Verificado con addMagnet: 1 link(s). Archivo interno: /Torrente.presidente.2026.Pm.TS.1O8Op.mkv (5.2 GB)
+
+[06] RD:RD_OK        SCORE: -70 SIZE:   1.4 GB HASH:c6676c6f6270b17a720cbe8012bc9ae02a5af149
+     Torrente.presidente.2026.Pm.TS.avi  ==>  /Torrente.presidente.2026.Pm.TS.avi
+     ARCHIVO: /Torrente.presidente.2026.Pm.TS.avi (1.4 GB)
+     MOTIVO: Verificado con addMagnet: 1 link(s). Archivo interno: /Torrente.presidente.2026.Pm.TS.avi (1.4 GB)
+
+[07] RD:RD_OK        SCORE:-140 SIZE:   1.8 GB HASH:14e155665660a3cb89e65fc2d8b2c2d605c7638b
+     Torrente presidente (2026)  CAMRip [CLYON].mkv  ==>  /Torrente presidente (2026)  CAMRip [CLYON].mkv
+     ARCHIVO: /Torrente presidente (2026)  CAMRip [CLYON].mkv (1.8 GB)
+     MOTIVO: Verificado con addMagnet: 1 link(s). Archivo interno: /Torrente presidente (2026)  CAMRip [CLYON].mkv (1.8 GB)
+
+[08] RD:RD_FAIL      SCORE:   0 SIZE:   1.9 GB HASH:b73e8f3553b93866dc1d05e4d924307841d5e9ef
+     www.UIndex.org    -    Torrente Presidente (2026) 1080p WEBRip 5.1-WORLD
+     QBIT: QBT_VIVO | seeds=3 peers=0 | qBittorrent con seed conectado: seeds=3, peers=0, state=stalleddl
+     MOTIVO: Real-Debrid rechaza este torrent por infraccion o bloqueo legal
+
+[09] RD:RD_FAIL      SCORE:   0 SIZE:   0.9 GB HASH:b3e47bed045d114aa1ac135eafdf062fd62bd181
+     www.UIndex.org    -    Torrente Presidente (2026) 720p WEBRip-WORLD
+     QBIT: QBT_VIVO | seeds=2 peers=0 | qBittorrent descargando: 0.36 MB/s, seeds=2, peers=0
+     MOTIVO: Real-Debrid rechaza este torrent por infraccion o bloqueo legal
+
+[10] RD:RD_FAIL      SCORE:   0 SIZE:   1.7 GB HASH:6aeb9f49517789b447b26e5fbd09c36880cf7cd1
+     www.UIndex.org    -    Torrente Presidente (2026) 1080p WEBRip x265 10bit 5.1-WORLD
+     QBIT: QBT_VIVO | seeds=2 peers=0 | qBittorrent con seed conectado: seeds=2, peers=0, state=stalleddl
+     MOTIVO: Real-Debrid rechaza este torrent por infraccion o bloqueo legal
+
+[11] RD:RD_FAIL      SCORE:   0 SIZE:   4.5 GB HASH:a63597e8edecd3586c7869bcbcea2732f38b43e2
+     www.UIndex.org    -    Torrente Presidente 2026 1080p NF WEB-DL DDP5 1 x264-SPWEB
+     QBIT: QBT_VIVO | seeds=2 peers=0 | qBittorrent con seed conectado: seeds=2, peers=0, state=stalleddl
+     MOTIVO: Real-Debrid rechaza este torrent por infraccion o bloqueo legal
+
+[12] RD:RD_FAIL      SCORE:   0 SIZE:   1.9 GB HASH:ae063523346cf7dbd3050cf23efc8d65f25bd6e5
+     Torrente Presidente (2026) [1080p] [WEBRip] [5.1] [YTS.GG - YTS.BZ]
+     QBIT: QBT_VIVO | seeds=1 peers=2 | qBittorrent con seed conectado: seeds=1, peers=2, state=stalleddl
+     MOTIVO: Real-Debrid rechaza este torrent por infraccion o bloqueo legal
+
+[13] RD:RD_FAIL      SCORE:   0 SIZE:   0.9 GB HASH:37d5ce941f46d0425707ac34683d3f974220277f
+     Torrente Presidente (2026) [720p] [WEBRip] [YTS.GG - YTS.BZ]
+     QBIT: QBT_VIVO | seeds=2 peers=1 | qBittorrent descargando: 0.05 MB/s, seeds=2, peers=1
+     MOTIVO: Real-Debrid rechaza este torrent por infraccion o bloqueo legal
+
+[14] RD:RD_FAIL      SCORE:   0 SIZE:   1.7 GB HASH:6db6cf36f7f10e856406d07ca1ab7a3308d24959
+     Torrente Presidente (2026) [1080p] [WEBRip] [x265] [10bit] [5.1] [YTS.GG - YTS.BZ]
+     QBIT: QBT_VIVO | seeds=1 peers=0 | qBittorrent descargando: 0.00 MB/s, seeds=1, peers=0
+     MOTIVO: Real-Debrid rechaza este torrent por infraccion o bloqueo legal
+
+[15] RD:PACK_SIN_COINCIDENCIA SCORE:   0 SIZE:   0.0 GB HASH:a1ae72797bcf893ff3d5b4160d08e7016ed2a534
+     Torrente Presidente (DonTorrent)
+     QBIT: QBT_VIVO | seeds=2 peers=0 | qBittorrent descargando: 0.10 MB/s, seeds=2, peers=0
+     MOTIVO: Pack/torrent sin archivo interno seguro: sin_candidato_video_pack files=1 terms=torrente,presidente
+
+[16] RD:RD_FAIL      SCORE:   0 SIZE:   1.9 GB HASH:43a788d217e61dd9ab95f10b4dee9784e1e174a5
+     Torrente Presidente BDrip XviD Castellano
+     QBIT: QBT_VIVO | seeds=3 peers=0 | qBittorrent con seed conectado: seeds=3, peers=0, state=stalleddl
+     MOTIVO: Real-Debrid rechaza este torrent por infraccion o bloqueo legal
+
+[17] RD:RD_FAIL      SCORE:   0 SIZE:   1.5 GB HASH:5d8b4fa701598864c3266644ac0490e23eeb9ab6
+     Torrente Presidente 2026 1080p (DUAL) WEB-DL HEVC x265 5.1 BONE.mkv
+     QBIT: QBT_VIVO | seeds=1 peers=0 | qBittorrent descargando: 0.15 MB/s, seeds=1, peers=0
+     MOTIVO: Real-Debrid rechaza este torrent por infraccion o bloqueo legal
+
+[18] RD:RD_FAIL      SCORE:   0 SIZE:   2.3 GB HASH:8c119a5646efbb12771077efae21887207aeb17e
+     Torrente Presidente (2026) (Spanish Subs) Web-Dl 1080P x264-Eac3 By Scorpion-Xusman (Nocturniap2P).mkv
+     QBIT: QBT_VIVO | seeds=2 peers=0 | qBittorrent con seed conectado: seeds=2, peers=0, state=stalleddl
+     MOTIVO: Real-Debrid rechaza este torrent por infraccion o bloqueo legal
+
+[19] RD:NO_INSTANT   SCORE:   0 SIZE:   1.1 GB HASH:0306254e68075f90c2882fad2da41b4d6e802fa7
+     Torrente 6 Presidente (2026) HdTScr castellano
+     QBIT: QBT_VIVO | seeds=1 peers=1 | qBittorrent descargando: 0.21 MB/s, seeds=1, peers=1
+     MOTIVO: No entrega link instantáneo. Estado: magnet_conversion, progreso: 0
+
+[20] RD:RD_FAIL      SCORE: -70 SIZE:   5.7 GB HASH:e2f192f89bbe324bc6d454e7b79fc244e4cc9d46
+     Torrente Presidente [2026] Cam YG
+     QBIT: QBT_VIVO | seeds=1 peers=0 | qBittorrent con seed conectado: seeds=1, peers=0, state=stalleddl
+     MOTIVO: Real-Debrid rechaza este torrent por infraccion o bloqueo legal
+
+[21] RD:RD_FAIL      SCORE: -70 SIZE:   2.3 GB HASH:dc6569102b6de5b0e29bd764e5af009b4e4f8c89
+     Torrente Presidente (2026).mkv
+     QBIT: QBT_VIVO | seeds=2 peers=0 | qBittorrent con seed conectado: seeds=2, peers=0, state=stalleddl
+     MOTIVO: Real-Debrid rechaza este torrent por infraccion o bloqueo legal

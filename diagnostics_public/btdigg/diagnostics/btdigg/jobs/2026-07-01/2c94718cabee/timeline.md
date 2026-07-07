@@ -1,0 +1,600 @@
+- 2026-07-01T02:18:15+02:00 [info] web::JOB_STARTED
+- 2026-07-01T02:18:15+02:00 [info] general::CONFIG_SNAPSHOT
+- 2026-07-01T02:18:15+02:00 [info] web::COMMAND_PREPARED
+- 2026-07-01T02:18:15+02:00 [info] web::PROCESS_STARTED
+- 2026-07-01T02:18:15+0200 [info] search::editor_clean_search_start
+- 2026-07-01T02:18:15+0200 [info] btdigg::browser_auto_search_start_dom
+- 2026-07-01T02:18:19+0200 [info] btdigg::extract_magnets
+- 2026-07-01T02:18:19+0200 [info] btdigg::btdigg_dump_dom_fallback
+- 2026-07-01T02:18:25+0200 [info] btdigg::extract_magnets
+- 2026-07-01T02:18:25+0200 [info] btdigg::btdigg_dump_dom_fallback
+- 2026-07-01T02:18:31+0200 [info] btdigg::extract_magnets
+- 2026-07-01T02:18:31+0200 [info] btdigg::btdigg_dump_dom_fallback
+- 2026-07-01T02:18:38+0200 [info] btdigg::extract_magnets
+- 2026-07-01T02:18:38+0200 [info] btdigg::btdigg_dump_dom_fallback
+- 2026-07-01T02:18:43+0200 [info] btdigg::extract_magnets
+- 2026-07-01T02:18:43+0200 [info] btdigg::btdigg_dump_dom_fallback
+- 2026-07-01T02:18:45+0200 [info] btdigg::browser_auto_search_end_dom
+- 2026-07-01T02:18:45+0200 [info] btdigg::browser_quality_rescue_start
+- 2026-07-01T02:18:45+0200 [info] btdigg::browser_auto_search_start_dom
+- 2026-07-01T02:18:49+0200 [info] btdigg::extract_magnets
+- 2026-07-01T02:18:49+0200 [info] btdigg::btdigg_dump_dom_fallback
+- 2026-07-01T02:18:51+0200 [info] btdigg::browser_auto_search_end_dom
+- 2026-07-01T02:18:51+0200 [info] btdigg::browser_quality_rescue_results
+- 2026-07-01T02:18:51+0200 [info] btdigg::browser_quality_rescue_end
+- 2026-07-01T02:18:51+0200 [info] motor::prepare_results_start
+- 2026-07-01T02:18:51+0200 [info] motor::prepare_after_scoring
+- 2026-07-01T02:18:51+0200 [info] motor::prepare_after_filter
+- 2026-07-01T02:18:51+0200 [info] motor::prepare_after_query_prefilter
+- 2026-07-01T02:18:51+0200 [info] real-debrid::rd_account_check_ok
+- 2026-07-01T02:18:51+0200 [info] real-debrid::rd_check_start
+- 2026-07-01T02:18:51+0200 [info] real-debrid::rd_api_http_error - disabled_endpoint
+- 2026-07-01T02:18:51+0200 [info] real-debrid::rd_cache_api_disabled_cached_set - Real-Debrid HTTP 403: [37 disabled_endpoint] {
+	"error": "disabled_endpoint",
+	"error_code": 37
+}
+- 2026-07-01T02:18:51+0200 [info] real-debrid::rd_cache_api_disabled - Real-Debrid HTTP 403: [37 disabled_endpoint] {
+	"error": "disabled_endpoint",
+	"error_code": 37
+}
+- 2026-07-01T02:18:51+0200 [info] real-debrid::rd_verify_batch_start
+- 2026-07-01T02:18:51+0200 [info] real-debrid::rd_slots_refresh
+- 2026-07-01T02:18:51+0200 [info] real-debrid::rd_active_count_before
+- 2026-07-01T02:18:52+0200 [info] real-debrid::rd_existing_preload_done
+- 2026-07-01T02:18:52+0200 [info] real-debrid::rd_verify_queue_start
+- 2026-07-01T02:18:52+0200 [info] real-debrid::rd_verify_queue_submit - The.Devil.Wears.Prada.2.2026.2160p.WEB-DL.DV.HDR10 .MULTi.FRE.ITA.LAT.RUS.H265.MP4-BEN.THE.MEN
+- 2026-07-01T02:18:52+0200 [info] real-debrid::rd_verify_add_start - The.Devil.Wears.Prada.2.2026.2160p.WEB-DL.DV.HDR10 .MULTi.FRE.ITA.LAT.RUS.H265.MP4-BEN.THE.MEN
+- 2026-07-01T02:18:52+0200 [info] real-debrid::rd_verify_queue_submit - The Devil Wears Prada 2 (2026) [720p][1080p] [2160p] [AMAZON] [Napisy PL]
+- 2026-07-01T02:18:52+0200 [info] real-debrid::rd_verify_add_start - The Devil Wears Prada 2 (2026) [720p][1080p] [2160p] [AMAZON] [Napisy PL]
+- 2026-07-01T02:18:52+0200 [info] real-debrid::rd_slots_reserve
+- 2026-07-01T02:18:52+0200 [info] real-debrid::rd_verify_queue_submit - Ďábel.nosí.Pradu.2.The.Devil.Wears.Prada.2.(2026)[2160p][WEB-DL][HDR].=.CSFD.64%
+- 2026-07-01T02:18:52+0200 [info] real-debrid::rd_verify_add_start - Ďábel.nosí.Pradu.2.The.Devil.Wears.Prada.2.(2026)[2160p][WEB-DL][HDR].=.CSFD.64%
+- 2026-07-01T02:18:52+0200 [info] real-debrid::rd_slots_reserve
+- 2026-07-01T02:18:52+0200 [debug] real-debrid::rd_rate_wait
+- 2026-07-01T02:18:52+0200 [info] real-debrid::rd_verify_queue_submit - The.Devil.Wears.Prada.2.2026.2160p.HDR10Plus.DV.WEBRip.6CH.x265.HEVC-PSA
+- 2026-07-01T02:18:52+0200 [info] real-debrid::rd_slots_reserve
+- 2026-07-01T02:18:52+0200 [info] real-debrid::rd_verify_add_start - The.Devil.Wears.Prada.2.2026.2160p.HDR10Plus.DV.WEBRip.6CH.x265.HEVC-PSA
+- 2026-07-01T02:18:52+0200 [info] real-debrid::rd_slots_reserve
+- 2026-07-01T02:18:52+0200 [info] real-debrid::rd_verify_queue_submit - The.Devil.Wears.Prada.2.2026.PLSUB.1080p.10bit.WEB-DL.DDP5.1.x265.HEVC-AdL
+- 2026-07-01T02:18:52+0200 [info] real-debrid::rd_verify_add_start - The.Devil.Wears.Prada.2.2026.PLSUB.1080p.10bit.WEB-DL.DDP5.1.x265.HEVC-AdL
+- 2026-07-01T02:18:52+0200 [debug] real-debrid::rd_endpoint_pace_wait
+- 2026-07-01T02:18:52+0200 [info] real-debrid::rd_verify_queue_submit - www.UIndex.org    -    The Devil Wears Prada 2 2026 1080p 10bit WEBRip 6CH x265 HEVC-PSA
+- 2026-07-01T02:18:52+0200 [info] real-debrid::rd_verify_add_start - www.UIndex.org    -    The Devil Wears Prada 2 2026 1080p 10bit WEBRip 6CH x265 HEVC-PSA
+- 2026-07-01T02:18:52+0200 [info] real-debrid::rd_slots_reserve
+- 2026-07-01T02:18:52+0200 [info] real-debrid::rd_verify_queue_submit - The.Devil.Wears.Prada.2.2026.1080p.10bit.WEBRip.6CH.x265.HEVC-PSA
+- 2026-07-01T02:18:52+0200 [info] real-debrid::rd_verify_add_start - The.Devil.Wears.Prada.2.2026.1080p.10bit.WEBRip.6CH.x265.HEVC-PSA
+- 2026-07-01T02:18:52+0200 [info] real-debrid::rd_slots_reserve
+- 2026-07-01T02:18:52+0200 [info] real-debrid::rd_slots_reserve
+- 2026-07-01T02:18:52+0200 [info] real-debrid::rd_verify_add_start - The.Devil.Wears.Prada.2.2026.MULTi.VF2.HDR.2160p.WEB.H265-SUPPLY
+- 2026-07-01T02:18:52+0200 [info] real-debrid::rd_verify_queue_submit - The.Devil.Wears.Prada.2.2026.MULTi.VF2.HDR.2160p.WEB.H265-SUPPLY
+- 2026-07-01T02:18:52+0200 [info] real-debrid::rd_slots_reserve
+- 2026-07-01T02:18:52+0200 [info] real-debrid::rd_verify_queue_submit - The.Devil.Wears.Prada.2.2026.HDR.2160P.WEB.H265.REPACK-POKE
+- 2026-07-01T02:18:52+0200 [info] real-debrid::rd_verify_add_start - The.Devil.Wears.Prada.2.2026.HDR.2160P.WEB.H265.REPACK-POKE
+- 2026-07-01T02:18:52+0200 [info] real-debrid::rd_verify_queue_submit - The.Devil.Wears.Prada.2.2026.HDR.2160P.WEB.H265.REPACK-POKE
+- 2026-07-01T02:18:52+0200 [info] real-debrid::rd_verify_add_start - The.Devil.Wears.Prada.2.2026.HDR.2160P.WEB.H265.REPACK-POKE
+- 2026-07-01T02:18:52+0200 [info] real-debrid::rd_slots_reserve
+- 2026-07-01T02:18:52+0200 [info] real-debrid::rd_verify_queue_submit - www.UIndex.org    -    The Devil Wears Prada 2 2026 1080p WEB-DL HEVC x265 5 1-BONE
+- 2026-07-01T02:18:52+0200 [info] real-debrid::rd_verify_add_start - www.UIndex.org    -    The Devil Wears Prada 2 2026 1080p WEB-DL HEVC x265 5 1-BONE
+- 2026-07-01T02:18:52+0200 [info] real-debrid::rd_slots_reserve
+- 2026-07-01T02:18:52+0200 [info] real-debrid::rd_verify_queue_submit - www.UIndex.org    -    The Devil Wears Prada 2 (2026) 1080p WEBRip x265 10bit 5.1-LAMA
+- 2026-07-01T02:18:52+0200 [info] real-debrid::rd_verify_add_start - www.UIndex.org    -    The Devil Wears Prada 2 (2026) 1080p WEBRip x265 10bit 5.1-LAMA
+- 2026-07-01T02:18:52+0200 [info] real-debrid::rd_slots_reserve
+- 2026-07-01T02:18:52+0200 [info] real-debrid::rd_verify_queue_submit - The Devil Wears Prada 2 (2026) [1080p] [WEBRip] [x265] [10bit] [5.1] [YTS.GG - YTS.BZ]
+- 2026-07-01T02:18:52+0200 [info] real-debrid::rd_verify_add_start - The Devil Wears Prada 2 (2026) [1080p] [WEBRip] [x265] [10bit] [5.1] [YTS.GG - YTS.BZ]
+- 2026-07-01T02:18:52+0200 [info] real-debrid::rd_slots_reserve
+- 2026-07-01T02:18:52+0200 [info] real-debrid::rd_verify_add_start - www.UIndex.org    -    The Devil Wears Prada 2 2026 1080p WEBRip 10Bit DDP5 1 x265-NeoNoir
+- 2026-07-01T02:18:52+0200 [info] real-debrid::rd_verify_queue_submit - www.UIndex.org    -    The Devil Wears Prada 2 2026 1080p WEBRip 10Bit DDP5 1 x265-NeoNoir
+- 2026-07-01T02:18:52+0200 [info] real-debrid::rd_slots_reserve
+- 2026-07-01T02:18:52+0200 [info] real-debrid::rd_slots_reserve
+- 2026-07-01T02:18:52+0200 [info] real-debrid::rd_verify_add_start - The.Devil.Wears.Prada.2.2026.2160P.WEB.H265-POKE
+- 2026-07-01T02:18:52+0200 [info] real-debrid::rd_verify_queue_submit - The.Devil.Wears.Prada.2.2026.2160P.WEB.H265-POKE
+- 2026-07-01T02:18:52+0200 [info] real-debrid::rd_slots_reserve
+- 2026-07-01T02:18:52+0200 [info] real-debrid::rd_verify_queue_submit - www.UIndex.org    -    The Devil Wears Prada 2 2026 1080p MA WEB-DL DDP5 1 Atmos H 264-BYNDR
+- 2026-07-01T02:18:52+0200 [info] real-debrid::rd_verify_add_start - www.UIndex.org    -    The Devil Wears Prada 2 2026 1080p MA WEB-DL DDP5 1 Atmos H 264-BYNDR
+- 2026-07-01T02:18:52+0200 [info] real-debrid::rd_verify_queue_submit - www.UIndex.org    -    The Devil Wears Prada 2 2026 720p 10bit WEBRip 6CH x265 HEVC-PSA
+- 2026-07-01T02:18:52+0200 [info] real-debrid::rd_verify_add_start - www.UIndex.org    -    The Devil Wears Prada 2 2026 720p 10bit WEBRip 6CH x265 HEVC-PSA
+- 2026-07-01T02:18:52+0200 [info] real-debrid::rd_slots_reserve
+- 2026-07-01T02:18:52+0200 [info] real-debrid::rd_verify_queue_submit - www.UIndex.org    -    The Devil Wears Prada 2 2026 1080p WebRip EAC3 5 1 x265-Lootera
+- 2026-07-01T02:18:52+0200 [info] real-debrid::rd_verify_add_start - www.UIndex.org    -    The Devil Wears Prada 2 2026 1080p WebRip EAC3 5 1 x265-Lootera
+- 2026-07-01T02:18:52+0200 [info] real-debrid::rd_slots_reserve
+- 2026-07-01T02:18:52+0200 [info] real-debrid::rd_verify_queue_submit - www.UIndex.org    -    The Devil Wears Prada 2 2026 1080p WEBRip x265-DH
+- 2026-07-01T02:18:52+0200 [info] real-debrid::rd_verify_add_start - www.UIndex.org    -    The Devil Wears Prada 2 2026 1080p WEBRip x265-DH
+- 2026-07-01T02:18:52+0200 [info] real-debrid::rd_slots_reserve
+- 2026-07-01T02:18:52+0200 [info] real-debrid::rd_verify_add_start - The.Devil.Wears.Prada.2.2026.1080p.DCP.WEBRIP.AC3.x264-AOC
+- 2026-07-01T02:18:52+0200 [info] real-debrid::rd_verify_queue_submit - The.Devil.Wears.Prada.2.2026.1080p.DCP.WEBRIP.AC3.x264-AOC
+- 2026-07-01T02:18:52+0200 [info] real-debrid::rd_slots_reserve
+- 2026-07-01T02:18:52+0200 [info] real-debrid::rd_verify_queue_submit - The.Devil.Wears.Prada.2.2026.1080p.DCP.WEBRIP.AC3.x264-AOC
+- 2026-07-01T02:18:52+0200 [info] real-debrid::rd_verify_add_start - The.Devil.Wears.Prada.2.2026.1080p.DCP.WEBRIP.AC3.x264-AOC
+- 2026-07-01T02:18:52+0200 [info] real-debrid::rd_slots_reserve
+- 2026-07-01T02:18:52+0200 [info] real-debrid::rd_verify_queue_submit - The Devil Wears Prada 2 [2026] Dual YG
+- 2026-07-01T02:18:52+0200 [info] real-debrid::rd_verify_add_start - The Devil Wears Prada 2 [2026] Dual YG
+- 2026-07-01T02:18:52+0200 [info] real-debrid::rd_slots_reserve
+- 2026-07-01T02:18:52+0200 [info] real-debrid::rd_verify_queue_submit - www.UIndex.org    -    The Devil Wears Prada 2 2026 1080p AMZN WEB-DL-Ben The Men
+- 2026-07-01T02:18:52+0200 [info] real-debrid::rd_verify_add_start - www.UIndex.org    -    The Devil Wears Prada 2 2026 1080p AMZN WEB-DL-Ben The Men
+- 2026-07-01T02:18:52+0200 [info] real-debrid::rd_slots_reserve
+- 2026-07-01T02:18:52+0200 [info] real-debrid::rd_verify_queue_submit - The.Devil.Wears.Prada.2.2026.1080p.AMZN.WEB-DL.DDP5.1.H.264.MP4-BEN.THE.MEN
+- 2026-07-01T02:18:52+0200 [info] real-debrid::rd_verify_add_start - The.Devil.Wears.Prada.2.2026.1080p.AMZN.WEB-DL.DDP5.1.H.264.MP4-BEN.THE.MEN
+- 2026-07-01T02:18:52+0200 [info] real-debrid::rd_slots_reserve
+- 2026-07-01T02:18:52+0200 [info] real-debrid::rd_verify_queue_submit - www.UIndex.org    -    The Devil Wears Prada 2 2026 1080p AMZN WEB-DL DDP5 1 H 264-KyoGo
+- 2026-07-01T02:18:52+0200 [info] real-debrid::rd_verify_add_start - www.UIndex.org    -    The Devil Wears Prada 2 2026 1080p AMZN WEB-DL DDP5 1 H 264-KyoGo
+- 2026-07-01T02:18:52+0200 [info] real-debrid::rd_slots_reserve
+- 2026-07-01T02:18:52+0200 [info] real-debrid::rd_verify_queue_submit - The.Devil.Wears.Prada.2.2026.1080p.AMZN.WEB-DL.DDP5.1.H.264-KyoGo
+- 2026-07-01T02:18:52+0200 [info] real-debrid::rd_verify_add_start - The.Devil.Wears.Prada.2.2026.1080p.AMZN.WEB-DL.DDP5.1.H.264-KyoGo
+- 2026-07-01T02:18:52+0200 [info] real-debrid::rd_slots_reserve
+- 2026-07-01T02:18:52+0200 [info] real-debrid::rd_verify_queue_submit - The.Devil.Wears.Prada.2.2026.WEB-DL.1080p.X264
+- 2026-07-01T02:18:52+0200 [info] real-debrid::rd_verify_add_start - The.Devil.Wears.Prada.2.2026.WEB-DL.1080p.X264
+- 2026-07-01T02:18:52+0200 [info] real-debrid::rd_slots_reserve
+- 2026-07-01T02:18:52+0200 [info] real-debrid::rd_verify_queue_submit - Ďábel.nosí.Pradu.2.The.Devil.Wears.Prada.2.(2026)[WebRip][1080p].=.CSFD.64%
+- 2026-07-01T02:18:52+0200 [info] real-debrid::rd_verify_add_start - Ďábel.nosí.Pradu.2.The.Devil.Wears.Prada.2.(2026)[WebRip][1080p].=.CSFD.64%
+- 2026-07-01T02:18:52+0200 [info] real-debrid::rd_slots_reserve
+- 2026-07-01T02:18:52+0200 [info] real-debrid::rd_verify_queue_submit - The Devil Wears Prada 2 (2026) 1080p WEBRip 5.1-LAMA
+- 2026-07-01T02:18:52+0200 [info] real-debrid::rd_verify_add_start - The Devil Wears Prada 2 (2026) 1080p WEBRip 5.1-LAMA
+- 2026-07-01T02:18:52+0200 [info] real-debrid::rd_slots_reserve
+- 2026-07-01T02:18:52+0200 [info] real-debrid::rd_verify_queue_submit - The.Devil.Wears.Prada.2.2026.1080p.WEBRip.x264.AAC5.1-[YTS.GG - YTS.BZ]
+- 2026-07-01T02:18:52+0200 [info] real-debrid::rd_verify_add_start - The.Devil.Wears.Prada.2.2026.1080p.WEBRip.x264.AAC5.1-[YTS.GG - YTS.BZ]
+- 2026-07-01T02:18:52+0200 [info] real-debrid::rd_slots_reserve
+- 2026-07-01T02:18:52+0200 [info] real-debrid::rd_verify_queue_submit - www.UIndex.org    -    The Devil Wears Prada 2 (2026) 1080p WEBRip 5.1-LAMA
+- 2026-07-01T02:18:52+0200 [info] real-debrid::rd_verify_add_start - www.UIndex.org    -    The Devil Wears Prada 2 (2026) 1080p WEBRip 5.1-LAMA
+- 2026-07-01T02:18:52+0200 [info] real-debrid::rd_slots_reserve
+- 2026-07-01T02:18:52+0200 [info] real-debrid::rd_verify_queue_submit - www.UIndex.org    -    The Devil Wears Prada 2 2026 720p MA WEB-DL DDP5 1 Atmos H 264-BYNDR
+- 2026-07-01T02:18:52+0200 [info] real-debrid::rd_verify_add_start - www.UIndex.org    -    The Devil Wears Prada 2 2026 720p MA WEB-DL DDP5 1 Atmos H 264-BYNDR
+- 2026-07-01T02:18:52+0200 [info] real-debrid::rd_slots_reserve
+- 2026-07-01T02:18:52+0200 [info] real-debrid::rd_verify_add_start - The.Devil.Wears.Prada.2.2026.1080p.WEB.DCPRip.x264-SOFSJ
+- 2026-07-01T02:18:52+0200 [info] real-debrid::rd_verify_queue_submit - The.Devil.Wears.Prada.2.2026.1080p.WEB.DCPRip.x264-SOFSJ
+- 2026-07-01T02:18:52+0200 [info] real-debrid::rd_slots_reserve
+- 2026-07-01T02:18:52+0200 [info] real-debrid::rd_verify_queue_submit - The Devil Wears Prada 2 [2026]
+- 2026-07-01T02:18:52+0200 [info] real-debrid::rd_verify_add_start - The Devil Wears Prada 2 [2026]
+- 2026-07-01T02:18:52+0200 [info] real-debrid::rd_slots_reserve
+- 2026-07-01T02:18:52+0200 [info] real-debrid::rd_verify_queue_submit - www.UIndex.org    -    The.Devil.Wears.Prada.2.2026.1080P.WEB.H264-POKE
+- 2026-07-01T02:18:52+0200 [info] real-debrid::rd_verify_add_start - www.UIndex.org    -    The.Devil.Wears.Prada.2.2026.1080P.WEB.H264-POKE
+- 2026-07-01T02:18:52+0200 [info] real-debrid::rd_slots_reserve
+- 2026-07-01T02:18:52+0200 [info] real-debrid::rd_verify_queue_submit - The Devil Wears Prada 2 [2026]
+- 2026-07-01T02:18:52+0200 [info] real-debrid::rd_verify_add_start - The Devil Wears Prada 2 [2026]
+- 2026-07-01T02:18:52+0200 [info] real-debrid::rd_slots_reserve
+- 2026-07-01T02:18:52+0200 [info] real-debrid::rd_verify_queue_submit - the.-devil.-wears.-prada.-2.2026.-dcprip.-1080p-sofcj
+- 2026-07-01T02:18:52+0200 [info] real-debrid::rd_verify_add_start - the.-devil.-wears.-prada.-2.2026.-dcprip.-1080p-sofcj
+- 2026-07-01T02:18:52+0200 [info] real-debrid::rd_slots_reserve
+- 2026-07-01T02:18:52+0200 [info] real-debrid::rd_verify_queue_submit - The.Devil.Wears.Prada.2.2026.720p.AMZN.WEB-DL.DDP5.1.H.264-KyoGo
+- 2026-07-01T02:18:52+0200 [info] real-debrid::rd_verify_add_start - The.Devil.Wears.Prada.2.2026.720p.AMZN.WEB-DL.DDP5.1.H.264-KyoGo
+- 2026-07-01T02:18:52+0200 [info] real-debrid::rd_slots_reserve
+- 2026-07-01T02:18:52+0200 [info] real-debrid::rd_verify_queue_submit - The.Devil.Wears.Prada.2.2026.WEB-DLRip-New-Team
+- 2026-07-01T02:18:52+0200 [info] real-debrid::rd_verify_add_start - The.Devil.Wears.Prada.2.2026.WEB-DLRip-New-Team
+- 2026-07-01T02:18:52+0200 [info] real-debrid::rd_slots_reserve
+- 2026-07-01T02:18:52+0200 [info] real-debrid::rd_slots_reserve
+- 2026-07-01T02:18:52+0200 [info] real-debrid::rd_verify_add_start - The.Devil.Wears.Prada.2.2026.WEBRip.x264.DD5.1-MiNiHD
+- 2026-07-01T02:18:52+0200 [info] real-debrid::rd_verify_queue_submit - The.Devil.Wears.Prada.2.2026.WEBRip.x264.DD5.1-MiNiHD
+- 2026-07-01T02:18:52+0200 [info] real-debrid::rd_slots_reserve
+- 2026-07-01T02:18:52+0200 [info] real-debrid::rd_verify_queue_submit - www.UIndex.org    -    The.Devil.Wears.Prada.2.2026.720P.WEB.H264-POKE
+- 2026-07-01T02:18:52+0200 [info] real-debrid::rd_verify_add_start - www.UIndex.org    -    The.Devil.Wears.Prada.2.2026.720P.WEB.H264-POKE
+- 2026-07-01T02:18:52+0200 [info] real-debrid::rd_verify_queue_submit - The Devil Wears Prada 2 [720p] [Napisy PL]
+- 2026-07-01T02:18:52+0200 [info] real-debrid::rd_verify_add_start - The Devil Wears Prada 2 [720p] [Napisy PL]
+- 2026-07-01T02:18:52+0200 [info] real-debrid::rd_slots_reserve
+- 2026-07-01T02:18:52+0200 [info] real-debrid::rd_slots_reserve
+- 2026-07-01T02:18:52+0200 [info] real-debrid::rd_verify_queue_submit - the-devil-wears-prada-2-2026_20260523
+- 2026-07-01T02:18:52+0200 [info] real-debrid::rd_verify_add_start - the-devil-wears-prada-2-2026_20260523
+- 2026-07-01T02:18:52+0200 [info] real-debrid::rd_slots_reserve
+- 2026-07-01T02:18:52+0200 [info] real-debrid::rd_verify_queue_submit - The.Devil.Wears.Prada.2.2026.HDR.2160P.WEB.H265.REPACK-TRB
+- 2026-07-01T02:18:52+0200 [info] real-debrid::rd_verify_add_start - The.Devil.Wears.Prada.2.2026.HDR.2160P.WEB.H265.REPACK-TRB
+- 2026-07-01T02:18:52+0200 [info] real-debrid::rd_slots_reserve
+- 2026-07-01T02:18:52+0200 [info] real-debrid::rd_verify_queue_submit - The.Devil.Wears.Prada.2.2026.2160P.WEB.H265-TRB
+- 2026-07-01T02:18:52+0200 [info] real-debrid::rd_verify_add_start - The.Devil.Wears.Prada.2.2026.2160P.WEB.H265-TRB
+- 2026-07-01T02:18:52+0200 [info] real-debrid::rd_verify_queue_submit - Lady Gaga, Doechii & SIENNA SPIRO – The Devil Wears Prada 2 (Music From The Motion Picture) Pop  (2026) 320_kbps Beats⭐
+- 2026-07-01T02:18:52+0200 [info] real-debrid::rd_verify_add_start - Lady Gaga, Doechii & SIENNA SPIRO – The Devil Wears Prada 2 (Music From The Motion Picture) Pop  (2026) 320_kbps Beats⭐
+- 2026-07-01T02:18:52+0200 [info] real-debrid::rd_slots_reserve
+- 2026-07-01T02:18:52+0200 [info] real-debrid::rd_verify_add_start - the_devil_wears_prada-2
+- 2026-07-01T02:18:52+0200 [info] real-debrid::rd_verify_queue_submit - the_devil_wears_prada-2
+- 2026-07-01T02:18:52+0200 [info] real-debrid::rd_slots_reserve
+- 2026-07-01T02:18:52+0200 [info] real-debrid::rd_verify_queue_submit - the_devil_wears_prada-2
+- 2026-07-01T02:18:52+0200 [info] real-debrid::rd_verify_add_start - the_devil_wears_prada-2
+- 2026-07-01T02:18:52+0200 [info] real-debrid::rd_slots_reserve
+- 2026-07-01T02:18:52+0200 [info] real-debrid::rd_verify_queue_submit - The.Devil.Wears.Prada.2.2026.1080P.WEB.H264-TRB
+- 2026-07-01T02:18:52+0200 [info] real-debrid::rd_verify_add_start - The.Devil.Wears.Prada.2.2026.1080P.WEB.H264-TRB
+- 2026-07-01T02:18:52+0200 [info] real-debrid::rd_slots_reserve
+- 2026-07-01T02:18:52+0200 [info] real-debrid::rd_verify_queue_submit - The.Devil.Wears.Prada.2.2026.V2.1080p.CAM.x264.ENG ESP-€lon_EaZy
+- 2026-07-01T02:18:52+0200 [info] real-debrid::rd_verify_add_start - The.Devil.Wears.Prada.2.2026.V2.1080p.CAM.x264.ENG ESP-€lon_EaZy
+- 2026-07-01T02:18:52+0200 [info] real-debrid::rd_slots_reserve
+- 2026-07-01T02:18:52+0200 [info] real-debrid::rd_verify_queue_submit - www.UIndex.org    -    The.Devil.Wears.Prada.2.2026.V2.1080p.CAM.x264.ENG ESP-€lon_EaZy
+- 2026-07-01T02:18:52+0200 [info] real-debrid::rd_verify_add_start - www.UIndex.org    -    The.Devil.Wears.Prada.2.2026.V2.1080p.CAM.x264.ENG ESP-€lon_EaZy
+- 2026-07-01T02:18:52+0200 [info] real-debrid::rd_slots_reserve
+- 2026-07-01T02:18:52+0200 [info] real-debrid::rd_slots_reserve
+- 2026-07-01T02:18:52+0200 [info] real-debrid::rd_verify_add_start - The Devil Wears Prada 2 [2026] TS Latino YG
+- 2026-07-01T02:18:52+0200 [info] real-debrid::rd_verify_queue_submit - The Devil Wears Prada 2 [2026] TS Latino YG
+- 2026-07-01T02:18:52+0200 [info] real-debrid::rd_slots_reserve
+- 2026-07-01T02:18:52+0200 [info] real-debrid::rd_api_http_error - infringing_file
+- 2026-07-01T02:18:52+0200 [info] real-debrid::rd_call_terminal_error - infringing_file
+- 2026-07-01T02:18:52+0200 [info] real-debrid::rd_verify_infringing - The.Devil.Wears.Prada.2.2026.2160p.WEB-DL.DV.HDR10 .MULTi.FRE.ITA.LAT.RUS.H265.MP4-BEN.THE.MEN
+- 2026-07-01T02:18:52+0200 [info] real-debrid::rd_verify_queue_done_item - The.Devil.Wears.Prada.2.2026.2160p.WEB-DL.DV.HDR10 .MULTi.FRE.ITA.LAT.RUS.H265.MP4-BEN.THE.MEN
+- 2026-07-01T02:18:53+0200 [info] real-debrid::rd_api_http_error - infringing_file
+- 2026-07-01T02:18:53+0200 [info] real-debrid::rd_call_terminal_error - infringing_file
+- 2026-07-01T02:18:53+0200 [info] real-debrid::rd_verify_infringing - The.Devil.Wears.Prada.2.2026.1080p.DCP.WEBRIP.AC3.x264-AOC
+- 2026-07-01T02:18:53+0200 [info] real-debrid::rd_verify_queue_done_item - The.Devil.Wears.Prada.2.2026.1080p.DCP.WEBRIP.AC3.x264-AOC
+- 2026-07-01T02:18:54+0200 [info] real-debrid::rd_verify_added
+- 2026-07-01T02:18:54+0200 [debug] real-debrid::rd_verify_poll - the-devil-wears-prada-2-2026_20260523
+- 2026-07-01T02:18:54+0200 [info] real-debrid::rd_verify_select_files
+- 2026-07-01T02:18:55+0200 [debug] real-debrid::rd_verify_post_select_poll - the-devil-wears-prada-2-2026_20260523
+- 2026-07-01T02:18:55+0200 [info] real-debrid::rd_verify_ok - the-devil-wears-prada-2-2026_20260523  ==>  /The Devil Wears Prada 2 - [2026].mp4
+- 2026-07-01T02:18:55+0200 [info] real-debrid::rd_verify_queue_done_item - the-devil-wears-prada-2-2026_20260523  ==>  /The Devil Wears Prada 2 - [2026].mp4
+- 2026-07-01T02:18:55+0200 [info] real-debrid::rd_api_http_error - infringing_file
+- 2026-07-01T02:18:55+0200 [info] real-debrid::rd_call_terminal_error - infringing_file
+- 2026-07-01T02:18:55+0200 [info] real-debrid::rd_verify_infringing - www.UIndex.org    -    The Devil Wears Prada 2 2026 1080p WebRip EAC3 5 1 x265-Lootera
+- 2026-07-01T02:18:55+0200 [info] real-debrid::rd_verify_queue_done_item - www.UIndex.org    -    The Devil Wears Prada 2 2026 1080p WebRip EAC3 5 1 x265-Lootera
+- 2026-07-01T02:18:56+0200 [info] real-debrid::rd_verify_added
+- 2026-07-01T02:18:56+0200 [debug] real-debrid::rd_verify_poll - Lady Gaga, Doechii & SIENNA SPIRO – The Devil Wears Prada 2 (Music From The Motion Picture) Pop  (2026) 320_kbps Beats⭐
+- 2026-07-01T02:18:56+0200 [info] real-debrid::rd_verify_pack_skip - Lady Gaga, Doechii & SIENNA SPIRO – The Devil Wears Prada 2 (Music From The Motion Picture) Pop  (2026) 320_kbps Beats⭐
+- 2026-07-01T02:18:56+0200 [info] real-debrid::rd_fast_discard - waiting_files_no_match
+- 2026-07-01T02:18:56+0200 [info] real-debrid::rd_fast_discard_reason - waiting_files_no_match
+- 2026-07-01T02:18:56+0200 [info] real-debrid::rd_fast_discard_delete - waiting_files_no_match
+- 2026-07-01T02:18:56+0200 [debug] real-debrid::rd_waiting_files_no_match_fast_delete - Lady Gaga, Doechii & SIENNA SPIRO – The Devil Wears Prada 2 (Music From The Motion Picture) Pop  (2026) 320_kbps Beats⭐
+- 2026-07-01T02:18:56+0200 [info] real-debrid::rd_delete_torrent
+- 2026-07-01T02:18:56+0200 [info] real-debrid::rd_slots_release
+- 2026-07-01T02:18:56+0200 [info] real-debrid::rd_verify_queue_done_item - Lady Gaga, Doechii & SIENNA SPIRO – The Devil Wears Prada 2 (Music From The Motion Picture) Pop  (2026) 320_kbps Beats⭐
+- 2026-07-01T02:18:57+0200 [debug] real-debrid::rd_endpoint_pace_wait
+- 2026-07-01T02:18:58+0200 [info] real-debrid::rd_verify_added
+- 2026-07-01T02:18:58+0200 [debug] real-debrid::rd_verify_poll - the_devil_wears_prada-2
+- 2026-07-01T02:18:58+0200 [info] real-debrid::rd_verify_added
+- 2026-07-01T02:18:58+0200 [debug] real-debrid::rd_verify_poll - The Devil Wears Prada 2 [2026]
+- 2026-07-01T02:18:58+0200 [debug] real-debrid::rd_rate_wait
+- 2026-07-01T02:18:58+0200 [info] real-debrid::rd_delete_torrent
+- 2026-07-01T02:18:58+0200 [info] real-debrid::rd_slots_release
+- 2026-07-01T02:18:58+0200 [info] real-debrid::rd_verify_not_instant - the_devil_wears_prada-2
+- 2026-07-01T02:18:58+0200 [info] real-debrid::rd_verify_queue_done_item - the_devil_wears_prada-2
+- 2026-07-01T02:18:59+0200 [info] real-debrid::rd_api_http_error - infringing_file
+- 2026-07-01T02:18:59+0200 [info] real-debrid::rd_call_terminal_error - infringing_file
+- 2026-07-01T02:18:59+0200 [info] real-debrid::rd_verify_infringing - www.UIndex.org    -    The Devil Wears Prada 2 2026 1080p 10bit WEBRip 6CH x265 HEVC-PSA
+- 2026-07-01T02:18:59+0200 [info] real-debrid::rd_verify_queue_done_item - www.UIndex.org    -    The Devil Wears Prada 2 2026 1080p 10bit WEBRip 6CH x265 HEVC-PSA
+- 2026-07-01T02:18:59+0200 [info] real-debrid::rd_verify_select_files
+- 2026-07-01T02:18:59+0200 [debug] real-debrid::rd_verify_post_select_poll - The Devil Wears Prada 2 [2026]
+- 2026-07-01T02:18:59+0200 [info] real-debrid::rd_verify_ok - The Devil Wears Prada 2 [2026]  ==>  /Subs/video.mkv
+- 2026-07-01T02:18:59+0200 [info] real-debrid::rd_verify_queue_done_item - The Devil Wears Prada 2 [2026]  ==>  /Subs/video.mkv
+- 2026-07-01T02:19:02+0200 [debug] real-debrid::rd_endpoint_pace_wait
+- 2026-07-01T02:19:07+0200 [debug] real-debrid::rd_endpoint_pace_wait
+- 2026-07-01T02:19:09+0200 [info] real-debrid::rd_verify_added
+- 2026-07-01T02:19:10+0200 [debug] real-debrid::rd_verify_poll - The.Devil.Wears.Prada.2.2026.720p.AMZN.WEB-DL.DDP5.1.H.264-KyoGo
+- 2026-07-01T02:19:10+0200 [info] real-debrid::rd_api_http_error - infringing_file
+- 2026-07-01T02:19:10+0200 [info] real-debrid::rd_call_terminal_error - infringing_file
+- 2026-07-01T02:19:10+0200 [info] real-debrid::rd_verify_infringing - The.Devil.Wears.Prada.2.2026.1080P.WEB.H264-TRB
+- 2026-07-01T02:19:10+0200 [info] real-debrid::rd_verify_queue_done_item - The.Devil.Wears.Prada.2.2026.1080P.WEB.H264-TRB
+- 2026-07-01T02:19:10+0200 [info] real-debrid::rd_delete_torrent
+- 2026-07-01T02:19:10+0200 [info] real-debrid::rd_slots_release
+- 2026-07-01T02:19:10+0200 [info] real-debrid::rd_verify_not_instant - The.Devil.Wears.Prada.2.2026.720p.AMZN.WEB-DL.DDP5.1.H.264-KyoGo
+- 2026-07-01T02:19:10+0200 [info] real-debrid::rd_verify_queue_done_item - The.Devil.Wears.Prada.2.2026.720p.AMZN.WEB-DL.DDP5.1.H.264-KyoGo
+- 2026-07-01T02:19:11+0200 [info] real-debrid::rd_verify_added
+- 2026-07-01T02:19:11+0200 [debug] real-debrid::rd_verify_poll - The.Devil.Wears.Prada.2.2026.2160P.WEB.H265-POKE
+- 2026-07-01T02:19:11+0200 [info] real-debrid::rd_verify_select_files
+- 2026-07-01T02:19:12+0200 [debug] real-debrid::rd_verify_post_select_poll - The.Devil.Wears.Prada.2.2026.2160P.WEB.H265-POKE
+- 2026-07-01T02:19:12+0200 [info] real-debrid::rd_fast_discard - zero_progress_post_select
+- 2026-07-01T02:19:12+0200 [info] real-debrid::rd_fast_discard_reason - zero_progress_post_select
+- 2026-07-01T02:19:12+0200 [info] real-debrid::rd_fast_discard_delete - zero_progress_post_select
+- 2026-07-01T02:19:12+0200 [info] real-debrid::rd_zero_progress_fast_delete - The.Devil.Wears.Prada.2.2026.2160P.WEB.H265-POKE
+- 2026-07-01T02:19:12+0200 [debug] real-debrid::rd_rate_wait
+- 2026-07-01T02:19:12+0200 [info] real-debrid::rd_api_http_error - infringing_file
+- 2026-07-01T02:19:12+0200 [info] real-debrid::rd_call_terminal_error - infringing_file
+- 2026-07-01T02:19:12+0200 [debug] real-debrid::rd_endpoint_pace_wait
+- 2026-07-01T02:19:12+0200 [info] real-debrid::rd_verify_infringing - The.Devil.Wears.Prada.2.2026.HDR.2160P.WEB.H265.REPACK-TRB
+- 2026-07-01T02:19:12+0200 [info] real-debrid::rd_verify_queue_done_item - The.Devil.Wears.Prada.2.2026.HDR.2160P.WEB.H265.REPACK-TRB
+- 2026-07-01T02:19:12+0200 [info] real-debrid::rd_delete_torrent
+- 2026-07-01T02:19:12+0200 [info] real-debrid::rd_slots_release
+- 2026-07-01T02:19:12+0200 [info] real-debrid::rd_verify_queue_done_item - The.Devil.Wears.Prada.2.2026.2160P.WEB.H265-POKE
+- 2026-07-01T02:19:13+0200 [info] real-debrid::rd_api_http_error - infringing_file
+- 2026-07-01T02:19:13+0200 [info] real-debrid::rd_call_terminal_error - infringing_file
+- 2026-07-01T02:19:13+0200 [info] real-debrid::rd_verify_infringing - The.Devil.Wears.Prada.2.2026.PLSUB.1080p.10bit.WEB-DL.DDP5.1.x265.HEVC-AdL
+- 2026-07-01T02:19:13+0200 [info] real-debrid::rd_verify_queue_done_item - The.Devil.Wears.Prada.2.2026.PLSUB.1080p.10bit.WEB-DL.DDP5.1.x265.HEVC-AdL
+- 2026-07-01T02:19:14+0200 [info] real-debrid::rd_api_http_error - infringing_file
+- 2026-07-01T02:19:14+0200 [info] real-debrid::rd_call_terminal_error - infringing_file
+- 2026-07-01T02:19:14+0200 [info] real-debrid::rd_verify_infringing - www.UIndex.org    -    The Devil Wears Prada 2 (2026) 1080p WEBRip x265 10bit 5.1-LAMA
+- 2026-07-01T02:19:14+0200 [info] real-debrid::rd_verify_queue_done_item - www.UIndex.org    -    The Devil Wears Prada 2 (2026) 1080p WEBRip x265 10bit 5.1-LAMA
+- 2026-07-01T02:19:15+0200 [info] real-debrid::rd_verify_added
+- 2026-07-01T02:19:15+0200 [debug] real-debrid::rd_verify_poll - The.Devil.Wears.Prada.2.2026.V2.1080p.CAM.x264.ENG ESP-€lon_EaZy
+- 2026-07-01T02:19:15+0200 [info] real-debrid::rd_verify_select_files
+- 2026-07-01T02:19:16+0200 [debug] real-debrid::rd_verify_post_select_poll - The.Devil.Wears.Prada.2.2026.V2.1080p.CAM.x264.ENG ESP-€lon_EaZy
+- 2026-07-01T02:19:16+0200 [info] real-debrid::rd_verify_ok - The.Devil.Wears.Prada.2.2026.V2.1080p.CAM.x264.ENG ESP-€lon_EaZy  ==>  /The.Devil.Wears.Prada.2.2026.V2.1080p.CAM.x264.ENG ESP-€lon_EaZy.mkv
+- 2026-07-01T02:19:16+0200 [info] real-debrid::rd_verify_queue_done_item - The.Devil.Wears.Prada.2.2026.V2.1080p.CAM.x264.ENG ESP-€lon_EaZy  ==>  /The.Devil.Wears.Prada.2.2026.V2.1080p.CAM.x264.E
+- 2026-07-01T02:19:16+0200 [info] real-debrid::rd_api_http_error - infringing_file
+- 2026-07-01T02:19:16+0200 [info] real-debrid::rd_call_terminal_error - infringing_file
+- 2026-07-01T02:19:16+0200 [info] real-debrid::rd_verify_infringing - The.Devil.Wears.Prada.2.2026.1080p.WEBRip.x264.AAC5.1-[YTS.GG - YTS.BZ]
+- 2026-07-01T02:19:16+0200 [info] real-debrid::rd_verify_queue_done_item - The.Devil.Wears.Prada.2.2026.1080p.WEBRip.x264.AAC5.1-[YTS.GG - YTS.BZ]
+- 2026-07-01T02:19:17+0200 [debug] real-debrid::rd_endpoint_pace_wait
+- 2026-07-01T02:19:18+0200 [info] real-debrid::rd_verify_added
+- 2026-07-01T02:19:18+0200 [debug] real-debrid::rd_verify_poll - www.UIndex.org    -    The.Devil.Wears.Prada.2.2026.V2.1080p.CAM.x264.ENG ESP-€lon_EaZy
+- 2026-07-01T02:19:18+0200 [info] real-debrid::rd_verify_select_files
+- 2026-07-01T02:19:19+0200 [debug] real-debrid::rd_verify_post_select_poll - www.UIndex.org    -    The.Devil.Wears.Prada.2.2026.V2.1080p.CAM.x264.ENG ESP-€lon_EaZy
+- 2026-07-01T02:19:19+0200 [info] real-debrid::rd_verify_ok - www.UIndex.org    -    The.Devil.Wears.Prada.2.2026.V2.1080p.CAM.x264.ENG ESP-€lon_EaZy  ==>  /The.Devil.Wears.Prada.2.2026.V2.1080p.CAM.x264.ENG ESP-€lon_EaZy.mkv
+- 2026-07-01T02:19:19+0200 [info] real-debrid::rd_verify_queue_done_item - www.UIndex.org    -    The.Devil.Wears.Prada.2.2026.V2.1080p.CAM.x264.ENG ESP-€lon_EaZy  ==>  /The.Devil.Wears.Prada.2.2
+- 2026-07-01T02:19:19+0200 [info] real-debrid::rd_verify_added
+- 2026-07-01T02:19:19+0200 [debug] real-debrid::rd_verify_poll - The.Devil.Wears.Prada.2.2026.WEBRip.x264.DD5.1-MiNiHD
+- 2026-07-01T02:19:19+0200 [info] real-debrid::rd_verify_added
+- 2026-07-01T02:19:19+0200 [debug] real-debrid::rd_rate_wait
+- 2026-07-01T02:19:19+0200 [info] real-debrid::rd_verify_select_files
+- 2026-07-01T02:19:20+0200 [debug] real-debrid::rd_verify_poll - the_devil_wears_prada-2
+- 2026-07-01T02:19:20+0200 [info] real-debrid::rd_verify_pack_skip - the_devil_wears_prada-2
+- 2026-07-01T02:19:20+0200 [info] real-debrid::rd_fast_discard - waiting_files_no_match
+- 2026-07-01T02:19:20+0200 [info] real-debrid::rd_fast_discard_reason - waiting_files_no_match
+- 2026-07-01T02:19:20+0200 [info] real-debrid::rd_fast_discard_delete - waiting_files_no_match
+- 2026-07-01T02:19:20+0200 [debug] real-debrid::rd_waiting_files_no_match_fast_delete - the_devil_wears_prada-2
+- 2026-07-01T02:19:20+0200 [debug] real-debrid::rd_verify_post_select_poll - The.Devil.Wears.Prada.2.2026.WEBRip.x264.DD5.1-MiNiHD
+- 2026-07-01T02:19:20+0200 [info] real-debrid::rd_fast_discard - zero_progress_post_select
+- 2026-07-01T02:19:20+0200 [info] real-debrid::rd_fast_discard_reason - zero_progress_post_select
+- 2026-07-01T02:19:20+0200 [info] real-debrid::rd_fast_discard_delete - zero_progress_post_select
+- 2026-07-01T02:19:20+0200 [info] real-debrid::rd_zero_progress_fast_delete - The.Devil.Wears.Prada.2.2026.WEBRip.x264.DD5.1-MiNiHD
+- 2026-07-01T02:19:20+0200 [debug] real-debrid::rd_endpoint_pace_wait
+- 2026-07-01T02:19:20+0200 [info] real-debrid::rd_delete_torrent
+- 2026-07-01T02:19:20+0200 [info] real-debrid::rd_slots_release
+- 2026-07-01T02:19:20+0200 [info] real-debrid::rd_verify_queue_done_item - the_devil_wears_prada-2
+- 2026-07-01T02:19:20+0200 [info] real-debrid::rd_api_http_error - infringing_file
+- 2026-07-01T02:19:20+0200 [info] real-debrid::rd_call_terminal_error - infringing_file
+- 2026-07-01T02:19:20+0200 [info] real-debrid::rd_verify_infringing - The.Devil.Wears.Prada.2.2026.WEB-DL.1080p.X264
+- 2026-07-01T02:19:20+0200 [info] real-debrid::rd_verify_queue_done_item - The.Devil.Wears.Prada.2.2026.WEB-DL.1080p.X264
+- 2026-07-01T02:19:21+0200 [info] real-debrid::rd_delete_torrent
+- 2026-07-01T02:19:21+0200 [info] real-debrid::rd_slots_release
+- 2026-07-01T02:19:21+0200 [info] real-debrid::rd_verify_queue_done_item - The.Devil.Wears.Prada.2.2026.WEBRip.x264.DD5.1-MiNiHD
+- 2026-07-01T02:19:21+0200 [info] real-debrid::rd_verify_added
+- 2026-07-01T02:19:21+0200 [debug] real-debrid::rd_verify_poll - The.Devil.Wears.Prada.2.2026.1080p.WEB.DCPRip.x264-SOFSJ
+- 2026-07-01T02:19:22+0200 [info] real-debrid::rd_verify_select_files
+- 2026-07-01T02:19:22+0200 [debug] real-debrid::rd_endpoint_pace_wait
+- 2026-07-01T02:19:22+0200 [debug] real-debrid::rd_verify_post_select_poll - The.Devil.Wears.Prada.2.2026.1080p.WEB.DCPRip.x264-SOFSJ
+- 2026-07-01T02:19:22+0200 [info] real-debrid::rd_api_http_error - infringing_file
+- 2026-07-01T02:19:22+0200 [info] real-debrid::rd_verify_ok - The.Devil.Wears.Prada.2.2026.1080p.WEB.DCPRip.x264-SOFSJ  ==>  /The.Devil.Wears.Prada.2.2026.1080p.WEB.DCPRip.x264-SOFSJ.mkv
+- 2026-07-01T02:19:22+0200 [info] real-debrid::rd_verify_queue_done_item - The.Devil.Wears.Prada.2.2026.1080p.WEB.DCPRip.x264-SOFSJ  ==>  /The.Devil.Wears.Prada.2.2026.1080p.WEB.DCPRip.x264-SOFSJ
+- 2026-07-01T02:19:22+0200 [info] real-debrid::rd_call_terminal_error - infringing_file
+- 2026-07-01T02:19:22+0200 [info] real-debrid::rd_verify_infringing - The.Devil.Wears.Prada.2.2026.WEB-DLRip-New-Team
+- 2026-07-01T02:19:22+0200 [info] real-debrid::rd_verify_queue_done_item - The.Devil.Wears.Prada.2.2026.WEB-DLRip-New-Team
+- 2026-07-01T02:19:23+0200 [info] real-debrid::rd_api_http_error - infringing_file
+- 2026-07-01T02:19:23+0200 [info] real-debrid::rd_call_terminal_error - infringing_file
+- 2026-07-01T02:19:23+0200 [info] real-debrid::rd_verify_infringing - www.UIndex.org    -    The Devil Wears Prada 2 2026 720p MA WEB-DL DDP5 1 Atmos H 264-BYNDR
+- 2026-07-01T02:19:23+0200 [info] real-debrid::rd_verify_queue_done_item - www.UIndex.org    -    The Devil Wears Prada 2 2026 720p MA WEB-DL DDP5 1 Atmos H 264-BYNDR
+- 2026-07-01T02:19:24+0200 [info] real-debrid::rd_verify_added
+- 2026-07-01T02:19:24+0200 [debug] real-debrid::rd_verify_poll - The.Devil.Wears.Prada.2.2026.MULTi.VF2.HDR.2160p.WEB.H265-SUPPLY
+- 2026-07-01T02:19:25+0200 [info] real-debrid::rd_verify_select_files
+- 2026-07-01T02:19:25+0200 [info] real-debrid::rd_verify_added
+- 2026-07-01T02:19:25+0200 [debug] real-debrid::rd_endpoint_pace_wait
+- 2026-07-01T02:19:25+0200 [debug] real-debrid::rd_verify_post_select_poll - The.Devil.Wears.Prada.2.2026.MULTi.VF2.HDR.2160p.WEB.H265-SUPPLY
+- 2026-07-01T02:19:25+0200 [info] real-debrid::rd_verify_ok - The.Devil.Wears.Prada.2.2026.MULTi.VF2.HDR.2160p.WEB.H265-SUPPLY  ==>  /The.Devil.Wears.Prada.2.2026.MULTi.VF2.HDR.2160p.WEB.H265-SUPPLY.mkv
+- 2026-07-01T02:19:25+0200 [info] real-debrid::rd_verify_queue_done_item - The.Devil.Wears.Prada.2.2026.MULTi.VF2.HDR.2160p.WEB.H265-SUPPLY  ==>  /The.Devil.Wears.Prada.2.2026.MULTi.VF2.HDR.2160p
+- 2026-07-01T02:19:25+0200 [debug] real-debrid::rd_verify_poll - The Devil Wears Prada 2 (2026) [720p][1080p] [2160p] [AMAZON] [Napisy PL]
+- 2026-07-01T02:19:25+0200 [debug] real-debrid::rd_rate_wait
+- 2026-07-01T02:19:26+0200 [info] real-debrid::rd_verify_select_files
+- 2026-07-01T02:19:26+0200 [info] real-debrid::rd_api_http_error - too_many_requests
+- 2026-07-01T02:19:26+0200 [info] real-debrid::rd_endpoint_429_backoff
+- 2026-07-01T02:19:26+0200 [info] real-debrid::rd_rate_429_cooldown
+- 2026-07-01T02:19:26+0200 [debug] real-debrid::rd_verify_post_select_poll - The Devil Wears Prada 2 (2026) [720p][1080p] [2160p] [AMAZON] [Napisy PL]
+- 2026-07-01T02:19:26+0200 [info] real-debrid::rd_fast_discard - zero_progress_post_select
+- 2026-07-01T02:19:26+0200 [info] real-debrid::rd_fast_discard_reason - zero_progress_post_select
+- 2026-07-01T02:19:26+0200 [info] real-debrid::rd_fast_discard_delete - zero_progress_post_select
+- 2026-07-01T02:19:26+0200 [info] real-debrid::rd_zero_progress_fast_delete - The Devil Wears Prada 2 (2026) [720p][1080p] [2160p] [AMAZON] [Napisy PL]
+- 2026-07-01T02:19:27+0200 [debug] real-debrid::rd_endpoint_pace_wait
+- 2026-07-01T02:19:27+0200 [info] real-debrid::rd_call_retry_429 - Real-Debrid HTTP 429: [34 too_many_requests] {"error": "too_many_requests", "error_code": 34, "src": "front-1"}
+- 2026-07-01T02:19:29+0200 [info] real-debrid::rd_delete_torrent
+- 2026-07-01T02:19:29+0200 [info] real-debrid::rd_slots_release
+- 2026-07-01T02:19:29+0200 [info] real-debrid::rd_verify_queue_done_item - The Devil Wears Prada 2 (2026) [720p][1080p] [2160p] [AMAZON] [Napisy PL]
+- 2026-07-01T02:19:32+0200 [debug] real-debrid::rd_endpoint_pace_wait
+- 2026-07-01T02:19:32+0200 [info] real-debrid::rd_api_http_error - infringing_file
+- 2026-07-01T02:19:32+0200 [info] real-debrid::rd_call_terminal_error - infringing_file
+- 2026-07-01T02:19:32+0200 [info] real-debrid::rd_verify_infringing - www.UIndex.org    -    The Devil Wears Prada 2 (2026) 1080p WEBRip 5.1-LAMA
+- 2026-07-01T02:19:32+0200 [info] real-debrid::rd_verify_queue_done_item - www.UIndex.org    -    The Devil Wears Prada 2 (2026) 1080p WEBRip 5.1-LAMA
+- 2026-07-01T02:19:34+0200 [info] real-debrid::rd_verify_added
+- 2026-07-01T02:19:34+0200 [debug] real-debrid::rd_verify_poll - The Devil Wears Prada 2 [2026]
+- 2026-07-01T02:19:35+0200 [info] real-debrid::rd_verify_select_files
+- 2026-07-01T02:19:35+0200 [info] real-debrid::rd_verify_added
+- 2026-07-01T02:19:35+0200 [debug] real-debrid::rd_verify_post_select_poll - The Devil Wears Prada 2 [2026]
+- 2026-07-01T02:19:35+0200 [info] real-debrid::rd_verify_ok - The Devil Wears Prada 2 [2026]  ==>  /The.Devil.Wears.Prada.2.2026.1080p.DCPRip.x264-FS_FFB.mkv
+- 2026-07-01T02:19:35+0200 [info] real-debrid::rd_verify_queue_done_item - The Devil Wears Prada 2 [2026]  ==>  /The.Devil.Wears.Prada.2.2026.1080p.DCPRip.x264-FS_FFB.mkv
+- 2026-07-01T02:19:35+0200 [debug] real-debrid::rd_verify_poll - The.Devil.Wears.Prada.2.2026.HDR.2160P.WEB.H265.REPACK-POKE
+- 2026-07-01T02:19:36+0200 [info] real-debrid::rd_verify_select_files
+- 2026-07-01T02:19:36+0200 [debug] real-debrid::rd_verify_post_select_poll - The.Devil.Wears.Prada.2.2026.HDR.2160P.WEB.H265.REPACK-POKE
+- 2026-07-01T02:19:36+0200 [info] real-debrid::rd_verify_ok - The.Devil.Wears.Prada.2.2026.HDR.2160P.WEB.H265.REPACK-POKE  ==>  /the.devil.wears.prada.2.2026.hdr.2160p.web.h265.repack-poke.mkv
+- 2026-07-01T02:19:36+0200 [info] real-debrid::rd_verify_queue_done_item - The.Devil.Wears.Prada.2.2026.HDR.2160P.WEB.H265.REPACK-POKE  ==>  /the.devil.wears.prada.2.2026.hdr.2160p.web.h265.repac
+- 2026-07-01T02:19:36+0200 [info] real-debrid::rd_api_http_error - infringing_file
+- 2026-07-01T02:19:36+0200 [info] real-debrid::rd_call_terminal_error - infringing_file
+- 2026-07-01T02:19:36+0200 [info] real-debrid::rd_verify_infringing - www.UIndex.org    -    The Devil Wears Prada 2 2026 1080p AMZN WEB-DL-Ben The Men
+- 2026-07-01T02:19:36+0200 [info] real-debrid::rd_verify_queue_done_item - www.UIndex.org    -    The Devil Wears Prada 2 2026 1080p AMZN WEB-DL-Ben The Men
+- 2026-07-01T02:19:37+0200 [debug] real-debrid::rd_endpoint_pace_wait
+- 2026-07-01T02:19:38+0200 [info] real-debrid::rd_api_http_error - infringing_file
+- 2026-07-01T02:19:38+0200 [info] real-debrid::rd_call_terminal_error - infringing_file
+- 2026-07-01T02:19:38+0200 [info] real-debrid::rd_verify_infringing - The.Devil.Wears.Prada.2.2026.2160p.HDR10Plus.DV.WEBRip.6CH.x265.HEVC-PSA
+- 2026-07-01T02:19:38+0200 [info] real-debrid::rd_verify_queue_done_item - The.Devil.Wears.Prada.2.2026.2160p.HDR10Plus.DV.WEBRip.6CH.x265.HEVC-PSA
+- 2026-07-01T02:19:39+0200 [info] real-debrid::rd_api_http_error - infringing_file
+- 2026-07-01T02:19:39+0200 [info] real-debrid::rd_call_terminal_error - infringing_file
+- 2026-07-01T02:19:39+0200 [info] real-debrid::rd_verify_infringing - www.UIndex.org    -    The Devil Wears Prada 2 2026 1080p AMZN WEB-DL DDP5 1 H 264-KyoGo
+- 2026-07-01T02:19:39+0200 [info] real-debrid::rd_verify_queue_done_item - www.UIndex.org    -    The Devil Wears Prada 2 2026 1080p AMZN WEB-DL DDP5 1 H 264-KyoGo
+- 2026-07-01T02:19:40+0200 [info] real-debrid::rd_verify_added
+- 2026-07-01T02:19:41+0200 [debug] real-debrid::rd_verify_poll - The Devil Wears Prada 2 [2026] TS Latino YG
+- 2026-07-01T02:19:41+0200 [info] real-debrid::rd_verify_select_files
+- 2026-07-01T02:19:41+0200 [debug] real-debrid::rd_verify_post_select_poll - The Devil Wears Prada 2 [2026] TS Latino YG
+- 2026-07-01T02:19:41+0200 [info] real-debrid::rd_verify_ok - The Devil Wears Prada 2 [2026] TS Latino YG  ==>  /The.Devil.Wears.Prada.2.2026.1080p.Telesync.h265.Latino YG.mkv
+- 2026-07-01T02:19:41+0200 [info] real-debrid::rd_verify_queue_done_item - The Devil Wears Prada 2 [2026] TS Latino YG  ==>  /The.Devil.Wears.Prada.2.2026.1080p.Telesync.h265.Latino YG.mkv
+- 2026-07-01T02:19:42+0200 [info] real-debrid::rd_api_http_error - infringing_file
+- 2026-07-01T02:19:42+0200 [info] real-debrid::rd_call_terminal_error - infringing_file
+- 2026-07-01T02:19:42+0200 [info] real-debrid::rd_verify_infringing - The.Devil.Wears.Prada.2.2026.1080p.AMZN.WEB-DL.DDP5.1.H.264-KyoGo
+- 2026-07-01T02:19:42+0200 [info] real-debrid::rd_verify_queue_done_item - The.Devil.Wears.Prada.2.2026.1080p.AMZN.WEB-DL.DDP5.1.H.264-KyoGo
+- 2026-07-01T02:19:43+0200 [debug] real-debrid::rd_endpoint_pace_wait
+- 2026-07-01T02:19:43+0200 [info] real-debrid::rd_verify_added
+- 2026-07-01T02:19:43+0200 [debug] real-debrid::rd_verify_poll - The.Devil.Wears.Prada.2.2026.HDR.2160P.WEB.H265.REPACK-POKE
+- 2026-07-01T02:19:44+0200 [info] real-debrid::rd_verify_select_files
+- 2026-07-01T02:19:44+0200 [debug] real-debrid::rd_verify_post_select_poll - The.Devil.Wears.Prada.2.2026.HDR.2160P.WEB.H265.REPACK-POKE
+- 2026-07-01T02:19:44+0200 [info] real-debrid::rd_verify_ok - The.Devil.Wears.Prada.2.2026.HDR.2160P.WEB.H265.REPACK-POKE  ==>  /the.devil.wears.prada.2.2026.hdr.2160p.web.h265.repack-poke.mkv
+- 2026-07-01T02:19:44+0200 [info] real-debrid::rd_verify_queue_done_item - The.Devil.Wears.Prada.2.2026.HDR.2160P.WEB.H265.REPACK-POKE  ==>  /the.devil.wears.prada.2.2026.hdr.2160p.web.h265.repac
+- 2026-07-01T02:19:44+0200 [info] real-debrid::rd_api_http_error - too_many_requests
+- 2026-07-01T02:19:44+0200 [info] real-debrid::rd_endpoint_429_backoff
+- 2026-07-01T02:19:44+0200 [info] real-debrid::rd_rate_429_cooldown
+- 2026-07-01T02:19:45+0200 [info] real-debrid::rd_call_retry_429 - Real-Debrid HTTP 429: [34 too_many_requests] {"error": "too_many_requests", "error_code": 34, "src": "front-1"}
+- 2026-07-01T02:19:49+0200 [debug] real-debrid::rd_endpoint_pace_wait
+- 2026-07-01T02:19:51+0200 [info] real-debrid::rd_api_http_error - infringing_file
+- 2026-07-01T02:19:51+0200 [info] real-debrid::rd_call_terminal_error - infringing_file
+- 2026-07-01T02:19:51+0200 [info] real-debrid::rd_verify_infringing - The Devil Wears Prada 2 (2026) [1080p] [WEBRip] [x265] [10bit] [5.1] [YTS.GG - YTS.BZ]
+- 2026-07-01T02:19:51+0200 [info] real-debrid::rd_verify_queue_done_item - The Devil Wears Prada 2 (2026) [1080p] [WEBRip] [x265] [10bit] [5.1] [YTS.GG - YTS.BZ]
+- 2026-07-01T02:19:52+0200 [info] real-debrid::rd_api_http_error - infringing_file
+- 2026-07-01T02:19:52+0200 [info] real-debrid::rd_call_terminal_error - infringing_file
+- 2026-07-01T02:19:53+0200 [info] real-debrid::rd_verify_infringing - Ďábel.nosí.Pradu.2.The.Devil.Wears.Prada.2.(2026)[2160p][WEB-DL][HDR].=.CSFD.64%
+- 2026-07-01T02:19:53+0200 [info] real-debrid::rd_verify_queue_done_item - Ďábel.nosí.Pradu.2.The.Devil.Wears.Prada.2.(2026)[2160p][WEB-DL][HDR].=.CSFD.64%
+- 2026-07-01T02:19:54+0200 [debug] real-debrid::rd_endpoint_pace_wait
+- 2026-07-01T02:19:54+0200 [info] real-debrid::rd_api_http_error - infringing_file
+- 2026-07-01T02:19:54+0200 [info] real-debrid::rd_call_terminal_error - infringing_file
+- 2026-07-01T02:19:54+0200 [info] real-debrid::rd_verify_infringing - Ďábel.nosí.Pradu.2.The.Devil.Wears.Prada.2.(2026)[WebRip][1080p].=.CSFD.64%
+- 2026-07-01T02:19:54+0200 [info] real-debrid::rd_verify_queue_done_item - Ďábel.nosí.Pradu.2.The.Devil.Wears.Prada.2.(2026)[WebRip][1080p].=.CSFD.64%
+- 2026-07-01T02:19:56+0200 [info] real-debrid::rd_api_http_error - infringing_file
+- 2026-07-01T02:19:56+0200 [info] real-debrid::rd_call_terminal_error - infringing_file
+- 2026-07-01T02:19:56+0200 [info] real-debrid::rd_verify_infringing - www.UIndex.org    -    The Devil Wears Prada 2 2026 1080p WEB-DL HEVC x265 5 1-BONE
+- 2026-07-01T02:19:56+0200 [info] real-debrid::rd_verify_queue_done_item - www.UIndex.org    -    The Devil Wears Prada 2 2026 1080p WEB-DL HEVC x265 5 1-BONE
+- 2026-07-01T02:19:58+0200 [info] real-debrid::rd_api_http_error - too_many_requests
+- 2026-07-01T02:19:58+0200 [info] real-debrid::rd_endpoint_429_backoff
+- 2026-07-01T02:19:58+0200 [info] real-debrid::rd_rate_429_cooldown
+- 2026-07-01T02:19:59+0200 [info] real-debrid::rd_call_retry_429 - Real-Debrid HTTP 429: [34 too_many_requests] {"error": "too_many_requests", "error_code": 34, "src": "front-1"}
+- 2026-07-01T02:20:00+0200 [debug] real-debrid::rd_endpoint_pace_wait
+- 2026-07-01T02:20:04+0200 [info] real-debrid::rd_api_http_error - infringing_file
+- 2026-07-01T02:20:04+0200 [info] real-debrid::rd_call_terminal_error - infringing_file
+- 2026-07-01T02:20:04+0200 [info] real-debrid::rd_verify_infringing - www.UIndex.org    -    The Devil Wears Prada 2 2026 1080p MA WEB-DL DDP5 1 Atmos H 264-BYNDR
+- 2026-07-01T02:20:04+0200 [info] real-debrid::rd_verify_queue_done_item - www.UIndex.org    -    The Devil Wears Prada 2 2026 1080p MA WEB-DL DDP5 1 Atmos H 264-BYNDR
+- 2026-07-01T02:20:05+0200 [debug] real-debrid::rd_endpoint_pace_wait
+- 2026-07-01T02:20:06+0200 [info] real-debrid::rd_api_http_error - infringing_file
+- 2026-07-01T02:20:06+0200 [info] real-debrid::rd_call_terminal_error - infringing_file
+- 2026-07-01T02:20:06+0200 [info] real-debrid::rd_verify_infringing - The.Devil.Wears.Prada.2.2026.2160P.WEB.H265-TRB
+- 2026-07-01T02:20:06+0200 [info] real-debrid::rd_verify_queue_done_item - The.Devil.Wears.Prada.2.2026.2160P.WEB.H265-TRB
+- 2026-07-01T02:20:09+0200 [info] real-debrid::rd_verify_added
+- 2026-07-01T02:20:09+0200 [debug] real-debrid::rd_verify_poll - The Devil Wears Prada 2 [2026] Dual YG
+- 2026-07-01T02:20:09+0200 [info] real-debrid::rd_verify_select_files
+- 2026-07-01T02:20:10+0200 [debug] real-debrid::rd_verify_post_select_poll - The Devil Wears Prada 2 [2026] Dual YG
+- 2026-07-01T02:20:10+0200 [info] real-debrid::rd_verify_ok - The Devil Wears Prada 2 [2026] Dual YG  ==>  /The.Devil.Wears.Prada.2.1080p.WEB-DL.H.264.Dual YG.mkv
+- 2026-07-01T02:20:10+0200 [info] real-debrid::rd_verify_queue_done_item - The Devil Wears Prada 2 [2026] Dual YG  ==>  /The.Devil.Wears.Prada.2.1080p.WEB-DL.H.264.Dual YG.mkv
+- 2026-07-01T02:20:11+0200 [debug] real-debrid::rd_endpoint_pace_wait
+- 2026-07-01T02:20:11+0200 [info] real-debrid::rd_api_http_error - infringing_file
+- 2026-07-01T02:20:11+0200 [info] real-debrid::rd_call_terminal_error - infringing_file
+- 2026-07-01T02:20:11+0200 [info] real-debrid::rd_verify_infringing - The Devil Wears Prada 2 [720p] [Napisy PL]
+- 2026-07-01T02:20:11+0200 [info] real-debrid::rd_verify_queue_done_item - The Devil Wears Prada 2 [720p] [Napisy PL]
+- 2026-07-01T02:20:14+0200 [info] real-debrid::rd_api_http_error - infringing_file
+- 2026-07-01T02:20:14+0200 [info] real-debrid::rd_call_terminal_error - infringing_file
+- 2026-07-01T02:20:14+0200 [info] real-debrid::rd_verify_infringing - The.Devil.Wears.Prada.2.2026.1080p.10bit.WEBRip.6CH.x265.HEVC-PSA
+- 2026-07-01T02:20:14+0200 [info] real-debrid::rd_verify_queue_done_item - The.Devil.Wears.Prada.2.2026.1080p.10bit.WEBRip.6CH.x265.HEVC-PSA
+- 2026-07-01T02:20:16+0200 [debug] real-debrid::rd_endpoint_pace_wait
+- 2026-07-01T02:20:16+0200 [info] real-debrid::rd_api_http_error - infringing_file
+- 2026-07-01T02:20:16+0200 [info] real-debrid::rd_call_terminal_error - infringing_file
+- 2026-07-01T02:20:16+0200 [info] real-debrid::rd_verify_infringing - www.UIndex.org    -    The.Devil.Wears.Prada.2.2026.720P.WEB.H264-POKE
+- 2026-07-01T02:20:16+0200 [info] real-debrid::rd_verify_queue_done_item - www.UIndex.org    -    The.Devil.Wears.Prada.2.2026.720P.WEB.H264-POKE
+- 2026-07-01T02:20:19+0200 [info] real-debrid::rd_api_http_error - infringing_file
+- 2026-07-01T02:20:19+0200 [info] real-debrid::rd_call_terminal_error - infringing_file
+- 2026-07-01T02:20:19+0200 [info] real-debrid::rd_verify_infringing - www.UIndex.org    -    The Devil Wears Prada 2 2026 1080p WEBRip x265-DH
+- 2026-07-01T02:20:19+0200 [info] real-debrid::rd_verify_queue_done_item - www.UIndex.org    -    The Devil Wears Prada 2 2026 1080p WEBRip x265-DH
+- 2026-07-01T02:20:21+0200 [debug] real-debrid::rd_endpoint_pace_wait
+- 2026-07-01T02:20:21+0200 [info] real-debrid::rd_api_http_error - infringing_file
+- 2026-07-01T02:20:21+0200 [info] real-debrid::rd_call_terminal_error - infringing_file
+- 2026-07-01T02:20:21+0200 [info] real-debrid::rd_verify_infringing - The.Devil.Wears.Prada.2.2026.1080p.DCP.WEBRIP.AC3.x264-AOC
+- 2026-07-01T02:20:21+0200 [info] real-debrid::rd_verify_queue_done_item - The.Devil.Wears.Prada.2.2026.1080p.DCP.WEBRIP.AC3.x264-AOC
+- 2026-07-01T02:20:24+0200 [info] real-debrid::rd_api_http_error - infringing_file
+- 2026-07-01T02:20:24+0200 [info] real-debrid::rd_call_terminal_error - infringing_file
+- 2026-07-01T02:20:24+0200 [info] real-debrid::rd_verify_infringing - www.UIndex.org    -    The.Devil.Wears.Prada.2.2026.1080P.WEB.H264-POKE
+- 2026-07-01T02:20:24+0200 [info] real-debrid::rd_verify_queue_done_item - www.UIndex.org    -    The.Devil.Wears.Prada.2.2026.1080P.WEB.H264-POKE
+- 2026-07-01T02:20:26+0200 [info] real-debrid::rd_api_http_error - infringing_file
+- 2026-07-01T02:20:26+0200 [info] real-debrid::rd_call_terminal_error - infringing_file
+- 2026-07-01T02:20:26+0200 [info] real-debrid::rd_verify_infringing - The.Devil.Wears.Prada.2.2026.1080p.AMZN.WEB-DL.DDP5.1.H.264.MP4-BEN.THE.MEN
+- 2026-07-01T02:20:26+0200 [info] real-debrid::rd_verify_queue_done_item - The.Devil.Wears.Prada.2.2026.1080p.AMZN.WEB-DL.DDP5.1.H.264.MP4-BEN.THE.MEN
+- 2026-07-01T02:20:27+0200 [debug] real-debrid::rd_endpoint_pace_wait
+- 2026-07-01T02:20:29+0200 [info] real-debrid::rd_api_http_error - infringing_file
+- 2026-07-01T02:20:29+0200 [info] real-debrid::rd_call_terminal_error - infringing_file
+- 2026-07-01T02:20:29+0200 [info] real-debrid::rd_verify_infringing - www.UIndex.org    -    The Devil Wears Prada 2 2026 720p 10bit WEBRip 6CH x265 HEVC-PSA
+- 2026-07-01T02:20:29+0200 [info] real-debrid::rd_verify_queue_done_item - www.UIndex.org    -    The Devil Wears Prada 2 2026 720p 10bit WEBRip 6CH x265 HEVC-PSA
+- 2026-07-01T02:20:31+0200 [info] real-debrid::rd_verify_added
+- 2026-07-01T02:20:31+0200 [debug] real-debrid::rd_verify_poll - the.-devil.-wears.-prada.-2.2026.-dcprip.-1080p-sofcj
+- 2026-07-01T02:20:32+0200 [info] real-debrid::rd_verify_select_files
+- 2026-07-01T02:20:32+0200 [debug] real-debrid::rd_verify_post_select_poll - the.-devil.-wears.-prada.-2.2026.-dcprip.-1080p-sofcj
+- 2026-07-01T02:20:32+0200 [info] real-debrid::rd_verify_ok - the.-devil.-wears.-prada.-2.2026.-dcprip.-1080p-sofcj  ==>  /The.Devil.Wears.Prada.2.2026.DCPRip.1080p-SOFCJ.mp4
+- 2026-07-01T02:20:32+0200 [info] real-debrid::rd_verify_queue_done_item - the.-devil.-wears.-prada.-2.2026.-dcprip.-1080p-sofcj  ==>  /The.Devil.Wears.Prada.2.2026.DCPRip.1080p-SOFCJ.mp4
+- 2026-07-01T02:20:33+0200 [debug] real-debrid::rd_endpoint_pace_wait
+- 2026-07-01T02:20:34+0200 [info] real-debrid::rd_api_http_error - infringing_file
+- 2026-07-01T02:20:34+0200 [info] real-debrid::rd_call_terminal_error - infringing_file
+- 2026-07-01T02:20:34+0200 [info] real-debrid::rd_verify_infringing - www.UIndex.org    -    The Devil Wears Prada 2 2026 1080p WEBRip 10Bit DDP5 1 x265-NeoNoir
+- 2026-07-01T02:20:34+0200 [info] real-debrid::rd_verify_queue_done_item - www.UIndex.org    -    The Devil Wears Prada 2 2026 1080p WEBRip 10Bit DDP5 1 x265-NeoNoir
+- 2026-07-01T02:20:36+0200 [info] real-debrid::rd_api_http_error - too_many_requests
+- 2026-07-01T02:20:36+0200 [info] real-debrid::rd_endpoint_429_backoff
+- 2026-07-01T02:20:36+0200 [info] real-debrid::rd_rate_429_cooldown
+- 2026-07-01T02:20:37+0200 [info] real-debrid::rd_call_retry_429 - Real-Debrid HTTP 429: [34 too_many_requests] {"error": "too_many_requests", "error_code": 34, "src": "front-2"}
+- 2026-07-01T02:20:38+0200 [debug] real-debrid::rd_endpoint_pace_wait
+- 2026-07-01T02:20:42+0200 [info] real-debrid::rd_api_http_error - infringing_file
+- 2026-07-01T02:20:42+0200 [info] real-debrid::rd_call_terminal_error - infringing_file
+- 2026-07-01T02:20:42+0200 [info] real-debrid::rd_verify_infringing - The Devil Wears Prada 2 (2026) 1080p WEBRip 5.1-LAMA
+- 2026-07-01T02:20:42+0200 [info] real-debrid::rd_verify_queue_done_item - The Devil Wears Prada 2 (2026) 1080p WEBRip 5.1-LAMA
+- 2026-07-01T02:20:42+0200 [info] real-debrid::rd_verify_queue_end
+- 2026-07-01T02:20:42+0200 [info] real-debrid::rd_rate_summary
+- 2026-07-01T02:20:42+0200 [info] real-debrid::rd_endpoint_pacer_summary
+- 2026-07-01T02:20:42+0200 [info] real-debrid::rd_cleanup_final_start
+- 2026-07-01T02:20:42+0200 [info] real-debrid::rd_slots_refresh
+- 2026-07-01T02:20:42+0200 [info] real-debrid::rd_active_count_after
+- 2026-07-01T02:20:42+0200 [info] real-debrid::rd_cleanup_final_end
+- 2026-07-01T02:20:42+0200 [info] real-debrid::rd_rate_summary
+- 2026-07-01T02:20:42+0200 [info] real-debrid::rd_endpoint_pacer_summary
+- 2026-07-01T02:20:42+0200 [info] real-debrid::rd_verify_batch_end
+- 2026-07-01T02:20:42+0200 [info] real-debrid::rd_check_summary
+- 2026-07-01T02:20:42+0200 [info] qbittorrent::qbt_relevance_filter
+- 2026-07-01T02:20:42+0200 [info] qbittorrent::qbt_probe_batch_start
+- 2026-07-01T02:20:43+0200 [info] qbittorrent::qbt_login
+- 2026-07-01T02:20:43+0200 [info] qbittorrent::qbt_login
+- 2026-07-01T02:20:43+0200 [info] qbittorrent::qbt_login
+- 2026-07-01T02:20:43+0200 [info] qbittorrent::qbt_login
+- 2026-07-01T02:20:43+0200 [info] qbittorrent::qbt_probe_add - The.Devil.Wears.Prada.2.2026.2160p.WEB-DL.DV.HDR10 .MULTi.FRE.ITA.LAT.RUS.H265.MP4-BEN.THE.MEN
+- 2026-07-01T02:20:43+0200 [info] qbittorrent::qbt_probe_add - The Devil Wears Prada 2 (2026) [720p][1080p] [2160p] [AMAZON] [Napisy PL]
+- 2026-07-01T02:20:43+0200 [info] qbittorrent::qbt_probe_add - Ďábel.nosí.Pradu.2.The.Devil.Wears.Prada.2.(2026)[2160p][WEB-DL][HDR].=.CSFD.64%
+- 2026-07-01T02:20:43+0200 [info] qbittorrent::qbt_probe_add - The.Devil.Wears.Prada.2.2026.2160p.HDR10Plus.DV.WEBRip.6CH.x265.HEVC-PSA
+- 2026-07-01T02:20:45+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-01T02:20:45+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-01T02:20:45+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-01T02:20:45+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-01T02:20:47+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-01T02:20:47+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-01T02:20:47+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-01T02:20:47+0200 [info] qbittorrent::qbt_probe_result - qBittorrent con seed conectado: seeds=3, peers=9, state=stalleddl
+- 2026-07-01T02:20:47+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-01T02:20:47+0200 [info] qbittorrent::qbt_delete_probe
+- 2026-07-01T02:20:47+0200 [info] qbittorrent::qbt_login
+- 2026-07-01T02:20:47+0200 [info] qbittorrent::qbt_probe_add - The.Devil.Wears.Prada.2.2026.PLSUB.1080p.10bit.WEB-DL.DDP5.1.x265.HEVC-AdL
+- 2026-07-01T02:20:49+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-01T02:20:49+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-01T02:20:49+0200 [info] qbittorrent::qbt_probe_result - qBittorrent con seed conectado: seeds=1, peers=9, state=stalleddl
+- 2026-07-01T02:20:49+0200 [info] qbittorrent::qbt_delete_probe
+- 2026-07-01T02:20:49+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-01T02:20:49+0200 [info] qbittorrent::qbt_login
+- 2026-07-01T02:20:49+0200 [info] qbittorrent::qbt_probe_add - www.UIndex.org    -    The Devil Wears Prada 2 2026 1080p 10bit WEBRip 6CH x265 HEVC-PSA
+- 2026-07-01T02:20:49+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-01T02:20:51+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-01T02:20:51+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-01T02:20:51+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-01T02:20:51+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-01T02:20:53+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-01T02:20:53+0200 [info] qbittorrent::qbt_probe_result - qBittorrent con seed conectado: seeds=1, peers=0, state=stalleddl
+- 2026-07-01T02:20:53+0200 [info] qbittorrent::qbt_delete_probe
+- 2026-07-01T02:20:53+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-01T02:20:53+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-01T02:20:53+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-01T02:20:53+0200 [info] qbittorrent::qbt_login
+- 2026-07-01T02:20:53+0200 [info] qbittorrent::qbt_probe_result - qBittorrent descargando: 0.00 MB/s, seeds=1, peers=0
+- 2026-07-01T02:20:53+0200 [info] qbittorrent::qbt_probe_add - The.Devil.Wears.Prada.2.2026.1080p.10bit.WEBRip.6CH.x265.HEVC-PSA
+- 2026-07-01T02:20:53+0200 [info] qbittorrent::qbt_delete_probe
+- 2026-07-01T02:20:53+0200 [info] qbittorrent::qbt_login
+- 2026-07-01T02:20:53+0200 [info] qbittorrent::qbt_probe_add - www.UIndex.org    -    The Devil Wears Prada 2 2026 1080p WEB-DL HEVC x265 5 1-BONE
+- 2026-07-01T02:20:55+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-01T02:20:55+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-01T02:20:55+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-01T02:20:55+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-01T02:20:56+02:00 [info] web::JOB_CANCEL_REQUESTED
+- 2026-07-01T02:20:56+0200 [info] motor::job_cancel_checkpoint
+- 2026-07-01T02:20:56+0200 [info] qbittorrent::qbt_delete_probe
+- 2026-07-01T02:20:56+0200 [info] motor::job_cancel_checkpoint
+- 2026-07-01T02:20:56+0200 [info] qbittorrent::qbt_login
+- 2026-07-01T02:20:56+0200 [info] motor::job_cancel_checkpoint
+- 2026-07-01T02:20:56+0200 [info] qbittorrent::qbt_login
+- 2026-07-01T02:20:56+0200 [info] motor::job_cancel_checkpoint
+- 2026-07-01T02:20:56+0200 [info] motor::job_cancel_checkpoint
+- 2026-07-01T02:20:56+0200 [info] motor::job_cancel_checkpoint
+- 2026-07-01T02:20:56+0200 [info] motor::job_cancel_checkpoint
+- 2026-07-01T02:20:56+0200 [info] qbittorrent::qbt_delete_probe
+- 2026-07-01T02:20:56+0200 [info] qbittorrent::qbt_delete_probe
+- 2026-07-01T02:20:56+0200 [info] qbittorrent::qbt_delete_probe
+- 2026-07-01T02:20:56+0200 [info] qbittorrent::qbt_login
+- 2026-07-01T02:20:56+0200 [info] motor::job_cancel_checkpoint
+- 2026-07-01T02:20:57+0200 [info] qbittorrent::qbt_login
+- 2026-07-01T02:20:57+0200 [info] qbittorrent::qbt_login
+- 2026-07-01T02:20:57+0200 [info] qbittorrent::qbt_login
+- 2026-07-01T02:20:57+0200 [info] motor::job_cancel_checkpoint
+- 2026-07-01T02:20:57+0200 [info] motor::job_cancel_checkpoint
+- 2026-07-01T02:20:57+0200 [info] motor::job_cancel_checkpoint
+- 2026-07-01T02:20:57+0200 [info] qbittorrent::qbt_login
+- 2026-07-01T02:20:57+0200 [info] motor::job_cancel_checkpoint
+- 2026-07-01T02:20:57+0200 [info] search::editor_clean_cancelled - qbt_probe_candidates.worker
+- 2026-07-01T02:20:57+02:00 [info] web::JOB_FINISHED_CANCELLED

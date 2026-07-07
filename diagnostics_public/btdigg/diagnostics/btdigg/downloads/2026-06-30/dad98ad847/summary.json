@@ -1,0 +1,61 @@
+{
+  "already_present": false,
+  "card": {
+    "hash": "57cac85048e5200bdcded17ef70e846e4b25d802",
+    "source": "RD",
+    "status": "RD OK",
+    "title": "El diablo viste de Prada 2 (2026) [Bluray 1080p][Esp].mkv"
+  },
+  "counts": {
+    "debug": 4,
+    "error": 0,
+    "info": 34,
+    "warn": 0
+  },
+  "destination": {
+    "destino": "movies",
+    "inbox": "/watch/torrents/inbox/movies",
+    "qbt_savepath": "/data/downloads/torrents/complete/movies",
+    "rdt_savepath": "/data/downloads/movies"
+  },
+  "diagnostic_status": "ok",
+  "elapsed": "4.29s",
+  "engine": "RDT-Client",
+  "event_count": 38,
+  "hash": "57cac85048e5200bdcded17ef70e846e4b25d802",
+  "id": "dad98ad847",
+  "index": 1,
+  "kind": "download",
+  "last_event": "RDT_FOLLOWUP_DONE",
+  "link_ref": "***",
+  "link_type": "***",
+  "module": "btdigg",
+  "operation_status": "ok",
+  "phases": {
+    "btdigg": 4,
+    "download": 9,
+    "general": 1,
+    "rdt-client": 14,
+    "real-debrid": 9
+  },
+  "rdt_id": "1d958c36-7ac0-4c81-9bca-8bc8e2dd3eee",
+  "read_order": [
+    "summary.json",
+    "timeline.md",
+    "warnings.jsonl",
+    "errors.jsonl",
+    "events.jsonl"
+  ],
+  "remote": "192.168.1.199",
+  "route": "RD_VERIFIED_MAGNET_NATIVE",
+  "started_at": "2026-06-30T19:17:14+02:00",
+  "status": "ok",
+  "title": "El diablo viste de Prada 2 (2026) [Bluray 1080p][Esp].mkv",
+  "tracking": {
+    "destino": "movies",
+    "hash": "57cac85048e5200bdcded17ef70e846e4b25d802",
+    "record_id": "c266afd29a3320b8",
+    "tracking_file": "/app/data/seguimiento_actual.json"
+  },
+  "updated_at": "2026-06-30T19:17:19+02:00"
+}

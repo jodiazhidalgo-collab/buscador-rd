@@ -1,0 +1,108 @@
+{
+  "action": "search",
+  "btdigg_found": 10,
+  "command": {
+    "cmd": [
+      "/usr/local/bin/python",
+      "-u",
+      "rd_turbo_editor_maestro.py",
+      "--search",
+      "--query",
+      "Johnny English 2018 es",
+      "--pages",
+      "1-20",
+      "--mode",
+      "0",
+      "--min-gb",
+      "0"
+    ],
+    "cwd": "/app/app/motor/btdigg"
+  },
+  "config_snapshot": {
+    "qbit_probe_enabled": false,
+    "source": "/app/app/motor/btdigg/config.json"
+  },
+  "counts": {
+    "debug": 7,
+    "error": 0,
+    "info": 127,
+    "warn": 0
+  },
+  "diagnostic_status": "ok",
+  "elapsed_sec": 132.198,
+  "event_count": 134,
+  "exit_code": 0,
+  "export": {
+    "all_json": "/app/app/motor/btdigg/exports/ULTIMOS_RESULTADOS.json",
+    "shown": 0,
+    "top_txt": "/app/app/motor/btdigg/exports/ULTIMO_TOP.txt",
+    "total": 0
+  },
+  "id": "1790c1324282",
+  "kind": "job",
+  "last_event": "JOB_FINISHED_OK",
+  "last_motor_event": "editor_clean_search_end",
+  "min_gb": "0",
+  "mode": "0",
+  "module": "btdigg",
+  "operation_status": "ok",
+  "pages": "1-20",
+  "payload": {
+    "action": "search",
+    "min_gb": "0",
+    "mode": "0",
+    "module": "btdigg",
+    "pages": "1-20",
+    "query": "Johnny English 2018 es"
+  },
+  "phases": {
+    "btdigg": 49,
+    "general": 1,
+    "motor": 7,
+    "qbittorrent": 1,
+    "real-debrid": 67,
+    "search": 5,
+    "web": 4
+  },
+  "query": "Johnny English 2018 es",
+  "query_prefilter": {
+    "after": 0,
+    "before": 206,
+    "removed": 202,
+    "rescue": 4,
+    "terms": "johnny,english,2018"
+  },
+  "read_order": [
+    "summary.json",
+    "timeline.md",
+    "warnings.jsonl",
+    "errors.jsonl",
+    "events.jsonl"
+  ],
+  "real_debrid": {
+    "NO_CACHE": 0,
+    "NO_INSTANT": 4,
+    "NO_VERIFICADO": 0,
+    "RD_API_OFF": 0,
+    "RD_ERROR": 0,
+    "RD_ERROR_TEMPORAL": 0,
+    "RD_FAIL": 0,
+    "RD_INSTANT": 0,
+    "RD_OK": 0,
+    "SIN_HASH": 0,
+    "TORRENT_NO_VALIDO": 0,
+    "total": 4
+  },
+  "results_count": 0,
+  "results_shown": 0,
+  "started_at": "2026-06-30T05:17:03+02:00",
+  "status": "ok",
+  "updated_at": "2026-06-30T05:19:15+02:00",
+  "working_filter": {
+    "after": 0,
+    "before": 4,
+    "qbit_extras": 0,
+    "rd_valid": 0,
+    "removed": 4
+  }
+}

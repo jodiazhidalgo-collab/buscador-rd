@@ -1,0 +1,108 @@
+{
+  "action": "search",
+  "btdigg_found": 1,
+  "command": {
+    "cmd": [
+      "/usr/local/bin/python",
+      "-u",
+      "rd_turbo_editor_maestro.py",
+      "--search",
+      "--query",
+      "Maridos en accion 2026",
+      "--pages",
+      "1-3",
+      "--mode",
+      "0",
+      "--min-gb",
+      "0"
+    ],
+    "cwd": "/app/app/motor/btdigg"
+  },
+  "config_snapshot": {
+    "qbit_probe_enabled": false,
+    "source": "/app/app/motor/btdigg/config.json"
+  },
+  "counts": {
+    "debug": 16,
+    "error": 0,
+    "info": 112,
+    "warn": 0
+  },
+  "diagnostic_status": "ok",
+  "elapsed_sec": 34.342,
+  "event_count": 128,
+  "exit_code": 0,
+  "export": {
+    "all_json": "/app/app/motor/btdigg/exports/ULTIMOS_RESULTADOS.json",
+    "shown": 4,
+    "top_txt": "/app/app/motor/btdigg/exports/ULTIMO_TOP.txt",
+    "total": 4
+  },
+  "id": "f4d4113b7696",
+  "kind": "job",
+  "last_event": "JOB_FINISHED_OK",
+  "last_motor_event": "editor_clean_search_end",
+  "min_gb": "0",
+  "mode": "0",
+  "module": "btdigg",
+  "operation_status": "ok",
+  "pages": "1-3",
+  "payload": {
+    "action": "search",
+    "min_gb": "0",
+    "mode": "0",
+    "module": "btdigg",
+    "pages": "1-3",
+    "query": "Maridos en accion 2026"
+  },
+  "phases": {
+    "btdigg": 15,
+    "general": 1,
+    "motor": 7,
+    "qbittorrent": 1,
+    "real-debrid": 95,
+    "search": 5,
+    "web": 4
+  },
+  "query": "Maridos en accion 2026",
+  "query_prefilter": {
+    "after": 7,
+    "before": 7,
+    "removed": 0,
+    "rescue": 0,
+    "terms": "maridos,accion,2026"
+  },
+  "read_order": [
+    "summary.json",
+    "timeline.md",
+    "warnings.jsonl",
+    "errors.jsonl",
+    "events.jsonl"
+  ],
+  "real_debrid": {
+    "NO_CACHE": 0,
+    "NO_INSTANT": 1,
+    "NO_VERIFICADO": 0,
+    "RD_API_OFF": 0,
+    "RD_ERROR": 0,
+    "RD_ERROR_TEMPORAL": 0,
+    "RD_FAIL": 2,
+    "RD_INSTANT": 0,
+    "RD_OK": 4,
+    "SIN_HASH": 0,
+    "TORRENT_NO_VALIDO": 0,
+    "total": 7
+  },
+  "results_count": 4,
+  "results_shown": 4,
+  "started_at": "2026-06-30T03:05:35+02:00",
+  "status": "ok",
+  "updated_at": "2026-06-30T03:06:09+02:00",
+  "working_filter": {
+    "after": 4,
+    "before": 7,
+    "qbit_extras": 0,
+    "rd_valid": 4,
+    "removed": 3
+  }
+}

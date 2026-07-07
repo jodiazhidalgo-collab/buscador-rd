@@ -1,2 +1,0 @@
-{"code": null, "data": {"status": "cancelling"}, "event": "JOB_CANCEL_REQUESTED", "event_id": "E000001", "level": "info", "observed_ts": "2026-07-08T01:20:52+02:00", "phase": "web", "seq": 1, "trace_id": "job_cancel_route", "trace_kind": "job", "ts": "2026-07-08T01:20:52+02:00"}
-{"code": null, "data": {"status": "cancelling"}, "event": "JOB_CANCEL_REQUESTED", "event_id": "E000002", "level": "info", "observed_ts": "2026-07-08T01:20:52+02:00", "phase": "web", "seq": 2, "trace_id": "job_cancel_route", "trace_kind": "job", "ts": "2026-07-08T01:20:52+02:00"}

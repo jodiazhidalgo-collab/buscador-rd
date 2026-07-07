@@ -1,0 +1,71 @@
+{
+  "action": "search",
+  "cleanup_uncertain": false,
+  "command": {
+    "cmd": [
+      "/usr/local/bin/python",
+      "-u",
+      "rd_turbo_editor_maestro.py",
+      "--search",
+      "--query",
+      "cenicienta",
+      "--pages",
+      "1-3",
+      "--mode",
+      "0",
+      "--min-gb",
+      ""
+    ],
+    "cwd": "/app/app/motor/btdigg"
+  },
+  "config_snapshot": {
+    "qbit_probe_enabled": true,
+    "source": "/app/app/motor/btdigg/config.json"
+  },
+  "counts": {
+    "debug": 0,
+    "error": 1,
+    "info": 10,
+    "warn": 0
+  },
+  "diagnostic_status": "error",
+  "elapsed_sec": 46.086,
+  "event_count": 11,
+  "exit_code": 130,
+  "forced_stop": false,
+  "id": "45abaa284a21",
+  "kind": "job",
+  "last_error_code": "BTDIGG.BTDIGG_DUMP_DOM_FALLBACK_ERROR",
+  "last_event": "JOB_FINISHED_CANCELLED",
+  "last_motor_event": "editor_clean_cancelled",
+  "mode": "0",
+  "module": "btdigg",
+  "operation_status": "cancelled",
+  "pages": "1-3",
+  "payload": {
+    "action": "search",
+    "min_gb": "",
+    "mode": "0",
+    "module": "btdigg",
+    "pages": "1-3",
+    "query": "cenicienta"
+  },
+  "phases": {
+    "btdigg": 2,
+    "general": 1,
+    "motor": 1,
+    "search": 2,
+    "web": 5
+  },
+  "query": "cenicienta",
+  "read_order": [
+    "summary.json",
+    "timeline.md",
+    "warnings.jsonl",
+    "errors.jsonl",
+    "events.jsonl"
+  ],
+  "started_at": "2026-07-01T05:25:46+02:00",
+  "status": "cancelled",
+  "updated_at": "2026-07-01T05:26:32+02:00"
+}

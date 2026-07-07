@@ -1,0 +1,739 @@
+- 2026-06-30T05:22:51+02:00 [info] web::JOB_STARTED
+- 2026-06-30T05:22:51+02:00 [info] general::CONFIG_SNAPSHOT
+- 2026-06-30T05:22:51+02:00 [info] web::COMMAND_PREPARED
+- 2026-06-30T05:22:51+02:00 [info] web::PROCESS_STARTED
+- 2026-06-30T05:22:51+0200 [info] search::editor_clean_search_start
+- 2026-06-30T05:22:51+0200 [info] btdigg::browser_auto_search_start_dom
+- 2026-06-30T05:22:55+0200 [info] btdigg::extract_magnets
+- 2026-06-30T05:22:55+0200 [info] btdigg::btdigg_dump_dom_fallback
+- 2026-06-30T05:23:01+0200 [info] btdigg::extract_magnets
+- 2026-06-30T05:23:01+0200 [info] btdigg::btdigg_dump_dom_fallback
+- 2026-06-30T05:23:07+0200 [info] btdigg::extract_magnets
+- 2026-06-30T05:23:07+0200 [info] btdigg::btdigg_dump_dom_fallback
+- 2026-06-30T05:23:13+0200 [info] btdigg::extract_magnets
+- 2026-06-30T05:23:13+0200 [info] btdigg::btdigg_dump_dom_fallback
+- 2026-06-30T05:23:19+0200 [info] btdigg::extract_magnets
+- 2026-06-30T05:23:19+0200 [info] btdigg::btdigg_dump_dom_fallback
+- 2026-06-30T05:23:25+0200 [info] btdigg::extract_magnets
+- 2026-06-30T05:23:25+0200 [info] btdigg::btdigg_dump_dom_fallback
+- 2026-06-30T05:23:30+0200 [info] btdigg::extract_magnets
+- 2026-06-30T05:23:30+0200 [info] btdigg::btdigg_dump_dom_fallback
+- 2026-06-30T05:23:36+0200 [info] btdigg::extract_magnets
+- 2026-06-30T05:23:36+0200 [info] btdigg::btdigg_dump_dom_fallback
+- 2026-06-30T05:23:42+0200 [info] btdigg::extract_magnets
+- 2026-06-30T05:23:42+0200 [info] btdigg::btdigg_dump_dom_fallback
+- 2026-06-30T05:23:47+0200 [info] btdigg::extract_magnets
+- 2026-06-30T05:23:47+0200 [info] btdigg::btdigg_dump_dom_fallback
+- 2026-06-30T05:23:53+0200 [info] btdigg::extract_magnets
+- 2026-06-30T05:23:53+0200 [info] btdigg::btdigg_dump_dom_fallback
+- 2026-06-30T05:23:59+0200 [info] btdigg::extract_magnets
+- 2026-06-30T05:23:59+0200 [info] btdigg::btdigg_dump_dom_fallback
+- 2026-06-30T05:24:05+0200 [info] btdigg::extract_magnets
+- 2026-06-30T05:24:05+0200 [info] btdigg::btdigg_dump_dom_fallback
+- 2026-06-30T05:24:10+0200 [info] btdigg::extract_magnets
+- 2026-06-30T05:24:10+0200 [info] btdigg::btdigg_dump_dom_fallback
+- 2026-06-30T05:24:16+0200 [info] btdigg::extract_magnets
+- 2026-06-30T05:24:16+0200 [info] btdigg::btdigg_dump_dom_fallback
+- 2026-06-30T05:24:22+0200 [info] btdigg::extract_magnets
+- 2026-06-30T05:24:22+0200 [info] btdigg::btdigg_dump_dom_fallback
+- 2026-06-30T05:24:27+0200 [info] btdigg::extract_magnets
+- 2026-06-30T05:24:27+0200 [info] btdigg::btdigg_dump_dom_fallback
+- 2026-06-30T05:24:32+0200 [info] btdigg::extract_magnets
+- 2026-06-30T05:24:32+0200 [info] btdigg::btdigg_dump_dom_fallback
+- 2026-06-30T05:24:38+0200 [info] btdigg::extract_magnets
+- 2026-06-30T05:24:38+0200 [info] btdigg::btdigg_dump_dom_fallback
+- 2026-06-30T05:24:43+0200 [info] btdigg::extract_magnets
+- 2026-06-30T05:24:43+0200 [info] btdigg::btdigg_dump_dom_fallback
+- 2026-06-30T05:24:45+0200 [info] btdigg::browser_auto_search_end_dom
+- 2026-06-30T05:24:45+0200 [info] btdigg::browser_quality_rescue_start
+- 2026-06-30T05:24:45+0200 [info] btdigg::browser_auto_search_start_dom
+- 2026-06-30T05:24:48+0200 [info] btdigg::extract_magnets
+- 2026-06-30T05:24:48+0200 [info] btdigg::btdigg_dump_dom_fallback
+- 2026-06-30T05:24:50+0200 [info] btdigg::browser_auto_search_end_dom
+- 2026-06-30T05:24:50+0200 [info] btdigg::browser_quality_rescue_results
+- 2026-06-30T05:24:50+0200 [info] btdigg::browser_quality_rescue_end
+- 2026-06-30T05:24:50+0200 [info] motor::prepare_results_start
+- 2026-06-30T05:24:51+0200 [info] motor::prepare_after_scoring
+- 2026-06-30T05:24:51+0200 [info] motor::prepare_after_filter
+- 2026-06-30T05:24:51+0200 [info] motor::prepare_after_query_prefilter
+- 2026-06-30T05:24:51+0200 [info] real-debrid::rd_account_check_ok
+- 2026-06-30T05:24:51+0200 [info] real-debrid::rd_check_start
+- 2026-06-30T05:24:51+0200 [info] real-debrid::rd_api_http_error - disabled_endpoint
+- 2026-06-30T05:24:51+0200 [info] real-debrid::rd_cache_api_disabled_cached_set - Real-Debrid HTTP 403: [37 disabled_endpoint] {
+	"error": "disabled_endpoint",
+	"error_code": 37
+}
+- 2026-06-30T05:24:51+0200 [info] real-debrid::rd_cache_api_disabled - Real-Debrid HTTP 403: [37 disabled_endpoint] {
+	"error": "disabled_endpoint",
+	"error_code": 37
+}
+- 2026-06-30T05:24:51+0200 [info] real-debrid::rd_verify_batch_start
+- 2026-06-30T05:24:51+0200 [info] real-debrid::rd_slots_refresh
+- 2026-06-30T05:24:51+0200 [info] real-debrid::rd_active_count_before
+- 2026-06-30T05:24:51+0200 [info] real-debrid::rd_existing_preload_done
+- 2026-06-30T05:24:51+0200 [info] real-debrid::rd_verify_queue_start
+- 2026-06-30T05:24:51+0200 [info] real-debrid::rd_verify_add_start - Johnny.English.Strikes.Again.2018.2160p.REMUX.UHD.BluRay.HDR.HEVC.DTS.X.7.1-iFT
+- 2026-06-30T05:24:51+0200 [info] real-debrid::rd_verify_queue_submit - Johnny.English.Strikes.Again.2018.2160p.REMUX.UHD.BluRay.HDR.HEVC.DTS.X.7.1-iFT
+- 2026-06-30T05:24:51+0200 [info] real-debrid::rd_slots_reserve
+- 2026-06-30T05:24:51+0200 [info] real-debrid::rd_verify_add_start - Johnny.English.Strikes.Again.2018.UHD.BluRay.2160p.HEVC.DTS-HD.MA.7.1.REMUX-HDRemuX
+- 2026-06-30T05:24:51+0200 [info] real-debrid::rd_slots_reserve
+- 2026-06-30T05:24:51+0200 [debug] real-debrid::rd_endpoint_pace_wait
+- 2026-06-30T05:24:51+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-30T05:24:51+0200 [info] real-debrid::rd_verify_queue_submit - Johnny.English.Strikes.Again.2018.UHD.BluRay.2160p.HEVC.DTS-HD.MA.7.1.REMUX-HDRemuX
+- 2026-06-30T05:24:51+0200 [info] real-debrid::rd_verify_add_start - 【高清影视之家发布 www.BBEBBB.com】憨豆特工3[中文字幕 特效字幕].Johnny.English.Strikes.Again.2018.V2.Bluray.2160p.DTS-X7.1.HDR.x265.10bit-DreamHD
+- 2026-06-30T05:24:51+0200 [info] real-debrid::rd_verify_queue_submit - 【高清影视之家发布 www.BBEBBB.com】憨豆特工3[中文字幕 特效字幕].Johnny.English.Strikes.Again.2018.V2.Bluray.2160p.DTS-X7.1.HDR.x265.10bit-Drea
+- 2026-06-30T05:24:51+0200 [info] real-debrid::rd_slots_reserve
+- 2026-06-30T05:24:51+0200 [info] real-debrid::rd_verify_add_start - Johnny.English.Strikes.Again.2018.720p.BluRay.x264.DTS-FGT
+- 2026-06-30T05:24:51+0200 [info] real-debrid::rd_slots_reserve
+- 2026-06-30T05:24:51+0200 [info] real-debrid::rd_verify_queue_submit - Johnny.English.Strikes.Again.2018.720p.BluRay.x264.DTS-FGT
+- 2026-06-30T05:24:51+0200 [info] real-debrid::rd_verify_add_start - 憨豆特工3.Johnny English Strikes Again.2018.1080p&2160p.H265
+- 2026-06-30T05:24:51+0200 [info] real-debrid::rd_slots_reserve
+- 2026-06-30T05:24:51+0200 [info] real-debrid::rd_verify_queue_submit - 憨豆特工3.Johnny English Strikes Again.2018.1080p&2160p.H265
+- 2026-06-30T05:24:51+0200 [info] real-debrid::rd_verify_add_start - Johnny English Strikes Again 2018 720p BluRay DD5.1 x264-TayTO
+- 2026-06-30T05:24:51+0200 [info] real-debrid::rd_verify_queue_submit - Johnny English Strikes Again 2018 720p BluRay DD5.1 x264-TayTO
+- 2026-06-30T05:24:51+0200 [info] real-debrid::rd_slots_reserve
+- 2026-06-30T05:24:51+0200 [info] real-debrid::rd_verify_add_start - 【高清影视之家发布 www.HDBTHD.com】憨豆特工3[中文字幕 特效字幕].Johnny.English.Strikes.Again.2018.V2.Bluray.2160p.DTS-X7.1.HDR.x265.10bit-DreamHD
+- 2026-06-30T05:24:51+0200 [info] real-debrid::rd_slots_reserve
+- 2026-06-30T05:24:51+0200 [info] real-debrid::rd_verify_queue_submit - 【高清影视之家发布 www.HDBTHD.com】憨豆特工3[中文字幕 特效字幕].Johnny.English.Strikes.Again.2018.V2.Bluray.2160p.DTS-X7.1.HDR.x265.10bit-Drea
+- 2026-06-30T05:24:51+0200 [info] real-debrid::rd_verify_add_start - www.Torrenting.com - Johnny English Strikes Again 2018 UHD BluRay 1080p DDP 5 1 HDR10 x265-SM737
+- 2026-06-30T05:24:51+0200 [info] real-debrid::rd_slots_reserve
+- 2026-06-30T05:24:51+0200 [info] real-debrid::rd_verify_queue_submit - www.Torrenting.com - Johnny English Strikes Again 2018 UHD BluRay 1080p DDP 5 1 HDR10 x265-SM737
+- 2026-06-30T05:24:51+0200 [info] real-debrid::rd_verify_add_start - Johnny.English.Strikes.Again.2018.BluRay.1080p.DTS-X.7.1.AVC.REMUX-FraMeSToR
+- 2026-06-30T05:24:51+0200 [info] real-debrid::rd_verify_queue_submit - Johnny.English.Strikes.Again.2018.BluRay.1080p.DTS-X.7.1.AVC.REMUX-FraMeSToR
+- 2026-06-30T05:24:51+0200 [info] real-debrid::rd_slots_reserve
+- 2026-06-30T05:24:51+0200 [info] real-debrid::rd_verify_add_start - Kolekcja Johnny English 2003-2018 [10Bit SDR UPSCALING] [2160p.BluRay.H265.AC3-AS76-FT] [Lektor PL] [Alusia]
+- 2026-06-30T05:24:51+0200 [info] real-debrid::rd_verify_queue_submit - Kolekcja Johnny English 2003-2018 [10Bit SDR UPSCALING] [2160p.BluRay.H265.AC3-AS76-FT] [Lektor PL] [Alusia]
+- 2026-06-30T05:24:51+0200 [info] real-debrid::rd_slots_reserve
+- 2026-06-30T05:24:51+0200 [info] real-debrid::rd_verify_add_start - [ACESSE...HD-ELITE.ME]...Johnny.English.Strikes.Again.2018 Extras.BluRay.1080p.Remux.H264.DTS-MA.5.1.LuisRichard
+- 2026-06-30T05:24:51+0200 [info] real-debrid::rd_slots_reserve
+- 2026-06-30T05:24:51+0200 [info] real-debrid::rd_verify_queue_submit - [ACESSE...HD-ELITE.ME]...Johnny.English.Strikes.Again.2018 Extras.BluRay.1080p.Remux.H264.DTS-MA.5.1.LuisRichard
+- 2026-06-30T05:24:51+0200 [info] real-debrid::rd_verify_add_start - johnny.-english.-strikes.-again.-2018.720p.-brrip.-hindi.-dual-audio.-all-movies-hub.in
+- 2026-06-30T05:24:51+0200 [info] real-debrid::rd_verify_queue_submit - johnny.-english.-strikes.-again.-2018.720p.-brrip.-hindi.-dual-audio.-all-movies-hub.in
+- 2026-06-30T05:24:52+0200 [info] real-debrid::rd_slots_reserve
+- 2026-06-30T05:24:52+0200 [info] real-debrid::rd_verify_add_start - www.UIndex.org    -    Johnny English Strikes Again 2018 1080p BluRay DTS x264-VietHD
+- 2026-06-30T05:24:52+0200 [info] real-debrid::rd_slots_reserve
+- 2026-06-30T05:24:52+0200 [info] real-debrid::rd_verify_queue_submit - www.UIndex.org    -    Johnny English Strikes Again 2018 1080p BluRay DTS x264-VietHD
+- 2026-06-30T05:24:52+0200 [info] real-debrid::rd_verify_add_start - Johnny English - Saga (2003-2018) ITA ENG AC3 5.1 WEB-DL 1080p x265-LateNever
+- 2026-06-30T05:24:52+0200 [info] real-debrid::rd_verify_queue_submit - Johnny English - Saga (2003-2018) ITA ENG AC3 5.1 WEB-DL 1080p x265-LateNever
+- 2026-06-30T05:24:52+0200 [info] real-debrid::rd_slots_reserve
+- 2026-06-30T05:24:52+0200 [info] real-debrid::rd_verify_add_start - 【更多高清电影访问 www.BBSDDS.com】憨豆特工3[简繁英字幕].Johnny.English.Strikes.Again.2018.BluRay.1080p.x265.10bit-MiniHD
+- 2026-06-30T05:24:52+0200 [info] real-debrid::rd_verify_queue_submit - 【更多高清电影访问 www.BBSDDS.com】憨豆特工3[简繁英字幕].Johnny.English.Strikes.Again.2018.BluRay.1080p.x265.10bit-MiniHD
+- 2026-06-30T05:24:52+0200 [info] real-debrid::rd_slots_reserve
+- 2026-06-30T05:24:52+0200 [info] real-debrid::rd_verify_add_start - johnny.-english.-strikes.-again.-2018.1080p.-blu-ray.-h-264.-aac-rarbg
+- 2026-06-30T05:24:52+0200 [info] real-debrid::rd_slots_reserve
+- 2026-06-30T05:24:52+0200 [info] real-debrid::rd_verify_queue_submit - johnny.-english.-strikes.-again.-2018.1080p.-blu-ray.-h-264.-aac-rarbg
+- 2026-06-30T05:24:52+0200 [info] real-debrid::rd_verify_add_start - Johnny English Triology 2003-2018 1080P Bluray x265 HEVC [shadow]
+- 2026-06-30T05:24:52+0200 [info] real-debrid::rd_verify_queue_submit - Johnny English Triology 2003-2018 1080P Bluray x265 HEVC [shadow]
+- 2026-06-30T05:24:52+0200 [info] real-debrid::rd_slots_reserve
+- 2026-06-30T05:24:52+0200 [info] real-debrid::rd_verify_add_start - www.torrenting.com  - Johnny English Strikes Again 2018.1080p.Bluray.X264-EVO
+- 2026-06-30T05:24:52+0200 [info] real-debrid::rd_verify_queue_submit - www.torrenting.com  - Johnny English Strikes Again 2018.1080p.Bluray.X264-EVO
+- 2026-06-30T05:24:52+0200 [info] real-debrid::rd_slots_reserve
+- 2026-06-30T05:24:52+0200 [info] real-debrid::rd_verify_add_start - Johnny.English.Strikes.Again.2018.720p.BRRip.XviD.AC3-XVID
+- 2026-06-30T05:24:52+0200 [info] real-debrid::rd_verify_queue_submit - Johnny.English.Strikes.Again.2018.720p.BRRip.XviD.AC3-XVID
+- 2026-06-30T05:24:52+0200 [info] real-debrid::rd_slots_reserve
+- 2026-06-30T05:24:52+0200 [info] real-debrid::rd_verify_add_start - Johnny.English.Strikes.Again.2018.1080p.Bluray.x264.DTS-Manning
+- 2026-06-30T05:24:52+0200 [info] real-debrid::rd_verify_queue_submit - Johnny.English.Strikes.Again.2018.1080p.Bluray.x264.DTS-Manning
+- 2026-06-30T05:24:52+0200 [info] real-debrid::rd_slots_reserve
+- 2026-06-30T05:24:52+0200 [info] real-debrid::rd_verify_add_start - Johnny English Trilogy 2003-2018 1080p BluRay HEVC x265 5.1 BONE
+- 2026-06-30T05:24:52+0200 [info] real-debrid::rd_verify_queue_submit - Johnny English Trilogy 2003-2018 1080p BluRay HEVC x265 5.1 BONE
+- 2026-06-30T05:24:52+0200 [info] real-debrid::rd_slots_reserve
+- 2026-06-30T05:24:52+0200 [info] real-debrid::rd_verify_add_start - Johnny.English.Strikes.Again.2018.1080p.BRRip.x265-RAGNAR
+- 2026-06-30T05:24:52+0200 [info] real-debrid::rd_slots_reserve
+- 2026-06-30T05:24:52+0200 [info] real-debrid::rd_verify_queue_submit - Johnny.English.Strikes.Again.2018.1080p.BRRip.x265-RAGNAR
+- 2026-06-30T05:24:52+0200 [info] real-debrid::rd_verify_add_start - Johnny.English.Strikes.Again.2018.720p.BluRay.DTS.x264-Du
+- 2026-06-30T05:24:52+0200 [info] real-debrid::rd_verify_queue_submit - Johnny.English.Strikes.Again.2018.720p.BluRay.DTS.x264-Du
+- 2026-06-30T05:24:52+0200 [info] real-debrid::rd_slots_reserve
+- 2026-06-30T05:24:52+0200 [info] real-debrid::rd_verify_add_start - Johnny.English.Strikes.Again.2018.720p.BluRay.DTS.x264-Du
+- 2026-06-30T05:24:52+0200 [info] real-debrid::rd_verify_queue_submit - Johnny.English.Strikes.Again.2018.720p.BluRay.DTS.x264-Du
+- 2026-06-30T05:24:52+0200 [info] real-debrid::rd_slots_reserve
+- 2026-06-30T05:24:52+0200 [info] real-debrid::rd_verify_add_start - Johnny.English.Strikes.Again.2018.720p.BluRay.x264.DTS-FGT
+- 2026-06-30T05:24:52+0200 [info] real-debrid::rd_verify_queue_submit - Johnny.English.Strikes.Again.2018.720p.BluRay.x264.DTS-FGT
+- 2026-06-30T05:24:52+0200 [info] real-debrid::rd_slots_reserve
+- 2026-06-30T05:24:52+0200 [info] real-debrid::rd_verify_add_start - Johnny.English.Strikes.Again.2018.YG
+- 2026-06-30T05:24:52+0200 [info] real-debrid::rd_verify_queue_submit - Johnny.English.Strikes.Again.2018.YG
+- 2026-06-30T05:24:52+0200 [info] real-debrid::rd_slots_reserve
+- 2026-06-30T05:24:52+0200 [info] real-debrid::rd_verify_add_start - Johnny.English.Strikes.Again.2018.Bluray.1080p.x264-Grym
+- 2026-06-30T05:24:52+0200 [info] real-debrid::rd_verify_queue_submit - Johnny.English.Strikes.Again.2018.Bluray.1080p.x264-Grym
+- 2026-06-30T05:24:52+0200 [info] real-debrid::rd_slots_reserve
+- 2026-06-30T05:24:52+0200 [info] real-debrid::rd_verify_add_start - Kolekcja Filmów - Johnny English 2003-2018 [1080p.BluRay.H264.AC3.5.1-DTS.5.1-NoNaNo-NitroTeam] [Napisy PL] [Lektor PL]
+- 2026-06-30T05:24:52+0200 [info] real-debrid::rd_verify_queue_submit - Kolekcja Filmów - Johnny English 2003-2018 [1080p.BluRay.H264.AC3.5.1-DTS.5.1-NoNaNo-NitroTeam] [Napisy PL] [Lektor PL]
+- 2026-06-30T05:24:52+0200 [info] real-debrid::rd_slots_reserve
+- 2026-06-30T05:24:52+0200 [info] real-debrid::rd_verify_add_start - Johnny English Strikes Again 2018.1080p.Bluray.X264-EVO
+- 2026-06-30T05:24:52+0200 [info] real-debrid::rd_verify_queue_submit - Johnny English Strikes Again 2018.1080p.Bluray.X264-EVO
+- 2026-06-30T05:24:52+0200 [info] real-debrid::rd_slots_reserve
+- 2026-06-30T05:24:52+0200 [info] real-debrid::rd_verify_add_start - Johnny.English.Strikes.Again.2018.INTERNAL.1080p.BluRay.X264-DEFLATE[EtHD]
+- 2026-06-30T05:24:52+0200 [info] real-debrid::rd_verify_queue_submit - Johnny.English.Strikes.Again.2018.INTERNAL.1080p.BluRay.X264-DEFLATE[EtHD]
+- 2026-06-30T05:24:52+0200 [info] real-debrid::rd_slots_reserve
+- 2026-06-30T05:24:52+0200 [info] real-debrid::rd_verify_add_start - Johnny.English.Strikes.Again.2018.1080p.BluRay.DTS.x264-OaSis
+- 2026-06-30T05:24:52+0200 [info] real-debrid::rd_verify_queue_submit - Johnny.English.Strikes.Again.2018.1080p.BluRay.DTS.x264-OaSis
+- 2026-06-30T05:24:52+0200 [info] real-debrid::rd_slots_reserve
+- 2026-06-30T05:24:52+0200 [info] real-debrid::rd_verify_add_start - Johnny.English.Strikes.Again.2018.1080p.BluRay.X264-DEFLATE[rarbg]
+- 2026-06-30T05:24:52+0200 [info] real-debrid::rd_verify_queue_submit - Johnny.English.Strikes.Again.2018.1080p.BluRay.X264-DEFLATE[rarbg]
+- 2026-06-30T05:24:52+0200 [info] real-debrid::rd_slots_reserve
+- 2026-06-30T05:24:52+0200 [info] real-debrid::rd_verify_add_start - Johnny.English.Strikes.Again.2018.1080p.BluRay.x264.DTS-WiKi
+- 2026-06-30T05:24:52+0200 [info] real-debrid::rd_verify_queue_submit - Johnny.English.Strikes.Again.2018.1080p.BluRay.x264.DTS-WiKi
+- 2026-06-30T05:24:52+0200 [info] real-debrid::rd_slots_reserve
+- 2026-06-30T05:24:52+0200 [info] real-debrid::rd_verify_add_start - Johnny English Collection (2003-2018) 1080p BluRay x264 {Hindi-Eng DTS 5.1 & DD 5.1} MSub By~Hammer~
+- 2026-06-30T05:24:52+0200 [info] real-debrid::rd_slots_reserve
+- 2026-06-30T05:24:52+0200 [info] real-debrid::rd_verify_queue_submit - Johnny English Collection (2003-2018) 1080p BluRay x264 {Hindi-Eng DTS 5.1 & DD 5.1} MSub By~Hammer~
+- 2026-06-30T05:24:52+0200 [info] real-debrid::rd_verify_add_start - Johnny.English.Strikes.Again.2018.720p.BluRay.X264-DEFLATE[EtHD]
+- 2026-06-30T05:24:52+0200 [info] real-debrid::rd_verify_queue_submit - Johnny.English.Strikes.Again.2018.720p.BluRay.X264-DEFLATE[EtHD]
+- 2026-06-30T05:24:52+0200 [info] real-debrid::rd_slots_reserve
+- 2026-06-30T05:24:52+0200 [info] real-debrid::rd_verify_add_start - Johnny.English.Strikes.Again.2018.720p.BluRay.X264-DEFLATE
+- 2026-06-30T05:24:52+0200 [info] real-debrid::rd_verify_queue_submit - Johnny.English.Strikes.Again.2018.720p.BluRay.X264-DEFLATE
+- 2026-06-30T05:24:52+0200 [info] real-debrid::rd_slots_reserve
+- 2026-06-30T05:24:52+0200 [info] real-debrid::rd_verify_add_start - Johnny.English.Trilogy.2003-2018.1080p.BluRay.x264.AAC.5.1-ZiTO
+- 2026-06-30T05:24:52+0200 [info] real-debrid::rd_slots_reserve
+- 2026-06-30T05:24:52+0200 [info] real-debrid::rd_verify_queue_submit - Johnny.English.Trilogy.2003-2018.1080p.BluRay.x264.AAC.5.1-ZiTO
+- 2026-06-30T05:24:52+0200 [info] real-debrid::rd_verify_add_start - Johnny English Strikes Again (2018) 1080p BluRay [xPau.se]
+- 2026-06-30T05:24:52+0200 [info] real-debrid::rd_verify_queue_submit - Johnny English Strikes Again (2018) 1080p BluRay [xPau.se]
+- 2026-06-30T05:24:52+0200 [info] real-debrid::rd_slots_reserve
+- 2026-06-30T05:24:52+0200 [info] real-debrid::rd_verify_add_start - Johnny English 3.0 2018 [R5] (1080p) LAPUMiA
+- 2026-06-30T05:24:52+0200 [info] real-debrid::rd_slots_reserve
+- 2026-06-30T05:24:52+0200 [info] real-debrid::rd_verify_queue_submit - Johnny English 3.0 2018 [R5] (1080p) LAPUMiA
+- 2026-06-30T05:24:52+0200 [info] real-debrid::rd_verify_add_start - Johnny.English.Strikes.Again.2018.720p.BluRay.x264.[Arena.Bg]
+- 2026-06-30T05:24:52+0200 [info] real-debrid::rd_slots_reserve
+- 2026-06-30T05:24:52+0200 [info] real-debrid::rd_verify_queue_submit - Johnny.English.Strikes.Again.2018.720p.BluRay.x264.[Arena.Bg]
+- 2026-06-30T05:24:52+0200 [info] real-debrid::rd_verify_add_start - Johnny English (2003-2018)
+- 2026-06-30T05:24:52+0200 [info] real-debrid::rd_slots_reserve
+- 2026-06-30T05:24:52+0200 [info] real-debrid::rd_verify_queue_submit - Johnny English (2003-2018)
+- 2026-06-30T05:24:52+0200 [info] real-debrid::rd_verify_add_start - Johnny English Strikes Again 2018.1080p.Bluray.X264-EVO
+- 2026-06-30T05:24:52+0200 [info] real-debrid::rd_verify_queue_submit - Johnny English Strikes Again 2018.1080p.Bluray.X264-EVO
+- 2026-06-30T05:24:52+0200 [info] real-debrid::rd_slots_reserve
+- 2026-06-30T05:24:52+0200 [info] real-debrid::rd_verify_add_start - Johnny English Strikes Again 2018.1080p.Bluray.X264-EVO
+- 2026-06-30T05:24:52+0200 [info] real-debrid::rd_verify_queue_submit - Johnny English Strikes Again 2018.1080p.Bluray.X264-EVO
+- 2026-06-30T05:24:52+0200 [info] real-debrid::rd_slots_reserve
+- 2026-06-30T05:24:52+0200 [info] real-debrid::rd_verify_add_start - Johnny.English.Strikes.Again.2018.1080p.Bluray.X264-EVO
+- 2026-06-30T05:24:52+0200 [info] real-debrid::rd_slots_reserve
+- 2026-06-30T05:24:52+0200 [info] real-debrid::rd_verify_queue_submit - Johnny.English.Strikes.Again.2018.1080p.Bluray.X264-EVO
+- 2026-06-30T05:24:52+0200 [info] real-debrid::rd_verify_add_start - Johnny.English.Strikes.Again.2018.1080p.BluRay.X264-DEFLATE
+- 2026-06-30T05:24:52+0200 [info] real-debrid::rd_slots_reserve
+- 2026-06-30T05:24:52+0200 [info] real-debrid::rd_verify_queue_submit - Johnny.English.Strikes.Again.2018.1080p.BluRay.X264-DEFLATE
+- 2026-06-30T05:24:52+0200 [info] real-debrid::rd_verify_add_start - Johnny.English.Strikes.Again.2018.1080p.BluRay.X264-DEFLATE[EtHD]
+- 2026-06-30T05:24:52+0200 [info] real-debrid::rd_verify_queue_submit - Johnny.English.Strikes.Again.2018.1080p.BluRay.X264-DEFLATE[EtHD]
+- 2026-06-30T05:24:52+0200 [info] real-debrid::rd_slots_reserve
+- 2026-06-30T05:24:52+0200 [info] real-debrid::rd_verify_add_start - Johnny.English.Strikes.Again.2018.1080p.BluRay.H264.AAC-RARBG
+- 2026-06-30T05:24:52+0200 [info] real-debrid::rd_verify_queue_submit - Johnny.English.Strikes.Again.2018.1080p.BluRay.H264.AAC-RARBG
+- 2026-06-30T05:24:52+0200 [info] real-debrid::rd_verify_add_start - Johnny.English.Strikes.Again.2018.1080p.Bluray.akoam.net
+- 2026-06-30T05:24:52+0200 [info] real-debrid::rd_verify_queue_submit - Johnny.English.Strikes.Again.2018.1080p.Bluray.akoam.net
+- 2026-06-30T05:24:52+0200 [info] real-debrid::rd_slots_reserve
+- 2026-06-30T05:24:52+0200 [info] real-debrid::rd_verify_add_start - Johnny.English.Strikes.Again.2018.1080p.BluRay.X264-DEFLATE
+- 2026-06-30T05:24:52+0200 [info] real-debrid::rd_verify_queue_submit - Johnny.English.Strikes.Again.2018.1080p.BluRay.X264-DEFLATE
+- 2026-06-30T05:24:52+0200 [info] real-debrid::rd_slots_reserve
+- 2026-06-30T05:24:52+0200 [info] real-debrid::rd_verify_add_start - Johnny.English.Strikes.Again.2018.INTERNAL.1080p.BluRay.X264-DEFLATE[rarbg]
+- 2026-06-30T05:24:52+0200 [info] real-debrid::rd_verify_queue_submit - Johnny.English.Strikes.Again.2018.INTERNAL.1080p.BluRay.X264-DEFLATE[rarbg]
+- 2026-06-30T05:24:52+0200 [info] real-debrid::rd_slots_reserve
+- 2026-06-30T05:24:52+0200 [info] real-debrid::rd_verify_add_start - [憨豆特工3].Johnny.English.Strikes.Again.2018.BD.720P&1080P.x264.AAC.5.1.English.内嵌特效中英-FFansMp4
+- 2026-06-30T05:24:52+0200 [info] real-debrid::rd_verify_queue_submit - [憨豆特工3].Johnny.English.Strikes.Again.2018.BD.720P&1080P.x264.AAC.5.1.English.内嵌特效中英-FFansMp4
+- 2026-06-30T05:24:52+0200 [info] real-debrid::rd_slots_reserve
+- 2026-06-30T05:24:52+0200 [info] real-debrid::rd_verify_add_start - Johnny.English.Strikes.Again.2018.720p.BDRip.X264.AC3-EVO
+- 2026-06-30T05:24:52+0200 [info] real-debrid::rd_verify_queue_submit - Johnny.English.Strikes.Again.2018.720p.BDRip.X264.AC3-EVO
+- 2026-06-30T05:24:52+0200 [info] real-debrid::rd_slots_reserve
+- 2026-06-30T05:24:52+0200 [info] real-debrid::rd_verify_add_start - johnny.-english.-strikes.-again.-2018.720p.-brrip.-hindi.-dual-audio.-all-movies-hub.in
+- 2026-06-30T05:24:52+0200 [info] real-debrid::rd_verify_queue_submit - johnny.-english.-strikes.-again.-2018.720p.-brrip.-hindi.-dual-audio.-all-movies-hub.in
+- 2026-06-30T05:24:52+0200 [info] real-debrid::rd_slots_reserve
+- 2026-06-30T05:24:52+0200 [info] real-debrid::rd_verify_add_start - Johnny.English.MOViE.PACK.SLOSubs.1080p.BluRay.x264-INFIRE
+- 2026-06-30T05:24:52+0200 [info] real-debrid::rd_verify_queue_submit - Johnny.English.MOViE.PACK.SLOSubs.1080p.BluRay.x264-INFIRE
+- 2026-06-30T05:24:52+0200 [info] real-debrid::rd_slots_reserve
+- 2026-06-30T05:24:52+0200 [info] real-debrid::rd_verify_add_start - Johnny English Strikes Again 2018.1080p.Bluray.X264-EVO
+- 2026-06-30T05:24:52+0200 [info] real-debrid::rd_verify_queue_submit - Johnny English Strikes Again 2018.1080p.Bluray.X264-EVO
+- 2026-06-30T05:24:52+0200 [info] real-debrid::rd_slots_reserve
+- 2026-06-30T05:24:52+0200 [info] real-debrid::rd_verify_add_start - Johnny.English.Strikes.Again.2018.BDRip.AC3.X264-CMRG[TGx]
+- 2026-06-30T05:24:52+0200 [info] real-debrid::rd_verify_queue_submit - Johnny.English.Strikes.Again.2018.BDRip.AC3.X264-CMRG[TGx]
+- 2026-06-30T05:24:52+0200 [info] real-debrid::rd_slots_reserve
+- 2026-06-30T05:24:52+0200 [info] real-debrid::rd_verify_add_start - Johnny.English.Strikes.Again.2018.BDRip
+- 2026-06-30T05:24:52+0200 [info] real-debrid::rd_verify_queue_submit - Johnny.English.Strikes.Again.2018.BDRip
+- 2026-06-30T05:24:52+0200 [info] real-debrid::rd_slots_reserve
+- 2026-06-30T05:24:52+0200 [info] real-debrid::rd_verify_add_start - Johnny.English.Strikes.Again.2018.BDRip.X264-DEFLATE[rarbg]
+- 2026-06-30T05:24:52+0200 [info] real-debrid::rd_verify_queue_submit - Johnny.English.Strikes.Again.2018.BDRip.X264-DEFLATE[rarbg]
+- 2026-06-30T05:24:52+0200 [info] real-debrid::rd_slots_reserve
+- 2026-06-30T05:24:52+0200 [info] real-debrid::rd_verify_add_start - Johnny English Trilogy.2003-2018.BDRip.XviD.480x
+- 2026-06-30T05:24:52+0200 [info] real-debrid::rd_verify_queue_submit - Johnny English Trilogy.2003-2018.BDRip.XviD.480x
+- 2026-06-30T05:24:52+0200 [info] real-debrid::rd_slots_reserve
+- 2026-06-30T05:24:52+0200 [info] real-debrid::rd_verify_add_start - Johnny.English.Strikes.Again.2018.720p.BluRay.x264.DTS-FGT
+- 2026-06-30T05:24:52+0200 [info] real-debrid::rd_verify_queue_submit - Johnny.English.Strikes.Again.2018.720p.BluRay.x264.DTS-FGT
+- 2026-06-30T05:24:52+0200 [info] real-debrid::rd_slots_reserve
+- 2026-06-30T05:24:52+0200 [info] real-debrid::rd_slots_reserve
+- 2026-06-30T05:24:52+0200 [info] real-debrid::rd_verify_added
+- 2026-06-30T05:24:52+0200 [debug] real-debrid::rd_verify_poll - Johnny.English.Strikes.Again.2018.2160p.REMUX.UHD.BluRay.HDR.HEVC.DTS.X.7.1-iFT
+- 2026-06-30T05:24:52+0200 [info] real-debrid::rd_verify_select_files
+- 2026-06-30T05:24:53+0200 [debug] real-debrid::rd_verify_post_select_poll - Johnny.English.Strikes.Again.2018.2160p.REMUX.UHD.BluRay.HDR.HEVC.DTS.X.7.1-iFT
+- 2026-06-30T05:24:53+0200 [info] real-debrid::rd_fast_discard - zero_progress_post_select
+- 2026-06-30T05:24:53+0200 [info] real-debrid::rd_fast_discard_reason - zero_progress_post_select
+- 2026-06-30T05:24:53+0200 [info] real-debrid::rd_fast_discard_delete - zero_progress_post_select
+- 2026-06-30T05:24:53+0200 [info] real-debrid::rd_zero_progress_fast_delete - Johnny.English.Strikes.Again.2018.2160p.REMUX.UHD.BluRay.HDR.HEVC.DTS.X.7.1-iFT
+- 2026-06-30T05:24:53+0200 [info] real-debrid::rd_delete_torrent
+- 2026-06-30T05:24:53+0200 [info] real-debrid::rd_slots_release
+- 2026-06-30T05:24:53+0200 [info] real-debrid::rd_verify_queue_done_item - Johnny.English.Strikes.Again.2018.2160p.REMUX.UHD.BluRay.HDR.HEVC.DTS.X.7.1-iFT
+- 2026-06-30T05:24:53+0200 [info] real-debrid::rd_verify_added
+- 2026-06-30T05:24:53+0200 [debug] real-debrid::rd_verify_poll - Johnny English Strikes Again 2018.1080p.Bluray.X264-EVO
+- 2026-06-30T05:24:54+0200 [info] real-debrid::rd_api_http_error - infringing_file
+- 2026-06-30T05:24:54+0200 [info] real-debrid::rd_call_terminal_error - infringing_file
+- 2026-06-30T05:24:54+0200 [info] real-debrid::rd_verify_infringing - Johnny.English.Strikes.Again.2018.1080p.Bluray.x264.DTS-Manning
+- 2026-06-30T05:24:54+0200 [info] real-debrid::rd_verify_queue_done_item - Johnny.English.Strikes.Again.2018.1080p.Bluray.x264.DTS-Manning
+- 2026-06-30T05:24:54+0200 [info] real-debrid::rd_delete_torrent
+- 2026-06-30T05:24:54+0200 [info] real-debrid::rd_slots_release
+- 2026-06-30T05:24:54+0200 [info] real-debrid::rd_verify_not_instant - Johnny English Strikes Again 2018.1080p.Bluray.X264-EVO
+- 2026-06-30T05:24:54+0200 [info] real-debrid::rd_verify_queue_done_item - Johnny English Strikes Again 2018.1080p.Bluray.X264-EVO
+- 2026-06-30T05:24:55+0200 [info] real-debrid::rd_verify_added
+- 2026-06-30T05:24:55+0200 [debug] real-debrid::rd_verify_poll - Johnny.English.Strikes.Again.2018.1080p.BluRay.X264-DEFLATE
+- 2026-06-30T05:24:55+0200 [info] real-debrid::rd_delete_torrent
+- 2026-06-30T05:24:55+0200 [info] real-debrid::rd_slots_release
+- 2026-06-30T05:24:55+0200 [info] real-debrid::rd_verify_not_instant - Johnny.English.Strikes.Again.2018.1080p.BluRay.X264-DEFLATE
+- 2026-06-30T05:24:55+0200 [info] real-debrid::rd_verify_queue_done_item - Johnny.English.Strikes.Again.2018.1080p.BluRay.X264-DEFLATE
+- 2026-06-30T05:24:56+0200 [info] real-debrid::rd_verify_added
+- 2026-06-30T05:24:56+0200 [debug] real-debrid::rd_endpoint_pace_wait
+- 2026-06-30T05:24:57+0200 [debug] real-debrid::rd_verify_poll - Johnny English (2003-2018)
+- 2026-06-30T05:24:57+0200 [info] real-debrid::rd_verify_added
+- 2026-06-30T05:24:57+0200 [debug] real-debrid::rd_verify_poll - Johnny.English.Strikes.Again.2018.BluRay.1080p.DTS-X.7.1.AVC.REMUX-FraMeSToR
+- 2026-06-30T05:24:57+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-30T05:24:57+0200 [info] real-debrid::rd_verify_select_files
+- 2026-06-30T05:24:58+0200 [debug] real-debrid::rd_verify_post_select_poll - Johnny.English.Strikes.Again.2018.BluRay.1080p.DTS-X.7.1.AVC.REMUX-FraMeSToR
+- 2026-06-30T05:24:58+0200 [info] real-debrid::rd_fast_discard - zero_progress_post_select
+- 2026-06-30T05:24:58+0200 [info] real-debrid::rd_fast_discard_reason - zero_progress_post_select
+- 2026-06-30T05:24:58+0200 [info] real-debrid::rd_fast_discard_delete - zero_progress_post_select
+- 2026-06-30T05:24:58+0200 [info] real-debrid::rd_zero_progress_fast_delete - Johnny.English.Strikes.Again.2018.BluRay.1080p.DTS-X.7.1.AVC.REMUX-FraMeSToR
+- 2026-06-30T05:24:58+0200 [debug] real-debrid::rd_endpoint_pace_wait
+- 2026-06-30T05:24:58+0200 [info] real-debrid::rd_verify_added
+- 2026-06-30T05:24:58+0200 [info] real-debrid::rd_delete_torrent
+- 2026-06-30T05:24:58+0200 [info] real-debrid::rd_slots_release
+- 2026-06-30T05:24:58+0200 [info] real-debrid::rd_verify_not_instant - Johnny English (2003-2018)
+- 2026-06-30T05:24:58+0200 [info] real-debrid::rd_verify_queue_done_item - Johnny English (2003-2018)
+- 2026-06-30T05:24:58+0200 [debug] real-debrid::rd_verify_poll - Johnny.English.Trilogy.2003-2018.1080p.BluRay.x264.AAC.5.1-ZiTO
+- 2026-06-30T05:24:58+0200 [info] real-debrid::rd_fast_discard - magnet_error
+- 2026-06-30T05:24:58+0200 [info] real-debrid::rd_fast_discard_reason - magnet_error
+- 2026-06-30T05:24:58+0200 [info] real-debrid::rd_fast_discard_delete - magnet_error
+- 2026-06-30T05:24:59+0200 [info] real-debrid::rd_delete_torrent
+- 2026-06-30T05:24:59+0200 [info] real-debrid::rd_slots_release
+- 2026-06-30T05:24:59+0200 [info] real-debrid::rd_verify_queue_done_item - Johnny.English.Strikes.Again.2018.BluRay.1080p.DTS-X.7.1.AVC.REMUX-FraMeSToR
+- 2026-06-30T05:24:59+0200 [info] real-debrid::rd_verify_added
+- 2026-06-30T05:24:59+0200 [info] real-debrid::rd_delete_torrent
+- 2026-06-30T05:24:59+0200 [info] real-debrid::rd_slots_release
+- 2026-06-30T05:24:59+0200 [info] real-debrid::rd_verify_queue_done_item - Johnny.English.Trilogy.2003-2018.1080p.BluRay.x264.AAC.5.1-ZiTO
+- 2026-06-30T05:24:59+0200 [debug] real-debrid::rd_verify_poll - Johnny.English.MOViE.PACK.SLOSubs.1080p.BluRay.x264-INFIRE
+- 2026-06-30T05:24:59+0200 [info] real-debrid::rd_fast_discard - magnet_error
+- 2026-06-30T05:24:59+0200 [info] real-debrid::rd_fast_discard_reason - magnet_error
+- 2026-06-30T05:24:59+0200 [info] real-debrid::rd_fast_discard_delete - magnet_error
+- 2026-06-30T05:25:00+0200 [info] real-debrid::rd_delete_torrent
+- 2026-06-30T05:25:00+0200 [info] real-debrid::rd_slots_release
+- 2026-06-30T05:25:00+0200 [info] real-debrid::rd_verify_queue_done_item - Johnny.English.MOViE.PACK.SLOSubs.1080p.BluRay.x264-INFIRE
+- 2026-06-30T05:25:00+0200 [info] real-debrid::rd_verify_added
+- 2026-06-30T05:25:00+0200 [debug] real-debrid::rd_verify_poll - Johnny.English.Strikes.Again.2018.1080p.Bluray.akoam.net
+- 2026-06-30T05:25:00+0200 [info] real-debrid::rd_delete_torrent
+- 2026-06-30T05:25:00+0200 [info] real-debrid::rd_slots_release
+- 2026-06-30T05:25:00+0200 [info] real-debrid::rd_verify_not_instant - Johnny.English.Strikes.Again.2018.1080p.Bluray.akoam.net
+- 2026-06-30T05:25:00+0200 [info] real-debrid::rd_verify_queue_done_item - Johnny.English.Strikes.Again.2018.1080p.Bluray.akoam.net
+- 2026-06-30T05:25:01+0200 [info] real-debrid::rd_verify_added
+- 2026-06-30T05:25:01+0200 [debug] real-debrid::rd_verify_poll - Johnny.English.Strikes.Again.2018.720p.BluRay.DTS.x264-Du
+- 2026-06-30T05:25:01+0200 [debug] real-debrid::rd_endpoint_pace_wait
+- 2026-06-30T05:25:01+0200 [info] real-debrid::rd_delete_torrent
+- 2026-06-30T05:25:01+0200 [info] real-debrid::rd_slots_release
+- 2026-06-30T05:25:01+0200 [info] real-debrid::rd_verify_not_instant - Johnny.English.Strikes.Again.2018.720p.BluRay.DTS.x264-Du
+- 2026-06-30T05:25:01+0200 [info] real-debrid::rd_verify_queue_done_item - Johnny.English.Strikes.Again.2018.720p.BluRay.DTS.x264-Du
+- 2026-06-30T05:25:02+0200 [info] real-debrid::rd_verify_added
+- 2026-06-30T05:25:02+0200 [debug] real-debrid::rd_verify_poll - www.UIndex.org    -    Johnny English Strikes Again 2018 1080p BluRay DTS x264-VietHD
+- 2026-06-30T05:25:02+0200 [info] real-debrid::rd_verify_select_files
+- 2026-06-30T05:25:03+0200 [info] real-debrid::rd_api_http_error - infringing_file
+- 2026-06-30T05:25:03+0200 [info] real-debrid::rd_call_terminal_error - infringing_file
+- 2026-06-30T05:25:03+0200 [info] real-debrid::rd_verify_infringing - Johnny.English.Strikes.Again.2018.1080p.BluRay.X264-DEFLATE[EtHD]
+- 2026-06-30T05:25:03+0200 [info] real-debrid::rd_verify_queue_done_item - Johnny.English.Strikes.Again.2018.1080p.BluRay.X264-DEFLATE[EtHD]
+- 2026-06-30T05:25:03+0200 [debug] real-debrid::rd_verify_post_select_poll - www.UIndex.org    -    Johnny English Strikes Again 2018 1080p BluRay DTS x264-VietHD
+- 2026-06-30T05:25:03+0200 [info] real-debrid::rd_verify_ok - www.UIndex.org    -    Johnny English Strikes Again 2018 1080p BluRay DTS x264-VietHD  ==>  /Johnny English Strikes Again 2018 1080p BluRay DTS x264-VietHD.mkv
+- 2026-06-30T05:25:03+0200 [info] real-debrid::rd_verify_queue_done_item - www.UIndex.org    -    Johnny English Strikes Again 2018 1080p BluRay DTS x264-VietHD  ==>  /Johnny English Strikes Agai
+- 2026-06-30T05:25:04+0200 [info] real-debrid::rd_verify_added
+- 2026-06-30T05:25:05+0200 [debug] real-debrid::rd_verify_poll - 【更多高清电影访问 www.BBSDDS.com】憨豆特工3[简繁英字幕].Johnny.English.Strikes.Again.2018.BluRay.1080p.x265.10bit-MiniHD
+- 2026-06-30T05:25:05+0200 [info] real-debrid::rd_verify_added
+- 2026-06-30T05:25:05+0200 [debug] real-debrid::rd_verify_poll - [ACESSE...HD-ELITE.ME]...Johnny.English.Strikes.Again.2018 Extras.BluRay.1080p.Remux.H264.DTS-MA.5.1.LuisRichard
+- 2026-06-30T05:25:05+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-30T05:25:05+0200 [info] real-debrid::rd_delete_torrent
+- 2026-06-30T05:25:05+0200 [info] real-debrid::rd_slots_release
+- 2026-06-30T05:25:05+0200 [info] real-debrid::rd_verify_not_instant - 【更多高清电影访问 www.BBSDDS.com】憨豆特工3[简繁英字幕].Johnny.English.Strikes.Again.2018.BluRay.1080p.x265.10bit-MiniHD
+- 2026-06-30T05:25:05+0200 [info] real-debrid::rd_verify_queue_done_item - 【更多高清电影访问 www.BBSDDS.com】憨豆特工3[简繁英字幕].Johnny.English.Strikes.Again.2018.BluRay.1080p.x265.10bit-MiniHD
+- 2026-06-30T05:25:06+0200 [info] real-debrid::rd_verify_select_files
+- 2026-06-30T05:25:06+0200 [info] real-debrid::rd_api_http_error - infringing_file
+- 2026-06-30T05:25:06+0200 [info] real-debrid::rd_call_terminal_error - infringing_file
+- 2026-06-30T05:25:06+0200 [info] real-debrid::rd_verify_infringing - Johnny English Strikes Again 2018.1080p.Bluray.X264-EVO
+- 2026-06-30T05:25:06+0200 [info] real-debrid::rd_verify_queue_done_item - Johnny English Strikes Again 2018.1080p.Bluray.X264-EVO
+- 2026-06-30T05:25:06+0200 [debug] real-debrid::rd_verify_post_select_poll - [ACESSE...HD-ELITE.ME]...Johnny.English.Strikes.Again.2018 Extras.BluRay.1080p.Remux.H264.DTS-MA.5.1.LuisRichard
+- 2026-06-30T05:25:06+0200 [info] real-debrid::rd_fast_discard - zero_progress_post_select
+- 2026-06-30T05:25:06+0200 [info] real-debrid::rd_fast_discard_reason - zero_progress_post_select
+- 2026-06-30T05:25:06+0200 [info] real-debrid::rd_fast_discard_delete - zero_progress_post_select
+- 2026-06-30T05:25:06+0200 [info] real-debrid::rd_zero_progress_fast_delete - [ACESSE...HD-ELITE.ME]...Johnny.English.Strikes.Again.2018 Extras.BluRay.1080p.Remux.H264.DTS-MA.5.1.LuisRichard
+- 2026-06-30T05:25:06+0200 [info] real-debrid::rd_delete_torrent
+- 2026-06-30T05:25:06+0200 [info] real-debrid::rd_slots_release
+- 2026-06-30T05:25:06+0200 [info] real-debrid::rd_verify_queue_done_item - [ACESSE...HD-ELITE.ME]...Johnny.English.Strikes.Again.2018 Extras.BluRay.1080p.Remux.H264.DTS-MA.5.1.LuisRichard
+- 2026-06-30T05:25:06+0200 [debug] real-debrid::rd_endpoint_pace_wait
+- 2026-06-30T05:25:07+0200 [info] real-debrid::rd_verify_added
+- 2026-06-30T05:25:07+0200 [debug] real-debrid::rd_verify_poll - Johnny English Triology 2003-2018 1080P Bluray x265 HEVC [shadow]
+- 2026-06-30T05:25:07+0200 [info] real-debrid::rd_verify_select_files
+- 2026-06-30T05:25:08+0200 [info] real-debrid::rd_api_http_error - infringing_file
+- 2026-06-30T05:25:08+0200 [info] real-debrid::rd_call_terminal_error - infringing_file
+- 2026-06-30T05:25:08+0200 [info] real-debrid::rd_verify_infringing - Johnny English Strikes Again 2018.1080p.Bluray.X264-EVO
+- 2026-06-30T05:25:08+0200 [info] real-debrid::rd_verify_queue_done_item - Johnny English Strikes Again 2018.1080p.Bluray.X264-EVO
+- 2026-06-30T05:25:08+0200 [debug] real-debrid::rd_verify_post_select_poll - Johnny English Triology 2003-2018 1080P Bluray x265 HEVC [shadow]
+- 2026-06-30T05:25:08+0200 [info] real-debrid::rd_fast_discard - zero_progress_post_select
+- 2026-06-30T05:25:08+0200 [info] real-debrid::rd_fast_discard_reason - zero_progress_post_select
+- 2026-06-30T05:25:08+0200 [info] real-debrid::rd_fast_discard_delete - zero_progress_post_select
+- 2026-06-30T05:25:08+0200 [info] real-debrid::rd_zero_progress_fast_delete - Johnny English Triology 2003-2018 1080P Bluray x265 HEVC [shadow]
+- 2026-06-30T05:25:08+0200 [info] real-debrid::rd_delete_torrent
+- 2026-06-30T05:25:08+0200 [info] real-debrid::rd_slots_release
+- 2026-06-30T05:25:08+0200 [info] real-debrid::rd_verify_queue_done_item - Johnny English Triology 2003-2018 1080P Bluray x265 HEVC [shadow]
+- 2026-06-30T05:25:09+0200 [info] real-debrid::rd_verify_added
+- 2026-06-30T05:25:09+0200 [debug] real-debrid::rd_verify_poll - Kolekcja Filmów - Johnny English 2003-2018 [1080p.BluRay.H264.AC3.5.1-DTS.5.1-NoNaNo-NitroTeam] [Napisy PL] [Lektor PL]
+- 2026-06-30T05:25:09+0200 [info] real-debrid::rd_verify_select_files
+- 2026-06-30T05:25:10+0200 [debug] real-debrid::rd_verify_post_select_poll - Kolekcja Filmów - Johnny English 2003-2018 [1080p.BluRay.H264.AC3.5.1-DTS.5.1-NoNaNo-NitroTeam] [Napisy PL] [Lektor PL]
+- 2026-06-30T05:25:10+0200 [info] real-debrid::rd_fast_discard - zero_progress_post_select
+- 2026-06-30T05:25:10+0200 [info] real-debrid::rd_fast_discard_reason - zero_progress_post_select
+- 2026-06-30T05:25:10+0200 [info] real-debrid::rd_fast_discard_delete - zero_progress_post_select
+- 2026-06-30T05:25:10+0200 [info] real-debrid::rd_zero_progress_fast_delete - Kolekcja Filmów - Johnny English 2003-2018 [1080p.BluRay.H264.AC3.5.1-DTS.5.1-NoNaNo-NitroTeam] [Napisy PL] [Lektor PL]
+- 2026-06-30T05:25:10+0200 [info] real-debrid::rd_delete_torrent
+- 2026-06-30T05:25:10+0200 [info] real-debrid::rd_slots_release
+- 2026-06-30T05:25:10+0200 [info] real-debrid::rd_verify_queue_done_item - Kolekcja Filmów - Johnny English 2003-2018 [1080p.BluRay.H264.AC3.5.1-DTS.5.1-NoNaNo-NitroTeam] [Napisy PL] [Lektor PL]
+- 2026-06-30T05:25:10+0200 [info] real-debrid::rd_verify_added
+- 2026-06-30T05:25:11+0200 [debug] real-debrid::rd_verify_poll - Johnny.English.Strikes.Again.2018.BDRip
+- 2026-06-30T05:25:11+0200 [info] real-debrid::rd_api_http_error - infringing_file
+- 2026-06-30T05:25:11+0200 [info] real-debrid::rd_call_terminal_error - infringing_file
+- 2026-06-30T05:25:11+0200 [info] real-debrid::rd_verify_infringing - Johnny.English.Strikes.Again.2018.1080p.BluRay.X264-DEFLATE
+- 2026-06-30T05:25:11+0200 [info] real-debrid::rd_verify_queue_done_item - Johnny.English.Strikes.Again.2018.1080p.BluRay.X264-DEFLATE
+- 2026-06-30T05:25:11+0200 [info] real-debrid::rd_delete_torrent
+- 2026-06-30T05:25:11+0200 [info] real-debrid::rd_slots_release
+- 2026-06-30T05:25:11+0200 [info] real-debrid::rd_verify_not_instant - Johnny.English.Strikes.Again.2018.BDRip
+- 2026-06-30T05:25:11+0200 [info] real-debrid::rd_verify_queue_done_item - Johnny.English.Strikes.Again.2018.BDRip
+- 2026-06-30T05:25:11+0200 [debug] real-debrid::rd_endpoint_pace_wait
+- 2026-06-30T05:25:12+0200 [info] real-debrid::rd_api_http_error - infringing_file
+- 2026-06-30T05:25:12+0200 [info] real-debrid::rd_call_terminal_error - infringing_file
+- 2026-06-30T05:25:12+0200 [info] real-debrid::rd_verify_infringing - Johnny.English.Strikes.Again.2018.INTERNAL.1080p.BluRay.X264-DEFLATE[rarbg]
+- 2026-06-30T05:25:12+0200 [info] real-debrid::rd_verify_queue_done_item - Johnny.English.Strikes.Again.2018.INTERNAL.1080p.BluRay.X264-DEFLATE[rarbg]
+- 2026-06-30T05:25:13+0200 [info] real-debrid::rd_api_http_error - infringing_file
+- 2026-06-30T05:25:13+0200 [info] real-debrid::rd_call_terminal_error - infringing_file
+- 2026-06-30T05:25:13+0200 [info] real-debrid::rd_verify_infringing - Johnny.English.Strikes.Again.2018.1080p.BluRay.X264-DEFLATE[rarbg]
+- 2026-06-30T05:25:13+0200 [info] real-debrid::rd_verify_queue_done_item - Johnny.English.Strikes.Again.2018.1080p.BluRay.X264-DEFLATE[rarbg]
+- 2026-06-30T05:25:14+0200 [info] real-debrid::rd_verify_added
+- 2026-06-30T05:25:14+0200 [debug] real-debrid::rd_verify_poll - Kolekcja Johnny English 2003-2018 [10Bit SDR UPSCALING] [2160p.BluRay.H265.AC3-AS76-FT] [Lektor PL] [Alusia]
+- 2026-06-30T05:25:14+0200 [info] real-debrid::rd_verify_select_files
+- 2026-06-30T05:25:15+0200 [info] real-debrid::rd_verify_added
+- 2026-06-30T05:25:15+0200 [debug] real-debrid::rd_endpoint_pace_wait
+- 2026-06-30T05:25:15+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-30T05:25:15+0200 [debug] real-debrid::rd_verify_post_select_poll - Kolekcja Johnny English 2003-2018 [10Bit SDR UPSCALING] [2160p.BluRay.H265.AC3-AS76-FT] [Lektor PL] [Alusia]
+- 2026-06-30T05:25:15+0200 [info] real-debrid::rd_fast_discard - zero_progress_post_select
+- 2026-06-30T05:25:15+0200 [info] real-debrid::rd_fast_discard_reason - zero_progress_post_select
+- 2026-06-30T05:25:15+0200 [info] real-debrid::rd_fast_discard_delete - zero_progress_post_select
+- 2026-06-30T05:25:15+0200 [info] real-debrid::rd_zero_progress_fast_delete - Kolekcja Johnny English 2003-2018 [10Bit SDR UPSCALING] [2160p.BluRay.H265.AC3-AS76-FT] [Lektor PL] [Alusia]
+- 2026-06-30T05:25:15+0200 [debug] real-debrid::rd_verify_poll - 【高清影视之家发布 www.HDBTHD.com】憨豆特工3[中文字幕 特效字幕].Johnny.English.Strikes.Again.2018.V2.Bluray.2160p.DTS-X7.1.HDR.x265.10bit-Drea
+- 2026-06-30T05:25:15+0200 [info] real-debrid::rd_delete_torrent
+- 2026-06-30T05:25:15+0200 [info] real-debrid::rd_slots_release
+- 2026-06-30T05:25:15+0200 [info] real-debrid::rd_verify_queue_done_item - Kolekcja Johnny English 2003-2018 [10Bit SDR UPSCALING] [2160p.BluRay.H265.AC3-AS76-FT] [Lektor PL] [Alusia]
+- 2026-06-30T05:25:16+0200 [info] real-debrid::rd_verify_select_files
+- 2026-06-30T05:25:16+0200 [debug] real-debrid::rd_endpoint_pace_wait
+- 2026-06-30T05:25:16+0200 [debug] real-debrid::rd_verify_post_select_poll - 【高清影视之家发布 www.HDBTHD.com】憨豆特工3[中文字幕 特效字幕].Johnny.English.Strikes.Again.2018.V2.Bluray.2160p.DTS-X7.1.HDR.x265.10bit-Drea
+- 2026-06-30T05:25:16+0200 [info] real-debrid::rd_fast_discard - zero_progress_post_select
+- 2026-06-30T05:25:16+0200 [info] real-debrid::rd_fast_discard_reason - zero_progress_post_select
+- 2026-06-30T05:25:16+0200 [info] real-debrid::rd_fast_discard_delete - zero_progress_post_select
+- 2026-06-30T05:25:16+0200 [info] real-debrid::rd_zero_progress_fast_delete - 【高清影视之家发布 www.HDBTHD.com】憨豆特工3[中文字幕 特效字幕].Johnny.English.Strikes.Again.2018.V2.Bluray.2160p.DTS-X7.1.HDR.x265.10bit-DreamHD
+- 2026-06-30T05:25:17+0200 [info] real-debrid::rd_delete_torrent
+- 2026-06-30T05:25:17+0200 [info] real-debrid::rd_slots_release
+- 2026-06-30T05:25:17+0200 [info] real-debrid::rd_verify_queue_done_item - 【高清影视之家发布 www.HDBTHD.com】憨豆特工3[中文字幕 特效字幕].Johnny.English.Strikes.Again.2018.V2.Bluray.2160p.DTS-X7.1.HDR.x265.10bit-Drea
+- 2026-06-30T05:25:17+0200 [info] real-debrid::rd_verify_added
+- 2026-06-30T05:25:17+0200 [debug] real-debrid::rd_verify_poll - Johnny.English.Strikes.Again.2018.1080p.Bluray.X264-EVO
+- 2026-06-30T05:25:17+0200 [info] real-debrid::rd_verify_added
+- 2026-06-30T05:25:17+0200 [debug] real-debrid::rd_verify_poll - Johnny.English.Strikes.Again.2018.1080p.BluRay.DTS.x264-OaSis
+- 2026-06-30T05:25:18+0200 [info] real-debrid::rd_delete_torrent
+- 2026-06-30T05:25:18+0200 [info] real-debrid::rd_slots_release
+- 2026-06-30T05:25:18+0200 [info] real-debrid::rd_verify_not_instant - Johnny.English.Strikes.Again.2018.1080p.Bluray.X264-EVO
+- 2026-06-30T05:25:18+0200 [info] real-debrid::rd_verify_queue_done_item - Johnny.English.Strikes.Again.2018.1080p.Bluray.X264-EVO
+- 2026-06-30T05:25:18+0200 [debug] real-debrid::rd_endpoint_pace_wait
+- 2026-06-30T05:25:18+0200 [info] real-debrid::rd_api_http_error - too_many_requests
+- 2026-06-30T05:25:18+0200 [info] real-debrid::rd_endpoint_429_backoff
+- 2026-06-30T05:25:18+0200 [info] real-debrid::rd_rate_429_cooldown
+- 2026-06-30T05:25:18+0200 [info] real-debrid::rd_delete_torrent
+- 2026-06-30T05:25:18+0200 [info] real-debrid::rd_slots_release
+- 2026-06-30T05:25:18+0200 [info] real-debrid::rd_verify_not_instant - Johnny.English.Strikes.Again.2018.1080p.BluRay.DTS.x264-OaSis
+- 2026-06-30T05:25:18+0200 [info] real-debrid::rd_verify_queue_done_item - Johnny.English.Strikes.Again.2018.1080p.BluRay.DTS.x264-OaSis
+- 2026-06-30T05:25:19+0200 [info] real-debrid::rd_call_retry_429 - Real-Debrid HTTP 429: [34 too_many_requests] {"error": "too_many_requests", "error_code": 34, "src": "front-1"}
+- 2026-06-30T05:25:22+0200 [debug] real-debrid::rd_endpoint_pace_wait
+- 2026-06-30T05:25:24+0200 [info] real-debrid::rd_verify_added
+- 2026-06-30T05:25:24+0200 [debug] real-debrid::rd_verify_poll - Johnny English Collection (2003-2018) 1080p BluRay x264 {Hindi-Eng DTS 5.1 & DD 5.1} MSub By~Hammer~
+- 2026-06-30T05:25:25+0200 [info] real-debrid::rd_verify_select_files
+- 2026-06-30T05:25:25+0200 [debug] real-debrid::rd_verify_post_select_poll - Johnny English Collection (2003-2018) 1080p BluRay x264 {Hindi-Eng DTS 5.1 & DD 5.1} MSub By~Hammer~
+- 2026-06-30T05:25:25+0200 [info] real-debrid::rd_fast_discard - zero_progress_post_select
+- 2026-06-30T05:25:25+0200 [info] real-debrid::rd_fast_discard_reason - zero_progress_post_select
+- 2026-06-30T05:25:25+0200 [info] real-debrid::rd_fast_discard_delete - zero_progress_post_select
+- 2026-06-30T05:25:25+0200 [info] real-debrid::rd_zero_progress_fast_delete - Johnny English Collection (2003-2018) 1080p BluRay x264 {Hindi-Eng DTS 5.1 & DD 5.1} MSub By~Hammer~
+- 2026-06-30T05:25:25+0200 [info] real-debrid::rd_delete_torrent
+- 2026-06-30T05:25:25+0200 [info] real-debrid::rd_slots_release
+- 2026-06-30T05:25:25+0200 [info] real-debrid::rd_verify_queue_done_item - Johnny English Collection (2003-2018) 1080p BluRay x264 {Hindi-Eng DTS 5.1 & DD 5.1} MSub By~Hammer~
+- 2026-06-30T05:25:27+0200 [debug] real-debrid::rd_endpoint_pace_wait
+- 2026-06-30T05:25:27+0200 [info] real-debrid::rd_verify_added
+- 2026-06-30T05:25:27+0200 [debug] real-debrid::rd_verify_poll - Johnny English 3.0 2018 [R5] (1080p) LAPUMiA
+- 2026-06-30T05:25:27+0200 [info] real-debrid::rd_api_http_error - too_many_requests
+- 2026-06-30T05:25:27+0200 [info] real-debrid::rd_endpoint_429_backoff
+- 2026-06-30T05:25:27+0200 [info] real-debrid::rd_rate_429_cooldown
+- 2026-06-30T05:25:27+0200 [info] real-debrid::rd_verify_select_files
+- 2026-06-30T05:25:28+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-30T05:25:28+0200 [info] real-debrid::rd_call_retry_429 - Real-Debrid HTTP 429: [34 too_many_requests] {"error": "too_many_requests", "error_code": 34, "src": "front-1"}
+- 2026-06-30T05:25:30+0200 [debug] real-debrid::rd_verify_post_select_poll - Johnny English 3.0 2018 [R5] (1080p) LAPUMiA
+- 2026-06-30T05:25:30+0200 [info] real-debrid::rd_fast_discard - zero_progress_post_select
+- 2026-06-30T05:25:30+0200 [info] real-debrid::rd_fast_discard_reason - zero_progress_post_select
+- 2026-06-30T05:25:30+0200 [info] real-debrid::rd_fast_discard_delete - zero_progress_post_select
+- 2026-06-30T05:25:30+0200 [info] real-debrid::rd_zero_progress_fast_delete - Johnny English 3.0 2018 [R5] (1080p) LAPUMiA
+- 2026-06-30T05:25:31+0200 [info] real-debrid::rd_delete_torrent
+- 2026-06-30T05:25:31+0200 [info] real-debrid::rd_slots_release
+- 2026-06-30T05:25:31+0200 [info] real-debrid::rd_verify_queue_done_item - Johnny English 3.0 2018 [R5] (1080p) LAPUMiA
+- 2026-06-30T05:25:33+0200 [debug] real-debrid::rd_endpoint_pace_wait
+- 2026-06-30T05:25:34+0200 [info] real-debrid::rd_verify_added
+- 2026-06-30T05:25:34+0200 [debug] real-debrid::rd_verify_poll - johnny.-english.-strikes.-again.-2018.720p.-brrip.-hindi.-dual-audio.-all-movies-hub.in
+- 2026-06-30T05:25:34+0200 [info] real-debrid::rd_delete_torrent
+- 2026-06-30T05:25:34+0200 [info] real-debrid::rd_slots_release
+- 2026-06-30T05:25:34+0200 [info] real-debrid::rd_verify_not_instant - johnny.-english.-strikes.-again.-2018.720p.-brrip.-hindi.-dual-audio.-all-movies-hub.in
+- 2026-06-30T05:25:34+0200 [info] real-debrid::rd_verify_queue_done_item - johnny.-english.-strikes.-again.-2018.720p.-brrip.-hindi.-dual-audio.-all-movies-hub.in
+- 2026-06-30T05:25:35+0200 [info] real-debrid::rd_api_http_error - infringing_file
+- 2026-06-30T05:25:35+0200 [info] real-debrid::rd_call_terminal_error - infringing_file
+- 2026-06-30T05:25:35+0200 [info] real-debrid::rd_verify_infringing - Johnny.English.Strikes.Again.2018.720p.BluRay.x264.DTS-FGT
+- 2026-06-30T05:25:35+0200 [info] real-debrid::rd_verify_queue_done_item - Johnny.English.Strikes.Again.2018.720p.BluRay.x264.DTS-FGT
+- 2026-06-30T05:25:37+0200 [info] real-debrid::rd_verify_added
+- 2026-06-30T05:25:38+0200 [debug] real-debrid::rd_verify_poll - Johnny English Strikes Again (2018) 1080p BluRay [xPau.se]
+- 2026-06-30T05:25:38+0200 [info] real-debrid::rd_verify_select_files
+- 2026-06-30T05:25:38+0200 [debug] real-debrid::rd_endpoint_pace_wait
+- 2026-06-30T05:25:38+0200 [debug] real-debrid::rd_verify_post_select_poll - Johnny English Strikes Again (2018) 1080p BluRay [xPau.se]
+- 2026-06-30T05:25:38+0200 [info] real-debrid::rd_fast_discard - zero_progress_post_select
+- 2026-06-30T05:25:38+0200 [info] real-debrid::rd_fast_discard_reason - zero_progress_post_select
+- 2026-06-30T05:25:38+0200 [info] real-debrid::rd_fast_discard_delete - zero_progress_post_select
+- 2026-06-30T05:25:38+0200 [info] real-debrid::rd_zero_progress_fast_delete - Johnny English Strikes Again (2018) 1080p BluRay [xPau.se]
+- 2026-06-30T05:25:39+0200 [info] real-debrid::rd_delete_torrent
+- 2026-06-30T05:25:39+0200 [info] real-debrid::rd_slots_release
+- 2026-06-30T05:25:39+0200 [info] real-debrid::rd_verify_queue_done_item - Johnny English Strikes Again (2018) 1080p BluRay [xPau.se]
+- 2026-06-30T05:25:39+0200 [info] real-debrid::rd_api_http_error - infringing_file
+- 2026-06-30T05:25:39+0200 [info] real-debrid::rd_call_terminal_error - infringing_file
+- 2026-06-30T05:25:39+0200 [info] real-debrid::rd_verify_infringing - Johnny.English.Strikes.Again.2018.720p.BluRay.x264.DTS-FGT
+- 2026-06-30T05:25:39+0200 [info] real-debrid::rd_verify_queue_done_item - Johnny.English.Strikes.Again.2018.720p.BluRay.x264.DTS-FGT
+- 2026-06-30T05:25:41+0200 [info] real-debrid::rd_api_http_error - infringing_file
+- 2026-06-30T05:25:41+0200 [info] real-debrid::rd_call_terminal_error - infringing_file
+- 2026-06-30T05:25:41+0200 [info] real-debrid::rd_verify_infringing - Johnny.English.Strikes.Again.2018.720p.BluRay.x264.DTS-FGT
+- 2026-06-30T05:25:41+0200 [info] real-debrid::rd_verify_queue_done_item - Johnny.English.Strikes.Again.2018.720p.BluRay.x264.DTS-FGT
+- 2026-06-30T05:25:43+0200 [info] real-debrid::rd_verify_added
+- 2026-06-30T05:25:43+0200 [debug] real-debrid::rd_verify_poll - [憨豆特工3].Johnny.English.Strikes.Again.2018.BD.720P&1080P.x264.AAC.5.1.English.内嵌特效中英-FFansMp4
+- 2026-06-30T05:25:43+0200 [info] real-debrid::rd_verify_select_files
+- 2026-06-30T05:25:43+0200 [debug] real-debrid::rd_endpoint_pace_wait
+- 2026-06-30T05:25:44+0200 [debug] real-debrid::rd_verify_post_select_poll - [憨豆特工3].Johnny.English.Strikes.Again.2018.BD.720P&1080P.x264.AAC.5.1.English.内嵌特效中英-FFansMp4
+- 2026-06-30T05:25:44+0200 [info] real-debrid::rd_fast_discard - zero_progress_post_select
+- 2026-06-30T05:25:44+0200 [info] real-debrid::rd_fast_discard_reason - zero_progress_post_select
+- 2026-06-30T05:25:44+0200 [info] real-debrid::rd_fast_discard_delete - zero_progress_post_select
+- 2026-06-30T05:25:44+0200 [info] real-debrid::rd_zero_progress_fast_delete - [憨豆特工3].Johnny.English.Strikes.Again.2018.BD.720P&1080P.x264.AAC.5.1.English.内嵌特效中英-FFansMp4
+- 2026-06-30T05:25:44+0200 [info] real-debrid::rd_delete_torrent
+- 2026-06-30T05:25:44+0200 [info] real-debrid::rd_slots_release
+- 2026-06-30T05:25:44+0200 [info] real-debrid::rd_verify_queue_done_item - [憨豆特工3].Johnny.English.Strikes.Again.2018.BD.720P&1080P.x264.AAC.5.1.English.内嵌特效中英-FFansMp4
+- 2026-06-30T05:25:44+0200 [info] real-debrid::rd_api_http_error - infringing_file
+- 2026-06-30T05:25:44+0200 [info] real-debrid::rd_call_terminal_error - infringing_file
+- 2026-06-30T05:25:44+0200 [info] real-debrid::rd_verify_infringing - Johnny.English.Strikes.Again.2018.BDRip.X264-DEFLATE[rarbg]
+- 2026-06-30T05:25:44+0200 [info] real-debrid::rd_verify_queue_done_item - Johnny.English.Strikes.Again.2018.BDRip.X264-DEFLATE[rarbg]
+- 2026-06-30T05:25:46+0200 [info] real-debrid::rd_verify_added
+- 2026-06-30T05:25:46+0200 [debug] real-debrid::rd_verify_poll - Johnny English Trilogy 2003-2018 1080p BluRay HEVC x265 5.1 BONE
+- 2026-06-30T05:25:47+0200 [info] real-debrid::rd_verify_select_files
+- 2026-06-30T05:25:47+0200 [debug] real-debrid::rd_verify_post_select_poll - Johnny English Trilogy 2003-2018 1080p BluRay HEVC x265 5.1 BONE
+- 2026-06-30T05:25:47+0200 [info] real-debrid::rd_verify_ok - Johnny English Trilogy 2003-2018 1080p BluRay HEVC x265 5.1 BONE  ==>  /Johnny English Strikes Again 2018 1080p BluRay HEVC x265 5.1 BONE.mkv
+- 2026-06-30T05:25:47+0200 [info] real-debrid::rd_verify_queue_done_item - Johnny English Trilogy 2003-2018 1080p BluRay HEVC x265 5.1 BONE  ==>  /Johnny English Strikes Again 2018 1080p BluRay H
+- 2026-06-30T05:25:48+0200 [info] real-debrid::rd_api_http_error - too_many_requests
+- 2026-06-30T05:25:48+0200 [info] real-debrid::rd_endpoint_429_backoff
+- 2026-06-30T05:25:48+0200 [info] real-debrid::rd_rate_429_cooldown
+- 2026-06-30T05:25:49+0200 [info] real-debrid::rd_call_retry_429 - Real-Debrid HTTP 429: [34 too_many_requests] {"error": "too_many_requests", "error_code": 34, "src": "front-1"}
+- 2026-06-30T05:25:49+0200 [debug] real-debrid::rd_endpoint_pace_wait
+- 2026-06-30T05:25:54+0200 [debug] real-debrid::rd_endpoint_pace_wait
+- 2026-06-30T05:25:55+0200 [info] real-debrid::rd_verify_added
+- 2026-06-30T05:25:55+0200 [debug] real-debrid::rd_verify_poll - johnny.-english.-strikes.-again.-2018.720p.-brrip.-hindi.-dual-audio.-all-movies-hub.in
+- 2026-06-30T05:25:56+0200 [info] real-debrid::rd_delete_torrent
+- 2026-06-30T05:25:56+0200 [info] real-debrid::rd_slots_release
+- 2026-06-30T05:25:56+0200 [info] real-debrid::rd_verify_not_instant - johnny.-english.-strikes.-again.-2018.720p.-brrip.-hindi.-dual-audio.-all-movies-hub.in
+- 2026-06-30T05:25:56+0200 [info] real-debrid::rd_verify_queue_done_item - johnny.-english.-strikes.-again.-2018.720p.-brrip.-hindi.-dual-audio.-all-movies-hub.in
+- 2026-06-30T05:25:57+0200 [info] real-debrid::rd_verify_added
+- 2026-06-30T05:25:57+0200 [debug] real-debrid::rd_verify_poll - Johnny.English.Strikes.Again.2018.1080p.BRRip.x265-RAGNAR
+- 2026-06-30T05:25:58+0200 [info] real-debrid::rd_delete_torrent
+- 2026-06-30T05:25:58+0200 [info] real-debrid::rd_slots_release
+- 2026-06-30T05:25:58+0200 [info] real-debrid::rd_verify_not_instant - Johnny.English.Strikes.Again.2018.1080p.BRRip.x265-RAGNAR
+- 2026-06-30T05:25:58+0200 [info] real-debrid::rd_verify_queue_done_item - Johnny.English.Strikes.Again.2018.1080p.BRRip.x265-RAGNAR
+- 2026-06-30T05:25:59+0200 [debug] real-debrid::rd_endpoint_pace_wait
+- 2026-06-30T05:25:59+0200 [info] real-debrid::rd_verify_added
+- 2026-06-30T05:25:59+0200 [debug] real-debrid::rd_verify_poll - www.Torrenting.com - Johnny English Strikes Again 2018 UHD BluRay 1080p DDP 5 1 HDR10 x265-SM737
+- 2026-06-30T05:26:00+0200 [info] real-debrid::rd_verify_select_files
+- 2026-06-30T05:26:00+0200 [debug] real-debrid::rd_verify_post_select_poll - www.Torrenting.com - Johnny English Strikes Again 2018 UHD BluRay 1080p DDP 5 1 HDR10 x265-SM737
+- 2026-06-30T05:26:00+0200 [info] real-debrid::rd_fast_discard - zero_progress_post_select
+- 2026-06-30T05:26:00+0200 [info] real-debrid::rd_fast_discard_reason - zero_progress_post_select
+- 2026-06-30T05:26:00+0200 [info] real-debrid::rd_fast_discard_delete - zero_progress_post_select
+- 2026-06-30T05:26:00+0200 [info] real-debrid::rd_zero_progress_fast_delete - www.Torrenting.com - Johnny English Strikes Again 2018 UHD BluRay 1080p DDP 5 1 HDR10 x265-SM737
+- 2026-06-30T05:26:00+0200 [info] real-debrid::rd_delete_torrent
+- 2026-06-30T05:26:00+0200 [info] real-debrid::rd_slots_release
+- 2026-06-30T05:26:00+0200 [info] real-debrid::rd_verify_queue_done_item - www.Torrenting.com - Johnny English Strikes Again 2018 UHD BluRay 1080p DDP 5 1 HDR10 x265-SM737
+- 2026-06-30T05:26:02+0200 [info] real-debrid::rd_verify_added
+- 2026-06-30T05:26:02+0200 [debug] real-debrid::rd_verify_poll - Johnny.English.Strikes.Again.2018.Bluray.1080p.x264-Grym
+- 2026-06-30T05:26:02+0200 [info] real-debrid::rd_verify_select_files
+- 2026-06-30T05:26:03+0200 [debug] real-debrid::rd_verify_post_select_poll - Johnny.English.Strikes.Again.2018.Bluray.1080p.x264-Grym
+- 2026-06-30T05:26:03+0200 [info] real-debrid::rd_verify_ok - Johnny.English.Strikes.Again.2018.Bluray.1080p.x264-Grym  ==>  /Johnny.English.Strikes.Again.2018.Bluray.1080p.DTS-X-HD-7.1.x264-Grym.mkv
+- 2026-06-30T05:26:03+0200 [info] real-debrid::rd_verify_queue_done_item - Johnny.English.Strikes.Again.2018.Bluray.1080p.x264-Grym  ==>  /Johnny.English.Strikes.Again.2018.Bluray.1080p.DTS-X-HD-
+- 2026-06-30T05:26:04+0200 [debug] real-debrid::rd_endpoint_pace_wait
+- 2026-06-30T05:26:04+0200 [info] real-debrid::rd_verify_added
+- 2026-06-30T05:26:04+0200 [debug] real-debrid::rd_verify_poll - Johnny.English.Strikes.Again.2018.720p.BRRip.XviD.AC3-XVID
+- 2026-06-30T05:26:05+0200 [info] real-debrid::rd_delete_torrent
+- 2026-06-30T05:26:05+0200 [info] real-debrid::rd_slots_release
+- 2026-06-30T05:26:05+0200 [info] real-debrid::rd_verify_not_instant - Johnny.English.Strikes.Again.2018.720p.BRRip.XviD.AC3-XVID
+- 2026-06-30T05:26:05+0200 [info] real-debrid::rd_verify_queue_done_item - Johnny.English.Strikes.Again.2018.720p.BRRip.XviD.AC3-XVID
+- 2026-06-30T05:26:07+0200 [info] real-debrid::rd_verify_added
+- 2026-06-30T05:26:07+0200 [debug] real-debrid::rd_verify_poll - Johnny.English.Strikes.Again.2018.720p.BluRay.X264-DEFLATE
+- 2026-06-30T05:26:07+0200 [info] real-debrid::rd_delete_torrent
+- 2026-06-30T05:26:07+0200 [info] real-debrid::rd_slots_release
+- 2026-06-30T05:26:07+0200 [info] real-debrid::rd_verify_not_instant - Johnny.English.Strikes.Again.2018.720p.BluRay.X264-DEFLATE
+- 2026-06-30T05:26:07+0200 [info] real-debrid::rd_verify_queue_done_item - Johnny.English.Strikes.Again.2018.720p.BluRay.X264-DEFLATE
+- 2026-06-30T05:26:09+0200 [info] real-debrid::rd_api_http_error - too_many_requests
+- 2026-06-30T05:26:09+0200 [info] real-debrid::rd_endpoint_429_backoff
+- 2026-06-30T05:26:09+0200 [info] real-debrid::rd_rate_429_cooldown
+- 2026-06-30T05:26:10+0200 [info] real-debrid::rd_call_retry_429 - Real-Debrid HTTP 429: [34 too_many_requests] {"error": "too_many_requests", "error_code": 34, "src": "front-1"}
+- 2026-06-30T05:26:10+0200 [debug] real-debrid::rd_endpoint_pace_wait
+- 2026-06-30T05:26:15+0200 [debug] real-debrid::rd_endpoint_pace_wait
+- 2026-06-30T05:26:15+0200 [info] real-debrid::rd_api_http_error - infringing_file
+- 2026-06-30T05:26:15+0200 [info] real-debrid::rd_call_terminal_error - infringing_file
+- 2026-06-30T05:26:15+0200 [info] real-debrid::rd_verify_infringing - Johnny.English.Strikes.Again.2018.720p.BluRay.X264-DEFLATE[EtHD]
+- 2026-06-30T05:26:15+0200 [info] real-debrid::rd_verify_queue_done_item - Johnny.English.Strikes.Again.2018.720p.BluRay.X264-DEFLATE[EtHD]
+- 2026-06-30T05:26:18+0200 [info] real-debrid::rd_api_http_error - infringing_file
+- 2026-06-30T05:26:18+0200 [info] real-debrid::rd_call_terminal_error - infringing_file
+- 2026-06-30T05:26:18+0200 [info] real-debrid::rd_verify_infringing - Johnny English - Saga (2003-2018) ITA ENG AC3 5.1 WEB-DL 1080p x265-LateNever
+- 2026-06-30T05:26:18+0200 [info] real-debrid::rd_verify_queue_done_item - Johnny English - Saga (2003-2018) ITA ENG AC3 5.1 WEB-DL 1080p x265-LateNever
+- 2026-06-30T05:26:20+0200 [debug] real-debrid::rd_endpoint_pace_wait
+- 2026-06-30T05:26:20+0200 [info] real-debrid::rd_api_http_error - infringing_file
+- 2026-06-30T05:26:20+0200 [info] real-debrid::rd_call_terminal_error - infringing_file
+- 2026-06-30T05:26:20+0200 [info] real-debrid::rd_verify_infringing - Johnny.English.Strikes.Again.2018.INTERNAL.1080p.BluRay.X264-DEFLATE[EtHD]
+- 2026-06-30T05:26:20+0200 [info] real-debrid::rd_verify_queue_done_item - Johnny.English.Strikes.Again.2018.INTERNAL.1080p.BluRay.X264-DEFLATE[EtHD]
+- 2026-06-30T05:26:23+0200 [info] real-debrid::rd_api_http_error - infringing_file
+- 2026-06-30T05:26:23+0200 [info] real-debrid::rd_call_terminal_error - infringing_file
+- 2026-06-30T05:26:23+0200 [info] real-debrid::rd_verify_infringing - Johnny English Trilogy.2003-2018.BDRip.XviD.480x
+- 2026-06-30T05:26:23+0200 [info] real-debrid::rd_verify_queue_done_item - Johnny English Trilogy.2003-2018.BDRip.XviD.480x
+- 2026-06-30T05:26:25+0200 [debug] real-debrid::rd_endpoint_pace_wait
+- 2026-06-30T05:26:26+0200 [info] real-debrid::rd_verify_added
+- 2026-06-30T05:26:26+0200 [debug] real-debrid::rd_verify_poll - Johnny.English.Strikes.Again.2018.1080p.BluRay.H264.AAC-RARBG
+- 2026-06-30T05:26:27+0200 [info] real-debrid::rd_verify_select_files
+- 2026-06-30T05:26:27+0200 [debug] real-debrid::rd_verify_post_select_poll - Johnny.English.Strikes.Again.2018.1080p.BluRay.H264.AAC-RARBG
+- 2026-06-30T05:26:27+0200 [info] real-debrid::rd_fast_discard - zero_progress_post_select
+- 2026-06-30T05:26:27+0200 [info] real-debrid::rd_fast_discard_reason - zero_progress_post_select
+- 2026-06-30T05:26:27+0200 [info] real-debrid::rd_fast_discard_delete - zero_progress_post_select
+- 2026-06-30T05:26:27+0200 [info] real-debrid::rd_zero_progress_fast_delete - Johnny.English.Strikes.Again.2018.1080p.BluRay.H264.AAC-RARBG
+- 2026-06-30T05:26:27+0200 [info] real-debrid::rd_delete_torrent
+- 2026-06-30T05:26:27+0200 [info] real-debrid::rd_slots_release
+- 2026-06-30T05:26:27+0200 [info] real-debrid::rd_verify_queue_done_item - Johnny.English.Strikes.Again.2018.1080p.BluRay.H264.AAC-RARBG
+- 2026-06-30T05:26:28+0200 [info] real-debrid::rd_api_http_error - infringing_file
+- 2026-06-30T05:26:28+0200 [info] real-debrid::rd_call_terminal_error - infringing_file
+- 2026-06-30T05:26:28+0200 [info] real-debrid::rd_verify_infringing - Johnny.English.Strikes.Again.2018.720p.BluRay.x264.[Arena.Bg]
+- 2026-06-30T05:26:28+0200 [info] real-debrid::rd_verify_queue_done_item - Johnny.English.Strikes.Again.2018.720p.BluRay.x264.[Arena.Bg]
+- 2026-06-30T05:26:30+0200 [debug] real-debrid::rd_endpoint_pace_wait
+- 2026-06-30T05:26:31+0200 [info] real-debrid::rd_api_http_error - infringing_file
+- 2026-06-30T05:26:31+0200 [info] real-debrid::rd_call_terminal_error - infringing_file
+- 2026-06-30T05:26:31+0200 [info] real-debrid::rd_verify_infringing - Johnny.English.Strikes.Again.2018.720p.BDRip.X264.AC3-EVO
+- 2026-06-30T05:26:31+0200 [info] real-debrid::rd_verify_queue_done_item - Johnny.English.Strikes.Again.2018.720p.BDRip.X264.AC3-EVO
+- 2026-06-30T05:26:33+0200 [info] real-debrid::rd_api_http_error - too_many_requests
+- 2026-06-30T05:26:33+0200 [info] real-debrid::rd_endpoint_429_backoff
+- 2026-06-30T05:26:33+0200 [info] real-debrid::rd_rate_429_cooldown
+- 2026-06-30T05:26:34+0200 [info] real-debrid::rd_call_retry_429 - Real-Debrid HTTP 429: [34 too_many_requests] {"error": "too_many_requests", "error_code": 34, "src": "front-1"}
+- 2026-06-30T05:26:36+0200 [debug] real-debrid::rd_endpoint_pace_wait
+- 2026-06-30T05:26:39+0200 [info] real-debrid::rd_verify_added
+- 2026-06-30T05:26:39+0200 [debug] real-debrid::rd_verify_poll - Johnny.English.Strikes.Again.2018.720p.BluRay.DTS.x264-Du
+- 2026-06-30T05:26:40+0200 [info] real-debrid::rd_delete_torrent
+- 2026-06-30T05:26:40+0200 [info] real-debrid::rd_slots_release
+- 2026-06-30T05:26:40+0200 [info] real-debrid::rd_verify_not_instant - Johnny.English.Strikes.Again.2018.720p.BluRay.DTS.x264-Du
+- 2026-06-30T05:26:40+0200 [info] real-debrid::rd_verify_queue_done_item - Johnny.English.Strikes.Again.2018.720p.BluRay.DTS.x264-Du
+- 2026-06-30T05:26:41+0200 [debug] real-debrid::rd_endpoint_pace_wait
+- 2026-06-30T05:26:41+0200 [info] real-debrid::rd_verify_added
+- 2026-06-30T05:26:42+0200 [debug] real-debrid::rd_verify_poll - johnny.-english.-strikes.-again.-2018.1080p.-blu-ray.-h-264.-aac-rarbg
+- 2026-06-30T05:26:42+0200 [info] real-debrid::rd_delete_torrent
+- 2026-06-30T05:26:42+0200 [info] real-debrid::rd_slots_release
+- 2026-06-30T05:26:42+0200 [info] real-debrid::rd_verify_not_instant - johnny.-english.-strikes.-again.-2018.1080p.-blu-ray.-h-264.-aac-rarbg
+- 2026-06-30T05:26:42+0200 [info] real-debrid::rd_verify_queue_done_item - johnny.-english.-strikes.-again.-2018.1080p.-blu-ray.-h-264.-aac-rarbg
+- 2026-06-30T05:26:45+0200 [info] real-debrid::rd_verify_added
+- 2026-06-30T05:26:45+0200 [debug] real-debrid::rd_verify_poll - Johnny English Strikes Again 2018 720p BluRay DD5.1 x264-TayTO
+- 2026-06-30T05:26:45+0200 [info] real-debrid::rd_verify_select_files
+- 2026-06-30T05:26:46+0200 [debug] real-debrid::rd_verify_post_select_poll - Johnny English Strikes Again 2018 720p BluRay DD5.1 x264-TayTO
+- 2026-06-30T05:26:46+0200 [info] real-debrid::rd_fast_discard - zero_progress_post_select
+- 2026-06-30T05:26:46+0200 [info] real-debrid::rd_fast_discard_reason - zero_progress_post_select
+- 2026-06-30T05:26:46+0200 [info] real-debrid::rd_fast_discard_delete - zero_progress_post_select
+- 2026-06-30T05:26:46+0200 [info] real-debrid::rd_zero_progress_fast_delete - Johnny English Strikes Again 2018 720p BluRay DD5.1 x264-TayTO
+- 2026-06-30T05:26:46+0200 [info] real-debrid::rd_delete_torrent
+- 2026-06-30T05:26:46+0200 [info] real-debrid::rd_slots_release
+- 2026-06-30T05:26:46+0200 [info] real-debrid::rd_verify_queue_done_item - Johnny English Strikes Again 2018 720p BluRay DD5.1 x264-TayTO
+- 2026-06-30T05:26:46+0200 [debug] real-debrid::rd_endpoint_pace_wait
+- 2026-06-30T05:26:46+0200 [info] real-debrid::rd_verify_added
+- 2026-06-30T05:26:46+0200 [debug] real-debrid::rd_verify_poll - 憨豆特工3.Johnny English Strikes Again.2018.1080p&2160p.H265
+- 2026-06-30T05:26:47+0200 [info] real-debrid::rd_verify_select_files
+- 2026-06-30T05:26:47+0200 [debug] real-debrid::rd_verify_post_select_poll - 憨豆特工3.Johnny English Strikes Again.2018.1080p&2160p.H265
+- 2026-06-30T05:26:47+0200 [info] real-debrid::rd_fast_discard - zero_progress_post_select
+- 2026-06-30T05:26:47+0200 [info] real-debrid::rd_fast_discard_reason - zero_progress_post_select
+- 2026-06-30T05:26:47+0200 [info] real-debrid::rd_fast_discard_delete - zero_progress_post_select
+- 2026-06-30T05:26:47+0200 [info] real-debrid::rd_zero_progress_fast_delete - 憨豆特工3.Johnny English Strikes Again.2018.1080p&2160p.H265
+- 2026-06-30T05:26:48+0200 [info] real-debrid::rd_delete_torrent
+- 2026-06-30T05:26:48+0200 [info] real-debrid::rd_slots_release
+- 2026-06-30T05:26:48+0200 [info] real-debrid::rd_verify_queue_done_item - 憨豆特工3.Johnny English Strikes Again.2018.1080p&2160p.H265
+- 2026-06-30T05:26:49+0200 [info] real-debrid::rd_api_http_error - infringing_file
+- 2026-06-30T05:26:49+0200 [info] real-debrid::rd_call_terminal_error - infringing_file
+- 2026-06-30T05:26:49+0200 [info] real-debrid::rd_verify_infringing - Johnny.English.Strikes.Again.2018.BDRip.AC3.X264-CMRG[TGx]
+- 2026-06-30T05:26:49+0200 [info] real-debrid::rd_verify_queue_done_item - Johnny.English.Strikes.Again.2018.BDRip.AC3.X264-CMRG[TGx]
+- 2026-06-30T05:26:51+0200 [debug] real-debrid::rd_endpoint_pace_wait
+- 2026-06-30T05:26:51+0200 [info] real-debrid::rd_api_http_error - infringing_file
+- 2026-06-30T05:26:51+0200 [info] real-debrid::rd_call_terminal_error - infringing_file
+- 2026-06-30T05:26:51+0200 [info] real-debrid::rd_verify_infringing - www.torrenting.com  - Johnny English Strikes Again 2018.1080p.Bluray.X264-EVO
+- 2026-06-30T05:26:51+0200 [info] real-debrid::rd_verify_queue_done_item - www.torrenting.com  - Johnny English Strikes Again 2018.1080p.Bluray.X264-EVO
+- 2026-06-30T05:26:54+0200 [info] real-debrid::rd_api_http_error - infringing_file
+- 2026-06-30T05:26:54+0200 [info] real-debrid::rd_call_terminal_error - infringing_file
+- 2026-06-30T05:26:54+0200 [info] real-debrid::rd_verify_infringing - Johnny.English.Strikes.Again.2018.1080p.BluRay.x264.DTS-WiKi
+- 2026-06-30T05:26:54+0200 [info] real-debrid::rd_verify_queue_done_item - Johnny.English.Strikes.Again.2018.1080p.BluRay.x264.DTS-WiKi
+- 2026-06-30T05:26:56+0200 [debug] real-debrid::rd_endpoint_pace_wait
+- 2026-06-30T05:26:56+0200 [info] real-debrid::rd_verify_added
+- 2026-06-30T05:26:56+0200 [debug] real-debrid::rd_verify_poll - Johnny.English.Strikes.Again.2018.YG
+- 2026-06-30T05:26:57+0200 [info] real-debrid::rd_verify_select_files
+- 2026-06-30T05:26:57+0200 [debug] real-debrid::rd_verify_post_select_poll - Johnny.English.Strikes.Again.2018.YG
+- 2026-06-30T05:26:57+0200 [info] real-debrid::rd_fast_discard - zero_progress_post_select
+- 2026-06-30T05:26:57+0200 [info] real-debrid::rd_fast_discard_reason - zero_progress_post_select
+- 2026-06-30T05:26:57+0200 [info] real-debrid::rd_fast_discard_delete - zero_progress_post_select
+- 2026-06-30T05:26:57+0200 [info] real-debrid::rd_zero_progress_fast_delete - Johnny.English.Strikes.Again.2018.YG
+- 2026-06-30T05:26:57+0200 [info] real-debrid::rd_delete_torrent
+- 2026-06-30T05:26:57+0200 [info] real-debrid::rd_slots_release
+- 2026-06-30T05:26:57+0200 [info] real-debrid::rd_verify_queue_done_item - Johnny.English.Strikes.Again.2018.YG
+- 2026-06-30T05:26:59+0200 [info] real-debrid::rd_verify_added
+- 2026-06-30T05:26:59+0200 [debug] real-debrid::rd_verify_poll - Johnny.English.Strikes.Again.2018.UHD.BluRay.2160p.HEVC.DTS-HD.MA.7.1.REMUX-HDRemuX
+- 2026-06-30T05:26:59+0200 [info] real-debrid::rd_verify_select_files
+- 2026-06-30T05:27:00+0200 [debug] real-debrid::rd_verify_post_select_poll - Johnny.English.Strikes.Again.2018.UHD.BluRay.2160p.HEVC.DTS-HD.MA.7.1.REMUX-HDRemuX
+- 2026-06-30T05:27:00+0200 [info] real-debrid::rd_fast_discard - zero_progress_post_select
+- 2026-06-30T05:27:00+0200 [info] real-debrid::rd_fast_discard_reason - zero_progress_post_select
+- 2026-06-30T05:27:00+0200 [info] real-debrid::rd_fast_discard_delete - zero_progress_post_select
+- 2026-06-30T05:27:00+0200 [info] real-debrid::rd_zero_progress_fast_delete - Johnny.English.Strikes.Again.2018.UHD.BluRay.2160p.HEVC.DTS-HD.MA.7.1.REMUX-HDRemuX
+- 2026-06-30T05:27:00+0200 [info] real-debrid::rd_delete_torrent
+- 2026-06-30T05:27:00+0200 [info] real-debrid::rd_slots_release
+- 2026-06-30T05:27:00+0200 [info] real-debrid::rd_verify_queue_done_item - Johnny.English.Strikes.Again.2018.UHD.BluRay.2160p.HEVC.DTS-HD.MA.7.1.REMUX-HDRemuX
+- 2026-06-30T05:27:01+0200 [debug] real-debrid::rd_endpoint_pace_wait
+- 2026-06-30T05:27:01+0200 [info] real-debrid::rd_verify_added
+- 2026-06-30T05:27:02+0200 [debug] real-debrid::rd_verify_poll - 【高清影视之家发布 www.BBEBBB.com】憨豆特工3[中文字幕 特效字幕].Johnny.English.Strikes.Again.2018.V2.Bluray.2160p.DTS-X7.1.HDR.x265.10bit-Drea
+- 2026-06-30T05:27:02+0200 [info] real-debrid::rd_delete_torrent
+- 2026-06-30T05:27:02+0200 [info] real-debrid::rd_slots_release
+- 2026-06-30T05:27:02+0200 [info] real-debrid::rd_verify_not_instant - 【高清影视之家发布 www.BBEBBB.com】憨豆特工3[中文字幕 特效字幕].Johnny.English.Strikes.Again.2018.V2.Bluray.2160p.DTS-X7.1.HDR.x265.10bit-DreamHD
+- 2026-06-30T05:27:02+0200 [info] real-debrid::rd_verify_queue_done_item - 【高清影视之家发布 www.BBEBBB.com】憨豆特工3[中文字幕 特效字幕].Johnny.English.Strikes.Again.2018.V2.Bluray.2160p.DTS-X7.1.HDR.x265.10bit-Drea
+- 2026-06-30T05:27:04+0200 [info] real-debrid::rd_api_http_error - infringing_file
+- 2026-06-30T05:27:04+0200 [info] real-debrid::rd_call_terminal_error - infringing_file
+- 2026-06-30T05:27:04+0200 [info] real-debrid::rd_verify_infringing - Johnny English Strikes Again 2018.1080p.Bluray.X264-EVO
+- 2026-06-30T05:27:04+0200 [info] real-debrid::rd_verify_queue_done_item - Johnny English Strikes Again 2018.1080p.Bluray.X264-EVO
+- 2026-06-30T05:27:04+0200 [info] real-debrid::rd_verify_queue_end
+- 2026-06-30T05:27:04+0200 [info] real-debrid::rd_rate_summary
+- 2026-06-30T05:27:04+0200 [info] real-debrid::rd_endpoint_pacer_summary
+- 2026-06-30T05:27:04+0200 [info] real-debrid::rd_cleanup_final_start
+- 2026-06-30T05:27:04+0200 [info] real-debrid::rd_slots_refresh
+- 2026-06-30T05:27:04+0200 [info] real-debrid::rd_active_count_after
+- 2026-06-30T05:27:04+0200 [info] real-debrid::rd_cleanup_final_end
+- 2026-06-30T05:27:04+0200 [info] real-debrid::rd_rate_summary
+- 2026-06-30T05:27:04+0200 [info] real-debrid::rd_endpoint_pacer_summary
+- 2026-06-30T05:27:04+0200 [info] real-debrid::rd_verify_batch_end
+- 2026-06-30T05:27:04+0200 [info] real-debrid::rd_check_summary
+- 2026-06-30T05:27:04+0200 [info] qbittorrent::qbt_probe_skipped - disabled
+- 2026-06-30T05:27:04+0200 [info] motor::prepare_qbit_extras
+- 2026-06-30T05:27:04+0200 [info] motor::prepare_rd_temp_errors
+- 2026-06-30T05:27:04+0200 [info] motor::prepare_after_working_filter
+- 2026-06-30T05:27:04+0200 [info] search::export_results
+- 2026-06-30T05:27:04+0200 [info] search::export_results
+- 2026-06-30T05:27:04+0200 [info] real-debrid::rd_delete_torrent
+- 2026-06-30T05:27:04+0200 [debug] real-debrid::rd_endpoint_pace_wait
+- 2026-06-30T05:27:05+0200 [info] real-debrid::rd_delete_torrent
+- 2026-06-30T05:27:06+0200 [info] real-debrid::rd_delete_torrent
+- 2026-06-30T05:27:06+0200 [info] search::editor_clean_search_rd_cleanup
+- 2026-06-30T05:27:06+0200 [info] search::editor_clean_search_end
+- 2026-06-30T05:27:06+02:00 [info] web::JOB_FINISHED_OK

@@ -1,0 +1,61 @@
+{
+  "already_present": false,
+  "card": {
+    "hash": "5cadce74acd88357cef88f668d2cf48de2840e93",
+    "source": "RD",
+    "status": "RD OK",
+    "title": "Torrente presidente (2026) [Bluray 720p][Esp].mkv"
+  },
+  "counts": {
+    "debug": 3,
+    "error": 0,
+    "info": 35,
+    "warn": 0
+  },
+  "destination": {
+    "destino": "movies",
+    "inbox": "/watch/torrents/inbox/movies",
+    "qbt_savepath": "/data/downloads/torrents/complete/movies",
+    "rdt_savepath": "/data/downloads/movies"
+  },
+  "diagnostic_status": "ok",
+  "elapsed": "3.03s",
+  "engine": "RDT-Client",
+  "event_count": 38,
+  "hash": "5cadce74acd88357cef88f668d2cf48de2840e93",
+  "id": "bbbbd81538",
+  "index": 3,
+  "kind": "download",
+  "last_event": "RDT_FOLLOWUP_DONE",
+  "link_ref": "***",
+  "link_type": "***",
+  "module": "btdigg",
+  "operation_status": "ok",
+  "phases": {
+    "btdigg": 4,
+    "download": 9,
+    "general": 1,
+    "rdt-client": 13,
+    "real-debrid": 10
+  },
+  "rdt_id": "a9e7a402-3145-4fe9-ab5b-ce45344f9939",
+  "read_order": [
+    "summary.json",
+    "timeline.md",
+    "warnings.jsonl",
+    "errors.jsonl",
+    "events.jsonl"
+  ],
+  "remote": "192.168.1.199",
+  "route": "RD_VERIFIED_MAGNET_NATIVE",
+  "started_at": "2026-07-03T06:07:38+02:00",
+  "status": "ok",
+  "title": "Torrente presidente (2026) [Bluray 720p][Esp].mkv",
+  "tracking": {
+    "destino": "movies",
+    "hash": "5cadce74acd88357cef88f668d2cf48de2840e93",
+    "record_id": "a80749590c50420b",
+    "tracking_file": "/app/data/seguimiento_actual.json"
+  },
+  "updated_at": "2026-07-03T06:07:38+02:00"
+}

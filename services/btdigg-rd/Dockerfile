@@ -25,7 +25,8 @@ RUN apt-get update \
 
 WORKDIR /app
 COPY requirements.txt /app/requirements.txt
-RUN pip install -r /app/requirements.txt
+COPY requirements-dev.txt /app/requirements-dev.txt
+RUN pip install -r /app/requirements-dev.txt
 COPY app /app/app
 
 EXPOSE 9007

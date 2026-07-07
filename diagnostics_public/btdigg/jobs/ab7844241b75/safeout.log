@@ -1,0 +1,78 @@
+
+--- ARRANQUE MOTOR BTDIGG RD ---
+BTDigg + RD - opción 1 limpia
+Búsqueda: Pillion
+Páginas: 1
+Modo: 0
+
+
+Navegador automático página 1 (1/1):
+  https://en.btdig.com/search?q=Pillion&p=0
+  Rescate DOM: 10 magnets encontrados
+
+Encontrados 10 resultados brutos. Filtrando...
+
+Aspiradora terminada: 10 resultados únicos encontrados.
+Modo sin filtro: no descarto por idioma/calidad, pero SÍ ordeno por calidad.
+Criba búsqueda seria: 9/10 coinciden en el mismo título/archivo.
+Rescate RD pendiente por titulo/pack dudoso: 1
+
+Comprobando token Real-Debrid...
+Token Real-Debrid OK: exmelenas
+
+Consultando Real-Debrid cache/instantáneo...
+
+Aviso: Real-Debrid tiene desactivada instantAvailability.
+Paso serio: verifico de verdad con addMagnet los 9 mejores candidatos.
+  Verificando 1/9: Pillion.2025.Webrip.Hin.Dub.1Xbet
+  Verificando 2/9: www.UIndex.org    -    Pillion (2025) 720p WEBRip-LAMA
+  Verificando 9/9: www.UIndex.org    -    Pillion 2025 1080p WEB EN-RGB
+  Verificando 5/9: Pillion (2025) AMZN WEB-DL 1080p x265 EAC3 DDP 5.1-InChY
+  Verificando 7/9: Pillion.2025.WEBRip.BEN.DUB.1XBET
+  Verificando 8/9: www.UIndex.org    -    Pillion (2025) 1080p WEBRip 5.1-LAMA
+  Verificando 4/9: www.UIndex.org    -    Pillion 2025 1080p WEBRip x265-DH
+  Verificando 6/9: Pillion (2025) (1080p AMZN WEB-DL H264 SDR DDP 5.1 English - HONE)
+  Verificando 3/9: www.UIndex.org    -    Pillion 2025 1080p 10bit WEBRip 6CH X265 HEVC-PSA
+
+Resumen RD: RD_FAIL=9
+
+Rescate RD: verifico 1 candidatos dudosos fuertes.
+
+Comprobando token Real-Debrid...
+Token Real-Debrid OK: exmelenas
+
+Consultando Real-Debrid cache/instantáneo...
+
+Aviso: Real-Debrid tiene instantAvailability desactivado; uso addMagnet directo.
+Paso serio: verifico de verdad con addMagnet los 1 mejores candidatos.
+  Verificando 1/1: videos Epic CBR1000RR VS BMW M6! Pillion view!.wmv
+
+Resumen RD: RD_FAIL=1
+
+qBit: probando 10 candidatos extra (4 a la vez, 16s máximo).
+qBit vivo 1/10: QBT_VIVO - www.UIndex.org    -    Pillion 2025 1080p 10bit WEBRip 6CH X265 HEVC-PSA
+qBit vivo 2/10: QBT_VIVO - www.UIndex.org    -    Pillion (2025) 720p WEBRip-LAMA
+qBit progreso: 4/10 comprobados | vivos 2
+qBit vivo 6/10: QBT_VIVO - www.UIndex.org    -    Pillion (2025) 1080p WEBRip 5.1-LAMA
+qBit vivo 8/10: QBT_VIVO - www.UIndex.org    -    Pillion 2025 1080p WEB EN-RGB
+qBit progreso: 10/10 comprobados | vivos 4
+Resultados válidos para JDownloader/RD: 0/10
+Lista extra qBittorrent vivos reales: 4
+
+========================================================================
+ TOP LIMPIO
+========================================================================
+[01] RD:RD_FAIL      SCORE:  65 SIZE:   1.0 GB  www.UIndex.org    -    Pillion (2025) 720p WEBRip-LAMA
+     qBit vivo: QBT_VIVO | seeds=2 peers=0 | qBittorrent con seed conectado: seeds=2, peers=0, state=stalleddl
+[02] RD:RD_FAIL      SCORE:  62 SIZE:   1.7 GB  www.UIndex.org    -    Pillion 2025 1080p 10bit WEBRip 6CH X265 HEVC-PSA
+     qBit vivo: QBT_VIVO | seeds=1 peers=1 | qBittorrent descargando: 0.19 MB/s, seeds=1, peers=1
+[03] RD:RD_FAIL      SCORE:  39 SIZE:   2.0 GB  www.UIndex.org    -    Pillion (2025) 1080p WEBRip 5.1-LAMA
+     qBit vivo: QBT_VIVO | seeds=2 peers=0 | qBittorrent con seed conectado: seeds=2, peers=0, state=stalleddl
+[04] RD:RD_FAIL      SCORE:  36 SIZE:   6.2 GB  www.UIndex.org    -    Pillion 2025 1080p WEB EN-RGB
+     qBit vivo: QBT_VIVO | seeds=2 peers=0 | qBittorrent con seed conectado: seeds=2, peers=0, state=stalleddl
+========================================================================
+Elige: 1 | 1,4,7 | A=todos los válidos RD | T=todos mostrados RD/qBit | S=salir
+Resultados guardados para el Editor: 4
+Real-Debrid temporal limpio: 0 id(s) revisado(s).
+
+RESULTADOS LISTOS. Escribe abajo 1, 1,3, A, T o S y pulsa Enviar.

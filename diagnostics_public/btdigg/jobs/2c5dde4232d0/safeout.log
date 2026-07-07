@@ -1,0 +1,61 @@
+
+--- ARRANQUE MOTOR BTDIGG RD ---
+BTDigg + RD - opción 1 limpia
+Búsqueda: Matrix 1999
+Páginas: 1
+Modo: 0
+
+
+Navegador automático página 1 (1/1):
+  https://en.btdig.com/search?q=matrix%201999&p=0
+  BTDigg Chrome TLS: 10 magnets encontrados
+
+Encontrados 10 resultados brutos. Filtrando...
+
+Aspiradora terminada: 10 resultados únicos encontrados.
+Modo sin filtro: no descarto por idioma/calidad y no ordeno por calidad/tamano; solo penalizo basura.
+Criba búsqueda seria: 7/10 coinciden en el mismo título/archivo.
+Rescate RD pendiente por titulo/pack dudoso: 3
+
+Comprobando token Real-Debrid...
+Token Real-Debrid OK: exmelenas
+
+Consultando Real-Debrid cache/instantáneo...
+
+Aviso: Real-Debrid tiene desactivada instantAvailability.
+Paso serio: verifico de verdad con addMagnet los 7 mejores candidatos.
+  Verificando 4/7: The.Matrix.1999.iNTERNAL.DVDRip.x264-FADE
+  Verificando 1/7: ng-left:0em"> The. Matrix .Trilogy.1080p.HDDVD.x264-SCC The. Matrix . 1999 .1080p.HDDVD.x264-hV Samp
+  Verificando 5/7: #MKV#.The.Matrix.1999.2160p.BluRay.HEVC.TrueHD.7.1.Atmos-COASTER
+  Verificando 2/7: ing-left:0em"> The. Matrix .Trilogy.1080p.HDDVD.x264-hV The. Matrix . 1999 .1080p.HDDVD.x264-hV Samp
+  Verificando 3/7: ing-left:0em"> The. Matrix .Trilogy.1080p.HDDVD.x264-hV The. Matrix . 1999 .1080p.HDDVD.x264-hV samp
+  Verificando 7/7: The.Matrix.1999.REMASTERED.MULTi.1080p.BluRay.x264-Ulysse
+  Verificando 6/7: The.Matrix.1999.REMASTERED.1080p.BluRay.X264-AMIABLE
+
+Resumen RD: NO_INSTANT=1 | PACK_SIN_COINCIDENCIA=1 | RD_FAIL=5
+
+Rescate RD: verifico 3 candidatos dudosos fuertes.
+
+Comprobando token Real-Debrid...
+Token Real-Debrid OK: exmelenas
+
+Consultando Real-Debrid cache/instantáneo...
+
+Aviso: Real-Debrid tiene instantAvailability desactivado; uso addMagnet directo.
+Paso serio: verifico de verdad con addMagnet los 3 mejores candidatos.
+  Verificando 1/3: Matrix.iTALiAN PAcK BDRip 720p MarGe
+  Verificando 2/3: .720p.HDDVD.DTS.x264-ESiR Matrix .Trilogy.720p.HDDVD.DTS.x264-ESiR.nfo 12.65 KB The. Matrix . 1999 .
+  Verificando 3/3: The.Matrix.1999.1080p.BluRay.x264-CtrlHD/The.Matrix.1999.1080p.BluRay.x264-CtrlHD.mkv
+
+Resumen RD: NO_INSTANT=1 | PACK_SIN_COINCIDENCIA=1 | RD_FAIL=1
+Resultados válidos para JDownloader/RD: 0/10
+Lista extra qBittorrent vivos reales: 0
+
+========================================================================
+ TOP LIMPIO
+========================================================================
+No hay resultados limpios.
+Resultados guardados para el Editor: 0
+Real-Debrid temporal limpio: 0 id(s) revisado(s).
+
+RESULTADOS LISTOS. Escribe abajo 1, 1,3, A, T o S y pulsa Enviar.

@@ -1,0 +1,19 @@
+- 2026-07-02T06:58:49+02:00 [info] download::DOWNLOAD_CLICK_RECEIVED - Enola Holmes 3 (2026) [Bluray 720p][Esp]
+- 2026-07-02T06:58:49+02:00 [info] btdigg::BTDIGG_CLIENT_CARD
+- 2026-07-02T06:58:49+02:00 [info] btdigg::BTDIGG_SERVER_CARD_OK - Enola Holmes 3 (2026) [Bluray 720p][Esp]
+- 2026-07-02T06:58:49+02:00 [info] download::CLIENT_CONTRACT_HINT
+- 2026-07-02T06:58:49+02:00 [info] download::CONTRACT_SUMMARY
+- 2026-07-02T06:58:49+02:00 [info] general::DESTINATION_SELECTED
+- 2026-07-02T06:58:49+02:00 [info] btdigg::BTDIGG_RESOLVE_START - Enola Holmes 3 (2026) [Bluray 720p][Esp]
+- 2026-07-02T06:58:49+02:00 [info] btdigg::BTDIGG_RESOLVE_OK
+- 2026-07-02T06:58:49+02:00 [info] download::ROUTE_DECIDED - qbt_status=QBT_VIVO
+- 2026-07-02T06:58:49+02:00 [info] download::CONTRACT_SUMMARY - qbt_status=QBT_VIVO
+- 2026-07-02T06:58:49+02:00 [info] download::ROUTE_SELECTED
+- 2026-07-02T06:58:49+02:00 [info] qbittorrent::qBittorrent_INFO_BY_HASH_OK
+- 2026-07-02T06:58:49+02:00 [info] qbittorrent::qBittorrent_ADD_URL_START
+- 2026-07-02T06:58:49+02:00 [info] qbittorrent::qBittorrent_LOGIN_OK
+- 2026-07-02T06:58:49+02:00 [info] qbittorrent::qBittorrent_POST_ADD_ATTEMPT
+- 2026-07-02T06:58:49+02:00 [info] qbittorrent::qBittorrent_ADD_URL_OK
+- 2026-07-02T06:58:49+02:00 [info] download::TRACKING_REGISTERED
+- 2026-07-02T06:58:49+02:00 [info] download::CLEANUP_FINAL - qbit_target
+- 2026-07-02T06:58:49+02:00 [info] download::DOWNLOAD_END_OK

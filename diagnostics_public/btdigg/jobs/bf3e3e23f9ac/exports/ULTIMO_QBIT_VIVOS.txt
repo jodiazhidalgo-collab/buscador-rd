@@ -1,0 +1,6 @@
+RD Turbo Pro - lista extra qBittorrent vivos
+================================================================================
+[Q01] QBT:QBT_VIVO   SIZE:   8.0 GB HASH:7d7158c4cb7d709f03a93b83c761e8a2678fd090
+      TORRENT: John Wick 2014 BluRay 1080p DTS AC3 x264-MgB
+      MOTIVO: qBittorrent descargando: 2.03 MB/s, seeds=3, peers=7
+      MAGNET: magnet:?xt=urn:btih:7d7158c4cb7d709f03a93b83c761e8a2678fd090&dn=John+Wick+2014+BluRay+1080p+DTS+AC3+x264-MgB&tr=udp://tracker.openbittorrent.com:80&tr=udp://tracker.opentrackr.org:1337/announce

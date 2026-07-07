@@ -1,0 +1,61 @@
+{
+  "already_present": false,
+  "card": {
+    "hash": "1ce1d61ae825f55367a9a585771f451e599a2059",
+    "source": "RD",
+    "status": "RD OK",
+    "title": "/harlan.cobens.shelter.s01e08.hdr.2160p.web.h265-nhtfs.mkv"
+  },
+  "counts": {
+    "debug": 4,
+    "error": 0,
+    "info": 34,
+    "warn": 0
+  },
+  "destination": {
+    "destino": "tv",
+    "inbox": "/watch/torrents/inbox/tv",
+    "qbt_savepath": "/data/downloads/torrents/complete/tv",
+    "rdt_savepath": "/data/downloads/tv"
+  },
+  "diagnostic_status": "ok",
+  "elapsed": "4.19s",
+  "engine": "RDT-Client",
+  "event_count": 38,
+  "hash": "1ce1d61ae825f55367a9a585771f451e599a2059",
+  "id": "7ef7271246",
+  "index": 16,
+  "kind": "download",
+  "last_event": "RDT_FOLLOWUP_DONE",
+  "link_ref": "btih:1ce1d61ae825f55367a9a585771f451e599a2059",
+  "link_type": "magnet",
+  "module": "btdigg",
+  "operation_status": "ok",
+  "phases": {
+    "btdigg": 4,
+    "download": 9,
+    "general": 1,
+    "rdt-client": 14,
+    "real-debrid": 9
+  },
+  "rdt_id": "26cbb348-9c18-49bd-81f3-e1290c74295d",
+  "read_order": [
+    "summary.json",
+    "timeline.md",
+    "warnings.jsonl",
+    "errors.jsonl",
+    "events.jsonl"
+  ],
+  "remote": "192.168.1.199",
+  "route": "RD_VERIFIED_MAGNET_NATIVE",
+  "started_at": "2026-06-27T05:11:33+02:00",
+  "status": "ok",
+  "title": "/harlan.cobens.shelter.s01e08.hdr.2160p.web.h265-nhtfs.mkv",
+  "tracking": {
+    "destino": "tv",
+    "hash": "1ce1d61ae825f55367a9a585771f451e599a2059",
+    "record_id": "d69005890c67ff12",
+    "tracking_file": "/app/data/seguimiento_actual.json"
+  },
+  "updated_at": "2026-06-27T05:11:37+02:00"
+}

@@ -1,0 +1,71 @@
+{
+  "action": "search",
+  "cleanup_uncertain": false,
+  "command": {
+    "cmd": [
+      "/usr/local/bin/python",
+      "-u",
+      "rd_turbo_editor_maestro.py",
+      "--search",
+      "--query",
+      "2160p The Devil Wears Prada 2",
+      "--pages",
+      "1-10",
+      "--mode",
+      "0",
+      "--min-gb",
+      "0"
+    ],
+    "cwd": "/app/app/motor/btdigg"
+  },
+  "config_snapshot": {
+    "qbit_probe_enabled": false,
+    "source": "/app/app/motor/btdigg/config.json"
+  },
+  "counts": {
+    "debug": 0,
+    "error": 0,
+    "info": 12,
+    "warn": 0
+  },
+  "diagnostic_status": "ok",
+  "elapsed_sec": 8.296,
+  "event_count": 12,
+  "exit_code": 130,
+  "forced_stop": false,
+  "id": "178f3f83a2bd",
+  "kind": "job",
+  "last_event": "JOB_FINISHED_CANCELLED",
+  "last_motor_event": "editor_clean_cancelled",
+  "min_gb": "0",
+  "mode": "0",
+  "module": "btdigg",
+  "operation_status": "cancelled",
+  "pages": "1-10",
+  "payload": {
+    "action": "search",
+    "min_gb": "0",
+    "mode": "0",
+    "module": "btdigg",
+    "pages": "1-10",
+    "query": "2160p The Devil Wears Prada 2"
+  },
+  "phases": {
+    "btdigg": 3,
+    "general": 1,
+    "motor": 1,
+    "search": 2,
+    "web": 5
+  },
+  "query": "2160p The Devil Wears Prada 2",
+  "read_order": [
+    "summary.json",
+    "timeline.md",
+    "warnings.jsonl",
+    "errors.jsonl",
+    "events.jsonl"
+  ],
+  "started_at": "2026-07-01T02:16:55+02:00",
+  "status": "cancelled",
+  "updated_at": "2026-07-01T02:17:03+02:00"
+}

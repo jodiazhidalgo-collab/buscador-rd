@@ -1,0 +1,11 @@
+RD Turbo Pro - lista extra qBittorrent vivos
+================================================================================
+[Q01] QBT:QBT_VIVO   SIZE:  27.2 GB HASH:ae46cb52e98b52ae8e1e07b500f7d89a49501aa8
+      TORRENT: Secret.Level.S01.DV.2160p.WEB.H265-MiXED
+      MOTIVO: qBittorrent descargando: 0.03 MB/s, seeds=1, peers=0
+      MAGNET: magnet:?xt=urn:btih:ae46cb52e98b52ae8e1e07b500f7d89a49501aa8&dn=Secret.Level.S01.DV.2160p.WEB.H265-MiXED&tr=udp://tracker.openbittorrent.com:80&tr=udp://tracker.opentrackr.org:1337/announce
+
+[Q02] QBT:QBT_VIVO   SIZE: 114.6 GB HASH:ba0e751c2d2e9f8029288011fea785894d722383
+      TORRENT: [CumClinic] Siterip 2019-2020 [61 videos] [2160p]
+      MOTIVO: qBittorrent descargando: 2.32 MB/s, seeds=1, peers=6
+      MAGNET: magnet:?xt=urn:btih:ba0e751c2d2e9f8029288011fea785894d722383&dn=%5BCumClinic%5D+Siterip+2019-2020+%5B61+videos%5D+%5B2160p%5D&tr=udp://tracker.openbittorrent.com:80&tr=udp://tracker.opentrackr.org:1337/announce

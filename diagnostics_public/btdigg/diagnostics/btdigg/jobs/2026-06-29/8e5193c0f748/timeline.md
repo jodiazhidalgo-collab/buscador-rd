@@ -1,0 +1,741 @@
+- 2026-06-29T01:38:11+02:00 [info] web::JOB_STARTED
+- 2026-06-29T01:38:11+02:00 [info] general::CONFIG_SNAPSHOT
+- 2026-06-29T01:38:11+02:00 [info] web::COMMAND_PREPARED
+- 2026-06-29T01:38:11+02:00 [info] web::PROCESS_STARTED
+- 2026-06-29T01:38:12+0200 [info] search::editor_clean_search_start
+- 2026-06-29T01:38:12+0200 [info] btdigg::browser_auto_search_start_dom
+- 2026-06-29T01:38:16+0200 [info] btdigg::extract_magnets
+- 2026-06-29T01:38:16+0200 [info] btdigg::btdigg_dump_dom_fallback
+- 2026-06-29T01:38:22+0200 [info] btdigg::extract_magnets
+- 2026-06-29T01:38:22+0200 [info] btdigg::btdigg_dump_dom_fallback
+- 2026-06-29T01:38:27+0200 [info] btdigg::extract_magnets
+- 2026-06-29T01:38:27+0200 [info] btdigg::btdigg_dump_dom_fallback
+- 2026-06-29T01:38:34+0200 [info] btdigg::extract_magnets
+- 2026-06-29T01:38:34+0200 [info] btdigg::btdigg_dump_dom_fallback
+- 2026-06-29T01:38:40+0200 [info] btdigg::extract_magnets
+- 2026-06-29T01:38:40+0200 [info] btdigg::btdigg_dump_dom_fallback
+- 2026-06-29T01:38:46+0200 [info] btdigg::extract_magnets
+- 2026-06-29T01:38:46+0200 [info] btdigg::btdigg_dump_dom_fallback
+- 2026-06-29T01:38:48+0200 [info] btdigg::browser_auto_search_end_dom
+- 2026-06-29T01:38:48+0200 [info] motor::prepare_results_start
+- 2026-06-29T01:38:48+0200 [info] motor::prepare_after_scoring
+- 2026-06-29T01:38:48+0200 [info] motor::prepare_after_filter
+- 2026-06-29T01:38:48+0200 [info] motor::prepare_after_query_prefilter
+- 2026-06-29T01:38:48+0200 [info] real-debrid::rd_account_check_ok
+- 2026-06-29T01:38:48+0200 [info] real-debrid::rd_check_start
+- 2026-06-29T01:38:48+0200 [warn] real-debrid::rd_api_http_error - disabled_endpoint
+- 2026-06-29T01:38:48+0200 [warn] real-debrid::rd_cache_api_disabled_cached_set - Real-Debrid HTTP 403: [37 disabled_endpoint] {
+	"error": "disabled_endpoint",
+	"error_code": 37
+}
+- 2026-06-29T01:38:48+0200 [warn] real-debrid::rd_cache_api_disabled - Real-Debrid HTTP 403: [37 disabled_endpoint] {
+	"error": "disabled_endpoint",
+	"error_code": 37
+}
+- 2026-06-29T01:38:48+0200 [info] real-debrid::rd_verify_batch_start
+- 2026-06-29T01:38:48+0200 [info] real-debrid::rd_slots_refresh
+- 2026-06-29T01:38:48+0200 [info] real-debrid::rd_existing_preload_done
+- 2026-06-29T01:38:48+0200 [info] real-debrid::rd_verify_queue_start
+- 2026-06-29T01:38:48+0200 [info] real-debrid::rd_verify_add_start - regshow
+- 2026-06-29T01:38:48+0200 [info] real-debrid::rd_verify_queue_submit - regshow
+- 2026-06-29T01:38:48+0200 [info] real-debrid::rd_slots_reserve
+- 2026-06-29T01:38:48+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-29T01:38:48+0200 [info] real-debrid::rd_verify_add_start - regshow
+- 2026-06-29T01:38:48+0200 [info] real-debrid::rd_verify_queue_submit - regshow
+- 2026-06-29T01:38:48+0200 [info] real-debrid::rd_verify_add_start - regshow
+- 2026-06-29T01:38:48+0200 [info] real-debrid::rd_verify_queue_submit - regshow
+- 2026-06-29T01:38:48+0200 [info] real-debrid::rd_slots_reserve
+- 2026-06-29T01:38:48+0200 [info] real-debrid::rd_verify_add_start - Linger babe
+- 2026-06-29T01:38:48+0200 [info] real-debrid::rd_slots_reserve
+- 2026-06-29T01:38:48+0200 [info] real-debrid::rd_verify_queue_submit - Linger babe
+- 2026-06-29T01:38:48+0200 [info] real-debrid::rd_slots_reserve
+- 2026-06-29T01:38:48+0200 [info] real-debrid::rd_verify_add_start - The.Office.US.S01-S09.1080p.BluRay.x265-RBG
+- 2026-06-29T01:38:48+0200 [info] real-debrid::rd_slots_reserve
+- 2026-06-29T01:38:48+0200 [info] real-debrid::rd_verify_queue_submit - The.Office.US.S01-S09.1080p.BluRay.x265-RBG
+- 2026-06-29T01:38:48+0200 [info] real-debrid::rd_verify_add_start - The Office US (2005) Season 1-9 S01-S09 [Etcohod]
+- 2026-06-29T01:38:48+0200 [info] real-debrid::rd_slots_reserve
+- 2026-06-29T01:38:48+0200 [info] real-debrid::rd_verify_queue_submit - The Office US (2005) Season 1-9 S01-S09 [Etcohod]
+- 2026-06-29T01:38:48+0200 [info] real-debrid::rd_verify_add_start - NARUTO
+- 2026-06-29T01:38:48+0200 [info] real-debrid::rd_verify_queue_submit - NARUTO
+- 2026-06-29T01:38:48+0200 [info] real-debrid::rd_slots_reserve
+- 2026-06-29T01:38:48+0200 [info] real-debrid::rd_verify_add_start - Sandra.Bullock.MOViE.PACK.1080p.BluRay.x264-IPT
+- 2026-06-29T01:38:48+0200 [info] real-debrid::rd_slots_reserve
+- 2026-06-29T01:38:48+0200 [info] real-debrid::rd_verify_queue_submit - Sandra.Bullock.MOViE.PACK.1080p.BluRay.x264-IPT
+- 2026-06-29T01:38:48+0200 [info] real-debrid::rd_verify_add_start - Star.Wars.HEXOLOGY.NORDIC.1080p.BluRay.DTS.x264-Danishbits
+- 2026-06-29T01:38:48+0200 [info] real-debrid::rd_verify_queue_submit - Star.Wars.HEXOLOGY.NORDIC.1080p.BluRay.DTS.x264-Danishbits
+- 2026-06-29T01:38:48+0200 [info] real-debrid::rd_slots_reserve
+- 2026-06-29T01:38:48+0200 [info] real-debrid::rd_verify_add_start - One.Piece.S01-S15.1999-2012.FRENCH.1080p.WEB-DL.H264-CR
+- 2026-06-29T01:38:48+0200 [info] real-debrid::rd_verify_queue_submit - One.Piece.S01-S15.1999-2012.FRENCH.1080p.WEB-DL.H264-CR
+- 2026-06-29T01:38:48+0200 [info] real-debrid::rd_slots_reserve
+- 2026-06-29T01:38:48+0200 [info] real-debrid::rd_verify_add_start - Resident.Alien.S01.1080p.BluRay.x264-BORDURE
+- 2026-06-29T01:38:48+0200 [info] real-debrid::rd_verify_queue_submit - Resident.Alien.S01.1080p.BluRay.x264-BORDURE
+- 2026-06-29T01:38:48+0200 [info] real-debrid::rd_slots_reserve
+- 2026-06-29T01:38:48+0200 [info] real-debrid::rd_verify_add_start - Ray.Donovan.S03.1080p.BluRay.x264-ROVERS
+- 2026-06-29T01:38:48+0200 [info] real-debrid::rd_slots_reserve
+- 2026-06-29T01:38:48+0200 [info] real-debrid::rd_verify_queue_submit - Ray.Donovan.S03.1080p.BluRay.x264-ROVERS
+- 2026-06-29T01:38:48+0200 [info] real-debrid::rd_verify_add_start - Cosmos.A.Spacetime.Odyssey.S01E01-13.1080p.BluRay.x264-DeBTViD
+- 2026-06-29T01:38:48+0200 [info] real-debrid::rd_verify_queue_submit - Cosmos.A.Spacetime.Odyssey.S01E01-13.1080p.BluRay.x264-DeBTViD
+- 2026-06-29T01:38:48+0200 [info] real-debrid::rd_slots_reserve
+- 2026-06-29T01:38:48+0200 [info] real-debrid::rd_verify_add_start - The.Big.Bang.Theory.S09.1080p.BluRay.x264-SHORTBREHD
+- 2026-06-29T01:38:48+0200 [info] real-debrid::rd_slots_reserve
+- 2026-06-29T01:38:48+0200 [info] real-debrid::rd_verify_queue_submit - The.Big.Bang.Theory.S09.1080p.BluRay.x264-SHORTBREHD
+- 2026-06-29T01:38:48+0200 [info] real-debrid::rd_verify_add_start - one piece
+- 2026-06-29T01:38:48+0200 [info] real-debrid::rd_verify_queue_submit - one piece
+- 2026-06-29T01:38:48+0200 [info] real-debrid::rd_slots_reserve
+- 2026-06-29T01:38:48+0200 [info] real-debrid::rd_verify_add_start - [DBD-Raws][家庭教师][001-203TV全集 特别篇 特典映像][1080P][BDRip][HEVC-10bit][简繁外挂][FLAC][MKV]
+- 2026-06-29T01:38:48+0200 [info] real-debrid::rd_slots_reserve
+- 2026-06-29T01:38:48+0200 [info] real-debrid::rd_verify_queue_submit - [DBD-Raws][家庭教师][001-203TV全集 特别篇 特典映像][1080P][BDRip][HEVC-10bit][简繁外挂][FLAC][MKV]
+- 2026-06-29T01:38:48+0200 [info] real-debrid::rd_verify_add_start - Sa.Mycket.Battre
+- 2026-06-29T01:38:48+0200 [info] real-debrid::rd_verify_queue_submit - Sa.Mycket.Battre
+- 2026-06-29T01:38:48+0200 [info] real-debrid::rd_slots_reserve
+- 2026-06-29T01:38:48+0200 [info] real-debrid::rd_verify_add_start - Smileys.People.S01E01-06.1080p.BluRay.x264-BRMP
+- 2026-06-29T01:38:48+0200 [info] real-debrid::rd_verify_queue_submit - Smileys.People.S01E01-06.1080p.BluRay.x264-BRMP
+- 2026-06-29T01:38:48+0200 [info] real-debrid::rd_slots_reserve
+- 2026-06-29T01:38:48+0200 [info] real-debrid::rd_verify_add_start - Kallenz
+- 2026-06-29T01:38:48+0200 [info] real-debrid::rd_slots_reserve
+- 2026-06-29T01:38:48+0200 [info] real-debrid::rd_verify_queue_submit - Kallenz
+- 2026-06-29T01:38:48+0200 [info] real-debrid::rd_verify_add_start - [ Torrent911.rs ] CSI.Miami.iNTEGRALE.MULTi.1080p.WEB.H264-AZR
+- 2026-06-29T01:38:48+0200 [info] real-debrid::rd_verify_queue_submit - [ Torrent911.rs ] CSI.Miami.iNTEGRALE.MULTi.1080p.WEB.H264-AZR
+- 2026-06-29T01:38:48+0200 [info] real-debrid::rd_slots_reserve
+- 2026-06-29T01:38:48+0200 [info] real-debrid::rd_verify_add_start - South Park paka od Crosssiika
+- 2026-06-29T01:38:48+0200 [info] real-debrid::rd_slots_reserve
+- 2026-06-29T01:38:48+0200 [info] real-debrid::rd_verify_queue_submit - South Park paka od Crosssiika
+- 2026-06-29T01:38:48+0200 [info] real-debrid::rd_verify_add_start - Friends.COMPLETE.S01-S10.iNTERNAL.MULTi.1080p.WEB.x264-N3TFL1X
+- 2026-06-29T01:38:48+0200 [info] real-debrid::rd_verify_queue_submit - Friends.COMPLETE.S01-S10.iNTERNAL.MULTi.1080p.WEB.x264-N3TFL1X
+- 2026-06-29T01:38:48+0200 [info] real-debrid::rd_slots_reserve
+- 2026-06-29T01:38:48+0200 [info] real-debrid::rd_verify_add_start - [ Torrent911.my ] Friends.COMPLETE.S01-S10.iNTERNAL.MULTi.1080p.WEB.x264-N3TFL1X
+- 2026-06-29T01:38:48+0200 [info] real-debrid::rd_slots_reserve
+- 2026-06-29T01:38:48+0200 [info] real-debrid::rd_verify_queue_submit - [ Torrent911.my ] Friends.COMPLETE.S01-S10.iNTERNAL.MULTi.1080p.WEB.x264-N3TFL1X
+- 2026-06-29T01:38:48+0200 [info] real-debrid::rd_verify_add_start - 10-Babes
+- 2026-06-29T01:38:48+0200 [info] real-debrid::rd_slots_reserve
+- 2026-06-29T01:38:48+0200 [info] real-debrid::rd_verify_queue_submit - 10-Babes
+- 2026-06-29T01:38:48+0200 [info] real-debrid::rd_verify_add_start - Andra.Avenyn
+- 2026-06-29T01:38:48+0200 [info] real-debrid::rd_verify_queue_submit - Andra.Avenyn
+- 2026-06-29T01:38:48+0200 [info] real-debrid::rd_slots_reserve
+- 2026-06-29T01:38:48+0200 [info] real-debrid::rd_verify_queue_submit - 女子校生合集
+- 2026-06-29T01:38:48+0200 [info] real-debrid::rd_verify_add_start - 女子校生合集
+- 2026-06-29T01:38:48+0200 [info] real-debrid::rd_slots_reserve
+- 2026-06-29T01:38:48+0200 [info] real-debrid::rd_verify_queue_submit - Bleach
+- 2026-06-29T01:38:48+0200 [info] real-debrid::rd_verify_add_start - Bleach
+- 2026-06-29T01:38:48+0200 [info] real-debrid::rd_slots_reserve
+- 2026-06-29T01:38:48+0200 [info] real-debrid::rd_verify_queue_submit - 9月22号
+- 2026-06-29T01:38:48+0200 [info] real-debrid::rd_verify_add_start - 9月22号
+- 2026-06-29T01:38:48+0200 [info] real-debrid::rd_verify_add_start - 9月21号
+- 2026-06-29T01:38:48+0200 [info] real-debrid::rd_verify_queue_submit - 9月21号
+- 2026-06-29T01:38:48+0200 [info] real-debrid::rd_slots_reserve
+- 2026-06-29T01:38:48+0200 [info] real-debrid::rd_slots_reserve
+- 2026-06-29T01:38:48+0200 [info] real-debrid::rd_verify_add_start - One Piece - Season 1-20
+- 2026-06-29T01:38:48+0200 [info] real-debrid::rd_verify_queue_submit - One Piece - Season 1-20
+- 2026-06-29T01:38:48+0200 [info] real-debrid::rd_slots_reserve
+- 2026-06-29T01:38:48+0200 [info] real-debrid::rd_verify_add_start - Wakanim (France) Archive [2022]
+- 2026-06-29T01:38:48+0200 [info] real-debrid::rd_verify_queue_submit - Wakanim (France) Archive [2022]
+- 2026-06-29T01:38:48+0200 [info] real-debrid::rd_slots_reserve
+- 2026-06-29T01:38:48+0200 [info] real-debrid::rd_verify_add_start - 1-30
+- 2026-06-29T01:38:48+0200 [info] real-debrid::rd_verify_queue_submit - 1-30
+- 2026-06-29T01:38:48+0200 [info] real-debrid::rd_slots_reserve
+- 2026-06-29T01:38:48+0200 [info] real-debrid::rd_verify_add_start - [GloryholeSwallow.com]
+- 2026-06-29T01:38:48+0200 [info] real-debrid::rd_verify_queue_submit - [GloryholeSwallow.com]
+- 2026-06-29T01:38:48+0200 [info] real-debrid::rd_slots_reserve
+- 2026-06-29T01:38:48+0200 [info] real-debrid::rd_verify_add_start - Dragon Ball PL
+- 2026-06-29T01:38:48+0200 [info] real-debrid::rd_verify_queue_submit - Dragon Ball PL
+- 2026-06-29T01:38:48+0200 [info] real-debrid::rd_slots_reserve
+- 2026-06-29T01:38:48+0200 [info] real-debrid::rd_verify_queue_submit - [ Torrent911.io ] Bones.COMPLETE.MULTi.1080p.WEB.H264-FREEDOM
+- 2026-06-29T01:38:48+0200 [info] real-debrid::rd_verify_add_start - [ Torrent911.io ] Bones.COMPLETE.MULTi.1080p.WEB.H264-FREEDOM
+- 2026-06-29T01:38:48+0200 [info] real-debrid::rd_verify_add_start - One Piece Collection [EP 1-929   14 Movs   3 OVAs  15 TVSPs]
+- 2026-06-29T01:38:48+0200 [info] real-debrid::rd_verify_queue_submit - One Piece Collection [EP 1-929   14 Movs   3 OVAs  15 TVSPs]
+- 2026-06-29T01:38:48+0200 [info] real-debrid::rd_slots_reserve
+- 2026-06-29T01:38:48+0200 [info] real-debrid::rd_verify_add_start - upate
+- 2026-06-29T01:38:48+0200 [info] real-debrid::rd_verify_queue_submit - upate
+- 2026-06-29T01:38:48+0200 [info] real-debrid::rd_slots_reserve
+- 2026-06-29T01:38:48+0200 [info] real-debrid::rd_verify_add_start - Star Trek 1080p.BluRay.x264 BIG PACK
+- 2026-06-29T01:38:48+0200 [info] real-debrid::rd_verify_queue_submit - Star Trek 1080p.BluRay.x264 BIG PACK
+- 2026-06-29T01:38:48+0200 [info] real-debrid::rd_slots_reserve
+- 2026-06-29T01:38:48+0200 [info] real-debrid::rd_verify_add_start - Supernatural.S10.1080p.BluRay.x264-ROVERS
+- 2026-06-29T01:38:48+0200 [info] real-debrid::rd_slots_reserve
+- 2026-06-29T01:38:48+0200 [info] real-debrid::rd_verify_queue_submit - Supernatural.S10.1080p.BluRay.x264-ROVERS
+- 2026-06-29T01:38:48+0200 [info] real-debrid::rd_slots_reserve
+- 2026-06-29T01:38:48+0200 [info] real-debrid::rd_verify_add_start - 15-17
+- 2026-06-29T01:38:48+0200 [info] real-debrid::rd_slots_reserve
+- 2026-06-29T01:38:48+0200 [info] real-debrid::rd_verify_queue_submit - 15-17
+- 2026-06-29T01:38:48+0200 [info] real-debrid::rd_verify_add_start - 冬儿4-5
+- 2026-06-29T01:38:48+0200 [info] real-debrid::rd_verify_queue_submit - 冬儿4-5
+- 2026-06-29T01:38:48+0200 [info] real-debrid::rd_slots_reserve
+- 2026-06-29T01:38:48+0200 [info] real-debrid::rd_verify_add_start - 11-16
+- 2026-06-29T01:38:49+0200 [info] real-debrid::rd_slots_reserve
+- 2026-06-29T01:38:49+0200 [info] real-debrid::rd_verify_queue_submit - 11-16
+- 2026-06-29T01:38:49+0200 [info] real-debrid::rd_verify_add_start - 艾伦 10月13-19日
+- 2026-06-29T01:38:49+0200 [info] real-debrid::rd_slots_reserve
+- 2026-06-29T01:38:49+0200 [info] real-debrid::rd_verify_queue_submit - 艾伦 10月13-19日
+- 2026-06-29T01:38:49+0200 [info] real-debrid::rd_verify_add_start - 艾伦 9月22-28日
+- 2026-06-29T01:38:49+0200 [info] real-debrid::rd_slots_reserve
+- 2026-06-29T01:38:49+0200 [info] real-debrid::rd_verify_queue_submit - 艾伦 9月22-28日
+- 2026-06-29T01:38:49+0200 [info] real-debrid::rd_verify_add_start - 艾伦 7月压制
+- 2026-06-29T01:38:49+0200 [info] real-debrid::rd_verify_queue_submit - 艾伦 7月压制
+- 2026-06-29T01:38:49+0200 [info] real-debrid::rd_slots_reserve
+- 2026-06-29T01:38:49+0200 [info] real-debrid::rd_verify_add_start - 保宇  9月2日-8日
+- 2026-06-29T01:38:49+0200 [info] real-debrid::rd_verify_queue_submit - 保宇  9月2日-8日
+- 2026-06-29T01:38:49+0200 [info] real-debrid::rd_slots_reserve
+- 2026-06-29T01:38:49+0200 [info] real-debrid::rd_verify_add_start - 冬儿8月28号
+- 2026-06-29T01:38:49+0200 [info] real-debrid::rd_verify_queue_submit - 冬儿8月28号
+- 2026-06-29T01:38:49+0200 [info] real-debrid::rd_slots_reserve
+- 2026-06-29T01:38:49+0200 [info] real-debrid::rd_verify_add_start - 备份
+- 2026-06-29T01:38:49+0200 [info] real-debrid::rd_verify_queue_submit - 备份
+- 2026-06-29T01:38:49+0200 [info] real-debrid::rd_slots_reserve
+- 2026-06-29T01:38:49+0200 [info] real-debrid::rd_verify_add_start - 保宇  7月17号-22号
+- 2026-06-29T01:38:49+0200 [info] real-debrid::rd_verify_queue_submit - 保宇  7月17号-22号
+- 2026-06-29T01:38:49+0200 [info] real-debrid::rd_slots_reserve
+- 2026-06-29T01:38:49+0200 [info] real-debrid::rd_verify_add_start - That.70s.Show.S01.1080p.BluRay.x264-FilmHD
+- 2026-06-29T01:38:49+0200 [info] real-debrid::rd_verify_queue_submit - That.70s.Show.S01.1080p.BluRay.x264-FilmHD
+- 2026-06-29T01:38:49+0200 [info] real-debrid::rd_slots_reserve
+- 2026-06-29T01:38:49+0200 [info] real-debrid::rd_verify_add_start - Westworld.S01.GERMAN.DUBBED.DL.1080p.WebHD.x264-TVP
+- 2026-06-29T01:38:49+0200 [info] real-debrid::rd_verify_queue_submit - Westworld.S01.GERMAN.DUBBED.DL.1080p.WebHD.x264-TVP
+- 2026-06-29T01:38:49+0200 [info] real-debrid::rd_slots_reserve
+- 2026-06-29T01:38:49+0200 [info] real-debrid::rd_verify_add_start - Van.Helsing.S01.1080p.BluRay.x264-SHORTBREHD
+- 2026-06-29T01:38:49+0200 [info] real-debrid::rd_verify_queue_submit - Van.Helsing.S01.1080p.BluRay.x264-SHORTBREHD
+- 2026-06-29T01:38:49+0200 [info] real-debrid::rd_slots_reserve
+- 2026-06-29T01:38:49+0200 [info] real-debrid::rd_verify_add_start - The.Pacific.1080p.BluRay.x264
+- 2026-06-29T01:38:49+0200 [info] real-debrid::rd_verify_queue_submit - The.Pacific.1080p.BluRay.x264
+- 2026-06-29T01:38:49+0200 [info] real-debrid::rd_slots_reserve
+- 2026-06-29T01:38:49+0200 [info] real-debrid::rd_verify_add_start - The.Pacific.1080p.BluRay.x264-WAT
+- 2026-06-29T01:38:49+0200 [info] real-debrid::rd_verify_queue_submit - The.Pacific.1080p.BluRay.x264-WAT
+- 2026-06-29T01:38:49+0200 [info] real-debrid::rd_slots_reserve
+- 2026-06-29T01:38:49+0200 [info] real-debrid::rd_verify_add_start - Dragon Ball
+- 2026-06-29T01:38:49+0200 [info] real-debrid::rd_verify_queue_submit - Dragon Ball
+- 2026-06-29T01:38:49+0200 [info] real-debrid::rd_slots_reserve
+- 2026-06-29T01:38:49+0200 [info] real-debrid::rd_verify_add_start - [ Torrent911.io ] Smallville.COMPLETE.S01-S10.MULTi.1080p.WEB.H264-NERO
+- 2026-06-29T01:38:49+0200 [info] real-debrid::rd_verify_queue_submit - [ Torrent911.io ] Smallville.COMPLETE.S01-S10.MULTi.1080p.WEB.H264-NERO
+- 2026-06-29T01:38:49+0200 [info] real-debrid::rd_slots_reserve
+- 2026-06-29T01:38:49+0200 [info] real-debrid::rd_verify_add_start - 海贼王-One Piece
+- 2026-06-29T01:38:49+0200 [info] real-debrid::rd_slots_reserve
+- 2026-06-29T01:38:49+0200 [info] real-debrid::rd_verify_queue_submit - 海贼王-One Piece
+- 2026-06-29T01:38:49+0200 [info] real-debrid::rd_verify_add_start - Macken.Roys.Och.Rogers.Bilservice.1986.Del.1-6.Remastered.SWEDISH.1080p.BluRay.x264.HQ-TUSAHD
+- 2026-06-29T01:38:49+0200 [info] real-debrid::rd_verify_queue_submit - Macken.Roys.Och.Rogers.Bilservice.1986.Del.1-6.Remastered.SWEDISH.1080p.BluRay.x264.HQ-TUSAHD
+- 2026-06-29T01:38:49+0200 [info] real-debrid::rd_slots_reserve
+- 2026-06-29T01:38:49+0200 [info] real-debrid::rd_verify_add_start - Solsidan
+- 2026-06-29T01:38:49+0200 [info] real-debrid::rd_verify_queue_submit - Solsidan
+- 2026-06-29T01:38:49+0200 [info] real-debrid::rd_slots_reserve
+- 2026-06-29T01:38:49+0200 [info] real-debrid::rd_verify_add_start - 4号和6号
+- 2026-06-29T01:38:49+0200 [info] real-debrid::rd_slots_reserve
+- 2026-06-29T01:38:49+0200 [info] real-debrid::rd_verify_queue_submit - 4号和6号
+- 2026-06-29T01:38:49+0200 [info] real-debrid::rd_verify_added
+- 2026-06-29T01:38:49+0200 [info] real-debrid::rd_verify_added
+- 2026-06-29T01:38:49+0200 [info] real-debrid::rd_verify_added
+- 2026-06-29T01:38:49+0200 [info] real-debrid::rd_verify_added
+- 2026-06-29T01:38:50+0200 [debug] real-debrid::rd_verify_poll - 9月22号
+- 2026-06-29T01:38:50+0200 [info] real-debrid::rd_verify_added
+- 2026-06-29T01:38:50+0200 [info] real-debrid::rd_verify_added
+- 2026-06-29T01:38:51+0200 [info] real-debrid::rd_verify_select_files
+- 2026-06-29T01:38:51+0200 [info] real-debrid::rd_verify_added
+- 2026-06-29T01:38:51+0200 [warn] real-debrid::rd_api_http_error - infringing_file
+- 2026-06-29T01:38:51+0200 [warn] real-debrid::rd_call_terminal_error - infringing_file
+- 2026-06-29T01:38:51+0200 [warn] real-debrid::rd_verify_infringing - One.Piece.S01-S15.1999-2012.FRENCH.1080p.WEB-DL.H264-CR
+- 2026-06-29T01:38:51+0200 [info] real-debrid::rd_verify_queue_done_item - One.Piece.S01-S15.1999-2012.FRENCH.1080p.WEB-DL.H264-CR
+- 2026-06-29T01:38:51+0200 [warn] real-debrid::rd_api_http_error - infringing_file
+- 2026-06-29T01:38:51+0200 [warn] real-debrid::rd_call_terminal_error - infringing_file
+- 2026-06-29T01:38:51+0200 [warn] real-debrid::rd_verify_infringing - [ Torrent911.io ] Bones.COMPLETE.MULTi.1080p.WEB.H264-FREEDOM
+- 2026-06-29T01:38:51+0200 [info] real-debrid::rd_verify_queue_done_item - [ Torrent911.io ] Bones.COMPLETE.MULTi.1080p.WEB.H264-FREEDOM
+- 2026-06-29T01:38:51+0200 [info] real-debrid::rd_verify_added
+- 2026-06-29T01:38:52+0200 [info] real-debrid::rd_verify_added
+- 2026-06-29T01:38:52+0200 [info] real-debrid::rd_verify_added
+- 2026-06-29T01:38:52+0200 [info] real-debrid::rd_verify_added
+- 2026-06-29T01:38:52+0200 [info] real-debrid::rd_verify_added
+- 2026-06-29T01:38:53+0200 [debug] real-debrid::rd_verify_poll - Sa.Mycket.Battre
+- 2026-06-29T01:38:53+0200 [debug] real-debrid::rd_verify_poll - regshow
+- 2026-06-29T01:38:53+0200 [info] real-debrid::rd_verify_added
+- 2026-06-29T01:38:53+0200 [warn] real-debrid::rd_api_http_error - infringing_file
+- 2026-06-29T01:38:53+0200 [warn] real-debrid::rd_call_terminal_error - infringing_file
+- 2026-06-29T01:38:53+0200 [warn] real-debrid::rd_verify_infringing - The.Pacific.1080p.BluRay.x264
+- 2026-06-29T01:38:53+0200 [info] real-debrid::rd_verify_queue_done_item - The.Pacific.1080p.BluRay.x264
+- 2026-06-29T01:38:54+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-29T01:38:54+0200 [info] real-debrid::rd_verify_added
+- 2026-06-29T01:38:54+0200 [warn] real-debrid::rd_api_http_error - infringing_file
+- 2026-06-29T01:38:54+0200 [warn] real-debrid::rd_call_terminal_error - infringing_file
+- 2026-06-29T01:38:54+0200 [warn] real-debrid::rd_verify_infringing - [ Torrent911.my ] Friends.COMPLETE.S01-S10.iNTERNAL.MULTi.1080p.WEB.x264-N3TFL1X
+- 2026-06-29T01:38:54+0200 [info] real-debrid::rd_verify_queue_done_item - [ Torrent911.my ] Friends.COMPLETE.S01-S10.iNTERNAL.MULTi.1080p.WEB.x264-N3TFL1X
+- 2026-06-29T01:38:54+0200 [warn] real-debrid::rd_api_http_error - infringing_file
+- 2026-06-29T01:38:54+0200 [warn] real-debrid::rd_call_terminal_error - infringing_file
+- 2026-06-29T01:38:54+0200 [warn] real-debrid::rd_verify_infringing - [ Torrent911.rs ] CSI.Miami.iNTEGRALE.MULTi.1080p.WEB.H264-AZR
+- 2026-06-29T01:38:54+0200 [info] real-debrid::rd_verify_queue_done_item - [ Torrent911.rs ] CSI.Miami.iNTEGRALE.MULTi.1080p.WEB.H264-AZR
+- 2026-06-29T01:38:55+0200 [info] real-debrid::rd_verify_added
+- 2026-06-29T01:38:55+0200 [info] real-debrid::rd_verify_added
+- 2026-06-29T01:38:55+0200 [warn] real-debrid::rd_api_http_error - too_many_requests
+- 2026-06-29T01:38:55+0200 [warn] real-debrid::rd_rate_429_cooldown
+- 2026-06-29T01:38:56+0200 [warn] real-debrid::rd_call_retry_429 - Real-Debrid HTTP 429: [34 too_many_requests] {"error": "too_many_requests", "error_code": 34, "src": "front-2"}
+- 2026-06-29T01:38:59+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-29T01:39:04+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-29T01:39:07+0200 [warn] real-debrid::rd_api_http_error - infringing_file
+- 2026-06-29T01:39:07+0200 [warn] real-debrid::rd_call_terminal_error - infringing_file
+- 2026-06-29T01:39:07+0200 [warn] real-debrid::rd_verify_infringing - Star.Wars.HEXOLOGY.NORDIC.1080p.BluRay.DTS.x264-Danishbits
+- 2026-06-29T01:39:07+0200 [info] real-debrid::rd_verify_queue_done_item - Star.Wars.HEXOLOGY.NORDIC.1080p.BluRay.DTS.x264-Danishbits
+- 2026-06-29T01:39:07+0200 [info] real-debrid::rd_verify_added
+- 2026-06-29T01:39:07+0200 [debug] real-debrid::rd_verify_poll - 冬儿8月28号
+- 2026-06-29T01:39:08+0200 [info] real-debrid::rd_verify_added
+- 2026-06-29T01:39:08+0200 [debug] real-debrid::rd_verify_poll - Van.Helsing.S01.1080p.BluRay.x264-SHORTBREHD
+- 2026-06-29T01:39:08+0200 [info] real-debrid::rd_verify_added
+- 2026-06-29T01:39:08+0200 [info] real-debrid::rd_verify_added
+- 2026-06-29T01:39:08+0200 [debug] real-debrid::rd_verify_poll - 艾伦 9月22-28日
+- 2026-06-29T01:39:09+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-29T01:39:09+0200 [warn] real-debrid::rd_api_http_error - too_many_requests
+- 2026-06-29T01:39:09+0200 [warn] real-debrid::rd_rate_429_cooldown
+- 2026-06-29T01:39:09+0200 [info] real-debrid::rd_delete_torrent
+- 2026-06-29T01:39:09+0200 [info] real-debrid::rd_slots_release
+- 2026-06-29T01:39:09+0200 [info] real-debrid::rd_verify_pack_skip - 艾伦 9月22-28日
+- 2026-06-29T01:39:09+0200 [info] real-debrid::rd_verify_queue_done_item - 艾伦 9月22-28日
+- 2026-06-29T01:39:09+0200 [info] real-debrid::rd_verify_added
+- 2026-06-29T01:39:10+0200 [debug] real-debrid::rd_verify_poll - Wakanim (France) Archive [2022]
+- 2026-06-29T01:39:10+0200 [warn] real-debrid::rd_call_retry_429 - Real-Debrid HTTP 429: [34 too_many_requests] {"error": "too_many_requests", "error_code": 34, "src": "front-1"}
+- 2026-06-29T01:39:14+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-29T01:39:19+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-29T01:39:22+0200 [info] real-debrid::rd_delete_torrent
+- 2026-06-29T01:39:22+0200 [info] real-debrid::rd_slots_release
+- 2026-06-29T01:39:22+0200 [warn] real-debrid::rd_api_http_error - infringing_file
+- 2026-06-29T01:39:22+0200 [info] real-debrid::rd_verify_pack_skip - Sa.Mycket.Battre
+- 2026-06-29T01:39:22+0200 [info] real-debrid::rd_verify_added
+- 2026-06-29T01:39:22+0200 [warn] real-debrid::rd_call_terminal_error - infringing_file
+- 2026-06-29T01:39:22+0200 [info] real-debrid::rd_verify_queue_done_item - Sa.Mycket.Battre
+- 2026-06-29T01:39:22+0200 [warn] real-debrid::rd_verify_infringing - [ Torrent911.io ] Smallville.COMPLETE.S01-S10.MULTi.1080p.WEB.H264-NERO
+- 2026-06-29T01:39:22+0200 [info] real-debrid::rd_verify_queue_done_item - [ Torrent911.io ] Smallville.COMPLETE.S01-S10.MULTi.1080p.WEB.H264-NERO
+- 2026-06-29T01:39:22+0200 [info] real-debrid::rd_verify_added
+- 2026-06-29T01:39:23+0200 [warn] real-debrid::rd_api_http_error - too_many_requests
+- 2026-06-29T01:39:23+0200 [debug] real-debrid::rd_verify_poll - 艾伦 7月压制
+- 2026-06-29T01:39:23+0200 [warn] real-debrid::rd_api_http_error - too_many_requests
+- 2026-06-29T01:39:23+0200 [warn] real-debrid::rd_rate_429_cooldown
+- 2026-06-29T01:39:23+0200 [warn] real-debrid::rd_rate_429_cooldown
+- 2026-06-29T01:39:23+0200 [info] real-debrid::rd_verify_added
+- 2026-06-29T01:39:24+0200 [warn] real-debrid::rd_call_retry_429 - Real-Debrid HTTP 429: [34 too_many_requests] {"error": "too_many_requests", "error_code": 34, "src": "front-1"}
+- 2026-06-29T01:39:24+0200 [warn] real-debrid::rd_call_retry_429 - Real-Debrid HTTP 429: [34 too_many_requests] {"error": "too_many_requests", "error_code": 34, "src": "front-1"}
+- 2026-06-29T01:39:25+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-29T01:39:30+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-29T01:39:35+0200 [warn] real-debrid::rd_api_http_error - too_many_requests
+- 2026-06-29T01:39:35+0200 [warn] real-debrid::rd_rate_429_cooldown
+- 2026-06-29T01:39:35+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-29T01:39:35+0200 [info] real-debrid::rd_verify_added
+- 2026-06-29T01:39:35+0200 [debug] real-debrid::rd_verify_poll - [GloryholeSwallow.com]
+- 2026-06-29T01:39:35+0200 [info] real-debrid::rd_verify_added
+- 2026-06-29T01:39:36+0200 [warn] real-debrid::rd_call_retry_429 - Real-Debrid HTTP 429: [34 too_many_requests] {"error": "too_many_requests", "error_code": 34, "src": "front-2"}
+- 2026-06-29T01:39:40+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-29T01:39:45+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-29T01:39:47+0200 [warn] real-debrid::rd_api_http_error - too_many_requests
+- 2026-06-29T01:39:47+0200 [warn] real-debrid::rd_rate_429_cooldown
+- 2026-06-29T01:39:47+0200 [warn] real-debrid::rd_api_http_error - infringing_file
+- 2026-06-29T01:39:47+0200 [warn] real-debrid::rd_call_terminal_error - infringing_file
+- 2026-06-29T01:39:47+0200 [warn] real-debrid::rd_verify_infringing - Resident.Alien.S01.1080p.BluRay.x264-BORDURE
+- 2026-06-29T01:39:47+0200 [info] real-debrid::rd_verify_queue_done_item - Resident.Alien.S01.1080p.BluRay.x264-BORDURE
+- 2026-06-29T01:39:47+0200 [warn] real-debrid::rd_api_http_error - infringing_file
+- 2026-06-29T01:39:47+0200 [warn] real-debrid::rd_call_terminal_error - infringing_file
+- 2026-06-29T01:39:47+0200 [warn] real-debrid::rd_verify_infringing - Cosmos.A.Spacetime.Odyssey.S01E01-13.1080p.BluRay.x264-DeBTViD
+- 2026-06-29T01:39:47+0200 [info] real-debrid::rd_verify_queue_done_item - Cosmos.A.Spacetime.Odyssey.S01E01-13.1080p.BluRay.x264-DeBTViD
+- 2026-06-29T01:39:47+0200 [debug] real-debrid::rd_verify_post_select_poll - 9月22号
+- 2026-06-29T01:39:48+0200 [warn] real-debrid::rd_call_retry_429 - Real-Debrid HTTP 429: [34 too_many_requests] {"error": "too_many_requests", "error_code": 34, "src": "front-1"}
+- 2026-06-29T01:39:50+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-29T01:39:55+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-29T01:39:59+0200 [debug] real-debrid::rd_verify_poll - Kallenz
+- 2026-06-29T01:39:59+0200 [info] real-debrid::rd_verify_added
+- 2026-06-29T01:40:00+0200 [debug] real-debrid::rd_verify_poll - upate
+- 2026-06-29T01:40:00+0200 [debug] real-debrid::rd_verify_poll - 9月21号
+- 2026-06-29T01:40:00+0200 [warn] real-debrid::rd_api_http_error - infringing_file
+- 2026-06-29T01:40:00+0200 [warn] real-debrid::rd_api_http_error - too_many_requests
+- 2026-06-29T01:40:00+0200 [warn] real-debrid::rd_rate_429_cooldown
+- 2026-06-29T01:40:00+0200 [warn] real-debrid::rd_call_terminal_error - infringing_file
+- 2026-06-29T01:40:00+0200 [warn] real-debrid::rd_verify_infringing - Star Trek 1080p.BluRay.x264 BIG PACK
+- 2026-06-29T01:40:00+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-29T01:40:00+0200 [debug] real-debrid::rd_verify_poll - Sandra.Bullock.MOViE.PACK.1080p.BluRay.x264-IPT
+- 2026-06-29T01:40:00+0200 [info] real-debrid::rd_verify_queue_done_item - Star Trek 1080p.BluRay.x264 BIG PACK
+- 2026-06-29T01:40:00+0200 [warn] real-debrid::rd_api_http_error - infringing_file
+- 2026-06-29T01:40:00+0200 [warn] real-debrid::rd_call_terminal_error - infringing_file
+- 2026-06-29T01:40:00+0200 [warn] real-debrid::rd_verify_infringing - [DBD-Raws][家庭教师][001-203TV全集 特别篇 特典映像][1080P][BDRip][HEVC-10bit][简繁外挂][FLAC][MKV]
+- 2026-06-29T01:40:00+0200 [info] real-debrid::rd_verify_queue_done_item - [DBD-Raws][家庭教师][001-203TV全集 特别篇 特典映像][1080P][BDRip][HEVC-10bit][简繁外挂][FLAC][MKV]
+- 2026-06-29T01:40:01+0200 [warn] real-debrid::rd_call_retry_429 - Real-Debrid HTTP 429: [34 too_many_requests] {"error": "too_many_requests", "error_code": 34, "src": "front-1"}
+- 2026-06-29T01:40:05+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-29T01:40:10+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-29T01:40:13+0200 [info] real-debrid::rd_verify_added
+- 2026-06-29T01:40:13+0200 [info] real-debrid::rd_verify_added
+- 2026-06-29T01:40:13+0200 [debug] real-debrid::rd_verify_poll - Westworld.S01.GERMAN.DUBBED.DL.1080p.WebHD.x264-TVP
+- 2026-06-29T01:40:13+0200 [info] real-debrid::rd_verify_added
+- 2026-06-29T01:40:14+0200 [info] real-debrid::rd_delete_torrent
+- 2026-06-29T01:40:14+0200 [info] real-debrid::rd_slots_release
+- 2026-06-29T01:40:14+0200 [info] real-debrid::rd_verify_pack_skip - Westworld.S01.GERMAN.DUBBED.DL.1080p.WebHD.x264-TVP
+- 2026-06-29T01:40:14+0200 [info] real-debrid::rd_verify_queue_done_item - Westworld.S01.GERMAN.DUBBED.DL.1080p.WebHD.x264-TVP
+- 2026-06-29T01:40:14+0200 [debug] real-debrid::rd_verify_poll - 海贼王-One Piece
+- 2026-06-29T01:40:14+0200 [debug] real-debrid::rd_verify_poll - Solsidan
+- 2026-06-29T01:40:14+0200 [debug] real-debrid::rd_verify_poll - 1-30
+- 2026-06-29T01:40:15+0200 [info] real-debrid::rd_delete_torrent
+- 2026-06-29T01:40:15+0200 [info] real-debrid::rd_slots_release
+- 2026-06-29T01:40:15+0200 [info] real-debrid::rd_verify_pack_skip - 9月21号
+- 2026-06-29T01:40:15+0200 [info] real-debrid::rd_verify_queue_done_item - 9月21号
+- 2026-06-29T01:40:15+0200 [debug] real-debrid::rd_verify_poll - Dragon Ball
+- 2026-06-29T01:40:15+0200 [info] real-debrid::rd_verify_added
+- 2026-06-29T01:40:15+0200 [debug] real-debrid::rd_verify_poll - 15-17
+- 2026-06-29T01:40:15+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-29T01:40:16+0200 [warn] real-debrid::rd_api_http_error - infringing_file
+- 2026-06-29T01:40:16+0200 [warn] real-debrid::rd_call_terminal_error - infringing_file
+- 2026-06-29T01:40:16+0200 [warn] real-debrid::rd_verify_infringing - Supernatural.S10.1080p.BluRay.x264-ROVERS
+- 2026-06-29T01:40:16+0200 [info] real-debrid::rd_verify_added
+- 2026-06-29T01:40:16+0200 [info] real-debrid::rd_verify_added
+- 2026-06-29T01:40:16+0200 [info] real-debrid::rd_verify_queue_done_item - Supernatural.S10.1080p.BluRay.x264-ROVERS
+- 2026-06-29T01:40:16+0200 [debug] real-debrid::rd_verify_poll - 艾伦 10月13-19日
+- 2026-06-29T01:40:17+0200 [debug] real-debrid::rd_verify_poll - regshow
+- 2026-06-29T01:40:17+0200 [info] real-debrid::rd_verify_added
+- 2026-06-29T01:40:17+0200 [info] real-debrid::rd_verify_select_files
+- 2026-06-29T01:40:17+0200 [debug] real-debrid::rd_verify_poll - regshow
+- 2026-06-29T01:40:18+0200 [warn] real-debrid::rd_api_http_error - too_many_requests
+- 2026-06-29T01:40:18+0200 [warn] real-debrid::rd_rate_429_cooldown
+- 2026-06-29T01:40:18+0200 [info] real-debrid::rd_delete_torrent
+- 2026-06-29T01:40:18+0200 [info] real-debrid::rd_slots_release
+- 2026-06-29T01:40:18+0200 [info] real-debrid::rd_verify_queue_done_item - regshow
+- 2026-06-29T01:40:18+0200 [debug] real-debrid::rd_verify_poll - 女子校生合集
+- 2026-06-29T01:40:18+0200 [debug] real-debrid::rd_verify_poll - Linger babe
+- 2026-06-29T01:40:19+0200 [warn] real-debrid::rd_call_retry_429 - Real-Debrid HTTP 429: [34 too_many_requests] {"error": "too_many_requests", "error_code": 34, "src": "front-1"}
+- 2026-06-29T01:40:21+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-29T01:40:26+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-29T01:40:30+0200 [debug] real-debrid::rd_verify_poll - NARUTO
+- 2026-06-29T01:40:30+0200 [info] real-debrid::rd_verify_added
+- 2026-06-29T01:40:30+0200 [debug] real-debrid::rd_verify_poll - 4号和6号
+- 2026-06-29T01:40:30+0200 [debug] real-debrid::rd_verify_poll - Andra.Avenyn
+- 2026-06-29T01:40:31+0200 [warn] real-debrid::rd_api_http_error - too_many_requests
+- 2026-06-29T01:40:31+0200 [warn] real-debrid::rd_rate_429_cooldown
+- 2026-06-29T01:40:31+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-29T01:40:31+0200 [warn] real-debrid::rd_api_http_error - too_many_requests
+- 2026-06-29T01:40:31+0200 [warn] real-debrid::rd_rate_429_cooldown
+- 2026-06-29T01:40:31+0200 [info] real-debrid::rd_delete_torrent
+- 2026-06-29T01:40:31+0200 [info] real-debrid::rd_slots_release
+- 2026-06-29T01:40:31+0200 [info] real-debrid::rd_delete_torrent
+- 2026-06-29T01:40:31+0200 [info] real-debrid::rd_verify_queue_done_item - regshow
+- 2026-06-29T01:40:31+0200 [info] real-debrid::rd_slots_release
+- 2026-06-29T01:40:31+0200 [info] real-debrid::rd_verify_pack_skip - 15-17
+- 2026-06-29T01:40:31+0200 [info] real-debrid::rd_verify_queue_done_item - 15-17
+- 2026-06-29T01:40:32+0200 [warn] real-debrid::rd_call_retry_429 - Real-Debrid HTTP 429: [34 too_many_requests] {"error": "too_many_requests", "error_code": 34, "src": "front-2"}
+- 2026-06-29T01:40:32+0200 [warn] real-debrid::rd_call_retry_429 - Real-Debrid HTTP 429: [34 too_many_requests] {"error": "too_many_requests", "error_code": 34, "src": "front-2"}
+- 2026-06-29T01:40:36+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-29T01:40:41+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-29T01:40:43+0200 [info] real-debrid::rd_delete_torrent
+- 2026-06-29T01:40:43+0200 [info] real-debrid::rd_slots_release
+- 2026-06-29T01:40:43+0200 [info] real-debrid::rd_verify_queue_done_item - Van.Helsing.S01.1080p.BluRay.x264-SHORTBREHD
+- 2026-06-29T01:40:43+0200 [warn] real-debrid::rd_api_http_error - infringing_file
+- 2026-06-29T01:40:43+0200 [warn] real-debrid::rd_call_terminal_error - infringing_file
+- 2026-06-29T01:40:43+0200 [warn] real-debrid::rd_verify_infringing - Ray.Donovan.S03.1080p.BluRay.x264-ROVERS
+- 2026-06-29T01:40:43+0200 [info] real-debrid::rd_verify_queue_done_item - Ray.Donovan.S03.1080p.BluRay.x264-ROVERS
+- 2026-06-29T01:40:43+0200 [info] real-debrid::rd_verify_select_files
+- 2026-06-29T01:40:43+0200 [debug] real-debrid::rd_verify_poll - one piece
+- 2026-06-29T01:40:44+0200 [info] real-debrid::rd_delete_torrent
+- 2026-06-29T01:40:44+0200 [info] real-debrid::rd_slots_release
+- 2026-06-29T01:40:44+0200 [info] real-debrid::rd_verify_pack_skip - Wakanim (France) Archive [2022]
+- 2026-06-29T01:40:44+0200 [info] real-debrid::rd_verify_queue_done_item - Wakanim (France) Archive [2022]
+- 2026-06-29T01:40:44+0200 [info] real-debrid::rd_verify_added
+- 2026-06-29T01:40:44+0200 [info] real-debrid::rd_verify_added
+- 2026-06-29T01:40:44+0200 [info] real-debrid::rd_verify_added
+- 2026-06-29T01:40:45+0200 [info] real-debrid::rd_delete_torrent
+- 2026-06-29T01:40:45+0200 [info] real-debrid::rd_slots_release
+- 2026-06-29T01:40:45+0200 [info] real-debrid::rd_verify_pack_skip - Linger babe
+- 2026-06-29T01:40:45+0200 [info] real-debrid::rd_verify_queue_done_item - Linger babe
+- 2026-06-29T01:40:45+0200 [info] real-debrid::rd_verify_added
+- 2026-06-29T01:40:45+0200 [debug] real-debrid::rd_verify_poll - One Piece Collection [EP 1-929   14 Movs   3 OVAs  15 TVSPs]
+- 2026-06-29T01:40:45+0200 [info] real-debrid::rd_verify_added
+- 2026-06-29T01:40:46+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-29T01:40:46+0200 [info] real-debrid::rd_delete_torrent
+- 2026-06-29T01:40:46+0200 [info] real-debrid::rd_slots_release
+- 2026-06-29T01:40:46+0200 [info] real-debrid::rd_verify_pack_skip - 女子校生合集
+- 2026-06-29T01:40:46+0200 [info] real-debrid::rd_verify_queue_done_item - 女子校生合集
+- 2026-06-29T01:40:46+0200 [info] real-debrid::rd_delete_torrent
+- 2026-06-29T01:40:46+0200 [info] real-debrid::rd_slots_release
+- 2026-06-29T01:40:46+0200 [info] real-debrid::rd_verify_pack_skip - Solsidan
+- 2026-06-29T01:40:46+0200 [info] real-debrid::rd_verify_queue_done_item - Solsidan
+- 2026-06-29T01:40:46+0200 [info] real-debrid::rd_delete_torrent
+- 2026-06-29T01:40:46+0200 [info] real-debrid::rd_slots_release
+- 2026-06-29T01:40:46+0200 [info] real-debrid::rd_verify_pack_skip - 1-30
+- 2026-06-29T01:40:46+0200 [info] real-debrid::rd_verify_queue_done_item - 1-30
+- 2026-06-29T01:40:47+0200 [info] real-debrid::rd_verify_select_files
+- 2026-06-29T01:40:47+0200 [info] real-debrid::rd_delete_torrent
+- 2026-06-29T01:40:47+0200 [info] real-debrid::rd_slots_release
+- 2026-06-29T01:40:47+0200 [info] real-debrid::rd_verify_pack_skip - Andra.Avenyn
+- 2026-06-29T01:40:47+0200 [info] real-debrid::rd_verify_queue_done_item - Andra.Avenyn
+- 2026-06-29T01:40:47+0200 [warn] real-debrid::rd_api_http_error - infringing_file
+- 2026-06-29T01:40:47+0200 [warn] real-debrid::rd_call_terminal_error - infringing_file
+- 2026-06-29T01:40:47+0200 [warn] real-debrid::rd_verify_infringing - The.Big.Bang.Theory.S09.1080p.BluRay.x264-SHORTBREHD
+- 2026-06-29T01:40:47+0200 [info] real-debrid::rd_verify_queue_done_item - The.Big.Bang.Theory.S09.1080p.BluRay.x264-SHORTBREHD
+- 2026-06-29T01:40:47+0200 [debug] real-debrid::rd_verify_poll - Bleach
+- 2026-06-29T01:40:47+0200 [debug] real-debrid::rd_verify_poll - 10-Babes
+- 2026-06-29T01:40:48+0200 [warn] real-debrid::rd_api_http_error - too_many_requests
+- 2026-06-29T01:40:48+0200 [warn] real-debrid::rd_rate_429_cooldown
+- 2026-06-29T01:40:48+0200 [info] real-debrid::rd_delete_torrent
+- 2026-06-29T01:40:48+0200 [info] real-debrid::rd_slots_release
+- 2026-06-29T01:40:48+0200 [info] real-debrid::rd_verify_pack_skip - upate
+- 2026-06-29T01:40:48+0200 [info] real-debrid::rd_verify_queue_done_item - upate
+- 2026-06-29T01:40:48+0200 [info] real-debrid::rd_verify_added
+- 2026-06-29T01:40:48+0200 [info] real-debrid::rd_verify_added
+- 2026-06-29T01:40:49+0200 [warn] real-debrid::rd_call_retry_429 - Real-Debrid HTTP 429: [34 too_many_requests] {"error": "too_many_requests", "error_code": 34, "src": "front-2"}
+- 2026-06-29T01:40:51+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-29T01:40:56+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-29T01:41:01+0200 [info] real-debrid::rd_delete_torrent
+- 2026-06-29T01:41:01+0200 [info] real-debrid::rd_delete_torrent
+- 2026-06-29T01:41:01+0200 [info] real-debrid::rd_slots_release
+- 2026-06-29T01:41:01+0200 [info] real-debrid::rd_slots_release
+- 2026-06-29T01:41:01+0200 [info] real-debrid::rd_verify_pack_skip - 冬儿8月28号
+- 2026-06-29T01:41:01+0200 [info] real-debrid::rd_verify_queue_done_item - Sandra.Bullock.MOViE.PACK.1080p.BluRay.x264-IPT
+- 2026-06-29T01:41:01+0200 [info] real-debrid::rd_verify_queue_done_item - 冬儿8月28号
+- 2026-06-29T01:41:01+0200 [debug] real-debrid::rd_verify_post_select_poll - NARUTO
+- 2026-06-29T01:41:01+0200 [debug] real-debrid::rd_verify_post_select_poll - 艾伦 10月13-19日
+- 2026-06-29T01:41:01+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-29T01:41:01+0200 [warn] real-debrid::rd_api_http_error - infringing_file
+- 2026-06-29T01:41:01+0200 [warn] real-debrid::rd_call_terminal_error - infringing_file
+- 2026-06-29T01:41:01+0200 [warn] real-debrid::rd_verify_infringing - The Office US (2005) Season 1-9 S01-S09 [Etcohod]
+- 2026-06-29T01:41:01+0200 [info] real-debrid::rd_verify_queue_done_item - The Office US (2005) Season 1-9 S01-S09 [Etcohod]
+- 2026-06-29T01:41:01+0200 [warn] real-debrid::rd_api_http_error - infringing_file
+- 2026-06-29T01:41:01+0200 [warn] real-debrid::rd_api_http_error - too_many_requests
+- 2026-06-29T01:41:01+0200 [warn] real-debrid::rd_rate_429_cooldown
+- 2026-06-29T01:41:01+0200 [warn] real-debrid::rd_call_terminal_error - infringing_file
+- 2026-06-29T01:41:01+0200 [warn] real-debrid::rd_verify_infringing - 保宇  9月2日-8日
+- 2026-06-29T01:41:01+0200 [info] real-debrid::rd_verify_queue_done_item - 保宇  9月2日-8日
+- 2026-06-29T01:41:01+0200 [info] real-debrid::rd_delete_torrent
+- 2026-06-29T01:41:01+0200 [info] real-debrid::rd_slots_release
+- 2026-06-29T01:41:01+0200 [info] real-debrid::rd_verify_pack_skip - [GloryholeSwallow.com]
+- 2026-06-29T01:41:01+0200 [info] real-debrid::rd_verify_queue_done_item - [GloryholeSwallow.com]
+- 2026-06-29T01:41:02+0200 [warn] real-debrid::rd_call_retry_429 - Real-Debrid HTTP 429: [34 too_many_requests] {"error": "too_many_requests", "error_code": 34, "src": "front-2"}
+- 2026-06-29T01:41:07+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-29T01:41:13+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-29T01:41:14+0200 [warn] real-debrid::rd_api_http_error - too_many_requests
+- 2026-06-29T01:41:14+0200 [warn] real-debrid::rd_rate_429_cooldown
+- 2026-06-29T01:41:14+0200 [info] real-debrid::rd_delete_torrent
+- 2026-06-29T01:41:14+0200 [info] real-debrid::rd_delete_torrent
+- 2026-06-29T01:41:14+0200 [info] real-debrid::rd_slots_release
+- 2026-06-29T01:41:14+0200 [info] real-debrid::rd_slots_release
+- 2026-06-29T01:41:14+0200 [info] real-debrid::rd_verify_pack_skip - One Piece Collection [EP 1-929   14 Movs   3 OVAs  15 TVSPs]
+- 2026-06-29T01:41:14+0200 [info] real-debrid::rd_verify_pack_skip - regshow
+- 2026-06-29T01:41:14+0200 [info] real-debrid::rd_verify_queue_done_item - One Piece Collection [EP 1-929   14 Movs   3 OVAs  15 TVSPs]
+- 2026-06-29T01:41:14+0200 [info] real-debrid::rd_verify_queue_done_item - regshow
+- 2026-06-29T01:41:14+0200 [debug] real-debrid::rd_verify_post_select_poll - 海贼王-One Piece
+- 2026-06-29T01:41:15+0200 [warn] real-debrid::rd_call_retry_429 - Real-Debrid HTTP 429: [34 too_many_requests] {"error": "too_many_requests", "error_code": 34, "src": "front-1"}
+- 2026-06-29T01:41:19+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-29T01:41:24+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-29T01:41:26+0200 [debug] real-debrid::rd_verify_poll - That.70s.Show.S01.1080p.BluRay.x264-FilmHD
+- 2026-06-29T01:41:26+0200 [info] real-debrid::rd_delete_torrent
+- 2026-06-29T01:41:26+0200 [info] real-debrid::rd_slots_release
+- 2026-06-29T01:41:26+0200 [info] real-debrid::rd_verify_pack_skip - Kallenz
+- 2026-06-29T01:41:26+0200 [info] real-debrid::rd_verify_queue_done_item - Kallenz
+- 2026-06-29T01:41:26+0200 [info] real-debrid::rd_verify_added
+- 2026-06-29T01:41:26+0200 [debug] real-debrid::rd_verify_poll - 冬儿4-5
+- 2026-06-29T01:41:27+0200 [debug] real-debrid::rd_verify_poll - Smileys.People.S01E01-06.1080p.BluRay.x264-BRMP
+- 2026-06-29T01:41:27+0200 [info] real-debrid::rd_delete_torrent
+- 2026-06-29T01:41:27+0200 [info] real-debrid::rd_slots_release
+- 2026-06-29T01:41:27+0200 [info] real-debrid::rd_verify_not_instant - 9月22号
+- 2026-06-29T01:41:27+0200 [info] real-debrid::rd_verify_queue_done_item - 9月22号
+- 2026-06-29T01:41:27+0200 [debug] real-debrid::rd_verify_poll - The.Office.US.S01-S09.1080p.BluRay.x265-RBG
+- 2026-06-29T01:41:27+0200 [info] real-debrid::rd_verify_select_files
+- 2026-06-29T01:41:28+0200 [info] real-debrid::rd_delete_torrent
+- 2026-06-29T01:41:28+0200 [info] real-debrid::rd_slots_release
+- 2026-06-29T01:41:28+0200 [info] real-debrid::rd_verify_queue_done_item - Smileys.People.S01E01-06.1080p.BluRay.x264-BRMP
+- 2026-06-29T01:41:28+0200 [warn] real-debrid::rd_api_http_error - infringing_file
+- 2026-06-29T01:41:28+0200 [warn] real-debrid::rd_call_terminal_error - infringing_file
+- 2026-06-29T01:41:28+0200 [warn] real-debrid::rd_verify_infringing - Friends.COMPLETE.S01-S10.iNTERNAL.MULTi.1080p.WEB.x264-N3TFL1X
+- 2026-06-29T01:41:28+0200 [info] real-debrid::rd_verify_queue_done_item - Friends.COMPLETE.S01-S10.iNTERNAL.MULTi.1080p.WEB.x264-N3TFL1X
+- 2026-06-29T01:41:28+0200 [info] real-debrid::rd_delete_torrent
+- 2026-06-29T01:41:28+0200 [info] real-debrid::rd_delete_torrent
+- 2026-06-29T01:41:28+0200 [info] real-debrid::rd_slots_release
+- 2026-06-29T01:41:28+0200 [info] real-debrid::rd_slots_release
+- 2026-06-29T01:41:28+0200 [info] real-debrid::rd_verify_pack_skip - 10-Babes
+- 2026-06-29T01:41:28+0200 [info] real-debrid::rd_verify_pack_skip - 4号和6号
+- 2026-06-29T01:41:28+0200 [info] real-debrid::rd_verify_queue_done_item - 10-Babes
+- 2026-06-29T01:41:28+0200 [info] real-debrid::rd_verify_queue_done_item - 4号和6号
+- 2026-06-29T01:41:29+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-29T01:41:29+0200 [warn] real-debrid::rd_api_http_error - too_many_requests
+- 2026-06-29T01:41:29+0200 [warn] real-debrid::rd_rate_429_cooldown
+- 2026-06-29T01:41:29+0200 [info] real-debrid::rd_delete_torrent
+- 2026-06-29T01:41:29+0200 [info] real-debrid::rd_slots_release
+- 2026-06-29T01:41:29+0200 [info] real-debrid::rd_verify_queue_done_item - 艾伦 7月压制
+- 2026-06-29T01:41:29+0200 [info] real-debrid::rd_delete_torrent
+- 2026-06-29T01:41:29+0200 [info] real-debrid::rd_slots_release
+- 2026-06-29T01:41:29+0200 [info] real-debrid::rd_verify_pack_skip - The.Office.US.S01-S09.1080p.BluRay.x265-RBG
+- 2026-06-29T01:41:29+0200 [info] real-debrid::rd_verify_queue_done_item - The.Office.US.S01-S09.1080p.BluRay.x265-RBG
+- 2026-06-29T01:41:29+0200 [debug] real-debrid::rd_verify_poll - 保宇  7月17号-22号
+- 2026-06-29T01:41:30+0200 [warn] real-debrid::rd_call_retry_429 - Real-Debrid HTTP 429: [34 too_many_requests] {"error": "too_many_requests", "error_code": 34, "src": "front-2"}
+- 2026-06-29T01:41:34+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-29T01:41:39+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-29T01:41:41+0200 [debug] real-debrid::rd_verify_poll - Macken.Roys.Och.Rogers.Bilservice.1986.Del.1-6.Remastered.SWEDISH.1080p.BluRay.x264.HQ-TUSAHD
+- 2026-06-29T01:41:41+0200 [info] real-debrid::rd_delete_torrent
+- 2026-06-29T01:41:41+0200 [info] real-debrid::rd_slots_release
+- 2026-06-29T01:41:41+0200 [info] real-debrid::rd_verify_not_instant - 艾伦 10月13-19日
+- 2026-06-29T01:41:41+0200 [info] real-debrid::rd_verify_queue_done_item - 艾伦 10月13-19日
+- 2026-06-29T01:41:42+0200 [debug] real-debrid::rd_verify_poll - 备份
+- 2026-06-29T01:41:42+0200 [debug] real-debrid::rd_verify_poll - Dragon Ball PL
+- 2026-06-29T01:41:42+0200 [info] real-debrid::rd_delete_torrent
+- 2026-06-29T01:41:42+0200 [info] real-debrid::rd_slots_release
+- 2026-06-29T01:41:42+0200 [info] real-debrid::rd_verify_not_instant - 海贼王-One Piece
+- 2026-06-29T01:41:42+0200 [info] real-debrid::rd_verify_queue_done_item - 海贼王-One Piece
+- 2026-06-29T01:41:42+0200 [debug] real-debrid::rd_verify_poll - South Park paka od Crosssiika
+- 2026-06-29T01:41:43+0200 [debug] real-debrid::rd_verify_post_select_poll - one piece
+- 2026-06-29T01:41:43+0200 [debug] real-debrid::rd_verify_poll - One Piece - Season 1-20
+- 2026-06-29T01:41:43+0200 [info] real-debrid::rd_delete_torrent
+- 2026-06-29T01:41:43+0200 [info] real-debrid::rd_slots_release
+- 2026-06-29T01:41:43+0200 [info] real-debrid::rd_verify_not_instant - one piece
+- 2026-06-29T01:41:43+0200 [info] real-debrid::rd_verify_queue_done_item - one piece
+- 2026-06-29T01:41:43+0200 [warn] real-debrid::rd_api_http_error - too_many_requests
+- 2026-06-29T01:41:43+0200 [warn] real-debrid::rd_rate_429_cooldown
+- 2026-06-29T01:41:43+0200 [info] real-debrid::rd_delete_torrent
+- 2026-06-29T01:41:43+0200 [info] real-debrid::rd_slots_release
+- 2026-06-29T01:41:43+0200 [info] real-debrid::rd_verify_queue_done_item - Dragon Ball
+- 2026-06-29T01:41:43+0200 [info] real-debrid::rd_delete_torrent
+- 2026-06-29T01:41:43+0200 [info] real-debrid::rd_slots_release
+- 2026-06-29T01:41:43+0200 [info] real-debrid::rd_verify_pack_skip - South Park paka od Crosssiika
+- 2026-06-29T01:41:43+0200 [info] real-debrid::rd_verify_queue_done_item - South Park paka od Crosssiika
+- 2026-06-29T01:41:44+0200 [warn] real-debrid::rd_call_retry_429 - Real-Debrid HTTP 429: [34 too_many_requests] {"error": "too_many_requests", "error_code": 34, "src": "front-1"}
+- 2026-06-29T01:41:44+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-29T01:41:50+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-29T01:41:56+0200 [info] real-debrid::rd_delete_torrent
+- 2026-06-29T01:41:56+0200 [info] real-debrid::rd_slots_release
+- 2026-06-29T01:41:56+0200 [info] real-debrid::rd_verify_not_instant - NARUTO
+- 2026-06-29T01:41:56+0200 [info] real-debrid::rd_verify_queue_done_item - NARUTO
+- 2026-06-29T01:41:56+0200 [debug] real-debrid::rd_verify_poll - The.Pacific.1080p.BluRay.x264-WAT
+- 2026-06-29T01:41:56+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-29T01:41:56+0200 [info] real-debrid::rd_verify_select_files
+- 2026-06-29T01:41:56+0200 [info] real-debrid::rd_verify_select_files
+- 2026-06-29T01:41:57+0200 [info] real-debrid::rd_delete_torrent
+- 2026-06-29T01:41:57+0200 [info] real-debrid::rd_delete_torrent
+- 2026-06-29T01:41:57+0200 [info] real-debrid::rd_slots_release
+- 2026-06-29T01:41:57+0200 [info] real-debrid::rd_slots_release
+- 2026-06-29T01:41:57+0200 [info] real-debrid::rd_verify_queue_done_item - The.Pacific.1080p.BluRay.x264-WAT
+- 2026-06-29T01:41:57+0200 [info] real-debrid::rd_verify_queue_done_item - Macken.Roys.Och.Rogers.Bilservice.1986.Del.1-6.Remastered.SWEDISH.1080p.BluRay.x264.HQ-TUSAHD
+- 2026-06-29T01:41:57+0200 [info] real-debrid::rd_verify_select_files
+- 2026-06-29T01:41:57+0200 [debug] real-debrid::rd_verify_post_select_poll - One Piece - Season 1-20
+- 2026-06-29T01:41:58+0200 [info] real-debrid::rd_delete_torrent
+- 2026-06-29T01:41:58+0200 [info] real-debrid::rd_slots_release
+- 2026-06-29T01:41:58+0200 [info] real-debrid::rd_delete_torrent
+- 2026-06-29T01:41:58+0200 [info] real-debrid::rd_delete_torrent
+- 2026-06-29T01:41:58+0200 [info] real-debrid::rd_verify_pack_skip - 保宇  7月17号-22号
+- 2026-06-29T01:41:58+0200 [info] real-debrid::rd_slots_release
+- 2026-06-29T01:41:58+0200 [info] real-debrid::rd_slots_release
+- 2026-06-29T01:41:58+0200 [info] real-debrid::rd_verify_queue_done_item - 保宇  7月17号-22号
+- 2026-06-29T01:41:58+0200 [info] real-debrid::rd_verify_not_instant - One Piece - Season 1-20
+- 2026-06-29T01:41:58+0200 [info] real-debrid::rd_verify_queue_done_item - That.70s.Show.S01.1080p.BluRay.x264-FilmHD
+- 2026-06-29T01:41:58+0200 [info] real-debrid::rd_verify_queue_done_item - One Piece - Season 1-20
+- 2026-06-29T01:41:58+0200 [info] real-debrid::rd_verify_select_files
+- 2026-06-29T01:41:59+0200 [debug] real-debrid::rd_verify_post_select_poll - Bleach
+- 2026-06-29T01:41:59+0200 [info] real-debrid::rd_verify_select_files
+- 2026-06-29T01:41:59+0200 [debug] real-debrid::rd_verify_post_select_poll - 冬儿4-5
+- 2026-06-29T01:41:59+0200 [debug] real-debrid::rd_verify_post_select_poll - Dragon Ball PL
+- 2026-06-29T01:42:00+0200 [info] real-debrid::rd_delete_torrent
+- 2026-06-29T01:42:00+0200 [info] real-debrid::rd_slots_release
+- 2026-06-29T01:42:00+0200 [info] real-debrid::rd_delete_torrent
+- 2026-06-29T01:42:00+0200 [info] real-debrid::rd_verify_not_instant - Dragon Ball PL
+- 2026-06-29T01:42:00+0200 [info] real-debrid::rd_slots_release
+- 2026-06-29T01:42:00+0200 [info] real-debrid::rd_verify_queue_done_item - Dragon Ball PL
+- 2026-06-29T01:42:00+0200 [info] real-debrid::rd_verify_not_instant - Bleach
+- 2026-06-29T01:42:00+0200 [info] real-debrid::rd_verify_queue_done_item - Bleach
+- 2026-06-29T01:42:00+0200 [debug] real-debrid::rd_verify_post_select_poll - 备份
+- 2026-06-29T01:42:00+0200 [debug] real-debrid::rd_verify_poll - 11-16
+- 2026-06-29T01:42:01+0200 [info] real-debrid::rd_delete_torrent
+- 2026-06-29T01:42:01+0200 [info] real-debrid::rd_slots_release
+- 2026-06-29T01:42:01+0200 [info] real-debrid::rd_verify_not_instant - 冬儿4-5
+- 2026-06-29T01:42:01+0200 [info] real-debrid::rd_verify_queue_done_item - 冬儿4-5
+- 2026-06-29T01:42:01+0200 [info] real-debrid::rd_delete_torrent
+- 2026-06-29T01:42:01+0200 [info] real-debrid::rd_delete_torrent
+- 2026-06-29T01:42:01+0200 [info] real-debrid::rd_slots_release
+- 2026-06-29T01:42:01+0200 [info] real-debrid::rd_slots_release
+- 2026-06-29T01:42:01+0200 [info] real-debrid::rd_verify_pack_skip - 11-16
+- 2026-06-29T01:42:01+0200 [info] real-debrid::rd_verify_not_instant - 备份
+- 2026-06-29T01:42:01+0200 [info] real-debrid::rd_verify_queue_done_item - 11-16
+- 2026-06-29T01:42:01+0200 [info] real-debrid::rd_verify_queue_done_item - 备份
+- 2026-06-29T01:42:01+0200 [info] real-debrid::rd_verify_queue_end
+- 2026-06-29T01:42:01+0200 [info] real-debrid::rd_rate_summary
+- 2026-06-29T01:42:01+0200 [info] real-debrid::rd_cleanup_final_start
+- 2026-06-29T01:42:01+0200 [warn] real-debrid::rd_api_http_error - unknown_ressource
+- 2026-06-29T01:42:01+0200 [info] real-debrid::rd_cleanup_final_missing
+- 2026-06-29T01:42:01+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-29T01:42:02+0200 [warn] real-debrid::rd_api_http_error - unknown_ressource
+- 2026-06-29T01:42:02+0200 [info] real-debrid::rd_cleanup_final_missing
+- 2026-06-29T01:42:02+0200 [warn] real-debrid::rd_api_http_error - unknown_ressource
+- 2026-06-29T01:42:02+0200 [info] real-debrid::rd_cleanup_final_missing
+- 2026-06-29T01:42:02+0200 [warn] real-debrid::rd_api_http_error - unknown_ressource
+- 2026-06-29T01:42:02+0200 [info] real-debrid::rd_cleanup_final_missing
+- 2026-06-29T01:42:02+0200 [warn] real-debrid::rd_api_http_error - unknown_ressource
+- 2026-06-29T01:42:02+0200 [info] real-debrid::rd_cleanup_final_missing
+- 2026-06-29T01:42:03+0200 [warn] real-debrid::rd_api_http_error - unknown_ressource
+- 2026-06-29T01:42:03+0200 [info] real-debrid::rd_cleanup_final_missing
+- 2026-06-29T01:42:03+0200 [warn] real-debrid::rd_api_http_error - unknown_ressource
+- 2026-06-29T01:42:03+0200 [info] real-debrid::rd_cleanup_final_missing
+- 2026-06-29T01:42:03+0200 [warn] real-debrid::rd_api_http_error - unknown_ressource
+- 2026-06-29T01:42:03+0200 [info] real-debrid::rd_cleanup_final_missing
+- 2026-06-29T01:42:03+0200 [warn] real-debrid::rd_api_http_error - unknown_ressource
+- 2026-06-29T01:42:03+0200 [info] real-debrid::rd_cleanup_final_missing
+- 2026-06-29T01:42:04+0200 [warn] real-debrid::rd_api_http_error - unknown_ressource
+- 2026-06-29T01:42:04+0200 [info] real-debrid::rd_cleanup_final_missing
+- 2026-06-29T01:42:04+0200 [warn] real-debrid::rd_api_http_error - unknown_ressource
+- 2026-06-29T01:42:04+0200 [info] real-debrid::rd_cleanup_final_missing
+- 2026-06-29T01:42:04+0200 [warn] real-debrid::rd_api_http_error - unknown_ressource
+- 2026-06-29T01:42:04+0200 [info] real-debrid::rd_cleanup_final_missing
+- 2026-06-29T01:42:04+0200 [warn] real-debrid::rd_api_http_error - unknown_ressource
+- 2026-06-29T01:42:04+0200 [info] real-debrid::rd_cleanup_final_missing
+- 2026-06-29T01:42:05+0200 [warn] real-debrid::rd_api_http_error - unknown_ressource
+- 2026-06-29T01:42:05+0200 [info] real-debrid::rd_cleanup_final_missing
+- 2026-06-29T01:42:05+0200 [warn] real-debrid::rd_api_http_error - unknown_ressource
+- 2026-06-29T01:42:05+0200 [info] real-debrid::rd_cleanup_final_missing
+- 2026-06-29T01:42:05+0200 [warn] real-debrid::rd_api_http_error - unknown_ressource
+- 2026-06-29T01:42:05+0200 [info] real-debrid::rd_cleanup_final_missing
+- 2026-06-29T01:42:05+0200 [warn] real-debrid::rd_api_http_error - unknown_ressource
+- 2026-06-29T01:42:05+0200 [info] real-debrid::rd_cleanup_final_missing
+- 2026-06-29T01:42:06+0200 [warn] real-debrid::rd_api_http_error - unknown_ressource
+- 2026-06-29T01:42:06+0200 [info] real-debrid::rd_cleanup_final_missing
+- 2026-06-29T01:42:06+0200 [warn] real-debrid::rd_api_http_error - unknown_ressource
+- 2026-06-29T01:42:06+0200 [info] real-debrid::rd_cleanup_final_missing
+- 2026-06-29T01:42:06+0200 [warn] real-debrid::rd_api_http_error - unknown_ressource
+- 2026-06-29T01:42:06+0200 [info] real-debrid::rd_cleanup_final_missing
+- 2026-06-29T01:42:06+0200 [warn] real-debrid::rd_api_http_error - unknown_ressource
+- 2026-06-29T01:42:06+0200 [info] real-debrid::rd_cleanup_final_missing
+- 2026-06-29T01:42:06+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-29T01:42:07+0200 [warn] real-debrid::rd_api_http_error - unknown_ressource
+- 2026-06-29T01:42:07+0200 [info] real-debrid::rd_cleanup_final_missing
+- 2026-06-29T01:42:07+0200 [warn] real-debrid::rd_api_http_error - unknown_ressource
+- 2026-06-29T01:42:07+0200 [info] real-debrid::rd_cleanup_final_missing
+- 2026-06-29T01:42:07+0200 [warn] real-debrid::rd_api_http_error - unknown_ressource
+- 2026-06-29T01:42:07+0200 [info] real-debrid::rd_cleanup_final_missing
+- 2026-06-29T01:42:07+0200 [warn] real-debrid::rd_api_http_error - unknown_ressource
+- 2026-06-29T01:42:07+0200 [info] real-debrid::rd_cleanup_final_missing
+- 2026-06-29T01:42:08+0200 [warn] real-debrid::rd_api_http_error - unknown_ressource
+- 2026-06-29T01:42:08+0200 [info] real-debrid::rd_cleanup_final_missing
+- 2026-06-29T01:42:08+0200 [warn] real-debrid::rd_api_http_error - unknown_ressource
+- 2026-06-29T01:42:08+0200 [info] real-debrid::rd_cleanup_final_missing
+- 2026-06-29T01:42:08+0200 [warn] real-debrid::rd_api_http_error - unknown_ressource
+- 2026-06-29T01:42:08+0200 [info] real-debrid::rd_cleanup_final_missing
+- 2026-06-29T01:42:08+0200 [warn] real-debrid::rd_api_http_error - unknown_ressource
+- 2026-06-29T01:42:08+0200 [info] real-debrid::rd_cleanup_final_missing
+- 2026-06-29T01:42:09+0200 [warn] real-debrid::rd_api_http_error - unknown_ressource
+- 2026-06-29T01:42:09+0200 [info] real-debrid::rd_cleanup_final_missing
+- 2026-06-29T01:42:09+0200 [warn] real-debrid::rd_api_http_error - unknown_ressource
+- 2026-06-29T01:42:09+0200 [info] real-debrid::rd_cleanup_final_missing
+- 2026-06-29T01:42:09+0200 [warn] real-debrid::rd_api_http_error - unknown_ressource
+- 2026-06-29T01:42:09+0200 [info] real-debrid::rd_cleanup_final_missing
+- 2026-06-29T01:42:09+0200 [warn] real-debrid::rd_api_http_error - unknown_ressource
+- 2026-06-29T01:42:09+0200 [info] real-debrid::rd_cleanup_final_missing
+- 2026-06-29T01:42:10+0200 [warn] real-debrid::rd_api_http_error - unknown_ressource
+- 2026-06-29T01:42:10+0200 [info] real-debrid::rd_cleanup_final_missing
+- 2026-06-29T01:42:10+0200 [warn] real-debrid::rd_api_http_error - unknown_ressource
+- 2026-06-29T01:42:10+0200 [info] real-debrid::rd_cleanup_final_missing
+- 2026-06-29T01:42:10+0200 [warn] real-debrid::rd_api_http_error - unknown_ressource
+- 2026-06-29T01:42:10+0200 [info] real-debrid::rd_cleanup_final_missing
+- 2026-06-29T01:42:10+0200 [warn] real-debrid::rd_api_http_error - unknown_ressource
+- 2026-06-29T01:42:10+0200 [info] real-debrid::rd_cleanup_final_missing
+- 2026-06-29T01:42:11+0200 [warn] real-debrid::rd_api_http_error - unknown_ressource
+- 2026-06-29T01:42:11+0200 [info] real-debrid::rd_cleanup_final_missing
+- 2026-06-29T01:42:11+0200 [warn] real-debrid::rd_api_http_error - unknown_ressource
+- 2026-06-29T01:42:11+0200 [info] real-debrid::rd_cleanup_final_missing
+- 2026-06-29T01:42:11+0200 [warn] real-debrid::rd_api_http_error - unknown_ressource
+- 2026-06-29T01:42:11+0200 [info] real-debrid::rd_cleanup_final_missing
+- 2026-06-29T01:42:11+0200 [warn] real-debrid::rd_api_http_error - unknown_ressource
+- 2026-06-29T01:42:11+0200 [info] real-debrid::rd_cleanup_final_missing
+- 2026-06-29T01:42:11+0200 [debug] real-debrid::rd_rate_wait
+- 2026-06-29T01:42:12+0200 [warn] real-debrid::rd_api_http_error - unknown_ressource
+- 2026-06-29T01:42:12+0200 [info] real-debrid::rd_cleanup_final_missing
+- 2026-06-29T01:42:12+0200 [warn] real-debrid::rd_api_http_error - unknown_ressource
+- 2026-06-29T01:42:12+0200 [info] real-debrid::rd_cleanup_final_missing
+- 2026-06-29T01:42:12+0200 [info] real-debrid::rd_cleanup_final_end
+- 2026-06-29T01:42:12+0200 [info] real-debrid::rd_rate_summary
+- 2026-06-29T01:42:12+0200 [warn] real-debrid::rd_verify_batch_end
+- 2026-06-29T01:42:12+0200 [warn] real-debrid::rd_check_summary
+- 2026-06-29T01:42:12+0200 [info] qbittorrent::qbt_probe_skipped - disabled
+- 2026-06-29T01:42:12+0200 [info] motor::prepare_qbit_extras
+- 2026-06-29T01:42:12+0200 [info] motor::prepare_rd_temp_errors
+- 2026-06-29T01:42:12+0200 [info] motor::prepare_after_working_filter
+- 2026-06-29T01:42:12+0200 [info] search::export_results
+- 2026-06-29T01:42:12+0200 [info] search::export_results
+- 2026-06-29T01:42:12+0200 [info] search::editor_clean_search_rd_cleanup
+- 2026-06-29T01:42:12+0200 [info] search::editor_clean_search_end
+- 2026-06-29T01:42:12+02:00 [info] web::JOB_FINISHED_OK

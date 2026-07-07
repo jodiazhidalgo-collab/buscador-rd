@@ -1,0 +1,51 @@
+
+--- ARRANQUE MOTOR BTDIGG RD ---
+BTDigg + RD - opción 1 limpia
+Búsqueda: John Wick 2014
+Páginas: 1
+Modo: 0
+
+
+Navegador automático página 1 (1/1):
+  https://en.btdig.com/search?q=john%20wick%202014&p=0
+  BTDigg Chrome TLS: 10 magnets encontrados
+
+Encontrados 10 resultados brutos. Filtrando...
+
+Aspiradora terminada: 10 resultados únicos encontrados.
+Modo sin filtro: no descarto por idioma/calidad y no ordeno por calidad/tamano; solo penalizo basura.
+Criba búsqueda seria: 10/10 coinciden en el mismo título/archivo.
+
+Comprobando token Real-Debrid...
+Token Real-Debrid OK: exmelenas
+
+Consultando Real-Debrid cache/instantáneo...
+
+Aviso: Real-Debrid tiene desactivada instantAvailability.
+Paso serio: verifico de verdad con addMagnet los 10 mejores candidatos.
+  Verificando 1/10: John.Wick.2014.RERIP.720p.BluRay.x264-SPARKS
+  Verificando 7/10: John Wick 2014 BluRay 720p DTS x264-MgB [ETRG].mkv
+  Verificando 5/10: #MKV#.John.Wick.2014.2160p.BluRay.HEVC.TrueHD.7.1.Atmos-HDRINVASION
+  Verificando 6/10: John.Wick.2014.RERIP.BDRip.x264-SPARKS
+  Verificando 2/10: John.Wick.2014.720p.BluRay.x264-SPARKS
+  Verificando 9/10: John Wick 2014 BluRay 1080p AVC DTS-HD MA 7.1 x264-MgB [ETRG].mkv
+  Verificando 3/10: John.Wick.2014.MULTi.1080p.BluRay.x264-LOST
+  RD OK 10/10: John Wick 2014 BluRay 1080p DTS AC3 x264-MgB.mkv
+  Verificando 4/10: John.Wick.2014.1080p.BluRay.x264-SPARKS
+  Verificando 8/10: John Wick 2014 BluRay 720p DTS x264-MgB [ETRG].mkv
+
+Resumen RD: NO_INSTANT=3 | RD_FAIL=6 | RD_OK=1
+Resultados válidos para JDownloader/RD: 1/10
+Lista extra qBittorrent vivos reales: 0
+
+========================================================================
+ TOP LIMPIO
+========================================================================
+[01] RD:OK           SCORE:   0 SIZE:   7.9 GB  John Wick 2014 BluRay 1080p DTS AC3 x264-MgB  ==>  /John Wick 2014 BluRay 1080p DTS AC3 x264-Mg
+     archivo RD: /John Wick 2014 BluRay 1080p DTS AC3 x264-MgB.mkv (7.9 GB)
+========================================================================
+Elige: 1 | 1,4,7 | A=todos los válidos RD | T=todos mostrados RD/qBit | S=salir
+Resultados guardados para el Editor: 1
+Real-Debrid temporal limpio: 1 id(s) revisado(s).
+
+RESULTADOS LISTOS. Escribe abajo 1, 1,3, A, T o S y pulsa Enviar.

@@ -1,0 +1,457 @@
+- 2026-07-07T04:54:22+02:00 [info] web::JOB_STARTED
+- 2026-07-07T04:54:22+02:00 [info] general::CONFIG_SNAPSHOT
+- 2026-07-07T04:54:22+02:00 [info] web::COMMAND_PREPARED
+- 2026-07-07T04:54:22+02:00 [info] web::PROCESS_STARTED
+- 2026-07-07T04:54:22+0200 [info] search::editor_clean_search_start
+- 2026-07-07T04:54:22+0200 [info] btdigg::browser_auto_search_start_dom
+- 2026-07-07T04:54:24+0200 [info] btdigg::extract_magnets
+- 2026-07-07T04:54:24+0200 [info] btdigg::btdigg_curl_cffi_fetch
+- 2026-07-07T04:54:26+0200 [info] btdigg::browser_auto_search_end_dom
+- 2026-07-07T04:54:26+0200 [info] motor::prepare_results_start
+- 2026-07-07T04:54:26+0200 [info] motor::prepare_after_scoring
+- 2026-07-07T04:54:26+0200 [info] motor::prepare_after_filter
+- 2026-07-07T04:54:26+0200 [info] motor::prepare_after_query_prefilter
+- 2026-07-07T04:54:26+0200 [info] real-debrid::rd_account_check_ok
+- 2026-07-07T04:54:26+0200 [info] real-debrid::rd_check_start
+- 2026-07-07T04:54:26+0200 [info] real-debrid::rd_api_http_error - disabled_endpoint
+- 2026-07-07T04:54:26+0200 [info] real-debrid::rd_cache_api_disabled_cached_set - Real-Debrid HTTP 403: [37 disabled_endpoint] {
+	"error": "disabled_endpoint",
+	"error_code": 37
+}
+- 2026-07-07T04:54:26+0200 [info] real-debrid::rd_cache_api_disabled - Real-Debrid HTTP 403: [37 disabled_endpoint] {
+	"error": "disabled_endpoint",
+	"error_code": 37
+}
+- 2026-07-07T04:54:26+0200 [info] real-debrid::rd_verify_batch_start
+- 2026-07-07T04:54:26+0200 [info] real-debrid::rd_slots_refresh
+- 2026-07-07T04:54:26+0200 [info] real-debrid::rd_active_count_before
+- 2026-07-07T04:54:26+0200 [info] real-debrid::rd_existing_preload_done
+- 2026-07-07T04:54:26+0200 [info] real-debrid::rd_verify_queue_start
+- 2026-07-07T04:54:26+0200 [info] real-debrid::rd_verify_queue_submit - John.Wick.2014.RERIP.720p.BluRay.x264-SPARKS
+- 2026-07-07T04:54:26+0200 [info] real-debrid::rd_verify_add_start - John.Wick.2014.RERIP.720p.BluRay.x264-SPARKS
+- 2026-07-07T04:54:26+0200 [info] real-debrid::rd_slots_reserve
+- 2026-07-07T04:54:26+0200 [info] real-debrid::rd_verify_queue_submit - John.Wick.2014.720p.BluRay.x264-SPARKS
+- 2026-07-07T04:54:26+0200 [info] real-debrid::rd_verify_add_start - John.Wick.2014.720p.BluRay.x264-SPARKS
+- 2026-07-07T04:54:26+0200 [debug] real-debrid::rd_rate_wait
+- 2026-07-07T04:54:26+0200 [info] real-debrid::rd_verify_queue_submit - John.Wick.2014.MULTi.1080p.BluRay.x264-LOST
+- 2026-07-07T04:54:26+0200 [info] real-debrid::rd_verify_queue_submit - John.Wick.2014.1080p.BluRay.x264-SPARKS
+- 2026-07-07T04:54:26+0200 [info] real-debrid::rd_slots_reserve
+- 2026-07-07T04:54:26+0200 [debug] real-debrid::rd_endpoint_pace_wait
+- 2026-07-07T04:54:26+0200 [info] real-debrid::rd_verify_add_start - John.Wick.2014.1080p.BluRay.x264-SPARKS
+- 2026-07-07T04:54:26+0200 [info] real-debrid::rd_slots_reserve
+- 2026-07-07T04:54:26+0200 [info] real-debrid::rd_verify_add_start - John.Wick.2014.MULTi.1080p.BluRay.x264-LOST
+- 2026-07-07T04:54:26+0200 [info] real-debrid::rd_slots_reserve
+- 2026-07-07T04:54:26+0200 [info] real-debrid::rd_verify_queue_submit - #MKV#.John.Wick.2014.2160p.BluRay.HEVC.TrueHD.7.1.Atmos-HDRINVASION
+- 2026-07-07T04:54:26+0200 [info] real-debrid::rd_verify_add_start - #MKV#.John.Wick.2014.2160p.BluRay.HEVC.TrueHD.7.1.Atmos-HDRINVASION
+- 2026-07-07T04:54:27+0200 [info] real-debrid::rd_verify_queue_submit - John.Wick.2014.RERIP.BDRip.x264-SPARKS
+- 2026-07-07T04:54:27+0200 [info] real-debrid::rd_verify_add_start - John.Wick.2014.RERIP.BDRip.x264-SPARKS
+- 2026-07-07T04:54:27+0200 [info] real-debrid::rd_slots_reserve
+- 2026-07-07T04:54:27+0200 [info] real-debrid::rd_verify_add_start - John Wick 2014 BluRay 720p DTS x264-MgB [ETRG]
+- 2026-07-07T04:54:27+0200 [info] real-debrid::rd_verify_queue_submit - John Wick 2014 BluRay 720p DTS x264-MgB [ETRG]
+- 2026-07-07T04:54:27+0200 [info] real-debrid::rd_slots_reserve
+- 2026-07-07T04:54:27+0200 [info] real-debrid::rd_verify_add_start - John Wick 2014 BluRay 720p DTS x264-MgB [ETRG]
+- 2026-07-07T04:54:27+0200 [info] real-debrid::rd_verify_queue_submit - John Wick 2014 BluRay 720p DTS x264-MgB [ETRG]
+- 2026-07-07T04:54:27+0200 [info] real-debrid::rd_slots_reserve
+- 2026-07-07T04:54:27+0200 [info] real-debrid::rd_verify_queue_submit - John Wick 2014 BluRay 1080p AVC DTS-HD MA 7.1 x264-MgB [ETRG]
+- 2026-07-07T04:54:27+0200 [info] real-debrid::rd_verify_add_start - John Wick 2014 BluRay 1080p AVC DTS-HD MA 7.1 x264-MgB [ETRG]
+- 2026-07-07T04:54:27+0200 [info] real-debrid::rd_slots_reserve
+- 2026-07-07T04:54:27+0200 [info] real-debrid::rd_verify_add_start - John Wick 2014 BluRay 1080p DTS AC3 x264-MgB
+- 2026-07-07T04:54:27+0200 [info] real-debrid::rd_verify_queue_submit - John Wick 2014 BluRay 1080p DTS AC3 x264-MgB
+- 2026-07-07T04:54:27+0200 [info] real-debrid::rd_slots_reserve
+- 2026-07-07T04:54:27+0200 [info] real-debrid::rd_slots_reserve
+- 2026-07-07T04:54:27+0200 [info] real-debrid::rd_api_http_error - infringing_file
+- 2026-07-07T04:54:27+0200 [info] real-debrid::rd_call_terminal_error - infringing_file
+- 2026-07-07T04:54:27+0200 [info] real-debrid::rd_verify_infringing - John.Wick.2014.RERIP.720p.BluRay.x264-SPARKS
+- 2026-07-07T04:54:27+0200 [info] real-debrid::rd_verify_queue_done_item - John.Wick.2014.RERIP.720p.BluRay.x264-SPARKS
+- 2026-07-07T04:54:28+0200 [info] real-debrid::rd_api_http_error - infringing_file
+- 2026-07-07T04:54:28+0200 [info] real-debrid::rd_call_terminal_error - infringing_file
+- 2026-07-07T04:54:28+0200 [info] real-debrid::rd_verify_infringing - John.Wick.2014.1080p.BluRay.x264-SPARKS
+- 2026-07-07T04:54:28+0200 [info] real-debrid::rd_verify_queue_done_item - John.Wick.2014.1080p.BluRay.x264-SPARKS
+- 2026-07-07T04:54:29+0200 [info] real-debrid::rd_verify_added
+- 2026-07-07T04:54:29+0200 [debug] real-debrid::rd_verify_poll - #MKV#.John.Wick.2014.2160p.BluRay.HEVC.TrueHD.7.1.Atmos-HDRINVASION
+- 2026-07-07T04:54:30+0200 [info] real-debrid::rd_delete_torrent
+- 2026-07-07T04:54:30+0200 [info] real-debrid::rd_slots_release
+- 2026-07-07T04:54:30+0200 [info] real-debrid::rd_verify_not_instant - #MKV#.John.Wick.2014.2160p.BluRay.HEVC.TrueHD.7.1.Atmos-HDRINVASION
+- 2026-07-07T04:54:30+0200 [info] real-debrid::rd_verify_queue_done_item - #MKV#.John.Wick.2014.2160p.BluRay.HEVC.TrueHD.7.1.Atmos-HDRINVASION
+- 2026-07-07T04:54:30+0200 [info] real-debrid::rd_api_http_error - infringing_file
+- 2026-07-07T04:54:30+0200 [info] real-debrid::rd_call_terminal_error - infringing_file
+- 2026-07-07T04:54:30+0200 [info] real-debrid::rd_verify_infringing - John.Wick.2014.MULTi.1080p.BluRay.x264-LOST
+- 2026-07-07T04:54:30+0200 [info] real-debrid::rd_verify_queue_done_item - John.Wick.2014.MULTi.1080p.BluRay.x264-LOST
+- 2026-07-07T04:54:31+0200 [info] real-debrid::rd_verify_added
+- 2026-07-07T04:54:31+0200 [debug] real-debrid::rd_endpoint_pace_wait
+- 2026-07-07T04:54:32+0200 [debug] real-debrid::rd_verify_poll - John Wick 2014 BluRay 720p DTS x264-MgB [ETRG]
+- 2026-07-07T04:54:32+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T04:54:32+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T04:54:32+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T04:54:32+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T04:54:32+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T04:54:32+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T04:54:32+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T04:54:32+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T04:54:32+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T04:54:32+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T04:54:32+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T04:54:32+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T04:54:32+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T04:54:32+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T04:54:32+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T04:54:32+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T04:54:32+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T04:54:32+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T04:54:32+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T04:54:32+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T04:54:32+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T04:54:32+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T04:54:32+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T04:54:32+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T04:54:32+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T04:54:32+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T04:54:32+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T04:54:32+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T04:54:32+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T04:54:32+0200 [info] real-debrid::rd_verify_select_files
+- 2026-07-07T04:54:33+0200 [debug] real-debrid::rd_verify_post_select_poll - John Wick 2014 BluRay 720p DTS x264-MgB [ETRG]
+- 2026-07-07T04:54:33+0200 [info] real-debrid::rd_fast_discard - error
+- 2026-07-07T04:54:33+0200 [info] real-debrid::rd_fast_discard_reason - error
+- 2026-07-07T04:54:33+0200 [info] real-debrid::rd_fast_discard_delete - error
+- 2026-07-07T04:54:33+0200 [info] real-debrid::rd_api_http_error - infringing_file
+- 2026-07-07T04:54:33+0200 [info] real-debrid::rd_call_terminal_error - infringing_file
+- 2026-07-07T04:54:33+0200 [info] real-debrid::rd_verify_infringing - John.Wick.2014.RERIP.BDRip.x264-SPARKS
+- 2026-07-07T04:54:33+0200 [info] real-debrid::rd_verify_queue_done_item - John.Wick.2014.RERIP.BDRip.x264-SPARKS
+- 2026-07-07T04:54:33+0200 [info] real-debrid::rd_delete_torrent
+- 2026-07-07T04:54:33+0200 [info] real-debrid::rd_slots_release
+- 2026-07-07T04:54:33+0200 [info] real-debrid::rd_verify_queue_done_item - John Wick 2014 BluRay 720p DTS x264-MgB [ETRG]
+- 2026-07-07T04:54:34+0200 [info] real-debrid::rd_verify_added
+- 2026-07-07T04:54:34+0200 [debug] real-debrid::rd_verify_poll - John Wick 2014 BluRay 720p DTS x264-MgB [ETRG]
+- 2026-07-07T04:54:34+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T04:54:34+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T04:54:34+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T04:54:34+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T04:54:34+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T04:54:34+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T04:54:34+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T04:54:34+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T04:54:34+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T04:54:34+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T04:54:34+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T04:54:34+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T04:54:34+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T04:54:34+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T04:54:34+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T04:54:34+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T04:54:34+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T04:54:34+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T04:54:34+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T04:54:34+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T04:54:34+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T04:54:34+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T04:54:34+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T04:54:34+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T04:54:34+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T04:54:34+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T04:54:34+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T04:54:35+0200 [info] real-debrid::rd_verify_select_files
+- 2026-07-07T04:54:35+0200 [info] real-debrid::rd_api_http_error - infringing_file
+- 2026-07-07T04:54:35+0200 [info] real-debrid::rd_call_terminal_error - infringing_file
+- 2026-07-07T04:54:35+0200 [info] real-debrid::rd_verify_infringing - John.Wick.2014.720p.BluRay.x264-SPARKS
+- 2026-07-07T04:54:35+0200 [info] real-debrid::rd_verify_queue_done_item - John.Wick.2014.720p.BluRay.x264-SPARKS
+- 2026-07-07T04:54:35+0200 [debug] real-debrid::rd_verify_post_select_poll - John Wick 2014 BluRay 720p DTS x264-MgB [ETRG]
+- 2026-07-07T04:54:35+0200 [info] real-debrid::rd_fast_discard - zero_progress_post_select
+- 2026-07-07T04:54:35+0200 [info] real-debrid::rd_fast_discard_reason - zero_progress_post_select
+- 2026-07-07T04:54:35+0200 [info] real-debrid::rd_fast_discard_delete - zero_progress_post_select
+- 2026-07-07T04:54:35+0200 [info] real-debrid::rd_zero_progress_fast_delete - John Wick 2014 BluRay 720p DTS x264-MgB [ETRG]
+- 2026-07-07T04:54:35+0200 [info] real-debrid::rd_delete_torrent
+- 2026-07-07T04:54:35+0200 [info] real-debrid::rd_slots_release
+- 2026-07-07T04:54:35+0200 [info] real-debrid::rd_verify_queue_done_item - John Wick 2014 BluRay 720p DTS x264-MgB [ETRG]
+- 2026-07-07T04:54:36+0200 [info] real-debrid::rd_verify_added
+- 2026-07-07T04:54:36+0200 [debug] real-debrid::rd_verify_poll - John Wick 2014 BluRay 1080p AVC DTS-HD MA 7.1 x264-MgB [ETRG]
+- 2026-07-07T04:54:36+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T04:54:36+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T04:54:36+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T04:54:36+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T04:54:36+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T04:54:36+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T04:54:36+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T04:54:36+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T04:54:36+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T04:54:36+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T04:54:36+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T04:54:36+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T04:54:36+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T04:54:36+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T04:54:36+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T04:54:36+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T04:54:36+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T04:54:36+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T04:54:36+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T04:54:36+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T04:54:36+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T04:54:36+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T04:54:36+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T04:54:36+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T04:54:36+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T04:54:36+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T04:54:36+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T04:54:37+0200 [info] real-debrid::rd_verify_select_files
+- 2026-07-07T04:54:37+0200 [debug] real-debrid::rd_endpoint_pace_wait
+- 2026-07-07T04:54:37+0200 [debug] real-debrid::rd_verify_post_select_poll - John Wick 2014 BluRay 1080p AVC DTS-HD MA 7.1 x264-MgB [ETRG]
+- 2026-07-07T04:54:37+0200 [info] real-debrid::rd_fast_discard - zero_progress_post_select
+- 2026-07-07T04:54:37+0200 [info] real-debrid::rd_fast_discard_reason - zero_progress_post_select
+- 2026-07-07T04:54:37+0200 [info] real-debrid::rd_fast_discard_delete - zero_progress_post_select
+- 2026-07-07T04:54:37+0200 [info] real-debrid::rd_zero_progress_fast_delete - John Wick 2014 BluRay 1080p AVC DTS-HD MA 7.1 x264-MgB [ETRG]
+- 2026-07-07T04:54:38+0200 [info] real-debrid::rd_verify_added
+- 2026-07-07T04:54:38+0200 [info] real-debrid::rd_delete_torrent
+- 2026-07-07T04:54:38+0200 [info] real-debrid::rd_slots_release
+- 2026-07-07T04:54:38+0200 [info] real-debrid::rd_verify_queue_done_item - John Wick 2014 BluRay 1080p AVC DTS-HD MA 7.1 x264-MgB [ETRG]
+- 2026-07-07T04:54:38+0200 [debug] real-debrid::rd_verify_poll - John Wick 2014 BluRay 1080p DTS AC3 x264-MgB
+- 2026-07-07T04:54:38+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T04:54:38+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T04:54:38+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T04:54:38+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T04:54:38+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T04:54:38+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T04:54:38+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T04:54:38+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T04:54:38+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T04:54:38+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T04:54:38+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T04:54:38+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T04:54:38+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T04:54:38+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T04:54:38+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T04:54:38+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T04:54:38+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T04:54:38+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T04:54:38+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T04:54:38+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T04:54:38+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T04:54:38+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T04:54:38+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T04:54:38+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T04:54:38+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T04:54:38+0200 [debug] real-debrid::rd_rate_wait
+- 2026-07-07T04:54:38+0200 [info] real-debrid::rd_verify_select_files
+- 2026-07-07T04:54:39+0200 [debug] real-debrid::rd_verify_post_select_poll - John Wick 2014 BluRay 1080p DTS AC3 x264-MgB
+- 2026-07-07T04:54:39+0200 [info] real-debrid::rd_verify_ok - John Wick 2014 BluRay 1080p DTS AC3 x264-MgB  ==>  /John Wick 2014 BluRay 1080p DTS AC3 x264-MgB.mkv
+- 2026-07-07T04:54:39+0200 [info] real-debrid::rd_verify_queue_done_item - John Wick 2014 BluRay 1080p DTS AC3 x264-MgB  ==>  /John Wick 2014 BluRay 1080p DTS AC3 x264-MgB.mkv
+- 2026-07-07T04:54:39+0200 [info] real-debrid::rd_verify_queue_end
+- 2026-07-07T04:54:39+0200 [info] real-debrid::rd_rate_summary
+- 2026-07-07T04:54:39+0200 [info] real-debrid::rd_endpoint_pacer_summary
+- 2026-07-07T04:54:39+0200 [info] real-debrid::rd_cleanup_final_start
+- 2026-07-07T04:54:39+0200 [info] real-debrid::rd_slots_refresh
+- 2026-07-07T04:54:39+0200 [info] real-debrid::rd_active_count_after
+- 2026-07-07T04:54:39+0200 [info] real-debrid::rd_cleanup_final_end
+- 2026-07-07T04:54:39+0200 [info] real-debrid::rd_rate_summary
+- 2026-07-07T04:54:39+0200 [info] real-debrid::rd_endpoint_pacer_summary
+- 2026-07-07T04:54:39+0200 [info] real-debrid::rd_verify_batch_end
+- 2026-07-07T04:54:39+0200 [info] real-debrid::rd_check_summary
+- 2026-07-07T04:54:39+0200 [info] qbittorrent::qbt_relevance_filter
+- 2026-07-07T04:54:39+0200 [info] qbittorrent::qbt_probe_batch_start
+- 2026-07-07T04:54:39+0200 [info] qbittorrent::qbt_login
+- 2026-07-07T04:54:39+0200 [info] qbittorrent::qbt_login
+- 2026-07-07T04:54:39+0200 [info] qbittorrent::qbt_login
+- 2026-07-07T04:54:39+0200 [info] qbittorrent::qbt_login
+- 2026-07-07T04:54:39+0200 [info] qbittorrent::qbt_login
+- 2026-07-07T04:54:39+0200 [info] qbittorrent::qbt_probe_add - John.Wick.2014.720p.BluRay.x264-SPARKS
+- 2026-07-07T04:54:39+0200 [info] qbittorrent::qbt_probe_add - John.Wick.2014.RERIP.720p.BluRay.x264-SPARKS
+- 2026-07-07T04:54:39+0200 [info] qbittorrent::qbt_probe_add - John.Wick.2014.1080p.BluRay.x264-SPARKS
+- 2026-07-07T04:54:39+0200 [info] qbittorrent::qbt_probe_add - John.Wick.2014.MULTi.1080p.BluRay.x264-LOST
+- 2026-07-07T04:54:39+0200 [info] qbittorrent::qbt_probe_add - #MKV#.John.Wick.2014.2160p.BluRay.HEVC.TrueHD.7.1.Atmos-HDRINVASION
+- 2026-07-07T04:54:41+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T04:54:41+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T04:54:41+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T04:54:41+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T04:54:42+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T04:54:43+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T04:54:43+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T04:54:43+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T04:54:43+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T04:54:44+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T04:54:45+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T04:54:45+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T04:54:46+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T04:54:46+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T04:54:46+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T04:54:47+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T04:54:48+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T04:54:48+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T04:54:48+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T04:54:48+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T04:54:50+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T04:54:50+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T04:54:50+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T04:54:50+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T04:54:50+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T04:54:52+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T04:54:52+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T04:54:52+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T04:54:52+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T04:54:52+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T04:54:54+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T04:54:54+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T04:54:54+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T04:54:54+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T04:54:54+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T04:54:56+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T04:54:56+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T04:54:56+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T04:54:56+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T04:54:56+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T04:54:58+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T04:54:58+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T04:54:58+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T04:54:58+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T04:54:58+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T04:55:00+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T04:55:00+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T04:55:00+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T04:55:00+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T04:55:00+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T04:55:02+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T04:55:02+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T04:55:02+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T04:55:02+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T04:55:02+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T04:55:04+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T04:55:04+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T04:55:04+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T04:55:04+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T04:55:04+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T04:55:06+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T04:55:06+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T04:55:06+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T04:55:06+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T04:55:06+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T04:55:08+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T04:55:08+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T04:55:08+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T04:55:08+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T04:55:08+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T04:55:10+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T04:55:10+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T04:55:10+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T04:55:10+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T04:55:10+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T04:55:12+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T04:55:12+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T04:55:12+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T04:55:12+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T04:55:12+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T04:55:14+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T04:55:14+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T04:55:14+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T04:55:14+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T04:55:14+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T04:55:16+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T04:55:16+0200 [info] qbittorrent::qbt_probe_result - Sin vida clara en qBittorrent: state=metadl, seeds=0, peers=0, progress=0.000
+- 2026-07-07T04:55:16+0200 [info] qbittorrent::qbt_delete_probe
+- 2026-07-07T04:55:16+0200 [info] qbittorrent::qbt_login
+- 2026-07-07T04:55:16+0200 [info] qbittorrent::qbt_probe_add - John.Wick.2014.RERIP.BDRip.x264-SPARKS
+- 2026-07-07T04:55:16+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T04:55:16+0200 [info] qbittorrent::qbt_probe_result - Sin vida clara en qBittorrent: state=metadl, seeds=0, peers=0, progress=0.000
+- 2026-07-07T04:55:16+0200 [info] qbittorrent::qbt_delete_probe
+- 2026-07-07T04:55:16+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T04:55:16+0200 [info] qbittorrent::qbt_probe_result - Sin vida clara en qBittorrent: state=metadl, seeds=0, peers=0, progress=0.000
+- 2026-07-07T04:55:16+0200 [info] qbittorrent::qbt_login
+- 2026-07-07T04:55:16+0200 [info] qbittorrent::qbt_delete_probe
+- 2026-07-07T04:55:16+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T04:55:16+0200 [info] qbittorrent::qbt_probe_add - John Wick 2014 BluRay 720p DTS x264-MgB [ETRG]
+- 2026-07-07T04:55:16+0200 [info] qbittorrent::qbt_probe_result - Sin vida clara en qBittorrent: state=metadl, seeds=0, peers=0, progress=0.000
+- 2026-07-07T04:55:16+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T04:55:16+0200 [info] qbittorrent::qbt_delete_probe
+- 2026-07-07T04:55:16+0200 [info] qbittorrent::qbt_login
+- 2026-07-07T04:55:16+0200 [info] qbittorrent::qbt_probe_result - Sin vida clara en qBittorrent: state=metadl, seeds=0, peers=0, progress=0.000
+- 2026-07-07T04:55:16+0200 [info] qbittorrent::qbt_delete_probe
+- 2026-07-07T04:55:16+0200 [info] qbittorrent::qbt_login
+- 2026-07-07T04:55:16+0200 [info] qbittorrent::qbt_probe_add - John Wick 2014 BluRay 720p DTS x264-MgB [ETRG]
+- 2026-07-07T04:55:16+0200 [info] qbittorrent::qbt_probe_add - John Wick 2014 BluRay 1080p AVC DTS-HD MA 7.1 x264-MgB [ETRG]
+- 2026-07-07T04:55:18+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T04:55:18+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T04:55:18+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T04:55:18+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T04:55:20+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T04:55:20+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T04:55:20+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T04:55:20+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T04:55:22+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T04:55:22+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T04:55:22+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T04:55:22+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T04:55:24+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T04:55:24+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T04:55:24+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T04:55:24+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T04:55:26+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T04:55:26+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T04:55:26+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T04:55:26+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T04:55:28+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T04:55:28+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T04:55:28+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T04:55:28+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T04:55:30+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T04:55:30+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T04:55:30+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T04:55:30+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T04:55:32+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T04:55:32+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T04:55:32+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T04:55:32+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T04:55:34+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T04:55:34+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T04:55:34+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T04:55:34+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T04:55:36+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T04:55:36+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T04:55:36+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T04:55:36+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T04:55:38+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T04:55:38+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T04:55:38+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T04:55:38+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T04:55:40+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T04:55:40+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T04:55:40+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T04:55:40+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T04:55:42+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T04:55:42+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T04:55:42+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T04:55:42+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T04:55:44+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T04:55:44+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T04:55:44+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T04:55:44+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T04:55:46+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T04:55:46+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T04:55:46+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T04:55:46+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T04:55:48+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T04:55:48+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T04:55:48+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T04:55:48+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T04:55:50+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T04:55:50+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T04:55:50+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T04:55:50+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T04:55:52+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T04:55:52+0200 [info] qbittorrent::qbt_probe_result - Sin vida clara en qBittorrent: state=metadl, seeds=0, peers=0, progress=0.000
+- 2026-07-07T04:55:52+0200 [info] qbittorrent::qbt_delete_probe
+- 2026-07-07T04:55:52+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T04:55:52+0200 [info] qbittorrent::qbt_probe_result - Sin vida clara en qBittorrent: state=metadl, seeds=0, peers=0, progress=0.000
+- 2026-07-07T04:55:52+0200 [info] qbittorrent::qbt_delete_probe
+- 2026-07-07T04:55:52+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T04:55:52+0200 [info] qbittorrent::qbt_probe_result - Sin vida clara en qBittorrent: state=metadl, seeds=0, peers=0, progress=0.000
+- 2026-07-07T04:55:52+0200 [info] qbittorrent::qbt_delete_probe
+- 2026-07-07T04:55:52+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T04:55:52+0200 [info] qbittorrent::qbt_probe_result - Sin vida clara en qBittorrent: state=metadl, seeds=0, peers=0, progress=0.000
+- 2026-07-07T04:55:52+0200 [info] qbittorrent::qbt_delete_probe
+- 2026-07-07T04:55:52+0200 [info] qbittorrent::qbt_probe_batch_end
+- 2026-07-07T04:55:52+0200 [info] motor::prepare_qbit_extras
+- 2026-07-07T04:55:52+0200 [info] motor::prepare_rd_temp_errors
+- 2026-07-07T04:55:52+0200 [info] motor::prepare_after_working_filter
+- 2026-07-07T04:55:52+0200 [info] search::export_results
+- 2026-07-07T04:55:52+0200 [info] search::export_results
+- 2026-07-07T04:55:52+0200 [info] real-debrid::rd_delete_torrent
+- 2026-07-07T04:55:52+0200 [info] search::editor_clean_search_rd_cleanup
+- 2026-07-07T04:55:52+0200 [info] search::editor_clean_search_end
+- 2026-07-07T04:55:53+02:00 [info] web::JOB_FINISHED_OK

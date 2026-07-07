@@ -1,0 +1,61 @@
+{
+  "already_present": false,
+  "card": {
+    "hash": "3e20d77a59ead08fbb52d9a9ad61c2c59b5bb247",
+    "source": "RD",
+    "status": "RD OK",
+    "title": "/Shelter.2026.2160p.4K.WEB.x265.10bit.AAC5.1-[YTS.BZ].mkv"
+  },
+  "counts": {
+    "debug": 5,
+    "error": 0,
+    "info": 34,
+    "warn": 0
+  },
+  "destination": {
+    "destino": "movies",
+    "inbox": "/watch/torrents/inbox/movies",
+    "qbt_savepath": "/data/downloads/torrents/complete/movies",
+    "rdt_savepath": "/data/downloads/movies"
+  },
+  "diagnostic_status": "ok",
+  "elapsed": "5.27s",
+  "engine": "RDT-Client",
+  "event_count": 39,
+  "hash": "3e20d77a59ead08fbb52d9a9ad61c2c59b5bb247",
+  "id": "ca920d3dd3",
+  "index": 13,
+  "kind": "download",
+  "last_event": "RDT_FOLLOWUP_DONE",
+  "link_ref": "btih:3e20d77a59ead08fbb52d9a9ad61c2c59b5bb247",
+  "link_type": "magnet",
+  "module": "btdigg",
+  "operation_status": "ok",
+  "phases": {
+    "btdigg": 4,
+    "download": 9,
+    "general": 1,
+    "rdt-client": 15,
+    "real-debrid": 9
+  },
+  "rdt_id": "cefe9fa2-6eeb-42c9-bcd5-2915db4ad82e",
+  "read_order": [
+    "summary.json",
+    "timeline.md",
+    "warnings.jsonl",
+    "errors.jsonl",
+    "events.jsonl"
+  ],
+  "remote": "192.168.1.199",
+  "route": "RD_VERIFIED_MAGNET_NATIVE",
+  "started_at": "2026-06-27T05:24:04+02:00",
+  "status": "ok",
+  "title": "/Shelter.2026.2160p.4K.WEB.x265.10bit.AAC5.1-[YTS.BZ].mkv",
+  "tracking": {
+    "destino": "movies",
+    "hash": "3e20d77a59ead08fbb52d9a9ad61c2c59b5bb247",
+    "record_id": "9bb654ac7d57b47e",
+    "tracking_file": "/app/data/seguimiento_actual.json"
+  },
+  "updated_at": "2026-06-27T05:24:10+02:00"
+}

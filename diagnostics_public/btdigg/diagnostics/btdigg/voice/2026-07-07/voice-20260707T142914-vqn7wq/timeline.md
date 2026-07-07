@@ -1,0 +1,2 @@
+- 2026-07-07T16:29:13+02:00 [info] voice::voice_record_click
+- 2026-07-07T16:29:13+02:00 [warn] voice::voice_insecure_context - secure_context_required

@@ -1,0 +1,41 @@
+RD Turbo Pro - lista extra qBittorrent vivos
+================================================================================
+[Q01] QBT:QBT_VIVO   SIZE:  15.9 GB HASH:651d20e7f757763350dcd162981ff7bd5294c37e
+      TORRENT: Enola.Holmes.3.2026.MULTi.VF2.HDR.DV.2160p.WEB.H265-SUPPLY.mkv
+      MOTIVO: qBittorrent con seed conectado: seeds=1, peers=22, state=stalleddl
+      MAGNET: magnet:?xt=urn:btih:651d20e7f757763350dcd162981ff7bd5294c37e&dn=Enola.Holmes.3.2026.MULTi.VF2.HDR.DV.2160p.WEB.H265-SUPPLY.mkv&tr=udp://tracker.openbittorrent.com:80&tr=udp://tracker.opentrackr.org:1337/announce
+
+[Q02] QBT:QBT_VIVO   SIZE:  15.9 GB HASH:73e62cff594ef65d5dbbe6629576cbcb4fef2d07
+      TORRENT: Enola.Holmes.3.2026.MULTi.VF2.HDR.2160p.WEB.H265-FW.mkv
+      MOTIVO: qBittorrent con seed conectado: seeds=1, peers=0, state=stalleddl
+      MAGNET: magnet:?xt=urn:btih:73e62cff594ef65d5dbbe6629576cbcb4fef2d07&dn=Enola.Holmes.3.2026.MULTi.VF2.HDR.2160p.WEB.H265-FW.mkv&tr=udp://tracker.openbittorrent.com:80&tr=udp://tracker.opentrackr.org:1337/announce
+
+[Q03] QBT:QBT_VIVO   SIZE:  15.0 GB HASH:833a383a8e7b8507eeed7b3f9d7083b888ef3fd9
+      TORRENT: Enola.Holmes.3.2026.2160p.NF.WEB-DL.DV.HDR.DDP5.1.Atmos.H265.MP4-BEN.THE.MEN
+      MOTIVO: qBittorrent con seed conectado: seeds=3, peers=1, state=stalleddl
+      MAGNET: magnet:?xt=urn:btih:833a383a8e7b8507eeed7b3f9d7083b888ef3fd9&dn=Enola.Holmes.3.2026.2160p.NF.WEB-DL.DV.HDR.DDP5.1.Atmos.H265.MP4-BEN.THE.MEN&tr=udp://tracker.openbittorrent.com:80&tr=udp://tracker.opentrackr.org:1337/announce
+
+[Q04] QBT:QBT_VIVO   SIZE:  14.8 GB HASH:dc47bca049f983abc92e303804e54342876f7545
+      TORRENT: Enola.Holmes.3.2026.2160p.NF.WEB-DL.DDP5.1.Atmos.DV.HDR.H.265-KHN.mkv
+      MOTIVO: qBittorrent con seed conectado: seeds=1, peers=1, state=stalleddl
+      MAGNET: magnet:?xt=urn:btih:dc47bca049f983abc92e303804e54342876f7545&dn=Enola.Holmes.3.2026.2160p.NF.WEB-DL.DDP5.1.Atmos.DV.HDR.H.265-KHN.mkv&tr=udp://tracker.openbittorrent.com:80&tr=udp://tracker.opentrackr.org:1337/announce
+
+[Q05] QBT:QBT_VIVO   SIZE:  14.8 GB HASH:715bbdb685c287667dcfdcd25f6def1d7e3f749d
+      TORRENT: [DEVIL-TORRENTS.PL] Enola.Holmes.3.2026.MULTi.2160p.NF.WEB-DL.HDR.H265.DDP5.1.Atmos-K83
+      MOTIVO: qBittorrent descargando: 0.62 MB/s, seeds=1, peers=0
+      MAGNET: magnet:?xt=urn:btih:715bbdb685c287667dcfdcd25f6def1d7e3f749d&dn=%5BDEVIL-TORRENTS.PL%5D+Enola.Holmes.3.2026.MULTi.2160p.NF.WEB-DL.HDR.H265.DDP5.1.Atmos-K83&tr=udp://tracker.openbittorrent.com:80&tr=udp://tracker.opentrackr.org:1337/announce
+
+[Q06] QBT:QBT_VIVO   SIZE:  14.3 GB HASH:f4a304d7feb0d8a395f59f408d030566bc44619d
+      TORRENT: Enola.Holmes.3.2026.2160p.NF.WEB-DL.DDP5.1.Atmos.DV.HDR.H.265-BYNDR
+      MOTIVO: qBittorrent con seed conectado: seeds=1, peers=2, state=stalleddl
+      MAGNET: magnet:?xt=urn:btih:f4a304d7feb0d8a395f59f408d030566bc44619d&dn=Enola.Holmes.3.2026.2160p.NF.WEB-DL.DDP5.1.Atmos.DV.HDR.H.265-BYNDR&tr=udp://tracker.openbittorrent.com:80&tr=udp://tracker.opentrackr.org:1337/announce
+
+[Q07] QBT:QBT_VIVO   SIZE:  14.3 GB HASH:713202131be257a3d3bc0face9cecd335383c3d4
+      TORRENT: Enola.Holmes.3.2026.x265.WEB-DL.2160p.HDR-DV.mkv
+      MOTIVO: qBittorrent con seed conectado: seeds=2, peers=2, state=stalleddl
+      MAGNET: magnet:?xt=urn:btih:713202131be257a3d3bc0face9cecd335383c3d4&dn=Enola.Holmes.3.2026.x265.WEB-DL.2160p.HDR-DV.mkv&tr=udp://tracker.openbittorrent.com:80&tr=udp://tracker.opentrackr.org:1337/announce
+
+[Q08] QBT:QBT_VIVO   SIZE:  14.2 GB HASH:df7f922a299f19604c69153ebb62426b0dba06f5
+      TORRENT: Enola.Holmes.3.2026.HDR.2160p.WEB.h265-ETHEL.mkv
+      MOTIVO: qBittorrent con seed conectado: seeds=2, peers=2, state=stalleddl
+      MAGNET: magnet:?xt=urn:btih:df7f922a299f19604c69153ebb62426b0dba06f5&dn=Enola.Holmes.3.2026.HDR.2160p.WEB.h265-ETHEL.mkv&tr=udp://tracker.openbittorrent.com:80&tr=udp://tracker.opentrackr.org:1337/announce

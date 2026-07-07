@@ -1,0 +1,61 @@
+{
+  "already_present": false,
+  "card": {
+    "hash": "e3644af8b183930c1fd9e0ba9da03e69d204290b",
+    "source": "RD",
+    "status": "RD OK",
+    "title": "Johnny English (2003) BluRay 1080p Castellano 5.1.mkv"
+  },
+  "counts": {
+    "debug": 4,
+    "error": 0,
+    "info": 34,
+    "warn": 0
+  },
+  "destination": {
+    "destino": "movies",
+    "inbox": "/watch/torrents/inbox/movies",
+    "qbt_savepath": "/data/downloads/torrents/complete/movies",
+    "rdt_savepath": "/data/downloads/movies"
+  },
+  "diagnostic_status": "ok",
+  "elapsed": "4.22s",
+  "engine": "RDT-Client",
+  "event_count": 38,
+  "hash": "e3644af8b183930c1fd9e0ba9da03e69d204290b",
+  "id": "5614338761",
+  "index": 1,
+  "kind": "download",
+  "last_event": "RDT_FOLLOWUP_DONE",
+  "link_ref": "***",
+  "link_type": "***",
+  "module": "btdigg",
+  "operation_status": "ok",
+  "phases": {
+    "btdigg": 4,
+    "download": 9,
+    "general": 1,
+    "rdt-client": 14,
+    "real-debrid": 9
+  },
+  "rdt_id": "aaa38a7e-9125-44c8-a048-7990dfd92b9c",
+  "read_order": [
+    "summary.json",
+    "timeline.md",
+    "warnings.jsonl",
+    "errors.jsonl",
+    "events.jsonl"
+  ],
+  "remote": "192.168.1.186",
+  "route": "RD_VERIFIED_MAGNET_NATIVE",
+  "started_at": "2026-06-30T04:08:40+02:00",
+  "status": "ok",
+  "title": "Johnny English (2003) BluRay 1080p Castellano 5.1.mkv",
+  "tracking": {
+    "destino": "movies",
+    "hash": "e3644af8b183930c1fd9e0ba9da03e69d204290b",
+    "record_id": "16fb6520450e0f03",
+    "tracking_file": "/app/data/seguimiento_actual.json"
+  },
+  "updated_at": "2026-06-30T04:08:44+02:00"
+}

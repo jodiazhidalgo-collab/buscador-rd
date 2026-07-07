@@ -1,0 +1,523 @@
+- 2026-07-07T05:06:58+02:00 [info] web::JOB_STARTED
+- 2026-07-07T05:06:58+02:00 [info] general::CONFIG_SNAPSHOT
+- 2026-07-07T05:06:58+02:00 [info] web::COMMAND_PREPARED
+- 2026-07-07T05:06:58+02:00 [info] web::PROCESS_STARTED
+- 2026-07-07T05:06:58+0200 [info] search::editor_clean_search_start
+- 2026-07-07T05:06:58+0200 [info] btdigg::browser_auto_search_start_dom
+- 2026-07-07T05:07:00+0200 [info] btdigg::extract_magnets
+- 2026-07-07T05:07:00+0200 [info] btdigg::btdigg_curl_cffi_fetch
+- 2026-07-07T05:07:03+0200 [info] btdigg::extract_magnets
+- 2026-07-07T05:07:03+0200 [info] btdigg::btdigg_curl_cffi_fetch
+- 2026-07-07T05:07:05+0200 [info] btdigg::browser_auto_search_end_dom
+- 2026-07-07T05:07:05+0200 [info] motor::prepare_results_start
+- 2026-07-07T05:07:05+0200 [info] motor::prepare_after_scoring
+- 2026-07-07T05:07:05+0200 [info] motor::prepare_after_filter
+- 2026-07-07T05:07:05+0200 [info] motor::prepare_after_query_prefilter
+- 2026-07-07T05:07:05+0200 [info] real-debrid::rd_account_check_ok
+- 2026-07-07T05:07:05+0200 [info] real-debrid::rd_check_start
+- 2026-07-07T05:07:05+0200 [info] real-debrid::rd_api_http_error - disabled_endpoint
+- 2026-07-07T05:07:05+0200 [info] real-debrid::rd_cache_api_disabled_cached_set - Real-Debrid HTTP 403: [37 disabled_endpoint] {
+	"error": "disabled_endpoint",
+	"error_code": 37
+}
+- 2026-07-07T05:07:05+0200 [info] real-debrid::rd_cache_api_disabled - Real-Debrid HTTP 403: [37 disabled_endpoint] {
+	"error": "disabled_endpoint",
+	"error_code": 37
+}
+- 2026-07-07T05:07:05+0200 [info] real-debrid::rd_verify_batch_start
+- 2026-07-07T05:07:05+0200 [info] real-debrid::rd_slots_refresh
+- 2026-07-07T05:07:05+0200 [info] real-debrid::rd_active_count_before
+- 2026-07-07T05:07:06+0200 [info] real-debrid::rd_existing_preload_done
+- 2026-07-07T05:07:06+0200 [info] real-debrid::rd_verify_queue_start
+- 2026-07-07T05:07:06+0200 [info] real-debrid::rd_verify_queue_submit - 1950-la-cenicienta-cinderella-doblaje-original-edmundo-santos
+- 2026-07-07T05:07:06+0200 [info] real-debrid::rd_verify_add_start - VA - BSO Cenicienta (2015) [FLAC]
+- 2026-07-07T05:07:06+0200 [info] real-debrid::rd_verify_add_start - 1950-la-cenicienta-cinderella-doblaje-original-edmundo-santos
+- 2026-07-07T05:07:06+0200 [info] real-debrid::rd_verify_queue_submit - VA - BSO Cenicienta (2015) [FLAC]
+- 2026-07-07T05:07:06+0200 [info] real-debrid::rd_slots_reserve
+- 2026-07-07T05:07:06+0200 [info] real-debrid::rd_verify_queue_submit - La Cenicienta 2 La magia no termina a medianoche (2002) [BluRay 720p X264 MKV][AC3 5.1 Castellano][www.atomixHQ.ONE]
+- 2026-07-07T05:07:06+0200 [info] real-debrid::rd_verify_add_start - La Cenicienta 2 La magia no termina a medianoche (2002) [BluRay 720p X264 MKV][AC3 5.1 Castellano][www.atomixHQ.ONE]
+- 2026-07-07T05:07:06+0200 [info] real-debrid::rd_slots_reserve
+- 2026-07-07T05:07:06+0200 [info] real-debrid::rd_verify_queue_submit - la-cenicienta_doblaje
+- 2026-07-07T05:07:06+0200 [info] real-debrid::rd_verify_add_start - la-cenicienta_doblaje
+- 2026-07-07T05:07:06+0200 [info] real-debrid::rd_slots_reserve
+- 2026-07-07T05:07:06+0200 [info] real-debrid::rd_slots_reserve
+- 2026-07-07T05:07:06+0200 [debug] real-debrid::rd_endpoint_pace_wait
+- 2026-07-07T05:07:06+0200 [info] real-debrid::rd_verify_queue_submit - la-cenicienta_doblaje
+- 2026-07-07T05:07:06+0200 [info] real-debrid::rd_verify_add_start - la-cenicienta_doblaje
+- 2026-07-07T05:07:06+0200 [info] real-debrid::rd_slots_reserve
+- 2026-07-07T05:07:06+0200 [info] real-debrid::rd_verify_queue_submit - Cenicienta (2015) [BluRay 720p X264 MKV][AC3 5.1 Castellano][PctReload1.com]
+- 2026-07-07T05:07:06+0200 [info] real-debrid::rd_verify_add_start - Cenicienta (2015) [BluRay 720p X264 MKV][AC3 5.1 Castellano][PctReload1.com]
+- 2026-07-07T05:07:06+0200 [info] real-debrid::rd_slots_reserve
+- 2026-07-07T05:07:06+0200 [info] real-debrid::rd_verify_add_start - Chenoa_Absurda_Cenicienta
+- 2026-07-07T05:07:06+0200 [info] real-debrid::rd_verify_queue_submit - Chenoa_Absurda_Cenicienta
+- 2026-07-07T05:07:06+0200 [debug] real-debrid::rd_rate_wait
+- 2026-07-07T05:07:06+0200 [info] real-debrid::rd_slots_reserve
+- 2026-07-07T05:07:06+0200 [info] real-debrid::rd_verify_queue_submit - Cenicienta. (2015).(HDrip.XviD.Ac3.Esp).By Malaguita
+- 2026-07-07T05:07:06+0200 [info] real-debrid::rd_verify_add_start - Cenicienta. (2015).(HDrip.XviD.Ac3.Esp).By Malaguita
+- 2026-07-07T05:07:06+0200 [info] real-debrid::rd_verify_queue_submit - Una Cenicienta moderna salto a la fama (2021) [BluRay 720p X264 MKV][AC3 5.1 Castellano][www.maxitorrent.com]
+- 2026-07-07T05:07:06+0200 [info] real-debrid::rd_verify_add_start - Una Cenicienta moderna salto a la fama (2021) [BluRay 720p X264 MKV][AC3 5.1 Castellano][www.maxitorrent.com]
+- 2026-07-07T05:07:06+0200 [info] real-debrid::rd_slots_reserve
+- 2026-07-07T05:07:06+0200 [info] real-debrid::rd_verify_add_start - Una Cenicienta moderna (2019) [BluRay 720p X264 MKV][AC3 5.1 Castellano][www.maxitorrent.com]
+- 2026-07-07T05:07:06+0200 [info] real-debrid::rd_verify_queue_submit - Una Cenicienta moderna (2019) [BluRay 720p X264 MKV][AC3 5.1 Castellano][www.maxitorrent.com]
+- 2026-07-07T05:07:06+0200 [info] real-debrid::rd_slots_reserve
+- 2026-07-07T05:07:06+0200 [info] real-debrid::rd_verify_add_start - Cenicienta (Cinderella) (2021) [BluRay Rip][AC3 5.1 Castellano][www.maxitorrent.com]
+- 2026-07-07T05:07:06+0200 [info] real-debrid::rd_verify_queue_submit - Cenicienta (Cinderella) (2021) [BluRay Rip][AC3 5.1 Castellano][www.maxitorrent.com]
+- 2026-07-07T05:07:06+0200 [info] real-debrid::rd_slots_reserve
+- 2026-07-07T05:07:06+0200 [info] real-debrid::rd_verify_queue_submit - 32810069-la-otra-cenicienta-1977-peli-completa-espanol
+- 2026-07-07T05:07:06+0200 [info] real-debrid::rd_verify_add_start - 32810069-la-otra-cenicienta-1977-peli-completa-espanol
+- 2026-07-07T05:07:06+0200 [info] real-debrid::rd_slots_reserve
+- 2026-07-07T05:07:06+0200 [info] real-debrid::rd_verify_add_start - Cenicienta (1950) [BluRay 720p X264 MKV][AC3 5.1 Castellano][www.PCTRELOAD.COM]
+- 2026-07-07T05:07:06+0200 [info] real-debrid::rd_verify_queue_submit - Cenicienta (1950) [BluRay 720p X264 MKV][AC3 5.1 Castellano][www.PCTRELOAD.COM]
+- 2026-07-07T05:07:06+0200 [info] real-debrid::rd_slots_reserve
+- 2026-07-07T05:07:06+0200 [info] real-debrid::rd_verify_queue_submit - La Cenicienta.2015.DVDRip.Español.Disney.Pelicula
+- 2026-07-07T05:07:06+0200 [info] real-debrid::rd_verify_add_start - La Cenicienta.2015.DVDRip.Español.Disney.Pelicula
+- 2026-07-07T05:07:06+0200 [info] real-debrid::rd_slots_reserve
+- 2026-07-07T05:07:06+0200 [info] real-debrid::rd_verify_queue_submit - La.Cenicienta.[www.TodoCVCD.com][biri]
+- 2026-07-07T05:07:06+0200 [info] real-debrid::rd_verify_add_start - La.Cenicienta.[www.TodoCVCD.com][biri]
+- 2026-07-07T05:07:06+0200 [info] real-debrid::rd_slots_reserve
+- 2026-07-07T05:07:06+0200 [info] real-debrid::rd_slots_reserve
+- 2026-07-07T05:07:07+0200 [info] real-debrid::rd_verify_added
+- 2026-07-07T05:07:07+0200 [debug] real-debrid::rd_verify_poll - VA - BSO Cenicienta (2015) [FLAC]
+- 2026-07-07T05:07:07+0200 [info] real-debrid::rd_verify_added
+- 2026-07-07T05:07:07+0200 [debug] real-debrid::rd_verify_poll - Cenicienta (1950) [BluRay 720p X264 MKV][AC3 5.1 Castellano][www.PCTRELOAD.COM]
+- 2026-07-07T05:07:07+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T05:07:07+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T05:07:08+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T05:07:08+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T05:07:08+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T05:07:08+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T05:07:08+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T05:07:08+0200 [info] real-debrid::rd_verify_pack_skip - Cenicienta (1950) [BluRay 720p X264 MKV][AC3 5.1 Castellano][www.PCTRELOAD.COM]
+- 2026-07-07T05:07:08+0200 [info] real-debrid::rd_fast_discard - waiting_files_no_match
+- 2026-07-07T05:07:08+0200 [info] real-debrid::rd_fast_discard_reason - waiting_files_no_match
+- 2026-07-07T05:07:08+0200 [info] real-debrid::rd_fast_discard_delete - waiting_files_no_match
+- 2026-07-07T05:07:08+0200 [debug] real-debrid::rd_waiting_files_no_match_fast_delete - Cenicienta (1950) [BluRay 720p X264 MKV][AC3 5.1 Castellano][www.PCTRELOAD.COM]
+- 2026-07-07T05:07:08+0200 [debug] real-debrid::rd_endpoint_pace_wait
+- 2026-07-07T05:07:08+0200 [info] real-debrid::rd_delete_torrent
+- 2026-07-07T05:07:08+0200 [info] real-debrid::rd_slots_release
+- 2026-07-07T05:07:08+0200 [info] real-debrid::rd_verify_not_instant - VA - BSO Cenicienta (2015) [FLAC]
+- 2026-07-07T05:07:08+0200 [info] real-debrid::rd_verify_queue_done_item - VA - BSO Cenicienta (2015) [FLAC]
+- 2026-07-07T05:07:08+0200 [info] real-debrid::rd_delete_torrent
+- 2026-07-07T05:07:08+0200 [info] real-debrid::rd_slots_release
+- 2026-07-07T05:07:08+0200 [info] real-debrid::rd_verify_queue_done_item - Cenicienta (1950) [BluRay 720p X264 MKV][AC3 5.1 Castellano][www.PCTRELOAD.COM]
+- 2026-07-07T05:07:09+0200 [info] real-debrid::rd_verify_added
+- 2026-07-07T05:07:09+0200 [debug] real-debrid::rd_verify_poll - 32810069-la-otra-cenicienta-1977-peli-completa-espanol
+- 2026-07-07T05:07:10+0200 [info] real-debrid::rd_api_http_error - infringing_file
+- 2026-07-07T05:07:10+0200 [info] real-debrid::rd_call_terminal_error - infringing_file
+- 2026-07-07T05:07:10+0200 [info] real-debrid::rd_verify_infringing - La Cenicienta.2015.DVDRip.Español.Disney.Pelicula
+- 2026-07-07T05:07:10+0200 [info] real-debrid::rd_verify_queue_done_item - La Cenicienta.2015.DVDRip.Español.Disney.Pelicula
+- 2026-07-07T05:07:10+0200 [info] real-debrid::rd_delete_torrent
+- 2026-07-07T05:07:10+0200 [info] real-debrid::rd_slots_release
+- 2026-07-07T05:07:10+0200 [info] real-debrid::rd_verify_not_instant - 32810069-la-otra-cenicienta-1977-peli-completa-espanol
+- 2026-07-07T05:07:10+0200 [info] real-debrid::rd_verify_queue_done_item - 32810069-la-otra-cenicienta-1977-peli-completa-espanol
+- 2026-07-07T05:07:11+0200 [debug] real-debrid::rd_endpoint_pace_wait
+- 2026-07-07T05:07:11+0200 [info] real-debrid::rd_verify_added
+- 2026-07-07T05:07:11+0200 [debug] real-debrid::rd_verify_poll - Cenicienta. (2015).(HDrip.XviD.Ac3.Esp).By Malaguita
+- 2026-07-07T05:07:12+0200 [info] real-debrid::rd_delete_torrent
+- 2026-07-07T05:07:12+0200 [info] real-debrid::rd_slots_release
+- 2026-07-07T05:07:12+0200 [info] real-debrid::rd_verify_not_instant - Cenicienta. (2015).(HDrip.XviD.Ac3.Esp).By Malaguita
+- 2026-07-07T05:07:12+0200 [info] real-debrid::rd_verify_queue_done_item - Cenicienta. (2015).(HDrip.XviD.Ac3.Esp).By Malaguita
+- 2026-07-07T05:07:12+0200 [info] real-debrid::rd_verify_added
+- 2026-07-07T05:07:12+0200 [debug] real-debrid::rd_verify_poll - la-cenicienta_doblaje
+- 2026-07-07T05:07:12+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T05:07:12+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T05:07:12+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T05:07:12+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T05:07:12+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T05:07:12+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T05:07:12+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T05:07:12+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T05:07:12+0200 [info] real-debrid::rd_verify_pack_skip - la-cenicienta_doblaje
+- 2026-07-07T05:07:12+0200 [info] real-debrid::rd_fast_discard - waiting_files_no_match
+- 2026-07-07T05:07:12+0200 [info] real-debrid::rd_fast_discard_reason - waiting_files_no_match
+- 2026-07-07T05:07:12+0200 [info] real-debrid::rd_fast_discard_delete - waiting_files_no_match
+- 2026-07-07T05:07:12+0200 [debug] real-debrid::rd_waiting_files_no_match_fast_delete - la-cenicienta_doblaje
+- 2026-07-07T05:07:13+0200 [info] real-debrid::rd_delete_torrent
+- 2026-07-07T05:07:13+0200 [info] real-debrid::rd_slots_release
+- 2026-07-07T05:07:13+0200 [info] real-debrid::rd_verify_queue_done_item - la-cenicienta_doblaje
+- 2026-07-07T05:07:14+0200 [info] real-debrid::rd_verify_added
+- 2026-07-07T05:07:15+0200 [debug] real-debrid::rd_verify_poll - 1950-la-cenicienta-cinderella-doblaje-original-edmundo-santos
+- 2026-07-07T05:07:15+0200 [info] real-debrid::rd_verify_added
+- 2026-07-07T05:07:15+0200 [debug] real-debrid::rd_verify_poll - Cenicienta (2015) [BluRay 720p X264 MKV][AC3 5.1 Castellano][PctReload1.com]
+- 2026-07-07T05:07:15+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T05:07:15+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T05:07:15+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T05:07:15+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T05:07:15+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T05:07:15+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T05:07:15+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T05:07:15+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T05:07:15+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T05:07:15+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T05:07:15+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T05:07:15+0200 [info] real-debrid::rd_verify_pack_skip - Cenicienta (2015) [BluRay 720p X264 MKV][AC3 5.1 Castellano][PctReload1.com]
+- 2026-07-07T05:07:15+0200 [info] real-debrid::rd_fast_discard - waiting_files_no_match
+- 2026-07-07T05:07:15+0200 [info] real-debrid::rd_fast_discard_reason - waiting_files_no_match
+- 2026-07-07T05:07:15+0200 [info] real-debrid::rd_fast_discard_delete - waiting_files_no_match
+- 2026-07-07T05:07:15+0200 [debug] real-debrid::rd_waiting_files_no_match_fast_delete - Cenicienta (2015) [BluRay 720p X264 MKV][AC3 5.1 Castellano][PctReload1.com]
+- 2026-07-07T05:07:15+0200 [debug] real-debrid::rd_endpoint_pace_wait
+- 2026-07-07T05:07:15+0200 [info] real-debrid::rd_delete_torrent
+- 2026-07-07T05:07:15+0200 [info] real-debrid::rd_slots_release
+- 2026-07-07T05:07:15+0200 [info] real-debrid::rd_verify_not_instant - 1950-la-cenicienta-cinderella-doblaje-original-edmundo-santos
+- 2026-07-07T05:07:15+0200 [info] real-debrid::rd_verify_queue_done_item - 1950-la-cenicienta-cinderella-doblaje-original-edmundo-santos
+- 2026-07-07T05:07:16+0200 [info] real-debrid::rd_delete_torrent
+- 2026-07-07T05:07:16+0200 [info] real-debrid::rd_slots_release
+- 2026-07-07T05:07:16+0200 [info] real-debrid::rd_verify_queue_done_item - Cenicienta (2015) [BluRay 720p X264 MKV][AC3 5.1 Castellano][PctReload1.com]
+- 2026-07-07T05:07:16+0200 [debug] real-debrid::rd_endpoint_pace_wait
+- 2026-07-07T05:07:16+0200 [info] real-debrid::rd_verify_added
+- 2026-07-07T05:07:17+0200 [debug] real-debrid::rd_verify_poll - la-cenicienta_doblaje
+- 2026-07-07T05:07:17+0200 [info] real-debrid::rd_delete_torrent
+- 2026-07-07T05:07:17+0200 [info] real-debrid::rd_slots_release
+- 2026-07-07T05:07:17+0200 [info] real-debrid::rd_verify_not_instant - la-cenicienta_doblaje
+- 2026-07-07T05:07:17+0200 [info] real-debrid::rd_verify_queue_done_item - la-cenicienta_doblaje
+- 2026-07-07T05:07:18+0200 [info] real-debrid::rd_verify_added
+- 2026-07-07T05:07:18+0200 [debug] real-debrid::rd_verify_poll - Chenoa_Absurda_Cenicienta
+- 2026-07-07T05:07:18+0200 [info] real-debrid::rd_verify_added
+- 2026-07-07T05:07:18+0200 [info] real-debrid::rd_delete_torrent
+- 2026-07-07T05:07:18+0200 [info] real-debrid::rd_slots_release
+- 2026-07-07T05:07:18+0200 [info] real-debrid::rd_verify_not_instant - Chenoa_Absurda_Cenicienta
+- 2026-07-07T05:07:18+0200 [info] real-debrid::rd_verify_queue_done_item - Chenoa_Absurda_Cenicienta
+- 2026-07-07T05:07:18+0200 [debug] real-debrid::rd_verify_poll - La Cenicienta 2 La magia no termina a medianoche (2002) [BluRay 720p X264 MKV][AC3 5.1 Castellano][www.atomixHQ.ONE]
+- 2026-07-07T05:07:18+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T05:07:18+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T05:07:18+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T05:07:18+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T05:07:18+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T05:07:18+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T05:07:18+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T05:07:18+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T05:07:18+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T05:07:18+0200 [info] real-debrid::rd_verify_pack_skip - La Cenicienta 2 La magia no termina a medianoche (2002) [BluRay 720p X264 MKV][AC3 5.1 Castellano][www.atomixHQ.ONE]
+- 2026-07-07T05:07:18+0200 [info] real-debrid::rd_fast_discard - waiting_files_no_match
+- 2026-07-07T05:07:18+0200 [info] real-debrid::rd_fast_discard_reason - waiting_files_no_match
+- 2026-07-07T05:07:18+0200 [info] real-debrid::rd_fast_discard_delete - waiting_files_no_match
+- 2026-07-07T05:07:18+0200 [debug] real-debrid::rd_waiting_files_no_match_fast_delete - La Cenicienta 2 La magia no termina a medianoche (2002) [BluRay 720p X264 MKV][AC3 5.1 Castellano][www.atomixHQ.ONE]
+- 2026-07-07T05:07:19+0200 [info] real-debrid::rd_delete_torrent
+- 2026-07-07T05:07:19+0200 [info] real-debrid::rd_slots_release
+- 2026-07-07T05:07:19+0200 [info] real-debrid::rd_verify_queue_done_item - La Cenicienta 2 La magia no termina a medianoche (2002) [BluRay 720p X264 MKV][AC3 5.1 Castellano][www.atomixHQ.ONE]
+- 2026-07-07T05:07:20+0200 [info] real-debrid::rd_verify_added
+- 2026-07-07T05:07:20+0200 [debug] real-debrid::rd_verify_poll - Cenicienta (Cinderella) (2021) [BluRay Rip][AC3 5.1 Castellano][www.maxitorrent.com]
+- 2026-07-07T05:07:20+0200 [info] real-debrid::rd_delete_torrent
+- 2026-07-07T05:07:20+0200 [info] real-debrid::rd_slots_release
+- 2026-07-07T05:07:20+0200 [info] real-debrid::rd_verify_not_instant - Cenicienta (Cinderella) (2021) [BluRay Rip][AC3 5.1 Castellano][www.maxitorrent.com]
+- 2026-07-07T05:07:20+0200 [info] real-debrid::rd_verify_queue_done_item - Cenicienta (Cinderella) (2021) [BluRay Rip][AC3 5.1 Castellano][www.maxitorrent.com]
+- 2026-07-07T05:07:21+0200 [debug] real-debrid::rd_endpoint_pace_wait
+- 2026-07-07T05:07:21+0200 [info] real-debrid::rd_verify_added
+- 2026-07-07T05:07:21+0200 [debug] real-debrid::rd_verify_poll - La.Cenicienta.[www.TodoCVCD.com][biri]
+- 2026-07-07T05:07:22+0200 [info] real-debrid::rd_verify_added
+- 2026-07-07T05:07:22+0200 [info] real-debrid::rd_delete_torrent
+- 2026-07-07T05:07:22+0200 [info] real-debrid::rd_slots_release
+- 2026-07-07T05:07:22+0200 [info] real-debrid::rd_verify_not_instant - La.Cenicienta.[www.TodoCVCD.com][biri]
+- 2026-07-07T05:07:22+0200 [info] real-debrid::rd_verify_queue_done_item - La.Cenicienta.[www.TodoCVCD.com][biri]
+- 2026-07-07T05:07:22+0200 [debug] real-debrid::rd_verify_poll - Una Cenicienta moderna salto a la fama (2021) [BluRay 720p X264 MKV][AC3 5.1 Castellano][www.maxitorrent.com]
+- 2026-07-07T05:07:22+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T05:07:22+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T05:07:22+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T05:07:22+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T05:07:22+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T05:07:22+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T05:07:22+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T05:07:22+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T05:07:22+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T05:07:22+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T05:07:22+0200 [info] real-debrid::rd_verify_pack_skip - Una Cenicienta moderna salto a la fama (2021) [BluRay 720p X264 MKV][AC3 5.1 Castellano][www.maxitorrent.com]
+- 2026-07-07T05:07:22+0200 [info] real-debrid::rd_fast_discard - waiting_files_no_match
+- 2026-07-07T05:07:22+0200 [info] real-debrid::rd_fast_discard_reason - waiting_files_no_match
+- 2026-07-07T05:07:22+0200 [info] real-debrid::rd_fast_discard_delete - waiting_files_no_match
+- 2026-07-07T05:07:22+0200 [debug] real-debrid::rd_waiting_files_no_match_fast_delete - Una Cenicienta moderna salto a la fama (2021) [BluRay 720p X264 MKV][AC3 5.1 Castellano][www.maxitorrent.com]
+- 2026-07-07T05:07:22+0200 [debug] real-debrid::rd_endpoint_pace_wait
+- 2026-07-07T05:07:23+0200 [info] real-debrid::rd_delete_torrent
+- 2026-07-07T05:07:23+0200 [info] real-debrid::rd_slots_release
+- 2026-07-07T05:07:23+0200 [info] real-debrid::rd_verify_queue_done_item - Una Cenicienta moderna salto a la fama (2021) [BluRay 720p X264 MKV][AC3 5.1 Castellano][www.maxitorrent.com]
+- 2026-07-07T05:07:23+0200 [info] real-debrid::rd_verify_added
+- 2026-07-07T05:07:23+0200 [debug] real-debrid::rd_verify_poll - Una Cenicienta moderna (2019) [BluRay 720p X264 MKV][AC3 5.1 Castellano][www.maxitorrent.com]
+- 2026-07-07T05:07:23+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T05:07:23+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T05:07:23+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T05:07:23+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T05:07:23+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T05:07:23+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T05:07:23+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T05:07:23+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T05:07:23+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T05:07:23+0200 [info] real-debrid::rd_choose_file_eval
+- 2026-07-07T05:07:23+0200 [info] real-debrid::rd_verify_pack_skip - Una Cenicienta moderna (2019) [BluRay 720p X264 MKV][AC3 5.1 Castellano][www.maxitorrent.com]
+- 2026-07-07T05:07:23+0200 [info] real-debrid::rd_fast_discard - waiting_files_no_match
+- 2026-07-07T05:07:23+0200 [info] real-debrid::rd_fast_discard_reason - waiting_files_no_match
+- 2026-07-07T05:07:23+0200 [info] real-debrid::rd_fast_discard_delete - waiting_files_no_match
+- 2026-07-07T05:07:23+0200 [debug] real-debrid::rd_waiting_files_no_match_fast_delete - Una Cenicienta moderna (2019) [BluRay 720p X264 MKV][AC3 5.1 Castellano][www.maxitorrent.com]
+- 2026-07-07T05:07:23+0200 [info] real-debrid::rd_delete_torrent
+- 2026-07-07T05:07:23+0200 [info] real-debrid::rd_slots_release
+- 2026-07-07T05:07:23+0200 [info] real-debrid::rd_verify_queue_done_item - Una Cenicienta moderna (2019) [BluRay 720p X264 MKV][AC3 5.1 Castellano][www.maxitorrent.com]
+- 2026-07-07T05:07:23+0200 [info] real-debrid::rd_verify_queue_end
+- 2026-07-07T05:07:23+0200 [info] real-debrid::rd_rate_summary
+- 2026-07-07T05:07:23+0200 [info] real-debrid::rd_endpoint_pacer_summary
+- 2026-07-07T05:07:24+0200 [info] real-debrid::rd_cleanup_final_start
+- 2026-07-07T05:07:24+0200 [info] real-debrid::rd_slots_refresh
+- 2026-07-07T05:07:24+0200 [info] real-debrid::rd_active_count_after
+- 2026-07-07T05:07:24+0200 [info] real-debrid::rd_cleanup_final_end
+- 2026-07-07T05:07:24+0200 [info] real-debrid::rd_rate_summary
+- 2026-07-07T05:07:24+0200 [info] real-debrid::rd_endpoint_pacer_summary
+- 2026-07-07T05:07:24+0200 [info] real-debrid::rd_verify_batch_end
+- 2026-07-07T05:07:24+0200 [info] real-debrid::rd_check_summary
+- 2026-07-07T05:07:24+0200 [info] qbittorrent::qbt_relevance_filter
+- 2026-07-07T05:07:24+0200 [info] qbittorrent::qbt_probe_batch_start
+- 2026-07-07T05:07:24+0200 [info] qbittorrent::qbt_login
+- 2026-07-07T05:07:24+0200 [info] qbittorrent::qbt_login
+- 2026-07-07T05:07:24+0200 [info] qbittorrent::qbt_login
+- 2026-07-07T05:07:24+0200 [info] qbittorrent::qbt_login
+- 2026-07-07T05:07:24+0200 [info] qbittorrent::qbt_login
+- 2026-07-07T05:07:24+0200 [info] qbittorrent::qbt_probe_add - VA - BSO Cenicienta (2015) [FLAC]
+- 2026-07-07T05:07:24+0200 [info] qbittorrent::qbt_probe_add - 1950-la-cenicienta-cinderella-doblaje-original-edmundo-santos
+- 2026-07-07T05:07:24+0200 [info] qbittorrent::qbt_probe_add - la-cenicienta_doblaje
+- 2026-07-07T05:07:24+0200 [info] qbittorrent::qbt_probe_add - La Cenicienta 2 La magia no termina a medianoche (2002) [BluRay 720p X264 MKV][AC3 5.1 Castellano][www.atomixHQ.ONE]
+- 2026-07-07T05:07:24+0200 [info] qbittorrent::qbt_probe_add - la-cenicienta_doblaje
+- 2026-07-07T05:07:26+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T05:07:26+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T05:07:26+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T05:07:26+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T05:07:26+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T05:07:28+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T05:07:28+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T05:07:28+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T05:07:28+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T05:07:28+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T05:07:30+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T05:07:30+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T05:07:30+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T05:07:30+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T05:07:30+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T05:07:32+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T05:07:32+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T05:07:32+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T05:07:32+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T05:07:32+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T05:07:34+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T05:07:34+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T05:07:34+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T05:07:34+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T05:07:34+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T05:07:36+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T05:07:36+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T05:07:36+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T05:07:36+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T05:07:36+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T05:07:38+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T05:07:38+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T05:07:38+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T05:07:38+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T05:07:38+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T05:07:40+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T05:07:40+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T05:07:40+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T05:07:40+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T05:07:40+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T05:07:42+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T05:07:42+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T05:07:42+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T05:07:42+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T05:07:42+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T05:07:44+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T05:07:44+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T05:07:44+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T05:07:44+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T05:07:44+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T05:07:46+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T05:07:46+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T05:07:46+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T05:07:46+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T05:07:46+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T05:07:48+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T05:07:48+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T05:07:48+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T05:07:48+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T05:07:48+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T05:07:50+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T05:07:50+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T05:07:50+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T05:07:50+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T05:07:50+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T05:07:52+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T05:07:52+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T05:07:52+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T05:07:52+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T05:07:52+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T05:07:54+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T05:07:54+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T05:07:54+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T05:07:54+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T05:07:54+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T05:07:56+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T05:07:56+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T05:07:56+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T05:07:56+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T05:07:56+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T05:07:58+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T05:07:58+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T05:07:58+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T05:07:58+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T05:07:58+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T05:08:00+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T05:08:00+0200 [info] qbittorrent::qbt_probe_result - Sin vida clara en qBittorrent: state=metadl, seeds=0, peers=2, progress=0.000
+- 2026-07-07T05:08:00+0200 [info] qbittorrent::qbt_delete_probe
+- 2026-07-07T05:08:00+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T05:08:00+0200 [info] qbittorrent::qbt_probe_result - Sin vida clara en qBittorrent: state=metadl, seeds=0, peers=1, progress=0.000
+- 2026-07-07T05:08:00+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T05:08:00+0200 [info] qbittorrent::qbt_delete_probe
+- 2026-07-07T05:08:00+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T05:08:00+0200 [info] qbittorrent::qbt_probe_result - Sin vida clara en qBittorrent: state=metadl, seeds=0, peers=2, progress=0.000
+- 2026-07-07T05:08:00+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T05:08:00+0200 [info] qbittorrent::qbt_probe_result - Sin vida clara en qBittorrent: state=metadl, seeds=0, peers=0, progress=0.000
+- 2026-07-07T05:08:00+0200 [info] qbittorrent::qbt_login
+- 2026-07-07T05:08:00+0200 [info] qbittorrent::qbt_probe_result - Sin vida clara en qBittorrent: state=metadl, seeds=0, peers=1, progress=0.000
+- 2026-07-07T05:08:00+0200 [info] qbittorrent::qbt_delete_probe
+- 2026-07-07T05:08:00+0200 [info] qbittorrent::qbt_delete_probe
+- 2026-07-07T05:08:00+0200 [info] qbittorrent::qbt_login
+- 2026-07-07T05:08:00+0200 [info] qbittorrent::qbt_delete_probe
+- 2026-07-07T05:08:00+0200 [info] qbittorrent::qbt_probe_add - Cenicienta (2015) [BluRay 720p X264 MKV][AC3 5.1 Castellano][PctReload1.com]
+- 2026-07-07T05:08:00+0200 [info] qbittorrent::qbt_login
+- 2026-07-07T05:08:00+0200 [info] qbittorrent::qbt_login
+- 2026-07-07T05:08:00+0200 [info] qbittorrent::qbt_login
+- 2026-07-07T05:08:00+0200 [info] qbittorrent::qbt_probe_add - Chenoa_Absurda_Cenicienta
+- 2026-07-07T05:08:00+0200 [info] qbittorrent::qbt_probe_add - Cenicienta. (2015).(HDrip.XviD.Ac3.Esp).By Malaguita
+- 2026-07-07T05:08:00+0200 [info] qbittorrent::qbt_probe_add - Una Cenicienta moderna salto a la fama (2021) [BluRay 720p X264 MKV][AC3 5.1 Castellano][www.maxitorrent.com]
+- 2026-07-07T05:08:00+0200 [info] qbittorrent::qbt_probe_add - Una Cenicienta moderna (2019) [BluRay 720p X264 MKV][AC3 5.1 Castellano][www.maxitorrent.com]
+- 2026-07-07T05:08:02+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T05:08:03+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T05:08:03+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T05:08:03+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T05:08:03+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T05:08:04+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T05:08:05+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T05:08:05+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T05:08:05+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T05:08:05+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T05:08:06+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T05:08:07+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T05:08:07+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T05:08:07+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T05:08:07+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T05:08:08+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T05:08:09+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T05:08:09+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T05:08:09+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T05:08:09+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T05:08:10+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T05:08:11+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T05:08:11+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T05:08:11+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T05:08:11+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T05:08:12+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T05:08:13+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T05:08:13+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T05:08:13+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T05:08:13+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T05:08:14+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T05:08:15+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T05:08:15+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T05:08:15+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T05:08:15+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T05:08:16+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T05:08:17+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T05:08:17+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T05:08:17+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T05:08:17+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T05:08:18+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T05:08:19+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T05:08:19+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T05:08:19+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T05:08:19+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T05:08:20+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T05:08:21+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T05:08:21+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T05:08:21+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T05:08:21+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T05:08:22+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T05:08:23+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T05:08:23+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T05:08:23+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T05:08:23+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T05:08:24+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T05:08:25+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T05:08:25+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T05:08:25+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T05:08:25+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T05:08:26+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T05:08:27+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T05:08:27+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T05:08:27+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T05:08:27+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T05:08:28+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T05:08:29+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T05:08:29+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T05:08:29+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T05:08:29+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T05:08:30+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T05:08:31+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T05:08:31+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T05:08:31+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T05:08:31+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T05:08:32+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T05:08:33+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T05:08:33+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T05:08:33+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T05:08:33+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T05:08:34+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T05:08:35+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T05:08:35+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T05:08:35+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T05:08:35+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T05:08:36+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T05:08:36+0200 [info] qbittorrent::qbt_probe_result - Sin vida clara en qBittorrent: state=metadl, seeds=0, peers=0, progress=0.000
+- 2026-07-07T05:08:36+0200 [info] qbittorrent::qbt_delete_probe
+- 2026-07-07T05:08:37+0200 [info] qbittorrent::qbt_login
+- 2026-07-07T05:08:37+0200 [info] qbittorrent::qbt_probe_add - Cenicienta (Cinderella) (2021) [BluRay Rip][AC3 5.1 Castellano][www.maxitorrent.com]
+- 2026-07-07T05:08:37+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T05:08:37+0200 [info] qbittorrent::qbt_probe_result - Sin vida clara en qBittorrent: state=metadl, seeds=0, peers=0, progress=0.000
+- 2026-07-07T05:08:37+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T05:08:37+0200 [info] qbittorrent::qbt_delete_probe
+- 2026-07-07T05:08:37+0200 [info] qbittorrent::qbt_probe_result - Sin vida clara en qBittorrent: state=metadl, seeds=0, peers=0, progress=0.000
+- 2026-07-07T05:08:37+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T05:08:37+0200 [info] qbittorrent::qbt_probe_result - Sin vida clara en qBittorrent: state=metadl, seeds=0, peers=0, progress=0.000
+- 2026-07-07T05:08:37+0200 [info] qbittorrent::qbt_delete_probe
+- 2026-07-07T05:08:37+0200 [info] qbittorrent::qbt_login
+- 2026-07-07T05:08:37+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T05:08:37+0200 [info] qbittorrent::qbt_probe_result - Sin vida clara en qBittorrent: state=metadl, seeds=0, peers=0, progress=0.000
+- 2026-07-07T05:08:37+0200 [info] qbittorrent::qbt_delete_probe
+- 2026-07-07T05:08:37+0200 [info] qbittorrent::qbt_login
+- 2026-07-07T05:08:37+0200 [info] qbittorrent::qbt_delete_probe
+- 2026-07-07T05:08:37+0200 [info] qbittorrent::qbt_login
+- 2026-07-07T05:08:37+0200 [info] qbittorrent::qbt_probe_add - 32810069-la-otra-cenicienta-1977-peli-completa-espanol
+- 2026-07-07T05:08:37+0200 [info] qbittorrent::qbt_probe_add - Cenicienta (1950) [BluRay 720p X264 MKV][AC3 5.1 Castellano][www.PCTRELOAD.COM]
+- 2026-07-07T05:08:37+0200 [info] qbittorrent::qbt_probe_add - La Cenicienta.2015.DVDRip.Español.Disney.Pelicula
+- 2026-07-07T05:08:37+0200 [info] qbittorrent::qbt_login
+- 2026-07-07T05:08:37+0200 [info] qbittorrent::qbt_probe_add - La.Cenicienta.[www.TodoCVCD.com][biri]
+- 2026-07-07T05:08:39+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T05:08:39+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T05:08:39+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T05:08:39+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T05:08:39+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T05:08:41+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T05:08:41+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T05:08:41+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T05:08:41+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T05:08:41+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T05:08:43+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T05:08:43+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T05:08:43+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T05:08:43+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T05:08:43+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-07T05:08:44+02:00 [info] web::JOB_CANCEL_REQUESTED
+- 2026-07-07T05:08:44+0200 [info] motor::job_cancel_checkpoint
+- 2026-07-07T05:08:44+0200 [info] qbittorrent::qbt_delete_probe
+- 2026-07-07T05:08:44+0200 [info] motor::job_cancel_checkpoint
+- 2026-07-07T05:08:45+0200 [info] motor::job_cancel_checkpoint
+- 2026-07-07T05:08:45+0200 [info] motor::job_cancel_checkpoint
+- 2026-07-07T05:08:45+0200 [info] motor::job_cancel_checkpoint
+- 2026-07-07T05:08:45+0200 [info] qbittorrent::qbt_delete_probe
+- 2026-07-07T05:08:45+0200 [info] qbittorrent::qbt_delete_probe
+- 2026-07-07T05:08:45+0200 [info] motor::job_cancel_checkpoint
+- 2026-07-07T05:08:45+0200 [info] qbittorrent::qbt_delete_probe
+- 2026-07-07T05:08:45+0200 [info] qbittorrent::qbt_delete_probe
+- 2026-07-07T05:08:45+0200 [info] search::editor_clean_cancelled - qbt_probe_candidates.worker
+- 2026-07-07T05:08:45+02:00 [info] web::JOB_FINISHED_CANCELLED

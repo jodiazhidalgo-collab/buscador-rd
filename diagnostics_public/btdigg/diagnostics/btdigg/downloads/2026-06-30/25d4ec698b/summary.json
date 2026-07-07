@@ -1,0 +1,61 @@
+{
+  "already_present": false,
+  "card": {
+    "hash": "cc95e8602d303f614163ce2ac3bde2e36f72213b",
+    "source": "RD",
+    "status": "RD OK",
+    "title": "The.Devil.Wears.Prada.2.2026.HDR.2160P.WEB.H265.mkv"
+  },
+  "counts": {
+    "debug": 3,
+    "error": 0,
+    "info": 34,
+    "warn": 0
+  },
+  "destination": {
+    "destino": "movies",
+    "inbox": "/watch/torrents/inbox/movies",
+    "qbt_savepath": "/data/downloads/torrents/complete/movies",
+    "rdt_savepath": "/data/downloads/movies"
+  },
+  "diagnostic_status": "ok",
+  "elapsed": "3.27s",
+  "engine": "RDT-Client",
+  "event_count": 37,
+  "hash": "cc95e8602d303f614163ce2ac3bde2e36f72213b",
+  "id": "25d4ec698b",
+  "index": 1,
+  "kind": "download",
+  "last_event": "RDT_FOLLOWUP_DONE",
+  "link_ref": "***",
+  "link_type": "***",
+  "module": "btdigg",
+  "operation_status": "ok",
+  "phases": {
+    "btdigg": 4,
+    "download": 9,
+    "general": 1,
+    "rdt-client": 13,
+    "real-debrid": 9
+  },
+  "rdt_id": "39704724-c1f1-4225-ae7d-184e8c1cc978",
+  "read_order": [
+    "summary.json",
+    "timeline.md",
+    "warnings.jsonl",
+    "errors.jsonl",
+    "events.jsonl"
+  ],
+  "remote": "192.168.1.199",
+  "route": "RD_VERIFIED_MAGNET_NATIVE",
+  "started_at": "2026-06-30T19:21:57+02:00",
+  "status": "ok",
+  "title": "The.Devil.Wears.Prada.2.2026.HDR.2160P.WEB.H265.mkv",
+  "tracking": {
+    "destino": "movies",
+    "hash": "cc95e8602d303f614163ce2ac3bde2e36f72213b",
+    "record_id": "a03e01cc21734008",
+    "tracking_file": "/app/data/seguimiento_actual.json"
+  },
+  "updated_at": "2026-06-30T19:22:00+02:00"
+}

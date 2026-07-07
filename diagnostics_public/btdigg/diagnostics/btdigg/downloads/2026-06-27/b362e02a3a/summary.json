@@ -1,0 +1,61 @@
+{
+  "already_present": false,
+  "card": {
+    "hash": "59016782099c2eea533f8be48fdeecee5d8bddf5",
+    "source": "RD",
+    "status": "RD OK",
+    "title": "/Shelter.In.Place.2021.2160p.4K.WEB.x265.10bit.AAC5.1-[YTS.MX].mkv"
+  },
+  "counts": {
+    "debug": 3,
+    "error": 0,
+    "info": 34,
+    "warn": 0
+  },
+  "destination": {
+    "destino": "movies",
+    "inbox": "/watch/torrents/inbox/movies",
+    "qbt_savepath": "/data/downloads/torrents/complete/movies",
+    "rdt_savepath": "/data/downloads/movies"
+  },
+  "diagnostic_status": "ok",
+  "elapsed": "3.28s",
+  "engine": "RDT-Client",
+  "event_count": 37,
+  "hash": "59016782099c2eea533f8be48fdeecee5d8bddf5",
+  "id": "b362e02a3a",
+  "index": 14,
+  "kind": "download",
+  "last_event": "RDT_FOLLOWUP_DONE",
+  "link_ref": "btih:59016782099c2eea533f8be48fdeecee5d8bddf5",
+  "link_type": "magnet",
+  "module": "btdigg",
+  "operation_status": "ok",
+  "phases": {
+    "btdigg": 4,
+    "download": 9,
+    "general": 1,
+    "rdt-client": 13,
+    "real-debrid": 9
+  },
+  "rdt_id": "b1cc1f2c-57f9-4e94-b619-0c50f522885e",
+  "read_order": [
+    "summary.json",
+    "timeline.md",
+    "warnings.jsonl",
+    "errors.jsonl",
+    "events.jsonl"
+  ],
+  "remote": "192.168.1.199",
+  "route": "RD_VERIFIED_MAGNET_NATIVE",
+  "started_at": "2026-06-27T05:27:59+02:00",
+  "status": "ok",
+  "title": "/Shelter.In.Place.2021.2160p.4K.WEB.x265.10bit.AAC5.1-[YTS.MX].mkv",
+  "tracking": {
+    "destino": "movies",
+    "hash": "59016782099c2eea533f8be48fdeecee5d8bddf5",
+    "record_id": "63b6f59b6d28754a",
+    "tracking_file": "/app/data/seguimiento_actual.json"
+  },
+  "updated_at": "2026-06-27T05:27:59+02:00"
+}

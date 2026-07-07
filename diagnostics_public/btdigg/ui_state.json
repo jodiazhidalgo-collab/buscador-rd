@@ -1,0 +1,24 @@
+{
+  "client_id": "ui-mr5qsu1l-0lfoez",
+  "client_updated_at": 1783466440324,
+  "form": {
+    "minGb": "0",
+    "mode": "0",
+    "pages": "1",
+    "query": "Pillion"
+  },
+  "history_open": {
+    "days": {
+      "2026-07-07": false
+    },
+    "searches": {}
+  },
+  "result_sort": {
+    "dir": "asc",
+    "key": "index"
+  },
+  "server_updated_at": 1783466440664,
+  "updated_at": "2026-07-08T01:20:40+02:00",
+  "version": 1,
+  "view": "main"
+}

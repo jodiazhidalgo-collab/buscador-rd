@@ -1,0 +1,37 @@
+- 2026-07-01T02:04:12+02:00 [info] download::DOWNLOAD_CLICK_RECEIVED - Johnny English Reborn 2011 1080p BluRay DTS x264-DON.mkv
+- 2026-07-01T02:04:12+02:00 [info] btdigg::BTDIGG_HISTORY_CARD
+- 2026-07-01T02:04:12+02:00 [info] btdigg::BTDIGG_HISTORY_CARD_OK - Johnny English Reborn 2011 1080p BluRay DTS x264-DON.mkv
+- 2026-07-01T02:04:12+02:00 [info] download::CLIENT_CONTRACT_HINT
+- 2026-07-01T02:04:12+02:00 [info] download::CONTRACT_SUMMARY
+- 2026-07-01T02:04:12+02:00 [info] general::DESTINATION_SELECTED
+- 2026-07-01T02:04:13+02:00 [info] btdigg::BTDIGG_RESOLVE_START - Johnny English Reborn 2011 1080p BluRay DTS x264-DON.mkv
+- 2026-07-01T02:04:13+02:00 [info] btdigg::BTDIGG_RESOLVE_OK
+- 2026-07-01T02:04:13+02:00 [info] download::ROUTE_DECIDED - rd_status=RD_OK rd_existing=False rd_links=1
+- 2026-07-01T02:04:13+02:00 [info] download::CONTRACT_SUMMARY - rd_status=RD_OK rd_existing=False rd_links=1
+- 2026-07-01T02:04:13+02:00 [info] download::ROUTE_SELECTED
+- 2026-07-01T02:04:13+02:00 [info] real-debrid::RD_TEMP_ID_NOT_REUSED - rd_existing_false_prefilter_id_can_be_deleted
+- 2026-07-01T02:04:13+02:00 [info] rdt-client::RDT_NATIVE_LOGIN_OK
+- 2026-07-01T02:04:13+02:00 [info] rdt-client::RDT_NATIVE_DUPLICATE_CLEAR
+- 2026-07-01T02:04:13+02:00 [info] rdt-client::RD_VERIFIED_RDT_NATIVE_IMPORT
+- 2026-07-01T02:04:13+02:00 [info] real-debrid::RD_PREFILTER_MAGNET_START - Johnny English Reborn 2011 1080p BluRay DTS x264-DON.mkv
+- 2026-07-01T02:04:13+02:00 [info] real-debrid::RD_PREFILTER_MAGNET_ACCEPTED
+- 2026-07-01T02:04:13+02:00 [info] real-debrid::RD_SELECT_FILES_START
+- 2026-07-01T02:04:13+02:00 [info] real-debrid::RD_SELECT_FILES_OK
+- 2026-07-01T02:04:13+02:00 [info] real-debrid::RD_PREFILTER_MAGNET_KEEP_ALIVE
+- 2026-07-01T02:04:13+02:00 [info] real-debrid::RD_VERIFIED_PREFLIGHT_RESULT - RD aceptÃ³ el magnet
+- 2026-07-01T02:04:14+02:00 [info] rdt-client::RDT_NATIVE_LOGIN_OK
+- 2026-07-01T02:04:14+02:00 [info] rdt-client::RDT_NATIVE_UPLOAD_MAGNET_START - Johnny English Reborn 2011 1080p BluRay DTS x264-DON.mkv
+- 2026-07-01T02:04:14+02:00 [info] rdt-client::RDT_NATIVE_UPLOAD_MAGNET_OK
+- 2026-07-01T02:04:14+02:00 [info] rdt-client::RDT_NATIVE_NEW_ID_HASH_OK
+- 2026-07-01T02:04:14+02:00 [debug] rdt-client::RDT_NATIVE_READY_WAIT
+- 2026-07-01T02:04:15+02:00 [debug] rdt-client::RDT_NATIVE_READY_WAIT
+- 2026-07-01T02:04:16+02:00 [info] rdt-client::RDT_NATIVE_READY_OK
+- 2026-07-01T02:04:16+02:00 [info] download::TRACKING_REGISTERED
+- 2026-07-01T02:04:16+02:00 [info] download::CLEANUP_FINAL - rd_verified_native_import
+- 2026-07-01T02:04:16+02:00 [info] download::DOWNLOAD_END_OK
+- 2026-07-01T02:04:16+02:00 [info] rdt-client::RDT_FOLLOWUP_START - Johnny English Reborn 2011 1080p BluRay DTS x264-DON.mkv
+- 2026-07-01T02:04:16+02:00 [info] rdt-client::RDT_NATIVE_LOGIN_OK
+- 2026-07-01T02:04:16+02:00 [debug] rdt-client::RDT_FOLLOWUP_POLL
+- 2026-07-01T02:04:16+02:00 [info] real-debrid::RD_DELETE_START
+- 2026-07-01T02:04:17+02:00 [info] real-debrid::RD_DELETE_OK
+- 2026-07-01T02:04:17+02:00 [info] rdt-client::RDT_FOLLOWUP_DONE

@@ -1,0 +1,51 @@
+
+--- ARRANQUE MOTOR BTDIGG RD ---
+BTDigg + RD - opción 1 limpia
+Búsqueda: Enola Holmes 3
+Páginas: 1-1
+Modo: 0
+
+
+Navegador automático página 1 (1/1):
+  https://en.btdig.com/search?q=enola%20holmes%203&p=0
+  Rescate DOM: 10 magnets encontrados
+
+Encontrados 10 resultados brutos. Filtrando...
+
+Aspiradora terminada: 10 resultados únicos encontrados.
+Modo sin filtro: no descarto por idioma/calidad y no ordeno por calidad/tamano; solo penalizo basura.
+Criba búsqueda seria: 10/10 coinciden en el mismo título/archivo.
+
+Comprobando token Real-Debrid...
+Token Real-Debrid OK: exmelenas
+
+Consultando Real-Debrid cache/instantáneo...
+
+Aviso: Real-Debrid tiene desactivada instantAvailability.
+Paso serio: verifico de verdad con addMagnet los 10 mejores candidatos.
+  Verificando 1/10: www.UIndex.org    -    Enola.Holmes.3.2026.MULTI.1080p.WEB.x264-LOST
+  Verificando 8/10: www.UIndex.org    -    Enola Holmes 3 2026 720p NF WEB-DL DDP5 1 Atmos H 264-FLUX
+  RD OK 5/10: todos_los_archivos_rd
+  Verificando 10/10: www.UIndex.org    -    Enola Holmes 3 2026 1080p NF WEB-DL DDP5 1 Atmos H 264-FLUX
+  Verificando 6/10: www.UIndex.org    -    Enola Holmes 3 2026 1080p 10bit WEBRip 6CH x265 HEVC-PSA
+  Verificando 4/10: www.UIndex.org    -    Enola.Holmes.3.2026.1080p.WEB.h264-ETHEL
+  Verificando 2/10: www.UIndex.org    -    Enola Holmes 3 2026 1080p WEBRip 10Bit DDP5 1 x265-NeoNoir
+  Verificando 7/10: Enola.Holmes.3.2026.2160p.NF.WEB-DL.DDP5.1.Atmos.DV.HDR.H.265-BYNDR
+  Verificando 3/10: www.UIndex.org    -    Enola Holmes 3 2026 1080p NF WEB-DL-Ben The Men
+  Verificando 9/10: www.UIndex.org    -    Enola Holmes 3 2026 1080p NF WEB-DL DDP5 1 Atmos H 264-TURG
+
+Resumen RD: RD_FAIL=9 | RD_OK=1
+Resultados válidos para JDownloader/RD: 1/10
+Lista extra qBittorrent vivos reales: 0
+
+========================================================================
+ TOP LIMPIO
+========================================================================
+[01] RD:OK           SCORE:   0 SIZE:   7.2 GB  Enola.Holmes.3.(2026)[DUAL ESP-ENG][HDR10 HEVC][Bluray 1080p]-Mang0z4
+     archivo RD: todos_los_archivos_rd (7.2 GB)
+========================================================================
+Elige: 1 | 1,4,7 | A=todos los válidos RD | T=todos mostrados RD/qBit | S=salir
+Resultados guardados para el Editor: 1
+Real-Debrid temporal limpio: 1 id(s) revisado(s).
+
+RESULTADOS LISTOS. Escribe abajo 1, 1,3, A, T o S y pulsa Enviar.

@@ -1,0 +1,162 @@
+- 2026-07-02T16:03:53+02:00 [info] web::JOB_STARTED
+- 2026-07-02T16:03:53+02:00 [info] general::CONFIG_SNAPSHOT
+- 2026-07-02T16:03:53+02:00 [info] web::COMMAND_PREPARED
+- 2026-07-02T16:03:53+02:00 [info] web::PROCESS_STARTED
+- 2026-07-02T16:03:53+0200 [info] search::editor_clean_search_start
+- 2026-07-02T16:03:53+0200 [info] btdigg::browser_auto_search_start_dom
+- 2026-07-02T16:03:58+0200 [info] btdigg::extract_magnets
+- 2026-07-02T16:03:58+0200 [info] btdigg::btdigg_dump_dom_fallback
+- 2026-07-02T16:04:08+0200 [info] btdigg::extract_magnets
+- 2026-07-02T16:04:08+0200 [info] btdigg::btdigg_dump_dom_fallback
+- 2026-07-02T16:04:15+0200 [info] btdigg::extract_magnets
+- 2026-07-02T16:04:15+0200 [info] btdigg::btdigg_dump_dom_fallback
+- 2026-07-02T16:04:22+0200 [info] btdigg::extract_magnets
+- 2026-07-02T16:04:22+0200 [info] btdigg::btdigg_dump_dom_fallback
+- 2026-07-02T16:04:28+0200 [info] btdigg::extract_magnets
+- 2026-07-02T16:04:28+0200 [info] btdigg::btdigg_dump_dom_fallback
+- 2026-07-02T16:04:30+0200 [info] btdigg::browser_auto_search_end_dom
+- 2026-07-02T16:04:30+0200 [info] btdigg::browser_quality_rescue_start
+- 2026-07-02T16:04:30+0200 [info] btdigg::browser_auto_search_start_dom
+- 2026-07-02T16:04:34+0200 [info] btdigg::extract_magnets
+- 2026-07-02T16:04:34+0200 [info] btdigg::btdigg_dump_dom_fallback
+- 2026-07-02T16:04:36+0200 [info] btdigg::browser_auto_search_end_dom
+- 2026-07-02T16:04:36+0200 [info] btdigg::browser_quality_rescue_results
+- 2026-07-02T16:04:36+0200 [info] btdigg::browser_quality_rescue_end
+- 2026-07-02T16:04:36+0200 [info] motor::prepare_results_start
+- 2026-07-02T16:04:37+0200 [info] motor::prepare_after_scoring
+- 2026-07-02T16:04:37+0200 [info] motor::prepare_after_filter
+- 2026-07-02T16:04:37+0200 [info] motor::prepare_after_query_prefilter
+- 2026-07-02T16:04:37+0200 [info] real-debrid::rd_account_check_ok
+- 2026-07-02T16:04:37+0200 [info] real-debrid::rd_check_start
+- 2026-07-02T16:04:37+0200 [info] real-debrid::rd_api_http_error - disabled_endpoint
+- 2026-07-02T16:04:37+0200 [info] real-debrid::rd_cache_api_disabled_cached_set - Real-Debrid HTTP 403: [37 disabled_endpoint] {
+	"error": "disabled_endpoint",
+	"error_code": 37
+}
+- 2026-07-02T16:04:37+0200 [info] real-debrid::rd_cache_api_disabled - Real-Debrid HTTP 403: [37 disabled_endpoint] {
+	"error": "disabled_endpoint",
+	"error_code": 37
+}
+- 2026-07-02T16:04:37+0200 [info] real-debrid::rd_verify_batch_start
+- 2026-07-02T16:04:37+0200 [info] real-debrid::rd_slots_refresh
+- 2026-07-02T16:04:37+0200 [info] real-debrid::rd_active_count_before
+- 2026-07-02T16:04:37+0200 [info] real-debrid::rd_existing_preload_done
+- 2026-07-02T16:04:37+0200 [info] real-debrid::rd_verify_queue_start
+- 2026-07-02T16:04:37+0200 [info] real-debrid::rd_verify_queue_submit - Enola.Holmes.3.2026.MULTi.VF2.HDR.DV.2160p.WEB.H265-SUPPLY.mkv
+- 2026-07-02T16:04:37+0200 [info] real-debrid::rd_verify_add_start - Enola.Holmes.3.2026.MULTi.VF2.HDR.DV.2160p.WEB.H265-SUPPLY.mkv
+- 2026-07-02T16:04:37+0200 [info] real-debrid::rd_slots_reserve
+- 2026-07-02T16:04:37+0200 [info] real-debrid::rd_verify_add_start - Enola.Holmes.3.2026.MULTi.VF2.HDR.2160p.WEB.H265-FW.mkv
+- 2026-07-02T16:04:37+0200 [info] real-debrid::rd_slots_reserve
+- 2026-07-02T16:04:37+0200 [debug] real-debrid::rd_endpoint_pace_wait
+- 2026-07-02T16:04:37+0200 [info] real-debrid::rd_verify_queue_submit - Enola.Holmes.3.2026.MULTi.VF2.HDR.2160p.WEB.H265-FW.mkv
+- 2026-07-02T16:04:37+0200 [debug] real-debrid::rd_rate_wait
+- 2026-07-02T16:04:37+0200 [info] real-debrid::rd_verify_queue_submit - Enola Holmes 3 (2026) [4k 2160p][Esp]
+- 2026-07-02T16:04:37+0200 [info] real-debrid::rd_verify_add_start - Enola Holmes 3 (2026) [4k 2160p][Esp]
+- 2026-07-02T16:04:37+0200 [info] real-debrid::rd_slots_reserve
+- 2026-07-02T16:04:37+0200 [info] real-debrid::rd_verify_add_start - Enola.Holmes.3.2026.2160p.NF.WEB-DL.DV.HDR.DDP5.1.Atmos.H265.MP4-BEN.THE.MEN
+- 2026-07-02T16:04:37+0200 [info] real-debrid::rd_verify_queue_submit - Enola.Holmes.3.2026.2160p.NF.WEB-DL.DV.HDR.DDP5.1.Atmos.H265.MP4-BEN.THE.MEN
+- 2026-07-02T16:04:37+0200 [info] real-debrid::rd_slots_reserve
+- 2026-07-02T16:04:37+0200 [info] real-debrid::rd_verify_queue_submit - Enola.Holmes.3.2026.2160p.NF.WEB-DL.DDP5.1.Atmos.DV.HDR.H.265-KHN.mkv
+- 2026-07-02T16:04:37+0200 [info] real-debrid::rd_verify_add_start - Enola.Holmes.3.2026.2160p.NF.WEB-DL.DDP5.1.Atmos.DV.HDR.H.265-KHN.mkv
+- 2026-07-02T16:04:37+0200 [info] real-debrid::rd_verify_queue_submit - [DEVIL-TORRENTS.PL] Enola.Holmes.3.2026.MULTi.2160p.NF.WEB-DL.HDR.H265.DDP5.1.Atmos-K83
+- 2026-07-02T16:04:37+0200 [info] real-debrid::rd_verify_add_start - [DEVIL-TORRENTS.PL] Enola.Holmes.3.2026.MULTi.2160p.NF.WEB-DL.HDR.H265.DDP5.1.Atmos-K83
+- 2026-07-02T16:04:38+0200 [info] real-debrid::rd_slots_reserve
+- 2026-07-02T16:04:38+0200 [info] real-debrid::rd_verify_queue_submit - 【高清影视之家发布 www.BBQDDQ.com】福尔摩斯小姐3[杜比视界版本][简繁英字幕].Enola.Holmes.3.2026.2160p.NF.WEB-DL.DDP.5.1.Atmos.DV.H.265-DreamHD
+- 2026-07-02T16:04:38+0200 [info] real-debrid::rd_verify_add_start - 【高清影视之家发布 www.BBQDDQ.com】福尔摩斯小姐3[杜比视界版本][简繁英字幕].Enola.Holmes.3.2026.2160p.NF.WEB-DL.DDP.5.1.Atmos.DV.H.265-DreamHD
+- 2026-07-02T16:04:38+0200 [info] real-debrid::rd_slots_reserve
+- 2026-07-02T16:04:38+0200 [info] real-debrid::rd_verify_queue_submit - Enola.Holmes.3.2026.2160p.NF.WEB-DL.DDP5.1.Atmos.DV.HDR.H.265-BYNDR
+- 2026-07-02T16:04:38+0200 [info] real-debrid::rd_verify_add_start - Enola.Holmes.3.2026.2160p.NF.WEB-DL.DDP5.1.Atmos.DV.HDR.H.265-BYNDR
+- 2026-07-02T16:04:38+0200 [info] real-debrid::rd_slots_reserve
+- 2026-07-02T16:04:38+0200 [info] real-debrid::rd_verify_queue_submit - Enola.Holmes.3.2026.x265.WEB-DL.2160p.HDR-DV.mkv
+- 2026-07-02T16:04:38+0200 [info] real-debrid::rd_verify_add_start - Enola.Holmes.3.2026.x265.WEB-DL.2160p.HDR-DV.mkv
+- 2026-07-02T16:04:38+0200 [info] real-debrid::rd_slots_reserve
+- 2026-07-02T16:04:38+0200 [info] real-debrid::rd_verify_queue_submit - Enola.Holmes.3.2026.HDR.2160p.WEB.h265-ETHEL.mkv
+- 2026-07-02T16:04:38+0200 [info] real-debrid::rd_verify_add_start - Enola.Holmes.3.2026.HDR.2160p.WEB.h265-ETHEL.mkv
+- 2026-07-02T16:04:38+0200 [info] real-debrid::rd_slots_reserve
+- 2026-07-02T16:04:38+0200 [info] real-debrid::rd_slots_reserve
+- 2026-07-02T16:04:38+0200 [info] real-debrid::rd_verify_added
+- 2026-07-02T16:04:38+0200 [debug] real-debrid::rd_verify_poll - Enola.Holmes.3.2026.MULTi.VF2.HDR.DV.2160p.WEB.H265-SUPPLY.mkv
+- 2026-07-02T16:04:38+0200 [info] real-debrid::rd_verify_pack_skip - Enola.Holmes.3.2026.MULTi.VF2.HDR.DV.2160p.WEB.H265-SUPPLY.mkv
+- 2026-07-02T16:04:38+0200 [info] real-debrid::rd_fast_discard - waiting_files_no_match
+- 2026-07-02T16:04:38+0200 [info] real-debrid::rd_fast_discard_reason - waiting_files_no_match
+- 2026-07-02T16:04:38+0200 [info] real-debrid::rd_fast_discard_delete - waiting_files_no_match
+- 2026-07-02T16:04:38+0200 [debug] real-debrid::rd_waiting_files_no_match_fast_delete - Enola.Holmes.3.2026.MULTi.VF2.HDR.DV.2160p.WEB.H265-SUPPLY.mkv
+- 2026-07-02T16:04:38+0200 [info] real-debrid::rd_delete_torrent
+- 2026-07-02T16:04:38+0200 [info] real-debrid::rd_slots_release
+- 2026-07-02T16:04:38+0200 [info] real-debrid::rd_verify_queue_done_item - Enola.Holmes.3.2026.MULTi.VF2.HDR.DV.2160p.WEB.H265-SUPPLY.mkv
+- 2026-07-02T16:04:39+0200 [info] real-debrid::rd_api_http_error - infringing_file
+- 2026-07-02T16:04:39+0200 [info] real-debrid::rd_call_terminal_error - infringing_file
+- 2026-07-02T16:04:39+0200 [info] real-debrid::rd_verify_infringing - [DEVIL-TORRENTS.PL] Enola.Holmes.3.2026.MULTi.2160p.NF.WEB-DL.HDR.H265.DDP5.1.Atmos-K83
+- 2026-07-02T16:04:39+0200 [info] real-debrid::rd_verify_queue_done_item - [DEVIL-TORRENTS.PL] Enola.Holmes.3.2026.MULTi.2160p.NF.WEB-DL.HDR.H265.DDP5.1.Atmos-K83
+- 2026-07-02T16:04:41+0200 [info] real-debrid::rd_api_http_error - infringing_file
+- 2026-07-02T16:04:41+0200 [info] real-debrid::rd_call_terminal_error - infringing_file
+- 2026-07-02T16:04:41+0200 [info] real-debrid::rd_verify_infringing - Enola.Holmes.3.2026.2160p.NF.WEB-DL.DV.HDR.DDP5.1.Atmos.H265.MP4-BEN.THE.MEN
+- 2026-07-02T16:04:41+0200 [info] real-debrid::rd_verify_queue_done_item - Enola.Holmes.3.2026.2160p.NF.WEB-DL.DV.HDR.DDP5.1.Atmos.H265.MP4-BEN.THE.MEN
+- 2026-07-02T16:04:42+0200 [info] real-debrid::rd_verify_added
+- 2026-07-02T16:04:42+0200 [debug] real-debrid::rd_verify_poll - Enola.Holmes.3.2026.MULTi.VF2.HDR.2160p.WEB.H265-FW.mkv
+- 2026-07-02T16:04:42+0200 [info] real-debrid::rd_verify_pack_skip - Enola.Holmes.3.2026.MULTi.VF2.HDR.2160p.WEB.H265-FW.mkv
+- 2026-07-02T16:04:42+0200 [info] real-debrid::rd_fast_discard - waiting_files_no_match
+- 2026-07-02T16:04:42+0200 [info] real-debrid::rd_fast_discard_reason - waiting_files_no_match
+- 2026-07-02T16:04:42+0200 [info] real-debrid::rd_fast_discard_delete - waiting_files_no_match
+- 2026-07-02T16:04:42+0200 [debug] real-debrid::rd_waiting_files_no_match_fast_delete - Enola.Holmes.3.2026.MULTi.VF2.HDR.2160p.WEB.H265-FW.mkv
+- 2026-07-02T16:04:43+0200 [info] real-debrid::rd_delete_torrent
+- 2026-07-02T16:04:43+0200 [debug] real-debrid::rd_endpoint_pace_wait
+- 2026-07-02T16:04:43+0200 [info] real-debrid::rd_slots_release
+- 2026-07-02T16:04:43+0200 [info] real-debrid::rd_verify_queue_done_item - Enola.Holmes.3.2026.MULTi.VF2.HDR.2160p.WEB.H265-FW.mkv
+- 2026-07-02T16:04:44+0200 [info] real-debrid::rd_api_http_error - infringing_file
+- 2026-07-02T16:04:44+0200 [info] real-debrid::rd_call_terminal_error - infringing_file
+- 2026-07-02T16:04:44+0200 [info] real-debrid::rd_verify_infringing - Enola.Holmes.3.2026.x265.WEB-DL.2160p.HDR-DV.mkv
+- 2026-07-02T16:04:44+0200 [info] real-debrid::rd_verify_queue_done_item - Enola.Holmes.3.2026.x265.WEB-DL.2160p.HDR-DV.mkv
+- 2026-07-02T16:04:45+0200 [info] real-debrid::rd_verify_added
+- 2026-07-02T16:04:45+0200 [debug] real-debrid::rd_verify_poll - Enola.Holmes.3.2026.HDR.2160p.WEB.h265-ETHEL.mkv
+- 2026-07-02T16:04:45+0200 [info] real-debrid::rd_verify_pack_skip - Enola.Holmes.3.2026.HDR.2160p.WEB.h265-ETHEL.mkv
+- 2026-07-02T16:04:45+0200 [info] real-debrid::rd_fast_discard - waiting_files_no_match
+- 2026-07-02T16:04:45+0200 [info] real-debrid::rd_fast_discard_reason - waiting_files_no_match
+- 2026-07-02T16:04:45+0200 [info] real-debrid::rd_fast_discard_delete - waiting_files_no_match
+- 2026-07-02T16:04:45+0200 [debug] real-debrid::rd_waiting_files_no_match_fast_delete - Enola.Holmes.3.2026.HDR.2160p.WEB.h265-ETHEL.mkv
+- 2026-07-02T16:04:46+0200 [info] real-debrid::rd_delete_torrent
+- 2026-07-02T16:04:46+0200 [info] real-debrid::rd_slots_release
+- 2026-07-02T16:04:46+0200 [info] real-debrid::rd_verify_queue_done_item - Enola.Holmes.3.2026.HDR.2160p.WEB.h265-ETHEL.mkv
+- 2026-07-02T16:04:47+0200 [info] real-debrid::rd_api_http_error - infringing_file
+- 2026-07-02T16:04:47+0200 [info] real-debrid::rd_call_terminal_error - infringing_file
+- 2026-07-02T16:04:47+0200 [info] real-debrid::rd_verify_infringing - Enola.Holmes.3.2026.2160p.NF.WEB-DL.DDP5.1.Atmos.DV.HDR.H.265-BYNDR
+- 2026-07-02T16:04:47+0200 [info] real-debrid::rd_verify_queue_done_item - Enola.Holmes.3.2026.2160p.NF.WEB-DL.DDP5.1.Atmos.DV.HDR.H.265-BYNDR
+- 2026-07-02T16:04:48+0200 [debug] real-debrid::rd_endpoint_pace_wait
+- 2026-07-02T16:04:48+0200 [info] real-debrid::rd_api_http_error - infringing_file
+- 2026-07-02T16:04:48+0200 [info] real-debrid::rd_call_terminal_error - infringing_file
+- 2026-07-02T16:04:48+0200 [info] real-debrid::rd_verify_infringing - Enola.Holmes.3.2026.2160p.NF.WEB-DL.DDP5.1.Atmos.DV.HDR.H.265-KHN.mkv
+- 2026-07-02T16:04:48+0200 [info] real-debrid::rd_verify_queue_done_item - Enola.Holmes.3.2026.2160p.NF.WEB-DL.DDP5.1.Atmos.DV.HDR.H.265-KHN.mkv
+- 2026-07-02T16:04:51+0200 [info] real-debrid::rd_verify_added
+- 2026-07-02T16:04:51+0200 [debug] real-debrid::rd_verify_poll - 【高清影视之家发布 www.BBQDDQ.com】福尔摩斯小姐3[杜比视界版本][简繁英字幕].Enola.Holmes.3.2026.2160p.NF.WEB-DL.DDP.5.1.Atmos.DV.H.265-DreamHD
+- 2026-07-02T16:04:51+0200 [info] real-debrid::rd_verify_pack_skip - 【高清影视之家发布 www.BBQDDQ.com】福尔摩斯小姐3[杜比视界版本][简繁英字幕].Enola.Holmes.3.2026.2160p.NF.WEB-DL.DDP.5.1.Atmos.DV.H.265-DreamHD
+- 2026-07-02T16:04:51+0200 [info] real-debrid::rd_fast_discard - waiting_files_no_match
+- 2026-07-02T16:04:51+0200 [info] real-debrid::rd_fast_discard_reason - waiting_files_no_match
+- 2026-07-02T16:04:51+0200 [info] real-debrid::rd_fast_discard_delete - waiting_files_no_match
+- 2026-07-02T16:04:51+0200 [debug] real-debrid::rd_waiting_files_no_match_fast_delete - 【高清影视之家发布 www.BBQDDQ.com】福尔摩斯小姐3[杜比视界版本][简繁英字幕].Enola.Holmes.3.2026.2160p.NF.WEB-DL.DDP.5.1.Atmos.DV.H.265-DreamHD
+- 2026-07-02T16:04:51+0200 [info] real-debrid::rd_delete_torrent
+- 2026-07-02T16:04:51+0200 [info] real-debrid::rd_slots_release
+- 2026-07-02T16:04:51+0200 [info] real-debrid::rd_verify_queue_done_item - 【高清影视之家发布 www.BBQDDQ.com】福尔摩斯小姐3[杜比视界版本][简繁英字幕].Enola.Holmes.3.2026.2160p.NF.WEB-DL.DDP.5.1.Atmos.DV.H.265-DreamHD
+- 2026-07-02T16:04:51+0200 [info] real-debrid::rd_api_http_error - infringing_file
+- 2026-07-02T16:04:51+0200 [info] real-debrid::rd_call_terminal_error - infringing_file
+- 2026-07-02T16:04:51+0200 [info] real-debrid::rd_verify_infringing - Enola Holmes 3 (2026) [4k 2160p][Esp]
+- 2026-07-02T16:04:51+0200 [info] real-debrid::rd_verify_queue_done_item - Enola Holmes 3 (2026) [4k 2160p][Esp]
+- 2026-07-02T16:04:51+0200 [info] real-debrid::rd_verify_queue_end
+- 2026-07-02T16:04:51+0200 [info] real-debrid::rd_rate_summary
+- 2026-07-02T16:04:51+0200 [info] real-debrid::rd_endpoint_pacer_summary
+- 2026-07-02T16:04:51+0200 [info] real-debrid::rd_cleanup_final_start
+- 2026-07-02T16:04:51+0200 [info] real-debrid::rd_slots_refresh
+- 2026-07-02T16:04:51+0200 [info] real-debrid::rd_active_count_after
+- 2026-07-02T16:04:51+0200 [info] real-debrid::rd_cleanup_final_end
+- 2026-07-02T16:04:51+0200 [info] real-debrid::rd_rate_summary
+- 2026-07-02T16:04:51+0200 [info] real-debrid::rd_endpoint_pacer_summary
+- 2026-07-02T16:04:51+0200 [info] real-debrid::rd_verify_batch_end
+- 2026-07-02T16:04:51+0200 [info] real-debrid::rd_check_summary
+- 2026-07-02T16:04:51+0200 [info] qbittorrent::qbt_probe_skipped - disabled
+- 2026-07-02T16:04:51+0200 [info] motor::prepare_qbit_extras
+- 2026-07-02T16:04:51+0200 [info] motor::prepare_rd_temp_errors
+- 2026-07-02T16:04:51+0200 [info] motor::prepare_after_working_filter
+- 2026-07-02T16:04:51+0200 [info] search::export_results
+- 2026-07-02T16:04:51+0200 [info] search::export_results
+- 2026-07-02T16:04:51+0200 [info] search::editor_clean_search_rd_cleanup
+- 2026-07-02T16:04:51+0200 [info] search::editor_clean_search_end
+- 2026-07-02T16:04:52+02:00 [info] web::JOB_FINISHED_OK

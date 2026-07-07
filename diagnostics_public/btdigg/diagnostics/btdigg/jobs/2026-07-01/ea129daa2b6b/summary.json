@@ -1,0 +1,116 @@
+{
+  "action": "search",
+  "btdigg_found": 10,
+  "command": {
+    "cmd": [
+      "/usr/local/bin/python",
+      "-u",
+      "rd_turbo_editor_maestro.py",
+      "--search",
+      "--query",
+      "Pillion",
+      "--pages",
+      "1",
+      "--mode",
+      "0",
+      "--min-gb",
+      ""
+    ],
+    "cwd": "/app/app/motor/btdigg"
+  },
+  "config_snapshot": {
+    "qbit_probe_enabled": true,
+    "source": "/app/app/motor/btdigg/config.json",
+    "verify_wait_attempts": 1
+  },
+  "counts": {
+    "debug": 74,
+    "error": 0,
+    "info": 179,
+    "warn": 0
+  },
+  "diagnostic_status": "ok",
+  "elapsed_sec": 58.133,
+  "event_count": 253,
+  "exit_code": 0,
+  "export": {
+    "all_json": "/app/data/jobs/ea129daa2b6b/exports/ULTIMOS_RESULTADOS.json",
+    "shown": 3,
+    "top_txt": "/app/data/jobs/ea129daa2b6b/exports/ULTIMO_TOP.txt",
+    "total": 3
+  },
+  "id": "ea129daa2b6b",
+  "kind": "job",
+  "last_event": "JOB_FINISHED_OK",
+  "last_motor_event": "editor_clean_search_end",
+  "mode": "0",
+  "module": "btdigg",
+  "operation_status": "ok",
+  "pages": "1",
+  "payload": {
+    "action": "search",
+    "min_gb": "",
+    "mode": "0",
+    "module": "btdigg",
+    "pages": "1",
+    "query": "Pillion"
+  },
+  "phases": {
+    "btdigg": 4,
+    "general": 1,
+    "motor": 7,
+    "qbittorrent": 111,
+    "real-debrid": 121,
+    "search": 5,
+    "web": 4
+  },
+  "qbittorrent": {
+    "QBT_NO_PEERS": 5,
+    "QBT_TRACKER_HINT": 2,
+    "QBT_VIVO": 3,
+    "total": 10,
+    "vivos_reales": 3
+  },
+  "query": "Pillion",
+  "query_prefilter": {
+    "after": 9,
+    "before": 10,
+    "removed": 0,
+    "rescue": 1,
+    "terms": "pillion"
+  },
+  "read_order": [
+    "summary.json",
+    "timeline.md",
+    "warnings.jsonl",
+    "errors.jsonl",
+    "events.jsonl"
+  ],
+  "real_debrid": {
+    "NO_CACHE": 0,
+    "NO_INSTANT": 0,
+    "NO_VERIFICADO": 0,
+    "RD_API_OFF": 0,
+    "RD_ERROR": 0,
+    "RD_ERROR_TEMPORAL": 0,
+    "RD_FAIL": 1,
+    "RD_INSTANT": 0,
+    "RD_OK": 0,
+    "SIN_HASH": 0,
+    "TORRENT_NO_VALIDO": 0,
+    "cached_disabled": true,
+    "total": 1
+  },
+  "results_count": 3,
+  "results_shown": 3,
+  "started_at": "2026-07-01T12:31:42+02:00",
+  "status": "ok",
+  "updated_at": "2026-07-01T12:32:40+02:00",
+  "working_filter": {
+    "after": 3,
+    "before": 10,
+    "qbit_extras": 3,
+    "rd_valid": 0,
+    "removed": 7
+  }
+}
