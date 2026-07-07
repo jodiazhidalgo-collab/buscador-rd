@@ -29,6 +29,10 @@ const voiceStartSoundVolume = 0.7;
 const voiceDoneSoundVolume = 0.5;
 const notifiedJobs = {};
 let qbitSearchEnabled = true;
+let queueQbitEnabled = true;
+let searchQueueDraftItems = [];
+let searchQueueServerState = null;
+let searchQueuePollTimer = null;
 const searchModeValues = new Set(["0", "1", "3"]);
 
 function normalizeSearchMode(value) {
@@ -38,6 +42,7 @@ function normalizeSearchMode(value) {
 
 const formStoreKey = "btdiggRd.form.v1";
 const viewStoreKey = "btdiggRd.view.v1";
+const searchQueueDraftStoreKey = "btdiggRd.searchQueue.draft.v1";
 const activityStoreKey = "btdiggRd.activity.v1";
 const activeJobStoreKey = "btdiggRd.activeJob.v1";
 const rdFollowStoreKey = "btdiggRd.rdFollow.v1";
@@ -49,6 +54,7 @@ const uiStateEndpoint = "/api/ui-state";
 const rdOkVerifyTitleMarker = "__RD_OK_VERIFY_TITLE__";
 const terminalJobStatuses = new Set(["done", "error", "cancelled"]);
 const activeJobStatuses = new Set(["queued", "running", "cancelling"]);
+const activeQueueStatuses = new Set(["running", "stopping"]);
 let historyCache = null;
 let historyOpenState = { days: {}, searches: {} };
 let historyResultStore = {};
@@ -1134,6 +1140,297 @@ function toggleQueueMockView() {
   setQueueMockView(!queueMockVisible(), true);
 }
 
+function queueModeLabel(mode) {
+  const value = normalizeSearchMode(mode);
+  if (value === "3") return "Castellano";
+  if (value === "1") return "Calidad pura";
+  return "Sin filtro";
+}
+
+function queueIsActive(state = searchQueueServerState) {
+  return !!(state && activeQueueStatuses.has(String(state.status || "")));
+}
+
+function setQueueStatusText(text) {
+  const el = document.getElementById("queueStatus");
+  if (el) el.textContent = text || "Cola de busquedas.";
+}
+
+function setQueueQbitState(enabled) {
+  queueQbitEnabled = !!enabled;
+  const btn = document.getElementById("queueQbitToggle");
+  if (!btn) return;
+  btn.classList.toggle("is-on", queueQbitEnabled);
+  btn.classList.toggle("is-off", !queueQbitEnabled);
+  btn.textContent = queueQbitEnabled ? "qB ON" : "qB OFF";
+  btn.setAttribute("aria-pressed", queueQbitEnabled ? "true" : "false");
+}
+
+function toggleQueueQbit() {
+  if (queueIsActive()) return;
+  setQueueQbitState(!queueQbitEnabled);
+}
+
+function saveSearchQueueDraft() {
+  try {
+    localStorage.setItem(searchQueueDraftStoreKey, JSON.stringify(searchQueueDraftItems));
+  } catch (e) {}
+}
+
+function restoreSearchQueueDraft() {
+  try {
+    const data = JSON.parse(localStorage.getItem(searchQueueDraftStoreKey) || "[]");
+    if (Array.isArray(data)) {
+      searchQueueDraftItems = data
+        .filter(item => item && item.query)
+        .slice(0, 40)
+        .map(item => ({
+          id: String(item.id || ("q_" + Date.now().toString(36) + Math.random().toString(36).slice(2, 6))),
+          query: String(item.query || "").slice(0, 220),
+          pages: String(item.pages || "1"),
+          mode: normalizeSearchMode(item.mode),
+          min_gb: String(item.min_gb || ""),
+          qbit_enabled: item.qbit_enabled !== false,
+          status: "pending"
+        }));
+    }
+  } catch (e) {
+    searchQueueDraftItems = [];
+  }
+}
+
+function queueCurrentItems() {
+  if (searchQueueServerState && Array.isArray(searchQueueServerState.items) && searchQueueServerState.items.length) {
+    return searchQueueServerState.items;
+  }
+  return searchQueueDraftItems;
+}
+
+function queueCardClass(status) {
+  const value = String(status || "pending");
+  if (value === "done") return "is-done";
+  if (value === "running" || value === "queued") return "is-running";
+  if (value === "error") return "is-error";
+  if (value === "cancelled") return "is-cancelled";
+  return "is-pending";
+}
+
+function queueCardTitle(status) {
+  const value = String(status || "pending");
+  if (value === "done") return "Completada";
+  if (value === "running" || value === "queued") return "Trabajando";
+  if (value === "error") return "Error";
+  if (value === "cancelled") return "Cancelada";
+  return "Pendiente";
+}
+
+function queueItemMeta(item) {
+  const parts = [
+    "Pag. " + (item.pages || "1"),
+    queueModeLabel(item.mode),
+    (item.min_gb ? item.min_gb : "0") + " GB",
+    item.qbit_enabled === false ? "qB OFF" : "qB ON"
+  ];
+  const count = Number(item.results_count || 0);
+  if (String(item.status || "") === "done") parts.push(count + " resultados");
+  if (String(item.status || "") === "error" && item.error) parts.push("error");
+  return parts.join(" - ");
+}
+
+function renderSearchQueue() {
+  const list = document.getElementById("queueCardList");
+  if (!list) return;
+  const active = queueIsActive();
+  const items = queueCurrentItems();
+  if (!items.length) {
+    list.innerHTML = '<div class="queue-empty">Sin tareas en la lista.</div>';
+  } else {
+    list.innerHTML = items.map((item, index) => {
+      const id = escAttr(item.id || "");
+      const status = String(item.status || "pending");
+      const canMove = !active && !searchQueueServerState;
+      const upDisabled = !canMove || index === 0 ? " disabled" : "";
+      const downDisabled = !canMove || index === items.length - 1 ? " disabled" : "";
+      return [
+        '<article class="queue-task-card ' + queueCardClass(status) + '" title="' + escAttr(queueCardTitle(status)) + '">',
+        '<div class="queue-task-main"><strong>' + esc(item.query || "") + '</strong><small>' + esc(queueItemMeta(item)) + '</small></div>',
+        '<div class="queue-card-actions" aria-label="Ordenar">',
+        '<button class="queue-order-btn" type="button" title="Subir" onclick="moveSearchQueueItem(\'' + id + '\', -1)"' + upDisabled + '>&#9650;</button>',
+        '<button class="queue-order-btn" type="button" title="Bajar" onclick="moveSearchQueueItem(\'' + id + '\', 1)"' + downDisabled + '>&#9660;</button>',
+        '</div>',
+        '</article>'
+      ].join("");
+    }).join("");
+  }
+
+  const addBtn = document.getElementById("queueAddBtn");
+  const startBtn = document.getElementById("queueStartBtn");
+  const clearBtn = document.getElementById("queueClearBtn");
+  const stopBtn = document.getElementById("queueStopBtn");
+  const title = document.getElementById("queueTitle");
+  const pages = document.getElementById("queuePages");
+  const minGb = document.getElementById("queueMinGb");
+  const mode = document.getElementById("queueMode");
+  const qbit = document.getElementById("queueQbitToggle");
+  [addBtn, title, pages, minGb, mode, qbit].forEach(el => { if (el) el.disabled = active; });
+  if (startBtn) startBtn.disabled = active || !searchQueueDraftItems.length || !!searchQueueServerState;
+  if (clearBtn) clearBtn.disabled = active;
+  if (stopBtn) stopBtn.disabled = !active;
+
+  if (active) {
+    setQueueStatusText("Lista trabajando en el NAS...");
+  } else if (searchQueueServerState && String(searchQueueServerState.status || "") === "done") {
+    setQueueStatusText("Lista completada.");
+  } else if (searchQueueServerState && String(searchQueueServerState.status || "") === "error") {
+    setQueueStatusText("Lista terminada con avisos.");
+  } else if (searchQueueServerState && String(searchQueueServerState.status || "") === "cancelled") {
+    setQueueStatusText("Lista detenida.");
+  } else {
+    setQueueStatusText(searchQueueDraftItems.length ? "Lista preparada: " + searchQueueDraftItems.length : "Cola de busquedas.");
+  }
+}
+
+function addSearchQueueItem() {
+  if (queueIsActive()) return;
+  const title = document.getElementById("queueTitle");
+  const pages = document.getElementById("queuePages");
+  const mode = document.getElementById("queueMode");
+  const minGb = document.getElementById("queueMinGb");
+  const query = title ? String(title.value || "").trim() : "";
+  if (!query) {
+    setQueueStatusText("Escribe un titulo antes de anadir.");
+    if (title) title.focus();
+    return;
+  }
+  searchQueueServerState = null;
+  searchQueueDraftItems.push({
+    id: "q_" + Date.now().toString(36) + "_" + Math.random().toString(36).slice(2, 6),
+    query,
+    pages: pages ? String(pages.value || "1").trim() || "1" : "1",
+    mode: mode ? normalizeSearchMode(mode.value) : "0",
+    min_gb: minGb ? String(minGb.value || "").trim() : "",
+    qbit_enabled: queueQbitEnabled,
+    status: "pending"
+  });
+  if (title) title.value = "";
+  saveSearchQueueDraft();
+  renderSearchQueue();
+}
+
+function moveSearchQueueItem(id, dir) {
+  if (queueIsActive() || searchQueueServerState) return;
+  const index = searchQueueDraftItems.findIndex(item => String(item.id) === String(id));
+  const next = index + Number(dir || 0);
+  if (index < 0 || next < 0 || next >= searchQueueDraftItems.length) return;
+  const [item] = searchQueueDraftItems.splice(index, 1);
+  searchQueueDraftItems.splice(next, 0, item);
+  saveSearchQueueDraft();
+  renderSearchQueue();
+}
+
+function applySearchQueueState(state) {
+  searchQueueServerState = state && Array.isArray(state.items) && state.items.length ? state : null;
+  if (searchQueueServerState && searchQueueServerState.current_job_id && queueIsActive(searchQueueServerState)) {
+    const currentId = String(searchQueueServerState.current_job_id || "");
+    if (currentId && activeJobIds.btdigg !== currentId) {
+      resumeJob(currentId, "btdigg");
+    }
+  }
+  if (searchQueueServerState && !queueIsActive(searchQueueServerState)) {
+    try { localStorage.removeItem(searchQueueDraftStoreKey); } catch (e) {}
+    searchQueueDraftItems = [];
+    stopSearchQueuePolling();
+  }
+  renderSearchQueue();
+}
+
+function stopSearchQueuePolling() {
+  if (searchQueuePollTimer) clearInterval(searchQueuePollTimer);
+  searchQueuePollTimer = null;
+}
+
+function startSearchQueuePolling() {
+  if (searchQueuePollTimer) return;
+  searchQueuePollTimer = setInterval(loadSearchQueueStatus, 1500);
+}
+
+async function loadSearchQueueStatus() {
+  try {
+    const response = await fetch("/api/search-queue", { cache: "no-store" });
+    const data = await response.json();
+    if (!data.ok) return;
+    const queue = data.queue || null;
+    if (queue && Array.isArray(queue.items) && queue.items.length) {
+      applySearchQueueState(queue);
+      if (queueIsActive(queue)) startSearchQueuePolling();
+      return;
+    }
+  } catch (e) {}
+  if (!searchQueueServerState) renderSearchQueue();
+}
+
+async function startSearchQueue() {
+  if (queueIsActive()) return;
+  if (!searchQueueDraftItems.length) {
+    setQueueStatusText("Anade al menos una busqueda.");
+    return;
+  }
+  const btn = document.getElementById("queueStartBtn");
+  setActionButtonState(btn, "loading");
+  try {
+    const response = await fetch("/api/search-queue", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ items: searchQueueDraftItems })
+    });
+    const data = await response.json();
+    if (!response.ok || !data.ok) throw new Error(data.error || "no se pudo arrancar la lista");
+    searchQueueDraftItems = [];
+    try { localStorage.removeItem(searchQueueDraftStoreKey); } catch (e) {}
+    applySearchQueueState(data.queue);
+    startSearchQueuePolling();
+    setActionButtonState(btn, "done", "OK");
+  } catch (e) {
+    setQueueStatusText("Error: " + e.message);
+    setActionButtonState(btn, "error", "!");
+  }
+}
+
+async function stopSearchQueue() {
+  const btn = document.getElementById("queueStopBtn");
+  setActionButtonState(btn, "loading");
+  try {
+    const response = await fetch("/api/search-queue/stop", { method: "POST" });
+    const data = await response.json();
+    if (!response.ok || !data.ok) throw new Error(data.error || "no se pudo detener");
+    applySearchQueueState(data.queue);
+    startSearchQueuePolling();
+    setActionButtonState(btn, "done", "OK");
+  } catch (e) {
+    setQueueStatusText("Error: " + e.message);
+    setActionButtonState(btn, "error", "!");
+  }
+}
+
+async function clearSearchQueue() {
+  if (queueIsActive()) return;
+  const btn = document.getElementById("queueClearBtn");
+  setActionButtonState(btn, "loading");
+  try {
+    const response = await fetch("/api/search-queue/clear", { method: "POST" });
+    const data = await response.json();
+    if (!response.ok || !data.ok) throw new Error(data.error || "no se pudo limpiar");
+    searchQueueDraftItems = [];
+    searchQueueServerState = null;
+    try { localStorage.removeItem(searchQueueDraftStoreKey); } catch (e) {}
+    renderSearchQueue();
+    setActionButtonState(btn, "done", "OK");
+  } catch (e) {
+    setQueueStatusText("Error: " + e.message);
+    setActionButtonState(btn, "error", "!");
+  }
+}
+
 function restoreViewState(savedView = null) {
   let view = savedView;
   if (!view) {
@@ -1957,6 +2254,7 @@ async function refreshSharedRuntime() {
   if (!visibleNow()) return;
   await loadQbitToggle({ silent: true });
   await loadSharedUiState(true);
+  await loadSearchQueueStatus();
   const connected = await reconnectActiveJob();
   const now = Date.now();
   if (!connected && !moduleBusy.btdigg && now - lastResultsRefreshAt > 30000) {
@@ -3122,8 +3420,19 @@ if (settingsResetModal) {
   if (el) el.addEventListener("input", saveRdFollowTestState);
 });
 
+const queueTitleInput = document.getElementById("queueTitle");
+if (queueTitleInput) {
+  queueTitleInput.addEventListener("keydown", ev => {
+    if (ev.key !== "Enter" || ev.isComposing) return;
+    ev.preventDefault();
+    addSearchQueueItem();
+  });
+}
+
 async function initApp() {
   restoreFormState();
+  restoreSearchQueueDraft();
+  renderSearchQueue();
   restoreActivityState();
   restoreRdFollowState();
   const canAttemptVoice = !window.isSecureContext || (navigator.mediaDevices?.getUserMedia && window.MediaRecorder);
@@ -3131,6 +3440,8 @@ async function initApp() {
   const restoredShared = await loadSharedUiState(false);
   if (!restoredShared) restoreViewState();
   await loadQbitToggle();
+  setQueueQbitState(qbitSearchEnabled);
+  await loadSearchQueueStatus();
   loadSettings(true);
   updateStopButton();
   const connected = await reconnectActiveJob();

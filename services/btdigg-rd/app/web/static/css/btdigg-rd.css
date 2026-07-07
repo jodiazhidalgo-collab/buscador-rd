@@ -207,12 +207,17 @@ h2{margin:0;font-size:15px;letter-spacing:0}
 .queue-card-list{display:grid;gap:7px}
 .queue-task-card{position:relative;display:grid;grid-template-columns:minmax(0,1fr) 64px;gap:8px;align-items:center;min-height:54px;border:1px solid rgba(255,255,255,.075);border-radius:8px;background:linear-gradient(180deg,#111719,#0d1213);padding:9px 8px 9px 12px;overflow:hidden}
 .queue-task-card::before{content:"";position:absolute;left:0;top:8px;bottom:8px;width:3px;border-radius:0 3px 3px 0;background:rgba(151,165,164,.38)}
-.queue-task-card.is-done{border-color:rgba(225,239,238,.24);background:linear-gradient(120deg,rgba(235,245,245,.08),rgba(18,25,27,.96) 38%,rgba(14,18,19,.98))}
+.queue-task-card.is-done{border-color:rgba(225,239,238,.34);background:linear-gradient(115deg,rgba(244,252,252,.13),rgba(18,25,27,.98) 34%,rgba(14,18,19,.98));box-shadow:inset 0 1px 0 rgba(255,255,255,.08),inset 0 -1px 0 rgba(255,255,255,.035)}
 .queue-task-card.is-done::before{background:#d9ecec;box-shadow:0 0 14px rgba(210,238,240,.18)}
+.queue-task-card.is-done::after{content:"\2713";position:absolute;right:76px;top:50%;transform:translateY(-50%);color:rgba(235,251,251,.13);font-size:35px;font-weight:1000;line-height:1;pointer-events:none}
 .queue-task-card.is-running{border-color:rgba(160,224,233,.36);background:linear-gradient(180deg,#111b1e,#0e1416);box-shadow:inset 0 0 0 1px rgba(255,255,255,.025)}
 .queue-task-card.is-running::before{background:#8bddee;box-shadow:0 0 14px rgba(139,221,238,.32)}
 .queue-task-card.is-running::after{content:"";position:absolute;inset:-28px auto -28px -45%;width:42%;background:linear-gradient(90deg,transparent,rgba(238,250,255,.18),transparent);transform:skewX(-16deg);animation:queueMirrorSweep 2.2s ease-in-out infinite;pointer-events:none}
 .queue-task-card.is-pending{opacity:.88;background:linear-gradient(180deg,#101517,#0d1112)}
+.queue-task-card.is-error{border-color:rgba(255,107,107,.28);background:linear-gradient(180deg,#211316,#0f1112)}
+.queue-task-card.is-error::before{background:#ff8e8e}
+.queue-task-card.is-cancelled{opacity:.74;background:linear-gradient(180deg,#15181a,#101214)}
+.queue-task-card.is-cancelled::before{background:#7f8a8d}
 .queue-task-main{min-width:0;display:grid;gap:3px}
 .queue-task-card strong{display:block;min-width:0;color:#f3fbf7;font-size:13px;line-height:1.16;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .queue-task-card small{display:block;min-width:0;color:#94a4a0;font-size:11px;line-height:1.2;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
@@ -220,6 +225,9 @@ h2{margin:0;font-size:15px;letter-spacing:0}
 .queue-order-btn{width:29px;height:29px;display:inline-grid;place-items:center;border:1px solid rgba(85,199,217,.28);border-radius:8px;background:#172126;color:#dff9ff;font-size:12px;font-weight:1000;line-height:1;cursor:pointer;box-shadow:inset 0 0 0 1px rgba(255,255,255,.035)}
 .queue-order-btn:hover{background:#1b2a30;border-color:rgba(85,199,217,.5)}
 .queue-order-btn:active{transform:translateY(1px)}
+.queue-order-btn:disabled{opacity:.38;cursor:default}
+.queue-order-btn:disabled:active{transform:none}
+.queue-empty{min-height:48px;display:grid;place-items:center;border:1px dashed rgba(85,199,217,.22);border-radius:8px;background:#0f1416;color:#91a29e;font-size:12px;font-weight:800}
 @keyframes queueMirrorSweep{0%{left:-48%;opacity:0}18%,66%{opacity:1}100%{left:110%;opacity:0}}
 .modal-backdrop{position:fixed;inset:0;z-index:50;display:grid;place-items:center;padding:18px;background:rgba(0,0,0,.58);backdrop-filter:blur(3px)}
 .modal-backdrop.hidden{display:none}

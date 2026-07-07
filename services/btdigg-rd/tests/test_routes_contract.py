@@ -8,6 +8,9 @@ def test_public_routes_stay_registered(app):
 
     expected = {
         "/api/job": {"POST"},
+        "/api/search-queue": {"GET", "POST"},
+        "/api/search-queue/stop": {"POST"},
+        "/api/search-queue/clear": {"POST"},
         "/api/rdt/send": {"POST"},
         "/api/settings": {"GET", "POST"},
         "/api/qbit-toggle": {"GET", "POST"},

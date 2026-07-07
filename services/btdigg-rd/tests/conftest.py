@@ -30,6 +30,7 @@ DATA_DIR_SENSITIVE_MODULES = (
     "api.btdigg_rd.results",
     "api.btdigg_rd.classification",
     "api.btdigg_rd.ui_state",
+    "api.btdigg_rd.search_queue",
     "api.btdigg_rd._rd_client",
     "api.btdigg_rd._ui_state_service",
     "api.btdigg_rd.send",

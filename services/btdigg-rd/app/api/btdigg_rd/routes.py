@@ -34,6 +34,7 @@ from .jobs import TERMINAL_STATUSES, cancel_job, jobs, lock, running_job, start_
 from .retention import cleanup_rd_test_runs, list_rd_test_runs
 from .results import load_results
 from .rd_follow import build_rd_event_detail, build_rd_follow
+from .search_queue import clear_queue, queue_is_active, queue_status, start_queue, stop_queue
 from .send import api_rdt_send
 from .spoken_title_resolver import resolve_spoken_movie_title
 from .title_resolver import resolve_movie_title
@@ -54,6 +55,13 @@ def api_job():
     if module != "btdigg" or action != "search":
         return jsonify({"ok": False, "error": "módulo no válido"}), 400
 
+    if queue_is_active():
+        return jsonify({
+            "ok": False,
+            "error": "La lista esta trabajando. Detenla o espera a que termine.",
+            "module": "btdigg",
+        }), 409
+
     current = running_job()
     if current:
         return jsonify({
@@ -68,12 +76,43 @@ def api_job():
     return jsonify({"ok": True, "job_id": job_id})
 
 
+@bp.get("/api/search-queue")
+def api_search_queue_status():
+    return jsonify(queue_status())
+
+
+@bp.post("/api/search-queue")
+def api_search_queue_start():
+    data = request.get_json(force=True, silent=True) or {}
+    payload, status = start_queue(data)
+    return jsonify(payload), status
+
+
+@bp.post("/api/search-queue/stop")
+def api_search_queue_stop():
+    payload, status = stop_queue()
+    return jsonify(payload), status
+
+
+@bp.post("/api/search-queue/clear")
+def api_search_queue_clear():
+    payload, status = clear_queue()
+    return jsonify(payload), status
+
+
 @bp.post("/api/rd-test/job")
 def api_rd_test_job():
     data = request.get_json(force=True, silent=True) or {}
     query = str(data.get("query") or "").strip()
     if not query:
         return jsonify({"ok": False, "error": "falta título"}), 400
+
+    if queue_is_active():
+        return jsonify({
+            "ok": False,
+            "error": "La lista esta trabajando. Detenla o espera a que termine.",
+            "module": "btdigg",
+        }), 409
 
     current = running_job()
     if current:

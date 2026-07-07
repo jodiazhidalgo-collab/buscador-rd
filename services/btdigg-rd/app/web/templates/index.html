@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>BTDigg + RD</title>
-  <link rel="stylesheet" href="{{ url_for('static', filename='css/btdigg-rd.css') }}?v=39">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/btdigg-rd.css') }}?v=40">
 </head>
 <body>
   <main class="shell">
@@ -226,50 +226,28 @@
         <div class="queue-page-head">
           <div>
             <h2>Lista</h2>
-            <p class="sub">Cola de b&uacute;squedas.</p>
+            <p id="queueStatus" class="sub">Cola de b&uacute;squedas.</p>
           </div>
           <div class="queue-top-actions" aria-label="Acciones de lista">
-            <button class="btn primary" type="button">Ejecutar lista</button>
-            <button class="btn" type="button">Limpiar</button>
-            <button class="btn stop-btn" type="button">Detener</button>
+            <button id="queueStartBtn" class="btn primary" type="button" onclick="startSearchQueue()">Ejecutar lista</button>
+            <button id="queueClearBtn" class="btn" type="button" onclick="clearSearchQueue()">Limpiar</button>
+            <button id="queueStopBtn" class="btn stop-btn" type="button" onclick="stopSearchQueue()">Detener</button>
           </div>
         </div>
 
         <div class="queue-designs">
           <div class="queue-form queue-form-stacked">
-            <label class="field grow"><span>T&iacute;tulo</span><input type="text" value="Blade Runner 2049"></label>
+            <label class="field grow"><span>T&iacute;tulo</span><input id="queueTitle" type="text" autocomplete="off" placeholder="Ejemplo: Blade Runner 2049"></label>
             <div class="queue-mini-grid">
-              <label class="field small"><span>P&aacute;ginas</span><input type="text" value="1"></label>
-              <label class="field small"><span>GB</span><input type="text" value="8"></label>
-              <label class="field medium"><span>Modo</span><select><option>Calidad pura</option><option selected>Castellano obligatorio</option><option>Sin filtro</option></select></label>
-              <button class="queue-switch is-on" type="button">qB ON</button>
+              <label class="field small"><span>P&aacute;ginas</span><input id="queuePages" type="text" value="1"></label>
+              <label class="field small"><span>GB</span><input id="queueMinGb" type="text" inputmode="decimal" placeholder="0"></label>
+              <label class="field medium"><span>Modo</span><select id="queueMode"><option value="1">Calidad pura</option><option value="3" selected>Castellano obligatorio</option><option value="0">Sin filtro</option></select></label>
+              <button id="queueQbitToggle" class="queue-switch is-on" type="button" aria-pressed="true" onclick="toggleQueueQbit()">qB ON</button>
             </div>
-            <button class="btn primary" type="button">A&ntilde;adir a la lista</button>
+            <button id="queueAddBtn" class="btn primary" type="button" onclick="addSearchQueueItem()">A&ntilde;adir a la lista</button>
           </div>
 
-          <div class="queue-card-list">
-            <article class="queue-task-card is-done" title="Completada">
-              <div class="queue-task-main"><strong>Blade Runner 2049</strong><small>Pag. 1 - Castellano - 8 GB - qB ON</small></div>
-              <div class="queue-card-actions" aria-label="Ordenar">
-                <button class="queue-order-btn" type="button" title="Subir">&#9650;</button>
-                <button class="queue-order-btn" type="button" title="Bajar">&#9660;</button>
-              </div>
-            </article>
-            <article class="queue-task-card is-running" title="Trabajando">
-              <div class="queue-task-main"><strong>Alien Romulus</strong><small>Pag. 2 - Calidad pura - 5 GB - qB ON</small></div>
-              <div class="queue-card-actions" aria-label="Ordenar">
-                <button class="queue-order-btn" type="button" title="Subir">&#9650;</button>
-                <button class="queue-order-btn" type="button" title="Bajar">&#9660;</button>
-              </div>
-            </article>
-            <article class="queue-task-card is-pending" title="Pendiente">
-              <div class="queue-task-main"><strong>Dune Parte Dos</strong><small>Pag. 1 - Castellano - 0 GB - qB OFF</small></div>
-              <div class="queue-card-actions" aria-label="Ordenar">
-                <button class="queue-order-btn" type="button" title="Subir">&#9650;</button>
-                <button class="queue-order-btn" type="button" title="Bajar">&#9660;</button>
-              </div>
-            </article>
-          </div>
+          <div id="queueCardList" class="queue-card-list"></div>
         </div>
       </div>
     </section>
@@ -286,6 +264,6 @@
     </div>
   </div>
 
-  <script src="{{ url_for('static', filename='js/btdigg-rd.js') }}?v=38"></script>
+  <script src="{{ url_for('static', filename='js/btdigg-rd.js') }}?v=39"></script>
 </body>
 </html>
