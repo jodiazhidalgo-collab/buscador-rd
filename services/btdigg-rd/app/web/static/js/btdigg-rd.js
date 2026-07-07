@@ -28,6 +28,8 @@ const finishSoundVolume = 0.55;
 const voiceStartSoundVolume = 0.7;
 const voiceDoneSoundVolume = 0.5;
 const notifiedJobs = {};
+const queueFinishMutedJobs = new Set();
+let activityLogKeepsTail = { btdigg: false };
 let qbitSearchEnabled = true;
 let queueQbitEnabled = true;
 let searchQueueDraftItems = [];
@@ -333,7 +335,24 @@ function prepareFinishSound() {
   prepareUiSound(getFinishSound, finishSoundVolume);
 }
 
+function rememberQueueJob(jobId) {
+  const id = String(jobId || "").trim();
+  if (id) queueFinishMutedJobs.add(id);
+}
+
+function rememberQueueJobs(state) {
+  if (!state || typeof state !== "object") return;
+  rememberQueueJob(state.current_job_id);
+  (state.items || []).forEach(item => rememberQueueJob(item && item.job_id));
+}
+
 function playFinishSound(jobId) {
+  const id = String(jobId || "").trim();
+  if (id && queueFinishMutedJobs.has(id)) {
+    queueFinishMutedJobs.delete(id);
+    notifiedJobs[id] = true;
+    return;
+  }
   if (jobId && notifiedJobs[jobId]) return;
   if (jobId) notifiedJobs[jobId] = true;
   playUiSound(getFinishSound, finishSoundVolume);
@@ -1330,6 +1349,7 @@ function moveSearchQueueItem(id, dir) {
 
 function applySearchQueueState(state) {
   searchQueueServerState = state && Array.isArray(state.items) && state.items.length ? state : null;
+  rememberQueueJobs(searchQueueServerState);
   if (searchQueueServerState && searchQueueServerState.current_job_id && queueIsActive(searchQueueServerState)) {
     const currentId = String(searchQueueServerState.current_job_id || "");
     if (currentId && activeJobIds.btdigg !== currentId) {
@@ -2111,17 +2131,43 @@ function renderLogLine(div, line) {
   addLogPart(div, text);
 }
 
+function createLogLine(line) {
+  const div = document.createElement("div");
+  div.className = "line";
+  div.dataset.rawLine = String(line || "");
+  renderLogLine(div, line);
+  return div;
+}
+
+function beginActivityLog(module) {
+  activityLogKeepsTail[module] = true;
+  moduleLogs[module] = [];
+  const box = document.getElementById("log-" + module);
+  if (box) box.scrollTop = 0;
+}
+
+function finishActivityLog(module) {
+  activityLogKeepsTail[module] = false;
+  renderLog(module);
+}
+
 function renderLog(module) {
   const box = document.getElementById("log-" + module);
   if (!box) return;
-  box.innerHTML = "";
-  cleanLines(moduleLogs[module] || []).forEach(line => {
-    const div = document.createElement("div");
-    div.className = "line";
-    renderLogLine(div, line);
-    box.appendChild(div);
+  const lines = cleanLines(moduleLogs[module] || []);
+  const keepTail = !!activityLogKeepsTail[module] && box.children.length > lines.length;
+  if (!keepTail) {
+    while (box.children.length > lines.length) box.removeChild(box.lastElementChild);
+  }
+  lines.forEach((line, index) => {
+    const current = box.children[index];
+    const raw = String(line || "");
+    if (current && current.dataset.rawLine === raw) return;
+    const next = createLogLine(line);
+    if (current) box.replaceChild(next, current);
+    else box.appendChild(next);
   });
-  box.scrollTop = box.scrollHeight;
+  box.scrollTop = keepTail ? 0 : box.scrollHeight;
 }
 
 function clearCurrent() {
@@ -2187,6 +2233,7 @@ function applyJobSnapshot(job, module = "btdigg", options = {}) {
   if (isTerminalJobStatus(status)) {
     closeLive(module);
     moduleBusy[module] = false;
+    finishActivityLog(module);
     setModuleResults(module, status === "done" ? (job.results || []) : [], true, true);
     historyCache = null;
     setStatus(jobStatusLabel(status));
@@ -2227,8 +2274,7 @@ async function resumeJob(id, module = "btdigg", options = {}) {
     setStatus(jobStatusLabel(status));
     updateStopButton(status);
     if (!liveStreams[module]) {
-      moduleLogs[module] = ["Reconectando actividad LIVE..."];
-      renderLog(module);
+      beginActivityLog(module);
       openLive(id, module);
     }
     return true;
@@ -2291,8 +2337,7 @@ async function start(payload) {
   closeLive(module);
   setStatus("Trabajando LIVE...");
   updateStopButton("running");
-  moduleLogs[module] = ["Conectando actividad LIVE..."];
-  renderLog(module);
+  beginActivityLog(module);
 
   try {
     const response = await fetch("/api/job", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(payload) });
@@ -2304,6 +2349,7 @@ async function start(payload) {
         return;
       }
       moduleBusy[module] = false;
+      activityLogKeepsTail[module] = false;
       setStatus("Error");
       updateStopButton("error");
       pushLog(module, "ERROR: " + (data.error || "no se pudo arrancar"));
@@ -2314,6 +2360,7 @@ async function start(payload) {
     openLive(data.job_id, module);
   } catch (e) {
     moduleBusy[module] = false;
+    activityLogKeepsTail[module] = false;
     setStatus("Error");
     updateStopButton("error");
     pushLog(module, "ERROR arrancando buscador: " + e);
@@ -2352,6 +2399,7 @@ function openLive(id, module) {
     moduleBusy[module] = false;
     setStatus(jobStatusLabel(data.status));
     updateStopButton(data.status);
+    finishActivityLog(module);
     setModuleResults(module, data.status === "done" ? (data.results || []) : [], true, true);
     historyCache = null;
     if (data.status === "cancelled" && (data.forced_stop || data.cleanup_uncertain)) {
@@ -2387,6 +2435,7 @@ async function poll(id, module) {
         moduleBusy[module] = false;
         setStatus(jobStatusLabel(data.job.status));
         updateStopButton(data.job.status);
+        finishActivityLog(module);
         setModuleResults(module, data.job.status === "done" ? (data.job.results || []) : [], true, true);
         historyCache = null;
         if (data.job.status === "cancelled" && (data.job.forced_stop || data.job.cleanup_uncertain)) {
