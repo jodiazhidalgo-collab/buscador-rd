@@ -1,7 +1,8 @@
 param(
     [string]$Url = "http://192.168.1.159:9007/",
     [int]$TimeoutMs = 30000,
-    [switch]$SkipInstall
+    [switch]$SkipInstall,
+    [switch]$AllowBundledChromium
 )
 
 $ErrorActionPreference = "Stop"
@@ -16,6 +17,87 @@ function Get-ToolPath {
     return $cmd.Source
 }
 
+function Get-FileVersion {
+    param([string]$Path)
+
+    if (-not $Path -or -not (Test-Path -LiteralPath $Path)) {
+        return ""
+    }
+
+    $item = Get-Item -LiteralPath $Path
+    return [string]$item.VersionInfo.ProductVersion
+}
+
+function New-BrowserInfo {
+    param(
+        [string]$Name,
+        [string]$Channel,
+        [string]$Path,
+        [string]$Source
+    )
+
+    [pscustomobject]@{
+        name = $Name
+        channel = $Channel
+        path = $Path
+        source = $Source
+        version = Get-FileVersion -Path $Path
+    }
+}
+
+function Resolve-AppPathBrowser {
+    param(
+        [string]$RegistryPath,
+        [string]$Name,
+        [string]$Channel
+    )
+
+    if (-not (Test-Path -LiteralPath $RegistryPath)) {
+        return $null
+    }
+
+    $item = Get-Item -LiteralPath $RegistryPath
+    $exePath = [string]$item.GetValue("")
+    if ($exePath -and (Test-Path -LiteralPath $exePath)) {
+        return New-BrowserInfo -Name $Name -Channel $Channel -Path $exePath -Source $RegistryPath
+    }
+
+    return $null
+}
+
+function Resolve-SystemBrowser {
+    $registryCandidates = @(
+        @{ Path = "HKCU:\Software\Microsoft\Windows\CurrentVersion\App Paths\msedge.exe"; Name = "Microsoft Edge"; Channel = "msedge" },
+        @{ Path = "HKLM:\Software\Microsoft\Windows\CurrentVersion\App Paths\msedge.exe"; Name = "Microsoft Edge"; Channel = "msedge" },
+        @{ Path = "HKCU:\Software\Microsoft\Windows\CurrentVersion\App Paths\chrome.exe"; Name = "Google Chrome"; Channel = "chrome" },
+        @{ Path = "HKLM:\Software\Microsoft\Windows\CurrentVersion\App Paths\chrome.exe"; Name = "Google Chrome"; Channel = "chrome" }
+    )
+
+    foreach ($candidate in $registryCandidates) {
+        $browser = Resolve-AppPathBrowser -RegistryPath $candidate.Path -Name $candidate.Name -Channel $candidate.Channel
+        if ($browser) {
+            return $browser
+        }
+    }
+
+    $commonCandidates = @(
+        @{ Path = Join-Path ${env:ProgramFiles(x86)} "Microsoft\Edge\Application\msedge.exe"; Name = "Microsoft Edge"; Channel = "msedge" },
+        @{ Path = Join-Path $env:ProgramFiles "Microsoft\Edge\Application\msedge.exe"; Name = "Microsoft Edge"; Channel = "msedge" },
+        @{ Path = Join-Path $env:LOCALAPPDATA "Microsoft\Edge\Application\msedge.exe"; Name = "Microsoft Edge"; Channel = "msedge" },
+        @{ Path = Join-Path $env:ProgramFiles "Google\Chrome\Application\chrome.exe"; Name = "Google Chrome"; Channel = "chrome" },
+        @{ Path = Join-Path ${env:ProgramFiles(x86)} "Google\Chrome\Application\chrome.exe"; Name = "Google Chrome"; Channel = "chrome" },
+        @{ Path = Join-Path $env:LOCALAPPDATA "Google\Chrome\Application\chrome.exe"; Name = "Google Chrome"; Channel = "chrome" }
+    )
+
+    foreach ($candidate in $commonCandidates) {
+        if ($candidate.Path -and (Test-Path -LiteralPath $candidate.Path)) {
+            return New-BrowserInfo -Name $candidate.Name -Channel $candidate.Channel -Path $candidate.Path -Source "common-path"
+        }
+    }
+
+    return $null
+}
+
 $skillRoot = Resolve-Path (Join-Path $PSScriptRoot "..")
 $projectRoot = Resolve-Path (Join-Path $skillRoot "..\..\..")
 $runtime = Join-Path $projectRoot "_codex_runtime\playwright-ui-check"
@@ -26,21 +108,49 @@ New-Item -ItemType Directory -Force -Path $artifactRoot | Out-Null
 
 $nodePath = Get-ToolPath "node.exe"
 $npmPath = Get-ToolPath "npm.cmd"
-$env:PLAYWRIGHT_BROWSERS_PATH = Join-Path $runtime "ms-playwright"
 $env:NODE_PATH = Join-Path $runtime "node_modules"
+
+$browserInfo = Resolve-SystemBrowser
+if (-not $browserInfo -and -not $AllowBundledChromium) {
+    throw "No encuentro Chrome/Edge del sistema. Instala Chrome/Edge o ejecuta con -AllowBundledChromium para usar Chromium de Playwright."
+}
 
 Push-Location $runtime
 try {
     if (-not $SkipInstall) {
         if (-not (Test-Path (Join-Path $runtime "node_modules\playwright"))) {
-            & $npmPath install playwright --no-audit --no-fund | Out-Host
+            $previousSkipBrowserDownload = $env:PLAYWRIGHT_SKIP_BROWSER_DOWNLOAD
+            $env:PLAYWRIGHT_SKIP_BROWSER_DOWNLOAD = "1"
+            try {
+                & $npmPath install playwright --no-audit --no-fund | Out-Host
+            }
+            finally {
+                if ($null -eq $previousSkipBrowserDownload) {
+                    Remove-Item Env:\PLAYWRIGHT_SKIP_BROWSER_DOWNLOAD -ErrorAction SilentlyContinue
+                } else {
+                    $env:PLAYWRIGHT_SKIP_BROWSER_DOWNLOAD = $previousSkipBrowserDownload
+                }
+            }
         }
+    }
 
-        $playwrightCmd = Join-Path $runtime "node_modules\.bin\playwright.cmd"
-        if (-not (Test-Path $playwrightCmd)) {
-            throw "No encuentro Playwright instalado en $playwrightCmd."
-        }
+    $playwrightCmd = Join-Path $runtime "node_modules\.bin\playwright.cmd"
+    if (-not (Test-Path $playwrightCmd)) {
+        throw "No encuentro Playwright instalado en $playwrightCmd."
+    }
+
+    if ($AllowBundledChromium) {
+        $env:PLAYWRIGHT_BROWSERS_PATH = Join-Path $runtime "ms-playwright"
         & $playwrightCmd install chromium | Out-Host
+        $browserInfo = [pscustomobject]@{
+            name = "Playwright Chromium"
+            channel = ""
+            path = ""
+            source = "bundled"
+            version = ""
+        }
+    } else {
+        Remove-Item Env:\PLAYWRIGHT_BROWSERS_PATH -ErrorAction SilentlyContinue
     }
 }
 finally {
@@ -51,6 +161,18 @@ $runnerPath = Join-Path $artifactRoot "btdigg-rd-ui-check.runner.js"
 $resultPath = Join-Path $artifactRoot "btdigg-rd-ui-check.result.json"
 $desktopShot = Join-Path $artifactRoot "btdigg-rd-desktop.png"
 $mobileShot = Join-Path $artifactRoot "btdigg-rd-mobile.png"
+$launchConfigPath = Join-Path $artifactRoot "btdigg-rd-ui-check.launch.json"
+
+$launchConfig = @{
+    mode = if ($AllowBundledChromium) { "bundled" } else { "system" }
+    name = $browserInfo.name
+    channel = $browserInfo.channel
+    path = $browserInfo.path
+    source = $browserInfo.source
+    version = $browserInfo.version
+}
+$utf8NoBom = New-Object System.Text.UTF8Encoding($false)
+[System.IO.File]::WriteAllText($launchConfigPath, ($launchConfig | ConvertTo-Json -Depth 5), $utf8NoBom)
 
 $runner = @'
 const { chromium } = require("playwright");
@@ -61,6 +183,8 @@ const timeoutMs = Number(process.argv[3] || 30000);
 const resultPath = process.argv[4];
 const desktopShot = process.argv[5];
 const mobileShot = process.argv[6];
+const launchConfigPath = process.argv[7];
+const launchConfig = JSON.parse(fs.readFileSync(launchConfigPath, "utf8").replace(/^\uFEFF/, ""));
 
 const targets = [
   {
@@ -83,6 +207,93 @@ function shouldIgnoreUrl(rawUrl) {
   return /\/favicon\.ico(?:$|\?)/i.test(rawUrl || "");
 }
 
+async function inspectOverflow(page) {
+  return page.evaluate(() => {
+    const viewportWidth = window.innerWidth;
+    const scrollWidth = document.documentElement.scrollWidth;
+    const overflowAmount = Math.max(0, scrollWidth - viewportWidth);
+    const offenders = Array.from(document.querySelectorAll("body *"))
+      .map((el) => {
+        const rect = el.getBoundingClientRect();
+        return {
+          tag: el.tagName,
+          id: el.id || "",
+          className: String(el.className || "").slice(0, 100),
+          left: Math.round(rect.left),
+          right: Math.round(rect.right),
+          width: Math.round(rect.width),
+          text: (el.innerText || el.value || el.getAttribute("aria-label") || "").trim().slice(0, 140)
+        };
+      })
+      .filter((item) => item.width > 0 && (item.right > viewportWidth + 1 || item.left < -1))
+      .slice(0, 20);
+
+    return {
+      ok: overflowAmount <= 1 && offenders.length === 0,
+      hasOverflow: overflowAmount > 1 || offenders.length > 0,
+      viewportWidth,
+      scrollWidth,
+      overflowAmount,
+      offenders
+    };
+  });
+}
+
+async function inspectPersistence(page, timeoutMs) {
+  const result = {
+    checked: false,
+    ok: false,
+    targetView: "settings",
+    beforeReloadVisible: false,
+    afterReloadVisible: false,
+    storageViewBeforeReload: "",
+    storageViewAfterReload: "",
+    reason: ""
+  };
+
+  const hasSettingsToggle = await page.locator("#settingsToggle").count().catch(() => 0);
+  const hasSettingsView = await page.locator("#settingsView").count().catch(() => 0);
+  if (!hasSettingsToggle || !hasSettingsView) {
+    result.reason = "settings view controls not found";
+    return result;
+  }
+
+  result.checked = true;
+  const alreadyVisible = await page.evaluate(() => {
+    const el = document.querySelector("#settingsView");
+    return !!el && !el.classList.contains("hidden") && getComputedStyle(el).display !== "none";
+  });
+  if (!alreadyVisible) {
+    await page.click("#settingsToggle", { timeout: Math.min(timeoutMs, 5000) });
+    await page.waitForTimeout(850);
+  }
+
+  result.beforeReloadVisible = await page.evaluate(() => {
+    const el = document.querySelector("#settingsView");
+    return !!el && !el.classList.contains("hidden") && getComputedStyle(el).display !== "none";
+  });
+  result.storageViewBeforeReload = await page.evaluate(() => {
+    try { return localStorage.getItem("btdiggRd.view.v1") || ""; } catch (err) { return ""; }
+  });
+
+  await page.reload({ waitUntil: "domcontentloaded", timeout: timeoutMs });
+  await page.waitForLoadState("networkidle", { timeout: Math.min(timeoutMs, 10000) }).catch(() => {});
+  await page.waitForTimeout(850);
+
+  result.afterReloadVisible = await page.evaluate(() => {
+    const el = document.querySelector("#settingsView");
+    return !!el && !el.classList.contains("hidden") && getComputedStyle(el).display !== "none";
+  });
+  result.storageViewAfterReload = await page.evaluate(() => {
+    try { return localStorage.getItem("btdiggRd.view.v1") || ""; } catch (err) { return ""; }
+  });
+  result.ok = result.beforeReloadVisible && result.afterReloadVisible;
+  if (!result.ok) {
+    result.reason = "settings view did not persist after reload";
+  }
+  return result;
+}
+
 async function inspectTarget(browser, target) {
   const context = await browser.newContext({
     viewport: target.viewport,
@@ -90,6 +301,43 @@ async function inspectTarget(browser, target) {
     hasTouch: target.hasTouch,
     deviceScaleFactor: target.isMobile ? 2 : 1
   });
+
+  let interceptedUiState = null;
+  await context.route("**/api/ui-state", async (route) => {
+    const request = route.request();
+    const method = request.method().toUpperCase();
+    if (method === "POST") {
+      let body = {};
+      try {
+        body = JSON.parse(request.postData() || "{}");
+      } catch (err) {
+        body = {};
+      }
+      interceptedUiState = {
+        ...(body.state || {}),
+        client_id: body.client_id || "",
+        client_updated_at: body.client_updated_at || Date.now(),
+        server_updated_at: Date.now(),
+        intercepted_by_ui_check: true
+      };
+      await route.fulfill({
+        status: 200,
+        contentType: "application/json",
+        body: JSON.stringify({ ok: true, state: interceptedUiState })
+      });
+      return;
+    }
+    if (method === "GET" && interceptedUiState) {
+      await route.fulfill({
+        status: 200,
+        contentType: "application/json",
+        body: JSON.stringify({ ok: true, state: interceptedUiState })
+      });
+      return;
+    }
+    await route.continue();
+  });
+
   const page = await context.newPage();
 
   const consoleMessages = [];
@@ -131,6 +379,8 @@ async function inspectTarget(browser, target) {
 
   let mainStatus = 0;
   let snapshot = {};
+  let overflow = { ok: false, hasOverflow: true, reason: "not checked" };
+  let persistence = { checked: false, ok: false, reason: "not checked" };
   try {
     const response = await page.goto(url, { waitUntil: "domcontentloaded", timeout: timeoutMs });
     mainStatus = response ? response.status() : 0;
@@ -174,7 +424,9 @@ async function inspectTarget(browser, target) {
       };
     });
 
+    overflow = await inspectOverflow(page);
     await page.screenshot({ path: target.screenshot, fullPage: true });
+    persistence = await inspectPersistence(page, timeoutMs);
   } finally {
     await context.close();
   }
@@ -188,7 +440,9 @@ async function inspectTarget(browser, target) {
     consoleMessages.filter((x) => x.type === "error").length === 0 &&
     pageErrors.length === 0 &&
     failedRequests.length === 0 &&
-    responseErrors.length === 0
+    responseErrors.length === 0 &&
+    overflow.ok &&
+    persistence.ok
   );
 
   return {
@@ -201,12 +455,19 @@ async function inspectTarget(browser, target) {
     pageErrors,
     failedRequests,
     responseErrors,
+    overflow,
+    persistence,
     snapshot
   };
 }
 
 (async () => {
-  const browser = await chromium.launch({ headless: true });
+  const launchOptions = { headless: true };
+  if (launchConfig.mode === "system" && launchConfig.channel) {
+    launchOptions.channel = launchConfig.channel;
+  }
+
+  const browser = await chromium.launch(launchOptions);
   const results = [];
   try {
     for (const target of targets) {
@@ -221,7 +482,9 @@ async function inspectTarget(browser, target) {
     consoleWarnings: results.reduce((n, r) => n + r.consoleMessages.filter((x) => x.type === "warning").length, 0),
     pageErrors: results.reduce((n, r) => n + r.pageErrors.length, 0),
     failedRequests: results.reduce((n, r) => n + r.failedRequests.length, 0),
-    responseErrors: results.reduce((n, r) => n + r.responseErrors.length, 0)
+    responseErrors: results.reduce((n, r) => n + r.responseErrors.length, 0),
+    overflowFailures: results.reduce((n, r) => n + (r.overflow.ok ? 0 : 1), 0),
+    persistenceFailures: results.reduce((n, r) => n + (r.persistence.ok ? 0 : 1), 0)
   };
 
   const payload = {
@@ -229,6 +492,7 @@ async function inspectTarget(browser, target) {
     checkedAt: new Date().toISOString(),
     url,
     timeoutMs,
+    browser: launchConfig,
     totals,
     results
   };
@@ -241,6 +505,7 @@ async function inspectTarget(browser, target) {
     ok: false,
     checkedAt: new Date().toISOString(),
     url,
+    browser: launchConfig,
     fatal: String(err && err.stack ? err.stack : err)
   };
   fs.writeFileSync(resultPath, JSON.stringify(payload, null, 2), "utf8");
@@ -249,21 +514,30 @@ async function inspectTarget(browser, target) {
 });
 '@
 
-Set-Content -Path $runnerPath -Value $runner -Encoding UTF8
+[System.IO.File]::WriteAllText($runnerPath, $runner, $utf8NoBom)
 
-$raw = & $nodePath $runnerPath $Url $TimeoutMs $resultPath $desktopShot $mobileShot
+Remove-Item -LiteralPath $resultPath -ErrorAction SilentlyContinue
+$raw = & $nodePath $runnerPath $Url $TimeoutMs $resultPath $desktopShot $mobileShot $launchConfigPath
 $exit = $LASTEXITCODE
+if (-not (Test-Path -LiteralPath $resultPath)) {
+    exit $exit
+}
 $result = Get-Content -Raw -Path $resultPath | ConvertFrom-Json
 
 Write-Host "URL: $($result.url)"
+Write-Host ("NAVEGADOR: {0} CANAL={1} ORIGEN={2} VERSION={3}" -f $result.browser.name, $result.browser.channel, $result.browser.source, $result.browser.version)
 foreach ($item in $result.results) {
     $state = if ($item.ok) { "OK" } else { "FALLO" }
-    Write-Host ("{0}: {1} HTTP={2} APP={3} CAPTURA={4}" -f $item.name.ToUpperInvariant(), $state, $item.mainStatus, $item.appLoaded, $item.screenshot)
+    $overflowState = if ($item.overflow.ok) { "OK" } else { "FALLO" }
+    $persistenceState = if ($item.persistence.ok) { "OK" } else { "FALLO" }
+    Write-Host ("{0}: {1} HTTP={2} APP={3} OVERFLOW={4} PERSISTENCIA={5} CAPTURA={6}" -f $item.name.ToUpperInvariant(), $state, $item.mainStatus, $item.appLoaded, $overflowState, $persistenceState, $item.screenshot)
 }
 Write-Host ("CONSOLA_ERRORES: {0}" -f $result.totals.consoleErrors)
 Write-Host ("CONSOLA_AVISOS: {0}" -f $result.totals.consoleWarnings)
 Write-Host ("PAGINA_ERRORES: {0}" -f $result.totals.pageErrors)
 Write-Host ("RED_FALLOS: {0}" -f ($result.totals.failedRequests + $result.totals.responseErrors))
+Write-Host ("OVERFLOW_FALLOS: {0}" -f $result.totals.overflowFailures)
+Write-Host ("PERSISTENCIA_FALLOS: {0}" -f $result.totals.persistenceFailures)
 Write-Host "RESULTADO_JSON: $resultPath"
 
 if ($exit -ne 0) {

@@ -8,10 +8,12 @@ description: Validar visualmente la web btdigg-rd del proyecto Z:\buscador-rd en
 ## Flujo
 
 1. Abrir `http://192.168.1.159:9007/`.
-2. Comprobar que carga la herramienta real, no una pagina en blanco.
-3. Revisar consola y red si hay fallo visible.
-4. Probar solo el flujo afectado por el cambio.
-5. Si se tocan pestanas, filtros o secciones, comprobar persistencia tras recargar.
+2. Usar por defecto Chrome/Edge del sistema, detectado sin depender solo de PATH.
+3. Comprobar que carga la herramienta real, no una pagina en blanco.
+4. Validar desktop y mobile con capturas.
+5. Revisar consola JS, errores de pagina, red y respuestas HTTP con error.
+6. Comprobar overflow horizontal y persistencia de una vista tras recargar.
+7. Probar solo el flujo afectado por el cambio.
 
 ## Comando
 
@@ -25,9 +27,17 @@ Opcional:
 powershell -NoProfile -ExecutionPolicy Bypass -File .agents\skills\playwright-ui-check-btdigg-rd\scripts\ui_check.ps1 -Url http://192.168.1.159:9007/
 ```
 
+Fallback explicito si Chrome/Edge del sistema no sirve:
+
+```powershell
+powershell -NoProfile -ExecutionPolicy Bypass -File .agents\skills\playwright-ui-check-btdigg-rd\scripts\ui_check.ps1 -AllowBundledChromium
+```
+
 ## Reglas
 
 - La validacion visible manda sobre logs internos cuando el fallo es de UI.
 - No uses esta skill para cambiar codigo; solo para comprobar y recoger evidencia.
 - No hagas pruebas destructivas ni lances descargas reales sin permiso.
-- En respuesta final, indica URL, resultado visible, consola/red y captura si procede.
+- No descargues Chromium automaticamente en el flujo normal.
+- El fallback a Chromium de Playwright debe ser explicito, no automatico.
+- En respuesta final, indica URL, navegador usado, resultado visible, consola/red, overflow, persistencia y captura si procede.
