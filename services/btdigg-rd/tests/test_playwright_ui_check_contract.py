@@ -36,6 +36,8 @@ def test_ui_check_uses_system_browser_before_bundled_chromium():
         "App Paths\\chrome.exe",
         'launchOptions.channel = launchConfig.channel',
         "AllowBundledChromium",
+        "AllowExecutablePathFallback",
+        "executablePath: launchConfig.path",
         "PLAYWRIGHT_SKIP_BROWSER_DOWNLOAD",
     ):
         assert expected in script

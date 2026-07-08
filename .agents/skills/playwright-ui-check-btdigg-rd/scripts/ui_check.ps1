@@ -2,7 +2,8 @@ param(
     [string]$Url = "http://192.168.1.159:9007/",
     [int]$TimeoutMs = 30000,
     [switch]$SkipInstall,
-    [switch]$AllowBundledChromium
+    [switch]$AllowBundledChromium,
+    [switch]$AllowExecutablePathFallback
 )
 
 $ErrorActionPreference = "Stop"
@@ -170,6 +171,7 @@ $launchConfig = @{
     path = $browserInfo.path
     source = $browserInfo.source
     version = $browserInfo.version
+    allowExecutablePathFallback = [bool]$AllowExecutablePathFallback
 }
 $utf8NoBom = New-Object System.Text.UTF8Encoding($false)
 [System.IO.File]::WriteAllText($launchConfigPath, ($launchConfig | ConvertTo-Json -Depth 5), $utf8NoBom)
@@ -461,13 +463,30 @@ async function inspectTarget(browser, target) {
   };
 }
 
-(async () => {
+async function launchBrowser() {
   const launchOptions = { headless: true };
   if (launchConfig.mode === "system" && launchConfig.channel) {
     launchOptions.channel = launchConfig.channel;
   }
 
-  const browser = await chromium.launch(launchOptions);
+  try {
+    return await chromium.launch(launchOptions);
+  } catch (err) {
+    if (
+      launchConfig.mode === "system" &&
+      launchConfig.allowExecutablePathFallback &&
+      launchConfig.path
+    ) {
+      launchConfig.channelLaunchError = String(err && err.message ? err.message : err).slice(0, 1000);
+      launchConfig.usedExecutablePathFallback = true;
+      return await chromium.launch({ headless: true, executablePath: launchConfig.path });
+    }
+    throw err;
+  }
+}
+
+(async () => {
+  const browser = await launchBrowser();
   const results = [];
   try {
     for (const target of targets) {
