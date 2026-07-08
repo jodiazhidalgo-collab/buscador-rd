@@ -1,11 +1,11 @@
 {
   "client_id": "ui-mr1fx2c2-mm61i7",
-  "client_updated_at": 1783473262754,
+  "client_updated_at": 1783474874129,
   "form": {
     "minGb": "0",
     "mode": "0",
     "pages": "1",
-    "query": "Pillion"
+    "query": "Torrente presidente"
   },
   "history_open": {
     "days": {
@@ -21,8 +21,8 @@
     "dir": "asc",
     "key": "index"
   },
-  "server_updated_at": 1783473263192,
-  "updated_at": "2026-07-08T03:14:23+02:00",
+  "server_updated_at": 1783474874587,
+  "updated_at": "2026-07-08T03:41:14+02:00",
   "version": 1,
   "view": "settings"
 }

@@ -1,9 +1,9 @@
 {
   "summary": {
-    "generated_at": "2026-07-08T01:16:28.252564+00:00",
+    "generated_at": "2026-07-08T01:41:50.430592+00:00",
     "trigger": "web-push",
     "current_run_id": "",
-    "exported_files": 2879,
+    "exported_files": 2894,
     "skipped_files": 4,
     "redactions": 95,
     "sqlite_rows": 87,
@@ -27,8 +27,8 @@
     ],
     "repo": {
       "root": "/app/project",
-      "head": "e23c8afd0e3829d1877179d12e66ee5b59cc781e",
-      "tracked_files_count": 2980,
+      "head": "12e38c139ebeafe286e4b35e2076b35ea0587b0a",
+      "tracked_files_count": 3017,
       "public_dir": "/app/diagnostics_public"
     }
   },
@@ -11723,6 +11723,70 @@
     },
     {
       "source": "btdigg",
+      "path": "diagnostics/btdigg/jobs/2026-07-08/c3d38a48ff18/errors.jsonl",
+      "bytes": 0,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
+      "path": "diagnostics/btdigg/jobs/2026-07-08/c3d38a48ff18/events.jsonl",
+      "bytes": 71437,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
+      "path": "diagnostics/btdigg/jobs/2026-07-08/c3d38a48ff18/events.seq",
+      "bytes": 4,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
+      "path": "diagnostics/btdigg/jobs/2026-07-08/c3d38a48ff18/meta.json",
+      "bytes": 2087,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
+      "path": "diagnostics/btdigg/jobs/2026-07-08/c3d38a48ff18/rd_magnets_live.jsonl",
+      "bytes": 4781,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
+      "path": "diagnostics/btdigg/jobs/2026-07-08/c3d38a48ff18/summary.json",
+      "bytes": 3672,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
+      "path": "diagnostics/btdigg/jobs/2026-07-08/c3d38a48ff18/timeline.md",
+      "bytes": 13390,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
+      "path": "diagnostics/btdigg/jobs/2026-07-08/c3d38a48ff18/warnings.jsonl",
+      "bytes": 0,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
       "path": "diagnostics/btdigg/jobs/2026-07-08/d79f10a29602/errors.jsonl",
       "bytes": 0,
       "exported": true,
@@ -16276,7 +16340,7 @@
     {
       "source": "btdigg",
       "path": "history/btdigg_history.json",
-      "bytes": 135334,
+      "bytes": 135401,
       "exported": true,
       "redacted": false,
       "note": ""
@@ -21475,6 +21539,62 @@
     },
     {
       "source": "btdigg",
+      "path": "jobs/c3d38a48ff18/cancel.json",
+      "bytes": 115,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
+      "path": "jobs/c3d38a48ff18/exports/ULTIMOS_RESULTADOS.json",
+      "bytes": 18028,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
+      "path": "jobs/c3d38a48ff18/exports/ULTIMO_QBIT_VIVOS.txt",
+      "bytes": 125,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
+      "path": "jobs/c3d38a48ff18/exports/ULTIMO_RD_TEMPORAL.txt",
+      "bytes": 203,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
+      "path": "jobs/c3d38a48ff18/exports/ULTIMO_TOP.txt",
+      "bytes": 490,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
+      "path": "jobs/c3d38a48ff18/safeout.log",
+      "bytes": 2483,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
+      "path": "jobs/c3d38a48ff18/shown.json",
+      "bytes": 2062,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
       "path": "jobs/c45b3ba65aa5/cancel.json",
       "bytes": 115,
       "exported": true,
@@ -22972,7 +23092,7 @@
     {
       "source": "btdigg",
       "path": "motor/exports/EDITOR_MAESTRO_SHOWN.json",
-      "bytes": 1990,
+      "bytes": 2062,
       "exported": true,
       "redacted": false,
       "note": ""
@@ -22980,7 +23100,7 @@
     {
       "source": "btdigg",
       "path": "motor/exports/ULTIMOS_RESULTADOS.json",
-      "bytes": 17163,
+      "bytes": 18028,
       "exported": true,
       "redacted": false,
       "note": ""
@@ -23004,7 +23124,7 @@
     {
       "source": "btdigg",
       "path": "motor/exports/ULTIMO_TOP.txt",
-      "bytes": 469,
+      "bytes": 490,
       "exported": true,
       "redacted": false,
       "note": ""
@@ -23060,7 +23180,7 @@
     {
       "source": "btdigg",
       "path": "ui_state.json",
-      "bytes": 532,
+      "bytes": 544,
       "exported": true,
       "redacted": false,
       "note": ""
