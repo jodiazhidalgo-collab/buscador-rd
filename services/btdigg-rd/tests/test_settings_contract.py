@@ -34,13 +34,14 @@ def test_settings_get_post_contract(client, tmp_path, monkeypatch):
     get_payload = get_response.get_json()
     assert get_payload["ok"] is True
     fields = get_payload["settings"]["btdigg"]["fields"]
-    assert len(fields) == 29
+    assert len(fields) == 28
     assert all(field.get("value") is not None for field in fields)
     assert all("default" in field for field in fields)
     assert any(field["key"] == "default_pages" for field in fields)
     mode_field = next(field for field in fields if field["key"] == "default_mode")
     assert [option["value"] for option in mode_field["options"]] == [0, 1, 3]
     labels_by_key = {field["key"]: field["label"] for field in fields}
+    assert "pack_query_match_min_ratio" not in labels_by_key
     assert labels_by_key["default_pages"] == "Páginas BTDigg"
     assert labels_by_key["min_size_gb"] == "Tamaño mínimo GB"
 
@@ -80,7 +81,7 @@ def test_settings_trimmed_config_returns_effective_values_and_defaults(client, t
     assert response.status_code == 200
     fields = response.get_json()["settings"]["btdigg"]["fields"]
     by_key = {field["key"]: field for field in fields}
-    assert len(fields) == 29
+    assert len(fields) == 28
     assert all(field["value"] is not None for field in fields)
     assert all("default" in field for field in fields)
     assert by_key["default_pages"]["value"] == "1-3"

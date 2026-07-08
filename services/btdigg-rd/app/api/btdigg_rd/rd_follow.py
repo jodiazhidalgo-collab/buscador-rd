@@ -456,6 +456,13 @@ def _event_to_line(record: dict[str, Any], started_at: datetime | None) -> dict[
         return _line(record, started_at, "info", "select", f"RD: pide elegir archivo | {total_files} archivos, {videos} vídeos{extra}{suffix}.", "Secundario", "secundario")
 
     if event == "rd_select_files_decision":
+        files = data.get("files") or ""
+        if str(data.get("selection_mode") or "").lower() == "all" or str(files).lower() == "all":
+            total_files = _fmt_num(data.get("files_total"))
+            size = _fmt_num(data.get("file_size_gb") or data.get("total_size_gb"))
+            title = _short_title(data)
+            suffix = f" | {title}" if title else ""
+            return _line(record, started_at, "info", "select", f"RD: selecciono todo | {total_files} archivos | {size} GB{suffix}.", "Secundario", "secundario")
         fname = str(data.get("file_name") or "").strip()
         if len(fname) > 80:
             fname = fname[:79].rstrip() + "..."
@@ -466,6 +473,8 @@ def _event_to_line(record: dict[str, Any], started_at: datetime | None) -> dict[
 
     if event == "rd_verify_select_files":
         files = data.get("files") or data.get("selected_file") or ""
+        if str(data.get("selection_mode") or "").lower() == "all" or str(files).lower() == "all":
+            return _line(record, started_at, "info", "select", "RD: seleccion total enviada a Real-Debrid.", "Secundario", "secundario")
         suffix = f" | archivos {files}" if files else ""
         return _line(record, started_at, "info", "select", "RD: selección enviada a Real-Debrid" + suffix + ".", "Secundario", "secundario")
 

@@ -124,9 +124,22 @@ def test_rd_follow_explains_file_selection_without_marking_fail_as_ok(isolated_d
         n=1,
         total=2,
         title="Pillion 2025 1080p WEB EN-RGB",
-        files="1",
-        file_name="/Pillion 2025 1080p WEB EN-RGB.mkv",
+        files="all",
+        requested_files="all",
+        selection_mode="all",
+        file_name="todos los archivos",
         file_size_gb=6.15,
+        files_total=3,
+        video_files=1,
+    )
+    blackbox.job_event(
+        job_id,
+        "rd_verify_select_files",
+        n=1,
+        total=2,
+        title="Pillion 2025 1080p WEB EN-RGB",
+        files="all",
+        selection_mode="all",
     )
     blackbox.job_event(job_id, "rd_verify_queue_done_item", done=1, total=2, status="RD_FAIL")
 
@@ -134,7 +147,8 @@ def test_rd_follow_explains_file_selection_without_marking_fail_as_ok(isolated_d
     texts = [line["text"] for line in follow["lines"]]
 
     assert any("pide elegir archivo" in text for text in texts)
-    assert any("archivo elegido" in text for text in texts)
+    assert any("selecciono todo" in text for text in texts)
+    assert any("seleccion total enviada" in text for text in texts)
     fail_lines = [text for text in texts if "RD: 1/2" in text]
     assert fail_lines == ["RD: 1/2 aviso | RD_FAIL."]
     assert "OK" not in fail_lines[0]

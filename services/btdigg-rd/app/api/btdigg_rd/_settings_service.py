@@ -16,7 +16,6 @@ SETTINGS_SCHEMA: list[dict[str, Any]] = [
     {"key": "max_size_gb", "label": "Tamaño máximo GB", "help": "Descarta cosas demasiado grandes.", "type": "float", "min": 1, "max": 1000},
     {"key": "request_timeout_sec", "label": "Espera web/API", "help": "Tiempo máximo por llamadas web/RD/qBit.", "recommendation": "20-40", "type": "int", "min": 3, "max": 300},
     {"key": "delay_between_btdigg_pages_sec", "label": "Pausa entre páginas", "help": "Equilibrio para ir más rápido sin castigar BTDigg.", "recommendation": "3-7", "type": "float", "min": 0, "max": 60},
-    {"key": "pack_query_match_min_ratio", "label": "Coincidencia de paquete", "help": "Elige el archivo bueno dentro de un pack.", "recommendation": "0,50-0,65", "type": "float", "min": 0, "max": 1},
     {"key": "verify_max_candidates", "label": "Candidatos RD", "help": "Real-Debrid busca más, pero tarda más.", "recommendation": "30-60", "type": "int", "min": 1, "max": 300},
     {"key": "verify_wait_sec", "label": "Espera por intento RD", "help": "Segundos de espera interna de RD. Los intentos quedan fijos por dentro en 1.", "recommendation": "0,25-1", "type": "float", "min": 0, "max": 30},
     {"key": "qbit_probe_max_candidates", "label": "Candidatos qBittorrent", "help": "Cuántos candidatos prueba qBittorrent.", "recommendation": "20-40", "type": "int", "min": 1, "max": 300},

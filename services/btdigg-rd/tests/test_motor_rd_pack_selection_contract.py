@@ -54,6 +54,22 @@ def no_video_pack_info():
     }
 
 
+def small_mp4_pack_info(status="waiting_files_selection", links=None):
+    return {
+        "id": "TIDPRESI",
+        "status": status,
+        "progress": 0 if status == "waiting_files_selection" else 100,
+        "links": links or [],
+        "files": [
+            {
+                "id": "1",
+                "path": "/Torrente Presidente (DonTorrent).mp4",
+                "bytes": int(22.49 * 1024 * 1024),
+            },
+        ],
+    }
+
+
 def test_video_ext_ok_uses_raw_suffix_not_normalized_text():
     motor = load_motor_module()
 
@@ -68,25 +84,7 @@ def test_video_ext_ok_uses_raw_suffix_not_normalized_text():
     assert motor.video_ext_ok("/.pad/326511") is False
 
 
-def test_choose_internal_files_selects_large_mkv_by_id(monkeypatch):
-    motor = load_motor_module()
-    events = []
-    monkeypatch.setattr(motor, "diag", lambda event, **kwargs: events.append((event, kwargs)))
-
-    ids, fname, fgb, note = motor.choose_internal_files(
-        enola_pack_info(),
-        wanted_title="Enola Holmes 3",
-        wanted_terms=["enola", "holmes", "3"],
-    )
-
-    assert ids == "1"
-    assert fname.endswith(".mkv")
-    assert fgb > 7
-    assert "archivo_interno=" in note
-    assert any(event == "rd_choose_file_eval" and payload["skipped_reason"] == "extension_no_video" for event, payload in events)
-
-
-def test_rd_verify_by_addmagnet_selects_file_id_and_marks_ok(monkeypatch):
+def test_rd_verify_by_addmagnet_selects_all_and_marks_ok(monkeypatch):
     motor = load_motor_module()
     calls = []
     events = []
@@ -124,10 +122,10 @@ def test_rd_verify_by_addmagnet_selects_file_id_and_marks_ok(monkeypatch):
     checked = motor.rd_verify_by_addmagnet(result, "token", idx=1, total=1)
 
     assert checked.rd_status == "RD_OK"
-    assert checked.selected_file_ids == "1"
+    assert checked.selected_file_ids == "all"
     assert checked.rd_status != "PACK_SIN_COINCIDENCIA"
     select_calls = [call for call in calls if call[1] == "/torrents/selectFiles/TID123"]
-    assert select_calls == [("POST", "/torrents/selectFiles/TID123", {"files": "1"})]
+    assert select_calls == [("POST", "/torrents/selectFiles/TID123", {"files": "all"})]
     waiting_events = [payload for event, payload in events if event == "rd_waiting_files_selection"]
     assert len(waiting_events) == 1
     assert waiting_events[0]["files_total"] == 4
@@ -137,25 +135,36 @@ def test_rd_verify_by_addmagnet_selects_file_id_and_marks_ok(monkeypatch):
     decision_events = [payload for event, payload in events if event == "rd_select_files_decision"]
     assert len(decision_events) == 1
     assert decision_events[0]["candidate_trace_id"].startswith("rd-001-")
-    assert decision_events[0]["files"] == "1"
-    assert any(event == "rd_verify_select_files" and payload["files"] == "1" for event, payload in events)
+    assert decision_events[0]["files"] == "all"
+    assert decision_events[0]["selection_mode"] == "all"
+    assert any(event == "rd_verify_select_files" and payload["files"] == "all" for event, payload in events)
     assert any(event == "rd_verify_post_select_poll" and payload["candidate_trace_id"].startswith("rd-001-") for event, payload in events)
     assert any(event == "rd_verify_ok" and payload["candidate_trace_id"].startswith("rd-001-") for event, payload in events)
     assert not any(event == "rd_verify_pack_skip" for event, _payload in events)
 
 
-def test_rd_verify_by_addmagnet_without_valid_video_hard_skips_and_deletes(monkeypatch):
+def test_rd_verify_by_addmagnet_without_valid_video_selects_all_and_marks_ok(monkeypatch):
     motor = load_motor_module()
     calls = []
     events = []
     deleted = []
+    info_reads = 0
+
+    done_info = no_video_pack_info()
+    done_info["status"] = "downloaded"
+    done_info["progress"] = 100
+    done_info["links"] = ["https://real-debrid.example/text-pack-link"]
 
     def fake_rd_call(method, path, token, **kwargs):
+        nonlocal info_reads
         calls.append((method, path, kwargs.get("data")))
         if method == "POST" and path == "/torrents/addMagnet":
             return {"id": "TID404"}
         if method == "GET" and path == "/torrents/info/TID404":
-            return no_video_pack_info()
+            info_reads += 1
+            return no_video_pack_info() if info_reads == 1 else done_info
+        if method == "POST" and path == "/torrents/selectFiles/TID404":
+            return {}
         raise AssertionError(f"unexpected RD call: {method} {path}")
 
     monkeypatch.setattr(motor, "cancel_checkpoint", lambda *args, **kwargs: None)
@@ -175,11 +184,88 @@ def test_rd_verify_by_addmagnet_without_valid_video_hard_skips_and_deletes(monke
 
     checked = motor.rd_verify_by_addmagnet(result, "token", idx=1, total=1)
 
-    assert checked.rd_status == "PACK_SIN_COINCIDENCIA"
-    assert deleted == [("TID404", "waiting_files_no_match", True)]
-    assert not any(call[1] == "/torrents/selectFiles/TID404" for call in calls)
-    assert any(event == "rd_verify_pack_skip" for event, _payload in events)
-    assert any(event == "rd_choose_file_eval" and payload["skipped_reason"] == "extension_no_video" for event, payload in events)
+    assert checked.rd_status == "RD_OK"
+    assert checked.selected_file_ids == "all"
+    assert deleted == []
+    select_calls = [call for call in calls if call[1] == "/torrents/selectFiles/TID404"]
+    assert select_calls == [("POST", "/torrents/selectFiles/TID404", {"files": "all"})]
+    assert any(event == "rd_select_files_decision" and payload["selection_mode"] == "all" for event, payload in events)
+    assert not any(event == "rd_verify_pack_skip" for event, _payload in events)
+
+
+def test_rd_verify_by_addmagnet_small_mp4_selects_all_instead_of_pack_skip(monkeypatch):
+    motor = load_motor_module()
+    calls = []
+    events = []
+    info_reads = 0
+
+    wait_info = small_mp4_pack_info()
+    done_info = small_mp4_pack_info(status="downloaded", links=["https://real-debrid.example/presi"])
+
+    def fake_rd_call(method, path, token, **kwargs):
+        nonlocal info_reads
+        calls.append((method, path, kwargs.get("data")))
+        if method == "POST" and path == "/torrents/addMagnet":
+            return {"id": "TIDPRESI"}
+        if method == "GET" and path == "/torrents/info/TIDPRESI":
+            info_reads += 1
+            return wait_info if info_reads == 1 else done_info
+        if method == "POST" and path == "/torrents/selectFiles/TIDPRESI":
+            return {}
+        raise AssertionError(f"unexpected RD call: {method} {path}")
+
+    monkeypatch.setattr(motor, "cancel_checkpoint", lambda *args, **kwargs: None)
+    monkeypatch.setattr(motor, "sleep_interruptible", lambda *args, **kwargs: None)
+    monkeypatch.setattr(motor, "record_rd_sent_magnet", lambda *args, **kwargs: None)
+    monkeypatch.setattr(motor, "rd_find_existing_downloaded_by_hash", lambda *args, **kwargs: None)
+    monkeypatch.setattr(motor, "rd_call_with_retry", fake_rd_call)
+    monkeypatch.setattr(motor, "diag", lambda event, **kwargs: events.append((event, kwargs)))
+
+    result = motor.Result(
+        title="Torrente Presidente (DonTorrent)",
+        magnet="magnet:?xt=urn:btih:a1ae72797bcf893ff3d5b4160d08e7016ed2a534",
+        hash="a1ae72797bcf893ff3d5b4160d08e7016ed2a534",
+        size_gb=0.022,
+    )
+
+    checked = motor.rd_verify_by_addmagnet(result, "token", idx=1, total=1)
+
+    assert checked.rd_status == "RD_OK"
+    assert checked.selected_file_ids == "all"
+    select_calls = [call for call in calls if call[1] == "/torrents/selectFiles/TIDPRESI"]
+    assert select_calls == [("POST", "/torrents/selectFiles/TIDPRESI", {"files": "all"})]
+    waiting = [payload for event, payload in events if event == "rd_waiting_files_selection"]
+    assert waiting[0]["files_total"] == 1
+    assert waiting[0]["files"][0]["gb"] == 0.022
+    assert not any(event == "rd_verify_pack_skip" for event, _payload in events)
+
+
+def test_rd_torrent_id_to_downloads_selects_all_when_rd_waits_for_files(monkeypatch):
+    motor = load_motor_module()
+    calls = []
+    info_reads = 0
+    wait_info = small_mp4_pack_info()
+    done_info = small_mp4_pack_info(status="downloaded", links=["https://real-debrid.example/host-link"])
+
+    def fake_rd_api(method, path, token, **kwargs):
+        nonlocal info_reads
+        calls.append((method, path, kwargs.get("data")))
+        if method == "GET" and path == "/torrents/info/TIDDL":
+            info_reads += 1
+            return wait_info if info_reads == 1 else done_info
+        if method == "POST" and path == "/torrents/selectFiles/TIDDL":
+            return {}
+        if method == "POST" and path == "/unrestrict/link":
+            return {"download": "https://real-debrid.example/download"}
+        raise AssertionError(f"unexpected RD call: {method} {path}")
+
+    monkeypatch.setattr(motor, "rd_api", fake_rd_api)
+    monkeypatch.setattr(motor, "sleep_interruptible", lambda *args, **kwargs: None)
+
+    downloads = motor.rd_torrent_id_to_downloads("TIDDL", "token", wanted_title="Torrente Presidente")
+
+    assert downloads == ["https://real-debrid.example/download"]
+    assert ("POST", "/torrents/selectFiles/TIDDL", {"files": "all"}) in calls
 
 
 def test_rd_verify_by_addmagnet_records_blocked_before_file_selection(monkeypatch):

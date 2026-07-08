@@ -278,13 +278,6 @@ DEFAULT_CONFIG = {
     "rd_check_existing_torrents": True,
     "rd_existing_torrents_limit": 1000,
     "screen_hide_qbit_not_working": True,
-    "pack_auto_select_best_file": True,
-    "pack_only_video_files": True,
-    "pack_min_video_gb": 0.3,
-    "pack_query_match_min_ratio": 0.55,
-    "pack_hard_skip_without_match": True,
-    "pack_allow_title_single_video_fallback": True,
-    "pack_title_fallback_min_video_gb": 1.0,
     "quality_min_size_tolerance_gb": 1.0,
     "quality_min_size_tolerance_pct": 0.05,
     "quality_min_size_tolerance_max_gb": 3.0,
@@ -4382,24 +4375,28 @@ def _rd_files_snapshot(info, wanted_terms=None, max_files=24):
         "files_omitted": max(0, len(rows) - max_files),
     }
 
+def _rd_select_all_files_payload(snapshot):
+    total_size_gb = float(snapshot.get("total_size_gb") or 0.0)
+    files_total = int(snapshot.get("files_total") or 0)
+    video_files = int(snapshot.get("video_files") or 0)
+    note = (
+        f"seleccion_todo_rd files=all files_total={files_total} "
+        f"video_files={video_files} total_size_gb={total_size_gb:.3f}"
+    )
+    return {
+        "ids": "all",
+        "file_name": "todos los archivos",
+        "file_size_gb": total_size_gb,
+        "note": note,
+        "selection_mode": "all",
+    }
+
 def _basename_norm(path):
     return normalize(str(path or "").replace("\\", "/").rsplit("/", 1)[-1])
 
 def _is_extra_video_path(path):
     base = _basename_norm(path)
     return bool(re.search(r"(^|[^a-z0-9])(sample|trailer|extra|extras|featurette|preview)([^a-z0-9]|$)", base))
-
-def _diag_choose_file_eval(fid, path, gb, is_video_ext, is_extra, ratio, skipped_reason):
-    diag(
-        "rd_choose_file_eval",
-        file_id=str(fid or "")[:80],
-        path=str(path or "")[:240],
-        gb=round(float(gb or 0), 3),
-        is_video_ext=bool(is_video_ext),
-        is_extra=bool(is_extra),
-        ratio=round(float(ratio or 0), 3),
-        skipped_reason=str(skipped_reason or "")[:120],
-    )
 
 def terms_from_query_for_match(query):
     out = []
@@ -4472,81 +4469,6 @@ def _match_context_for_result(r):
         if value:
             parts.append(value)
     return "\n".join(parts)
-
-def choose_internal_files(info, wanted_title="", wanted_terms=None):
-    """
-    Escoge archivos internos seguros.
-    Regla clave: nunca selecciona todo a ciegas. En packs busca el archivo que coincide con la búsqueda.
-    """
-    files = info.get("files") if isinstance(info, dict) else []
-    if not isinstance(files, list) or not files:
-        return "", "", 0.0, "sin_lista_archivos"
-
-    terms = list(wanted_terms if wanted_terms is not None else query_terms_for_match())
-    if not terms and wanted_title:
-        terms = query_terms_for_match(wanted_title)
-
-    candidates = []
-    fallback_videos = []
-    total_files = len(files)
-    total_gb = 0.0
-    title_ratio, title_hits = _match_ratio(terms, wanted_title or "")
-    min_video_gb = float(CONFIG.get("pack_min_video_gb", 0.3) or 0.3)
-    fallback_min_gb = max(min_video_gb, float(CONFIG.get("pack_title_fallback_min_video_gb", 1.0) or 1.0), _current_min_size_gb())
-    for f in files:
-        path = _file_path(f)
-        fid = _file_id(f)
-        gb = _file_size_gb(f)
-        total_gb += gb
-        if not fid or not path:
-            _diag_choose_file_eval(fid, path, gb, video_ext_ok(path), False, 0.0, "sin_id_o_path")
-            continue
-        is_video_ext = video_ext_ok(path)
-        if CONFIG.get("pack_only_video_files", True) and not is_video_ext:
-            _diag_choose_file_eval(fid, path, gb, is_video_ext, False, 0.0, "extension_no_video")
-            continue
-        is_extra = _is_extra_video_path(path)
-        if gb and gb < min_video_gb:
-            _diag_choose_file_eval(fid, path, gb, is_video_ext, is_extra, 0.0, "tamano_menor_minimo")
-            continue
-        if not is_extra and (gb or 0) >= fallback_min_gb:
-            fallback_videos.append({"id": fid, "path": path, "gb": gb})
-        ratio, hits = _match_ratio(terms, path)
-        quality = score_result(Result(title=path, size_gb=gb), 0).score
-        # Penaliza samples y extras.
-        if is_extra:
-            quality -= 100
-        # En torrents con varios archivos, si hay términos claros de búsqueda,
-        # el archivo elegido debe coincidir con la búsqueda; el tamaño solo decide entre coincidencias.
-        is_multi_file = total_files > 1
-        if is_multi_file and terms and ratio < float(CONFIG.get("pack_query_match_min_ratio", 0.55) or 0.55):
-            _diag_choose_file_eval(fid, path, gb, is_video_ext, is_extra, ratio, "ratio_menor_minimo")
-            continue
-        # En torrents pequeños sin términos claros, el vídeo grande gana.
-        score = quality + int(min(60, gb * 2)) + int(ratio * 120)
-        candidates.append({"id": fid, "path": path, "gb": gb, "score": score, "ratio": ratio, "hits": hits})
-
-    if not candidates:
-        if (
-            CONFIG.get("pack_allow_title_single_video_fallback", True)
-            and terms
-            and title_ratio >= 1.0
-            and len(fallback_videos) == 1
-        ):
-            best = fallback_videos[0]
-            note = (
-                f"fallback_titulo_un_video={best['path']} | {best['gb']:.2f} GB | "
-                f"hits_titulo={','.join(title_hits) or '-'} | files_total={total_files}"
-            )
-            return best["id"], best["path"], best["gb"], note
-        # Si no hay candidato, NO seleccionar all: eso era lo peligroso.
-        return "", "", 0.0, f"sin_candidato_video_pack files={total_files} terms={','.join(terms)}"
-
-    candidates.sort(key=lambda x: (x["score"], x["gb"]), reverse=True)
-    best = candidates[0]
-    # Si hay varios trozos reales del mismo título, no hacemos inventos; elegimos el mejor vídeo.
-    note = f"archivo_interno={best['path']} | {best['gb']:.2f} GB | hits={','.join(best['hits']) or '-'} | files_total={total_files}"
-    return best["id"], best["path"], best["gb"], note
 
 def _rd_status_blob(info):
     if not isinstance(info, dict):
@@ -4821,27 +4743,13 @@ def rd_verify_by_addmagnet(r, token, idx=0, total=0, ctx=None):
                     progress=progress,
                     **snapshot,
                 )
-                ids, fname, fgb, note = choose_internal_files(info, r.title, wanted_terms=terms)
-                if not ids:
-                    diag("rd_verify_pack_skip", **_rd_candidate_diag(r, idx, total, tid), note=note, files_total=snapshot.get("files_total"), video_files=snapshot.get("video_files"))
-                    return _rd_apply_fast_discard(
-                        r,
-                        tid,
-                        {
-                            "discard": True,
-                            "reason": "waiting_files_no_match",
-                            "status": "PACK_SIN_COINCIDENCIA",
-                            "delete_now": True,
-                            "stage": "waiting_files_selection",
-                            "note": note,
-                        },
-                        token,
-                        idx,
-                        total,
-                        ctx=ctx,
-                    )
+                select_payload = _rd_select_all_files_payload(snapshot)
+                ids = select_payload["ids"]
+                fname = select_payload["file_name"]
+                fgb = select_payload["file_size_gb"]
+                note = select_payload["note"]
                 r.selected_file_ids = ids
-                r.selected_file_name = fname
+                r.selected_file_name = ""
                 r.selected_file_size_gb = fgb
                 r.size_gb = fgb or r.size_gb
                 r.rd_largest_gb = fgb or r.rd_largest_gb
@@ -4850,17 +4758,32 @@ def rd_verify_by_addmagnet(r, token, idx=0, total=0, ctx=None):
                     "rd_select_files_decision",
                     **_rd_candidate_diag(r, idx, total, tid),
                     files=ids,
+                    requested_files=ids,
+                    selection_mode=select_payload["selection_mode"],
                     file_name=fname[:240],
                     file_size_gb=round(float(fgb or 0), 3),
                     note=note[:500],
                     files_total=snapshot.get("files_total"),
                     video_files=snapshot.get("video_files"),
+                    total_size_gb=snapshot.get("total_size_gb"),
+                    files_omitted=snapshot.get("files_omitted"),
                 )
                 try:
                     cancel_checkpoint("rd_verify_by_addmagnet.before_select")
                     rd_call_with_retry("POST", f"/torrents/selectFiles/{tid}", token, data={"files": ids}, op_name="selectFiles", attempts=retries, retry_context=ctx, retry_429_attempts=retry_429_attempts)
                     selected_once = True
-                    diag("rd_verify_select_files", **_rd_candidate_diag(r, idx, total, tid), files=ids, file_name=fname[:240], file_size_gb=round(float(fgb or 0), 3), note=note[:500])
+                    diag(
+                        "rd_verify_select_files",
+                        **_rd_candidate_diag(r, idx, total, tid),
+                        files=ids,
+                        requested_files=ids,
+                        selection_mode=select_payload["selection_mode"],
+                        file_name=fname[:240],
+                        file_size_gb=round(float(fgb or 0), 3),
+                        note=note[:500],
+                        files_total=snapshot.get("files_total"),
+                        video_files=snapshot.get("video_files"),
+                    )
                 except Exception as e:
                     diag("rd_verify_select_error", **_rd_candidate_diag(r, idx, total, tid), error=str(e)[:300])
                     raise
@@ -5857,10 +5780,10 @@ def rd_torrent_id_to_downloads(tid, token, selected_ids="", wanted_title=""):
             try:
                 ids = selected_ids
                 if not ids:
-                    ids, fname, fgb, note = choose_internal_files(info, wanted_title)
-                    if not ids:
-                        raise RuntimeError("No selecciono todo el pack: " + note)
-                    print(f"  Archivo interno seleccionado: {fname} ({fgb:.1f} GB)")
+                    snapshot = _rd_files_snapshot(info, wanted_terms=query_terms_for_match(wanted_title))
+                    payload = _rd_select_all_files_payload(snapshot)
+                    ids = payload["ids"]
+                    print(f"  Seleccionando todos los archivos ({payload['file_size_gb']:.1f} GB)")
                 rd_api("POST", f"/torrents/selectFiles/{tid}", token, data={"files": ids})
                 print(f"  Archivos seleccionados: {ids}")
             except Exception as e:

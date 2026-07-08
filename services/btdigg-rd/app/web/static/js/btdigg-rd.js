@@ -3329,7 +3329,6 @@ const SETTINGS_RESET_FALLBACK_VALUES = {
   max_size_gb: "400",
   request_timeout_sec: "30",
   delay_between_btdigg_pages_sec: "3",
-  pack_query_match_min_ratio: "0.55",
   verify_max_candidates: "60",
   verify_wait_sec: "0.25",
   rd_addmagnet_min_interval_sec: "1",

@@ -15,7 +15,6 @@ PUBLIC_RUNTIME_DEFAULTS: dict[str, Any] = {
     "max_size_gb": 400.0,
     "request_timeout_sec": 30,
     "delay_between_btdigg_pages_sec": 3.0,
-    "pack_query_match_min_ratio": 0.55,
     "verify_max_candidates": 60,
     "verify_wait_sec": 0.25,
     "qbit_probe_max_candidates": 40,
