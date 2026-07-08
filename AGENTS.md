@@ -73,6 +73,25 @@ Rutas importantes:
 - Limpieza segura: usa `limpiar-residuos-btdigg-rd`.
 - Cierre Git local: usa `cerrar-git-btdigg-rd`.
 - Replicas 2/3: usa `replicate-btdigg-rd` solo con permiso explicito.
+- Investigacion avanzada externa: usa `investigacion-avanzada-buscador-rd`.
+
+## Investigacion avanzada externa
+
+Si el usuario pide investigacion avanzada, deep research, prompt para ChatGPT,
+"pasame lo que tengo que pegar", "que lo mire ChatGPT" o algo equivalente sobre
+Buscador RD, usa `investigacion-avanzada-buscador-rd`.
+
+El prompt generado debe indicar siempre:
+
+- repo GitHub: `jodiazhidalgo-collab/buscador-rd`;
+- rama: `master`;
+- mirar primero `README.md`, `AGENTS.md`, `docs/AI_REVIEW.md`,
+  `.agents/skills/`, `.github/workflows/ci.yml`, `services/btdigg-rd/tests/`
+  y `diagnostics_public/`;
+- adaptar el motivo al problema concreto del usuario;
+- no devolver el repo entero ni secretos;
+- recordar que datos vivos recientes solo aparecen en GitHub despues de hacer
+  `Push`.
 
 ## Git
 

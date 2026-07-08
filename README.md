@@ -51,6 +51,7 @@ Lee tambien:
 
 - `AGENTS.md`: instrucciones publicas del repo para Codex/ChatGPT y reglas de trabajo.
 - `.agents/skills/`: workflows reutilizables del proyecto, con scripts seguros y sin secretos.
+- `.agents/skills/investigacion-avanzada-buscador-rd/`: prompt reutilizable para pedir analisis avanzado externo sobre este repo.
 - `docs/AI_REVIEW.md`: guia publica para ChatGPT, Codex o revisiones externas.
 - `docs/evidencia-pytest-y-validacion-local.md`: pruebas pytest, comandos y evidencia local.
 - `.github/workflows/ci.yml`: CI publico con informe JUnit descargable.

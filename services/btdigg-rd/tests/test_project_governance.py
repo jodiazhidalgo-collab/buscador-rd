@@ -19,6 +19,7 @@ def test_root_readme_declares_public_entrypoints_and_truth_source():
         "docker-compose.example.yaml",
         "AGENTS.md",
         ".agents/skills/",
+        ".agents/skills/investigacion-avanzada-buscador-rd/",
         "DATA_DIR",
         "diagnostics/btdigg",
         "docs/AI_REVIEW.md",
@@ -32,6 +33,7 @@ def test_ai_review_guide_points_to_ci_evidence_and_safe_boundaries():
     for expected in (
         "AGENTS.md",
         ".agents/skills/",
+        ".agents/skills/investigacion-avanzada-buscador-rd/",
         "buscador-rd-pytest-evidence",
         "buscador-rd-pytest-junit.xml",
         "docker-compose.example.yaml",
@@ -75,3 +77,18 @@ def test_git_hooks_and_ci_are_present():
     assert "buscador-rd-pytest-evidence" in workflow
     assert "python -m pytest -q" in workflow
     assert "@jodiazhidalgo-collab" in codeowners
+
+
+def test_advanced_investigation_skill_points_to_github_repo():
+    agents = read("AGENTS.md")
+    skill = read(".agents/skills/investigacion-avanzada-buscador-rd/SKILL.md")
+
+    for text in (agents, skill):
+        assert "investigacion-avanzada-buscador-rd" in text
+        assert "jodiazhidalgo-collab/buscador-rd" in text
+        assert "diagnostics_public/" in text
+
+    assert "README.md" in skill
+    assert "AGENTS.md" in skill
+    assert "docs/AI_REVIEW.md" in skill
+    assert ".agents/skills/" in skill

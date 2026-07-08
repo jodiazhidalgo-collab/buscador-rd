@@ -24,6 +24,7 @@ Regla limpia:
 - `.agents/` fuera de `skills` no va a Git.
 - `.codex/` sigue siendo local y privado.
 - Los scripts de skills no deben contener tokens, passwords, API keys, cookies ni credenciales.
+- Para pedir una investigacion avanzada externa, usar `.agents/skills/investigacion-avanzada-buscador-rd/`.
 
 ## Verdad tecnica del flujo
 

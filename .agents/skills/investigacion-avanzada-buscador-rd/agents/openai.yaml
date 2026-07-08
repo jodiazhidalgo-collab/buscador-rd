@@ -1,0 +1,4 @@
+interface:
+  display_name: "Investigacion avanzada Buscador RD"
+  short_description: "Prompt IA para investigar Buscador RD"
+  default_prompt: "Use $investigacion-avanzada-buscador-rd para preparar un prompt de investigacion avanzada sobre Buscador RD."
