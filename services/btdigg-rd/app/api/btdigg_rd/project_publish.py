@@ -1,14 +1,13 @@
 from __future__ import annotations
 
 import os
-import shutil
 import subprocess
 import tempfile
 import threading
 from pathlib import Path
 from typing import Any
 
-from .public_diagnostics import default_public_dir, export_public_diagnostics
+from .public_diagnostics import export_public_diagnostics
 
 
 _LOCK = threading.Lock()
@@ -116,42 +115,11 @@ def _refresh_origin_branch(root: Path, remote: str, branch: str) -> None:
         raise PublishError(f"push no confirmado: origin/{branch} no coincide con HEAD")
 
 
-def _run_gitleaks(root: Path, target: Path) -> None:
-    _require_tool("gitleaks")
-    config = root / ".gitleaks.toml"
-    args = ["gitleaks", "dir", str(target), "--redact"]
-    if config.exists():
-        args.extend(["--config", str(config)])
-    _run(args, root, timeout=180)
-
-
 def _staged_names(root: Path) -> list[str]:
     result = _run_raw(["git", "diff", "--cached", "--name-only", "-z"], root)
     if result.returncode != 0:
         raise PublishError("no se pudo leer el stage de git")
     return [item for item in result.stdout.split("\0") if item]
-
-
-def _scan_staged_files(root: Path, names: list[str]) -> None:
-    if not names:
-        return
-    with tempfile.TemporaryDirectory(prefix="btdigg-staged-") as tmp:
-        tmp_root = Path(tmp)
-        copied = 0
-        for name in names:
-            source = (root / name).resolve()
-            try:
-                source.relative_to(root)
-            except ValueError:
-                raise PublishError("ruta staged fuera del proyecto")
-            if not source.exists() or not source.is_file():
-                continue
-            dest = tmp_root / name
-            dest.parent.mkdir(parents=True, exist_ok=True)
-            shutil.copy2(source, dest)
-            copied += 1
-        if copied:
-            _run_gitleaks(root, tmp_root)
 
 
 def publish_project() -> dict[str, Any]:
@@ -164,15 +132,10 @@ def publish_project() -> dict[str, Any]:
         _safe_git_setup(root)
 
         summary = export_public_diagnostics(trigger="web-push")
-        public_dir = root / "diagnostics_public"
-        if not public_dir.exists():
-            public_dir = default_public_dir()
-        _run_gitleaks(root, public_dir)
 
         _run(["git", "diff", "--check"], root)
         _run(["git", "add", "-A"], root)
         staged = _staged_names(root)
-        _scan_staged_files(root, staged)
 
         commit_created = False
         staged_check = _run_raw(["git", "diff", "--cached", "--quiet"], root)

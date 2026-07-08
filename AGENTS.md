@@ -201,7 +201,7 @@ tokens, passwords, API keys, Authorization, cookies y secretos equivalentes.
 Para regenerarla manualmente:
 
 ```powershell
-powershell -NoProfile -ExecutionPolicy Bypass -File scripts\export_public_diagnostics.ps1 -CheckSecrets
+powershell -NoProfile -ExecutionPolicy Bypass -File scripts\export_public_diagnostics.ps1
 ```
 
 Datos reales del motor:

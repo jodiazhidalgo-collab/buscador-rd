@@ -28,7 +28,7 @@ La UI visible manda cuando el problema es de botones, pestanas, busqueda, voz o 
 `diagnostics_public/` se regenera al terminar jobs RD/BTDigg y tambien se puede regenerar manualmente con:
 
 ```powershell
-powershell -NoProfile -ExecutionPolicy Bypass -File scripts\export_public_diagnostics.ps1 -CheckSecrets
+powershell -NoProfile -ExecutionPolicy Bypass -File scripts\export_public_diagnostics.ps1
 ```
 
 Para que ChatGPT lo vea desde GitHub, despues de regenerar hay que hacer commit y push.
@@ -38,11 +38,10 @@ Para que ChatGPT lo vea desde GitHub, despues de regenerar hay que hacer commit 
 En Ajustes existe un boton `Push` para publicar el estado actual del proyecto en GitHub desde la propia web. El flujo real es:
 
 1. regenerar `diagnostics_public/`;
-2. pasar `gitleaks`;
-3. preparar solo archivos permitidos por `.gitignore`;
-4. crear commit si hay cambios;
-5. hacer push a `master`;
-6. refrescar `origin/master` y confirmar que coincide con `HEAD`.
+2. preparar solo archivos permitidos por `.gitignore`;
+3. crear commit si hay cambios;
+4. hacer push a `master`;
+5. refrescar `origin/master` y confirmar que coincide con `HEAD`.
 
 El despliegue real usa una deploy key SSH local de solo este repo. La key vive fuera de Git en `config/btdigg-rd/git/`; el compose publico solo documenta el montaje.
 

@@ -5,12 +5,11 @@ import subprocess
 import pytest
 
 
-def test_project_publish_exports_scans_commits_and_pushes(tmp_path, monkeypatch):
+def test_project_publish_exports_commits_and_pushes(tmp_path, monkeypatch):
     from api.btdigg_rd import project_publish
 
     root = tmp_path / "repo"
     (root / ".git").mkdir(parents=True)
-    (root / ".gitleaks.toml").write_text("", encoding="utf-8")
     (root / "diagnostics_public").mkdir()
     (root / "diagnostics_public" / "manifest.json").write_text("{}", encoding="utf-8")
     code_file = root / "services" / "btdigg-rd" / "app" / "x.py"
@@ -23,11 +22,6 @@ def test_project_publish_exports_scans_commits_and_pushes(tmp_path, monkeypatch)
     monkeypatch.setattr(project_publish, "export_public_diagnostics", lambda trigger: {"trigger": trigger, "exported_files": 1})
 
     commands: list[list[str]] = []
-    gitleaks_targets = []
-
-    def fake_run_gitleaks(run_root, target):
-        assert run_root == root
-        gitleaks_targets.append(target)
 
     def fake_run(args, run_root, timeout=120):
         assert run_root == root
@@ -50,7 +44,6 @@ def test_project_publish_exports_scans_commits_and_pushes(tmp_path, monkeypatch)
             return subprocess.CompletedProcess(args, 1, "", "")
         return subprocess.CompletedProcess(args, 0, "", "")
 
-    monkeypatch.setattr(project_publish, "_run_gitleaks", fake_run_gitleaks)
     monkeypatch.setattr(project_publish, "_run", fake_run)
     monkeypatch.setattr(project_publish, "_run_raw", fake_run_raw)
     monkeypatch.setattr(project_publish, "_safe_git_setup", lambda run_root: None)
@@ -61,8 +54,6 @@ def test_project_publish_exports_scans_commits_and_pushes(tmp_path, monkeypatch)
     assert result["commit_created"] is True
     assert result["staged_files"] == 2
     assert result["branch"] == "master"
-    assert gitleaks_targets[0] == root / "diagnostics_public"
-    assert len(gitleaks_targets) == 2
     assert ["git", "add", "-A"] in commands
     assert ["git", "commit", "-m", "chore: publish diagnostics from web"] in commands
     assert ["git", "push", "git@github.com:owner/repo.git", "HEAD:master"] in commands

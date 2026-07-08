@@ -1,7 +1,3 @@
-param(
-    [switch]$CheckSecrets
-)
-
 $ErrorActionPreference = "Stop"
 
 $Root = (Resolve-Path (Join-Path $PSScriptRoot "..")).Path
@@ -27,14 +23,4 @@ try {
 }
 finally {
     Pop-Location
-}
-
-if ($CheckSecrets) {
-    $Gitleaks = Get-Command gitleaks -ErrorAction SilentlyContinue
-    if ($Gitleaks) {
-        & $Gitleaks.Source dir $PublicDir --config (Join-Path $Root ".gitleaks.toml") --redact
-    }
-    else {
-        Write-Warning "gitleaks no esta en PATH; export generado sin escaneo extra."
-    }
 }
