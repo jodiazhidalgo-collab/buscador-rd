@@ -1,0 +1,176 @@
+- 2026-07-08T05:17:58+02:00 [info] web::JOB_STARTED
+- 2026-07-08T05:17:58+02:00 [info] general::CONFIG_SNAPSHOT
+- 2026-07-08T05:17:58+02:00 [info] web::COMMAND_PREPARED
+- 2026-07-08T05:17:58+02:00 [info] web::PROCESS_STARTED
+- 2026-07-08T05:17:59+0200 [info] search::editor_clean_search_start
+- 2026-07-08T05:17:59+0200 [info] btdigg::browser_auto_search_start_dom
+- 2026-07-08T05:18:00+0200 [info] btdigg::extract_magnets
+- 2026-07-08T05:18:00+0200 [info] btdigg::btdigg_curl_cffi_fetch
+- 2026-07-08T05:18:02+0200 [info] btdigg::browser_auto_search_end_dom
+- 2026-07-08T05:18:02+0200 [info] motor::prepare_results_start
+- 2026-07-08T05:18:02+0200 [info] motor::prepare_after_scoring
+- 2026-07-08T05:18:02+0200 [info] motor::prepare_after_filter
+- 2026-07-08T05:18:02+0200 [info] motor::prepare_after_query_prefilter
+- 2026-07-08T05:18:02+0200 [info] real-debrid::rd_account_check_ok
+- 2026-07-08T05:18:02+0200 [info] real-debrid::rd_check_start
+- 2026-07-08T05:18:02+0200 [info] real-debrid::rd_api_http_error - disabled_endpoint
+- 2026-07-08T05:18:02+0200 [info] real-debrid::rd_cache_api_disabled_cached_set - Real-Debrid HTTP 403: [37 disabled_endpoint] {
+	"error": "disabled_endpoint",
+	"error_code": 37
+}
+- 2026-07-08T05:18:02+0200 [info] real-debrid::rd_cache_api_disabled - Real-Debrid HTTP 403: [37 disabled_endpoint] {
+	"error": "disabled_endpoint",
+	"error_code": 37
+}
+- 2026-07-08T05:18:02+0200 [info] real-debrid::rd_verify_batch_start
+- 2026-07-08T05:18:03+0200 [info] real-debrid::rd_slots_refresh
+- 2026-07-08T05:18:03+0200 [info] real-debrid::rd_active_count_before
+- 2026-07-08T05:18:03+0200 [info] real-debrid::rd_existing_preload_done
+- 2026-07-08T05:18:03+0200 [info] real-debrid::rd_verify_queue_start
+- 2026-07-08T05:18:03+0200 [info] real-debrid::rd_verify_queue_submit - Torrente.4.Lethal.Crisis.2011.Hun.PAL.DVDR-Gazdi
+- 2026-07-08T05:18:03+0200 [info] real-debrid::rd_verify_add_start - Torrente.4.Lethal.Crisis.2011.Hun.PAL.DVDR-Gazdi
+- 2026-07-08T05:18:03+0200 [info] real-debrid::rd_verify_queue_submit - Torrente ESP
+- 2026-07-08T05:18:03+0200 [info] real-debrid::rd_verify_add_start - Torrente ESP
+- 2026-07-08T05:18:03+0200 [info] real-debrid::rd_slots_reserve
+- 2026-07-08T05:18:03+0200 [info] real-debrid::rd_verify_queue_submit - Torrente.2.DVDRip.XviD.Hungarian-TvTiME
+- 2026-07-08T05:18:03+0200 [info] real-debrid::rd_verify_add_start - Torrente.2.DVDRip.XviD.Hungarian-TvTiME
+- 2026-07-08T05:18:03+0200 [info] real-debrid::rd_slots_reserve
+- 2026-07-08T05:18:03+0200 [info] real-debrid::rd_verify_queue_submit - Torrente.PCCD.Spanish.By.Vampire.For.wWw.GaMesFive.NeT
+- 2026-07-08T05:18:03+0200 [info] real-debrid::rd_verify_add_start - Torrente.PCCD.Spanish.By.Vampire.For.wWw.GaMesFive.NeT
+- 2026-07-08T05:18:03+0200 [info] real-debrid::rd_slots_reserve
+- 2026-07-08T05:18:03+0200 [debug] real-debrid::rd_endpoint_pace_wait
+- 2026-07-08T05:18:03+0200 [info] real-debrid::rd_verify_queue_submit - Torrente.3.A.Vedelmezo.2005.DVDRip.XviD.HUN-BOSS
+- 2026-07-08T05:18:03+0200 [info] real-debrid::rd_verify_add_start - Torrente.3.A.Vedelmezo.2005.DVDRip.XviD.HUN-BOSS
+- 2026-07-08T05:18:03+0200 [info] real-debrid::rd_slots_reserve
+- 2026-07-08T05:18:03+0200 [debug] real-debrid::rd_rate_wait
+- 2026-07-08T05:18:03+0200 [info] real-debrid::rd_verify_queue_submit - Torrente.4-Lethal.Crisis.2011.DVDRip.XviD.AC3-UNDEAD
+- 2026-07-08T05:18:03+0200 [info] real-debrid::rd_verify_add_start - Torrente.4-Lethal.Crisis.2011.DVDRip.XviD.AC3-UNDEAD
+- 2026-07-08T05:18:03+0200 [info] real-debrid::rd_slots_reserve
+- 2026-07-08T05:18:03+0200 [info] real-debrid::rd_verify_queue_submit - PS3_COD Black Ops_PunTorrente
+- 2026-07-08T05:18:03+0200 [info] real-debrid::rd_verify_add_start - PS3_COD Black Ops_PunTorrente
+- 2026-07-08T05:18:03+0200 [info] real-debrid::rd_slots_reserve
+- 2026-07-08T05:18:03+0200 [info] real-debrid::rd_verify_queue_submit - Torrente.Quadrology.DVDRip.Xvid.Hun-mihok
+- 2026-07-08T05:18:03+0200 [info] real-debrid::rd_verify_add_start - Torrente.Quadrology.DVDRip.Xvid.Hun-mihok
+- 2026-07-08T05:18:03+0200 [info] real-debrid::rd_slots_reserve
+- 2026-07-08T05:18:03+0200 [info] real-debrid::rd_slots_reserve
+- 2026-07-08T05:18:03+0200 [info] real-debrid::rd_verify_queue_submit - PS3_Sleeping Dogs_PunTorrente
+- 2026-07-08T05:18:03+0200 [info] real-debrid::rd_verify_add_start - PS3_Sleeping Dogs_PunTorrente
+- 2026-07-08T05:18:03+0200 [info] real-debrid::rd_slots_reserve
+- 2026-07-08T05:18:03+0200 [info] real-debrid::rd_verify_queue_submit - PS3_Dirt ShowDown_PunTorrente
+- 2026-07-08T05:18:03+0200 [info] real-debrid::rd_verify_add_start - PS3_Dirt ShowDown_PunTorrente
+- 2026-07-08T05:18:03+0200 [info] real-debrid::rd_slots_reserve
+- 2026-07-08T05:18:04+0200 [info] real-debrid::rd_verify_added
+- 2026-07-08T05:18:04+0200 [debug] real-debrid::rd_verify_poll - Torrente.4.Lethal.Crisis.2011.Hun.PAL.DVDR-Gazdi
+- 2026-07-08T05:18:04+0200 [info] real-debrid::rd_delete_torrent
+- 2026-07-08T05:18:04+0200 [info] real-debrid::rd_slots_release
+- 2026-07-08T05:18:04+0200 [info] real-debrid::rd_verify_not_instant - Torrente.4.Lethal.Crisis.2011.Hun.PAL.DVDR-Gazdi
+- 2026-07-08T05:18:04+0200 [info] real-debrid::rd_verify_queue_done_item - Torrente.4.Lethal.Crisis.2011.Hun.PAL.DVDR-Gazdi
+- 2026-07-08T05:18:06+0200 [info] real-debrid::rd_verify_added
+- 2026-07-08T05:18:06+0200 [debug] real-debrid::rd_verify_poll - Torrente.PCCD.Spanish.By.Vampire.For.wWw.GaMesFive.NeT
+- 2026-07-08T05:18:06+0200 [debug] real-debrid::rd_waiting_files_selection - Torrente.PCCD.Spanish.By.Vampire.For.wWw.GaMesFive.NeT
+- 2026-07-08T05:18:06+0200 [info] real-debrid::rd_select_files_decision - Torrente.PCCD.Spanish.By.Vampire.For.wWw.GaMesFive.NeT
+- 2026-07-08T05:18:07+0200 [info] real-debrid::rd_verify_select_files - Torrente.PCCD.Spanish.By.Vampire.For.wWw.GaMesFive.NeT
+- 2026-07-08T05:18:07+0200 [debug] real-debrid::rd_verify_post_select_poll - Torrente.PCCD.Spanish.By.Vampire.For.wWw.GaMesFive.NeT
+- 2026-07-08T05:18:07+0200 [info] real-debrid::rd_fast_discard - zero_progress_post_select
+- 2026-07-08T05:18:07+0200 [info] real-debrid::rd_fast_discard_reason - zero_progress_post_select
+- 2026-07-08T05:18:07+0200 [info] real-debrid::rd_fast_discard_delete - zero_progress_post_select
+- 2026-07-08T05:18:07+0200 [info] real-debrid::rd_zero_progress_fast_delete - Torrente.PCCD.Spanish.By.Vampire.For.wWw.GaMesFive.NeT
+- 2026-07-08T05:18:07+0200 [info] real-debrid::rd_delete_torrent
+- 2026-07-08T05:18:07+0200 [info] real-debrid::rd_slots_release
+- 2026-07-08T05:18:07+0200 [info] real-debrid::rd_verify_queue_done_item - Torrente.PCCD.Spanish.By.Vampire.For.wWw.GaMesFive.NeT
+- 2026-07-08T05:18:08+0200 [info] real-debrid::rd_verify_added
+- 2026-07-08T05:18:08+0200 [debug] real-debrid::rd_verify_poll - PS3_Dirt ShowDown_PunTorrente
+- 2026-07-08T05:18:08+0200 [debug] real-debrid::rd_waiting_files_selection - PS3_Dirt ShowDown_PunTorrente
+- 2026-07-08T05:18:08+0200 [info] real-debrid::rd_select_files_decision - PS3_Dirt ShowDown_PunTorrente
+- 2026-07-08T05:18:08+0200 [debug] real-debrid::rd_endpoint_pace_wait
+- 2026-07-08T05:18:08+0200 [info] real-debrid::rd_verify_added
+- 2026-07-08T05:18:08+0200 [info] real-debrid::rd_verify_select_files - PS3_Dirt ShowDown_PunTorrente
+- 2026-07-08T05:18:08+0200 [debug] real-debrid::rd_verify_poll - Torrente.4-Lethal.Crisis.2011.DVDRip.XviD.AC3-UNDEAD
+- 2026-07-08T05:18:08+0200 [debug] real-debrid::rd_rate_wait
+- 2026-07-08T05:18:09+0200 [debug] real-debrid::rd_verify_post_select_poll - PS3_Dirt ShowDown_PunTorrente
+- 2026-07-08T05:18:09+0200 [info] real-debrid::rd_fast_discard - zero_progress_post_select
+- 2026-07-08T05:18:09+0200 [info] real-debrid::rd_fast_discard_reason - zero_progress_post_select
+- 2026-07-08T05:18:09+0200 [info] real-debrid::rd_fast_discard_delete - zero_progress_post_select
+- 2026-07-08T05:18:09+0200 [info] real-debrid::rd_zero_progress_fast_delete - PS3_Dirt ShowDown_PunTorrente
+- 2026-07-08T05:18:09+0200 [debug] real-debrid::rd_endpoint_pace_wait
+- 2026-07-08T05:18:09+0200 [info] real-debrid::rd_delete_torrent
+- 2026-07-08T05:18:09+0200 [info] real-debrid::rd_slots_release
+- 2026-07-08T05:18:09+0200 [info] real-debrid::rd_verify_not_instant - Torrente.4-Lethal.Crisis.2011.DVDRip.XviD.AC3-UNDEAD
+- 2026-07-08T05:18:09+0200 [info] real-debrid::rd_verify_queue_done_item - Torrente.4-Lethal.Crisis.2011.DVDRip.XviD.AC3-UNDEAD
+- 2026-07-08T05:18:09+0200 [info] real-debrid::rd_delete_torrent
+- 2026-07-08T05:18:09+0200 [info] real-debrid::rd_slots_release
+- 2026-07-08T05:18:09+0200 [info] real-debrid::rd_verify_queue_done_item - PS3_Dirt ShowDown_PunTorrente
+- 2026-07-08T05:18:11+0200 [info] real-debrid::rd_verify_added
+- 2026-07-08T05:18:11+0200 [debug] real-debrid::rd_verify_poll - PS3_COD Black Ops_PunTorrente
+- 2026-07-08T05:18:11+0200 [debug] real-debrid::rd_waiting_files_selection - PS3_COD Black Ops_PunTorrente
+- 2026-07-08T05:18:11+0200 [info] real-debrid::rd_select_files_decision - PS3_COD Black Ops_PunTorrente
+- 2026-07-08T05:18:11+0200 [info] real-debrid::rd_verify_added
+- 2026-07-08T05:18:11+0200 [debug] real-debrid::rd_verify_poll - Torrente ESP
+- 2026-07-08T05:18:12+0200 [info] real-debrid::rd_verify_select_files - PS3_COD Black Ops_PunTorrente
+- 2026-07-08T05:18:12+0200 [debug] real-debrid::rd_waiting_files_selection - Torrente ESP
+- 2026-07-08T05:18:12+0200 [info] real-debrid::rd_select_files_decision - Torrente ESP
+- 2026-07-08T05:18:12+0200 [debug] real-debrid::rd_endpoint_pace_wait
+- 2026-07-08T05:18:12+0200 [debug] real-debrid::rd_verify_post_select_poll - PS3_COD Black Ops_PunTorrente
+- 2026-07-08T05:18:12+0200 [info] real-debrid::rd_fast_discard - zero_progress_post_select
+- 2026-07-08T05:18:12+0200 [info] real-debrid::rd_fast_discard_reason - zero_progress_post_select
+- 2026-07-08T05:18:12+0200 [info] real-debrid::rd_fast_discard_delete - zero_progress_post_select
+- 2026-07-08T05:18:12+0200 [info] real-debrid::rd_zero_progress_fast_delete - PS3_COD Black Ops_PunTorrente
+- 2026-07-08T05:18:12+0200 [info] real-debrid::rd_verify_select_files - Torrente ESP
+- 2026-07-08T05:18:12+0200 [info] real-debrid::rd_delete_torrent
+- 2026-07-08T05:18:12+0200 [info] real-debrid::rd_slots_release
+- 2026-07-08T05:18:12+0200 [info] real-debrid::rd_verify_queue_done_item - PS3_COD Black Ops_PunTorrente
+- 2026-07-08T05:18:13+0200 [debug] real-debrid::rd_endpoint_pace_wait
+- 2026-07-08T05:18:13+0200 [debug] real-debrid::rd_verify_post_select_poll - Torrente ESP
+- 2026-07-08T05:18:13+0200 [info] real-debrid::rd_fast_discard - zero_progress_post_select
+- 2026-07-08T05:18:13+0200 [info] real-debrid::rd_fast_discard_reason - zero_progress_post_select
+- 2026-07-08T05:18:13+0200 [info] real-debrid::rd_fast_discard_delete - zero_progress_post_select
+- 2026-07-08T05:18:13+0200 [info] real-debrid::rd_zero_progress_fast_delete - Torrente ESP
+- 2026-07-08T05:18:13+0200 [info] real-debrid::rd_delete_torrent
+- 2026-07-08T05:18:13+0200 [info] real-debrid::rd_slots_release
+- 2026-07-08T05:18:13+0200 [info] real-debrid::rd_verify_queue_done_item - Torrente ESP
+- 2026-07-08T05:18:14+0200 [info] real-debrid::rd_api_http_error - infringing_file
+- 2026-07-08T05:18:14+0200 [info] real-debrid::rd_call_terminal_error - infringing_file
+- 2026-07-08T05:18:14+0200 [info] real-debrid::rd_candidate_addmagnet_blocked - infringing_file
+- 2026-07-08T05:18:14+0200 [info] real-debrid::rd_verify_infringing - Torrente.3.A.Vedelmezo.2005.DVDRip.XviD.HUN-BOSS
+- 2026-07-08T05:18:14+0200 [info] real-debrid::rd_verify_queue_done_item - Torrente.3.A.Vedelmezo.2005.DVDRip.XviD.HUN-BOSS
+- 2026-07-08T05:18:14+0200 [info] real-debrid::rd_verify_added
+- 2026-07-08T05:18:15+0200 [info] real-debrid::rd_api_http_error - unknown_ressource
+- 2026-07-08T05:18:15+0200 [info] real-debrid::rd_delete_torrent
+- 2026-07-08T05:18:15+0200 [info] real-debrid::rd_slots_release
+- 2026-07-08T05:18:15+0200 [error] real-debrid::rd_verify_error - Real-Debrid HTTP 404: [7 unknown_ressource] {
+	"error": "unknown_ressource",
+	"error_code": 7
+}
+- 2026-07-08T05:18:15+0200 [info] real-debrid::rd_verify_queue_done_item - PS3_Sleeping Dogs_PunTorrente
+- 2026-07-08T05:18:17+0200 [info] real-debrid::rd_verify_added
+- 2026-07-08T05:18:17+0200 [debug] real-debrid::rd_verify_poll - Torrente.Quadrology.DVDRip.Xvid.Hun-mihok
+- 2026-07-08T05:18:17+0200 [info] real-debrid::rd_delete_torrent
+- 2026-07-08T05:18:17+0200 [info] real-debrid::rd_slots_release
+- 2026-07-08T05:18:17+0200 [info] real-debrid::rd_verify_not_instant - Torrente.Quadrology.DVDRip.Xvid.Hun-mihok
+- 2026-07-08T05:18:17+0200 [info] real-debrid::rd_verify_queue_done_item - Torrente.Quadrology.DVDRip.Xvid.Hun-mihok
+- 2026-07-08T05:18:17+0200 [info] real-debrid::rd_verify_added
+- 2026-07-08T05:18:18+0200 [debug] real-debrid::rd_verify_poll - Torrente.2.DVDRip.XviD.Hungarian-TvTiME
+- 2026-07-08T05:18:18+0200 [info] real-debrid::rd_delete_torrent
+- 2026-07-08T05:18:18+0200 [info] real-debrid::rd_slots_release
+- 2026-07-08T05:18:18+0200 [info] real-debrid::rd_verify_not_instant - Torrente.2.DVDRip.XviD.Hungarian-TvTiME
+- 2026-07-08T05:18:18+0200 [info] real-debrid::rd_verify_queue_done_item - Torrente.2.DVDRip.XviD.Hungarian-TvTiME
+- 2026-07-08T05:18:18+0200 [info] real-debrid::rd_verify_queue_end
+- 2026-07-08T05:18:18+0200 [info] real-debrid::rd_rate_summary
+- 2026-07-08T05:18:18+0200 [info] real-debrid::rd_endpoint_pacer_summary
+- 2026-07-08T05:18:18+0200 [info] real-debrid::rd_cleanup_final_start
+- 2026-07-08T05:18:18+0200 [info] real-debrid::rd_slots_refresh
+- 2026-07-08T05:18:18+0200 [info] real-debrid::rd_active_count_after
+- 2026-07-08T05:18:18+0200 [info] real-debrid::rd_cleanup_final_end
+- 2026-07-08T05:18:18+0200 [info] real-debrid::rd_rate_summary
+- 2026-07-08T05:18:18+0200 [info] real-debrid::rd_endpoint_pacer_summary
+- 2026-07-08T05:18:18+0200 [warn] real-debrid::rd_verify_batch_end
+- 2026-07-08T05:18:18+0200 [warn] real-debrid::rd_check_summary
+- 2026-07-08T05:18:18+0200 [info] qbittorrent::qbt_probe_skipped - disabled
+- 2026-07-08T05:18:18+0200 [info] motor::prepare_qbit_extras
+- 2026-07-08T05:18:18+0200 [info] motor::prepare_rd_temp_errors
+- 2026-07-08T05:18:18+0200 [info] motor::prepare_after_working_filter
+- 2026-07-08T05:18:18+0200 [info] search::export_results
+- 2026-07-08T05:18:18+0200 [info] search::export_results
+- 2026-07-08T05:18:18+0200 [info] search::editor_clean_search_rd_cleanup
+- 2026-07-08T05:18:18+0200 [info] search::editor_clean_search_end
+- 2026-07-08T05:18:19+02:00 [info] web::JOB_FINISHED_OK
