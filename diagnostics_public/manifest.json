@@ -1,9 +1,9 @@
 {
   "summary": {
-    "generated_at": "2026-07-08T01:52:38.215917+00:00",
+    "generated_at": "2026-07-08T01:56:15.718907+00:00",
     "trigger": "web-push",
     "current_run_id": "",
-    "exported_files": 2894,
+    "exported_files": 2909,
     "skipped_files": 4,
     "redactions": 95,
     "sqlite_rows": 87,
@@ -27,7 +27,7 @@
     ],
     "repo": {
       "root": "/app/project",
-      "head": "234fbf2b2c7a2f137c66b820458888303a9abb15",
+      "head": "ef46f4685236a1c1168ac326fc506160b3b4751b",
       "tracked_files_count": 3032,
       "public_dir": "/app/diagnostics_public"
     }
@@ -11723,6 +11723,70 @@
     },
     {
       "source": "btdigg",
+      "path": "diagnostics/btdigg/jobs/2026-07-08/b2ab43748f9f/errors.jsonl",
+      "bytes": 0,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
+      "path": "diagnostics/btdigg/jobs/2026-07-08/b2ab43748f9f/events.jsonl",
+      "bytes": 71908,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
+      "path": "diagnostics/btdigg/jobs/2026-07-08/b2ab43748f9f/events.seq",
+      "bytes": 4,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
+      "path": "diagnostics/btdigg/jobs/2026-07-08/b2ab43748f9f/meta.json",
+      "bytes": 2087,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
+      "path": "diagnostics/btdigg/jobs/2026-07-08/b2ab43748f9f/rd_magnets_live.jsonl",
+      "bytes": 4781,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
+      "path": "diagnostics/btdigg/jobs/2026-07-08/b2ab43748f9f/summary.json",
+      "bytes": 3672,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
+      "path": "diagnostics/btdigg/jobs/2026-07-08/b2ab43748f9f/timeline.md",
+      "bytes": 13460,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
+      "path": "diagnostics/btdigg/jobs/2026-07-08/b2ab43748f9f/warnings.jsonl",
+      "bytes": 0,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
       "path": "diagnostics/btdigg/jobs/2026-07-08/c3d38a48ff18/errors.jsonl",
       "bytes": 0,
       "exported": true,
@@ -16340,7 +16404,7 @@
     {
       "source": "btdigg",
       "path": "history/btdigg_history.json",
-      "bytes": 135401,
+      "bytes": 135468,
       "exported": true,
       "redacted": false,
       "note": ""
@@ -21013,6 +21077,62 @@
       "source": "btdigg",
       "path": "jobs/b1e33edab325/shown.json",
       "bytes": 26799,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
+      "path": "jobs/b2ab43748f9f/cancel.json",
+      "bytes": 115,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
+      "path": "jobs/b2ab43748f9f/exports/ULTIMOS_RESULTADOS.json",
+      "bytes": 18028,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
+      "path": "jobs/b2ab43748f9f/exports/ULTIMO_QBIT_VIVOS.txt",
+      "bytes": 125,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
+      "path": "jobs/b2ab43748f9f/exports/ULTIMO_RD_TEMPORAL.txt",
+      "bytes": 203,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
+      "path": "jobs/b2ab43748f9f/exports/ULTIMO_TOP.txt",
+      "bytes": 490,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
+      "path": "jobs/b2ab43748f9f/safeout.log",
+      "bytes": 2483,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
+      "path": "jobs/b2ab43748f9f/shown.json",
+      "bytes": 2062,
       "exported": true,
       "redacted": false,
       "note": ""
