@@ -48,6 +48,13 @@ Instrucciones:
   4. pruebas concretas que recomiendas;
   5. cambios propuestos, con rutas exactas;
   6. riesgos o dudas reales.
+- Incluye una entrega final para Codex con instrucciones ejecutables por fases:
+  1. estructura o archivos a tocar, si aplica;
+  2. ajustes concretos;
+  3. pruebas y validaciones;
+  4. orden recomendado de ejecucion.
+- Para cada fase indica rutas exactas, cambios esperados y comandos de prueba.
+- No propongas cambios genericos: la entrega debe ser accionable para Codex.
 ```
 
 ## Salida
