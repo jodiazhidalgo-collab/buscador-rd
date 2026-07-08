@@ -34,6 +34,10 @@ def test_project_publish_exports_scans_commits_and_pushes(tmp_path, monkeypatch)
         commands.append(args)
         if args == ["git", "branch", "--show-current"]:
             return "master\n"
+        if args == ["git", "rev-parse", "HEAD"]:
+            return "abc123456789\n"
+        if args == ["git", "rev-parse", "refs/remotes/origin/master"]:
+            return "abc123456789\n"
         if args == ["git", "rev-parse", "--short", "HEAD"]:
             return "abc123\n"
         return ""
@@ -62,6 +66,7 @@ def test_project_publish_exports_scans_commits_and_pushes(tmp_path, monkeypatch)
     assert ["git", "add", "-A"] in commands
     assert ["git", "commit", "-m", "chore: publish diagnostics from web"] in commands
     assert ["git", "push", "git@github.com:owner/repo.git", "HEAD:master"] in commands
+    assert ["git", "fetch", "git@github.com:owner/repo.git", "refs/heads/master:refs/remotes/origin/master"] in commands
 
 
 def test_project_publish_requires_enabled(monkeypatch):

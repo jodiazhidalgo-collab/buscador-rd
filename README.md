@@ -41,7 +41,8 @@ En Ajustes existe un boton `Push` para publicar el estado actual del proyecto en
 2. pasar `gitleaks`;
 3. preparar solo archivos permitidos por `.gitignore`;
 4. crear commit si hay cambios;
-5. hacer push a `master`.
+5. hacer push a `master`;
+6. refrescar `origin/master` y confirmar que coincide con `HEAD`.
 
 El despliegue real usa una deploy key SSH local de solo este repo. La key vive fuera de Git en `config/btdigg-rd/git/`; el compose publico solo documenta el montaje.
 

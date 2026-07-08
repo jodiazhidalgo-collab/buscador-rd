@@ -59,7 +59,8 @@ La pantalla de Ajustes incluye un boton `Push`. En el despliegue real, ese boton
 2. ejecuta `gitleaks` sobre el diagnostico publico y sobre los archivos preparados para commit;
 3. respeta `.gitignore`, por lo que no fuerza runtime crudo ni secretos ignorados;
 4. crea commit automatico solo si hay cambios;
-5. hace push por SSH al repo `buscador-rd`.
+5. hace push por SSH al repo `buscador-rd`;
+6. refresca `origin/master` y confirma que coincide con `HEAD`.
 
 La credencial de escritura es una deploy key SSH local y limitada a este repositorio. La ruta local `config/btdigg-rd/git/` no debe subirse a Git.
 

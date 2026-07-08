@@ -107,6 +107,15 @@ def _current_branch(root: Path) -> str:
     return branch or "master"
 
 
+def _refresh_origin_branch(root: Path, remote: str, branch: str) -> None:
+    refspec = f"refs/heads/{branch}:refs/remotes/origin/{branch}"
+    _run(["git", "fetch", remote, refspec], root, timeout=180)
+    head = _run(["git", "rev-parse", "HEAD"], root).strip()
+    origin_head = _run(["git", "rev-parse", f"refs/remotes/origin/{branch}"], root).strip()
+    if head != origin_head:
+        raise PublishError(f"push no confirmado: origin/{branch} no coincide con HEAD")
+
+
 def _run_gitleaks(root: Path, target: Path) -> None:
     _require_tool("gitleaks")
     config = root / ".gitleaks.toml"
@@ -179,6 +188,7 @@ def publish_project() -> dict[str, Any]:
         if not remote:
             remote = _run(["git", "remote", "get-url", "origin"], root).strip()
         _run(["git", "push", remote, f"HEAD:{branch}"], root, timeout=180)
+        _refresh_origin_branch(root, remote, branch)
 
         head = _run(["git", "rev-parse", "--short", "HEAD"], root).strip()
         return {
