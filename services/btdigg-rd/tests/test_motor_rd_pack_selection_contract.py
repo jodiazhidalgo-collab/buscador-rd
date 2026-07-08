@@ -70,6 +70,23 @@ def small_mp4_pack_info(status="waiting_files_selection", links=None):
     }
 
 
+def mixed_noise_pack_info(status="waiting_files_selection", links=None):
+    return {
+        "id": "TIDMIXED",
+        "status": status,
+        "progress": 0 if status == "waiting_files_selection" else 100,
+        "links": links or [],
+        "files": [
+            rd_file("1", "/Movie.Title.2026.1080p.mkv", 4.2),
+            rd_file("2", "/Movie.Title.2026.sample.mkv", 0.03),
+            rd_file("3", "/Subs/Movie.Title.2026.srt", 0.0001),
+            rd_file("4", "/Proof/Movie.Title.2026.nfo", 0.0001),
+            rd_file("5", "/Archives/Movie.Title.2026.part01.rar", 1.4),
+            rd_file("6", "/readme.txt", 0.001),
+        ],
+    }
+
+
 def test_video_ext_ok_uses_raw_suffix_not_normalized_text():
     motor = load_motor_module()
 
@@ -137,6 +154,7 @@ def test_rd_verify_by_addmagnet_selects_all_and_marks_ok(monkeypatch):
     assert decision_events[0]["candidate_trace_id"].startswith("rd-001-")
     assert decision_events[0]["files"] == "all"
     assert decision_events[0]["selection_mode"] == "all"
+    assert decision_events[0]["file_rows"][0]["path"].endswith(".mkv")
     assert any(event == "rd_verify_select_files" and payload["files"] == "all" for event, payload in events)
     assert any(event == "rd_verify_post_select_poll" and payload["candidate_trace_id"].startswith("rd-001-") for event, payload in events)
     assert any(event == "rd_verify_ok" and payload["candidate_trace_id"].startswith("rd-001-") for event, payload in events)
@@ -240,9 +258,60 @@ def test_rd_verify_by_addmagnet_small_mp4_selects_all_instead_of_pack_skip(monke
     assert not any(event == "rd_verify_pack_skip" for event, _payload in events)
 
 
+def test_rd_verify_by_addmagnet_mixed_noise_pack_selects_everything(monkeypatch):
+    motor = load_motor_module()
+    calls = []
+    events = []
+    info_reads = 0
+
+    wait_info = mixed_noise_pack_info()
+    done_info = mixed_noise_pack_info(status="downloaded", links=["https://real-debrid.example/mixed"])
+
+    def fake_rd_call(method, path, token, **kwargs):
+        nonlocal info_reads
+        calls.append((method, path, kwargs.get("data")))
+        if method == "POST" and path == "/torrents/addMagnet":
+            return {"id": "TIDMIXED"}
+        if method == "GET" and path == "/torrents/info/TIDMIXED":
+            info_reads += 1
+            return wait_info if info_reads == 1 else done_info
+        if method == "POST" and path == "/torrents/selectFiles/TIDMIXED":
+            return {}
+        raise AssertionError(f"unexpected RD call: {method} {path}")
+
+    monkeypatch.setattr(motor, "cancel_checkpoint", lambda *args, **kwargs: None)
+    monkeypatch.setattr(motor, "sleep_interruptible", lambda *args, **kwargs: None)
+    monkeypatch.setattr(motor, "record_rd_sent_magnet", lambda *args, **kwargs: None)
+    monkeypatch.setattr(motor, "rd_find_existing_downloaded_by_hash", lambda *args, **kwargs: None)
+    monkeypatch.setattr(motor, "rd_call_with_retry", fake_rd_call)
+    monkeypatch.setattr(motor, "diag", lambda event, **kwargs: events.append((event, kwargs)))
+
+    result = motor.Result(
+        title="Movie Title 2026",
+        magnet="magnet:?xt=urn:btih:" + "c" * 40,
+        hash="c" * 40,
+        size_gb=5.6,
+    )
+
+    checked = motor.rd_verify_by_addmagnet(result, "token", idx=2, total=3)
+
+    assert checked.rd_status == "RD_OK"
+    assert checked.selected_file_ids == "all"
+    assert ("POST", "/torrents/selectFiles/TIDMIXED", {"files": "all"}) in calls
+    decision = [payload for event, payload in events if event == "rd_select_files_decision"][0]
+    assert decision["selection_mode"] == "all"
+    paths = {row["path"] for row in decision["file_rows"]}
+    assert "/Movie.Title.2026.1080p.mkv" in paths
+    assert "/Movie.Title.2026.sample.mkv" in paths
+    assert "/Archives/Movie.Title.2026.part01.rar" in paths
+    assert "/readme.txt" in paths
+    assert not any(event == "rd_verify_pack_skip" for event, _payload in events)
+
+
 def test_rd_torrent_id_to_downloads_selects_all_when_rd_waits_for_files(monkeypatch):
     motor = load_motor_module()
     calls = []
+    events = []
     info_reads = 0
     wait_info = small_mp4_pack_info()
     done_info = small_mp4_pack_info(status="downloaded", links=["https://real-debrid.example/host-link"])
@@ -252,7 +321,7 @@ def test_rd_torrent_id_to_downloads_selects_all_when_rd_waits_for_files(monkeypa
         calls.append((method, path, kwargs.get("data")))
         if method == "GET" and path == "/torrents/info/TIDDL":
             info_reads += 1
-            return wait_info if info_reads == 1 else done_info
+            return wait_info if info_reads <= 2 else done_info
         if method == "POST" and path == "/torrents/selectFiles/TIDDL":
             return {}
         if method == "POST" and path == "/unrestrict/link":
@@ -261,11 +330,19 @@ def test_rd_torrent_id_to_downloads_selects_all_when_rd_waits_for_files(monkeypa
 
     monkeypatch.setattr(motor, "rd_api", fake_rd_api)
     monkeypatch.setattr(motor, "sleep_interruptible", lambda *args, **kwargs: None)
+    monkeypatch.setattr(motor, "diag", lambda event, **kwargs: events.append((event, kwargs)))
 
     downloads = motor.rd_torrent_id_to_downloads("TIDDL", "token", wanted_title="Torrente Presidente")
 
     assert downloads == ["https://real-debrid.example/download"]
-    assert ("POST", "/torrents/selectFiles/TIDDL", {"files": "all"}) in calls
+    select_calls = [call for call in calls if call[1] == "/torrents/selectFiles/TIDDL"]
+    assert select_calls == [("POST", "/torrents/selectFiles/TIDDL", {"files": "all"})]
+    assert any(event == "rd_waiting_files_selection" and payload["files_total"] == 1 for event, payload in events)
+    decision = [payload for event, payload in events if event == "rd_select_files_decision"][0]
+    assert decision["files"] == "all"
+    assert decision["selection_mode"] == "all"
+    assert decision["file_rows"][0]["path"] == "/Torrente Presidente (DonTorrent).mp4"
+    assert any(event == "rd_verify_select_files" and payload["requested_files"] == "all" for event, payload in events)
 
 
 def test_rd_verify_by_addmagnet_records_blocked_before_file_selection(monkeypatch):

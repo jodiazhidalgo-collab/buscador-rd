@@ -4391,6 +4391,24 @@ def _rd_select_all_files_payload(snapshot):
         "selection_mode": "all",
     }
 
+def _rd_select_all_diag_fields(snapshot, select_payload):
+    total_size_gb = float(snapshot.get("total_size_gb") or 0.0)
+    file_size_gb = float(select_payload.get("file_size_gb") or total_size_gb or 0.0)
+    return {
+        "files": select_payload["ids"],
+        "requested_files": select_payload["ids"],
+        "selection_mode": select_payload["selection_mode"],
+        "file_name": str(select_payload.get("file_name") or "")[:240],
+        "file_size_gb": round(file_size_gb, 3),
+        "note": str(select_payload.get("note") or "")[:500],
+        "files_total": snapshot.get("files_total"),
+        "video_files": snapshot.get("video_files"),
+        "selected_files": snapshot.get("selected_files"),
+        "total_size_gb": snapshot.get("total_size_gb"),
+        "files_omitted": snapshot.get("files_omitted"),
+        "file_rows": snapshot.get("files") or [],
+    }
+
 def _basename_norm(path):
     return normalize(str(path or "").replace("\\", "/").rsplit("/", 1)[-1])
 
@@ -4757,16 +4775,7 @@ def rd_verify_by_addmagnet(r, token, idx=0, total=0, ctx=None):
                 diag(
                     "rd_select_files_decision",
                     **_rd_candidate_diag(r, idx, total, tid),
-                    files=ids,
-                    requested_files=ids,
-                    selection_mode=select_payload["selection_mode"],
-                    file_name=fname[:240],
-                    file_size_gb=round(float(fgb or 0), 3),
-                    note=note[:500],
-                    files_total=snapshot.get("files_total"),
-                    video_files=snapshot.get("video_files"),
-                    total_size_gb=snapshot.get("total_size_gb"),
-                    files_omitted=snapshot.get("files_omitted"),
+                    **_rd_select_all_diag_fields(snapshot, select_payload),
                 )
                 try:
                     cancel_checkpoint("rd_verify_by_addmagnet.before_select")
@@ -4775,14 +4784,7 @@ def rd_verify_by_addmagnet(r, token, idx=0, total=0, ctx=None):
                     diag(
                         "rd_verify_select_files",
                         **_rd_candidate_diag(r, idx, total, tid),
-                        files=ids,
-                        requested_files=ids,
-                        selection_mode=select_payload["selection_mode"],
-                        file_name=fname[:240],
-                        file_size_gb=round(float(fgb or 0), 3),
-                        note=note[:500],
-                        files_total=snapshot.get("files_total"),
-                        video_files=snapshot.get("video_files"),
+                        **_rd_select_all_diag_fields(snapshot, select_payload),
                     )
                 except Exception as e:
                     diag("rd_verify_select_error", **_rd_candidate_diag(r, idx, total, tid), error=str(e)[:300])
@@ -5771,20 +5773,53 @@ def rd_torrent_url_to_downloads(url, token):
 
 def rd_torrent_id_to_downloads(tid, token, selected_ids="", wanted_title=""):
     info = None
+    selected_once = False
     for attempt in range(1, 16):
         info = rd_api("GET", f"/torrents/info/{tid}", token)
         status = info.get("status") if isinstance(info, dict) else "?"
         links = info.get("links") if isinstance(info, dict) else []
         print(f"  Estado RD: {status} intento {attempt}/15")
-        if isinstance(info, dict) and status == "waiting_files_selection":
+        if isinstance(info, dict) and status == "waiting_files_selection" and not selected_once:
             try:
                 ids = selected_ids
+                snapshot = _rd_files_snapshot(info, wanted_terms=query_terms_for_match(wanted_title))
                 if not ids:
-                    snapshot = _rd_files_snapshot(info, wanted_terms=query_terms_for_match(wanted_title))
                     payload = _rd_select_all_files_payload(snapshot)
                     ids = payload["ids"]
                     print(f"  Seleccionando todos los archivos ({payload['file_size_gb']:.1f} GB)")
+                else:
+                    payload = {
+                        "ids": ids,
+                        "file_name": "archivos indicados",
+                        "file_size_gb": float(snapshot.get("total_size_gb") or 0.0),
+                        "note": "seleccion_rd files=ids",
+                        "selection_mode": "explicit_ids",
+                    }
+                diag(
+                    "rd_waiting_files_selection",
+                    id=tid,
+                    title=str(wanted_title or "")[:160],
+                    status=status,
+                    attempt=attempt,
+                    progress=_rd_info_progress(info),
+                    **snapshot,
+                )
+                diag(
+                    "rd_select_files_decision",
+                    id=tid,
+                    title=str(wanted_title or "")[:160],
+                    attempt=attempt,
+                    **_rd_select_all_diag_fields(snapshot, payload),
+                )
                 rd_api("POST", f"/torrents/selectFiles/{tid}", token, data={"files": ids})
+                selected_once = True
+                diag(
+                    "rd_verify_select_files",
+                    id=tid,
+                    title=str(wanted_title or "")[:160],
+                    attempt=attempt,
+                    **_rd_select_all_diag_fields(snapshot, payload),
+                )
                 print(f"  Archivos seleccionados: {ids}")
             except Exception as e:
                 log(f"selectFiles warning {tid}: {e}")
