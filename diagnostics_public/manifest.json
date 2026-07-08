@@ -1,9 +1,9 @@
 {
   "summary": {
-    "generated_at": "2026-07-07T23:35:20.818047+00:00",
+    "generated_at": "2026-07-08T01:16:28.252564+00:00",
     "trigger": "web-push",
     "current_run_id": "",
-    "exported_files": 2842,
+    "exported_files": 2879,
     "skipped_files": 4,
     "redactions": 95,
     "sqlite_rows": 87,
@@ -27,8 +27,8 @@
     ],
     "repo": {
       "root": "/app/project",
-      "head": "59c4774b6af6067cf97613f420d318eb400509e8",
-      "tracked_files_count": 2938,
+      "head": "e23c8afd0e3829d1877179d12e66ee5b59cc781e",
+      "tracked_files_count": 2980,
       "public_dir": "/app/diagnostics_public"
     }
   },
@@ -11595,6 +11595,198 @@
     },
     {
       "source": "btdigg",
+      "path": "diagnostics/btdigg/jobs/2026-07-08/861d76ca42d5/errors.jsonl",
+      "bytes": 0,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
+      "path": "diagnostics/btdigg/jobs/2026-07-08/861d76ca42d5/events.jsonl",
+      "bytes": 133107,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
+      "path": "diagnostics/btdigg/jobs/2026-07-08/861d76ca42d5/events.seq",
+      "bytes": 4,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
+      "path": "diagnostics/btdigg/jobs/2026-07-08/861d76ca42d5/meta.json",
+      "bytes": 2074,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
+      "path": "diagnostics/btdigg/jobs/2026-07-08/861d76ca42d5/rd_magnets_live.jsonl",
+      "bytes": 3932,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
+      "path": "diagnostics/btdigg/jobs/2026-07-08/861d76ca42d5/summary.json",
+      "bytes": 3695,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
+      "path": "diagnostics/btdigg/jobs/2026-07-08/861d76ca42d5/timeline.md",
+      "bytes": 21458,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
+      "path": "diagnostics/btdigg/jobs/2026-07-08/861d76ca42d5/warnings.jsonl",
+      "bytes": 0,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
+      "path": "diagnostics/btdigg/jobs/2026-07-08/a84d7e65dc85/errors.jsonl",
+      "bytes": 0,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
+      "path": "diagnostics/btdigg/jobs/2026-07-08/a84d7e65dc85/events.jsonl",
+      "bytes": 70881,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
+      "path": "diagnostics/btdigg/jobs/2026-07-08/a84d7e65dc85/events.seq",
+      "bytes": 4,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
+      "path": "diagnostics/btdigg/jobs/2026-07-08/a84d7e65dc85/meta.json",
+      "bytes": 2075,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
+      "path": "diagnostics/btdigg/jobs/2026-07-08/a84d7e65dc85/rd_magnets_live.jsonl",
+      "bytes": 3932,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
+      "path": "diagnostics/btdigg/jobs/2026-07-08/a84d7e65dc85/summary.json",
+      "bytes": 3589,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
+      "path": "diagnostics/btdigg/jobs/2026-07-08/a84d7e65dc85/timeline.md",
+      "bytes": 12520,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
+      "path": "diagnostics/btdigg/jobs/2026-07-08/a84d7e65dc85/warnings.jsonl",
+      "bytes": 0,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
+      "path": "diagnostics/btdigg/jobs/2026-07-08/d79f10a29602/errors.jsonl",
+      "bytes": 0,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
+      "path": "diagnostics/btdigg/jobs/2026-07-08/d79f10a29602/events.jsonl",
+      "bytes": 71435,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
+      "path": "diagnostics/btdigg/jobs/2026-07-08/d79f10a29602/events.seq",
+      "bytes": 4,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
+      "path": "diagnostics/btdigg/jobs/2026-07-08/d79f10a29602/meta.json",
+      "bytes": 2087,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
+      "path": "diagnostics/btdigg/jobs/2026-07-08/d79f10a29602/rd_magnets_live.jsonl",
+      "bytes": 4781,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
+      "path": "diagnostics/btdigg/jobs/2026-07-08/d79f10a29602/summary.json",
+      "bytes": 3672,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
+      "path": "diagnostics/btdigg/jobs/2026-07-08/d79f10a29602/timeline.md",
+      "bytes": 13390,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
+      "path": "diagnostics/btdigg/jobs/2026-07-08/d79f10a29602/warnings.jsonl",
+      "bytes": 0,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
       "path": "diagnostics/btdigg/rd_tests/2026-06-30/rdt_2cb108b49e/errors.jsonl",
       "bytes": 0,
       "exported": true,
@@ -16084,7 +16276,7 @@
     {
       "source": "btdigg",
       "path": "history/btdigg_history.json",
-      "bytes": 123837,
+      "bytes": 135334,
       "exported": true,
       "redacted": false,
       "note": ""
@@ -16723,22 +16915,6 @@
     },
     {
       "source": "btdigg",
-      "path": "jobs/178f3f83a2bd/cancel.json",
-      "bytes": 111,
-      "exported": true,
-      "redacted": false,
-      "note": ""
-    },
-    {
-      "source": "btdigg",
-      "path": "jobs/178f3f83a2bd/safeout.log",
-      "bytes": 449,
-      "exported": true,
-      "redacted": false,
-      "note": ""
-    },
-    {
-      "source": "btdigg",
       "path": "jobs/183518d28bcc/cancel.json",
       "bytes": 117,
       "exported": true,
@@ -17067,22 +17243,6 @@
     },
     {
       "source": "btdigg",
-      "path": "jobs/2c94718cabee/cancel.json",
-      "bytes": 117,
-      "exported": true,
-      "redacted": false,
-      "note": ""
-    },
-    {
-      "source": "btdigg",
-      "path": "jobs/2c94718cabee/safeout.log",
-      "bytes": 6685,
-      "exported": true,
-      "redacted": false,
-      "note": ""
-    },
-    {
-      "source": "btdigg",
       "path": "jobs/2f1d78b181e6/cancel.json",
       "bytes": 115,
       "exported": true,
@@ -17301,22 +17461,6 @@
       "source": "btdigg",
       "path": "jobs/34e063d4ec23/shown.json",
       "bytes": 2000,
-      "exported": true,
-      "redacted": false,
-      "note": ""
-    },
-    {
-      "source": "btdigg",
-      "path": "jobs/357ed0759934/cancel.json",
-      "bytes": 117,
-      "exported": true,
-      "redacted": false,
-      "note": ""
-    },
-    {
-      "source": "btdigg",
-      "path": "jobs/357ed0759934/safeout.log",
-      "bytes": 1576,
       "exported": true,
       "redacted": false,
       "note": ""
@@ -19291,6 +19435,62 @@
     },
     {
       "source": "btdigg",
+      "path": "jobs/861d76ca42d5/cancel.json",
+      "bytes": 115,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
+      "path": "jobs/861d76ca42d5/exports/ULTIMOS_RESULTADOS.json",
+      "bytes": 17803,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
+      "path": "jobs/861d76ca42d5/exports/ULTIMO_QBIT_VIVOS.txt",
+      "bytes": 1909,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
+      "path": "jobs/861d76ca42d5/exports/ULTIMO_RD_TEMPORAL.txt",
+      "bytes": 203,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
+      "path": "jobs/861d76ca42d5/exports/ULTIMO_TOP.txt",
+      "bytes": 1794,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
+      "path": "jobs/861d76ca42d5/safeout.log",
+      "bytes": 3496,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
+      "path": "jobs/861d76ca42d5/shown.json",
+      "bytes": 9446,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
       "path": "jobs/8959324f687f/cancel.json",
       "bytes": 115,
       "exported": true,
@@ -19453,22 +19653,6 @@
       "source": "btdigg",
       "path": "jobs/8a1e5ae5011a/shown.json",
       "bytes": 2027,
-      "exported": true,
-      "redacted": false,
-      "note": ""
-    },
-    {
-      "source": "btdigg",
-      "path": "jobs/8dfd0325fa0d/cancel.json",
-      "bytes": 117,
-      "exported": true,
-      "redacted": false,
-      "note": ""
-    },
-    {
-      "source": "btdigg",
-      "path": "jobs/8dfd0325fa0d/safeout.log",
-      "bytes": 357,
       "exported": true,
       "redacted": false,
       "note": ""
@@ -20117,6 +20301,62 @@
       "source": "btdigg",
       "path": "jobs/a78ee43d353c/shown.json",
       "bytes": 2,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
+      "path": "jobs/a84d7e65dc85/cancel.json",
+      "bytes": 115,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
+      "path": "jobs/a84d7e65dc85/exports/ULTIMOS_RESULTADOS.json",
+      "bytes": 17163,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
+      "path": "jobs/a84d7e65dc85/exports/ULTIMO_QBIT_VIVOS.txt",
+      "bytes": 125,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
+      "path": "jobs/a84d7e65dc85/exports/ULTIMO_RD_TEMPORAL.txt",
+      "bytes": 203,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
+      "path": "jobs/a84d7e65dc85/exports/ULTIMO_TOP.txt",
+      "bytes": 469,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
+      "path": "jobs/a84d7e65dc85/safeout.log",
+      "bytes": 2192,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
+      "path": "jobs/a84d7e65dc85/shown.json",
+      "bytes": 1990,
       "exported": true,
       "redacted": false,
       "note": ""
@@ -21475,6 +21715,62 @@
     },
     {
       "source": "btdigg",
+      "path": "jobs/d79f10a29602/cancel.json",
+      "bytes": 115,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
+      "path": "jobs/d79f10a29602/exports/ULTIMOS_RESULTADOS.json",
+      "bytes": 18028,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
+      "path": "jobs/d79f10a29602/exports/ULTIMO_QBIT_VIVOS.txt",
+      "bytes": 125,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
+      "path": "jobs/d79f10a29602/exports/ULTIMO_RD_TEMPORAL.txt",
+      "bytes": 203,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
+      "path": "jobs/d79f10a29602/exports/ULTIMO_TOP.txt",
+      "bytes": 490,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
+      "path": "jobs/d79f10a29602/safeout.log",
+      "bytes": 2483,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
+      "path": "jobs/d79f10a29602/shown.json",
+      "bytes": 2062,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
       "path": "jobs/d965e9efe79a/cancel.json",
       "bytes": 115,
       "exported": true,
@@ -22668,7 +22964,7 @@
     {
       "source": "btdigg",
       "path": "motor/config.json",
-      "bytes": 22177,
+      "bytes": 22178,
       "exported": true,
       "redacted": true,
       "note": ""
@@ -22676,7 +22972,7 @@
     {
       "source": "btdigg",
       "path": "motor/exports/EDITOR_MAESTRO_SHOWN.json",
-      "bytes": 15870,
+      "bytes": 1990,
       "exported": true,
       "redacted": false,
       "note": ""
@@ -22684,7 +22980,7 @@
     {
       "source": "btdigg",
       "path": "motor/exports/ULTIMOS_RESULTADOS.json",
-      "bytes": 18848,
+      "bytes": 17163,
       "exported": true,
       "redacted": false,
       "note": ""
@@ -22692,7 +22988,7 @@
     {
       "source": "btdigg",
       "path": "motor/exports/ULTIMO_QBIT_VIVOS.txt",
-      "bytes": 3496,
+      "bytes": 125,
       "exported": true,
       "redacted": false,
       "note": ""
@@ -22708,7 +23004,7 @@
     {
       "source": "btdigg",
       "path": "motor/exports/ULTIMO_TOP.txt",
-      "bytes": 2962,
+      "bytes": 469,
       "exported": true,
       "redacted": false,
       "note": ""
@@ -22764,7 +23060,7 @@
     {
       "source": "btdigg",
       "path": "ui_state.json",
-      "bytes": 456,
+      "bytes": 532,
       "exported": true,
       "redacted": false,
       "note": ""
