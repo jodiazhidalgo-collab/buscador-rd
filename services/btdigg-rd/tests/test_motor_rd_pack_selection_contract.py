@@ -61,6 +61,8 @@ def test_video_ext_ok_uses_raw_suffix_not_normalized_text():
     assert motor.video_ext_ok("CARPETA/Pelicula.MKV") is True
     assert motor.video_ext_ok("/folder/video.mp4") is True
     assert motor.video_ext_ok("clip.m2ts") is True
+    assert motor.video_ext_ok("open-movie.webm") is True
+    assert motor.video_ext_ok("old-release.mpeg") is True
     assert motor.video_ext_ok("readme.txt") is False
     assert motor.video_ext_ok("pelicula.mkv.nfo") is False
     assert motor.video_ext_ok("/.pad/326511") is False
@@ -126,7 +128,19 @@ def test_rd_verify_by_addmagnet_selects_file_id_and_marks_ok(monkeypatch):
     assert checked.rd_status != "PACK_SIN_COINCIDENCIA"
     select_calls = [call for call in calls if call[1] == "/torrents/selectFiles/TID123"]
     assert select_calls == [("POST", "/torrents/selectFiles/TID123", {"files": "1"})]
+    waiting_events = [payload for event, payload in events if event == "rd_waiting_files_selection"]
+    assert len(waiting_events) == 1
+    assert waiting_events[0]["files_total"] == 4
+    assert waiting_events[0]["video_files"] == 1
+    assert waiting_events[0]["files"][0]["kind"] == "video"
+    assert waiting_events[0]["files"][0]["path"].endswith(".mkv")
+    decision_events = [payload for event, payload in events if event == "rd_select_files_decision"]
+    assert len(decision_events) == 1
+    assert decision_events[0]["candidate_trace_id"].startswith("rd-001-")
+    assert decision_events[0]["files"] == "1"
     assert any(event == "rd_verify_select_files" and payload["files"] == "1" for event, payload in events)
+    assert any(event == "rd_verify_post_select_poll" and payload["candidate_trace_id"].startswith("rd-001-") for event, payload in events)
+    assert any(event == "rd_verify_ok" and payload["candidate_trace_id"].startswith("rd-001-") for event, payload in events)
     assert not any(event == "rd_verify_pack_skip" for event, _payload in events)
 
 
@@ -166,3 +180,44 @@ def test_rd_verify_by_addmagnet_without_valid_video_hard_skips_and_deletes(monke
     assert not any(call[1] == "/torrents/selectFiles/TID404" for call in calls)
     assert any(event == "rd_verify_pack_skip" for event, _payload in events)
     assert any(event == "rd_choose_file_eval" and payload["skipped_reason"] == "extension_no_video" for event, payload in events)
+
+
+def test_rd_verify_by_addmagnet_records_blocked_before_file_selection(monkeypatch):
+    motor = load_motor_module()
+    events = []
+
+    def fake_rd_call(method, path, token, **kwargs):
+        if method == "POST" and path == "/torrents/addMagnet":
+            raise motor.RDAPIError(
+                method,
+                path,
+                451,
+                '{"error":"infringing_file","error_code":35}',
+                {"error": "infringing_file", "error_code": 35},
+            )
+        raise AssertionError(f"unexpected RD call: {method} {path}")
+
+    monkeypatch.setattr(motor, "cancel_checkpoint", lambda *args, **kwargs: None)
+    monkeypatch.setattr(motor, "record_rd_sent_magnet", lambda *args, **kwargs: None)
+    monkeypatch.setattr(motor, "rd_find_existing_downloaded_by_hash", lambda *args, **kwargs: None)
+    monkeypatch.setattr(motor, "rd_call_with_retry", fake_rd_call)
+    monkeypatch.setattr(motor, "diag", lambda event, **kwargs: events.append((event, kwargs)))
+
+    result = motor.Result(
+        title="www.UIndex.org - Pillion 2025 1080p WEB EN-RGB",
+        magnet="magnet:?xt=urn:btih:" + "e" * 40,
+        hash="e" * 40,
+        size_gb=6.15,
+    )
+
+    checked = motor.rd_verify_by_addmagnet(result, "token", idx=6, total=9)
+
+    assert checked.rd_status == "RD_FAIL"
+    blocked = [payload for event, payload in events if event == "rd_candidate_addmagnet_blocked"]
+    assert len(blocked) == 1
+    assert blocked[0]["stage"] == "addMagnet"
+    assert blocked[0]["code"] == 451
+    assert blocked[0]["error_code"] == 35
+    assert blocked[0]["hash"] == "e" * 40
+    assert blocked[0]["candidate_trace_id"].startswith("rd-006-")
+    assert not any(event == "rd_waiting_files_selection" for event, _payload in events)

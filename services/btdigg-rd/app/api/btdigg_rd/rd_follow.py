@@ -31,6 +31,9 @@ USEFUL_EVENTS = {
     "rd_verify_queue_done_item",
     "rd_endpoint_pace_wait",
     "rd_rate_wait",
+    "rd_candidate_addmagnet_blocked",
+    "rd_waiting_files_selection",
+    "rd_select_files_decision",
     "rd_verify_select_files",
     "rd_verify_post_select_poll",
     "rd_verify_ok",
@@ -149,6 +152,13 @@ def _fmt_num(value: Any, default: str = "0") -> str:
     if isinstance(value, float):
         return f"{value:.2f}".rstrip("0").rstrip(".")
     return str(value)
+
+
+def _short_title(data: dict[str, Any], limit: int = 70) -> str:
+    title = str(data.get("title") or "").strip()
+    if len(title) > limit:
+        return title[: limit - 1].rstrip() + "..."
+    return title
 
 
 def _fmt_sec(value: Any) -> str:
@@ -421,14 +431,43 @@ def _event_to_line(record: dict[str, Any], started_at: datetime | None) -> dict[
         done = int(data.get("done") or 0)
         total = int(data.get("total") or 0)
         status = str(data.get("status") or "")
-        if status in {"RD_ERROR", "RD_ERROR_TEMPORAL"}:
-            return _line(record, started_at, "warn", "progress", f"RD: {done}/{total} aviso.", "Principal", "principal")
-        return _line(record, started_at, "info", "progress", f"RD: {done}/{total} OK.", "OK", "ok")
+        if status == "RD_OK":
+            return _line(record, started_at, "ok", "progress", f"RD: {done}/{total} verificado.", "OK", "ok")
+        if status in {"RD_FAIL", "RD_ERROR", "RD_ERROR_TEMPORAL", "PACK_SIN_COINCIDENCIA"}:
+            return _line(record, started_at, "warn", "progress", f"RD: {done}/{total} aviso | {status}.", "Principal", "principal")
+        if status == "NO_INSTANT":
+            return _line(record, started_at, "info", "progress", f"RD: {done}/{total} sin link instantáneo.", "Secundario", "secundario")
+        return _line(record, started_at, "info", "progress", f"RD: {done}/{total} revisado | {status or 'pendiente'}.", "Secundario", "secundario")
+
+    if event == "rd_candidate_addmagnet_blocked":
+        code = data.get("code")
+        error_code = data.get("error_code")
+        title = _short_title(data)
+        suffix = f" | {title}" if title else ""
+        return _line(record, started_at, "warn", "rd-blocked", f"RD: bloqueó el magnet antes de elegir archivo | HTTP {code} / RD {error_code}{suffix}.", "Principal", "principal")
+
+    if event == "rd_waiting_files_selection":
+        total_files = _fmt_num(data.get("files_total"))
+        videos = _fmt_num(data.get("video_files"))
+        omitted = int(data.get("files_omitted") or 0)
+        extra = f" | {omitted} ocultos" if omitted else ""
+        title = _short_title(data)
+        suffix = f" | {title}" if title else ""
+        return _line(record, started_at, "info", "select", f"RD: pide elegir archivo | {total_files} archivos, {videos} vídeos{extra}{suffix}.", "Secundario", "secundario")
+
+    if event == "rd_select_files_decision":
+        fname = str(data.get("file_name") or "").strip()
+        if len(fname) > 80:
+            fname = fname[:79].rstrip() + "..."
+        size = _fmt_num(data.get("file_size_gb"))
+        files = data.get("files") or ""
+        suffix = f" | id {files}" if files else ""
+        return _line(record, started_at, "info", "select", f"RD: archivo elegido | {fname or 'sin nombre'} | {size} GB{suffix}.", "Secundario", "secundario")
 
     if event == "rd_verify_select_files":
         files = data.get("files") or data.get("selected_file") or ""
         suffix = f" | archivos {files}" if files else ""
-        return _line(record, started_at, "info", "select", "RD: pack detectado, seleccionando archivo interno" + suffix + ".", "Secundario", "secundario")
+        return _line(record, started_at, "info", "select", "RD: selección enviada a Real-Debrid" + suffix + ".", "Secundario", "secundario")
 
     if event == "rd_verify_post_select_poll":
         progress = _fmt_num(data.get("progress"))
@@ -628,6 +667,13 @@ def _summary(events: list[dict[str, Any]], summary_file: dict[str, Any]) -> dict
     total = int(queue_item.get("total") or queue_start.get("verifying") or rd_counts.get("total") or 0)
     done = int(queue_item.get("done") or 0)
     status_counts = {key: int(rd_counts.get(key, 0) or 0) for key in ("RD_OK", "NO_INSTANT", "PACK_SIN_COINCIDENCIA", "RD_FAIL", "RD_ERROR", "RD_ERROR_TEMPORAL") if key in rd_counts}
+    selection_summary = {
+        "blocked_before_selection": sum(1 for event in events if event.get("event") == "rd_candidate_addmagnet_blocked"),
+        "waiting_files_selection": sum(1 for event in events if event.get("event") == "rd_waiting_files_selection"),
+        "select_files_decision": sum(1 for event in events if event.get("event") == "rd_select_files_decision"),
+        "select_files_sent": sum(1 for event in events if event.get("event") == "rd_verify_select_files"),
+        "pack_without_match": sum(1 for event in events if event.get("event") == "rd_verify_pack_skip"),
+    }
     http_429 = pacer.get("429_by_group") if isinstance(pacer.get("429_by_group"), dict) else {}
     calls_by_group = pacer.get("calls_by_group") if isinstance(pacer.get("calls_by_group"), dict) else {}
     waits_by_group = pacer.get("waits_by_group") if isinstance(pacer.get("waits_by_group"), dict) else {}
@@ -659,6 +705,7 @@ def _summary(events: list[dict[str, Any]], summary_file: dict[str, Any]) -> dict
             "interval_final_by_group": pacer.get("interval_final_by_group") if isinstance(pacer.get("interval_final_by_group"), dict) else {},
         },
         "fast_discard": _count_fast_discard(events),
+        "file_selection": selection_summary,
         "cleanup": {
             "deleted": cleanup.get("cleanup_deleted", 0),
             "missing": cleanup.get("cleanup_missing", 0),

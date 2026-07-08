@@ -4286,9 +4286,9 @@ def _raw_suffix(path):
 
 def video_ext_ok(path):
     ext = _raw_suffix(path)
-    configured = CONFIG.get("video_extensions", [".mkv", ".mp4", ".avi", ".m4v", ".mov", ".wmv"])
+    configured = CONFIG.get("video_extensions", [".mkv", ".mp4", ".avi", ".m4v", ".mov", ".wmv", ".webm", ".mpg", ".mpeg"])
     allowed = {"." + str(x).lower().lstrip(".") for x in configured if str(x).strip()}
-    allowed.update({".m2ts", ".ts"})
+    allowed.update({".m2ts", ".ts", ".webm", ".mpg", ".mpeg"})
     return ext in allowed
 
 def _file_bytes(f):
@@ -4306,6 +4306,81 @@ def _file_id(f):
 
 def _file_path(f):
     return str(f.get("path") or f.get("name") or f.get("filename") or "").strip()
+
+def _rd_candidate_trace_id(r, idx=0):
+    h = str(getattr(r, "hash", "") or "").strip().lower()
+    if h:
+        return f"rd-{int(idx or 0):03d}-{h[:12]}"
+    title = normalize_compact(getattr(r, "title", "") or "")[:24] or "sinhash"
+    return f"rd-{int(idx or 0):03d}-{title}"
+
+def _rd_candidate_diag(r, idx=0, total=0, tid=""):
+    data = {
+        "candidate_trace_id": _rd_candidate_trace_id(r, idx),
+        "n": idx,
+        "total": total,
+        "hash": str(getattr(r, "hash", "") or "")[:80],
+        "title": str(getattr(r, "title", "") or "")[:180],
+    }
+    if tid:
+        data["id"] = str(tid)[:80]
+    return data
+
+def _rd_file_kind(path):
+    ext = _raw_suffix(path)
+    if video_ext_ok(path):
+        return "video"
+    if ext in {".srt", ".ass", ".ssa", ".sub", ".vtt"}:
+        return "subtitle"
+    if ext in {".nfo", ".txt", ".md", ".url"}:
+        return "text"
+    if ext in {".jpg", ".jpeg", ".png", ".webp"}:
+        return "image"
+    if ext in {".rar", ".zip", ".7z"}:
+        return "archive"
+    return "other"
+
+def _rd_files_snapshot(info, wanted_terms=None, max_files=24):
+    files = info.get("files") if isinstance(info, dict) else []
+    if not isinstance(files, list):
+        files = []
+    terms = list(wanted_terms or [])
+    rows = []
+    total_gb = 0.0
+    video_count = 0
+    selected_count = 0
+    for f in files:
+        path = _file_path(f)
+        gb = _file_size_gb(f)
+        total_gb += gb
+        kind = _rd_file_kind(path)
+        if kind == "video":
+            video_count += 1
+        if bool(f.get("selected")):
+            selected_count += 1
+        ratio, hits = _match_ratio(terms, path)
+        row = {
+            "id": _file_id(f)[:80],
+            "path": path[:260],
+            "gb": round(float(gb or 0), 3),
+            "kind": kind,
+            "video": kind == "video",
+            "extra": bool(_is_extra_video_path(path)),
+            "match_ratio": round(float(ratio or 0), 3),
+            "hits": ",".join(hits)[:120],
+            "selected": bool(f.get("selected")),
+        }
+        rows.append(row)
+    rows.sort(key=lambda item: (item["kind"] == "video", item["match_ratio"], item["gb"]), reverse=True)
+    max_files = max(1, int(max_files or 24))
+    return {
+        "files_total": len(files),
+        "video_files": video_count,
+        "selected_files": selected_count,
+        "total_size_gb": round(float(total_gb or 0), 3),
+        "files": rows[:max_files],
+        "files_omitted": max(0, len(rows) - max_files),
+    }
 
 def _basename_norm(path):
     return normalize(str(path or "").replace("\\", "/").rsplit("/", 1)[-1])
@@ -4596,7 +4671,7 @@ def _rd_mark_verify_ok(r, tid, links, idx=0, total=0, ctx=None):
         r.reason = f"Verificado con addMagnet: {len(links)} link(s), {shown_size:.1f} GB" if shown_size else f"Verificado con addMagnet: {len(links)} link(s)"
     if ctx:
         ctx.record_ok(tid)
-    diag("rd_verify_ok", n=idx, total=total, id=tid, links=len(links), size_gb=round(float(shown_size or 0), 3), selected_file=r.selected_file_name[:240], title=r.title[:220])
+    diag("rd_verify_ok", **_rd_candidate_diag(r, idx, total, tid), links=len(links), size_gb=round(float(shown_size or 0), 3), selected_file=r.selected_file_name[:240])
     return r
 
 def rd_verify_by_addmagnet(r, token, idx=0, total=0, ctx=None):
@@ -4669,7 +4744,15 @@ def rd_verify_by_addmagnet(r, token, idx=0, total=0, ctx=None):
             elif e.is_infringing:
                 r.rd_status = "RD_FAIL"
                 r.reason = "Real-Debrid rechaza este torrent por infraccion o bloqueo legal"
-                diag("rd_verify_infringing", n=idx, total=total, code=e.status_code, error_code=e.error_code, title=r.title[:160])
+                diag(
+                    "rd_candidate_addmagnet_blocked",
+                    **_rd_candidate_diag(r, idx, total),
+                    stage="addMagnet",
+                    code=e.status_code,
+                    error_code=e.error_code,
+                    error=str(getattr(e, "error", "") or "infringing_file")[:120],
+                )
+                diag("rd_verify_infringing", **_rd_candidate_diag(r, idx, total), code=e.status_code, error_code=e.error_code)
                 return r
             elif _is_rd_temp_error_msg(e) or e.is_active_limit:
                 return _mark_rd_temp_error(r, e, idx, total, tid)
@@ -4714,9 +4797,7 @@ def rd_verify_by_addmagnet(r, token, idx=0, total=0, ctx=None):
 
             diag(
                 "rd_verify_poll",
-                n=idx,
-                total=total,
-                id=tid,
+                **_rd_candidate_diag(r, idx, total, tid),
                 attempt=attempt,
                 status=status,
                 progress=progress,
@@ -4725,7 +4806,6 @@ def rd_verify_by_addmagnet(r, token, idx=0, total=0, ctx=None):
                 size_gb=round(float(size_gb or 0), 3),
                 selected_file=r.selected_file_name[:180],
                 selected_size_gb=round(float(r.selected_file_size_gb or 0), 3),
-                title=r.title[:120],
             )
 
             decision = rd_fast_discard_decision(info, r, stage="initial")
@@ -4733,9 +4813,17 @@ def rd_verify_by_addmagnet(r, token, idx=0, total=0, ctx=None):
                 return _rd_apply_fast_discard(r, tid, decision, token, idx, total, ctx=ctx)
 
             if status == "waiting_files_selection" and not selected_once:
+                snapshot = _rd_files_snapshot(info, wanted_terms=terms)
+                diag(
+                    "rd_waiting_files_selection",
+                    **_rd_candidate_diag(r, idx, total, tid),
+                    status=status,
+                    progress=progress,
+                    **snapshot,
+                )
                 ids, fname, fgb, note = choose_internal_files(info, r.title, wanted_terms=terms)
                 if not ids:
-                    diag("rd_verify_pack_skip", id=tid, n=idx, note=note, title=r.title[:160])
+                    diag("rd_verify_pack_skip", **_rd_candidate_diag(r, idx, total, tid), note=note, files_total=snapshot.get("files_total"), video_files=snapshot.get("video_files"))
                     return _rd_apply_fast_discard(
                         r,
                         tid,
@@ -4758,13 +4846,23 @@ def rd_verify_by_addmagnet(r, token, idx=0, total=0, ctx=None):
                 r.size_gb = fgb or r.size_gb
                 r.rd_largest_gb = fgb or r.rd_largest_gb
                 r.pack_note = note
+                diag(
+                    "rd_select_files_decision",
+                    **_rd_candidate_diag(r, idx, total, tid),
+                    files=ids,
+                    file_name=fname[:240],
+                    file_size_gb=round(float(fgb or 0), 3),
+                    note=note[:500],
+                    files_total=snapshot.get("files_total"),
+                    video_files=snapshot.get("video_files"),
+                )
                 try:
                     cancel_checkpoint("rd_verify_by_addmagnet.before_select")
                     rd_call_with_retry("POST", f"/torrents/selectFiles/{tid}", token, data={"files": ids}, op_name="selectFiles", attempts=retries, retry_context=ctx, retry_429_attempts=retry_429_attempts)
                     selected_once = True
-                    diag("rd_verify_select_files", id=tid, n=idx, files=ids, file_name=fname[:240], file_size_gb=round(float(fgb or 0), 3), note=note[:500])
+                    diag("rd_verify_select_files", **_rd_candidate_diag(r, idx, total, tid), files=ids, file_name=fname[:240], file_size_gb=round(float(fgb or 0), 3), note=note[:500])
                 except Exception as e:
-                    diag("rd_verify_select_error", id=tid, n=idx, error=str(e)[:300])
+                    diag("rd_verify_select_error", **_rd_candidate_diag(r, idx, total, tid), error=str(e)[:300])
                     raise
                 post_wait = float(CONFIG.get("rd_post_select_poll_sec", 0.25) or 0.25)
                 sleep_interruptible(post_wait, where="rd_post_select_poll")
@@ -4786,16 +4884,13 @@ def rd_verify_by_addmagnet(r, token, idx=0, total=0, ctx=None):
                                 r.size_gb = size_gb2
                         diag(
                             "rd_verify_post_select_poll",
-                            n=idx,
-                            total=total,
-                            id=tid,
+                            **_rd_candidate_diag(r, idx, total, tid),
                             status=status2,
                             progress=progress2,
                             links=len(links2) if isinstance(links2, list) else 0,
                             files=files_count2,
                             size_gb=round(float(size_gb2 or 0), 3),
                             selected_file=r.selected_file_name[:180],
-                            title=r.title[:120],
                         )
                         if links2 and (status2 in ("downloaded", "compressing", "uploading") or str(progress2) in ("100", "100.0")):
                             return _rd_mark_verify_ok(r, tid, links2, idx, total, ctx=ctx)
@@ -4832,7 +4927,7 @@ def rd_verify_by_addmagnet(r, token, idx=0, total=0, ctx=None):
             ctx.record_failed(tid, "no_instant")
         if CONFIG.get("cleanup_failed_verifications", True):
             rd_delete_torrent(tid, token, "no_instant", release_slot=True)
-        diag("rd_verify_not_instant", n=idx, total=total, id=tid, status=last_status, progress=last_progress, selected_file=r.selected_file_name[:240], title=r.title[:160])
+        diag("rd_verify_not_instant", **_rd_candidate_diag(r, idx, total, tid), status=last_status, progress=last_progress, selected_file=r.selected_file_name[:240])
         return r
 
     except UserCancelled:
@@ -4855,7 +4950,7 @@ def rd_verify_by_addmagnet(r, token, idx=0, total=0, ctx=None):
             ctx.record_failed(tid, "error")
         if tid and CONFIG.get("cleanup_failed_verifications", True):
             rd_delete_torrent(tid, token, "error", release_slot=True)
-        diag("rd_verify_error", n=idx, total=total, id=tid, error=str(e)[:500], title=r.title[:160])
+        diag("rd_verify_error", **_rd_candidate_diag(r, idx, total, tid), error=str(e)[:500])
         return r
 
 def rd_verify_by_torrent_url(r, token, idx=0, total=0):
