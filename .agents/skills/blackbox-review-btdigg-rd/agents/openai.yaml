@@ -1,0 +1,4 @@
+interface:
+  display_name: "Blackbox BTDigg RD"
+  short_description: "Leer diagnosticos blackbox de BTDigg RD"
+  default_prompt: "Usa esta skill para revisar el ultimo diagnostico de BTDigg RD."

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Backup BTDigg RD"
+  short_description: "Crear backup fechado del proyecto BTDigg RD"
+  default_prompt: "Usa esta skill antes de tocar zonas delicadas de BTDigg RD."

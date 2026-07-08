@@ -1,0 +1,4 @@
+interface:
+  display_name: "Limpiar Residuos BTDigg RD"
+  short_description: "Limpiar basura segura y pruebas sinteticas de Codex"
+  default_prompt: "Usa esta skill dentro del cierre final de BTDigg RD."

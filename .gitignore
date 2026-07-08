@@ -1,9 +1,10 @@
 # Proyecto unificado Buscador RD: no subir runtime, backups ni credenciales reales.
 
 _backups/
-.agents/
+.agents/*
+!.agents/skills/
+!.agents/skills/**
 .codex/
-AGENTS.md
 _codex_runtime/
 .playwright-mcp/
 test-results/

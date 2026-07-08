@@ -1,0 +1,4 @@
+interface:
+  display_name: "UI Check BTDigg RD"
+  short_description: "Validar visualmente BTDigg RD en navegador"
+  default_prompt: "Usa esta skill para comprobar la UI visible de BTDigg RD."

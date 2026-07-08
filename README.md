@@ -49,6 +49,8 @@ El despliegue real usa una deploy key SSH local de solo este repo. La key vive f
 
 Lee tambien:
 
+- `AGENTS.md`: instrucciones publicas del repo para Codex/ChatGPT y reglas de trabajo.
+- `.agents/skills/`: workflows reutilizables del proyecto, con scripts seguros y sin secretos.
 - `docs/AI_REVIEW.md`: guia publica para ChatGPT, Codex o revisiones externas.
 - `docs/evidencia-pytest-y-validacion-local.md`: pruebas pytest, comandos y evidencia local.
 - `.github/workflows/ci.yml`: CI publico con informe JUnit descargable.

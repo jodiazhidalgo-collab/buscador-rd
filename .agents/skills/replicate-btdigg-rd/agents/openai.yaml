@@ -1,0 +1,4 @@
+interface:
+  display_name: "Replicar BTDigg RD"
+  short_description: "Replicar cambios confirmados a las replicas 2 y 3"
+  default_prompt: "Usa esta skill solo cuando el usuario pida replicar BTDigg RD."

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Rebuild BTDigg RD"
+  short_description: "Reconstruir y comprobar el servicio btdigg-rd"
+  default_prompt: "Usa esta skill tras cambios web, backend, frontend, Docker o configuracion de BTDigg RD."

@@ -17,6 +17,8 @@ def test_root_readme_declares_public_entrypoints_and_truth_source():
         "services/btdigg-rd",
         "services/cloudflared",
         "docker-compose.example.yaml",
+        "AGENTS.md",
+        ".agents/skills/",
         "DATA_DIR",
         "diagnostics/btdigg",
         "docs/AI_REVIEW.md",
@@ -28,6 +30,8 @@ def test_ai_review_guide_points_to_ci_evidence_and_safe_boundaries():
     text = read("docs/AI_REVIEW.md")
 
     for expected in (
+        "AGENTS.md",
+        ".agents/skills/",
         "buscador-rd-pytest-evidence",
         "buscador-rd-pytest-junit.xml",
         "docker-compose.example.yaml",
@@ -38,15 +42,16 @@ def test_ai_review_guide_points_to_ci_evidence_and_safe_boundaries():
         assert expected in text
 
 
-def test_gitignore_keeps_runtime_backups_and_credentials_out():
+def test_gitignore_keeps_runtime_backups_and_credentials_out_but_allows_public_skills():
     text = read(".gitignore")
 
     for expected in (
         "_backups/",
         "_codex_runtime/",
-        ".agents/",
+        ".agents/*",
+        "!.agents/skills/",
+        "!.agents/skills/**",
         ".codex/",
-        "AGENTS.md",
         "docker-compose.yaml",
         "config/btdigg-rd/data/",
         "config/cloudflared/config/secrets.env",
@@ -54,6 +59,8 @@ def test_gitignore_keeps_runtime_backups_and_credentials_out():
         "*.zip",
     ):
         assert expected in text
+
+    assert "\nAGENTS.md" not in text
 
 
 def test_git_hooks_and_ci_are_present():

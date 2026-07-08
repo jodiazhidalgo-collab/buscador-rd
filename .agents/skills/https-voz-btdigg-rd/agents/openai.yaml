@@ -1,0 +1,4 @@
+interface:
+  display_name: "HTTPS Voz BTDigg RD"
+  short_description: "Mapa de microfono, HTTPS, Cloudflared, Whisper y resolver"
+  default_prompt: "Usa esta skill para diagnosticar voz, microfono, HTTPS movil, Cloudflared, Whisper o resolver de titulos en BTDigg RD."

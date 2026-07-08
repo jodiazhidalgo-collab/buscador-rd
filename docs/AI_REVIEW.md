@@ -5,12 +5,25 @@ Este documento es la guia publica y segura para revisar Buscador RD desde GitHub
 ## Que debe mirar primero una IA
 
 1. `README.md`: mapa publico del proyecto y verdad del flujo.
-2. `diagnostics_public/`: espejo publico saneado del runtime real, jobs, logs, JSON, seguimiento, historial y errores.
-3. `.github/workflows/ci.yml`: pruebas automaticas que GitHub ejecuta en cada push o pull request.
-4. Artefacto `buscador-rd-pytest-evidence` de GitHub Actions: informe JUnit de pytest descargable.
-5. `docs/evidencia-pytest-y-validacion-local.md`: como reproducir las pruebas desde cero.
-6. `docker-compose.example.yaml` y `.env.example`: forma publica del despliegue, sin credenciales reales.
-7. `services/btdigg-rd/tests/`: contratos de motor, RD/qB, jobs, UI state, voz y caja negra.
+2. `AGENTS.md`: reglas publicas de trabajo, raiz real, rutas importantes y cierre Git.
+3. `.agents/skills/`: workflows reutilizables del repo, con scripts seguros y sin secretos.
+4. `diagnostics_public/`: espejo publico saneado del runtime real, jobs, logs, JSON, seguimiento, historial y errores.
+5. `.github/workflows/ci.yml`: pruebas automaticas que GitHub ejecuta en cada push o pull request.
+6. Artefacto `buscador-rd-pytest-evidence` de GitHub Actions: informe JUnit de pytest descargable.
+7. `docs/evidencia-pytest-y-validacion-local.md`: como reproducir las pruebas desde cero.
+8. `docker-compose.example.yaml` y `.env.example`: forma publica del despliegue, sin credenciales reales.
+9. `services/btdigg-rd/tests/`: contratos de motor, RD/qB, jobs, UI state, voz y caja negra.
+
+## Skills publicas del proyecto
+
+Las skills del repo viven en `.agents/skills/` y se versionan en Git para que Codex, ChatGPT o una revision externa puedan ver el mismo flujo operativo que se usa en local.
+
+Regla limpia:
+
+- `.agents/skills/` si va a Git.
+- `.agents/` fuera de `skills` no va a Git.
+- `.codex/` sigue siendo local y privado.
+- Los scripts de skills no deben contener tokens, passwords, API keys, cookies ni credenciales.
 
 ## Verdad tecnica del flujo
 
@@ -67,8 +80,7 @@ Por seguridad, el repositorio publico no debe incluir:
 
 - `.env`
 - `docker-compose.yaml`
-- `AGENTS.md`
-- `.agents/`
+- `.agents/` fuera de `.agents/skills/`
 - `.codex/`
 - `_codex_runtime/`
 - `_backups/`

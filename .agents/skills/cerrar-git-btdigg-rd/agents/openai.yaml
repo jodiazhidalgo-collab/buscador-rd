@@ -1,0 +1,4 @@
+interface:
+  display_name: "Cerrar Git BTDigg RD"
+  short_description: "Limpiar basura segura, commit y push"
+  default_prompt: "Uso obligatorio al finalizar el turno si se ha tocado cualquier archivo en BTDigg RD: limpiar, commit y push desde la raiz."
