@@ -29,7 +29,7 @@ from ._tv_rules_service import (
 from ._ui_state_service import save_ui_state_payload, ui_state_payload
 from .blackbox import trace_folder
 from .config import BTDIGG_RUNTIME_DIR, RD_TEST_EXPORTS_DIR, VOICE_TRANSCRIBE_MAX_AUDIO_MB, ensure_runtime_dirs
-from .history import load_history
+from .history import load_history, load_qbit_no_seed_history
 from .jobs import TERMINAL_STATUSES, cancel_job, jobs, lock, running_job, start_job, start_rd_test
 from .project_publish import PublishError, publish_project
 from .retention import cleanup_rd_test_runs, list_rd_test_runs
@@ -332,6 +332,11 @@ def api_results(module: str):
 @bp.get("/api/history/btdigg")
 def api_history_btdigg():
     return jsonify({"ok": True, "history": load_history()})
+
+
+@bp.get("/api/history/qbit-no-seeds")
+def api_history_qbit_no_seeds():
+    return jsonify({"ok": True, "history": load_qbit_no_seed_history()})
 
 
 @bp.get("/api/ui-state")

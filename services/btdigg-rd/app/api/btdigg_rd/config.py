@@ -17,6 +17,7 @@ BTDIGG_TOKEN_FILE = Path(os.environ.get("BTDIGG_TOKEN_FILE", BTDIGG_RUNTIME_DIR 
 BTDIGG_EXPORTS_DIR = Path(os.environ.get("BTDIGG_EXPORT_DIR", BTDIGG_RUNTIME_DIR / "exports"))
 HISTORY_DIR = DATA / "history"
 HISTORY_FILE = HISTORY_DIR / "btdigg_history.json"
+QBIT_NO_SEEDS_HISTORY_FILE = HISTORY_DIR / "btdigg_qbit_no_seeds_history.json"
 DIAGNOSTICS_DIR = DATA / "diagnostics" / "btdigg"
 RD_TEST_DIAGNOSTICS_DIR = DIAGNOSTICS_DIR / "rd_tests"
 RD_TEST_EXPORTS_DIR = DIAGNOSTICS_DIR / "_exports" / "rd_tests"

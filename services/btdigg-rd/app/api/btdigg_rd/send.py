@@ -896,33 +896,33 @@ def rd_refresh_reusable_evidence(contract: dict[str, Any], trace_id: str = "") -
     return {"ok": False, "reason": "la evidencia RD ya no esta viva"}
 
 
-def route_qbit_reusable(contract: dict[str, Any], link: str, target: dict[str, str], title: str, module: str, started: float, trace_id: str):
+def route_qbit_reusable(contract: dict[str, Any], link: str, target: dict[str, str], title: str, module: str, started: float, trace_id: str, *, route_name: str = "QBIT_REUSABLE"):
     hash_value = normalize_infohash(contract.get("hash") or link)
-    trace_download(trace_id, "ROUTE_SELECTED", engine="qBittorrent", route="QBIT_REUSABLE", hash=hash_value or "sin_hash", qbt_was_existing=contract.get("qbt_was_existing"))
+    trace_download(trace_id, "ROUTE_SELECTED", engine="qBittorrent", route=route_name, hash=hash_value or "sin_hash", qbt_was_existing=contract.get("qbt_was_existing"))
     if link.startswith("magnet:"):
         if not hash_value:
-            trace_download(trace_id, "DOWNLOAD_REJECTED", route="QBIT_REUSABLE", reason="magnet sin hash")
+            trace_download(trace_id, "DOWNLOAD_REJECTED", route=route_name, reason="magnet sin hash")
             return jsonify({"ok": False, "error": "Este magnet no trae hash validable.", "trace_id": trace_id}), 400
         info, checked = client_info_by_hash(QBIT_BASE, QBIT_USER, QBIT_PASS, hash_value, trace_id=trace_id, engine_label="qBittorrent")
         if not checked:
-            trace_download(trace_id, "DOWNLOAD_REJECTED", route="QBIT_REUSABLE", reason="no se pudo comprobar duplicado qBit")
+            trace_download(trace_id, "DOWNLOAD_REJECTED", route=route_name, reason="no se pudo comprobar duplicado qBit")
             return jsonify({"ok": False, "error": "No pude comprobar qBittorrent por hash; no lo añado para evitar duplicados.", "trace_id": trace_id}), 502
         if info:
-            trace_download(trace_id, "QBIT_REUSABLE_ALREADY_PRESENT", hash=hash_value, state=info.get("state") or "", progress=info.get("progress") or "")
+            trace_download(trace_id, f"{route_name}_ALREADY_PRESENT", hash=hash_value, state=info.get("state") or "", progress=info.get("progress") or "")
             trace_download(trace_id, "CLEANUP_FINAL", action="none", reason="qbit_already_present")
-            trace_download(trace_id, "DOWNLOAD_END_OK", engine="qBittorrent", route="QBIT_REUSABLE", already_present=True, elapsed=_elapsed(started))
+            trace_download(trace_id, "DOWNLOAD_END_OK", engine="qBittorrent", route=route_name, already_present=True, elapsed=_elapsed(started))
             return jsonify({"ok": True, "message": "Ya estaba en qBittorrent", "module": module, "title": title, "engine": "qBittorrent", "already_present": True, "trace_id": trace_id})
         response = qbit_add_url(QBIT_BASE, QBIT_USER, QBIT_PASS, link, target, is_rdt=False, trace_id=trace_id, engine_label="qBittorrent")
         qbit_hash = hash_from_qbit_response(response) or hash_value
         record_download(title, module, link, download_hash=qbit_hash, destino=target["key"], trace_id=trace_id)
         trace_download(trace_id, "CLEANUP_FINAL", action="none", reason="qbit_target")
-        trace_download(trace_id, "DOWNLOAD_END_OK", engine="qBittorrent", route="QBIT_REUSABLE", already_present=False, elapsed=_elapsed(started))
+        trace_download(trace_id, "DOWNLOAD_END_OK", engine="qBittorrent", route=route_name, already_present=False, elapsed=_elapsed(started))
         return jsonify({"ok": True, "message": "Enviado a qBittorrent", "module": module, "title": title, "engine": "qBittorrent", "already_present": False, "trace_id": trace_id})
 
     if link.startswith(("http://", "https://")):
         raw = get_bytes(link, timeout=90)
         torrent_hash = torrent_infohash_from_bytes(raw)
-        trace_download(trace_id, "QBIT_REUSABLE_TORRENT_URL_OK", bytes=len(raw or b""), hash=torrent_hash or "sin_hash")
+        trace_download(trace_id, f"{route_name}_TORRENT_URL_OK", bytes=len(raw or b""), hash=torrent_hash or "sin_hash")
         if not raw or len(raw) < 40:
             return jsonify({"ok": False, "error": "El enlace devolvió un torrent vacío o inválido.", "trace_id": trace_id}), 500
         check_hash = torrent_hash or hash_value
@@ -930,16 +930,21 @@ def route_qbit_reusable(contract: dict[str, Any], link: str, target: dict[str, s
         if check_hash and not checked:
             return jsonify({"ok": False, "error": "No pude comprobar qBittorrent por hash; no lo añado para evitar duplicados.", "trace_id": trace_id}), 502
         if info:
-            trace_download(trace_id, "QBIT_REUSABLE_ALREADY_PRESENT", hash=check_hash, state=info.get("state") or "", progress=info.get("progress") or "")
-            trace_download(trace_id, "DOWNLOAD_END_OK", engine="qBittorrent", route="QBIT_REUSABLE", already_present=True, elapsed=_elapsed(started))
+            trace_download(trace_id, f"{route_name}_ALREADY_PRESENT", hash=check_hash, state=info.get("state") or "", progress=info.get("progress") or "")
+            trace_download(trace_id, "DOWNLOAD_END_OK", engine="qBittorrent", route=route_name, already_present=True, elapsed=_elapsed(started))
             return jsonify({"ok": True, "message": "Ya estaba en qBittorrent", "module": module, "title": title, "engine": "qBittorrent", "already_present": True, "trace_id": trace_id})
         response = qbit_add_torrent_bytes(QBIT_BASE, QBIT_USER, QBIT_PASS, raw, safe_filename(title, module or "descarga"), target, trace_id=trace_id, engine_label="qBittorrent")
         qbit_hash = hash_from_qbit_response(response) or check_hash
         record_download(title, module, "qbit-torrent", download_hash=qbit_hash, torrent_bytes=raw, destino=target["key"], trace_id=trace_id)
-        trace_download(trace_id, "DOWNLOAD_END_OK", engine="qBittorrent", route="QBIT_REUSABLE", already_present=False, elapsed=_elapsed(started))
+        trace_download(trace_id, "DOWNLOAD_END_OK", engine="qBittorrent", route=route_name, already_present=False, elapsed=_elapsed(started))
         return jsonify({"ok": True, "message": "Enviado a qBittorrent", "module": module, "title": title, "engine": "qBittorrent", "already_present": False, "trace_id": trace_id})
 
     return jsonify({"ok": False, "error": "No pude resolver este resultado a magnet o .torrent real.", "trace_id": trace_id}), 400
+
+
+def route_qbit_forced(contract: dict[str, Any], link: str, target: dict[str, str], title: str, module: str, started: float, trace_id: str):
+    trace_download(trace_id, "QBIT_FORCED_BY_USER", qbt_status=contract.get("qbt_status") or "", qbt_reason=contract.get("qbt_reason") or "")
+    return route_qbit_reusable(contract, link, target, title, module, started, trace_id, route_name="QBIT_FORCED")
 
 
 def route_rd_reusable(contract: dict[str, Any], link: str, target: dict[str, str], title: str, module: str, started: float, trace_id: str):
@@ -1195,6 +1200,8 @@ def api_rdt_send():
     link = str(payload.get("link") or payload.get("url") or "").strip()
     title = str(payload.get("title") or "").strip() or "descarga"
     module = str(payload.get("module") or "btdigg").strip() or "btdigg"
+    force_qbit = _truthy(payload.get("force_qbit"))
+    history_kind = str(payload.get("history_kind") or "").strip()
     payload_hash = normalize_infohash(payload.get("hash") or link)
     trace_download(trace_id, "DOWNLOAD_CLICK_RECEIVED", module=module, index=payload.get("index") or "", title=title, hash=payload_hash or "sin_hash", link_type=_link_kind(link), link_ref=_link_ref(link), remote=request.remote_addr)
 
@@ -1238,6 +1245,13 @@ def api_rdt_send():
                     contract["hash"] = normalize_infohash(contract.get("hash") or link)
                 elif link.startswith(("http://", "https://")):
                     contract["torrent_url"] = link
+                if force_qbit:
+                    if not (_truthy(payload.get("from_history")) and history_kind == "qbit_no_seeds"):
+                        trace_download(trace_id, "DOWNLOAD_REJECTED", route="QBIT_FORCED", reason="force_qbit fuera de historial sin semillas")
+                        return jsonify({"ok": False, "error": "Forzar qBit solo esta permitido desde el historial sin semillas.", "trace_id": trace_id}), 409
+                    trace_download(trace_id, "ROUTE_DECIDED", route="QBIT_FORCED", reason="usuario fuerza qBit desde historial sin semillas", hash=contract.get("hash") or "sin_hash")
+                    trace_contract(trace_id, contract, "QBIT_FORCED", "usuario fuerza qBit desde historial sin semillas")
+                    return route_qbit_forced(contract, link, target, title, module, started, trace_id)
                 route, route_reason = decide_btdigg_download_route(contract)
                 trace_download(trace_id, "ROUTE_DECIDED", route=route, reason=route_reason, hash=contract.get("hash") or "sin_hash")
                 trace_contract(trace_id, contract, route, route_reason)

@@ -58,6 +58,7 @@ def test_api_rdt_send_manual_magnet_fallback_to_qbit(client, monkeypatch):
 def test_send_route_decision_contract():
     from api.btdigg_rd import send
 
+    magnet = "magnet:?xt=urn:btih:" + "d" * 40
     assert send.decide_btdigg_download_route({"qbt_status": "QBT_OK"})[0] == "QBIT_REUSABLE"
     assert (
         send.decide_btdigg_download_route(
@@ -72,6 +73,7 @@ def test_send_route_decision_contract():
         == "RD_VERIFIED_MAGNET"
     )
     assert send.decide_btdigg_download_route({})[0] == "BLOCKED_NO_LINK"
+    assert send.decide_btdigg_download_route({"qbt_status": "QBT_NO_PEERS", "magnet": magnet})[0] == "BLOCKED_UNSAFE"
 
 
 def test_send_extracted_helpers_keep_send_wrappers():

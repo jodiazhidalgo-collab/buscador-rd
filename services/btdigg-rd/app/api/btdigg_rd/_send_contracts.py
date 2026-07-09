@@ -3,7 +3,7 @@ from __future__ import annotations
 from typing import Any
 
 from ._send_tracking import _int_value, _link_kind, _link_ref, clean_text, trace_download
-from .config import HISTORY_FILE
+from .config import HISTORY_FILE, QBIT_NO_SEEDS_HISTORY_FILE
 from .results import load_results, normalize_infohash
 from .utils import read_json
 
@@ -78,7 +78,13 @@ def _validate_btdigg_download_payload(payload: dict[str, Any], trace_id: str) ->
     return item, ""
 
 
-def _find_history_result(search_id: Any, result_position: Any) -> dict[str, Any] | None:
+def _history_file_for_kind(kind: Any):
+    if str(kind or "").strip() == "qbit_no_seeds":
+        return QBIT_NO_SEEDS_HISTORY_FILE
+    return HISTORY_FILE
+
+
+def _find_history_result(search_id: Any, result_position: Any, history_kind: Any = "") -> dict[str, Any] | None:
     search_id = str(search_id or "").strip()
     try:
         position = int(result_position)
@@ -86,7 +92,7 @@ def _find_history_result(search_id: Any, result_position: Any) -> dict[str, Any]
         position = 0
     if not search_id or position < 1:
         return None
-    data = read_json(HISTORY_FILE)
+    data = read_json(_history_file_for_kind(history_kind))
     entries = data.get("searches") if isinstance(data, dict) else data
     if not isinstance(entries, list):
         return None
@@ -104,6 +110,7 @@ def _find_history_result(search_id: Any, result_position: Any) -> dict[str, Any]
 
 def _validate_btdigg_history_payload(payload: dict[str, Any], trace_id: str) -> tuple[dict[str, Any] | None, str]:
     history_id = str(payload.get("history_id") or "").strip()
+    history_kind = str(payload.get("history_kind") or "").strip()
     history_result = _payload_index(payload.get("history_result") or payload.get("history_index"))
     client_link = str(payload.get("link") or payload.get("url") or "").strip()
     client_hash = normalize_infohash(payload.get("hash") or payload.get("btih") or client_link)
@@ -113,6 +120,7 @@ def _validate_btdigg_history_payload(payload: dict[str, Any], trace_id: str) -> 
     trace_download(
         trace_id,
         "BTDIGG_HISTORY_CARD",
+        history_kind=history_kind or "default",
         history_id=history_id or "sin_id",
         result=history_result or "sin_result",
         hash=client_hash or "sin_hash",
@@ -120,7 +128,7 @@ def _validate_btdigg_history_payload(payload: dict[str, Any], trace_id: str) -> 
         status=client_status,
     )
 
-    item = _find_history_result(history_id, history_result)
+    item = _find_history_result(history_id, history_result, history_kind)
     if not item:
         return None, "No encuentro esa tarjeta guardada en el historial."
 

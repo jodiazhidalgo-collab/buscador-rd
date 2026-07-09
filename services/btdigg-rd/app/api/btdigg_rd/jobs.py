@@ -29,7 +29,7 @@ from .blackbox import (
     start_rd_test as blackbox_start_rd_test,
 )
 from .config import BTDIGG_CODE_DIR, BTDIGG_CONFIG_FILE, BTDIGG_RUNTIME_DIR, BTDIGG_TOKEN_FILE, JOB_RUNS_DIR
-from .history import record_search
+from .history import record_qbit_no_seed_search_from_export, record_search
 from .retention import cleanup_job_runs, cleanup_rd_test_runs
 from .results import load_results
 from .public_diagnostics import export_public_diagnostics
@@ -465,6 +465,7 @@ def run_process(job_id: str, cmd: list[str], cwd: Path, safeout: Path | None = N
             if scope.record_shared_history:
                 try:
                     record_search(jobs.get(job_id, {}).get("payload") or {}, results)
+                    record_qbit_no_seed_search_from_export(jobs.get(job_id, {}).get("payload") or {}, runtime.exports_dir)
                 except Exception as exc:
                     append_job(job_id, f"Aviso historial: {type(exc).__name__}: {exc}")
                     _bb_error(scope, job_id, "HISTORY_RECORD_ERROR", exc)

@@ -60,6 +60,9 @@ const activeQueueStatuses = new Set(["running", "stopping"]);
 let historyCache = null;
 let historyOpenState = { days: {}, searches: {} };
 let historyResultStore = {};
+let qbitNoSeedsHistoryCache = null;
+let qbitNoSeedsHistoryOpenState = { days: {}, searches: {} };
+let qbitNoSeedsHistoryResultStore = {};
 let titleResolveOpenKey = "";
 let titleResolveCache = {};
 let resultsSnapshot = "";
@@ -173,6 +176,10 @@ function uiStatePayload() {
       days: historyOpenState.days || {},
       searches: historyOpenState.searches || {}
     },
+    qbit_no_seeds_history_open: {
+      days: qbitNoSeedsHistoryOpenState.days || {},
+      searches: qbitNoSeedsHistoryOpenState.searches || {}
+    },
     result_sort: resultSort.btdigg || { key: "index", dir: "asc" }
   };
 }
@@ -240,6 +247,7 @@ function applyUiState(state, remote = false) {
   try {
     if (!focusedFormField()) applyFormState(state.form || {});
     historyOpenState = normalizeHistoryOpenState(state.history_open);
+    qbitNoSeedsHistoryOpenState = normalizeHistoryOpenState(state.qbit_no_seeds_history_open);
     if (state.result_sort && typeof state.result_sort === "object") {
       resultSort.btdigg = {
         key: String(state.result_sort.key || "index"),
@@ -250,7 +258,10 @@ function applyUiState(state, remote = false) {
     saveFormState(false);
     saveUiStateLocal(state);
     if (remoteMs) lastUiStateRemoteMs = remoteMs;
-    if (historyVisible()) loadHistory(false);
+    if (historyVisible()) {
+      loadHistory(false);
+      loadQbitNoSeedsHistory(false);
+    }
     if (!historyVisible() && (moduleResults.btdigg || []).length) renderResults(moduleResults.btdigg || []);
   } finally {
     suppressUiStateSave = false;
@@ -1099,7 +1110,10 @@ function setHistoryView(show, persist = true) {
     try { localStorage.setItem(viewStoreKey, show ? "history" : "main"); } catch (e) {}
     markUiStateChanged();
   }
-  if (show) loadHistory(false);
+  if (show) {
+    loadHistory(false);
+    loadQbitNoSeedsHistory(false);
+  }
 }
 
 function toggleHistoryView() {
@@ -2225,6 +2239,7 @@ function applyJobSnapshot(job, module = "btdigg", options = {}) {
     moduleBusy[module] = false;
     setModuleResults(module, status === "done" ? (job.results || []) : [], true, true);
     historyCache = null;
+    qbitNoSeedsHistoryCache = null;
     setStatus(jobStatusLabel(status));
     updateStopButton(status);
     clearActiveJob(id, module);
@@ -2417,6 +2432,7 @@ function openLive(id, module) {
     updateStopButton(data.status);
     setModuleResults(module, data.status === "done" ? (data.results || []) : [], true, true);
     historyCache = null;
+    qbitNoSeedsHistoryCache = null;
     if (data.status === "cancelled" && (data.forced_stop || data.cleanup_uncertain)) {
       pushLog(module, "Aviso: cancelacion forzada. Revisa caja negra.");
     }
@@ -2452,6 +2468,7 @@ async function poll(id, module) {
         updateStopButton(data.job.status);
         setModuleResults(module, data.job.status === "done" ? (data.job.results || []) : [], true, true);
         historyCache = null;
+        qbitNoSeedsHistoryCache = null;
         if (data.job.status === "cancelled" && (data.job.forced_stop || data.job.cleanup_uncertain)) {
           pushLog(module, "Aviso: cancelacion forzada. Revisa caja negra.");
         }
@@ -2565,7 +2582,7 @@ function itemDownloadContract(item) {
 }
 
 async function sendDownloadItem(item, btn = null, options = {}) {
-  const link = item.link || item.magnet || item.url || "";
+  const link = itemDownloadLink(item);
   const itemHash = itemDownloadHash(item, link);
   if (!link) {
     setStatus("Sin enlace");
@@ -2594,8 +2611,10 @@ async function sendDownloadItem(item, btn = null, options = {}) {
         status: item.status || item.confidence || "",
         size: item.size || "",
         from_history: options.origin === "history",
+        history_kind: options.historyKind || "",
         history_id: options.historyId || "",
         history_result: options.historyResult || "",
+        force_qbit: !!options.forceQbit,
         contract: itemDownloadContract(item)
       })
     });
@@ -2645,6 +2664,53 @@ async function downloadHistoryItem(key, btn = null) {
     origin: "history",
     historyId: saved.historyId,
     historyResult: saved.historyResult
+  });
+}
+
+function itemDownloadLink(item) {
+  const raw = item && item.raw && typeof item.raw === "object" ? item.raw : {};
+  return String((item && (item.link || item.magnet || item.torrent_url || item.url)) || raw.magnet || raw.torrent_url || raw.url || raw.source_url || "").trim();
+}
+
+function historyUsefulLink(item) {
+  const raw = item && item.raw && typeof item.raw === "object" ? item.raw : {};
+  const sourceUrl = String(raw.source_url || "").trim();
+  const candidates = [
+    raw.magnet,
+    raw.torrent_url,
+    raw.url,
+    item && item.magnet,
+    item && item.torrent_url,
+    item && item.url,
+    item && item.link
+  ];
+  for (const candidate of candidates) {
+    const link = String(candidate || "").trim();
+    if (!link) continue;
+    if (link.startsWith("magnet:")) return link;
+    if (link.startsWith("http://") || link.startsWith("https://")) {
+      if (sourceUrl && link === sourceUrl) continue;
+      return link;
+    }
+  }
+  return "";
+}
+
+async function forceQbitNoSeedsHistoryItem(key, btn = null) {
+  const saved = qbitNoSeedsHistoryResultStore[key];
+  if (!saved || !saved.item) {
+    setStatus("Historial no encontrado");
+    moduleLogs.btdigg = ["No encuentro esa tarjeta guardada en historial sin semillas."];
+    renderLog("btdigg");
+    setActionButtonState(btn, "error", "!");
+    return;
+  }
+  return sendDownloadItem(saved.item, btn, {
+    origin: "history",
+    historyKind: "qbit_no_seeds",
+    historyId: saved.historyId,
+    historyResult: saved.historyResult,
+    forceQbit: true
   });
 }
 
@@ -2979,6 +3045,29 @@ async function loadHistory(force = false) {
   renderHistory();
 }
 
+async function loadQbitNoSeedsHistory(force = false) {
+  const panel = document.getElementById("qbitNoSeedsHistoryPanel");
+  if (!panel) return;
+  if (force) {
+    qbitNoSeedsHistoryOpenState = { days: {}, searches: {} };
+    qbitNoSeedsHistoryResultStore = {};
+    markUiStateChanged();
+  }
+  if (!qbitNoSeedsHistoryCache || force) {
+    panel.innerHTML = '<p class="hint history-empty">Cargando historial...</p>';
+    try {
+      const response = await fetch("/api/history/qbit-no-seeds");
+      const data = await response.json();
+      if (!data.ok) throw new Error(data.error || "fallo historial");
+      qbitNoSeedsHistoryCache = data.history || {};
+    } catch (e) {
+      panel.innerHTML = '<p class="hint history-empty">No se pudo cargar el historial.</p>';
+      return;
+    }
+  }
+  renderQbitNoSeedsHistory();
+}
+
 function historySourceRank(item) {
   const source = String((item && (item.source || item.quality)) || "").toLowerCase();
   if (source === "rd") return 0;
@@ -3084,6 +3173,102 @@ function renderHistory() {
         const detailRow = document.createElement("div");
         detailRow.className = "result-detail-row history-detail-row is-hidden";
         if (dl) dl.onclick = () => downloadHistoryItem(resultKey, dl);
+        if (tr) tr.onclick = () => toggleTitleResolveCard(item, detailRow, tr, resolveKey);
+        results.appendChild(result);
+        results.appendChild(detailRow);
+      });
+      searchCard.appendChild(results);
+      searchesBox.appendChild(searchCard);
+    });
+    dayCard.appendChild(searchesBox);
+    panel.appendChild(dayCard);
+  });
+}
+
+function qbitNoSeedsMeta(item) {
+  const sizeText = item.size || "-";
+  const addedText = translateAddedLabel(item.added || "hoy");
+  const seeds = Number(item.seeds_value ?? item.seeds ?? 0);
+  const peers = Number(item.peers_value ?? item.peers ?? 0);
+  return [
+    '<span class="history-result-size">' + esc(sizeText) + '</span>',
+    '<span class="history-result-sep"> &middot; </span>',
+    '<span class="history-result-added">' + esc(addedText) + '</span>',
+    '<span class="history-result-sep"> &middot; </span>',
+    '<span class="history-result-size">Semillas ' + esc(String(Number.isFinite(seeds) ? seeds : 0)) + '</span>',
+    '<span class="history-result-sep"> &middot; </span>',
+    '<span class="history-result-size">Pares ' + esc(String(Number.isFinite(peers) ? peers : 0)) + '</span>'
+  ].join("");
+}
+
+function renderQbitNoSeedsHistory() {
+  const panel = document.getElementById("qbitNoSeedsHistoryPanel");
+  if (!panel) return;
+  const days = (qbitNoSeedsHistoryCache && qbitNoSeedsHistoryCache.days) || [];
+  panel.innerHTML = "";
+  qbitNoSeedsHistoryResultStore = {};
+  if (!days.length) {
+    panel.innerHTML = '<p class="hint history-empty">Todav\u00eda no hay torrents sin semillas qB.</p>';
+    return;
+  }
+  days.forEach((day, dayIndex) => {
+    const dayCard = document.createElement("details");
+    dayCard.className = "history-day";
+    const dayKey = String(day.date || day.label || dayIndex);
+    dayCard.open = !!qbitNoSeedsHistoryOpenState.days[dayKey];
+    dayCard.innerHTML = '<summary><span>' + esc(day.label || day.date || "") + '</span></summary>';
+    dayCard.addEventListener("toggle", () => {
+      qbitNoSeedsHistoryOpenState.days[dayKey] = dayCard.open;
+      markUiStateChanged();
+    });
+    const searchesBox = document.createElement("div");
+    searchesBox.className = "history-searches";
+    (day.searches || []).forEach((search, searchIndex) => {
+      const searchCard = document.createElement("details");
+      searchCard.className = "history-search";
+      const searchKey = String(search.id || (dayKey + "-" + (search.created_at || searchIndex)));
+      searchCard.open = !!qbitNoSeedsHistoryOpenState.searches[searchKey];
+      searchCard.addEventListener("toggle", () => {
+        qbitNoSeedsHistoryOpenState.searches[searchKey] = searchCard.open;
+        markUiStateChanged();
+      });
+      const query = search.query || "(sin b\u00fasqueda)";
+      searchCard.innerHTML =
+        '<summary><span><b>' + esc(search.time_label || "") + '</b> ' + esc(query) + '</span></summary>' +
+        '<div class="history-meta">P\u00e1ginas ' + esc(search.pages || "-") + ' &middot; sin semillas ' + esc(String(search.result_count || 0)) + '</div>';
+      const results = document.createElement("div");
+      results.className = "history-results";
+      sortedHistoryResults(search.results || []).forEach(({ item, originalIndex }) => {
+        const result = document.createElement("div");
+        const link = historyUsefulLink(item);
+        const hasLink = !!link;
+        const resultKey = searchKey + "-" + originalIndex;
+        qbitNoSeedsHistoryResultStore[resultKey] = {
+          item,
+          historyId: search.id || "",
+          historyResult: originalIndex + 1
+        };
+        result.className = "history-result qbit-no-seed-result" + (hasLink ? " has-history-link" : "");
+        const resolveKey = "qbit-no-seeds-" + resultKey;
+        result.innerHTML =
+          '<div class="history-result-scroll" data-allow-horizontal-scroll="history-title">' +
+            '<div class="history-result-main">' +
+              '<strong>' + esc(item.title || "(sin t\u00edtulo)") + '</strong>' +
+              '<span class="history-result-meta">' + qbitNoSeedsMeta(item) + '</span>' +
+            '</div>' +
+          '</div>' +
+          '<div class="history-result-actions">' +
+            (hasLink ? '<button class="result-icon result-copy history-copy" type="button" title="Copiar enlace" aria-label="Copiar enlace">Copiar</button>' : '') +
+            (hasLink ? '<button class="result-icon result-download history-download history-route-btn history-route-qbit" type="button" title="Forzar qBit" aria-label="Forzar qBit">qBit</button>' : '') +
+            '<button class="result-icon result-title-resolve history-title-resolve" type="button" title="Resolver titulo" aria-label="Resolver titulo">Aa</button>' +
+          '</div>';
+        const cp = result.querySelector(".history-copy");
+        const dl = result.querySelector(".history-download");
+        const tr = result.querySelector(".history-title-resolve");
+        const detailRow = document.createElement("div");
+        detailRow.className = "result-detail-row history-detail-row is-hidden";
+        if (cp) cp.onclick = () => copyText(link, cp, "Enlace copiado");
+        if (dl) dl.onclick = () => forceQbitNoSeedsHistoryItem(resultKey, dl);
         if (tr) tr.onclick = () => toggleTitleResolveCard(item, detailRow, tr, resolveKey);
         results.appendChild(result);
         results.appendChild(detailRow);
