@@ -14,6 +14,7 @@ description: Validar visualmente la web btdigg-rd del proyecto Z:\buscador-rd en
 5. Revisar consola JS, errores de pagina, red y respuestas HTTP con error.
 6. Comprobar overflow horizontal y persistencia de una vista tras recargar.
 7. Probar solo el flujo afectado por el cambio.
+8. Si un elemento lleva `data-allow-horizontal-scroll`, tratarlo como scroll interno permitido y reportarlo separado del overflow real de pagina.
 
 ## Comando
 
@@ -41,3 +42,4 @@ powershell -NoProfile -ExecutionPolicy Bypass -File .agents\skills\playwright-ui
 - No descargues Chromium automaticamente en el flujo normal.
 - El fallback a Chromium de Playwright debe ser explicito, no automatico.
 - En respuesta final, indica URL, navegador usado, resultado visible, consola/red, overflow, persistencia y captura si procede.
+- No marques como fallo los textos largos dentro de una zona marcada con `data-allow-horizontal-scroll`; eso es comportamiento visible esperado.

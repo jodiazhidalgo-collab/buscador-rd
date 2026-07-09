@@ -6,6 +6,7 @@ from pathlib import Path
 PROJECT_ROOT = Path(__file__).resolve().parents[3]
 SCRIPT_PATH = PROJECT_ROOT / ".agents/skills/playwright-ui-check-btdigg-rd/scripts/ui_check.ps1"
 SKILL_PATH = PROJECT_ROOT / ".agents/skills/playwright-ui-check-btdigg-rd/SKILL.md"
+WEB_JS_PATH = PROJECT_ROOT / "services/btdigg-rd/app/web/static/js/btdigg-rd.js"
 
 
 def read(path: Path) -> str:
@@ -58,12 +59,24 @@ def test_ui_check_reports_overflow_and_persistence():
     for expected in (
         "inspectOverflow",
         "document.documentElement.scrollWidth",
+        "data-allow-horizontal-scroll",
+        "allowedHorizontalScrolls",
         "overflowFailures",
         "inspectPersistence",
         "page.reload",
         "persistenceFailures",
     ):
         assert expected in script
+
+
+def test_history_title_scroll_is_marked_as_allowed_horizontal_scroll():
+    script = read(SCRIPT_PATH)
+    web_js = read(WEB_JS_PATH)
+
+    assert 'data-allow-horizontal-scroll="history-title"' in web_js
+    assert 'closest("[data-allow-horizontal-scroll]")' in script
+    assert "marker.scrollWidth > marker.clientWidth + 1" in script
+    assert "allowedHorizontalScrolls" in script
 
 
 def test_skill_documents_the_visible_ui_check_contract():
@@ -77,6 +90,7 @@ def test_skill_documents_the_visible_ui_check_contract():
         "consola js",
         "red",
         "overflow horizontal",
+        "data-allow-horizontal-scroll",
         "persistencia",
         "allowbundledchromium",
         "fallback",

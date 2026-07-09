@@ -3065,7 +3065,7 @@ function renderHistory() {
         result.className = "history-result";
         const resolveKey = "history-" + resultKey;
         result.innerHTML =
-          '<div class="history-result-scroll">' +
+          '<div class="history-result-scroll" data-allow-horizontal-scroll="history-title">' +
             '<div class="history-result-main">' +
               '<strong>' + esc(item.title || "(sin t\u00edtulo)") + '</strong>' +
               '<span class="history-result-meta">' +

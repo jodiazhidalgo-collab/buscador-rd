@@ -214,21 +214,50 @@ async function inspectOverflow(page) {
     const viewportWidth = window.innerWidth;
     const scrollWidth = document.documentElement.scrollWidth;
     const overflowAmount = Math.max(0, scrollWidth - viewportWidth);
-    const offenders = Array.from(document.querySelectorAll("body *"))
+    const overflowCandidates = Array.from(document.querySelectorAll("body *"))
       .map((el) => {
         const rect = el.getBoundingClientRect();
         return {
-          tag: el.tagName,
-          id: el.id || "",
-          className: String(el.className || "").slice(0, 100),
-          left: Math.round(rect.left),
-          right: Math.round(rect.right),
-          width: Math.round(rect.width),
-          text: (el.innerText || el.value || el.getAttribute("aria-label") || "").trim().slice(0, 140)
+          el,
+          item: {
+            tag: el.tagName,
+            id: el.id || "",
+            className: String(el.className || "").slice(0, 100),
+            left: Math.round(rect.left),
+            right: Math.round(rect.right),
+            width: Math.round(rect.width),
+            text: (el.innerText || el.value || el.getAttribute("aria-label") || "").trim().slice(0, 140)
+          }
         };
       })
-      .filter((item) => item.width > 0 && (item.right > viewportWidth + 1 || item.left < -1))
-      .slice(0, 20);
+      .filter(({ item }) => item.width > 0 && (item.right > viewportWidth + 1 || item.left < -1));
+
+    const offenders = [];
+    const allowedHorizontalScrolls = [];
+
+    for (const candidate of overflowCandidates) {
+      const marker = candidate.el.closest("[data-allow-horizontal-scroll]");
+      const markerRect = marker ? marker.getBoundingClientRect() : null;
+      const markerStyle = marker ? window.getComputedStyle(marker) : null;
+      const markerInsidePage = markerRect
+        ? markerRect.left >= -1 && markerRect.right <= viewportWidth + 1
+        : false;
+      const markerCanScroll = marker
+        ? marker.scrollWidth > marker.clientWidth + 1 && /^(auto|scroll)$/i.test(markerStyle.overflowX)
+        : false;
+
+      if (marker && markerInsidePage && markerCanScroll) {
+        allowedHorizontalScrolls.push({
+          ...candidate.item,
+          allowedBy: marker.getAttribute("data-allow-horizontal-scroll") || "",
+          containerClassName: String(marker.className || "").slice(0, 100),
+          containerWidth: marker.clientWidth,
+          containerScrollWidth: marker.scrollWidth
+        });
+      } else {
+        offenders.push(candidate.item);
+      }
+    }
 
     return {
       ok: overflowAmount <= 1 && offenders.length === 0,
@@ -236,7 +265,8 @@ async function inspectOverflow(page) {
       viewportWidth,
       scrollWidth,
       overflowAmount,
-      offenders
+      offenders: offenders.slice(0, 20),
+      allowedHorizontalScrolls: allowedHorizontalScrolls.slice(0, 20)
     };
   });
 }
