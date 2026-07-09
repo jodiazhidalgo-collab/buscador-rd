@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import os
 from pathlib import Path
 
 
@@ -63,6 +64,14 @@ def test_gitignore_keeps_runtime_backups_and_credentials_out_but_allows_public_s
         assert expected in text
 
     assert "\nAGENTS.md" not in text
+
+
+def test_pytest_public_diagnostics_are_sandboxed():
+    configured = Path(os.environ["BTDIGG_PUBLIC_DIAGNOSTICS_DIR"])
+
+    assert configured != PROJECT_ROOT / "diagnostics_public"
+    assert "_codex_runtime" in configured.parts
+    assert configured.name == "pytest-public-diagnostics"
 
 
 def test_git_hooks_and_ci_are_present():

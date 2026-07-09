@@ -13,12 +13,15 @@ PROJECT_ROOT = Path(__file__).resolve().parents[1]
 UNIFIED_ROOT = PROJECT_ROOT.parents[1]
 APP_DIR = PROJECT_ROOT / "app"
 PYTEST_DATA_DIR = UNIFIED_ROOT / "_codex_runtime" / "test-data" / "pytest-session"
+PYTEST_PUBLIC_DIAGNOSTICS_DIR = UNIFIED_ROOT / "_codex_runtime" / "test-data" / "pytest-public-diagnostics"
 
 if str(APP_DIR) not in sys.path:
     sys.path.insert(0, str(APP_DIR))
 
 os.environ.setdefault("DATA_DIR", str(PYTEST_DATA_DIR))
+os.environ["BTDIGG_PUBLIC_DIAGNOSTICS_DIR"] = str(PYTEST_PUBLIC_DIAGNOSTICS_DIR)
 PYTEST_DATA_DIR.mkdir(parents=True, exist_ok=True)
+PYTEST_PUBLIC_DIAGNOSTICS_DIR.mkdir(parents=True, exist_ok=True)
 
 DATA_DIR_SENSITIVE_MODULES = (
     "api.btdigg_rd.config",
