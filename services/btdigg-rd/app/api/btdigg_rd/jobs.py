@@ -47,6 +47,7 @@ CANCEL_EXIT_CODES = {0, 130, -int(getattr(signal, "SIGTERM", 15)), -int(getattr(
 CANCEL_GRACE_SEC = float(os.environ.get("BTDIGG_CANCEL_GRACE_SEC", "30") or 30)
 CANCEL_TERMINATE_GRACE_SEC = float(os.environ.get("BTDIGG_CANCEL_TERMINATE_GRACE_SEC", "8") or 8)
 CANCEL_KILL_GRACE_SEC = float(os.environ.get("BTDIGG_CANCEL_KILL_GRACE_SEC", "4") or 4)
+TRUE_VALUES = {"1", "true", "yes", "on"}
 
 
 SEARCH_SCOPE = RunScope(kind="job", action="search")
@@ -250,6 +251,8 @@ def _promote_successful_artifacts(runtime: JobRuntime) -> None:
 
 
 def _refresh_public_diagnostics(scope: RunScope, job_id: str) -> None:
+    if os.environ.get("BTDIGG_AUTO_PUBLIC_DIAGNOSTICS", "").strip().lower() not in TRUE_VALUES:
+        return
     try:
         summary = export_public_diagnostics(trigger=f"{scope.kind}:{scope.action}", current_run_id=job_id)
         append_job(

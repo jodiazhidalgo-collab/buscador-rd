@@ -25,13 +25,13 @@ Para revisar un fallo, empieza por la caja negra y los artefactos del job:
 
 La UI visible manda cuando el problema es de botones, pestanas, busqueda, voz o seguimiento.
 
-`diagnostics_public/` se regenera al terminar jobs RD/BTDigg y tambien se puede regenerar manualmente con:
+`diagnostics_public/` no se regenera automaticamente al terminar cada busqueda normal. La caja negra real queda en el runtime local y esta copia publica se genera bajo demanda, para revision externa o Push:
 
 ```powershell
 powershell -NoProfile -ExecutionPolicy Bypass -File scripts\export_public_diagnostics.ps1
 ```
 
-Para que ChatGPT lo vea desde GitHub, despues de regenerar hay que hacer commit y push.
+Para que ChatGPT lo vea desde GitHub, despues de regenerar hay que hacer commit y push. El boton `Push` de la web regenera esta copia antes de publicar.
 
 ## Push desde la web
 

@@ -43,7 +43,7 @@ No se deben inventar fuentes paralelas si esos datos ya pueden derivarse del run
 
 `diagnostics_public/` es la copia publica saneada. Mantiene visibles busquedas, nombres, rutas, magnets, hashes, URLs, JSON, logs, estados RD/qB, errores y artefactos del job. Solo tapa tokens, passwords, API keys, Authorization, cookies y secretos equivalentes.
 
-La app regenera esa carpeta al terminar jobs RD/BTDigg. Tambien se puede regenerar manualmente:
+La app no regenera esa carpeta al terminar cada busqueda normal. El runtime local conserva la caja negra real y `diagnostics_public/` se regenera bajo demanda para revision externa, Push o export manual:
 
 ```powershell
 powershell -NoProfile -ExecutionPolicy Bypass -File scripts\export_public_diagnostics.ps1

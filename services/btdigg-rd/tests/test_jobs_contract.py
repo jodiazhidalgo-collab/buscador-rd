@@ -202,7 +202,7 @@ def test_successful_artifact_promotion_uses_motor_runtime_targets(
     assert (motor_runtime_dir / "last_links_ordenado.txt").read_text(encoding="utf-8") == "ordered"
 
 
-def test_job_refreshes_public_diagnostics_after_terminal_state(
+def test_job_does_not_refresh_public_diagnostics_by_default(
     isolated_data_dir, reload_data_dir_modules, monkeypatch
 ):
     jobs = _load_jobs(isolated_data_dir, reload_data_dir_modules)
@@ -212,6 +212,26 @@ def test_job_refreshes_public_diagnostics_after_terminal_state(
         calls.append(kwargs)
         return {"exported_files": 7, "redactions": 2}
 
+    monkeypatch.setattr(jobs, "export_public_diagnostics", fake_export)
+    jobs.jobs["job_public"] = {"id": "job_public", "log": []}
+
+    jobs._refresh_public_diagnostics(jobs.SEARCH_SCOPE, "job_public")
+
+    assert calls == []
+    assert jobs.jobs["job_public"]["log"] == []
+
+
+def test_job_refreshes_public_diagnostics_when_explicitly_enabled(
+    isolated_data_dir, reload_data_dir_modules, monkeypatch
+):
+    jobs = _load_jobs(isolated_data_dir, reload_data_dir_modules)
+    calls: list[dict[str, object]] = []
+
+    def fake_export(**kwargs):
+        calls.append(kwargs)
+        return {"exported_files": 7, "redactions": 2}
+
+    monkeypatch.setenv("BTDIGG_AUTO_PUBLIC_DIAGNOSTICS", "1")
     monkeypatch.setattr(jobs, "export_public_diagnostics", fake_export)
     jobs.jobs["job_public"] = {"id": "job_public", "log": []}
 

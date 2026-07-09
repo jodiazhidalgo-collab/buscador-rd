@@ -195,7 +195,9 @@ Z:\buscador-rd\diagnostics_public
 /volume1/docker/buscador-rd/diagnostics_public
 ```
 
-Esa carpeta se regenera al terminar jobs RD/BTDigg y mantiene visibles logs,
+Esa carpeta no se regenera automaticamente al terminar cada busqueda normal. El
+runtime local conserva la caja negra real y `diagnostics_public` se genera bajo
+demanda para revision externa, Push o export manual. Mantiene visibles logs,
 JSON, jobs, busquedas, magnets, hashes, rutas, URLs y errores. Solo debe tapar
 tokens, passwords, API keys, Authorization, cookies y secretos equivalentes.
 Para regenerarla manualmente:
