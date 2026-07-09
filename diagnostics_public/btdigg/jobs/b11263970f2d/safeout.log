@@ -1,0 +1,52 @@
+
+--- ARRANQUE MOTOR BTDIGG RD ---
+BTDigg + RD - opción 1 limpia
+Búsqueda: Whistle
+Páginas: 1-1
+Modo: 0
+
+
+Navegador automático página 1 (1/1):
+  https://en.btdig.com/search?q=whistle&p=0
+  BTDigg Chrome TLS: 10 magnets encontrados
+
+Encontrados 10 resultados brutos. Filtrando...
+
+Aspiradora terminada: 10 resultados únicos encontrados.
+Modo sin filtro: no descarto por idioma/calidad y no ordeno por calidad/tamano; solo penalizo basura.
+Criba búsqueda seria: 4/10 coinciden en el mismo título/archivo.
+Descartados antes de verificar por no coincidir: 6
+
+Comprobando token Real-Debrid...
+Token Real-Debrid OK: exmelenas
+
+Consultando Real-Debrid cache/instantáneo...
+
+Aviso: Real-Debrid tiene desactivada instantAvailability.
+Paso serio: verifico de verdad con addMagnet los 4 mejores candidatos.
+  Verificando 1/4: Embertone - Shire Whistle (Kontakt)
+  Verificando 4/4: Whistle 31 - 39 FIN VOSTFR 1080p
+  Verificando 3/4: Whistle!
+  Verificando 2/4: Embertone Shire Whistle
+
+Resumen RD: NO_INSTANT=4
+
+qBit: 4 candidatos (4 a la vez, 35s máximo).
+qBit vivo 1/4: Embertone Shire Whistle
+qBit probado 2/4: Embertone - Shire Whistle (Kontakt)
+qBit probado 3/4: Whistle 31 - 39 FIN VOSTFR 1080p
+qBit probado 4/4: Whistle!
+Resultados válidos para JDownloader/RD: 0/4
+Resultados qBittorrent: 1/4
+
+========================================================================
+ TOP LIMPIO
+========================================================================
+[01] RD:NO_INSTANT   SCORE:   0 SIZE:   0.3 GB  Embertone Shire Whistle
+     qBit vivo: QBT_VIVO | seeds=1 peers=5 | qBittorrent con seed conectado: seeds=1, peers=5, state=stalleddl
+========================================================================
+Elige: 1 | 1,4,7 | A=todos los válidos RD | T=todos mostrados RD/qBit | S=salir
+Resultados guardados para el Editor: 1
+Real-Debrid temporal limpio: 1 id(s) revisado(s).
+
+RESULTADOS LISTOS. Escribe abajo 1, 1,3, A, T o S y pulsa Enviar.

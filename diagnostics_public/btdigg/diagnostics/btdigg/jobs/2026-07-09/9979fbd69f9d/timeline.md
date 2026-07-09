@@ -1,0 +1,208 @@
+- 2026-07-09T02:33:19+02:00 [info] web::JOB_STARTED
+- 2026-07-09T02:33:19+02:00 [info] general::CONFIG_SNAPSHOT
+- 2026-07-09T02:33:19+02:00 [info] web::COMMAND_PREPARED
+- 2026-07-09T02:33:19+02:00 [info] web::PROCESS_STARTED
+- 2026-07-09T02:33:19+0200 [info] search::editor_clean_search_start
+- 2026-07-09T02:33:19+0200 [info] btdigg::browser_auto_search_start_dom
+- 2026-07-09T02:33:20+0200 [info] btdigg::extract_magnets
+- 2026-07-09T02:33:20+0200 [info] btdigg::btdigg_curl_cffi_fetch
+- 2026-07-09T02:33:22+0200 [info] btdigg::browser_auto_search_end_dom
+- 2026-07-09T02:33:22+0200 [info] motor::prepare_results_start
+- 2026-07-09T02:33:23+0200 [info] motor::prepare_after_scoring
+- 2026-07-09T02:33:23+0200 [info] motor::prepare_after_filter
+- 2026-07-09T02:33:23+0200 [info] motor::prepare_after_query_prefilter
+- 2026-07-09T02:33:23+0200 [info] real-debrid::rd_account_check_ok
+- 2026-07-09T02:33:23+0200 [info] real-debrid::rd_check_start
+- 2026-07-09T02:33:23+0200 [info] real-debrid::rd_api_http_error - disabled_endpoint
+- 2026-07-09T02:33:23+0200 [info] real-debrid::rd_cache_api_disabled_cached_set - Real-Debrid HTTP 403: [37 disabled_endpoint] {
+	"error": "disabled_endpoint",
+	"error_code": 37
+}
+- 2026-07-09T02:33:23+0200 [info] real-debrid::rd_cache_api_disabled - Real-Debrid HTTP 403: [37 disabled_endpoint] {
+	"error": "disabled_endpoint",
+	"error_code": 37
+}
+- 2026-07-09T02:33:23+0200 [info] real-debrid::rd_verify_batch_start
+- 2026-07-09T02:33:23+0200 [info] real-debrid::rd_slots_refresh
+- 2026-07-09T02:33:23+0200 [info] real-debrid::rd_active_count_before
+- 2026-07-09T02:33:23+0200 [info] real-debrid::rd_existing_preload_done
+- 2026-07-09T02:33:23+0200 [info] real-debrid::rd_verify_queue_start
+- 2026-07-09T02:33:23+0200 [info] real-debrid::rd_verify_queue_submit - Embertone - Shire Whistle (Kontakt)
+- 2026-07-09T02:33:23+0200 [info] real-debrid::rd_verify_add_start - Embertone - Shire Whistle (Kontakt)
+- 2026-07-09T02:33:23+0200 [info] real-debrid::rd_slots_reserve
+- 2026-07-09T02:33:23+0200 [info] real-debrid::rd_verify_queue_submit - Embertone Shire Whistle
+- 2026-07-09T02:33:23+0200 [info] real-debrid::rd_verify_add_start - Embertone Shire Whistle
+- 2026-07-09T02:33:23+0200 [info] real-debrid::rd_verify_queue_submit - Whistle!
+- 2026-07-09T02:33:23+0200 [info] real-debrid::rd_verify_add_start - Whistle!
+- 2026-07-09T02:33:23+0200 [info] real-debrid::rd_slots_reserve
+- 2026-07-09T02:33:23+0200 [debug] real-debrid::rd_rate_wait
+- 2026-07-09T02:33:24+0200 [info] real-debrid::rd_verify_queue_submit - Whistle 31 - 39 FIN VOSTFR 1080p
+- 2026-07-09T02:33:24+0200 [info] real-debrid::rd_verify_add_start - Whistle 31 - 39 FIN VOSTFR 1080p
+- 2026-07-09T02:33:24+0200 [info] real-debrid::rd_slots_reserve
+- 2026-07-09T02:33:24+0200 [debug] real-debrid::rd_endpoint_pace_wait
+- 2026-07-09T02:33:24+0200 [info] real-debrid::rd_slots_reserve
+- 2026-07-09T02:33:25+0200 [info] real-debrid::rd_verify_added
+- 2026-07-09T02:33:26+0200 [info] real-debrid::rd_verify_added
+- 2026-07-09T02:33:26+0200 [debug] real-debrid::rd_verify_poll - Embertone - Shire Whistle (Kontakt)
+- 2026-07-09T02:33:26+0200 [debug] real-debrid::rd_waiting_files_selection - Embertone - Shire Whistle (Kontakt)
+- 2026-07-09T02:33:26+0200 [info] real-debrid::rd_select_files_decision - Embertone - Shire Whistle (Kontakt)
+- 2026-07-09T02:33:26+0200 [debug] real-debrid::rd_verify_poll - Embertone Shire Whistle
+- 2026-07-09T02:33:26+0200 [debug] real-debrid::rd_waiting_files_selection - Embertone Shire Whistle
+- 2026-07-09T02:33:26+0200 [info] real-debrid::rd_select_files_decision - Embertone Shire Whistle
+- 2026-07-09T02:33:26+0200 [debug] real-debrid::rd_endpoint_pace_wait
+- 2026-07-09T02:33:26+0200 [info] real-debrid::rd_verify_select_files - Embertone - Shire Whistle (Kontakt)
+- 2026-07-09T02:33:27+0200 [debug] real-debrid::rd_verify_post_select_poll - Embertone - Shire Whistle (Kontakt)
+- 2026-07-09T02:33:27+0200 [info] real-debrid::rd_fast_discard - zero_progress_post_select
+- 2026-07-09T02:33:27+0200 [info] real-debrid::rd_fast_discard_reason - zero_progress_post_select
+- 2026-07-09T02:33:27+0200 [info] real-debrid::rd_fast_discard_delete - zero_progress_post_select
+- 2026-07-09T02:33:27+0200 [info] real-debrid::rd_zero_progress_fast_delete - Embertone - Shire Whistle (Kontakt)
+- 2026-07-09T02:33:27+0200 [info] real-debrid::rd_verify_select_files - Embertone Shire Whistle
+- 2026-07-09T02:33:27+0200 [info] real-debrid::rd_delete_torrent
+- 2026-07-09T02:33:27+0200 [info] real-debrid::rd_slots_release
+- 2026-07-09T02:33:27+0200 [info] real-debrid::rd_verify_queue_done_item - Embertone - Shire Whistle (Kontakt)
+- 2026-07-09T02:33:27+0200 [info] real-debrid::rd_verify_added
+- 2026-07-09T02:33:27+0200 [debug] real-debrid::rd_endpoint_pace_wait
+- 2026-07-09T02:33:28+0200 [debug] real-debrid::rd_verify_post_select_poll - Embertone Shire Whistle
+- 2026-07-09T02:33:28+0200 [info] real-debrid::rd_fast_discard - zero_progress_post_select
+- 2026-07-09T02:33:28+0200 [info] real-debrid::rd_fast_discard_reason - zero_progress_post_select
+- 2026-07-09T02:33:28+0200 [info] real-debrid::rd_fast_discard_delete - zero_progress_post_select
+- 2026-07-09T02:33:28+0200 [info] real-debrid::rd_zero_progress_fast_delete - Embertone Shire Whistle
+- 2026-07-09T02:33:28+0200 [debug] real-debrid::rd_verify_poll - Whistle!
+- 2026-07-09T02:33:28+0200 [debug] real-debrid::rd_waiting_files_selection - Whistle!
+- 2026-07-09T02:33:28+0200 [info] real-debrid::rd_select_files_decision - Whistle!
+- 2026-07-09T02:33:28+0200 [info] real-debrid::rd_delete_torrent
+- 2026-07-09T02:33:28+0200 [info] real-debrid::rd_slots_release
+- 2026-07-09T02:33:28+0200 [info] real-debrid::rd_verify_queue_done_item - Embertone Shire Whistle
+- 2026-07-09T02:33:28+0200 [info] real-debrid::rd_verify_select_files - Whistle!
+- 2026-07-09T02:33:29+0200 [debug] real-debrid::rd_rate_wait
+- 2026-07-09T02:33:29+0200 [info] real-debrid::rd_verify_added
+- 2026-07-09T02:33:29+0200 [debug] real-debrid::rd_verify_post_select_poll - Whistle!
+- 2026-07-09T02:33:29+0200 [info] real-debrid::rd_fast_discard - zero_progress_post_select
+- 2026-07-09T02:33:29+0200 [info] real-debrid::rd_fast_discard_reason - zero_progress_post_select
+- 2026-07-09T02:33:29+0200 [info] real-debrid::rd_fast_discard_delete - zero_progress_post_select
+- 2026-07-09T02:33:29+0200 [info] real-debrid::rd_zero_progress_fast_delete - Whistle!
+- 2026-07-09T02:33:29+0200 [debug] real-debrid::rd_verify_poll - Whistle 31 - 39 FIN VOSTFR 1080p
+- 2026-07-09T02:33:29+0200 [debug] real-debrid::rd_waiting_files_selection - Whistle 31 - 39 FIN VOSTFR 1080p
+- 2026-07-09T02:33:29+0200 [info] real-debrid::rd_select_files_decision - Whistle 31 - 39 FIN VOSTFR 1080p
+- 2026-07-09T02:33:29+0200 [info] real-debrid::rd_delete_torrent
+- 2026-07-09T02:33:29+0200 [info] real-debrid::rd_slots_release
+- 2026-07-09T02:33:29+0200 [info] real-debrid::rd_verify_queue_done_item - Whistle!
+- 2026-07-09T02:33:30+0200 [info] real-debrid::rd_verify_select_files - Whistle 31 - 39 FIN VOSTFR 1080p
+- 2026-07-09T02:33:30+0200 [debug] real-debrid::rd_verify_post_select_poll - Whistle 31 - 39 FIN VOSTFR 1080p
+- 2026-07-09T02:33:30+0200 [info] real-debrid::rd_fast_discard - zero_progress_post_select
+- 2026-07-09T02:33:30+0200 [info] real-debrid::rd_fast_discard_reason - zero_progress_post_select
+- 2026-07-09T02:33:30+0200 [info] real-debrid::rd_fast_discard_delete - zero_progress_post_select
+- 2026-07-09T02:33:30+0200 [info] real-debrid::rd_zero_progress_fast_delete - Whistle 31 - 39 FIN VOSTFR 1080p
+- 2026-07-09T02:33:31+0200 [info] real-debrid::rd_delete_torrent
+- 2026-07-09T02:33:31+0200 [info] real-debrid::rd_slots_release
+- 2026-07-09T02:33:31+0200 [info] real-debrid::rd_verify_queue_done_item - Whistle 31 - 39 FIN VOSTFR 1080p
+- 2026-07-09T02:33:31+0200 [info] real-debrid::rd_verify_queue_end
+- 2026-07-09T02:33:31+0200 [info] real-debrid::rd_rate_summary
+- 2026-07-09T02:33:31+0200 [info] real-debrid::rd_endpoint_pacer_summary
+- 2026-07-09T02:33:31+0200 [info] real-debrid::rd_cleanup_final_start
+- 2026-07-09T02:33:31+0200 [info] real-debrid::rd_slots_refresh
+- 2026-07-09T02:33:31+0200 [info] real-debrid::rd_active_count_after
+- 2026-07-09T02:33:31+0200 [info] real-debrid::rd_cleanup_final_end
+- 2026-07-09T02:33:31+0200 [info] real-debrid::rd_rate_summary
+- 2026-07-09T02:33:31+0200 [info] real-debrid::rd_endpoint_pacer_summary
+- 2026-07-09T02:33:31+0200 [info] real-debrid::rd_verify_batch_end
+- 2026-07-09T02:33:31+0200 [info] real-debrid::rd_check_summary
+- 2026-07-09T02:33:31+0200 [info] qbittorrent::qbt_relevance_filter
+- 2026-07-09T02:33:31+0200 [info] qbittorrent::qbt_probe_batch_start
+- 2026-07-09T02:33:31+0200 [info] qbittorrent::qbt_login
+- 2026-07-09T02:33:31+0200 [info] qbittorrent::qbt_login
+- 2026-07-09T02:33:31+0200 [info] qbittorrent::qbt_login
+- 2026-07-09T02:33:31+0200 [info] qbittorrent::qbt_login
+- 2026-07-09T02:33:31+0200 [info] qbittorrent::qbt_probe_add - Whistle!
+- 2026-07-09T02:33:31+0200 [info] qbittorrent::qbt_probe_add - Embertone Shire Whistle
+- 2026-07-09T02:33:31+0200 [info] qbittorrent::qbt_probe_add - Embertone - Shire Whistle (Kontakt)
+- 2026-07-09T02:33:31+0200 [info] qbittorrent::qbt_probe_add - Whistle 31 - 39 FIN VOSTFR 1080p
+- 2026-07-09T02:33:33+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-09T02:33:33+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-09T02:33:33+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-09T02:33:33+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-09T02:33:35+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-09T02:33:35+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-09T02:33:35+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-09T02:33:35+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-09T02:33:37+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-09T02:33:37+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-09T02:33:37+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-09T02:33:37+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-09T02:33:39+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-09T02:33:39+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-09T02:33:39+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-09T02:33:39+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-09T02:33:41+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-09T02:33:41+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-09T02:33:41+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-09T02:33:41+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-09T02:33:43+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-09T02:33:43+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-09T02:33:43+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-09T02:33:43+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-09T02:33:45+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-09T02:33:45+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-09T02:33:45+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-09T02:33:45+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-09T02:33:47+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-09T02:33:47+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-09T02:33:47+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-09T02:33:47+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-09T02:33:49+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-09T02:33:49+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-09T02:33:49+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-09T02:33:49+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-09T02:33:51+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-09T02:33:51+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-09T02:33:51+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-09T02:33:51+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-09T02:33:53+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-09T02:33:53+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-09T02:33:53+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-09T02:33:53+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-09T02:33:55+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-09T02:33:55+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-09T02:33:55+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-09T02:33:55+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-09T02:33:57+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-09T02:33:57+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-09T02:33:57+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-09T02:33:57+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-09T02:33:59+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-09T02:33:59+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-09T02:33:59+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-09T02:33:59+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-09T02:34:01+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-09T02:34:01+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-09T02:34:01+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-09T02:34:01+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-09T02:34:03+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-09T02:34:03+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-09T02:34:03+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-09T02:34:03+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-09T02:34:05+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-09T02:34:05+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-09T02:34:05+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-09T02:34:05+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-09T02:34:07+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-09T02:34:07+0200 [info] qbittorrent::qbt_probe_result - Sin vida clara en qBittorrent: state=metadl, seeds=0, peers=0, progress=0.000
+- 2026-07-09T02:34:07+0200 [info] qbittorrent::qbt_delete_probe
+- 2026-07-09T02:34:07+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-09T02:34:07+0200 [info] qbittorrent::qbt_probe_result - Sin vida clara en qBittorrent: state=metadl, seeds=0, peers=0, progress=0.000
+- 2026-07-09T02:34:07+0200 [info] qbittorrent::qbt_delete_probe
+- 2026-07-09T02:34:07+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-09T02:34:07+0200 [info] qbittorrent::qbt_probe_result - Sin vida clara en qBittorrent: state=metadl, seeds=0, peers=0, progress=0.000
+- 2026-07-09T02:34:07+0200 [info] qbittorrent::qbt_delete_probe
+- 2026-07-09T02:34:07+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-09T02:34:07+0200 [info] qbittorrent::qbt_probe_result - Sin vida clara en qBittorrent: state=metadl, seeds=0, peers=0, progress=0.000
+- 2026-07-09T02:34:07+0200 [info] qbittorrent::qbt_delete_probe
+- 2026-07-09T02:34:07+0200 [info] qbittorrent::qbt_probe_batch_end
+- 2026-07-09T02:34:07+0200 [info] motor::prepare_qbit_extras
+- 2026-07-09T02:34:07+0200 [info] motor::prepare_rd_temp_errors
+- 2026-07-09T02:34:07+0200 [info] motor::prepare_after_working_filter
+- 2026-07-09T02:34:07+0200 [info] search::export_results
+- 2026-07-09T02:34:07+0200 [info] search::export_results
+- 2026-07-09T02:34:07+0200 [info] search::editor_clean_search_rd_cleanup
+- 2026-07-09T02:34:07+0200 [info] search::editor_clean_search_end
+- 2026-07-09T02:34:08+02:00 [info] web::JOB_FINISHED_OK

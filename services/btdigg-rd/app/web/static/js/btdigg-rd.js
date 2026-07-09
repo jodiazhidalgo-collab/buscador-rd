@@ -52,6 +52,8 @@ const uiStateStoreKey = "btdiggRd.uiState.v1";
 const uiStateClientStoreKey = "btdiggRd.uiClient.v1";
 const uiStateEndpoint = "/api/ui-state";
 const rdOkVerifyTitleMarker = "__RD_OK_VERIFY_TITLE__";
+const qbitProbeTitleMarker = "__QBIT_PROBE_TITLE__";
+const qbitLiveTitleMarker = "__QBIT_LIVE_TITLE__";
 const terminalJobStatuses = new Set(["done", "error", "cancelled"]);
 const activeJobStatuses = new Set(["queued", "running", "cancelling"]);
 const activeQueueStatuses = new Set(["running", "stopping"]);
@@ -1966,10 +1968,14 @@ function formatLiveLine(line) {
   if (m) return "Real-Debrid OK.";
   m = l.match(/^Encontrados\s+(\d+)\s+resultados brutos/i);
   if (m) return `Encontrados ${m[1]} candidatos. Filtrando...`;
+  m = l.match(/^qBit:\s*(\d+)\s+candidatos\s*(.*)$/i);
+  if (m) return `qBit: ${m[1]} candidatos${m[2] ? " " + m[2].trim() : ""}`;
   m = l.match(/^qBit progreso:\s*(\d+)\/(\d+)\s+comprobados\s+\|\s+vivos\s+(\d+)/i);
-  if (m) return `qBit: ${m[1]}/${m[2]} comprobados | vivos ${m[3]}`;
+  if (m) return null;
   m = l.match(/^qBit vivo\s+(\d+)\/(\d+):\s*(.+)$/i);
-  if (m) return `qBit vivo ${m[1]}/${m[2]}: ${m[3]}`;
+  if (m) return `${qbitLiveTitleMarker}${m[1]}/${m[2]}: ${m[3].replace(/^QBT_(?:VIVO|OK)\s*-\s*/i, "")}`;
+  m = l.match(/^qBit probado\s+(\d+)\/(\d+):\s*(.+)$/i);
+  if (m) return `${qbitProbeTitleMarker}${m[1]}/${m[2]}: ${m[3]}`;
   m = l.match(/^Cola RD\s+\d+\/\d+:/i);
   if (m) return null;
   m = l.match(/^RD cola comprobados:/i);
@@ -1979,7 +1985,9 @@ function formatLiveLine(line) {
   m = l.match(/^Resultados v.lidos para JDownloader\/RD:\s*(.+)$/i);
   if (m) return `Resultados v\u00e1lidos RD: ${m[1]}`;
   m = l.match(/^Lista extra qBittorrent vivos reales:\s*(.+)$/i);
-  if (m) return `Lista extra qBittorrent vivos: ${m[1]}`;
+  if (m) return `Resultados qBittorrent: ${m[1]}`;
+  m = l.match(/^Resultados qBittorrent:\s*(.+)$/i);
+  if (m) return `Resultados qBittorrent: ${m[1]}`;
   m = l.match(/^B.SQUEDA:\s*(.+)$/i);
   if (m) return `B\u00fasqueda: ${m[1]}`;
   m = l.match(/^BTDigg \+ RD/i);
@@ -2030,11 +2038,23 @@ function renderLogLine(div, line) {
   let text = String(line || "");
   const rdOkVerifyTitle = text.startsWith(rdOkVerifyTitleMarker);
   if (rdOkVerifyTitle) text = text.slice(rdOkVerifyTitleMarker.length);
+  const qbitProbeTitle = text.startsWith(qbitProbeTitleMarker);
+  if (qbitProbeTitle) text = text.slice(qbitProbeTitleMarker.length);
+  const qbitLiveTitle = text.startsWith(qbitLiveTitleMarker);
+  if (qbitLiveTitle) text = text.slice(qbitLiveTitleMarker.length);
   const lower = text.toLowerCase();
   let match = text.match(/^(\d+\/\d+:\s*)(.+)$/i);
   if (match) {
-    addLogPart(div, match[1], "log-part-work");
-    addLogPart(div, match[2], rdOkVerifyTitle ? "log-part-ok" : "");
+    if (qbitLiveTitle) {
+      addLogPart(div, match[1], "log-part-ok");
+      addLogPart(div, match[2], "log-part-ok");
+    } else if (qbitProbeTitle) {
+      addLogPart(div, match[1]);
+      addLogPart(div, match[2]);
+    } else {
+      addLogPart(div, match[1], "log-part-work");
+      addLogPart(div, match[2], rdOkVerifyTitle ? "log-part-ok" : "");
+    }
     return;
   }
   match = text.match(/^(qBit:\s*)(.+)$/i);
@@ -2073,7 +2093,7 @@ function renderLogLine(div, line) {
     paintMetricLine(div, text);
     return;
   }
-  if (/^qBit vivo\b/i.test(text) || /^Lista extra qBittorrent vivos\b/i.test(text)) {
+  if (/^qBit vivo\b/i.test(text) || /^Lista extra qBittorrent vivos\b/i.test(text) || /^Resultados qBittorrent:/i.test(text)) {
     div.classList.add("is-qbit-strong");
     addLogPart(div, text);
     return;

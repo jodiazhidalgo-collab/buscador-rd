@@ -1,0 +1,15 @@
+RD Turbo Pro - último TOP
+================================================================================
+[01] RD:RD_OK        SCORE:   0 SIZE:  65.2 GB HASH:85c83aac569b30e33bd68fa6cdda82c9bf23de67
+     [2002-2003] Whistle_哨聲響起(ホイッスル!)_TV
+     MOTIVO: Verificado con addMagnet: 1 link(s), 65.2 GB
+
+[02] RD:NO_INSTANT   SCORE:   0 SIZE:   0.3 GB HASH:2dae71e7ce940999203b2d1f5965a002209bfc87
+     Embertone Shire Whistle
+     QBIT: QBT_VIVO | seeds=2 peers=4 | qBittorrent descargando: 0.03 MB/s, seeds=2, peers=4
+     MOTIVO: Descartado rapido RD: post-select sin links ni progreso util
+
+[03] RD:NO_INSTANT   SCORE:   0 SIZE:   0.1 GB HASH:04ee99850ac777d6e8321d231632de6c5e6d5e7a
+     RealiWhistle
+     QBIT: QBT_VIVO | seeds=2 peers=7 | qBittorrent descargando: 0.11 MB/s, seeds=2, peers=7
+     MOTIVO: Descartado rapido RD: post-select sin links ni progreso util

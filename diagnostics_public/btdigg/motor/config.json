@@ -259,7 +259,7 @@
   "qbit_host": "http://192.168.1.159:8080",
   "qbit_pass": "",
   "qbit_probe_category": "manual",
-  "qbit_probe_enabled": false,
+  "qbit_probe_enabled": true,
   "qbit_probe_max_candidates": 40,
   "qbit_probe_only_non_rd_working": true,
   "qbit_probe_parallel_workers": 5,

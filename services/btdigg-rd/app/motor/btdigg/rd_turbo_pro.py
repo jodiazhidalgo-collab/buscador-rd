@@ -73,6 +73,7 @@ DIAG_EVENTS = []
 CURRENT_QUERY = ""
 CURRENT_MIN_SIZE_GB = 0.0
 LAST_QBIT_EXTRAS = []
+LAST_QBIT_PROBE_TOTAL = 0
 RD_EXISTING_TORRENTS_CACHE = None
 DIAG_LOCK = threading.RLock()
 RD_EXISTING_LOCK = threading.RLock()
@@ -1892,6 +1893,8 @@ def _qbt_probe_one_fresh(r, idx, total):
     return qbt_probe_one(opener, r, idx, total)
 
 def qbt_probe_candidates(results):
+    global LAST_QBIT_PROBE_TOTAL
+    LAST_QBIT_PROBE_TOTAL = 0
     cancel_checkpoint("qbt_probe_candidates.before")
     if not CONFIG.get("qbit_probe_enabled", True):
         diag("qbt_probe_skipped", reason="disabled")
@@ -1908,6 +1911,7 @@ def qbt_probe_candidates(results):
             skipped += 1
     diag("qbt_relevance_filter", before=len(candidates), after=len(relevant), skipped=skipped)
     candidates = relevant[:int(CONFIG.get("qbit_probe_max_candidates", 15) or 15)]
+    LAST_QBIT_PROBE_TOTAL = len(candidates)
     if not candidates:
         diag("qbt_probe_skipped", reason="no_candidates_after_relevance")
         return results
@@ -1915,9 +1919,7 @@ def qbt_probe_candidates(results):
     workers = min(workers, len(candidates))
     wait_sec = int(float(CONFIG.get("qbit_probe_wait_sec", 25) or 25))
     total_candidates = len(candidates)
-    progress_step = max(2, total_candidates // 5 or 1)
-    vivos = 0
-    print(f"\nqBit: probando {total_candidates} candidatos extra ({workers} a la vez, {wait_sec}s máximo).", flush=True)
+    print(f"\nqBit: {total_candidates} candidatos ({workers} a la vez, {wait_sec}s máximo).", flush=True)
     diag("qbt_probe_batch_start", total=len(results), probing=len(candidates), workers=workers)
     if workers <= 1:
         opener = qbt_login()
@@ -1930,11 +1932,11 @@ def qbt_probe_candidates(results):
         for i, r in enumerate(candidates, 1):
             cancel_checkpoint("qbt_probe_candidates.item")
             qbt_probe_one(opener, r, i, len(candidates))
+            name = _result_display_name(r)[:100]
             if _is_qbt_working_status(r.qbt_status):
-                vivos += 1
-                print(f"qBit vivo {i}/{total_candidates}: {r.qbt_status} - {_result_display_name(r)[:100]}", flush=True)
-            elif i % progress_step == 0 or i == total_candidates:
-                print(f"qBit progreso: {i}/{total_candidates} comprobados | vivos {vivos}", flush=True)
+                print(f"qBit vivo {i}/{total_candidates}: {name}", flush=True)
+            else:
+                print(f"qBit probado {i}/{total_candidates}: {name}", flush=True)
     else:
         with ThreadPoolExecutor(max_workers=workers) as ex:
             futs = {ex.submit(_qbt_probe_one_fresh, r, i, len(candidates)): (i, r) for i, r in enumerate(candidates, 1)}
@@ -1945,11 +1947,11 @@ def qbt_probe_candidates(results):
                 done += 1
                 try:
                     fut.result()
+                    name = _result_display_name(r)[:100]
                     if _is_qbt_working_status(r.qbt_status):
-                        vivos += 1
-                        print(f"qBit vivo {done}/{total_candidates}: {r.qbt_status} - {_result_display_name(r)[:100]}", flush=True)
-                    elif done % progress_step == 0 or done == total_candidates:
-                        print(f"qBit progreso: {done}/{total_candidates} comprobados | vivos {vivos}", flush=True)
+                        print(f"qBit vivo {done}/{total_candidates}: {name}", flush=True)
+                    else:
+                        print(f"qBit probado {done}/{total_candidates}: {name}", flush=True)
                 except Exception as e:
                     r.qbt_status = "QBT_ERROR"
                     r.qbt_reason = str(e)[:500]
@@ -5392,9 +5394,10 @@ def _prepare_query_prefilter(scored):
 
 
 def prepare_results(results, mode, token):
-    global LAST_QBIT_EXTRAS, LAST_RD_TEMP_ERRORS
+    global LAST_QBIT_EXTRAS, LAST_QBIT_PROBE_TOTAL, LAST_RD_TEMP_ERRORS
     mode = coerce_mode(mode)
     LAST_QBIT_EXTRAS = []
+    LAST_QBIT_PROBE_TOTAL = 0
     LAST_RD_TEMP_ERRORS = []
     cancel_checkpoint("prepare_results.start")
     diag("prepare_results_start", incoming=len(results), mode=mode, min_size_gb=_current_min_size_gb())
@@ -5483,7 +5486,7 @@ def prepare_results(results, mode, token):
         rd_working = [r for r in working if _is_working_status(r.rd_status)]
         diag("prepare_after_working_filter", before=before, after=len(working), removed=before-len(working), qbit_extras=len(LAST_QBIT_EXTRAS), rd_valid=len(rd_working))
         print(f"Resultados válidos para JDownloader/RD: {len(rd_working)}/{before}", flush=True)
-        print(f"Lista extra qBittorrent vivos reales: {len(LAST_QBIT_EXTRAS)}", flush=True)
+        print(f"Resultados qBittorrent: {len(LAST_QBIT_EXTRAS)}/{LAST_QBIT_PROBE_TOTAL}", flush=True)
         if LAST_RD_TEMP_ERRORS:
             print(f"Pendientes por error temporal RD (no se dan por muertos): {len(LAST_RD_TEMP_ERRORS)}", flush=True)
         checked = working
@@ -5569,9 +5572,10 @@ def display_results(results):
     return shown
 
 def prepare_quick_btdigg_results(results, mode):
-    global LAST_QBIT_EXTRAS, LAST_RD_TEMP_ERRORS
+    global LAST_QBIT_EXTRAS, LAST_QBIT_PROBE_TOTAL, LAST_RD_TEMP_ERRORS
     mode = coerce_mode(mode)
     LAST_QBIT_EXTRAS = []
+    LAST_QBIT_PROBE_TOTAL = 0
     LAST_RD_TEMP_ERRORS = []
     diag("quick_btdigg_prepare_start", incoming=len(results), mode=mode, min_size_gb=_current_min_size_gb())
     scored = [score_result(r, mode) for r in results]

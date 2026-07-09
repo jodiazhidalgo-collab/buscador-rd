@@ -1,10 +1,10 @@
 {
-  "client_id": "ui-mr1fx2c2-mm61i7",
-  "client_updated_at": 1783555657063,
+  "client_id": "ui-mrcsvlk7-0wlfwb",
+  "client_updated_at": 1783558832487,
   "form": {
     "minGb": "0",
-    "mode": "3",
-    "pages": "1-2",
+    "mode": "0",
+    "pages": "1-1",
     "query": "Whistle"
   },
   "history_open": {
@@ -19,8 +19,8 @@
     "dir": "asc",
     "key": "index"
   },
-  "server_updated_at": 1783555657349,
-  "updated_at": "2026-07-09T02:07:37+02:00",
+  "server_updated_at": 1783558832826,
+  "updated_at": "2026-07-09T03:00:32+02:00",
   "version": 1,
-  "view": "history"
+  "view": "main"
 }

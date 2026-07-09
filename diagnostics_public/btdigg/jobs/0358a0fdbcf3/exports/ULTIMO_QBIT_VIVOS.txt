@@ -2,5 +2,10 @@ RD Turbo Pro - lista extra qBittorrent vivos
 ================================================================================
 [Q01] QBT:QBT_VIVO   SIZE:   0.3 GB HASH:2dae71e7ce940999203b2d1f5965a002209bfc87
       TORRENT: Embertone Shire Whistle
-      MOTIVO: qBittorrent con seed conectado: seeds=1, peers=5, state=stalleddl
+      MOTIVO: qBittorrent con seed conectado: seeds=1, peers=8, state=stalleddl
       MAGNET: magnet:?xt=urn:btih:2dae71e7ce940999203b2d1f5965a002209bfc87&dn=Embertone+Shire+Whistle&tr=udp://tracker.openbittorrent.com:80&tr=udp://tracker.opentrackr.org:1337/announce
+
+[Q02] QBT:QBT_VIVO   SIZE:   0.1 GB HASH:04ee99850ac777d6e8321d231632de6c5e6d5e7a
+      TORRENT: RealiWhistle
+      MOTIVO: qBittorrent descargando: 0.16 MB/s, seeds=3, peers=4
+      MAGNET: magnet:?xt=urn:btih:04ee99850ac777d6e8321d231632de6c5e6d5e7a&dn=RealiWhistle&tr=udp://tracker.openbittorrent.com:80&tr=udp://tracker.opentrackr.org:1337/announce

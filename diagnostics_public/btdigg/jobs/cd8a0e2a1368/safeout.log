@@ -1,0 +1,92 @@
+
+--- ARRANQUE MOTOR BTDIGG RD ---
+BTDigg + RD - opción 1 limpia
+Búsqueda: Whistle
+Páginas: 1-3
+Modo: 0
+
+
+Navegador automático página 1 (1/3):
+  https://en.btdig.com/search?q=whistle&p=0
+  BTDigg Chrome TLS: 10 magnets encontrados
+
+Navegador automático página 2 (2/3):
+  https://en.btdig.com/search?q=whistle&p=1
+  BTDigg Chrome TLS: 10 magnets encontrados
+
+Navegador automático página 3 (3/3):
+  https://en.btdig.com/search?q=whistle&p=2
+  BTDigg Chrome TLS: 10 magnets encontrados
+
+Encontrados 30 resultados brutos. Filtrando...
+
+Aspiradora terminada: 30 resultados únicos encontrados.
+Modo sin filtro: no descarto por idioma/calidad y no ordeno por calidad/tamano; solo penalizo basura.
+Criba búsqueda seria: 19/30 coinciden en el mismo título/archivo.
+Descartados antes de verificar por no coincidir: 11
+
+Comprobando token Real-Debrid...
+Token Real-Debrid OK: exmelenas
+
+Consultando Real-Debrid cache/instantáneo...
+
+Aviso: Real-Debrid tiene desactivada instantAvailability.
+Paso serio: verifico de verdad con addMagnet los 19 mejores candidatos.
+  Verificando 1/19: Embertone - Shire Whistle (Kontakt)
+  Verificando 10/19: If.I.Want.To.Whistle.I.Whistle.2010.DVDRip.XviD-LAP
+  Verificando 3/19: Whistle!
+  Verificando 6/19: Whistle
+  Verificando 9/19: Whistle TV
+  Verificando 4/19: Whistle 31 - 39 FIN VOSTFR 1080p
+  Verificando 7/19: RealiWhistle
+  Verificando 16/19: Whistle Discography
+  Verificando 5/19: Whistle TV
+  Verificando 12/19: Whistle TV
+  Verificando 15/19: Whistle!_(DVDRip_640x480_x264_AC3)
+  Verificando 2/19: Embertone Shire Whistle
+  Verificando 14/19: Whistle!_(DVDRip_640x480_x264_AC3)
+  RD OK 13/19: [2002-2003] Whistle_哨聲響起(ホイッスル!)_TV
+  Verificando 11/19: Whistle TV
+  Verificando 17/19: [animefull]_Whistle! - 01-39 [640x480][mkv]
+  Verificando 8/19: Whistle! (WEB-DL 1440x1080 x264 AC3)
+  Verificando 18/19: Whistle! 01-39 (DVD 640x480 x264 AC3)
+  Verificando 19/19: Whistle
+
+Resumen RD: NO_INSTANT=9 | RD_FAIL=9 | RD_OK=1
+
+qBit: 18 candidatos (5 a la vez, 35s máximo).
+qBit vivo 1/18: Embertone Shire Whistle
+qBit probado 2/18: Embertone - Shire Whistle (Kontakt)
+qBit probado 3/18: Whistle TV
+qBit probado 4/18: Whistle!
+qBit probado 5/18: Whistle 31 - 39 FIN VOSTFR 1080p
+qBit vivo 6/18: RealiWhistle
+qBit probado 7/18: Whistle
+qBit probado 8/18: If.I.Want.To.Whistle.I.Whistle.2010.DVDRip.XviD-LAP
+qBit probado 9/18: Whistle! (WEB-DL 1440x1080 x264 AC3)
+qBit probado 10/18: Whistle TV
+qBit probado 11/18: Whistle TV
+qBit probado 12/18: Whistle TV
+qBit probado 13/18: Whistle!_(DVDRip_640x480_x264_AC3)
+qBit probado 14/18: Whistle!_(DVDRip_640x480_x264_AC3)
+qBit probado 15/18: Whistle Discography
+qBit probado 16/18: [animefull]_Whistle! - 01-39 [640x480][mkv]
+qBit probado 17/18: Whistle! 01-39 (DVD 640x480 x264 AC3)
+qBit probado 18/18: Whistle
+Resultados válidos para JDownloader/RD: 1/19
+Resultados qBittorrent: 2/18
+
+========================================================================
+ TOP LIMPIO
+========================================================================
+[01] RD:OK           SCORE:   0 SIZE:  65.2 GB  [2002-2003] Whistle_哨聲響起(ホイッスル!)_TV
+[02] RD:NO_INSTANT   SCORE:   0 SIZE:   0.3 GB  Embertone Shire Whistle
+     qBit vivo: QBT_VIVO | seeds=2 peers=4 | qBittorrent descargando: 0.03 MB/s, seeds=2, peers=4
+[03] RD:NO_INSTANT   SCORE:   0 SIZE:   0.1 GB  RealiWhistle
+     qBit vivo: QBT_VIVO | seeds=2 peers=7 | qBittorrent descargando: 0.11 MB/s, seeds=2, peers=7
+========================================================================
+Elige: 1 | 1,4,7 | A=todos los válidos RD | T=todos mostrados RD/qBit | S=salir
+Resultados guardados para el Editor: 3
+Real-Debrid temporal limpio: 3 id(s) revisado(s).
+
+RESULTADOS LISTOS. Escribe abajo 1, 1,3, A, T o S y pulsa Enviar.
