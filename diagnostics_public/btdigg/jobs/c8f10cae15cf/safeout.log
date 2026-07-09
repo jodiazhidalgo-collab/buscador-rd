@@ -1,0 +1,62 @@
+
+--- ARRANQUE MOTOR BTDIGG RD ---
+BTDigg + RD - opción 1 limpia
+Búsqueda: wasabi
+Páginas: 1-5
+Modo: 3
+
+
+Navegador automático página 1 (1/5):
+  https://en.btdig.com/search?q=wasabi&p=0
+  BTDigg Chrome TLS: 10 magnets encontrados
+
+Navegador automático página 2 (2/5):
+  https://en.btdig.com/search?q=wasabi&p=1
+  BTDigg Chrome TLS: 10 magnets encontrados
+
+Navegador automático página 3 (3/5):
+  https://en.btdig.com/search?q=wasabi&p=2
+  BTDigg Chrome TLS: 10 magnets encontrados
+
+Navegador automático página 4 (4/5):
+  https://en.btdig.com/search?q=wasabi&p=3
+  BTDigg Chrome TLS: 10 magnets encontrados
+
+Navegador automático página 5 (5/5):
+  https://en.btdig.com/search?q=wasabi&p=4
+  BTDigg Chrome TLS: 10 magnets encontrados
+
+Encontrados 50 resultados brutos. Filtrando...
+
+Aspiradora terminada: 50 resultados únicos encontrados.
+Filtro aplicado: 4/50 siguen como candidatos.
+Criba búsqueda seria: 3/4 coinciden en el mismo título/archivo.
+Descartados antes de verificar por no coincidir: 1
+
+Comprobando token Real-Debrid...
+Token Real-Debrid OK: exmelenas
+
+Consultando Real-Debrid cache/instantáneo...
+
+Aviso: Real-Debrid tiene desactivada instantAvailability.
+Paso serio: verifico de verdad con addMagnet los 3 mejores candidatos.
+  Verificando 1/3: 24.S08.720p.BluRay.x264-WASABi
+  Verificando 2/3: Wasabi
+  Verificando 3/3: Tadashi x Wasabi
+
+Resumen RD: NO_INSTANT=2 | RD_FAIL=1
+
+qBit: probando 3 candidatos extra (3 a la vez, 35s máximo).
+qBit progreso: 2/3 comprobados | vivos 0
+qBit progreso: 3/3 comprobados | vivos 0
+Resultados válidos para JDownloader/RD: 0/3
+Lista extra qBittorrent vivos reales: 0
+
+========================================================================
+ TOP LIMPIO
+========================================================================
+No hay resultados limpios.
+Resultados guardados para el Editor: 0
+Real-Debrid temporal limpio: 0 id(s) revisado(s).
+
+RESULTADOS LISTOS. Escribe abajo 1, 1,3, A, T o S y pulsa Enviar.

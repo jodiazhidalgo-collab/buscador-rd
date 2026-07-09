@@ -1,0 +1,11 @@
+RD Turbo Pro - lista extra qBittorrent vivos
+================================================================================
+[Q01] QBT:QBT_VIVO   SIZE:   1.4 GB HASH:d8cae6a286ed0d3d788b7ddcf17a79835e2b1ac4
+      TORRENT: Whistle El silbido del mal BDrip XviD Castellano
+      MOTIVO: qBittorrent con seed conectado: seeds=2, peers=0, state=stalleddl
+      MAGNET: magnet:?xt=urn:btih:d8cae6a286ed0d3d788b7ddcf17a79835e2b1ac4&dn=Whistle+El+silbido+del+mal+BDrip+XviD+Castellano&tr=udp://tracker.openbittorrent.com:80&tr=udp://tracker.opentrackr.org:1337/announce
+
+[Q02] QBT:QBT_VIVO   SIZE:   2.5 GB HASH:d0168140ed5e16a523de4f8a44d85532f905dd64
+      TORRENT: Whistle El silbido del mal Ingles-Castellano Subt-Esp.Forz H264 E-AC3 5.1 BDrip hd 1080p
+      MOTIVO: qBittorrent descargando: 0.71 MB/s, seeds=4, peers=12
+      MAGNET: magnet:?xt=urn:btih:d0168140ed5e16a523de4f8a44d85532f905dd64&dn=Whistle+El+silbido+del+mal+Ingles-Castellano+Subt-Esp.Forz+H264+E-AC3+5.1+BDrip+hd+1080p&tr=udp://tracker.openbittorrent.com:80&tr=udp://tracker.opentrackr.org:1337/announce

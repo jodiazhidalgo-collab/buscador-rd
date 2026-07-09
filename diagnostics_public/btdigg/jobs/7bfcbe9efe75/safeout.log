@@ -1,0 +1,86 @@
+
+--- ARRANQUE MOTOR BTDIGG RD ---
+BTDigg + RD - opción 1 limpia
+Búsqueda: Whistle El silbido del mal
+Páginas: 1-10
+Modo: 0
+
+
+Navegador automático página 1 (1/10):
+  https://en.btdig.com/search?q=whistle%20el%20silbido%20del%20mal&p=0
+  BTDigg Chrome TLS: 6 magnets encontrados
+
+Navegador automático página 2 (2/10):
+  https://en.btdig.com/search?q=whistle%20el%20silbido%20del%20mal&p=1
+  BTDigg Chrome TLS: 6 magnets encontrados
+
+Navegador automático página 3 (3/10):
+  https://en.btdig.com/search?q=whistle%20el%20silbido%20del%20mal&p=2
+  BTDigg Chrome TLS: 6 magnets encontrados
+
+Navegador automático página 4 (4/10):
+  https://en.btdig.com/search?q=whistle%20el%20silbido%20del%20mal&p=3
+  BTDigg Chrome TLS: 6 magnets encontrados
+
+Navegador automático página 5 (5/10):
+  https://en.btdig.com/search?q=whistle%20el%20silbido%20del%20mal&p=4
+  BTDigg Chrome TLS: 6 magnets encontrados
+
+Navegador automático página 6 (6/10):
+  https://en.btdig.com/search?q=whistle%20el%20silbido%20del%20mal&p=5
+  BTDigg Chrome TLS: 6 magnets encontrados
+
+Navegador automático página 7 (7/10):
+  https://en.btdig.com/search?q=whistle%20el%20silbido%20del%20mal&p=6
+  BTDigg Chrome TLS: 6 magnets encontrados
+
+Navegador automático página 8 (8/10):
+  https://en.btdig.com/search?q=whistle%20el%20silbido%20del%20mal&p=7
+  BTDigg Chrome TLS: 6 magnets encontrados
+
+Navegador automático página 9 (9/10):
+  https://en.btdig.com/search?q=whistle%20el%20silbido%20del%20mal&p=8
+  BTDigg Chrome TLS: 6 magnets encontrados
+
+Navegador automático página 10 (10/10):
+  https://en.btdig.com/search?q=whistle%20el%20silbido%20del%20mal&p=9
+  BTDigg Chrome TLS: 6 magnets encontrados
+
+Encontrados 6 resultados brutos. Filtrando...
+
+Aspiradora terminada: 6 resultados únicos encontrados.
+Modo sin filtro: no descarto por idioma/calidad y no ordeno por calidad/tamano; solo penalizo basura.
+Criba búsqueda seria: 2/6 coinciden en el mismo título/archivo.
+Descartados antes de verificar por no coincidir: 4
+
+Comprobando token Real-Debrid...
+Token Real-Debrid OK: exmelenas
+
+Consultando Real-Debrid cache/instantáneo...
+
+Aviso: Real-Debrid tiene desactivada instantAvailability.
+Paso serio: verifico de verdad con addMagnet los 2 mejores candidatos.
+  Verificando 1/2: Whistle El silbido del mal BDrip XviD Castellano
+  Verificando 2/2: Whistle El silbido del mal Ingles-Castellano Subt-Esp.Forz H264 E-AC3 5.1 BDrip hd 1080p
+
+Resumen RD: RD_FAIL=2
+
+qBit: probando 2 candidatos extra (2 a la vez, 35s máximo).
+qBit vivo 1/2: QBT_VIVO - Whistle El silbido del mal BDrip XviD Castellano
+qBit vivo 2/2: QBT_VIVO - Whistle El silbido del mal Ingles-Castellano Subt-Esp.Forz H264 E-AC3 5.1 BDrip hd 1080p
+Resultados válidos para JDownloader/RD: 0/2
+Lista extra qBittorrent vivos reales: 2
+
+========================================================================
+ TOP LIMPIO
+========================================================================
+[01] RD:RD_FAIL      SCORE:   0 SIZE:   1.4 GB  Whistle El silbido del mal BDrip XviD Castellano
+     qBit vivo: QBT_VIVO | seeds=2 peers=0 | qBittorrent con seed conectado: seeds=2, peers=0, state=stalleddl
+[02] RD:RD_FAIL      SCORE:   0 SIZE:   2.5 GB  Whistle El silbido del mal Ingles-Castellano Subt-Esp.Forz H264 E-AC3 5.1 BDrip hd 1080p
+     qBit vivo: QBT_VIVO | seeds=4 peers=12 | qBittorrent descargando: 0.71 MB/s, seeds=4, peers=12
+========================================================================
+Elige: 1 | 1,4,7 | A=todos los válidos RD | T=todos mostrados RD/qBit | S=salir
+Resultados guardados para el Editor: 2
+Real-Debrid temporal limpio: 0 id(s) revisado(s).
+
+RESULTADOS LISTOS. Escribe abajo 1, 1,3, A, T o S y pulsa Enviar.

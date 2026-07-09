@@ -1,0 +1,111 @@
+- 2026-07-09T00:41:45+02:00 [info] web::JOB_STARTED
+- 2026-07-09T00:41:45+02:00 [info] general::CONFIG_SNAPSHOT
+- 2026-07-09T00:41:45+02:00 [info] web::COMMAND_PREPARED
+- 2026-07-09T00:41:45+02:00 [info] web::PROCESS_STARTED
+- 2026-07-09T00:41:46+0200 [info] search::editor_clean_search_start
+- 2026-07-09T00:41:46+0200 [info] btdigg::browser_auto_search_start_dom
+- 2026-07-09T00:41:48+0200 [info] btdigg::extract_magnets
+- 2026-07-09T00:41:48+0200 [info] btdigg::btdigg_curl_cffi_fetch
+- 2026-07-09T00:41:53+0200 [info] btdigg::extract_magnets
+- 2026-07-09T00:41:53+0200 [info] btdigg::btdigg_curl_cffi_fetch
+- 2026-07-09T00:41:55+0200 [info] btdigg::browser_auto_search_end_dom
+- 2026-07-09T00:41:55+0200 [info] motor::prepare_results_start
+- 2026-07-09T00:41:55+0200 [info] motor::prepare_after_scoring
+- 2026-07-09T00:41:55+0200 [info] motor::prepare_after_filter
+- 2026-07-09T00:41:55+0200 [info] motor::prepare_after_query_prefilter
+- 2026-07-09T00:41:55+0200 [info] real-debrid::rd_account_check_ok
+- 2026-07-09T00:41:55+0200 [info] real-debrid::rd_check_start
+- 2026-07-09T00:41:56+0200 [info] real-debrid::rd_api_http_error - disabled_endpoint
+- 2026-07-09T00:41:56+0200 [info] real-debrid::rd_cache_api_disabled_cached_set - Real-Debrid HTTP 403: [37 disabled_endpoint] {
+	"error": "disabled_endpoint",
+	"error_code": 37
+}
+- 2026-07-09T00:41:56+0200 [info] real-debrid::rd_cache_api_disabled - Real-Debrid HTTP 403: [37 disabled_endpoint] {
+	"error": "disabled_endpoint",
+	"error_code": 37
+}
+- 2026-07-09T00:41:56+0200 [info] real-debrid::rd_verify_batch_start
+- 2026-07-09T00:41:56+0200 [info] real-debrid::rd_slots_refresh
+- 2026-07-09T00:41:56+0200 [info] real-debrid::rd_active_count_before
+- 2026-07-09T00:41:56+0200 [info] real-debrid::rd_existing_preload_done
+- 2026-07-09T00:41:56+0200 [info] real-debrid::rd_verify_queue_start
+- 2026-07-09T00:41:56+0200 [info] real-debrid::rd_verify_queue_submit - Whistle El silbido del mal (2025) [Bluray 1080p][Esp]
+- 2026-07-09T00:41:56+0200 [info] real-debrid::rd_verify_add_start - Whistle El silbido del mal (2025) [Bluray 1080p][Esp]
+- 2026-07-09T00:41:56+0200 [info] real-debrid::rd_verify_queue_submit - Whistle El silbido del mal (2025) [Bluray 720p][Esp]
+- 2026-07-09T00:41:56+0200 [info] real-debrid::rd_verify_add_start - Whistle El silbido del mal (2025) [Bluray 720p][Esp]
+- 2026-07-09T00:41:56+0200 [info] real-debrid::rd_slots_reserve
+- 2026-07-09T00:41:56+0200 [info] real-debrid::rd_verify_add_start - Whistle El silbido del mal Ingles-Castellano Subt-Esp.Forz H264 E-AC3 5.1 BDrip hd 1080p
+- 2026-07-09T00:41:56+0200 [info] real-debrid::rd_verify_queue_submit - Whistle El silbido del mal Ingles-Castellano Subt-Esp.Forz H264 E-AC3 5.1 BDrip hd 1080p
+- 2026-07-09T00:41:56+0200 [info] real-debrid::rd_slots_reserve
+- 2026-07-09T00:41:56+0200 [debug] real-debrid::rd_rate_wait
+- 2026-07-09T00:41:56+0200 [info] real-debrid::rd_verify_queue_submit - Whistle El silbido del mal BDrip XviD Castellano
+- 2026-07-09T00:41:56+0200 [info] real-debrid::rd_verify_add_start - Whistle El silbido del mal BDrip XviD Castellano
+- 2026-07-09T00:41:56+0200 [info] real-debrid::rd_slots_reserve
+- 2026-07-09T00:41:56+0200 [info] real-debrid::rd_verify_queue_submit - Whistle El silbido del mal (2025) [Bluray][Esp]
+- 2026-07-09T00:41:56+0200 [info] real-debrid::rd_verify_add_start - Whistle El silbido del mal (2025) [Bluray][Esp]
+- 2026-07-09T00:41:56+0200 [info] real-debrid::rd_slots_reserve
+- 2026-07-09T00:41:56+0200 [debug] real-debrid::rd_endpoint_pace_wait
+- 2026-07-09T00:41:56+0200 [info] real-debrid::rd_slots_reserve
+- 2026-07-09T00:41:56+0200 [info] real-debrid::rd_verify_added
+- 2026-07-09T00:41:57+0200 [debug] real-debrid::rd_verify_poll - Whistle El silbido del mal (2025) [Bluray 1080p][Esp]
+- 2026-07-09T00:41:57+0200 [debug] real-debrid::rd_waiting_files_selection - Whistle El silbido del mal (2025) [Bluray 1080p][Esp]
+- 2026-07-09T00:41:57+0200 [info] real-debrid::rd_select_files_decision - Whistle El silbido del mal (2025) [Bluray 1080p][Esp]
+- 2026-07-09T00:41:57+0200 [info] real-debrid::rd_verify_select_files - Whistle El silbido del mal (2025) [Bluray 1080p][Esp]
+- 2026-07-09T00:41:57+0200 [debug] real-debrid::rd_verify_post_select_poll - Whistle El silbido del mal (2025) [Bluray 1080p][Esp]
+- 2026-07-09T00:41:57+0200 [info] real-debrid::rd_verify_ok - Whistle El silbido del mal (2025) [Bluray 1080p][Esp]
+- 2026-07-09T00:41:57+0200 [info] real-debrid::rd_verify_queue_done_item - Whistle El silbido del mal (2025) [Bluray 1080p][Esp]
+- 2026-07-09T00:41:58+0200 [info] real-debrid::rd_api_http_error - infringing_file
+- 2026-07-09T00:41:58+0200 [info] real-debrid::rd_call_terminal_error - infringing_file
+- 2026-07-09T00:41:58+0200 [info] real-debrid::rd_candidate_addmagnet_blocked - infringing_file
+- 2026-07-09T00:41:58+0200 [info] real-debrid::rd_verify_infringing - Whistle El silbido del mal BDrip XviD Castellano
+- 2026-07-09T00:41:58+0200 [info] real-debrid::rd_verify_queue_done_item - Whistle El silbido del mal BDrip XviD Castellano
+- 2026-07-09T00:41:59+0200 [info] real-debrid::rd_api_http_error - infringing_file
+- 2026-07-09T00:41:59+0200 [info] real-debrid::rd_call_terminal_error - infringing_file
+- 2026-07-09T00:41:59+0200 [info] real-debrid::rd_candidate_addmagnet_blocked - infringing_file
+- 2026-07-09T00:41:59+0200 [info] real-debrid::rd_verify_infringing - Whistle El silbido del mal Ingles-Castellano Subt-Esp.Forz H264 E-AC3 5.1 BDrip hd 1080p
+- 2026-07-09T00:41:59+0200 [info] real-debrid::rd_verify_queue_done_item - Whistle El silbido del mal Ingles-Castellano Subt-Esp.Forz H264 E-AC3 5.1 BDrip hd 1080p
+- 2026-07-09T00:42:01+0200 [info] real-debrid::rd_verify_added
+- 2026-07-09T00:42:01+0200 [debug] real-debrid::rd_verify_poll - Whistle El silbido del mal (2025) [Bluray 720p][Esp]
+- 2026-07-09T00:42:01+0200 [debug] real-debrid::rd_waiting_files_selection - Whistle El silbido del mal (2025) [Bluray 720p][Esp]
+- 2026-07-09T00:42:01+0200 [info] real-debrid::rd_select_files_decision - Whistle El silbido del mal (2025) [Bluray 720p][Esp]
+- 2026-07-09T00:42:01+0200 [info] real-debrid::rd_verify_select_files - Whistle El silbido del mal (2025) [Bluray 720p][Esp]
+- 2026-07-09T00:42:01+0200 [debug] real-debrid::rd_endpoint_pace_wait
+- 2026-07-09T00:42:02+0200 [debug] real-debrid::rd_verify_post_select_poll - Whistle El silbido del mal (2025) [Bluray 720p][Esp]
+- 2026-07-09T00:42:02+0200 [info] real-debrid::rd_verify_ok - Whistle El silbido del mal (2025) [Bluray 720p][Esp]
+- 2026-07-09T00:42:02+0200 [info] real-debrid::rd_verify_queue_done_item - Whistle El silbido del mal (2025) [Bluray 720p][Esp]
+- 2026-07-09T00:42:02+0200 [info] real-debrid::rd_verify_added
+- 2026-07-09T00:42:02+0200 [debug] real-debrid::rd_verify_poll - Whistle El silbido del mal (2025) [Bluray][Esp]
+- 2026-07-09T00:42:02+0200 [debug] real-debrid::rd_waiting_files_selection - Whistle El silbido del mal (2025) [Bluray][Esp]
+- 2026-07-09T00:42:02+0200 [info] real-debrid::rd_select_files_decision - Whistle El silbido del mal (2025) [Bluray][Esp]
+- 2026-07-09T00:42:03+0200 [info] real-debrid::rd_verify_select_files - Whistle El silbido del mal (2025) [Bluray][Esp]
+- 2026-07-09T00:42:03+0200 [debug] real-debrid::rd_verify_post_select_poll - Whistle El silbido del mal (2025) [Bluray][Esp]
+- 2026-07-09T00:42:03+0200 [info] real-debrid::rd_fast_discard - zero_progress_post_select
+- 2026-07-09T00:42:03+0200 [info] real-debrid::rd_fast_discard_reason - zero_progress_post_select
+- 2026-07-09T00:42:03+0200 [info] real-debrid::rd_fast_discard_delete - zero_progress_post_select
+- 2026-07-09T00:42:03+0200 [info] real-debrid::rd_zero_progress_fast_delete - Whistle El silbido del mal (2025) [Bluray][Esp]
+- 2026-07-09T00:42:03+0200 [info] real-debrid::rd_delete_torrent
+- 2026-07-09T00:42:03+0200 [info] real-debrid::rd_slots_release
+- 2026-07-09T00:42:03+0200 [info] real-debrid::rd_verify_queue_done_item - Whistle El silbido del mal (2025) [Bluray][Esp]
+- 2026-07-09T00:42:03+0200 [info] real-debrid::rd_verify_queue_end
+- 2026-07-09T00:42:03+0200 [info] real-debrid::rd_rate_summary
+- 2026-07-09T00:42:03+0200 [info] real-debrid::rd_endpoint_pacer_summary
+- 2026-07-09T00:42:03+0200 [info] real-debrid::rd_cleanup_final_start
+- 2026-07-09T00:42:04+0200 [info] real-debrid::rd_slots_refresh
+- 2026-07-09T00:42:04+0200 [info] real-debrid::rd_active_count_after
+- 2026-07-09T00:42:04+0200 [info] real-debrid::rd_cleanup_final_end
+- 2026-07-09T00:42:04+0200 [info] real-debrid::rd_rate_summary
+- 2026-07-09T00:42:04+0200 [info] real-debrid::rd_endpoint_pacer_summary
+- 2026-07-09T00:42:04+0200 [info] real-debrid::rd_verify_batch_end
+- 2026-07-09T00:42:04+0200 [info] real-debrid::rd_check_summary
+- 2026-07-09T00:42:04+0200 [info] qbittorrent::qbt_probe_skipped - disabled
+- 2026-07-09T00:42:04+0200 [info] motor::prepare_qbit_extras
+- 2026-07-09T00:42:04+0200 [info] motor::prepare_rd_temp_errors
+- 2026-07-09T00:42:04+0200 [info] motor::prepare_after_working_filter
+- 2026-07-09T00:42:04+0200 [info] search::export_results
+- 2026-07-09T00:42:04+0200 [info] search::export_results
+- 2026-07-09T00:42:04+0200 [debug] real-debrid::rd_endpoint_pace_wait
+- 2026-07-09T00:42:04+0200 [info] real-debrid::rd_delete_torrent
+- 2026-07-09T00:42:05+0200 [info] real-debrid::rd_delete_torrent
+- 2026-07-09T00:42:05+0200 [info] search::editor_clean_search_rd_cleanup
+- 2026-07-09T00:42:05+0200 [info] search::editor_clean_search_end
+- 2026-07-09T00:42:05+02:00 [info] web::JOB_FINISHED_OK

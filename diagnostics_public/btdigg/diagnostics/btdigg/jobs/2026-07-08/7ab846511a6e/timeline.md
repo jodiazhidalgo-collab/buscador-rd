@@ -1,0 +1,137 @@
+- 2026-07-08T05:45:43+02:00 [info] web::JOB_STARTED
+- 2026-07-08T05:45:43+02:00 [info] general::CONFIG_SNAPSHOT
+- 2026-07-08T05:45:43+02:00 [info] web::COMMAND_PREPARED
+- 2026-07-08T05:45:43+02:00 [info] web::PROCESS_STARTED
+- 2026-07-08T05:45:43+0200 [info] search::editor_clean_search_start
+- 2026-07-08T05:45:43+0200 [info] btdigg::browser_auto_search_start_dom
+- 2026-07-08T05:45:44+0200 [info] btdigg::extract_magnets
+- 2026-07-08T05:45:44+0200 [info] btdigg::btdigg_curl_cffi_fetch
+- 2026-07-08T05:45:46+0200 [info] btdigg::browser_auto_search_end_dom
+- 2026-07-08T05:45:46+0200 [info] motor::prepare_results_start
+- 2026-07-08T05:45:47+0200 [info] motor::prepare_after_scoring
+- 2026-07-08T05:45:47+0200 [info] motor::prepare_after_filter
+- 2026-07-08T05:45:47+0200 [info] motor::prepare_after_query_prefilter
+- 2026-07-08T05:45:47+0200 [info] real-debrid::rd_account_check_ok
+- 2026-07-08T05:45:47+0200 [info] real-debrid::rd_check_start
+- 2026-07-08T05:45:47+0200 [info] real-debrid::rd_api_http_error - disabled_endpoint
+- 2026-07-08T05:45:47+0200 [info] real-debrid::rd_cache_api_disabled_cached_set - Real-Debrid HTTP 403: [37 disabled_endpoint] {
+	"error": "disabled_endpoint",
+	"error_code": 37
+}
+- 2026-07-08T05:45:47+0200 [info] real-debrid::rd_cache_api_disabled - Real-Debrid HTTP 403: [37 disabled_endpoint] {
+	"error": "disabled_endpoint",
+	"error_code": 37
+}
+- 2026-07-08T05:45:47+0200 [info] real-debrid::rd_verify_batch_start
+- 2026-07-08T05:45:47+0200 [info] real-debrid::rd_slots_refresh
+- 2026-07-08T05:45:47+0200 [info] real-debrid::rd_active_count_before
+- 2026-07-08T05:45:47+0200 [info] real-debrid::rd_existing_preload_done
+- 2026-07-08T05:45:47+0200 [info] real-debrid::rd_verify_queue_start
+- 2026-07-08T05:45:47+0200 [info] real-debrid::rd_verify_queue_submit - Pillion.2025.1080p.BluRay.H264-RiSEHD [TorrentSurf.to]
+- 2026-07-08T05:45:47+0200 [info] real-debrid::rd_verify_add_start - Pillion.2025.1080p.BluRay.H264-RiSEHD [TorrentSurf.to]
+- 2026-07-08T05:45:47+0200 [info] real-debrid::rd_slots_reserve
+- 2026-07-08T05:45:47+0200 [info] real-debrid::rd_verify_add_start - Pillion.2025.WEBRip.BEN.DUB.1XBET
+- 2026-07-08T05:45:47+0200 [info] real-debrid::rd_verify_queue_submit - Pillion.2025.WEBRip.BEN.DUB.1XBET
+- 2026-07-08T05:45:47+0200 [info] real-debrid::rd_slots_reserve
+- 2026-07-08T05:45:47+0200 [info] real-debrid::rd_verify_queue_submit - Pillion.2025.Webrip.Hin.Dub.1Xbet
+- 2026-07-08T05:45:47+0200 [info] real-debrid::rd_verify_add_start - Pillion.2025.Webrip.Hin.Dub.1Xbet
+- 2026-07-08T05:45:47+0200 [info] real-debrid::rd_slots_reserve
+- 2026-07-08T05:45:47+0200 [debug] real-debrid::rd_rate_wait
+- 2026-07-08T05:45:47+0200 [info] real-debrid::rd_verify_add_start - www.UIndex.org    -    Pillion 2025 1080p 10bit WEBRip 6CH X265 HEVC-PSA
+- 2026-07-08T05:45:47+0200 [info] real-debrid::rd_verify_queue_submit - www.UIndex.org    -    Pillion 2025 1080p 10bit WEBRip 6CH X265 HEVC-PSA
+- 2026-07-08T05:45:47+0200 [info] real-debrid::rd_verify_queue_submit - Pillion.2025.1080p.BluRay.x264-TRB
+- 2026-07-08T05:45:47+0200 [debug] real-debrid::rd_endpoint_pace_wait
+- 2026-07-08T05:45:47+0200 [info] real-debrid::rd_slots_reserve
+- 2026-07-08T05:45:47+0200 [info] real-debrid::rd_verify_add_start - Pillion.2025.1080p.BluRay.x264-TRB
+- 2026-07-08T05:45:47+0200 [info] real-debrid::rd_verify_queue_submit - www.UIndex.org    -    Pillion 2025 1080p WEB EN-RGB
+- 2026-07-08T05:45:47+0200 [info] real-debrid::rd_verify_add_start - www.UIndex.org    -    Pillion 2025 1080p WEB EN-RGB
+- 2026-07-08T05:45:47+0200 [info] real-debrid::rd_slots_reserve
+- 2026-07-08T05:45:47+0200 [info] real-debrid::rd_verify_queue_submit - www.UIndex.org    -    Pillion (2025) 1080p WEBRip 5.1-LAMA
+- 2026-07-08T05:45:47+0200 [info] real-debrid::rd_verify_add_start - www.UIndex.org    -    Pillion (2025) 1080p WEBRip 5.1-LAMA
+- 2026-07-08T05:45:47+0200 [info] real-debrid::rd_slots_reserve
+- 2026-07-08T05:45:47+0200 [info] real-debrid::rd_verify_queue_submit - www.UIndex.org    -    Pillion (2025) 720p WEBRip-LAMA
+- 2026-07-08T05:45:47+0200 [info] real-debrid::rd_verify_queue_submit - Pillion (2025) AMZN WEB-DL 1080p x265 EAC3 DDP 5.1-InChY
+- 2026-07-08T05:45:47+0200 [info] real-debrid::rd_slots_reserve
+- 2026-07-08T05:45:47+0200 [info] real-debrid::rd_verify_add_start - Pillion (2025) AMZN WEB-DL 1080p x265 EAC3 DDP 5.1-InChY
+- 2026-07-08T05:45:47+0200 [info] real-debrid::rd_verify_add_start - www.UIndex.org    -    Pillion (2025) 720p WEBRip-LAMA
+- 2026-07-08T05:45:47+0200 [info] real-debrid::rd_slots_reserve
+- 2026-07-08T05:45:47+0200 [info] real-debrid::rd_slots_reserve
+- 2026-07-08T05:45:48+0200 [info] real-debrid::rd_verify_added
+- 2026-07-08T05:45:48+0200 [debug] real-debrid::rd_verify_poll - Pillion.2025.1080p.BluRay.H264-RiSEHD [TorrentSurf.to]
+- 2026-07-08T05:45:48+0200 [debug] real-debrid::rd_waiting_files_selection - Pillion.2025.1080p.BluRay.H264-RiSEHD [TorrentSurf.to]
+- 2026-07-08T05:45:48+0200 [info] real-debrid::rd_select_files_decision - Pillion.2025.1080p.BluRay.H264-RiSEHD [TorrentSurf.to]
+- 2026-07-08T05:45:48+0200 [info] real-debrid::rd_verify_select_files - Pillion.2025.1080p.BluRay.H264-RiSEHD [TorrentSurf.to]
+- 2026-07-08T05:45:49+0200 [debug] real-debrid::rd_verify_post_select_poll - Pillion.2025.1080p.BluRay.H264-RiSEHD [TorrentSurf.to]
+- 2026-07-08T05:45:49+0200 [info] real-debrid::rd_fast_discard - zero_progress_post_select
+- 2026-07-08T05:45:49+0200 [info] real-debrid::rd_fast_discard_reason - zero_progress_post_select
+- 2026-07-08T05:45:49+0200 [info] real-debrid::rd_fast_discard_delete - zero_progress_post_select
+- 2026-07-08T05:45:49+0200 [info] real-debrid::rd_zero_progress_fast_delete - Pillion.2025.1080p.BluRay.H264-RiSEHD [TorrentSurf.to]
+- 2026-07-08T05:45:49+0200 [info] real-debrid::rd_delete_torrent
+- 2026-07-08T05:45:49+0200 [info] real-debrid::rd_slots_release
+- 2026-07-08T05:45:49+0200 [info] real-debrid::rd_verify_queue_done_item - Pillion.2025.1080p.BluRay.H264-RiSEHD [TorrentSurf.to]
+- 2026-07-08T05:45:49+0200 [info] real-debrid::rd_api_http_error - infringing_file
+- 2026-07-08T05:45:49+0200 [info] real-debrid::rd_call_terminal_error - infringing_file
+- 2026-07-08T05:45:49+0200 [info] real-debrid::rd_candidate_addmagnet_blocked - infringing_file
+- 2026-07-08T05:45:49+0200 [info] real-debrid::rd_verify_infringing - Pillion.2025.1080p.BluRay.x264-TRB
+- 2026-07-08T05:45:49+0200 [info] real-debrid::rd_verify_queue_done_item - Pillion.2025.1080p.BluRay.x264-TRB
+- 2026-07-08T05:45:51+0200 [info] real-debrid::rd_api_http_error - infringing_file
+- 2026-07-08T05:45:51+0200 [info] real-debrid::rd_call_terminal_error - infringing_file
+- 2026-07-08T05:45:51+0200 [info] real-debrid::rd_candidate_addmagnet_blocked - infringing_file
+- 2026-07-08T05:45:51+0200 [info] real-debrid::rd_verify_infringing - Pillion.2025.Webrip.Hin.Dub.1Xbet
+- 2026-07-08T05:45:51+0200 [info] real-debrid::rd_verify_queue_done_item - Pillion.2025.Webrip.Hin.Dub.1Xbet
+- 2026-07-08T05:45:52+0200 [info] real-debrid::rd_api_http_error - infringing_file
+- 2026-07-08T05:45:52+0200 [info] real-debrid::rd_call_terminal_error - infringing_file
+- 2026-07-08T05:45:52+0200 [info] real-debrid::rd_candidate_addmagnet_blocked - infringing_file
+- 2026-07-08T05:45:52+0200 [info] real-debrid::rd_verify_infringing - www.UIndex.org    -    Pillion 2025 1080p 10bit WEBRip 6CH X265 HEVC-PSA
+- 2026-07-08T05:45:52+0200 [info] real-debrid::rd_verify_queue_done_item - www.UIndex.org    -    Pillion 2025 1080p 10bit WEBRip 6CH X265 HEVC-PSA
+- 2026-07-08T05:45:53+0200 [debug] real-debrid::rd_endpoint_pace_wait
+- 2026-07-08T05:45:54+0200 [info] real-debrid::rd_api_http_error - infringing_file
+- 2026-07-08T05:45:54+0200 [info] real-debrid::rd_call_terminal_error - infringing_file
+- 2026-07-08T05:45:54+0200 [info] real-debrid::rd_candidate_addmagnet_blocked - infringing_file
+- 2026-07-08T05:45:54+0200 [info] real-debrid::rd_verify_infringing - Pillion.2025.WEBRip.BEN.DUB.1XBET
+- 2026-07-08T05:45:54+0200 [info] real-debrid::rd_verify_queue_done_item - Pillion.2025.WEBRip.BEN.DUB.1XBET
+- 2026-07-08T05:45:55+0200 [info] real-debrid::rd_api_http_error - infringing_file
+- 2026-07-08T05:45:55+0200 [info] real-debrid::rd_call_terminal_error - infringing_file
+- 2026-07-08T05:45:55+0200 [info] real-debrid::rd_candidate_addmagnet_blocked - infringing_file
+- 2026-07-08T05:45:55+0200 [info] real-debrid::rd_verify_infringing - Pillion (2025) AMZN WEB-DL 1080p x265 EAC3 DDP 5.1-InChY
+- 2026-07-08T05:45:55+0200 [info] real-debrid::rd_verify_queue_done_item - Pillion (2025) AMZN WEB-DL 1080p x265 EAC3 DDP 5.1-InChY
+- 2026-07-08T05:45:57+0200 [info] real-debrid::rd_api_http_error - infringing_file
+- 2026-07-08T05:45:57+0200 [info] real-debrid::rd_call_terminal_error - infringing_file
+- 2026-07-08T05:45:57+0200 [info] real-debrid::rd_candidate_addmagnet_blocked - infringing_file
+- 2026-07-08T05:45:57+0200 [info] real-debrid::rd_verify_infringing - www.UIndex.org    -    Pillion (2025) 1080p WEBRip 5.1-LAMA
+- 2026-07-08T05:45:57+0200 [info] real-debrid::rd_verify_queue_done_item - www.UIndex.org    -    Pillion (2025) 1080p WEBRip 5.1-LAMA
+- 2026-07-08T05:45:58+0200 [debug] real-debrid::rd_endpoint_pace_wait
+- 2026-07-08T05:45:58+0200 [info] real-debrid::rd_verify_added
+- 2026-07-08T05:45:58+0200 [debug] real-debrid::rd_verify_poll - www.UIndex.org    -    Pillion 2025 1080p WEB EN-RGB
+- 2026-07-08T05:45:58+0200 [debug] real-debrid::rd_waiting_files_selection - www.UIndex.org    -    Pillion 2025 1080p WEB EN-RGB
+- 2026-07-08T05:45:58+0200 [info] real-debrid::rd_select_files_decision - www.UIndex.org    -    Pillion 2025 1080p WEB EN-RGB
+- 2026-07-08T05:45:59+0200 [info] real-debrid::rd_verify_select_files - www.UIndex.org    -    Pillion 2025 1080p WEB EN-RGB
+- 2026-07-08T05:45:59+0200 [debug] real-debrid::rd_verify_post_select_poll - www.UIndex.org    -    Pillion 2025 1080p WEB EN-RGB
+- 2026-07-08T05:45:59+0200 [info] real-debrid::rd_verify_ok - www.UIndex.org    -    Pillion 2025 1080p WEB EN-RGB
+- 2026-07-08T05:45:59+0200 [info] real-debrid::rd_verify_queue_done_item - www.UIndex.org    -    Pillion 2025 1080p WEB EN-RGB
+- 2026-07-08T05:46:00+0200 [info] real-debrid::rd_api_http_error - infringing_file
+- 2026-07-08T05:46:00+0200 [info] real-debrid::rd_call_terminal_error - infringing_file
+- 2026-07-08T05:46:00+0200 [info] real-debrid::rd_candidate_addmagnet_blocked - infringing_file
+- 2026-07-08T05:46:00+0200 [info] real-debrid::rd_verify_infringing - www.UIndex.org    -    Pillion (2025) 720p WEBRip-LAMA
+- 2026-07-08T05:46:00+0200 [info] real-debrid::rd_verify_queue_done_item - www.UIndex.org    -    Pillion (2025) 720p WEBRip-LAMA
+- 2026-07-08T05:46:00+0200 [info] real-debrid::rd_verify_queue_end
+- 2026-07-08T05:46:00+0200 [info] real-debrid::rd_rate_summary
+- 2026-07-08T05:46:00+0200 [info] real-debrid::rd_endpoint_pacer_summary
+- 2026-07-08T05:46:00+0200 [info] real-debrid::rd_cleanup_final_start
+- 2026-07-08T05:46:00+0200 [info] real-debrid::rd_slots_refresh
+- 2026-07-08T05:46:00+0200 [info] real-debrid::rd_active_count_after
+- 2026-07-08T05:46:00+0200 [info] real-debrid::rd_cleanup_final_end
+- 2026-07-08T05:46:00+0200 [info] real-debrid::rd_rate_summary
+- 2026-07-08T05:46:00+0200 [info] real-debrid::rd_endpoint_pacer_summary
+- 2026-07-08T05:46:00+0200 [info] real-debrid::rd_verify_batch_end
+- 2026-07-08T05:46:00+0200 [info] real-debrid::rd_check_summary
+- 2026-07-08T05:46:00+0200 [info] qbittorrent::qbt_probe_skipped - disabled
+- 2026-07-08T05:46:00+0200 [info] motor::prepare_qbit_extras
+- 2026-07-08T05:46:00+0200 [info] motor::prepare_rd_temp_errors
+- 2026-07-08T05:46:00+0200 [info] motor::prepare_after_working_filter
+- 2026-07-08T05:46:00+0200 [info] search::export_results
+- 2026-07-08T05:46:00+0200 [info] search::export_results
+- 2026-07-08T05:46:00+0200 [info] real-debrid::rd_delete_torrent
+- 2026-07-08T05:46:00+0200 [info] search::editor_clean_search_rd_cleanup
+- 2026-07-08T05:46:00+0200 [info] search::editor_clean_search_end
+- 2026-07-08T05:46:00+02:00 [info] web::JOB_FINISHED_OK

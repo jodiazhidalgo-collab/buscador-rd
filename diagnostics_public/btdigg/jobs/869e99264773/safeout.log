@@ -1,0 +1,51 @@
+
+--- ARRANQUE MOTOR BTDIGG RD ---
+BTDigg + RD - opción 1 limpia
+Búsqueda: Whistle El silbido del mal
+Páginas: 1-2
+Modo: 3
+
+
+Navegador automático página 1 (1/2):
+  https://en.btdig.com/search?q=whistle%20el%20silbido%20del%20mal&p=0
+  BTDigg Chrome TLS: 9 magnets encontrados
+
+Navegador automático página 2 (2/2):
+  https://en.btdig.com/search?q=whistle%20el%20silbido%20del%20mal&p=1
+  BTDigg Chrome TLS: 9 magnets encontrados
+
+Encontrados 9 resultados brutos. Filtrando...
+
+Aspiradora terminada: 9 resultados únicos encontrados.
+Filtro aplicado: 7/9 siguen como candidatos.
+Criba búsqueda seria: 5/7 coinciden en el mismo título/archivo.
+Descartados antes de verificar por no coincidir: 2
+
+Comprobando token Real-Debrid...
+Token Real-Debrid OK: exmelenas
+
+Consultando Real-Debrid cache/instantáneo...
+
+Aviso: Real-Debrid tiene desactivada instantAvailability.
+Paso serio: verifico de verdad con addMagnet los 5 mejores candidatos.
+  RD OK 1/5: Whistle El silbido del mal (2025) [Bluray 1080p][Esp]
+  Verificando 4/5: Whistle El silbido del mal BDrip XviD Castellano
+  Verificando 3/5: Whistle El silbido del mal Ingles-Castellano Subt-Esp.Forz H264 E-AC3 5.1 BDrip hd 1080p
+  RD OK 2/5: Whistle El silbido del mal (2025) [Bluray 720p][Esp]
+  Verificando 5/5: Whistle El silbido del mal (2025) [Bluray][Esp]
+
+Resumen RD: NO_INSTANT=1 | RD_FAIL=2 | RD_OK=2
+Resultados válidos para JDownloader/RD: 2/5
+Lista extra qBittorrent vivos reales: 0
+
+========================================================================
+ TOP LIMPIO
+========================================================================
+[01] RD:OK           SCORE:  43 SIZE:  13.6 GB  Whistle El silbido del mal (2025) [Bluray 1080p][Esp]
+[02] RD:OK           SCORE:  41 SIZE:   5.2 GB  Whistle El silbido del mal (2025) [Bluray 720p][Esp]
+========================================================================
+Elige: 1 | 1,4,7 | A=todos los válidos RD | T=todos mostrados RD/qBit | S=salir
+Resultados guardados para el Editor: 2
+Real-Debrid temporal limpio: 2 id(s) revisado(s).
+
+RESULTADOS LISTOS. Escribe abajo 1, 1,3, A, T o S y pulsa Enviar.

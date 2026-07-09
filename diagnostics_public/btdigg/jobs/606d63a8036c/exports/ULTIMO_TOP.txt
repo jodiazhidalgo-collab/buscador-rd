@@ -1,0 +1,10 @@
+RD Turbo Pro - último TOP
+================================================================================
+[01] RD:RD_OK        SCORE:   0 SIZE:   1.7 GB HASH:227f6a3140eb01ef68d6c50d9f8cfa7eac6c5928
+     Mr.Bean Holiday (2007) [Rowan Atkinson] 1080p BluRay H264 DolbyD 5.1   nickarad
+     MOTIVO: Verificado con addMagnet: 1 link(s), 1.7 GB
+
+[02] RD:NO_INSTANT   SCORE:   0 SIZE:   3.7 GB HASH:9a6c998227394e30ca194d74e220eb8bf123599e
+     Mr. Beans Holiday 2007 BluRay 720p DTS x264-3Li
+     QBIT: QBT_VIVO | seeds=1 peers=3 | qBittorrent con seed conectado: seeds=1, peers=3, state=stalleddl
+     MOTIVO: Descartado rapido RD: post-select sin links ni progreso util

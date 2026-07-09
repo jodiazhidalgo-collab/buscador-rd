@@ -1,0 +1,195 @@
+- 2026-07-08T17:58:22+02:00 [info] web::JOB_STARTED
+- 2026-07-08T17:58:22+02:00 [info] general::CONFIG_SNAPSHOT
+- 2026-07-08T17:58:22+02:00 [info] web::COMMAND_PREPARED
+- 2026-07-08T17:58:22+02:00 [info] web::PROCESS_STARTED
+- 2026-07-08T17:58:22+0200 [info] search::editor_clean_search_start
+- 2026-07-08T17:58:22+0200 [info] btdigg::browser_auto_search_start_dom
+- 2026-07-08T17:58:23+0200 [info] btdigg::extract_magnets
+- 2026-07-08T17:58:23+0200 [info] btdigg::btdigg_curl_cffi_fetch
+- 2026-07-08T17:58:27+0200 [info] btdigg::extract_magnets
+- 2026-07-08T17:58:27+0200 [info] btdigg::btdigg_curl_cffi_fetch
+- 2026-07-08T17:58:30+0200 [info] btdigg::extract_magnets
+- 2026-07-08T17:58:30+0200 [info] btdigg::btdigg_curl_cffi_fetch
+- 2026-07-08T17:58:33+0200 [info] btdigg::extract_magnets
+- 2026-07-08T17:58:33+0200 [info] btdigg::btdigg_curl_cffi_fetch
+- 2026-07-08T17:58:36+0200 [info] btdigg::extract_magnets
+- 2026-07-08T17:58:36+0200 [info] btdigg::btdigg_curl_cffi_fetch
+- 2026-07-08T17:58:38+0200 [info] btdigg::browser_auto_search_end_dom
+- 2026-07-08T17:58:38+0200 [info] btdigg::browser_quality_rescue_start
+- 2026-07-08T17:58:38+0200 [info] btdigg::browser_auto_search_start_dom
+- 2026-07-08T17:58:39+0200 [info] btdigg::extract_magnets
+- 2026-07-08T17:58:39+0200 [info] btdigg::btdigg_curl_cffi_fetch
+- 2026-07-08T17:58:41+0200 [info] btdigg::browser_auto_search_end_dom
+- 2026-07-08T17:58:41+0200 [info] btdigg::browser_quality_rescue_results
+- 2026-07-08T17:58:41+0200 [info] btdigg::browser_quality_rescue_end
+- 2026-07-08T17:58:41+0200 [info] motor::prepare_results_start
+- 2026-07-08T17:58:41+0200 [info] motor::prepare_after_scoring
+- 2026-07-08T17:58:41+0200 [info] motor::prepare_after_filter
+- 2026-07-08T17:58:41+0200 [info] motor::prepare_after_query_prefilter
+- 2026-07-08T17:58:41+0200 [info] real-debrid::rd_account_check_ok
+- 2026-07-08T17:58:41+0200 [info] real-debrid::rd_check_start
+- 2026-07-08T17:58:42+0200 [info] real-debrid::rd_api_http_error - disabled_endpoint
+- 2026-07-08T17:58:42+0200 [info] real-debrid::rd_cache_api_disabled_cached_set - Real-Debrid HTTP 403: [37 disabled_endpoint] {
+	"error": "disabled_endpoint",
+	"error_code": 37
+}
+- 2026-07-08T17:58:42+0200 [info] real-debrid::rd_cache_api_disabled - Real-Debrid HTTP 403: [37 disabled_endpoint] {
+	"error": "disabled_endpoint",
+	"error_code": 37
+}
+- 2026-07-08T17:58:42+0200 [info] real-debrid::rd_verify_batch_start
+- 2026-07-08T17:58:42+0200 [info] real-debrid::rd_slots_refresh
+- 2026-07-08T17:58:42+0200 [info] real-debrid::rd_active_count_before
+- 2026-07-08T17:58:42+0200 [info] real-debrid::rd_existing_preload_done
+- 2026-07-08T17:58:42+0200 [info] real-debrid::rd_verify_queue_start
+- 2026-07-08T17:58:42+0200 [info] real-debrid::rd_verify_queue_submit - 索命哨.Whistle.2025.UHD.Blu-ray.2160p.HDR10.HEVC.DTS-HD.MA.5.1-sh@CHDBits
+- 2026-07-08T17:58:42+0200 [info] real-debrid::rd_verify_add_start - 索命哨.Whistle.2025.UHD.Blu-ray.2160p.HDR10.HEVC.DTS-HD.MA.5.1-sh@CHDBits
+- 2026-07-08T17:58:42+0200 [info] real-debrid::rd_verify_queue_submit - 【高清影视之家发布 www.BBEGGE.com】索命哨[简繁英字幕].Whistle.2025.2160p.Bluray.REMUX.HDR10.HEVC.DTS-HDMA5.1-DreamHD
+- 2026-07-08T17:58:42+0200 [info] real-debrid::rd_verify_add_start - 【高清影视之家发布 www.BBEGGE.com】索命哨[简繁英字幕].Whistle.2025.2160p.Bluray.REMUX.HDR10.HEVC.DTS-HDMA5.1-DreamHD
+- 2026-07-08T17:58:42+0200 [info] real-debrid::rd_slots_reserve
+- 2026-07-08T17:58:42+0200 [info] real-debrid::rd_verify_add_start - 【高清影视之家发布 www.BBEGGE.com】索命哨[简繁英字幕].Whistle.2025.Bluray.2160p.DTS-HDMA5.1.x265.10bit-DreamHD
+- 2026-07-08T17:58:42+0200 [info] real-debrid::rd_verify_queue_submit - 【高清影视之家发布 www.BBEGGE.com】索命哨[简繁英字幕].Whistle.2025.Bluray.2160p.DTS-HDMA5.1.x265.10bit-DreamHD
+- 2026-07-08T17:58:42+0200 [info] real-debrid::rd_slots_reserve
+- 2026-07-08T17:58:42+0200 [info] real-debrid::rd_verify_queue_submit - 【高清影视之家发布 www.BBEBBB.com】索命哨[简繁英字幕].Whistle.2025.2160p.UHD.BluRay.x265.10bit.HDR.DTS-HD.MA.5.1-QuickIO
+- 2026-07-08T17:58:42+0200 [info] real-debrid::rd_verify_add_start - 【高清影视之家发布 www.BBEBBB.com】索命哨[简繁英字幕].Whistle.2025.2160p.UHD.BluRay.x265.10bit.HDR.DTS-HD.MA.5.1-QuickIO
+- 2026-07-08T17:58:42+0200 [info] real-debrid::rd_slots_reserve
+- 2026-07-08T17:58:42+0200 [debug] real-debrid::rd_rate_wait
+- 2026-07-08T17:58:42+0200 [info] real-debrid::rd_verify_add_start - [XTORRENTY.ORG] Whistle.2025.MULTi.2160p.UHD.AMZN.WEB-DL.SDR.H.265.DD5.1-RX
+- 2026-07-08T17:58:42+0200 [info] real-debrid::rd_verify_queue_submit - [XTORRENTY.ORG] Whistle.2025.MULTi.2160p.UHD.AMZN.WEB-DL.SDR.H.265.DD5.1-RX
+- 2026-07-08T17:58:42+0200 [info] real-debrid::rd_slots_reserve
+- 2026-07-08T17:58:42+0200 [debug] real-debrid::rd_endpoint_pace_wait
+- 2026-07-08T17:58:42+0200 [info] real-debrid::rd_verify_queue_submit - Whistle.2025.UHD.WEB.DL.HEVC.2160p.4K.HDR.10 E-AC3
+- 2026-07-08T17:58:42+0200 [info] real-debrid::rd_verify_add_start - Whistle.2025.UHD.WEB.DL.HEVC.2160p.4K.HDR.10 E-AC3
+- 2026-07-08T17:58:42+0200 [info] real-debrid::rd_slots_reserve
+- 2026-07-08T17:58:42+0200 [info] real-debrid::rd_verify_queue_submit - Whistle.2025.2160p.AMZN.WEB-DL.DDP5.1.H.265-BYNDR[PianYuan]
+- 2026-07-08T17:58:42+0200 [info] real-debrid::rd_verify_add_start - Whistle.2025.2160p.AMZN.WEB-DL.DDP5.1.H.265-BYNDR[PianYuan]
+- 2026-07-08T17:58:42+0200 [info] real-debrid::rd_slots_reserve
+- 2026-07-08T17:58:42+0200 [info] real-debrid::rd_verify_queue_submit - Whistle 2025 WEB-DL 2160p SDR HEVC DDP 5.1 x265
+- 2026-07-08T17:58:42+0200 [info] real-debrid::rd_verify_add_start - Whistle 2025 WEB-DL 2160p SDR HEVC DDP 5.1 x265
+- 2026-07-08T17:58:42+0200 [info] real-debrid::rd_slots_reserve
+- 2026-07-08T17:58:42+0200 [info] real-debrid::rd_verify_queue_submit - KarupsHA.18.04.23.Jane.Wilde.Blowing.Coachs.Whistle.XXX.2160p.MP4-KTR[rarbg]
+- 2026-07-08T17:58:42+0200 [info] real-debrid::rd_verify_add_start - KarupsHA.18.04.23.Jane.Wilde.Blowing.Coachs.Whistle.XXX.2160p.MP4-KTR[rarbg]
+- 2026-07-08T17:58:42+0200 [info] real-debrid::rd_slots_reserve
+- 2026-07-08T17:58:42+0200 [info] real-debrid::rd_verify_queue_submit - Whistle (2025) [2160p] [4K] [WEB] [5.1] [YTS.BZ]
+- 2026-07-08T17:58:42+0200 [info] real-debrid::rd_verify_add_start - Whistle (2025) [2160p] [4K] [WEB] [5.1] [YTS.BZ]
+- 2026-07-08T17:58:42+0200 [info] real-debrid::rd_slots_reserve
+- 2026-07-08T17:58:42+0200 [info] real-debrid::rd_slots_reserve
+- 2026-07-08T17:58:44+0200 [info] real-debrid::rd_verify_added
+- 2026-07-08T17:58:44+0200 [debug] real-debrid::rd_verify_poll - 索命哨.Whistle.2025.UHD.Blu-ray.2160p.HDR10.HEVC.DTS-HD.MA.5.1-sh@CHDBits
+- 2026-07-08T17:58:44+0200 [debug] real-debrid::rd_waiting_files_selection - 索命哨.Whistle.2025.UHD.Blu-ray.2160p.HDR10.HEVC.DTS-HD.MA.5.1-sh@CHDBits
+- 2026-07-08T17:58:44+0200 [info] real-debrid::rd_select_files_decision - 索命哨.Whistle.2025.UHD.Blu-ray.2160p.HDR10.HEVC.DTS-HD.MA.5.1-sh@CHDBits
+- 2026-07-08T17:58:44+0200 [info] real-debrid::rd_verify_added
+- 2026-07-08T17:58:45+0200 [debug] real-debrid::rd_verify_poll - Whistle (2025) [2160p] [4K] [WEB] [5.1] [YTS.BZ]
+- 2026-07-08T17:58:45+0200 [debug] real-debrid::rd_waiting_files_selection - Whistle (2025) [2160p] [4K] [WEB] [5.1] [YTS.BZ]
+- 2026-07-08T17:58:45+0200 [info] real-debrid::rd_select_files_decision - Whistle (2025) [2160p] [4K] [WEB] [5.1] [YTS.BZ]
+- 2026-07-08T17:58:45+0200 [debug] real-debrid::rd_endpoint_pace_wait
+- 2026-07-08T17:58:45+0200 [info] real-debrid::rd_verify_select_files - 索命哨.Whistle.2025.UHD.Blu-ray.2160p.HDR10.HEVC.DTS-HD.MA.5.1-sh@CHDBits
+- 2026-07-08T17:58:45+0200 [debug] real-debrid::rd_verify_post_select_poll - 索命哨.Whistle.2025.UHD.Blu-ray.2160p.HDR10.HEVC.DTS-HD.MA.5.1-sh@CHDBits
+- 2026-07-08T17:58:45+0200 [info] real-debrid::rd_fast_discard - zero_progress_post_select
+- 2026-07-08T17:58:45+0200 [info] real-debrid::rd_fast_discard_reason - zero_progress_post_select
+- 2026-07-08T17:58:45+0200 [info] real-debrid::rd_fast_discard_delete - zero_progress_post_select
+- 2026-07-08T17:58:45+0200 [info] real-debrid::rd_zero_progress_fast_delete - 索命哨.Whistle.2025.UHD.Blu-ray.2160p.HDR10.HEVC.DTS-HD.MA.5.1-sh@CHDBits
+- 2026-07-08T17:58:45+0200 [info] real-debrid::rd_verify_select_files - Whistle (2025) [2160p] [4K] [WEB] [5.1] [YTS.BZ]
+- 2026-07-08T17:58:45+0200 [info] real-debrid::rd_delete_torrent
+- 2026-07-08T17:58:45+0200 [info] real-debrid::rd_slots_release
+- 2026-07-08T17:58:45+0200 [info] real-debrid::rd_verify_queue_done_item - 索命哨.Whistle.2025.UHD.Blu-ray.2160p.HDR10.HEVC.DTS-HD.MA.5.1-sh@CHDBits
+- 2026-07-08T17:58:46+0200 [info] real-debrid::rd_verify_added
+- 2026-07-08T17:58:46+0200 [debug] real-debrid::rd_verify_poll - 【高清影视之家发布 www.BBEGGE.com】索命哨[简繁英字幕].Whistle.2025.2160p.Bluray.REMUX.HDR10.HEVC.DTS-HDMA5.1-DreamHD
+- 2026-07-08T17:58:46+0200 [debug] real-debrid::rd_waiting_files_selection - 【高清影视之家发布 www.BBEGGE.com】索命哨[简繁英字幕].Whistle.2025.2160p.Bluray.REMUX.HDR10.HEVC.DTS-HDMA5.1-DreamHD
+- 2026-07-08T17:58:46+0200 [info] real-debrid::rd_select_files_decision - 【高清影视之家发布 www.BBEGGE.com】索命哨[简繁英字幕].Whistle.2025.2160p.Bluray.REMUX.HDR10.HEVC.DTS-HDMA5.1-DreamHD
+- 2026-07-08T17:58:46+0200 [debug] real-debrid::rd_verify_post_select_poll - Whistle (2025) [2160p] [4K] [WEB] [5.1] [YTS.BZ]
+- 2026-07-08T17:58:46+0200 [info] real-debrid::rd_verify_ok - Whistle (2025) [2160p] [4K] [WEB] [5.1] [YTS.BZ]
+- 2026-07-08T17:58:46+0200 [info] real-debrid::rd_verify_queue_done_item - Whistle (2025) [2160p] [4K] [WEB] [5.1] [YTS.BZ]
+- 2026-07-08T17:58:47+0200 [info] real-debrid::rd_verify_select_files - 【高清影视之家发布 www.BBEGGE.com】索命哨[简繁英字幕].Whistle.2025.2160p.Bluray.REMUX.HDR10.HEVC.DTS-HDMA5.1-DreamHD
+- 2026-07-08T17:58:47+0200 [debug] real-debrid::rd_verify_post_select_poll - 【高清影视之家发布 www.BBEGGE.com】索命哨[简繁英字幕].Whistle.2025.2160p.Bluray.REMUX.HDR10.HEVC.DTS-HDMA5.1-DreamHD
+- 2026-07-08T17:58:47+0200 [info] real-debrid::rd_fast_discard - zero_progress_post_select
+- 2026-07-08T17:58:47+0200 [info] real-debrid::rd_fast_discard_reason - zero_progress_post_select
+- 2026-07-08T17:58:47+0200 [info] real-debrid::rd_fast_discard_delete - zero_progress_post_select
+- 2026-07-08T17:58:47+0200 [info] real-debrid::rd_zero_progress_fast_delete - 【高清影视之家发布 www.BBEGGE.com】索命哨[简繁英字幕].Whistle.2025.2160p.Bluray.REMUX.HDR10.HEVC.DTS-HDMA5.1-DreamHD
+- 2026-07-08T17:58:47+0200 [debug] real-debrid::rd_endpoint_pace_wait
+- 2026-07-08T17:58:47+0200 [info] real-debrid::rd_verify_added
+- 2026-07-08T17:58:47+0200 [debug] real-debrid::rd_rate_wait
+- 2026-07-08T17:58:47+0200 [info] real-debrid::rd_delete_torrent
+- 2026-07-08T17:58:47+0200 [info] real-debrid::rd_slots_release
+- 2026-07-08T17:58:47+0200 [info] real-debrid::rd_verify_queue_done_item - 【高清影视之家发布 www.BBEGGE.com】索命哨[简繁英字幕].Whistle.2025.2160p.Bluray.REMUX.HDR10.HEVC.DTS-HDMA5.1-DreamHD
+- 2026-07-08T17:58:47+0200 [debug] real-debrid::rd_verify_poll - 【高清影视之家发布 www.BBEGGE.com】索命哨[简繁英字幕].Whistle.2025.Bluray.2160p.DTS-HDMA5.1.x265.10bit-DreamHD
+- 2026-07-08T17:58:47+0200 [debug] real-debrid::rd_waiting_files_selection - 【高清影视之家发布 www.BBEGGE.com】索命哨[简繁英字幕].Whistle.2025.Bluray.2160p.DTS-HDMA5.1.x265.10bit-DreamHD
+- 2026-07-08T17:58:47+0200 [info] real-debrid::rd_select_files_decision - 【高清影视之家发布 www.BBEGGE.com】索命哨[简繁英字幕].Whistle.2025.Bluray.2160p.DTS-HDMA5.1.x265.10bit-DreamHD
+- 2026-07-08T17:58:48+0200 [info] real-debrid::rd_verify_select_files - 【高清影视之家发布 www.BBEGGE.com】索命哨[简繁英字幕].Whistle.2025.Bluray.2160p.DTS-HDMA5.1.x265.10bit-DreamHD
+- 2026-07-08T17:58:49+0200 [debug] real-debrid::rd_verify_post_select_poll - 【高清影视之家发布 www.BBEGGE.com】索命哨[简繁英字幕].Whistle.2025.Bluray.2160p.DTS-HDMA5.1.x265.10bit-DreamHD
+- 2026-07-08T17:58:49+0200 [info] real-debrid::rd_verify_ok - 【高清影视之家发布 www.BBEGGE.com】索命哨[简繁英字幕].Whistle.2025.Bluray.2160p.DTS-HDMA5.1.x265.10bit-DreamHD
+- 2026-07-08T17:58:49+0200 [info] real-debrid::rd_verify_queue_done_item - 【高清影视之家发布 www.BBEGGE.com】索命哨[简繁英字幕].Whistle.2025.Bluray.2160p.DTS-HDMA5.1.x265.10bit-DreamHD
+- 2026-07-08T17:58:49+0200 [info] real-debrid::rd_verify_added
+- 2026-07-08T17:58:49+0200 [debug] real-debrid::rd_verify_poll - KarupsHA.18.04.23.Jane.Wilde.Blowing.Coachs.Whistle.XXX.2160p.MP4-KTR[rarbg]
+- 2026-07-08T17:58:49+0200 [debug] real-debrid::rd_waiting_files_selection - KarupsHA.18.04.23.Jane.Wilde.Blowing.Coachs.Whistle.XXX.2160p.MP4-KTR[rarbg]
+- 2026-07-08T17:58:49+0200 [info] real-debrid::rd_select_files_decision - KarupsHA.18.04.23.Jane.Wilde.Blowing.Coachs.Whistle.XXX.2160p.MP4-KTR[rarbg]
+- 2026-07-08T17:58:49+0200 [info] real-debrid::rd_verify_select_files - KarupsHA.18.04.23.Jane.Wilde.Blowing.Coachs.Whistle.XXX.2160p.MP4-KTR[rarbg]
+- 2026-07-08T17:58:50+0200 [debug] real-debrid::rd_verify_post_select_poll - KarupsHA.18.04.23.Jane.Wilde.Blowing.Coachs.Whistle.XXX.2160p.MP4-KTR[rarbg]
+- 2026-07-08T17:58:50+0200 [info] real-debrid::rd_fast_discard - zero_progress_post_select
+- 2026-07-08T17:58:50+0200 [info] real-debrid::rd_fast_discard_reason - zero_progress_post_select
+- 2026-07-08T17:58:50+0200 [info] real-debrid::rd_fast_discard_delete - zero_progress_post_select
+- 2026-07-08T17:58:50+0200 [info] real-debrid::rd_zero_progress_fast_delete - KarupsHA.18.04.23.Jane.Wilde.Blowing.Coachs.Whistle.XXX.2160p.MP4-KTR[rarbg]
+- 2026-07-08T17:58:50+0200 [info] real-debrid::rd_delete_torrent
+- 2026-07-08T17:58:50+0200 [info] real-debrid::rd_slots_release
+- 2026-07-08T17:58:50+0200 [info] real-debrid::rd_verify_queue_done_item - KarupsHA.18.04.23.Jane.Wilde.Blowing.Coachs.Whistle.XXX.2160p.MP4-KTR[rarbg]
+- 2026-07-08T17:58:50+0200 [info] real-debrid::rd_api_http_error - infringing_file
+- 2026-07-08T17:58:50+0200 [info] real-debrid::rd_call_terminal_error - infringing_file
+- 2026-07-08T17:58:50+0200 [info] real-debrid::rd_candidate_addmagnet_blocked - infringing_file
+- 2026-07-08T17:58:50+0200 [info] real-debrid::rd_verify_infringing - Whistle.2025.2160p.AMZN.WEB-DL.DDP5.1.H.265-BYNDR[PianYuan]
+- 2026-07-08T17:58:50+0200 [info] real-debrid::rd_verify_queue_done_item - Whistle.2025.2160p.AMZN.WEB-DL.DDP5.1.H.265-BYNDR[PianYuan]
+- 2026-07-08T17:58:52+0200 [info] real-debrid::rd_verify_added
+- 2026-07-08T17:58:52+0200 [debug] real-debrid::rd_verify_poll - Whistle.2025.UHD.WEB.DL.HEVC.2160p.4K.HDR.10 E-AC3
+- 2026-07-08T17:58:52+0200 [debug] real-debrid::rd_waiting_files_selection - Whistle.2025.UHD.WEB.DL.HEVC.2160p.4K.HDR.10 E-AC3
+- 2026-07-08T17:58:52+0200 [info] real-debrid::rd_select_files_decision - Whistle.2025.UHD.WEB.DL.HEVC.2160p.4K.HDR.10 E-AC3
+- 2026-07-08T17:58:52+0200 [info] real-debrid::rd_verify_select_files - Whistle.2025.UHD.WEB.DL.HEVC.2160p.4K.HDR.10 E-AC3
+- 2026-07-08T17:58:52+0200 [debug] real-debrid::rd_endpoint_pace_wait
+- 2026-07-08T17:58:53+0200 [debug] real-debrid::rd_verify_post_select_poll - Whistle.2025.UHD.WEB.DL.HEVC.2160p.4K.HDR.10 E-AC3
+- 2026-07-08T17:58:53+0200 [info] real-debrid::rd_verify_ok - Whistle.2025.UHD.WEB.DL.HEVC.2160p.4K.HDR.10 E-AC3
+- 2026-07-08T17:58:53+0200 [info] real-debrid::rd_verify_queue_done_item - Whistle.2025.UHD.WEB.DL.HEVC.2160p.4K.HDR.10 E-AC3
+- 2026-07-08T17:58:53+0200 [info] real-debrid::rd_api_http_error - infringing_file
+- 2026-07-08T17:58:53+0200 [info] real-debrid::rd_call_terminal_error - infringing_file
+- 2026-07-08T17:58:53+0200 [info] real-debrid::rd_candidate_addmagnet_blocked - infringing_file
+- 2026-07-08T17:58:53+0200 [info] real-debrid::rd_verify_infringing - [XTORRENTY.ORG] Whistle.2025.MULTi.2160p.UHD.AMZN.WEB-DL.SDR.H.265.DD5.1-RX
+- 2026-07-08T17:58:53+0200 [info] real-debrid::rd_verify_queue_done_item - [XTORRENTY.ORG] Whistle.2025.MULTi.2160p.UHD.AMZN.WEB-DL.SDR.H.265.DD5.1-RX
+- 2026-07-08T17:58:56+0200 [info] real-debrid::rd_verify_added
+- 2026-07-08T17:58:56+0200 [debug] real-debrid::rd_verify_poll - 【高清影视之家发布 www.BBEBBB.com】索命哨[简繁英字幕].Whistle.2025.2160p.UHD.BluRay.x265.10bit.HDR.DTS-HD.MA.5.1-QuickIO
+- 2026-07-08T17:58:56+0200 [info] real-debrid::rd_api_http_error - infringing_file
+- 2026-07-08T17:58:56+0200 [debug] real-debrid::rd_waiting_files_selection - 【高清影视之家发布 www.BBEBBB.com】索命哨[简繁英字幕].Whistle.2025.2160p.UHD.BluRay.x265.10bit.HDR.DTS-HD.MA.5.1-QuickIO
+- 2026-07-08T17:58:56+0200 [info] real-debrid::rd_call_terminal_error - infringing_file
+- 2026-07-08T17:58:56+0200 [info] real-debrid::rd_select_files_decision - 【高清影视之家发布 www.BBEBBB.com】索命哨[简繁英字幕].Whistle.2025.2160p.UHD.BluRay.x265.10bit.HDR.DTS-HD.MA.5.1-QuickIO
+- 2026-07-08T17:58:56+0200 [info] real-debrid::rd_candidate_addmagnet_blocked - infringing_file
+- 2026-07-08T17:58:56+0200 [info] real-debrid::rd_verify_infringing - Whistle 2025 WEB-DL 2160p SDR HEVC DDP 5.1 x265
+- 2026-07-08T17:58:56+0200 [info] real-debrid::rd_verify_queue_done_item - Whistle 2025 WEB-DL 2160p SDR HEVC DDP 5.1 x265
+- 2026-07-08T17:58:57+0200 [info] real-debrid::rd_verify_select_files - 【高清影视之家发布 www.BBEBBB.com】索命哨[简繁英字幕].Whistle.2025.2160p.UHD.BluRay.x265.10bit.HDR.DTS-HD.MA.5.1-QuickIO
+- 2026-07-08T17:58:57+0200 [debug] real-debrid::rd_verify_post_select_poll - 【高清影视之家发布 www.BBEBBB.com】索命哨[简繁英字幕].Whistle.2025.2160p.UHD.BluRay.x265.10bit.HDR.DTS-HD.MA.5.1-QuickIO
+- 2026-07-08T17:58:57+0200 [info] real-debrid::rd_fast_discard - zero_progress_post_select
+- 2026-07-08T17:58:57+0200 [info] real-debrid::rd_fast_discard_reason - zero_progress_post_select
+- 2026-07-08T17:58:57+0200 [info] real-debrid::rd_fast_discard_delete - zero_progress_post_select
+- 2026-07-08T17:58:57+0200 [info] real-debrid::rd_zero_progress_fast_delete - 【高清影视之家发布 www.BBEBBB.com】索命哨[简繁英字幕].Whistle.2025.2160p.UHD.BluRay.x265.10bit.HDR.DTS-HD.MA.5.1-QuickIO
+- 2026-07-08T17:58:57+0200 [info] real-debrid::rd_delete_torrent
+- 2026-07-08T17:58:57+0200 [info] real-debrid::rd_slots_release
+- 2026-07-08T17:58:57+0200 [info] real-debrid::rd_verify_queue_done_item - 【高清影视之家发布 www.BBEBBB.com】索命哨[简繁英字幕].Whistle.2025.2160p.UHD.BluRay.x265.10bit.HDR.DTS-HD.MA.5.1-QuickIO
+- 2026-07-08T17:58:57+0200 [info] real-debrid::rd_verify_queue_end
+- 2026-07-08T17:58:57+0200 [info] real-debrid::rd_rate_summary
+- 2026-07-08T17:58:57+0200 [info] real-debrid::rd_endpoint_pacer_summary
+- 2026-07-08T17:58:57+0200 [info] real-debrid::rd_cleanup_final_start
+- 2026-07-08T17:58:57+0200 [info] real-debrid::rd_slots_refresh
+- 2026-07-08T17:58:57+0200 [info] real-debrid::rd_active_count_after
+- 2026-07-08T17:58:57+0200 [info] real-debrid::rd_cleanup_final_end
+- 2026-07-08T17:58:57+0200 [info] real-debrid::rd_rate_summary
+- 2026-07-08T17:58:57+0200 [info] real-debrid::rd_endpoint_pacer_summary
+- 2026-07-08T17:58:58+0200 [info] real-debrid::rd_verify_batch_end
+- 2026-07-08T17:58:58+0200 [info] real-debrid::rd_check_summary
+- 2026-07-08T17:58:58+0200 [info] qbittorrent::qbt_probe_skipped - disabled
+- 2026-07-08T17:58:58+0200 [info] motor::prepare_qbit_extras
+- 2026-07-08T17:58:58+0200 [info] motor::prepare_rd_temp_errors
+- 2026-07-08T17:58:58+0200 [info] motor::prepare_after_working_filter
+- 2026-07-08T17:58:58+0200 [info] search::export_results
+- 2026-07-08T17:58:58+0200 [info] search::export_results
+- 2026-07-08T17:58:58+0200 [debug] real-debrid::rd_endpoint_pace_wait
+- 2026-07-08T17:58:58+0200 [info] real-debrid::rd_delete_torrent
+- 2026-07-08T17:58:59+0200 [info] real-debrid::rd_delete_torrent
+- 2026-07-08T17:58:59+0200 [info] real-debrid::rd_delete_torrent
+- 2026-07-08T17:58:59+0200 [info] search::editor_clean_search_rd_cleanup
+- 2026-07-08T17:58:59+0200 [info] search::editor_clean_search_end
+- 2026-07-08T17:59:00+02:00 [info] web::JOB_FINISHED_OK

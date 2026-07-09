@@ -1,0 +1,11 @@
+RD Turbo Pro - último TOP
+================================================================================
+[01] RD:RD_FAIL      SCORE:   0 SIZE:   1.4 GB HASH:d8cae6a286ed0d3d788b7ddcf17a79835e2b1ac4
+     Whistle El silbido del mal BDrip XviD Castellano
+     QBIT: QBT_VIVO | seeds=2 peers=0 | qBittorrent con seed conectado: seeds=2, peers=0, state=stalleddl
+     MOTIVO: Real-Debrid rechaza este torrent por infraccion o bloqueo legal
+
+[02] RD:RD_FAIL      SCORE:   0 SIZE:   2.5 GB HASH:d0168140ed5e16a523de4f8a44d85532f905dd64
+     Whistle El silbido del mal Ingles-Castellano Subt-Esp.Forz H264 E-AC3 5.1 BDrip hd 1080p
+     QBIT: QBT_VIVO | seeds=4 peers=12 | qBittorrent descargando: 0.71 MB/s, seeds=4, peers=12
+     MOTIVO: Real-Debrid rechaza este torrent por infraccion o bloqueo legal

@@ -1,6 +1,0 @@
-RD Turbo Pro - lista extra qBittorrent vivos
-================================================================================
-[Q01] QBT:QBT_VIVO   SIZE:4099.2 GB HASH:2e51e0cf62c3febd44e8405fee6260d1da12663a
-      TORRENT: Blacked-Entire-Site-2024-[titflix.ca]
-      MOTIVO: qBittorrent ya tiene progreso real: progress=0.000, availability=0.00, state=stalleddl
-      MAGNET: magnet:?xt=urn:btih:2e51e0cf62c3febd44e8405fee6260d1da12663a&dn=Blacked-Entire-Site-2024-%5Btitflix.ca%5D&tr=udp://tracker.openbittorrent.com:80&tr=udp://tracker.opentrackr.org:1337/announce

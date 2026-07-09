@@ -1,0 +1,25 @@
+- 2026-07-09T00:42:21+02:00 [info] web::JOB_STARTED
+- 2026-07-09T00:42:21+02:00 [info] general::CONFIG_SNAPSHOT
+- 2026-07-09T00:42:21+02:00 [info] web::COMMAND_PREPARED
+- 2026-07-09T00:42:21+02:00 [info] web::PROCESS_STARTED
+- 2026-07-09T00:42:21+0200 [info] search::editor_clean_search_start
+- 2026-07-09T00:42:21+0200 [info] btdigg::browser_auto_search_start_dom
+- 2026-07-09T00:42:23+0200 [info] btdigg::extract_magnets
+- 2026-07-09T00:42:23+0200 [info] btdigg::btdigg_curl_cffi_fetch
+- 2026-07-09T00:42:26+0200 [info] btdigg::extract_magnets
+- 2026-07-09T00:42:26+0200 [info] btdigg::btdigg_curl_cffi_fetch
+- 2026-07-09T00:42:28+0200 [info] btdigg::browser_auto_search_end_dom
+- 2026-07-09T00:42:28+0200 [info] motor::prepare_results_start
+- 2026-07-09T00:42:28+0200 [info] motor::prepare_after_scoring
+- 2026-07-09T00:42:28+0200 [info] motor::prepare_after_filter
+- 2026-07-09T00:42:28+0200 [info] motor::prepare_after_query_prefilter
+- 2026-07-09T00:42:28+0200 [info] real-debrid::rd_check_skipped - solo_enlaces_directos
+- 2026-07-09T00:42:28+0200 [info] qbittorrent::qbt_probe_skipped - disabled
+- 2026-07-09T00:42:28+0200 [info] motor::prepare_qbit_extras
+- 2026-07-09T00:42:28+0200 [info] motor::prepare_rd_temp_errors
+- 2026-07-09T00:42:28+0200 [info] motor::prepare_after_working_filter
+- 2026-07-09T00:42:28+0200 [info] search::export_results
+- 2026-07-09T00:42:28+0200 [info] search::export_results
+- 2026-07-09T00:42:28+0200 [info] search::editor_clean_search_rd_cleanup
+- 2026-07-09T00:42:28+0200 [info] search::editor_clean_search_end
+- 2026-07-09T00:42:28+02:00 [info] web::JOB_FINISHED_OK

@@ -1,0 +1,124 @@
+- 2026-07-09T00:40:07+02:00 [info] web::JOB_STARTED
+- 2026-07-09T00:40:07+02:00 [info] general::CONFIG_SNAPSHOT
+- 2026-07-09T00:40:07+02:00 [info] web::COMMAND_PREPARED
+- 2026-07-09T00:40:07+02:00 [info] web::PROCESS_STARTED
+- 2026-07-09T00:40:07+0200 [info] search::editor_clean_search_start
+- 2026-07-09T00:40:07+0200 [info] btdigg::browser_auto_search_start_dom
+- 2026-07-09T00:40:09+0200 [info] btdigg::extract_magnets
+- 2026-07-09T00:40:09+0200 [info] btdigg::btdigg_curl_cffi_fetch
+- 2026-07-09T00:40:12+0200 [info] btdigg::extract_magnets
+- 2026-07-09T00:40:12+0200 [info] btdigg::btdigg_curl_cffi_fetch
+- 2026-07-09T00:40:15+0200 [info] btdigg::extract_magnets
+- 2026-07-09T00:40:15+0200 [info] btdigg::btdigg_curl_cffi_fetch
+- 2026-07-09T00:40:18+0200 [info] btdigg::extract_magnets
+- 2026-07-09T00:40:18+0200 [info] btdigg::btdigg_curl_cffi_fetch
+- 2026-07-09T00:40:21+0200 [info] btdigg::extract_magnets
+- 2026-07-09T00:40:21+0200 [info] btdigg::btdigg_curl_cffi_fetch
+- 2026-07-09T00:40:24+0200 [info] btdigg::extract_magnets
+- 2026-07-09T00:40:24+0200 [info] btdigg::btdigg_curl_cffi_fetch
+- 2026-07-09T00:40:27+0200 [info] btdigg::extract_magnets
+- 2026-07-09T00:40:27+0200 [info] btdigg::btdigg_curl_cffi_fetch
+- 2026-07-09T00:40:35+0200 [info] btdigg::extract_magnets
+- 2026-07-09T00:40:35+0200 [info] btdigg::btdigg_curl_cffi_fetch
+- 2026-07-09T00:40:38+0200 [info] btdigg::extract_magnets
+- 2026-07-09T00:40:38+0200 [info] btdigg::btdigg_curl_cffi_fetch
+- 2026-07-09T00:40:41+0200 [info] btdigg::extract_magnets
+- 2026-07-09T00:40:41+0200 [info] btdigg::btdigg_curl_cffi_fetch
+- 2026-07-09T00:40:45+0200 [info] btdigg::extract_magnets
+- 2026-07-09T00:40:45+0200 [info] btdigg::btdigg_curl_cffi_fetch
+- 2026-07-09T00:40:48+0200 [info] btdigg::extract_magnets
+- 2026-07-09T00:40:48+0200 [info] btdigg::btdigg_curl_cffi_fetch
+- 2026-07-09T00:40:51+0200 [info] btdigg::extract_magnets
+- 2026-07-09T00:40:51+0200 [info] btdigg::btdigg_curl_cffi_fetch
+- 2026-07-09T00:40:54+0200 [info] btdigg::extract_magnets
+- 2026-07-09T00:40:54+0200 [info] btdigg::btdigg_curl_cffi_fetch
+- 2026-07-09T00:40:57+0200 [info] btdigg::extract_magnets
+- 2026-07-09T00:40:57+0200 [info] btdigg::btdigg_curl_cffi_fetch
+- 2026-07-09T00:41:00+0200 [info] btdigg::extract_magnets
+- 2026-07-09T00:41:00+0200 [info] btdigg::btdigg_curl_cffi_fetch
+- 2026-07-09T00:41:03+0200 [info] btdigg::extract_magnets
+- 2026-07-09T00:41:03+0200 [info] btdigg::btdigg_curl_cffi_fetch
+- 2026-07-09T00:41:06+0200 [info] btdigg::extract_magnets
+- 2026-07-09T00:41:06+0200 [info] btdigg::btdigg_curl_cffi_fetch
+- 2026-07-09T00:41:10+0200 [info] btdigg::extract_magnets
+- 2026-07-09T00:41:10+0200 [info] btdigg::btdigg_curl_cffi_fetch
+- 2026-07-09T00:41:13+0200 [info] btdigg::extract_magnets
+- 2026-07-09T00:41:13+0200 [info] btdigg::btdigg_curl_cffi_fetch
+- 2026-07-09T00:41:15+0200 [info] btdigg::browser_auto_search_end_dom
+- 2026-07-09T00:41:15+0200 [info] motor::prepare_results_start
+- 2026-07-09T00:41:15+0200 [info] motor::prepare_after_scoring
+- 2026-07-09T00:41:15+0200 [info] motor::prepare_after_filter
+- 2026-07-09T00:41:15+0200 [info] motor::prepare_after_query_prefilter
+- 2026-07-09T00:41:16+0200 [info] real-debrid::rd_account_check_ok
+- 2026-07-09T00:41:16+0200 [info] real-debrid::rd_check_start
+- 2026-07-09T00:41:16+0200 [info] real-debrid::rd_api_http_error - disabled_endpoint
+- 2026-07-09T00:41:16+0200 [info] real-debrid::rd_cache_api_disabled_cached_set - Real-Debrid HTTP 403: [37 disabled_endpoint] {
+	"error": "disabled_endpoint",
+	"error_code": 37
+}
+- 2026-07-09T00:41:16+0200 [info] real-debrid::rd_cache_api_disabled - Real-Debrid HTTP 403: [37 disabled_endpoint] {
+	"error": "disabled_endpoint",
+	"error_code": 37
+}
+- 2026-07-09T00:41:16+0200 [info] real-debrid::rd_verify_batch_start
+- 2026-07-09T00:41:16+0200 [info] real-debrid::rd_slots_refresh
+- 2026-07-09T00:41:16+0200 [info] real-debrid::rd_active_count_before
+- 2026-07-09T00:41:16+0200 [info] real-debrid::rd_existing_preload_done
+- 2026-07-09T00:41:16+0200 [info] real-debrid::rd_verify_queue_start
+- 2026-07-09T00:41:16+0200 [info] real-debrid::rd_verify_add_start - [Anime-Keep]_Whistle_-_01-20
+- 2026-07-09T00:41:16+0200 [info] real-debrid::rd_verify_queue_submit - [Anime-Keep]_Whistle_-_01-20
+- 2026-07-09T00:41:16+0200 [info] real-debrid::rd_slots_reserve
+- 2026-07-09T00:41:16+0200 [info] real-debrid::rd_verify_add_start - Whistle! (Digital) (XRA-Empire)
+- 2026-07-09T00:41:16+0200 [info] real-debrid::rd_verify_queue_submit - Whistle! (Digital) (XRA-Empire)
+- 2026-07-09T00:41:16+0200 [info] real-debrid::rd_slots_reserve
+- 2026-07-09T00:41:16+0200 [info] real-debrid::rd_verify_queue_submit - Michael Nesmith Presents The Wichita Train Whistle Sings - 1968 LP Monkees
+- 2026-07-09T00:41:16+0200 [info] real-debrid::rd_verify_add_start - Michael Nesmith Presents The Wichita Train Whistle Sings - 1968 LP Monkees
+- 2026-07-09T00:41:16+0200 [info] real-debrid::rd_slots_reserve
+- 2026-07-09T00:41:16+0200 [debug] real-debrid::rd_endpoint_pace_wait
+- 2026-07-09T00:41:17+0200 [info] real-debrid::rd_verify_added
+- 2026-07-09T00:41:18+0200 [debug] real-debrid::rd_verify_poll - [Anime-Keep]_Whistle_-_01-20
+- 2026-07-09T00:41:18+0200 [info] real-debrid::rd_delete_torrent
+- 2026-07-09T00:41:18+0200 [info] real-debrid::rd_slots_release
+- 2026-07-09T00:41:18+0200 [info] real-debrid::rd_verify_not_instant - [Anime-Keep]_Whistle_-_01-20
+- 2026-07-09T00:41:18+0200 [info] real-debrid::rd_verify_queue_done_item - [Anime-Keep]_Whistle_-_01-20
+- 2026-07-09T00:41:20+0200 [info] real-debrid::rd_verify_added
+- 2026-07-09T00:41:20+0200 [debug] real-debrid::rd_verify_poll - Whistle! (Digital) (XRA-Empire)
+- 2026-07-09T00:41:20+0200 [debug] real-debrid::rd_waiting_files_selection - Whistle! (Digital) (XRA-Empire)
+- 2026-07-09T00:41:20+0200 [info] real-debrid::rd_select_files_decision - Whistle! (Digital) (XRA-Empire)
+- 2026-07-09T00:41:20+0200 [info] real-debrid::rd_verify_added
+- 2026-07-09T00:41:20+0200 [info] real-debrid::rd_verify_select_files - Whistle! (Digital) (XRA-Empire)
+- 2026-07-09T00:41:20+0200 [debug] real-debrid::rd_verify_poll - Michael Nesmith Presents The Wichita Train Whistle Sings - 1968 LP Monkees
+- 2026-07-09T00:41:20+0200 [debug] real-debrid::rd_rate_wait
+- 2026-07-09T00:41:21+0200 [debug] real-debrid::rd_verify_post_select_poll - Whistle! (Digital) (XRA-Empire)
+- 2026-07-09T00:41:21+0200 [info] real-debrid::rd_fast_discard - zero_progress_post_select
+- 2026-07-09T00:41:21+0200 [info] real-debrid::rd_fast_discard_reason - zero_progress_post_select
+- 2026-07-09T00:41:21+0200 [info] real-debrid::rd_fast_discard_delete - zero_progress_post_select
+- 2026-07-09T00:41:21+0200 [info] real-debrid::rd_zero_progress_fast_delete - Whistle! (Digital) (XRA-Empire)
+- 2026-07-09T00:41:21+0200 [info] real-debrid::rd_delete_torrent
+- 2026-07-09T00:41:21+0200 [debug] real-debrid::rd_endpoint_pace_wait
+- 2026-07-09T00:41:21+0200 [info] real-debrid::rd_slots_release
+- 2026-07-09T00:41:21+0200 [info] real-debrid::rd_verify_not_instant - Michael Nesmith Presents The Wichita Train Whistle Sings - 1968 LP Monkees
+- 2026-07-09T00:41:21+0200 [info] real-debrid::rd_verify_queue_done_item - Michael Nesmith Presents The Wichita Train Whistle Sings - 1968 LP Monkees
+- 2026-07-09T00:41:21+0200 [info] real-debrid::rd_delete_torrent
+- 2026-07-09T00:41:21+0200 [info] real-debrid::rd_slots_release
+- 2026-07-09T00:41:21+0200 [info] real-debrid::rd_verify_queue_done_item - Whistle! (Digital) (XRA-Empire)
+- 2026-07-09T00:41:21+0200 [info] real-debrid::rd_verify_queue_end
+- 2026-07-09T00:41:22+0200 [info] real-debrid::rd_rate_summary
+- 2026-07-09T00:41:22+0200 [info] real-debrid::rd_endpoint_pacer_summary
+- 2026-07-09T00:41:22+0200 [info] real-debrid::rd_cleanup_final_start
+- 2026-07-09T00:41:22+0200 [info] real-debrid::rd_slots_refresh
+- 2026-07-09T00:41:22+0200 [info] real-debrid::rd_active_count_after
+- 2026-07-09T00:41:22+0200 [info] real-debrid::rd_cleanup_final_end
+- 2026-07-09T00:41:22+0200 [info] real-debrid::rd_rate_summary
+- 2026-07-09T00:41:22+0200 [info] real-debrid::rd_endpoint_pacer_summary
+- 2026-07-09T00:41:22+0200 [info] real-debrid::rd_verify_batch_end
+- 2026-07-09T00:41:22+0200 [info] real-debrid::rd_check_summary
+- 2026-07-09T00:41:22+0200 [info] qbittorrent::qbt_probe_skipped - disabled
+- 2026-07-09T00:41:22+0200 [info] motor::prepare_qbit_extras
+- 2026-07-09T00:41:22+0200 [info] motor::prepare_rd_temp_errors
+- 2026-07-09T00:41:22+0200 [info] motor::prepare_after_working_filter
+- 2026-07-09T00:41:22+0200 [info] search::export_results
+- 2026-07-09T00:41:22+0200 [info] search::export_results
+- 2026-07-09T00:41:22+0200 [info] search::editor_clean_search_rd_cleanup
+- 2026-07-09T00:41:22+0200 [info] search::editor_clean_search_end
+- 2026-07-09T00:41:22+02:00 [info] web::JOB_FINISHED_OK

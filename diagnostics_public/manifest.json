@@ -1,35 +1,35 @@
 {
   "summary": {
-    "generated_at": "2026-07-08T03:25:09.573937+00:00",
-    "trigger": "web-push",
+    "generated_at": "2026-07-09T00:07:46.354902+00:00",
+    "trigger": "manual-script",
     "current_run_id": "",
-    "exported_files": 2925,
+    "exported_files": 3114,
     "skipped_files": 2,
-    "redactions": 95,
-    "sqlite_rows": 87,
+    "redactions": 62,
+    "sqlite_rows": 61,
     "sources": [
       {
         "label": "btdigg",
-        "path": "/app/data"
+        "path": "Z:\\buscador-rd\\config\\btdigg-rd\\data"
       },
       {
         "label": "cloudflared_data",
-        "path": "/app/public_sources/cloudflared_data"
+        "path": "Z:\\buscador-rd\\config\\cloudflared\\data"
       },
       {
         "label": "cloudflared_logs",
-        "path": "/app/public_sources/cloudflared_logs"
+        "path": "Z:\\buscador-rd\\config\\cloudflared\\logs"
       },
       {
         "label": "whisper_logs",
-        "path": "/app/public_sources/whisper_logs"
+        "path": "Z:\\buscador-rd\\config\\whisper\\logs"
       }
     ],
     "repo": {
-      "root": "/app/project",
-      "head": "da89f81acaa16a4c15e23e0bab75645af6800b0b",
-      "tracked_files_count": 3062,
-      "public_dir": "/app/diagnostics_public"
+      "root": "\\\\192.168.1.159\\docker\\buscador-rd",
+      "head": "e554cee6862541f15588ee41f5333a1bb907954c",
+      "tracked_files_count": 3063,
+      "public_dir": "\\\\192.168.1.159\\docker\\buscador-rd\\diagnostics_public"
     }
   },
   "files": [
@@ -1117,6 +1117,166 @@
       "source": "btdigg",
       "path": "diagnostics/btdigg/downloads/2026-07-03/c1b44d16c2/timeline.md",
       "bytes": 3123,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
+      "path": "diagnostics/btdigg/downloads/2026-07-08/a1704f3530/events.jsonl",
+      "bytes": 7717,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
+      "path": "diagnostics/btdigg/downloads/2026-07-08/a1704f3530/events.seq",
+      "bytes": 3,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
+      "path": "diagnostics/btdigg/downloads/2026-07-08/a1704f3530/summary.json",
+      "bytes": 1740,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
+      "path": "diagnostics/btdigg/downloads/2026-07-08/a1704f3530/timeline.md",
+      "bytes": 1578,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
+      "path": "diagnostics/btdigg/downloads/2026-07-08/a47a0465fd/events.jsonl",
+      "bytes": 14659,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
+      "path": "diagnostics/btdigg/downloads/2026-07-08/a47a0465fd/events.seq",
+      "bytes": 3,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
+      "path": "diagnostics/btdigg/downloads/2026-07-08/a47a0465fd/summary.json",
+      "bytes": 1567,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
+      "path": "diagnostics/btdigg/downloads/2026-07-08/a47a0465fd/timeline.md",
+      "bytes": 3093,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
+      "path": "diagnostics/btdigg/downloads/2026-07-08/e0aaa08a40/events.jsonl",
+      "bytes": 15070,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
+      "path": "diagnostics/btdigg/downloads/2026-07-08/e0aaa08a40/events.seq",
+      "bytes": 3,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
+      "path": "diagnostics/btdigg/downloads/2026-07-08/e0aaa08a40/summary.json",
+      "bytes": 1723,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
+      "path": "diagnostics/btdigg/downloads/2026-07-08/e0aaa08a40/timeline.md",
+      "bytes": 3559,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
+      "path": "diagnostics/btdigg/downloads/2026-07-09/5478ec9ed2/events.jsonl",
+      "bytes": 7762,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
+      "path": "diagnostics/btdigg/downloads/2026-07-09/5478ec9ed2/events.seq",
+      "bytes": 3,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
+      "path": "diagnostics/btdigg/downloads/2026-07-09/5478ec9ed2/summary.json",
+      "bytes": 1743,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
+      "path": "diagnostics/btdigg/downloads/2026-07-09/5478ec9ed2/timeline.md",
+      "bytes": 1580,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
+      "path": "diagnostics/btdigg/downloads/2026-07-09/7f5c1d1451/events.jsonl",
+      "bytes": 7642,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
+      "path": "diagnostics/btdigg/downloads/2026-07-09/7f5c1d1451/events.seq",
+      "bytes": 3,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
+      "path": "diagnostics/btdigg/downloads/2026-07-09/7f5c1d1451/summary.json",
+      "bytes": 1663,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
+      "path": "diagnostics/btdigg/downloads/2026-07-09/7f5c1d1451/timeline.md",
+      "bytes": 1460,
       "exported": true,
       "redacted": false,
       "note": ""
@@ -11531,6 +11691,318 @@
     },
     {
       "source": "btdigg",
+      "path": "diagnostics/btdigg/jobs/2026-07-08/0b4e16d450c6/errors.jsonl",
+      "bytes": 0,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
+      "path": "diagnostics/btdigg/jobs/2026-07-08/0b4e16d450c6/events.jsonl",
+      "bytes": 21387,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
+      "path": "diagnostics/btdigg/jobs/2026-07-08/0b4e16d450c6/events.seq",
+      "bytes": 3,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
+      "path": "diagnostics/btdigg/jobs/2026-07-08/0b4e16d450c6/meta.json",
+      "bytes": 2097,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
+      "path": "diagnostics/btdigg/jobs/2026-07-08/0b4e16d450c6/summary.json",
+      "bytes": 3366,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
+      "path": "diagnostics/btdigg/jobs/2026-07-08/0b4e16d450c6/timeline.md",
+      "bytes": 3159,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
+      "path": "diagnostics/btdigg/jobs/2026-07-08/0b4e16d450c6/warnings.jsonl",
+      "bytes": 0,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
+      "path": "diagnostics/btdigg/jobs/2026-07-08/1414a1008263/errors.jsonl",
+      "bytes": 0,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
+      "path": "diagnostics/btdigg/jobs/2026-07-08/1414a1008263/events.jsonl",
+      "bytes": 169070,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
+      "path": "diagnostics/btdigg/jobs/2026-07-08/1414a1008263/events.seq",
+      "bytes": 4,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
+      "path": "diagnostics/btdigg/jobs/2026-07-08/1414a1008263/meta.json",
+      "bytes": 2077,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
+      "path": "diagnostics/btdigg/jobs/2026-07-08/1414a1008263/rd_magnets_live.jsonl",
+      "bytes": 11510,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
+      "path": "diagnostics/btdigg/jobs/2026-07-08/1414a1008263/summary.json",
+      "bytes": 3600,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
+      "path": "diagnostics/btdigg/jobs/2026-07-08/1414a1008263/timeline.md",
+      "bytes": 29585,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
+      "path": "diagnostics/btdigg/jobs/2026-07-08/1414a1008263/warnings.jsonl",
+      "bytes": 0,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
+      "path": "diagnostics/btdigg/jobs/2026-07-08/3eb8e6bdbfd0/errors.jsonl",
+      "bytes": 0,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
+      "path": "diagnostics/btdigg/jobs/2026-07-08/3eb8e6bdbfd0/events.jsonl",
+      "bytes": 237615,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
+      "path": "diagnostics/btdigg/jobs/2026-07-08/3eb8e6bdbfd0/events.seq",
+      "bytes": 4,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
+      "path": "diagnostics/btdigg/jobs/2026-07-08/3eb8e6bdbfd0/meta.json",
+      "bytes": 2079,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
+      "path": "diagnostics/btdigg/jobs/2026-07-08/3eb8e6bdbfd0/rd_magnets_live.jsonl",
+      "bytes": 3883,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
+      "path": "diagnostics/btdigg/jobs/2026-07-08/3eb8e6bdbfd0/summary.json",
+      "bytes": 3732,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
+      "path": "diagnostics/btdigg/jobs/2026-07-08/3eb8e6bdbfd0/timeline.md",
+      "bytes": 29218,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
+      "path": "diagnostics/btdigg/jobs/2026-07-08/3eb8e6bdbfd0/warnings.jsonl",
+      "bytes": 0,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
+      "path": "diagnostics/btdigg/jobs/2026-07-08/4f91f376f1a8/errors.jsonl",
+      "bytes": 0,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
+      "path": "diagnostics/btdigg/jobs/2026-07-08/4f91f376f1a8/events.jsonl",
+      "bytes": 113771,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
+      "path": "diagnostics/btdigg/jobs/2026-07-08/4f91f376f1a8/events.seq",
+      "bytes": 4,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
+      "path": "diagnostics/btdigg/jobs/2026-07-08/4f91f376f1a8/meta.json",
+      "bytes": 2085,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
+      "path": "diagnostics/btdigg/jobs/2026-07-08/4f91f376f1a8/rd_magnets_live.jsonl",
+      "bytes": 4781,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
+      "path": "diagnostics/btdigg/jobs/2026-07-08/4f91f376f1a8/summary.json",
+      "bytes": 3733,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
+      "path": "diagnostics/btdigg/jobs/2026-07-08/4f91f376f1a8/timeline.md",
+      "bytes": 19627,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
+      "path": "diagnostics/btdigg/jobs/2026-07-08/4f91f376f1a8/warnings.jsonl",
+      "bytes": 0,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
+      "path": "diagnostics/btdigg/jobs/2026-07-08/51c0abf2afa2/errors.jsonl",
+      "bytes": 0,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
+      "path": "diagnostics/btdigg/jobs/2026-07-08/51c0abf2afa2/events.jsonl",
+      "bytes": 721665,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
+      "path": "diagnostics/btdigg/jobs/2026-07-08/51c0abf2afa2/events.seq",
+      "bytes": 5,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
+      "path": "diagnostics/btdigg/jobs/2026-07-08/51c0abf2afa2/meta.json",
+      "bytes": 2092,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
+      "path": "diagnostics/btdigg/jobs/2026-07-08/51c0abf2afa2/rd_magnets_live.jsonl",
+      "bytes": 17560,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
+      "path": "diagnostics/btdigg/jobs/2026-07-08/51c0abf2afa2/summary.json",
+      "bytes": 3779,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
+      "path": "diagnostics/btdigg/jobs/2026-07-08/51c0abf2afa2/timeline.md",
+      "bytes": 109802,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
+      "path": "diagnostics/btdigg/jobs/2026-07-08/51c0abf2afa2/warnings.jsonl",
+      "bytes": 0,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
       "path": "diagnostics/btdigg/jobs/2026-07-08/55e5b22153cd/errors.jsonl",
       "bytes": 0,
       "exported": true,
@@ -11595,6 +12067,262 @@
     },
     {
       "source": "btdigg",
+      "path": "diagnostics/btdigg/jobs/2026-07-08/606d63a8036c/errors.jsonl",
+      "bytes": 0,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
+      "path": "diagnostics/btdigg/jobs/2026-07-08/606d63a8036c/events.jsonl",
+      "bytes": 399448,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
+      "path": "diagnostics/btdigg/jobs/2026-07-08/606d63a8036c/events.seq",
+      "bytes": 4,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
+      "path": "diagnostics/btdigg/jobs/2026-07-08/606d63a8036c/meta.json",
+      "bytes": 2080,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
+      "path": "diagnostics/btdigg/jobs/2026-07-08/606d63a8036c/rd_magnets_live.jsonl",
+      "bytes": 9269,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
+      "path": "diagnostics/btdigg/jobs/2026-07-08/606d63a8036c/summary.json",
+      "bytes": 3715,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
+      "path": "diagnostics/btdigg/jobs/2026-07-08/606d63a8036c/timeline.md",
+      "bytes": 57383,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
+      "path": "diagnostics/btdigg/jobs/2026-07-08/606d63a8036c/warnings.jsonl",
+      "bytes": 0,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
+      "path": "diagnostics/btdigg/jobs/2026-07-08/6446d7308338/errors.jsonl",
+      "bytes": 0,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
+      "path": "diagnostics/btdigg/jobs/2026-07-08/6446d7308338/events.jsonl",
+      "bytes": 115484,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
+      "path": "diagnostics/btdigg/jobs/2026-07-08/6446d7308338/events.seq",
+      "bytes": 4,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
+      "path": "diagnostics/btdigg/jobs/2026-07-08/6446d7308338/meta.json",
+      "bytes": 2078,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
+      "path": "diagnostics/btdigg/jobs/2026-07-08/6446d7308338/rd_magnets_live.jsonl",
+      "bytes": 5439,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
+      "path": "diagnostics/btdigg/jobs/2026-07-08/6446d7308338/summary.json",
+      "bytes": 3601,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
+      "path": "diagnostics/btdigg/jobs/2026-07-08/6446d7308338/timeline.md",
+      "bytes": 20300,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
+      "path": "diagnostics/btdigg/jobs/2026-07-08/6446d7308338/warnings.jsonl",
+      "bytes": 0,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
+      "path": "diagnostics/btdigg/jobs/2026-07-08/779ec70f5a1f/errors.jsonl",
+      "bytes": 0,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
+      "path": "diagnostics/btdigg/jobs/2026-07-08/779ec70f5a1f/events.jsonl",
+      "bytes": 71137,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
+      "path": "diagnostics/btdigg/jobs/2026-07-08/779ec70f5a1f/events.seq",
+      "bytes": 4,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
+      "path": "diagnostics/btdigg/jobs/2026-07-08/779ec70f5a1f/meta.json",
+      "bytes": 2074,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
+      "path": "diagnostics/btdigg/jobs/2026-07-08/779ec70f5a1f/rd_magnets_live.jsonl",
+      "bytes": 3932,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
+      "path": "diagnostics/btdigg/jobs/2026-07-08/779ec70f5a1f/summary.json",
+      "bytes": 3573,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
+      "path": "diagnostics/btdigg/jobs/2026-07-08/779ec70f5a1f/timeline.md",
+      "bytes": 12036,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
+      "path": "diagnostics/btdigg/jobs/2026-07-08/779ec70f5a1f/warnings.jsonl",
+      "bytes": 0,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
+      "path": "diagnostics/btdigg/jobs/2026-07-08/7ab846511a6e/errors.jsonl",
+      "bytes": 0,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
+      "path": "diagnostics/btdigg/jobs/2026-07-08/7ab846511a6e/events.jsonl",
+      "bytes": 71153,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
+      "path": "diagnostics/btdigg/jobs/2026-07-08/7ab846511a6e/events.seq",
+      "bytes": 4,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
+      "path": "diagnostics/btdigg/jobs/2026-07-08/7ab846511a6e/meta.json",
+      "bytes": 2075,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
+      "path": "diagnostics/btdigg/jobs/2026-07-08/7ab846511a6e/rd_magnets_live.jsonl",
+      "bytes": 3932,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
+      "path": "diagnostics/btdigg/jobs/2026-07-08/7ab846511a6e/summary.json",
+      "bytes": 3589,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
+      "path": "diagnostics/btdigg/jobs/2026-07-08/7ab846511a6e/timeline.md",
+      "bytes": 12036,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
+      "path": "diagnostics/btdigg/jobs/2026-07-08/7ab846511a6e/warnings.jsonl",
+      "bytes": 0,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
       "path": "diagnostics/btdigg/jobs/2026-07-08/7affa86828eb/errors.jsonl",
       "bytes": 0,
       "exported": true,
@@ -11652,6 +12380,134 @@
     {
       "source": "btdigg",
       "path": "diagnostics/btdigg/jobs/2026-07-08/7affa86828eb/warnings.jsonl",
+      "bytes": 0,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
+      "path": "diagnostics/btdigg/jobs/2026-07-08/7bfcbe9efe75/errors.jsonl",
+      "bytes": 0,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
+      "path": "diagnostics/btdigg/jobs/2026-07-08/7bfcbe9efe75/events.jsonl",
+      "bytes": 45622,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
+      "path": "diagnostics/btdigg/jobs/2026-07-08/7bfcbe9efe75/events.seq",
+      "bytes": 3,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
+      "path": "diagnostics/btdigg/jobs/2026-07-08/7bfcbe9efe75/meta.json",
+      "bytes": 2096,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
+      "path": "diagnostics/btdigg/jobs/2026-07-08/7bfcbe9efe75/rd_magnets_live.jsonl",
+      "bytes": 945,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
+      "path": "diagnostics/btdigg/jobs/2026-07-08/7bfcbe9efe75/summary.json",
+      "bytes": 3748,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
+      "path": "diagnostics/btdigg/jobs/2026-07-08/7bfcbe9efe75/timeline.md",
+      "bytes": 7333,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
+      "path": "diagnostics/btdigg/jobs/2026-07-08/7bfcbe9efe75/warnings.jsonl",
+      "bytes": 0,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
+      "path": "diagnostics/btdigg/jobs/2026-07-08/8506ac0fcc5b/errors.jsonl",
+      "bytes": 0,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
+      "path": "diagnostics/btdigg/jobs/2026-07-08/8506ac0fcc5b/events.jsonl",
+      "bytes": 38164,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
+      "path": "diagnostics/btdigg/jobs/2026-07-08/8506ac0fcc5b/events.seq",
+      "bytes": 3,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
+      "path": "diagnostics/btdigg/jobs/2026-07-08/8506ac0fcc5b/meta.json",
+      "bytes": 2097,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
+      "path": "diagnostics/btdigg/jobs/2026-07-08/8506ac0fcc5b/rd_magnets_live.jsonl",
+      "bytes": 945,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
+      "path": "diagnostics/btdigg/jobs/2026-07-08/8506ac0fcc5b/summary.json",
+      "bytes": 3669,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
+      "path": "diagnostics/btdigg/jobs/2026-07-08/8506ac0fcc5b/timeline.md",
+      "bytes": 6069,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
+      "path": "diagnostics/btdigg/jobs/2026-07-08/8506ac0fcc5b/warnings.jsonl",
       "bytes": 0,
       "exported": true,
       "redacted": false,
@@ -11851,6 +12707,134 @@
     },
     {
       "source": "btdigg",
+      "path": "diagnostics/btdigg/jobs/2026-07-08/c0420e1d4d5f/errors.jsonl",
+      "bytes": 0,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
+      "path": "diagnostics/btdigg/jobs/2026-07-08/c0420e1d4d5f/events.jsonl",
+      "bytes": 71155,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
+      "path": "diagnostics/btdigg/jobs/2026-07-08/c0420e1d4d5f/events.seq",
+      "bytes": 4,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
+      "path": "diagnostics/btdigg/jobs/2026-07-08/c0420e1d4d5f/meta.json",
+      "bytes": 2087,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
+      "path": "diagnostics/btdigg/jobs/2026-07-08/c0420e1d4d5f/rd_magnets_live.jsonl",
+      "bytes": 4781,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
+      "path": "diagnostics/btdigg/jobs/2026-07-08/c0420e1d4d5f/summary.json",
+      "bytes": 3640,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
+      "path": "diagnostics/btdigg/jobs/2026-07-08/c0420e1d4d5f/timeline.md",
+      "bytes": 13013,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
+      "path": "diagnostics/btdigg/jobs/2026-07-08/c0420e1d4d5f/warnings.jsonl",
+      "bytes": 0,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
+      "path": "diagnostics/btdigg/jobs/2026-07-08/c200c2dd6021/errors.jsonl",
+      "bytes": 0,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
+      "path": "diagnostics/btdigg/jobs/2026-07-08/c200c2dd6021/events.jsonl",
+      "bytes": 89648,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
+      "path": "diagnostics/btdigg/jobs/2026-07-08/c200c2dd6021/events.seq",
+      "bytes": 4,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
+      "path": "diagnostics/btdigg/jobs/2026-07-08/c200c2dd6021/meta.json",
+      "bytes": 2079,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
+      "path": "diagnostics/btdigg/jobs/2026-07-08/c200c2dd6021/rd_magnets_live.jsonl",
+      "bytes": 1786,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
+      "path": "diagnostics/btdigg/jobs/2026-07-08/c200c2dd6021/summary.json",
+      "bytes": 3691,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
+      "path": "diagnostics/btdigg/jobs/2026-07-08/c200c2dd6021/timeline.md",
+      "bytes": 13787,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
+      "path": "diagnostics/btdigg/jobs/2026-07-08/c200c2dd6021/warnings.jsonl",
+      "bytes": 0,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
       "path": "diagnostics/btdigg/jobs/2026-07-08/c3d38a48ff18/errors.jsonl",
       "bytes": 0,
       "exported": true,
@@ -11979,6 +12963,70 @@
     },
     {
       "source": "btdigg",
+      "path": "diagnostics/btdigg/jobs/2026-07-08/c8f10cae15cf/errors.jsonl",
+      "bytes": 0,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
+      "path": "diagnostics/btdigg/jobs/2026-07-08/c8f10cae15cf/events.jsonl",
+      "bytes": 78941,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
+      "path": "diagnostics/btdigg/jobs/2026-07-08/c8f10cae15cf/events.seq",
+      "bytes": 4,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
+      "path": "diagnostics/btdigg/jobs/2026-07-08/c8f10cae15cf/meta.json",
+      "bytes": 2075,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
+      "path": "diagnostics/btdigg/jobs/2026-07-08/c8f10cae15cf/rd_magnets_live.jsonl",
+      "bytes": 1117,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
+      "path": "diagnostics/btdigg/jobs/2026-07-08/c8f10cae15cf/summary.json",
+      "bytes": 3697,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
+      "path": "diagnostics/btdigg/jobs/2026-07-08/c8f10cae15cf/timeline.md",
+      "bytes": 10941,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
+      "path": "diagnostics/btdigg/jobs/2026-07-08/c8f10cae15cf/warnings.jsonl",
+      "bytes": 0,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
       "path": "diagnostics/btdigg/jobs/2026-07-08/d79f10a29602/errors.jsonl",
       "bytes": 0,
       "exported": true,
@@ -12036,6 +13084,302 @@
     {
       "source": "btdigg",
       "path": "diagnostics/btdigg/jobs/2026-07-08/d79f10a29602/warnings.jsonl",
+      "bytes": 0,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
+      "path": "diagnostics/btdigg/jobs/2026-07-08/f75f0cb40f77/errors.jsonl",
+      "bytes": 0,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
+      "path": "diagnostics/btdigg/jobs/2026-07-08/f75f0cb40f77/events.jsonl",
+      "bytes": 13400,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
+      "path": "diagnostics/btdigg/jobs/2026-07-08/f75f0cb40f77/events.seq",
+      "bytes": 3,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
+      "path": "diagnostics/btdigg/jobs/2026-07-08/f75f0cb40f77/meta.json",
+      "bytes": 2080,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
+      "path": "diagnostics/btdigg/jobs/2026-07-08/f75f0cb40f77/summary.json",
+      "bytes": 2828,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
+      "path": "diagnostics/btdigg/jobs/2026-07-08/f75f0cb40f77/timeline.md",
+      "bytes": 1875,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
+      "path": "diagnostics/btdigg/jobs/2026-07-08/f75f0cb40f77/warnings.jsonl",
+      "bytes": 0,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
+      "path": "diagnostics/btdigg/jobs/2026-07-09/656a37cd3299/errors.jsonl",
+      "bytes": 0,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
+      "path": "diagnostics/btdigg/jobs/2026-07-09/656a37cd3299/events.jsonl",
+      "bytes": 10810,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
+      "path": "diagnostics/btdigg/jobs/2026-07-09/656a37cd3299/events.seq",
+      "bytes": 3,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
+      "path": "diagnostics/btdigg/jobs/2026-07-09/656a37cd3299/meta.json",
+      "bytes": 2077,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
+      "path": "diagnostics/btdigg/jobs/2026-07-09/656a37cd3299/summary.json",
+      "bytes": 3285,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
+      "path": "diagnostics/btdigg/jobs/2026-07-09/656a37cd3299/timeline.md",
+      "bytes": 1608,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
+      "path": "diagnostics/btdigg/jobs/2026-07-09/656a37cd3299/warnings.jsonl",
+      "bytes": 0,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
+      "path": "diagnostics/btdigg/jobs/2026-07-09/869e99264773/errors.jsonl",
+      "bytes": 0,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
+      "path": "diagnostics/btdigg/jobs/2026-07-09/869e99264773/events.jsonl",
+      "bytes": 58459,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
+      "path": "diagnostics/btdigg/jobs/2026-07-09/869e99264773/events.seq",
+      "bytes": 4,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
+      "path": "diagnostics/btdigg/jobs/2026-07-09/869e99264773/meta.json",
+      "bytes": 2096,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
+      "path": "diagnostics/btdigg/jobs/2026-07-09/869e99264773/rd_magnets_live.jsonl",
+      "bytes": 2285,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
+      "path": "diagnostics/btdigg/jobs/2026-07-09/869e99264773/summary.json",
+      "bytes": 3667,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
+      "path": "diagnostics/btdigg/jobs/2026-07-09/869e99264773/timeline.md",
+      "bytes": 9492,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
+      "path": "diagnostics/btdigg/jobs/2026-07-09/869e99264773/warnings.jsonl",
+      "bytes": 0,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
+      "path": "diagnostics/btdigg/jobs/2026-07-09/bf6371f90a82/errors.jsonl",
+      "bytes": 0,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
+      "path": "diagnostics/btdigg/jobs/2026-07-09/bf6371f90a82/events.jsonl",
+      "bytes": 62348,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
+      "path": "diagnostics/btdigg/jobs/2026-07-09/bf6371f90a82/events.seq",
+      "bytes": 4,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
+      "path": "diagnostics/btdigg/jobs/2026-07-09/bf6371f90a82/meta.json",
+      "bytes": 2078,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
+      "path": "diagnostics/btdigg/jobs/2026-07-09/bf6371f90a82/rd_magnets_live.jsonl",
+      "bytes": 1282,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
+      "path": "diagnostics/btdigg/jobs/2026-07-09/bf6371f90a82/summary.json",
+      "bytes": 3597,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
+      "path": "diagnostics/btdigg/jobs/2026-07-09/bf6371f90a82/timeline.md",
+      "bytes": 8809,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
+      "path": "diagnostics/btdigg/jobs/2026-07-09/bf6371f90a82/warnings.jsonl",
+      "bytes": 0,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
+      "path": "diagnostics/btdigg/jobs/2026-07-09/f2c440e37863/errors.jsonl",
+      "bytes": 0,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
+      "path": "diagnostics/btdigg/jobs/2026-07-09/f2c440e37863/events.jsonl",
+      "bytes": 10810,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
+      "path": "diagnostics/btdigg/jobs/2026-07-09/f2c440e37863/events.seq",
+      "bytes": 3,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
+      "path": "diagnostics/btdigg/jobs/2026-07-09/f2c440e37863/meta.json",
+      "bytes": 2077,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
+      "path": "diagnostics/btdigg/jobs/2026-07-09/f2c440e37863/summary.json",
+      "bytes": 3285,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
+      "path": "diagnostics/btdigg/jobs/2026-07-09/f2c440e37863/timeline.md",
+      "bytes": 1608,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
+      "path": "diagnostics/btdigg/jobs/2026-07-09/f2c440e37863/warnings.jsonl",
       "bytes": 0,
       "exported": true,
       "redacted": false,
@@ -16532,7 +17876,7 @@
     {
       "source": "btdigg",
       "path": "history/btdigg_history.json",
-      "bytes": 138015,
+      "bytes": 193047,
       "exported": true,
       "redacted": false,
       "note": ""
@@ -16541,14 +17885,6 @@
       "source": "btdigg",
       "path": "jobs/01f6d1245f57/cancel.json",
       "bytes": 115,
-      "exported": true,
-      "redacted": false,
-      "note": ""
-    },
-    {
-      "source": "btdigg",
-      "path": "jobs/01f6d1245f57/exports/ULTIMOS_RESULTADOS.json",
-      "bytes": 54553,
       "exported": true,
       "redacted": false,
       "note": ""
@@ -16579,6 +17915,14 @@
     },
     {
       "source": "btdigg",
+      "path": "jobs/01f6d1245f57/exports/ULTIMOS_RESULTADOS.json",
+      "bytes": 54553,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
       "path": "jobs/01f6d1245f57/safeout.log",
       "bytes": 4874,
       "exported": true,
@@ -16597,14 +17941,6 @@
       "source": "btdigg",
       "path": "jobs/020c767b30c0/cancel.json",
       "bytes": 115,
-      "exported": true,
-      "redacted": false,
-      "note": ""
-    },
-    {
-      "source": "btdigg",
-      "path": "jobs/020c767b30c0/exports/ULTIMOS_RESULTADOS.json",
-      "bytes": 17340,
       "exported": true,
       "redacted": false,
       "note": ""
@@ -16635,6 +17971,14 @@
     },
     {
       "source": "btdigg",
+      "path": "jobs/020c767b30c0/exports/ULTIMOS_RESULTADOS.json",
+      "bytes": 17340,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
       "path": "jobs/020c767b30c0/safeout.log",
       "bytes": 2281,
       "exported": true,
@@ -16653,14 +17997,6 @@
       "source": "btdigg",
       "path": "jobs/04e6b3564cfa/cancel.json",
       "bytes": 115,
-      "exported": true,
-      "redacted": false,
-      "note": ""
-    },
-    {
-      "source": "btdigg",
-      "path": "jobs/04e6b3564cfa/exports/ULTIMOS_RESULTADOS.json",
-      "bytes": 17340,
       "exported": true,
       "redacted": false,
       "note": ""
@@ -16691,6 +18027,14 @@
     },
     {
       "source": "btdigg",
+      "path": "jobs/04e6b3564cfa/exports/ULTIMOS_RESULTADOS.json",
+      "bytes": 17340,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
       "path": "jobs/04e6b3564cfa/safeout.log",
       "bytes": 2281,
       "exported": true,
@@ -16709,14 +18053,6 @@
       "source": "btdigg",
       "path": "jobs/0635b1dad48a/cancel.json",
       "bytes": 115,
-      "exported": true,
-      "redacted": false,
-      "note": ""
-    },
-    {
-      "source": "btdigg",
-      "path": "jobs/0635b1dad48a/exports/ULTIMOS_RESULTADOS.json",
-      "bytes": 2,
       "exported": true,
       "redacted": false,
       "note": ""
@@ -16747,6 +18083,14 @@
     },
     {
       "source": "btdigg",
+      "path": "jobs/0635b1dad48a/exports/ULTIMOS_RESULTADOS.json",
+      "bytes": 2,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
       "path": "jobs/0635b1dad48a/safeout.log",
       "bytes": 861,
       "exported": true,
@@ -16765,14 +18109,6 @@
       "source": "btdigg",
       "path": "jobs/08537a61e168/cancel.json",
       "bytes": 115,
-      "exported": true,
-      "redacted": false,
-      "note": ""
-    },
-    {
-      "source": "btdigg",
-      "path": "jobs/08537a61e168/exports/ULTIMOS_RESULTADOS.json",
-      "bytes": 17384,
       "exported": true,
       "redacted": false,
       "note": ""
@@ -16803,6 +18139,14 @@
     },
     {
       "source": "btdigg",
+      "path": "jobs/08537a61e168/exports/ULTIMOS_RESULTADOS.json",
+      "bytes": 17384,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
       "path": "jobs/08537a61e168/safeout.log",
       "bytes": 2281,
       "exported": true,
@@ -16821,14 +18165,6 @@
       "source": "btdigg",
       "path": "jobs/08c5839239b8/cancel.json",
       "bytes": 115,
-      "exported": true,
-      "redacted": false,
-      "note": ""
-    },
-    {
-      "source": "btdigg",
-      "path": "jobs/08c5839239b8/exports/ULTIMOS_RESULTADOS.json",
-      "bytes": 18149,
       "exported": true,
       "redacted": false,
       "note": ""
@@ -16859,6 +18195,14 @@
     },
     {
       "source": "btdigg",
+      "path": "jobs/08c5839239b8/exports/ULTIMOS_RESULTADOS.json",
+      "bytes": 18149,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
       "path": "jobs/08c5839239b8/safeout.log",
       "bytes": 2548,
       "exported": true,
@@ -16877,14 +18221,6 @@
       "source": "btdigg",
       "path": "jobs/08ef4546afe5/cancel.json",
       "bytes": 115,
-      "exported": true,
-      "redacted": false,
-      "note": ""
-    },
-    {
-      "source": "btdigg",
-      "path": "jobs/08ef4546afe5/exports/ULTIMOS_RESULTADOS.json",
-      "bytes": 17340,
       "exported": true,
       "redacted": false,
       "note": ""
@@ -16915,6 +18251,14 @@
     },
     {
       "source": "btdigg",
+      "path": "jobs/08ef4546afe5/exports/ULTIMOS_RESULTADOS.json",
+      "bytes": 17340,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
       "path": "jobs/08ef4546afe5/safeout.log",
       "bytes": 2281,
       "exported": true,
@@ -16933,14 +18277,6 @@
       "source": "btdigg",
       "path": "jobs/09e00f4dd587/cancel.json",
       "bytes": 115,
-      "exported": true,
-      "redacted": false,
-      "note": ""
-    },
-    {
-      "source": "btdigg",
-      "path": "jobs/09e00f4dd587/exports/ULTIMOS_RESULTADOS.json",
-      "bytes": 17340,
       "exported": true,
       "redacted": false,
       "note": ""
@@ -16971,6 +18307,14 @@
     },
     {
       "source": "btdigg",
+      "path": "jobs/09e00f4dd587/exports/ULTIMOS_RESULTADOS.json",
+      "bytes": 17340,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
       "path": "jobs/09e00f4dd587/safeout.log",
       "bytes": 2281,
       "exported": true,
@@ -16987,7 +18331,7 @@
     },
     {
       "source": "btdigg",
-      "path": "jobs/0e121ca6e566/cancel.json",
+      "path": "jobs/0b4e16d450c6/cancel.json",
       "bytes": 115,
       "exported": true,
       "redacted": false,
@@ -16995,8 +18339,56 @@
     },
     {
       "source": "btdigg",
-      "path": "jobs/0e121ca6e566/exports/ULTIMOS_RESULTADOS.json",
-      "bytes": 1640,
+      "path": "jobs/0b4e16d450c6/exports/ULTIMO_QBIT_VIVOS.txt",
+      "bytes": 125,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
+      "path": "jobs/0b4e16d450c6/exports/ULTIMO_RD_TEMPORAL.txt",
+      "bytes": 203,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
+      "path": "jobs/0b4e16d450c6/exports/ULTIMO_TOP.txt",
+      "bytes": 107,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
+      "path": "jobs/0b4e16d450c6/exports/ULTIMOS_RESULTADOS.json",
+      "bytes": 2,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
+      "path": "jobs/0b4e16d450c6/safeout.log",
+      "bytes": 2557,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
+      "path": "jobs/0b4e16d450c6/shown.json",
+      "bytes": 2,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
+      "path": "jobs/0e121ca6e566/cancel.json",
+      "bytes": 115,
       "exported": true,
       "redacted": false,
       "note": ""
@@ -17027,6 +18419,14 @@
     },
     {
       "source": "btdigg",
+      "path": "jobs/0e121ca6e566/exports/ULTIMOS_RESULTADOS.json",
+      "bytes": 1640,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
       "path": "jobs/0e121ca6e566/safeout.log",
       "bytes": 2419,
       "exported": true,
@@ -17036,62 +18436,6 @@
     {
       "source": "btdigg",
       "path": "jobs/0e121ca6e566/shown.json",
-      "bytes": 2,
-      "exported": true,
-      "redacted": false,
-      "note": ""
-    },
-    {
-      "source": "btdigg",
-      "path": "jobs/105ef5fc7ab0/cancel.json",
-      "bytes": 115,
-      "exported": true,
-      "redacted": false,
-      "note": ""
-    },
-    {
-      "source": "btdigg",
-      "path": "jobs/105ef5fc7ab0/exports/ULTIMOS_RESULTADOS.json",
-      "bytes": 2,
-      "exported": true,
-      "redacted": false,
-      "note": ""
-    },
-    {
-      "source": "btdigg",
-      "path": "jobs/105ef5fc7ab0/exports/ULTIMO_QBIT_VIVOS.txt",
-      "bytes": 125,
-      "exported": true,
-      "redacted": false,
-      "note": ""
-    },
-    {
-      "source": "btdigg",
-      "path": "jobs/105ef5fc7ab0/exports/ULTIMO_RD_TEMPORAL.txt",
-      "bytes": 203,
-      "exported": true,
-      "redacted": false,
-      "note": ""
-    },
-    {
-      "source": "btdigg",
-      "path": "jobs/105ef5fc7ab0/exports/ULTIMO_TOP.txt",
-      "bytes": 107,
-      "exported": true,
-      "redacted": false,
-      "note": ""
-    },
-    {
-      "source": "btdigg",
-      "path": "jobs/105ef5fc7ab0/safeout.log",
-      "bytes": 1718,
-      "exported": true,
-      "redacted": false,
-      "note": ""
-    },
-    {
-      "source": "btdigg",
-      "path": "jobs/105ef5fc7ab0/shown.json",
       "bytes": 2,
       "exported": true,
       "redacted": false,
@@ -17115,7 +18459,7 @@
     },
     {
       "source": "btdigg",
-      "path": "jobs/15cbbc79fde1/cancel.json",
+      "path": "jobs/1414a1008263/cancel.json",
       "bytes": 115,
       "exported": true,
       "redacted": false,
@@ -17123,8 +18467,56 @@
     },
     {
       "source": "btdigg",
-      "path": "jobs/15cbbc79fde1/exports/ULTIMOS_RESULTADOS.json",
-      "bytes": 17340,
+      "path": "jobs/1414a1008263/exports/ULTIMO_QBIT_VIVOS.txt",
+      "bytes": 125,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
+      "path": "jobs/1414a1008263/exports/ULTIMO_RD_TEMPORAL.txt",
+      "bytes": 203,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
+      "path": "jobs/1414a1008263/exports/ULTIMO_TOP.txt",
+      "bytes": 1273,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
+      "path": "jobs/1414a1008263/exports/ULTIMOS_RESULTADOS.json",
+      "bytes": 50966,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
+      "path": "jobs/1414a1008263/safeout.log",
+      "bytes": 4090,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
+      "path": "jobs/1414a1008263/shown.json",
+      "bytes": 10314,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
+      "path": "jobs/15cbbc79fde1/cancel.json",
+      "bytes": 115,
       "exported": true,
       "redacted": false,
       "note": ""
@@ -17149,6 +18541,14 @@
       "source": "btdigg",
       "path": "jobs/15cbbc79fde1/exports/ULTIMO_TOP.txt",
       "bytes": 506,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
+      "path": "jobs/15cbbc79fde1/exports/ULTIMOS_RESULTADOS.json",
+      "bytes": 17340,
       "exported": true,
       "redacted": false,
       "note": ""
@@ -17195,14 +18595,6 @@
     },
     {
       "source": "btdigg",
-      "path": "jobs/192e134b91f6/exports/ULTIMOS_RESULTADOS.json",
-      "bytes": 17340,
-      "exported": true,
-      "redacted": false,
-      "note": ""
-    },
-    {
-      "source": "btdigg",
       "path": "jobs/192e134b91f6/exports/ULTIMO_QBIT_VIVOS.txt",
       "bytes": 125,
       "exported": true,
@@ -17227,6 +18619,14 @@
     },
     {
       "source": "btdigg",
+      "path": "jobs/192e134b91f6/exports/ULTIMOS_RESULTADOS.json",
+      "bytes": 17340,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
       "path": "jobs/192e134b91f6/safeout.log",
       "bytes": 2281,
       "exported": true,
@@ -17237,118 +18637,6 @@
       "source": "btdigg",
       "path": "jobs/192e134b91f6/shown.json",
       "bytes": 2000,
-      "exported": true,
-      "redacted": false,
-      "note": ""
-    },
-    {
-      "source": "btdigg",
-      "path": "jobs/1e1fdade144b/cancel.json",
-      "bytes": 115,
-      "exported": true,
-      "redacted": false,
-      "note": ""
-    },
-    {
-      "source": "btdigg",
-      "path": "jobs/1e1fdade144b/exports/ULTIMOS_RESULTADOS.json",
-      "bytes": 17935,
-      "exported": true,
-      "redacted": false,
-      "note": ""
-    },
-    {
-      "source": "btdigg",
-      "path": "jobs/1e1fdade144b/exports/ULTIMO_QBIT_VIVOS.txt",
-      "bytes": 1505,
-      "exported": true,
-      "redacted": false,
-      "note": ""
-    },
-    {
-      "source": "btdigg",
-      "path": "jobs/1e1fdade144b/exports/ULTIMO_RD_TEMPORAL.txt",
-      "bytes": 203,
-      "exported": true,
-      "redacted": false,
-      "note": ""
-    },
-    {
-      "source": "btdigg",
-      "path": "jobs/1e1fdade144b/exports/ULTIMO_TOP.txt",
-      "bytes": 1487,
-      "exported": true,
-      "redacted": false,
-      "note": ""
-    },
-    {
-      "source": "btdigg",
-      "path": "jobs/1e1fdade144b/safeout.log",
-      "bytes": 3291,
-      "exported": true,
-      "redacted": false,
-      "note": ""
-    },
-    {
-      "source": "btdigg",
-      "path": "jobs/1e1fdade144b/shown.json",
-      "bytes": 7634,
-      "exported": true,
-      "redacted": false,
-      "note": ""
-    },
-    {
-      "source": "btdigg",
-      "path": "jobs/23cd0aad72b0/cancel.json",
-      "bytes": 115,
-      "exported": true,
-      "redacted": false,
-      "note": ""
-    },
-    {
-      "source": "btdigg",
-      "path": "jobs/23cd0aad72b0/exports/ULTIMOS_RESULTADOS.json",
-      "bytes": 2,
-      "exported": true,
-      "redacted": false,
-      "note": ""
-    },
-    {
-      "source": "btdigg",
-      "path": "jobs/23cd0aad72b0/exports/ULTIMO_QBIT_VIVOS.txt",
-      "bytes": 125,
-      "exported": true,
-      "redacted": false,
-      "note": ""
-    },
-    {
-      "source": "btdigg",
-      "path": "jobs/23cd0aad72b0/exports/ULTIMO_RD_TEMPORAL.txt",
-      "bytes": 203,
-      "exported": true,
-      "redacted": false,
-      "note": ""
-    },
-    {
-      "source": "btdigg",
-      "path": "jobs/23cd0aad72b0/exports/ULTIMO_TOP.txt",
-      "bytes": 107,
-      "exported": true,
-      "redacted": false,
-      "note": ""
-    },
-    {
-      "source": "btdigg",
-      "path": "jobs/23cd0aad72b0/safeout.log",
-      "bytes": 1743,
-      "exported": true,
-      "redacted": false,
-      "note": ""
-    },
-    {
-      "source": "btdigg",
-      "path": "jobs/23cd0aad72b0/shown.json",
-      "bytes": 2,
       "exported": true,
       "redacted": false,
       "note": ""
@@ -17395,14 +18683,6 @@
     },
     {
       "source": "btdigg",
-      "path": "jobs/266c61d91add/exports/ULTIMOS_RESULTADOS.json",
-      "bytes": 16994,
-      "exported": true,
-      "redacted": false,
-      "note": ""
-    },
-    {
-      "source": "btdigg",
       "path": "jobs/266c61d91add/exports/ULTIMO_QBIT_VIVOS.txt",
       "bytes": 125,
       "exported": true,
@@ -17421,6 +18701,14 @@
       "source": "btdigg",
       "path": "jobs/266c61d91add/exports/ULTIMO_TOP.txt",
       "bytes": 107,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
+      "path": "jobs/266c61d91add/exports/ULTIMOS_RESULTADOS.json",
+      "bytes": 16994,
       "exported": true,
       "redacted": false,
       "note": ""
@@ -17451,14 +18739,6 @@
     },
     {
       "source": "btdigg",
-      "path": "jobs/2c5dde4232d0/exports/ULTIMOS_RESULTADOS.json",
-      "bytes": 18102,
-      "exported": true,
-      "redacted": false,
-      "note": ""
-    },
-    {
-      "source": "btdigg",
       "path": "jobs/2c5dde4232d0/exports/ULTIMO_QBIT_VIVOS.txt",
       "bytes": 125,
       "exported": true,
@@ -17477,6 +18757,14 @@
       "source": "btdigg",
       "path": "jobs/2c5dde4232d0/exports/ULTIMO_TOP.txt",
       "bytes": 107,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
+      "path": "jobs/2c5dde4232d0/exports/ULTIMOS_RESULTADOS.json",
+      "bytes": 18102,
       "exported": true,
       "redacted": false,
       "note": ""
@@ -17507,14 +18795,6 @@
     },
     {
       "source": "btdigg",
-      "path": "jobs/2f1d78b181e6/exports/ULTIMOS_RESULTADOS.json",
-      "bytes": 17304,
-      "exported": true,
-      "redacted": false,
-      "note": ""
-    },
-    {
-      "source": "btdigg",
       "path": "jobs/2f1d78b181e6/exports/ULTIMO_QBIT_VIVOS.txt",
       "bytes": 125,
       "exported": true,
@@ -17533,6 +18813,14 @@
       "source": "btdigg",
       "path": "jobs/2f1d78b181e6/exports/ULTIMO_TOP.txt",
       "bytes": 506,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
+      "path": "jobs/2f1d78b181e6/exports/ULTIMOS_RESULTADOS.json",
+      "bytes": 17304,
       "exported": true,
       "redacted": false,
       "note": ""
@@ -17563,14 +18851,6 @@
     },
     {
       "source": "btdigg",
-      "path": "jobs/32a04cf51827/exports/ULTIMOS_RESULTADOS.json",
-      "bytes": 17304,
-      "exported": true,
-      "redacted": false,
-      "note": ""
-    },
-    {
-      "source": "btdigg",
       "path": "jobs/32a04cf51827/exports/ULTIMO_QBIT_VIVOS.txt",
       "bytes": 125,
       "exported": true,
@@ -17589,6 +18869,14 @@
       "source": "btdigg",
       "path": "jobs/32a04cf51827/exports/ULTIMO_TOP.txt",
       "bytes": 506,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
+      "path": "jobs/32a04cf51827/exports/ULTIMOS_RESULTADOS.json",
+      "bytes": 17304,
       "exported": true,
       "redacted": false,
       "note": ""
@@ -17619,14 +18907,6 @@
     },
     {
       "source": "btdigg",
-      "path": "jobs/33dbdf96564c/exports/ULTIMOS_RESULTADOS.json",
-      "bytes": 16994,
-      "exported": true,
-      "redacted": false,
-      "note": ""
-    },
-    {
-      "source": "btdigg",
       "path": "jobs/33dbdf96564c/exports/ULTIMO_QBIT_VIVOS.txt",
       "bytes": 125,
       "exported": true,
@@ -17645,6 +18925,14 @@
       "source": "btdigg",
       "path": "jobs/33dbdf96564c/exports/ULTIMO_TOP.txt",
       "bytes": 107,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
+      "path": "jobs/33dbdf96564c/exports/ULTIMOS_RESULTADOS.json",
+      "bytes": 16994,
       "exported": true,
       "redacted": false,
       "note": ""
@@ -17675,14 +18963,6 @@
     },
     {
       "source": "btdigg",
-      "path": "jobs/34e063d4ec23/exports/ULTIMOS_RESULTADOS.json",
-      "bytes": 18149,
-      "exported": true,
-      "redacted": false,
-      "note": ""
-    },
-    {
-      "source": "btdigg",
       "path": "jobs/34e063d4ec23/exports/ULTIMO_QBIT_VIVOS.txt",
       "bytes": 125,
       "exported": true,
@@ -17701,6 +18981,14 @@
       "source": "btdigg",
       "path": "jobs/34e063d4ec23/exports/ULTIMO_TOP.txt",
       "bytes": 506,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
+      "path": "jobs/34e063d4ec23/exports/ULTIMOS_RESULTADOS.json",
+      "bytes": 18149,
       "exported": true,
       "redacted": false,
       "note": ""
@@ -17731,14 +19019,6 @@
     },
     {
       "source": "btdigg",
-      "path": "jobs/35ece02b3d8b/exports/ULTIMOS_RESULTADOS.json",
-      "bytes": 17340,
-      "exported": true,
-      "redacted": false,
-      "note": ""
-    },
-    {
-      "source": "btdigg",
       "path": "jobs/35ece02b3d8b/exports/ULTIMO_QBIT_VIVOS.txt",
       "bytes": 125,
       "exported": true,
@@ -17757,6 +19037,14 @@
       "source": "btdigg",
       "path": "jobs/35ece02b3d8b/exports/ULTIMO_TOP.txt",
       "bytes": 506,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
+      "path": "jobs/35ece02b3d8b/exports/ULTIMOS_RESULTADOS.json",
+      "bytes": 17340,
       "exported": true,
       "redacted": false,
       "note": ""
@@ -17803,14 +19091,6 @@
     },
     {
       "source": "btdigg",
-      "path": "jobs/38a6077f4692/exports/ULTIMOS_RESULTADOS.json",
-      "bytes": 18141,
-      "exported": true,
-      "redacted": false,
-      "note": ""
-    },
-    {
-      "source": "btdigg",
       "path": "jobs/38a6077f4692/exports/ULTIMO_QBIT_VIVOS.txt",
       "bytes": 125,
       "exported": true,
@@ -17829,6 +19109,14 @@
       "source": "btdigg",
       "path": "jobs/38a6077f4692/exports/ULTIMO_TOP.txt",
       "bytes": 506,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
+      "path": "jobs/38a6077f4692/exports/ULTIMOS_RESULTADOS.json",
+      "bytes": 18141,
       "exported": true,
       "redacted": false,
       "note": ""
@@ -17859,14 +19147,6 @@
     },
     {
       "source": "btdigg",
-      "path": "jobs/3ccb8543c976/exports/ULTIMOS_RESULTADOS.json",
-      "bytes": 17340,
-      "exported": true,
-      "redacted": false,
-      "note": ""
-    },
-    {
-      "source": "btdigg",
       "path": "jobs/3ccb8543c976/exports/ULTIMO_QBIT_VIVOS.txt",
       "bytes": 125,
       "exported": true,
@@ -17885,6 +19165,14 @@
       "source": "btdigg",
       "path": "jobs/3ccb8543c976/exports/ULTIMO_TOP.txt",
       "bytes": 506,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
+      "path": "jobs/3ccb8543c976/exports/ULTIMOS_RESULTADOS.json",
+      "bytes": 17340,
       "exported": true,
       "redacted": false,
       "note": ""
@@ -17915,14 +19203,6 @@
     },
     {
       "source": "btdigg",
-      "path": "jobs/3e9b638ded61/exports/ULTIMOS_RESULTADOS.json",
-      "bytes": 17780,
-      "exported": true,
-      "redacted": false,
-      "note": ""
-    },
-    {
-      "source": "btdigg",
       "path": "jobs/3e9b638ded61/exports/ULTIMO_QBIT_VIVOS.txt",
       "bytes": 125,
       "exported": true,
@@ -17947,6 +19227,14 @@
     },
     {
       "source": "btdigg",
+      "path": "jobs/3e9b638ded61/exports/ULTIMOS_RESULTADOS.json",
+      "bytes": 17780,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
       "path": "jobs/3e9b638ded61/safeout.log",
       "bytes": 2184,
       "exported": true,
@@ -17963,16 +19251,112 @@
     },
     {
       "source": "btdigg",
-      "path": "jobs/45abaa284a21/cancel.json",
-      "bytes": 117,
+      "path": "jobs/3eb8e6bdbfd0/cancel.json",
+      "bytes": 115,
       "exported": true,
       "redacted": false,
       "note": ""
     },
     {
       "source": "btdigg",
-      "path": "jobs/45abaa284a21/safeout.log",
-      "bytes": 614,
+      "path": "jobs/3eb8e6bdbfd0/exports/ULTIMO_QBIT_VIVOS.txt",
+      "bytes": 125,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
+      "path": "jobs/3eb8e6bdbfd0/exports/ULTIMO_RD_TEMPORAL.txt",
+      "bytes": 203,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
+      "path": "jobs/3eb8e6bdbfd0/exports/ULTIMO_TOP.txt",
+      "bytes": 107,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
+      "path": "jobs/3eb8e6bdbfd0/exports/ULTIMOS_RESULTADOS.json",
+      "bytes": 85805,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
+      "path": "jobs/3eb8e6bdbfd0/safeout.log",
+      "bytes": 3301,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
+      "path": "jobs/3eb8e6bdbfd0/shown.json",
+      "bytes": 2,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
+      "path": "jobs/4f91f376f1a8/cancel.json",
+      "bytes": 115,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
+      "path": "jobs/4f91f376f1a8/exports/ULTIMO_QBIT_VIVOS.txt",
+      "bytes": 3551,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
+      "path": "jobs/4f91f376f1a8/exports/ULTIMO_RD_TEMPORAL.txt",
+      "bytes": 203,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
+      "path": "jobs/4f91f376f1a8/exports/ULTIMO_TOP.txt",
+      "bytes": 2936,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
+      "path": "jobs/4f91f376f1a8/exports/ULTIMOS_RESULTADOS.json",
+      "bytes": 18431,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
+      "path": "jobs/4f91f376f1a8/safeout.log",
+      "bytes": 4790,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
+      "path": "jobs/4f91f376f1a8/shown.json",
+      "bytes": 17404,
       "exported": true,
       "redacted": false,
       "note": ""
@@ -17981,14 +19365,6 @@
       "source": "btdigg",
       "path": "jobs/50b2e764ef71/cancel.json",
       "bytes": 115,
-      "exported": true,
-      "redacted": false,
-      "note": ""
-    },
-    {
-      "source": "btdigg",
-      "path": "jobs/50b2e764ef71/exports/ULTIMOS_RESULTADOS.json",
-      "bytes": 18141,
       "exported": true,
       "redacted": false,
       "note": ""
@@ -18019,6 +19395,14 @@
     },
     {
       "source": "btdigg",
+      "path": "jobs/50b2e764ef71/exports/ULTIMOS_RESULTADOS.json",
+      "bytes": 18141,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
       "path": "jobs/50b2e764ef71/safeout.log",
       "bytes": 2548,
       "exported": true,
@@ -18037,14 +19421,6 @@
       "source": "btdigg",
       "path": "jobs/5103eb962887/cancel.json",
       "bytes": 115,
-      "exported": true,
-      "redacted": false,
-      "note": ""
-    },
-    {
-      "source": "btdigg",
-      "path": "jobs/5103eb962887/exports/ULTIMOS_RESULTADOS.json",
-      "bytes": 17209,
       "exported": true,
       "redacted": false,
       "note": ""
@@ -18075,6 +19451,14 @@
     },
     {
       "source": "btdigg",
+      "path": "jobs/5103eb962887/exports/ULTIMOS_RESULTADOS.json",
+      "bytes": 17209,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
       "path": "jobs/5103eb962887/safeout.log",
       "bytes": 2290,
       "exported": true,
@@ -18091,7 +19475,7 @@
     },
     {
       "source": "btdigg",
-      "path": "jobs/52aafc10fd97/cancel.json",
+      "path": "jobs/51c0abf2afa2/cancel.json",
       "bytes": 115,
       "exported": true,
       "redacted": false,
@@ -18099,8 +19483,56 @@
     },
     {
       "source": "btdigg",
-      "path": "jobs/52aafc10fd97/exports/ULTIMOS_RESULTADOS.json",
-      "bytes": 18141,
+      "path": "jobs/51c0abf2afa2/exports/ULTIMO_QBIT_VIVOS.txt",
+      "bytes": 125,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
+      "path": "jobs/51c0abf2afa2/exports/ULTIMO_RD_TEMPORAL.txt",
+      "bytes": 203,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
+      "path": "jobs/51c0abf2afa2/exports/ULTIMO_TOP.txt",
+      "bytes": 107,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
+      "path": "jobs/51c0abf2afa2/exports/ULTIMOS_RESULTADOS.json",
+      "bytes": 127458,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
+      "path": "jobs/51c0abf2afa2/safeout.log",
+      "bytes": 6170,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
+      "path": "jobs/51c0abf2afa2/shown.json",
+      "bytes": 2,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
+      "path": "jobs/52aafc10fd97/cancel.json",
+      "bytes": 115,
       "exported": true,
       "redacted": false,
       "note": ""
@@ -18131,6 +19563,14 @@
     },
     {
       "source": "btdigg",
+      "path": "jobs/52aafc10fd97/exports/ULTIMOS_RESULTADOS.json",
+      "bytes": 18141,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
       "path": "jobs/52aafc10fd97/safeout.log",
       "bytes": 2548,
       "exported": true,
@@ -18149,14 +19589,6 @@
       "source": "btdigg",
       "path": "jobs/538e32dac825/cancel.json",
       "bytes": 115,
-      "exported": true,
-      "redacted": false,
-      "note": ""
-    },
-    {
-      "source": "btdigg",
-      "path": "jobs/538e32dac825/exports/ULTIMOS_RESULTADOS.json",
-      "bytes": 17340,
       "exported": true,
       "redacted": false,
       "note": ""
@@ -18187,6 +19619,14 @@
     },
     {
       "source": "btdigg",
+      "path": "jobs/538e32dac825/exports/ULTIMOS_RESULTADOS.json",
+      "bytes": 17340,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
       "path": "jobs/538e32dac825/safeout.log",
       "bytes": 2281,
       "exported": true,
@@ -18205,14 +19645,6 @@
       "source": "btdigg",
       "path": "jobs/55e5b22153cd/cancel.json",
       "bytes": 115,
-      "exported": true,
-      "redacted": false,
-      "note": ""
-    },
-    {
-      "source": "btdigg",
-      "path": "jobs/55e5b22153cd/exports/ULTIMOS_RESULTADOS.json",
-      "bytes": 18848,
       "exported": true,
       "redacted": false,
       "note": ""
@@ -18243,6 +19675,14 @@
     },
     {
       "source": "btdigg",
+      "path": "jobs/55e5b22153cd/exports/ULTIMOS_RESULTADOS.json",
+      "bytes": 18848,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
       "path": "jobs/55e5b22153cd/safeout.log",
       "bytes": 4863,
       "exported": true,
@@ -18259,72 +19699,8 @@
     },
     {
       "source": "btdigg",
-      "path": "jobs/56e79fce3bd4/cancel.json",
-      "bytes": 115,
-      "exported": true,
-      "redacted": false,
-      "note": ""
-    },
-    {
-      "source": "btdigg",
-      "path": "jobs/56e79fce3bd4/exports/ULTIMOS_RESULTADOS.json",
-      "bytes": 2,
-      "exported": true,
-      "redacted": false,
-      "note": ""
-    },
-    {
-      "source": "btdigg",
-      "path": "jobs/56e79fce3bd4/exports/ULTIMO_QBIT_VIVOS.txt",
-      "bytes": 125,
-      "exported": true,
-      "redacted": false,
-      "note": ""
-    },
-    {
-      "source": "btdigg",
-      "path": "jobs/56e79fce3bd4/exports/ULTIMO_RD_TEMPORAL.txt",
-      "bytes": 203,
-      "exported": true,
-      "redacted": false,
-      "note": ""
-    },
-    {
-      "source": "btdigg",
-      "path": "jobs/56e79fce3bd4/exports/ULTIMO_TOP.txt",
-      "bytes": 107,
-      "exported": true,
-      "redacted": false,
-      "note": ""
-    },
-    {
-      "source": "btdigg",
-      "path": "jobs/56e79fce3bd4/safeout.log",
-      "bytes": 1240,
-      "exported": true,
-      "redacted": false,
-      "note": ""
-    },
-    {
-      "source": "btdigg",
-      "path": "jobs/56e79fce3bd4/shown.json",
-      "bytes": 2,
-      "exported": true,
-      "redacted": false,
-      "note": ""
-    },
-    {
-      "source": "btdigg",
       "path": "jobs/5a8c8bc39f3e/cancel.json",
       "bytes": 115,
-      "exported": true,
-      "redacted": false,
-      "note": ""
-    },
-    {
-      "source": "btdigg",
-      "path": "jobs/5a8c8bc39f3e/exports/ULTIMOS_RESULTADOS.json",
-      "bytes": 17340,
       "exported": true,
       "redacted": false,
       "note": ""
@@ -18355,6 +19731,14 @@
     },
     {
       "source": "btdigg",
+      "path": "jobs/5a8c8bc39f3e/exports/ULTIMOS_RESULTADOS.json",
+      "bytes": 17340,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
       "path": "jobs/5a8c8bc39f3e/safeout.log",
       "bytes": 2281,
       "exported": true,
@@ -18379,14 +19763,6 @@
     },
     {
       "source": "btdigg",
-      "path": "jobs/5d0a6bac8ac8/exports/ULTIMOS_RESULTADOS.json",
-      "bytes": 17340,
-      "exported": true,
-      "redacted": false,
-      "note": ""
-    },
-    {
-      "source": "btdigg",
       "path": "jobs/5d0a6bac8ac8/exports/ULTIMO_QBIT_VIVOS.txt",
       "bytes": 125,
       "exported": true,
@@ -18405,6 +19781,14 @@
       "source": "btdigg",
       "path": "jobs/5d0a6bac8ac8/exports/ULTIMO_TOP.txt",
       "bytes": 506,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
+      "path": "jobs/5d0a6bac8ac8/exports/ULTIMOS_RESULTADOS.json",
+      "bytes": 17340,
       "exported": true,
       "redacted": false,
       "note": ""
@@ -18451,14 +19835,6 @@
     },
     {
       "source": "btdigg",
-      "path": "jobs/5f17edfc80ad/exports/ULTIMOS_RESULTADOS.json",
-      "bytes": 17340,
-      "exported": true,
-      "redacted": false,
-      "note": ""
-    },
-    {
-      "source": "btdigg",
       "path": "jobs/5f17edfc80ad/exports/ULTIMO_QBIT_VIVOS.txt",
       "bytes": 125,
       "exported": true,
@@ -18483,6 +19859,14 @@
     },
     {
       "source": "btdigg",
+      "path": "jobs/5f17edfc80ad/exports/ULTIMOS_RESULTADOS.json",
+      "bytes": 17340,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
       "path": "jobs/5f17edfc80ad/safeout.log",
       "bytes": 2281,
       "exported": true,
@@ -18499,7 +19883,7 @@
     },
     {
       "source": "btdigg",
-      "path": "jobs/628cf405fa80/cancel.json",
+      "path": "jobs/606d63a8036c/cancel.json",
       "bytes": 115,
       "exported": true,
       "redacted": false,
@@ -18507,8 +19891,56 @@
     },
     {
       "source": "btdigg",
-      "path": "jobs/628cf405fa80/exports/ULTIMOS_RESULTADOS.json",
-      "bytes": 17340,
+      "path": "jobs/606d63a8036c/exports/ULTIMO_QBIT_VIVOS.txt",
+      "bytes": 562,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
+      "path": "jobs/606d63a8036c/exports/ULTIMO_RD_TEMPORAL.txt",
+      "bytes": 203,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
+      "path": "jobs/606d63a8036c/exports/ULTIMO_TOP.txt",
+      "bytes": 670,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
+      "path": "jobs/606d63a8036c/exports/ULTIMOS_RESULTADOS.json",
+      "bytes": 90361,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
+      "path": "jobs/606d63a8036c/safeout.log",
+      "bytes": 4187,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
+      "path": "jobs/606d63a8036c/shown.json",
+      "bytes": 3808,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
+      "path": "jobs/628cf405fa80/cancel.json",
+      "bytes": 115,
       "exported": true,
       "redacted": false,
       "note": ""
@@ -18539,6 +19971,14 @@
     },
     {
       "source": "btdigg",
+      "path": "jobs/628cf405fa80/exports/ULTIMOS_RESULTADOS.json",
+      "bytes": 17340,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
       "path": "jobs/628cf405fa80/safeout.log",
       "bytes": 2281,
       "exported": true,
@@ -18557,14 +19997,6 @@
       "source": "btdigg",
       "path": "jobs/62e605075dc6/cancel.json",
       "bytes": 115,
-      "exported": true,
-      "redacted": false,
-      "note": ""
-    },
-    {
-      "source": "btdigg",
-      "path": "jobs/62e605075dc6/exports/ULTIMOS_RESULTADOS.json",
-      "bytes": 87461,
       "exported": true,
       "redacted": false,
       "note": ""
@@ -18595,6 +20027,14 @@
     },
     {
       "source": "btdigg",
+      "path": "jobs/62e605075dc6/exports/ULTIMOS_RESULTADOS.json",
+      "bytes": 87461,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
       "path": "jobs/62e605075dc6/safeout.log",
       "bytes": 7774,
       "exported": true,
@@ -18611,7 +20051,7 @@
     },
     {
       "source": "btdigg",
-      "path": "jobs/657646f2ab87/cancel.json",
+      "path": "jobs/6446d7308338/cancel.json",
       "bytes": 115,
       "exported": true,
       "redacted": false,
@@ -18619,8 +20059,112 @@
     },
     {
       "source": "btdigg",
-      "path": "jobs/657646f2ab87/exports/ULTIMOS_RESULTADOS.json",
+      "path": "jobs/6446d7308338/exports/ULTIMO_QBIT_VIVOS.txt",
+      "bytes": 125,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
+      "path": "jobs/6446d7308338/exports/ULTIMO_RD_TEMPORAL.txt",
+      "bytes": 203,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
+      "path": "jobs/6446d7308338/exports/ULTIMO_TOP.txt",
+      "bytes": 806,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
+      "path": "jobs/6446d7308338/exports/ULTIMOS_RESULTADOS.json",
+      "bytes": 19025,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
+      "path": "jobs/6446d7308338/safeout.log",
+      "bytes": 3397,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
+      "path": "jobs/6446d7308338/shown.json",
+      "bytes": 5827,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
+      "path": "jobs/656a37cd3299/cancel.json",
+      "bytes": 115,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
+      "path": "jobs/656a37cd3299/exports/ULTIMO_QBIT_VIVOS.txt",
+      "bytes": 125,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
+      "path": "jobs/656a37cd3299/exports/ULTIMO_RD_TEMPORAL.txt",
+      "bytes": 203,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
+      "path": "jobs/656a37cd3299/exports/ULTIMO_TOP.txt",
+      "bytes": 107,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
+      "path": "jobs/656a37cd3299/exports/ULTIMOS_RESULTADOS.json",
+      "bytes": 1660,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
+      "path": "jobs/656a37cd3299/safeout.log",
+      "bytes": 1059,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
+      "path": "jobs/656a37cd3299/shown.json",
       "bytes": 2,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
+      "path": "jobs/657646f2ab87/cancel.json",
+      "bytes": 115,
       "exported": true,
       "redacted": false,
       "note": ""
@@ -18651,6 +20195,14 @@
     },
     {
       "source": "btdigg",
+      "path": "jobs/657646f2ab87/exports/ULTIMOS_RESULTADOS.json",
+      "bytes": 2,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
       "path": "jobs/657646f2ab87/safeout.log",
       "bytes": 1846,
       "exported": true,
@@ -18669,14 +20221,6 @@
       "source": "btdigg",
       "path": "jobs/66ee80f73752/cancel.json",
       "bytes": 115,
-      "exported": true,
-      "redacted": false,
-      "note": ""
-    },
-    {
-      "source": "btdigg",
-      "path": "jobs/66ee80f73752/exports/ULTIMOS_RESULTADOS.json",
-      "bytes": 18141,
       "exported": true,
       "redacted": false,
       "note": ""
@@ -18707,6 +20251,14 @@
     },
     {
       "source": "btdigg",
+      "path": "jobs/66ee80f73752/exports/ULTIMOS_RESULTADOS.json",
+      "bytes": 18141,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
       "path": "jobs/66ee80f73752/safeout.log",
       "bytes": 2548,
       "exported": true,
@@ -18725,14 +20277,6 @@
       "source": "btdigg",
       "path": "jobs/677f270daf73/cancel.json",
       "bytes": 115,
-      "exported": true,
-      "redacted": false,
-      "note": ""
-    },
-    {
-      "source": "btdigg",
-      "path": "jobs/677f270daf73/exports/ULTIMOS_RESULTADOS.json",
-      "bytes": 17340,
       "exported": true,
       "redacted": false,
       "note": ""
@@ -18763,6 +20307,14 @@
     },
     {
       "source": "btdigg",
+      "path": "jobs/677f270daf73/exports/ULTIMOS_RESULTADOS.json",
+      "bytes": 17340,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
       "path": "jobs/677f270daf73/safeout.log",
       "bytes": 2281,
       "exported": true,
@@ -18781,14 +20333,6 @@
       "source": "btdigg",
       "path": "jobs/68168a5199b1/cancel.json",
       "bytes": 115,
-      "exported": true,
-      "redacted": false,
-      "note": ""
-    },
-    {
-      "source": "btdigg",
-      "path": "jobs/68168a5199b1/exports/ULTIMOS_RESULTADOS.json",
-      "bytes": 17340,
       "exported": true,
       "redacted": false,
       "note": ""
@@ -18819,6 +20363,14 @@
     },
     {
       "source": "btdigg",
+      "path": "jobs/68168a5199b1/exports/ULTIMOS_RESULTADOS.json",
+      "bytes": 17340,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
       "path": "jobs/68168a5199b1/safeout.log",
       "bytes": 2281,
       "exported": true,
@@ -18837,14 +20389,6 @@
       "source": "btdigg",
       "path": "jobs/691bcedfe6a0/cancel.json",
       "bytes": 115,
-      "exported": true,
-      "redacted": false,
-      "note": ""
-    },
-    {
-      "source": "btdigg",
-      "path": "jobs/691bcedfe6a0/exports/ULTIMOS_RESULTADOS.json",
-      "bytes": 17340,
       "exported": true,
       "redacted": false,
       "note": ""
@@ -18875,6 +20419,14 @@
     },
     {
       "source": "btdigg",
+      "path": "jobs/691bcedfe6a0/exports/ULTIMOS_RESULTADOS.json",
+      "bytes": 17340,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
       "path": "jobs/691bcedfe6a0/safeout.log",
       "bytes": 2281,
       "exported": true,
@@ -18893,14 +20445,6 @@
       "source": "btdigg",
       "path": "jobs/6c1132b9b242/cancel.json",
       "bytes": 115,
-      "exported": true,
-      "redacted": false,
-      "note": ""
-    },
-    {
-      "source": "btdigg",
-      "path": "jobs/6c1132b9b242/exports/ULTIMOS_RESULTADOS.json",
-      "bytes": 2,
       "exported": true,
       "redacted": false,
       "note": ""
@@ -18931,6 +20475,14 @@
     },
     {
       "source": "btdigg",
+      "path": "jobs/6c1132b9b242/exports/ULTIMOS_RESULTADOS.json",
+      "bytes": 2,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
       "path": "jobs/6c1132b9b242/safeout.log",
       "bytes": 918,
       "exported": true,
@@ -18955,14 +20507,6 @@
     },
     {
       "source": "btdigg",
-      "path": "jobs/6c919074753b/exports/ULTIMOS_RESULTADOS.json",
-      "bytes": 18105,
-      "exported": true,
-      "redacted": false,
-      "note": ""
-    },
-    {
-      "source": "btdigg",
       "path": "jobs/6c919074753b/exports/ULTIMO_QBIT_VIVOS.txt",
       "bytes": 125,
       "exported": true,
@@ -18981,6 +20525,14 @@
       "source": "btdigg",
       "path": "jobs/6c919074753b/exports/ULTIMO_TOP.txt",
       "bytes": 506,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
+      "path": "jobs/6c919074753b/exports/ULTIMOS_RESULTADOS.json",
+      "bytes": 18105,
       "exported": true,
       "redacted": false,
       "note": ""
@@ -19027,14 +20579,6 @@
     },
     {
       "source": "btdigg",
-      "path": "jobs/6e62b744f837/exports/ULTIMOS_RESULTADOS.json",
-      "bytes": 85969,
-      "exported": true,
-      "redacted": false,
-      "note": ""
-    },
-    {
-      "source": "btdigg",
       "path": "jobs/6e62b744f837/exports/ULTIMO_QBIT_VIVOS.txt",
       "bytes": 125,
       "exported": true,
@@ -19053,6 +20597,14 @@
       "source": "btdigg",
       "path": "jobs/6e62b744f837/exports/ULTIMO_TOP.txt",
       "bytes": 974,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
+      "path": "jobs/6e62b744f837/exports/ULTIMOS_RESULTADOS.json",
+      "bytes": 85969,
       "exported": true,
       "redacted": false,
       "note": ""
@@ -19083,14 +20635,6 @@
     },
     {
       "source": "btdigg",
-      "path": "jobs/701c71929467/exports/ULTIMOS_RESULTADOS.json",
-      "bytes": 2,
-      "exported": true,
-      "redacted": false,
-      "note": ""
-    },
-    {
-      "source": "btdigg",
       "path": "jobs/701c71929467/exports/ULTIMO_QBIT_VIVOS.txt",
       "bytes": 125,
       "exported": true,
@@ -19109,6 +20653,14 @@
       "source": "btdigg",
       "path": "jobs/701c71929467/exports/ULTIMO_TOP.txt",
       "bytes": 107,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
+      "path": "jobs/701c71929467/exports/ULTIMOS_RESULTADOS.json",
+      "bytes": 2,
       "exported": true,
       "redacted": false,
       "note": ""
@@ -19139,14 +20691,6 @@
     },
     {
       "source": "btdigg",
-      "path": "jobs/71c39dc821d8/exports/ULTIMOS_RESULTADOS.json",
-      "bytes": 17340,
-      "exported": true,
-      "redacted": false,
-      "note": ""
-    },
-    {
-      "source": "btdigg",
       "path": "jobs/71c39dc821d8/exports/ULTIMO_QBIT_VIVOS.txt",
       "bytes": 125,
       "exported": true,
@@ -19171,6 +20715,14 @@
     },
     {
       "source": "btdigg",
+      "path": "jobs/71c39dc821d8/exports/ULTIMOS_RESULTADOS.json",
+      "bytes": 17340,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
       "path": "jobs/71c39dc821d8/safeout.log",
       "bytes": 2281,
       "exported": true,
@@ -19187,7 +20739,7 @@
     },
     {
       "source": "btdigg",
-      "path": "jobs/7848cd978285/cancel.json",
+      "path": "jobs/779ec70f5a1f/cancel.json",
       "bytes": 115,
       "exported": true,
       "redacted": false,
@@ -19195,8 +20747,56 @@
     },
     {
       "source": "btdigg",
-      "path": "jobs/7848cd978285/exports/ULTIMOS_RESULTADOS.json",
-      "bytes": 18141,
+      "path": "jobs/779ec70f5a1f/exports/ULTIMO_QBIT_VIVOS.txt",
+      "bytes": 125,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
+      "path": "jobs/779ec70f5a1f/exports/ULTIMO_RD_TEMPORAL.txt",
+      "bytes": 203,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
+      "path": "jobs/779ec70f5a1f/exports/ULTIMO_TOP.txt",
+      "bytes": 316,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
+      "path": "jobs/779ec70f5a1f/exports/ULTIMOS_RESULTADOS.json",
+      "bytes": 16956,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
+      "path": "jobs/779ec70f5a1f/safeout.log",
+      "bytes": 2122,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
+      "path": "jobs/779ec70f5a1f/shown.json",
+      "bytes": 1811,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
+      "path": "jobs/7848cd978285/cancel.json",
+      "bytes": 115,
       "exported": true,
       "redacted": false,
       "note": ""
@@ -19227,6 +20827,14 @@
     },
     {
       "source": "btdigg",
+      "path": "jobs/7848cd978285/exports/ULTIMOS_RESULTADOS.json",
+      "bytes": 18141,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
       "path": "jobs/7848cd978285/safeout.log",
       "bytes": 2548,
       "exported": true,
@@ -19243,7 +20851,7 @@
     },
     {
       "source": "btdigg",
-      "path": "jobs/7affa86828eb/cancel.json",
+      "path": "jobs/7ab846511a6e/cancel.json",
       "bytes": 115,
       "exported": true,
       "redacted": false,
@@ -19251,8 +20859,56 @@
     },
     {
       "source": "btdigg",
-      "path": "jobs/7affa86828eb/exports/ULTIMOS_RESULTADOS.json",
-      "bytes": 17779,
+      "path": "jobs/7ab846511a6e/exports/ULTIMO_QBIT_VIVOS.txt",
+      "bytes": 125,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
+      "path": "jobs/7ab846511a6e/exports/ULTIMO_RD_TEMPORAL.txt",
+      "bytes": 203,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
+      "path": "jobs/7ab846511a6e/exports/ULTIMO_TOP.txt",
+      "bytes": 316,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
+      "path": "jobs/7ab846511a6e/exports/ULTIMOS_RESULTADOS.json",
+      "bytes": 16956,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
+      "path": "jobs/7ab846511a6e/safeout.log",
+      "bytes": 2122,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
+      "path": "jobs/7ab846511a6e/shown.json",
+      "bytes": 1811,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
+      "path": "jobs/7affa86828eb/cancel.json",
+      "bytes": 115,
       "exported": true,
       "redacted": false,
       "note": ""
@@ -19283,6 +20939,14 @@
     },
     {
       "source": "btdigg",
+      "path": "jobs/7affa86828eb/exports/ULTIMOS_RESULTADOS.json",
+      "bytes": 17779,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
       "path": "jobs/7affa86828eb/safeout.log",
       "bytes": 2404,
       "exported": true,
@@ -19301,14 +20965,6 @@
       "source": "btdigg",
       "path": "jobs/7bb4458e9152/cancel.json",
       "bytes": 115,
-      "exported": true,
-      "redacted": false,
-      "note": ""
-    },
-    {
-      "source": "btdigg",
-      "path": "jobs/7bb4458e9152/exports/ULTIMOS_RESULTADOS.json",
-      "bytes": 18471,
       "exported": true,
       "redacted": false,
       "note": ""
@@ -19339,6 +20995,14 @@
     },
     {
       "source": "btdigg",
+      "path": "jobs/7bb4458e9152/exports/ULTIMOS_RESULTADOS.json",
+      "bytes": 18471,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
       "path": "jobs/7bb4458e9152/safeout.log",
       "bytes": 2231,
       "exported": true,
@@ -19355,7 +21019,7 @@
     },
     {
       "source": "btdigg",
-      "path": "jobs/7c078ae669b5/cancel.json",
+      "path": "jobs/7bfcbe9efe75/cancel.json",
       "bytes": 115,
       "exported": true,
       "redacted": false,
@@ -19363,8 +21027,56 @@
     },
     {
       "source": "btdigg",
-      "path": "jobs/7c078ae669b5/exports/ULTIMOS_RESULTADOS.json",
-      "bytes": 17340,
+      "path": "jobs/7bfcbe9efe75/exports/ULTIMO_QBIT_VIVOS.txt",
+      "bytes": 1071,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
+      "path": "jobs/7bfcbe9efe75/exports/ULTIMO_RD_TEMPORAL.txt",
+      "bytes": 203,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
+      "path": "jobs/7bfcbe9efe75/exports/ULTIMO_TOP.txt",
+      "bytes": 798,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
+      "path": "jobs/7bfcbe9efe75/exports/ULTIMOS_RESULTADOS.json",
+      "bytes": 10626,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
+      "path": "jobs/7bfcbe9efe75/safeout.log",
+      "bytes": 3695,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
+      "path": "jobs/7bfcbe9efe75/shown.json",
+      "bytes": 3966,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
+      "path": "jobs/7c078ae669b5/cancel.json",
+      "bytes": 115,
       "exported": true,
       "redacted": false,
       "note": ""
@@ -19395,6 +21107,14 @@
     },
     {
       "source": "btdigg",
+      "path": "jobs/7c078ae669b5/exports/ULTIMOS_RESULTADOS.json",
+      "bytes": 17340,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
       "path": "jobs/7c078ae669b5/safeout.log",
       "bytes": 2281,
       "exported": true,
@@ -19413,14 +21133,6 @@
       "source": "btdigg",
       "path": "jobs/7dc641b0e083/cancel.json",
       "bytes": 115,
-      "exported": true,
-      "redacted": false,
-      "note": ""
-    },
-    {
-      "source": "btdigg",
-      "path": "jobs/7dc641b0e083/exports/ULTIMOS_RESULTADOS.json",
-      "bytes": 18141,
       "exported": true,
       "redacted": false,
       "note": ""
@@ -19451,6 +21163,14 @@
     },
     {
       "source": "btdigg",
+      "path": "jobs/7dc641b0e083/exports/ULTIMOS_RESULTADOS.json",
+      "bytes": 18141,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
       "path": "jobs/7dc641b0e083/safeout.log",
       "bytes": 2548,
       "exported": true,
@@ -19469,14 +21189,6 @@
       "source": "btdigg",
       "path": "jobs/7fce09392222/cancel.json",
       "bytes": 115,
-      "exported": true,
-      "redacted": false,
-      "note": ""
-    },
-    {
-      "source": "btdigg",
-      "path": "jobs/7fce09392222/exports/ULTIMOS_RESULTADOS.json",
-      "bytes": 17340,
       "exported": true,
       "redacted": false,
       "note": ""
@@ -19507,6 +21219,14 @@
     },
     {
       "source": "btdigg",
+      "path": "jobs/7fce09392222/exports/ULTIMOS_RESULTADOS.json",
+      "bytes": 17340,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
       "path": "jobs/7fce09392222/safeout.log",
       "bytes": 2281,
       "exported": true,
@@ -19525,14 +21245,6 @@
       "source": "btdigg",
       "path": "jobs/809fded25965/cancel.json",
       "bytes": 115,
-      "exported": true,
-      "redacted": false,
-      "note": ""
-    },
-    {
-      "source": "btdigg",
-      "path": "jobs/809fded25965/exports/ULTIMOS_RESULTADOS.json",
-      "bytes": 85804,
       "exported": true,
       "redacted": false,
       "note": ""
@@ -19563,6 +21275,14 @@
     },
     {
       "source": "btdigg",
+      "path": "jobs/809fded25965/exports/ULTIMOS_RESULTADOS.json",
+      "bytes": 85804,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
       "path": "jobs/809fded25965/safeout.log",
       "bytes": 5895,
       "exported": true,
@@ -19581,14 +21301,6 @@
       "source": "btdigg",
       "path": "jobs/839ce91e0f5b/cancel.json",
       "bytes": 115,
-      "exported": true,
-      "redacted": false,
-      "note": ""
-    },
-    {
-      "source": "btdigg",
-      "path": "jobs/839ce91e0f5b/exports/ULTIMOS_RESULTADOS.json",
-      "bytes": 17851,
       "exported": true,
       "redacted": false,
       "note": ""
@@ -19619,6 +21331,14 @@
     },
     {
       "source": "btdigg",
+      "path": "jobs/839ce91e0f5b/exports/ULTIMOS_RESULTADOS.json",
+      "bytes": 17851,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
       "path": "jobs/839ce91e0f5b/safeout.log",
       "bytes": 2420,
       "exported": true,
@@ -19637,14 +21357,6 @@
       "source": "btdigg",
       "path": "jobs/83be646ade68/cancel.json",
       "bytes": 115,
-      "exported": true,
-      "redacted": false,
-      "note": ""
-    },
-    {
-      "source": "btdigg",
-      "path": "jobs/83be646ade68/exports/ULTIMOS_RESULTADOS.json",
-      "bytes": 17340,
       "exported": true,
       "redacted": false,
       "note": ""
@@ -19675,6 +21387,14 @@
     },
     {
       "source": "btdigg",
+      "path": "jobs/83be646ade68/exports/ULTIMOS_RESULTADOS.json",
+      "bytes": 17340,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
       "path": "jobs/83be646ade68/safeout.log",
       "bytes": 2281,
       "exported": true,
@@ -19691,7 +21411,7 @@
     },
     {
       "source": "btdigg",
-      "path": "jobs/859810b2bd74/cancel.json",
+      "path": "jobs/8506ac0fcc5b/cancel.json",
       "bytes": 115,
       "exported": true,
       "redacted": false,
@@ -19699,23 +21419,15 @@
     },
     {
       "source": "btdigg",
-      "path": "jobs/859810b2bd74/exports/ULTIMOS_RESULTADOS.json",
-      "bytes": 55389,
+      "path": "jobs/8506ac0fcc5b/exports/ULTIMO_QBIT_VIVOS.txt",
+      "bytes": 125,
       "exported": true,
       "redacted": false,
       "note": ""
     },
     {
       "source": "btdigg",
-      "path": "jobs/859810b2bd74/exports/ULTIMO_QBIT_VIVOS.txt",
-      "bytes": 975,
-      "exported": true,
-      "redacted": false,
-      "note": ""
-    },
-    {
-      "source": "btdigg",
-      "path": "jobs/859810b2bd74/exports/ULTIMO_RD_TEMPORAL.txt",
+      "path": "jobs/8506ac0fcc5b/exports/ULTIMO_RD_TEMPORAL.txt",
       "bytes": 203,
       "exported": true,
       "redacted": false,
@@ -19723,24 +21435,32 @@
     },
     {
       "source": "btdigg",
-      "path": "jobs/859810b2bd74/exports/ULTIMO_TOP.txt",
-      "bytes": 850,
+      "path": "jobs/8506ac0fcc5b/exports/ULTIMO_TOP.txt",
+      "bytes": 107,
       "exported": true,
       "redacted": false,
       "note": ""
     },
     {
       "source": "btdigg",
-      "path": "jobs/859810b2bd74/safeout.log",
-      "bytes": 4628,
+      "path": "jobs/8506ac0fcc5b/exports/ULTIMOS_RESULTADOS.json",
+      "bytes": 10477,
       "exported": true,
       "redacted": false,
       "note": ""
     },
     {
       "source": "btdigg",
-      "path": "jobs/859810b2bd74/shown.json",
-      "bytes": 3924,
+      "path": "jobs/8506ac0fcc5b/safeout.log",
+      "bytes": 2871,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
+      "path": "jobs/8506ac0fcc5b/shown.json",
+      "bytes": 2,
       "exported": true,
       "redacted": false,
       "note": ""
@@ -19749,14 +21469,6 @@
       "source": "btdigg",
       "path": "jobs/861d76ca42d5/cancel.json",
       "bytes": 115,
-      "exported": true,
-      "redacted": false,
-      "note": ""
-    },
-    {
-      "source": "btdigg",
-      "path": "jobs/861d76ca42d5/exports/ULTIMOS_RESULTADOS.json",
-      "bytes": 17803,
       "exported": true,
       "redacted": false,
       "note": ""
@@ -19787,6 +21499,14 @@
     },
     {
       "source": "btdigg",
+      "path": "jobs/861d76ca42d5/exports/ULTIMOS_RESULTADOS.json",
+      "bytes": 17803,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
       "path": "jobs/861d76ca42d5/safeout.log",
       "bytes": 3496,
       "exported": true,
@@ -19803,7 +21523,7 @@
     },
     {
       "source": "btdigg",
-      "path": "jobs/8959324f687f/cancel.json",
+      "path": "jobs/869e99264773/cancel.json",
       "bytes": 115,
       "exported": true,
       "redacted": false,
@@ -19811,8 +21531,56 @@
     },
     {
       "source": "btdigg",
-      "path": "jobs/8959324f687f/exports/ULTIMOS_RESULTADOS.json",
-      "bytes": 2,
+      "path": "jobs/869e99264773/exports/ULTIMO_QBIT_VIVOS.txt",
+      "bytes": 125,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
+      "path": "jobs/869e99264773/exports/ULTIMO_RD_TEMPORAL.txt",
+      "bytes": 203,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
+      "path": "jobs/869e99264773/exports/ULTIMO_TOP.txt",
+      "bytes": 527,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
+      "path": "jobs/869e99264773/exports/ULTIMOS_RESULTADOS.json",
+      "bytes": 12337,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
+      "path": "jobs/869e99264773/safeout.log",
+      "bytes": 2124,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
+      "path": "jobs/869e99264773/shown.json",
+      "bytes": 3717,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
+      "path": "jobs/8959324f687f/cancel.json",
+      "bytes": 115,
       "exported": true,
       "redacted": false,
       "note": ""
@@ -19843,6 +21611,14 @@
     },
     {
       "source": "btdigg",
+      "path": "jobs/8959324f687f/exports/ULTIMOS_RESULTADOS.json",
+      "bytes": 2,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
       "path": "jobs/8959324f687f/safeout.log",
       "bytes": 1008,
       "exported": true,
@@ -19861,14 +21637,6 @@
       "source": "btdigg",
       "path": "jobs/89bfa14c5280/cancel.json",
       "bytes": 115,
-      "exported": true,
-      "redacted": false,
-      "note": ""
-    },
-    {
-      "source": "btdigg",
-      "path": "jobs/89bfa14c5280/exports/ULTIMOS_RESULTADOS.json",
-      "bytes": 18141,
       "exported": true,
       "redacted": false,
       "note": ""
@@ -19899,6 +21667,14 @@
     },
     {
       "source": "btdigg",
+      "path": "jobs/89bfa14c5280/exports/ULTIMOS_RESULTADOS.json",
+      "bytes": 18141,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
       "path": "jobs/89bfa14c5280/safeout.log",
       "bytes": 2548,
       "exported": true,
@@ -19917,14 +21693,6 @@
       "source": "btdigg",
       "path": "jobs/8a1e5ae5011a/cancel.json",
       "bytes": 115,
-      "exported": true,
-      "redacted": false,
-      "note": ""
-    },
-    {
-      "source": "btdigg",
-      "path": "jobs/8a1e5ae5011a/exports/ULTIMOS_RESULTADOS.json",
-      "bytes": 17851,
       "exported": true,
       "redacted": false,
       "note": ""
@@ -19955,6 +21723,14 @@
     },
     {
       "source": "btdigg",
+      "path": "jobs/8a1e5ae5011a/exports/ULTIMOS_RESULTADOS.json",
+      "bytes": 17851,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
       "path": "jobs/8a1e5ae5011a/safeout.log",
       "bytes": 2420,
       "exported": true,
@@ -19973,14 +21749,6 @@
       "source": "btdigg",
       "path": "jobs/8ec2fcd5c3a8/cancel.json",
       "bytes": 115,
-      "exported": true,
-      "redacted": false,
-      "note": ""
-    },
-    {
-      "source": "btdigg",
-      "path": "jobs/8ec2fcd5c3a8/exports/ULTIMOS_RESULTADOS.json",
-      "bytes": 18141,
       "exported": true,
       "redacted": false,
       "note": ""
@@ -20011,6 +21779,14 @@
     },
     {
       "source": "btdigg",
+      "path": "jobs/8ec2fcd5c3a8/exports/ULTIMOS_RESULTADOS.json",
+      "bytes": 18141,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
       "path": "jobs/8ec2fcd5c3a8/safeout.log",
       "bytes": 2548,
       "exported": true,
@@ -20035,14 +21811,6 @@
     },
     {
       "source": "btdigg",
-      "path": "jobs/8ecf9852e6b3/exports/ULTIMOS_RESULTADOS.json",
-      "bytes": 17594,
-      "exported": true,
-      "redacted": false,
-      "note": ""
-    },
-    {
-      "source": "btdigg",
       "path": "jobs/8ecf9852e6b3/exports/ULTIMO_QBIT_VIVOS.txt",
       "bytes": 125,
       "exported": true,
@@ -20061,6 +21829,14 @@
       "source": "btdigg",
       "path": "jobs/8ecf9852e6b3/exports/ULTIMO_TOP.txt",
       "bytes": 107,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
+      "path": "jobs/8ecf9852e6b3/exports/ULTIMOS_RESULTADOS.json",
+      "bytes": 17594,
       "exported": true,
       "redacted": false,
       "note": ""
@@ -20123,14 +21899,6 @@
     },
     {
       "source": "btdigg",
-      "path": "jobs/993994ea22bc/exports/ULTIMOS_RESULTADOS.json",
-      "bytes": 17340,
-      "exported": true,
-      "redacted": false,
-      "note": ""
-    },
-    {
-      "source": "btdigg",
       "path": "jobs/993994ea22bc/exports/ULTIMO_QBIT_VIVOS.txt",
       "bytes": 125,
       "exported": true,
@@ -20149,6 +21917,14 @@
       "source": "btdigg",
       "path": "jobs/993994ea22bc/exports/ULTIMO_TOP.txt",
       "bytes": 506,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
+      "path": "jobs/993994ea22bc/exports/ULTIMOS_RESULTADOS.json",
+      "bytes": 17340,
       "exported": true,
       "redacted": false,
       "note": ""
@@ -20179,14 +21955,6 @@
     },
     {
       "source": "btdigg",
-      "path": "jobs/9b41aa144dbf/exports/ULTIMOS_RESULTADOS.json",
-      "bytes": 18141,
-      "exported": true,
-      "redacted": false,
-      "note": ""
-    },
-    {
-      "source": "btdigg",
       "path": "jobs/9b41aa144dbf/exports/ULTIMO_QBIT_VIVOS.txt",
       "bytes": 125,
       "exported": true,
@@ -20205,6 +21973,14 @@
       "source": "btdigg",
       "path": "jobs/9b41aa144dbf/exports/ULTIMO_TOP.txt",
       "bytes": 506,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
+      "path": "jobs/9b41aa144dbf/exports/ULTIMOS_RESULTADOS.json",
+      "bytes": 18141,
       "exported": true,
       "redacted": false,
       "note": ""
@@ -20235,14 +22011,6 @@
     },
     {
       "source": "btdigg",
-      "path": "jobs/a089658a1d97/exports/ULTIMOS_RESULTADOS.json",
-      "bytes": 17340,
-      "exported": true,
-      "redacted": false,
-      "note": ""
-    },
-    {
-      "source": "btdigg",
       "path": "jobs/a089658a1d97/exports/ULTIMO_QBIT_VIVOS.txt",
       "bytes": 125,
       "exported": true,
@@ -20261,6 +22029,14 @@
       "source": "btdigg",
       "path": "jobs/a089658a1d97/exports/ULTIMO_TOP.txt",
       "bytes": 506,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
+      "path": "jobs/a089658a1d97/exports/ULTIMOS_RESULTADOS.json",
+      "bytes": 17340,
       "exported": true,
       "redacted": false,
       "note": ""
@@ -20291,14 +22067,6 @@
     },
     {
       "source": "btdigg",
-      "path": "jobs/a57ea0dc061e/exports/ULTIMOS_RESULTADOS.json",
-      "bytes": 18141,
-      "exported": true,
-      "redacted": false,
-      "note": ""
-    },
-    {
-      "source": "btdigg",
       "path": "jobs/a57ea0dc061e/exports/ULTIMO_QBIT_VIVOS.txt",
       "bytes": 125,
       "exported": true,
@@ -20323,6 +22091,14 @@
     },
     {
       "source": "btdigg",
+      "path": "jobs/a57ea0dc061e/exports/ULTIMOS_RESULTADOS.json",
+      "bytes": 18141,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
       "path": "jobs/a57ea0dc061e/safeout.log",
       "bytes": 2548,
       "exported": true,
@@ -20339,184 +22115,8 @@
     },
     {
       "source": "btdigg",
-      "path": "jobs/a6c238ed276f/cancel.json",
-      "bytes": 115,
-      "exported": true,
-      "redacted": false,
-      "note": ""
-    },
-    {
-      "source": "btdigg",
-      "path": "jobs/a6c238ed276f/exports/ULTIMOS_RESULTADOS.json",
-      "bytes": 17887,
-      "exported": true,
-      "redacted": false,
-      "note": ""
-    },
-    {
-      "source": "btdigg",
-      "path": "jobs/a6c238ed276f/exports/ULTIMO_QBIT_VIVOS.txt",
-      "bytes": 1941,
-      "exported": true,
-      "redacted": false,
-      "note": ""
-    },
-    {
-      "source": "btdigg",
-      "path": "jobs/a6c238ed276f/exports/ULTIMO_RD_TEMPORAL.txt",
-      "bytes": 203,
-      "exported": true,
-      "redacted": false,
-      "note": ""
-    },
-    {
-      "source": "btdigg",
-      "path": "jobs/a6c238ed276f/exports/ULTIMO_TOP.txt",
-      "bytes": 1435,
-      "exported": true,
-      "redacted": false,
-      "note": ""
-    },
-    {
-      "source": "btdigg",
-      "path": "jobs/a6c238ed276f/safeout.log",
-      "bytes": 3807,
-      "exported": true,
-      "redacted": false,
-      "note": ""
-    },
-    {
-      "source": "btdigg",
-      "path": "jobs/a6c238ed276f/shown.json",
-      "bytes": 7618,
-      "exported": true,
-      "redacted": false,
-      "note": ""
-    },
-    {
-      "source": "btdigg",
-      "path": "jobs/a6d837ee83b0/cancel.json",
-      "bytes": 115,
-      "exported": true,
-      "redacted": false,
-      "note": ""
-    },
-    {
-      "source": "btdigg",
-      "path": "jobs/a6d837ee83b0/exports/ULTIMOS_RESULTADOS.json",
-      "bytes": 17804,
-      "exported": true,
-      "redacted": false,
-      "note": ""
-    },
-    {
-      "source": "btdigg",
-      "path": "jobs/a6d837ee83b0/exports/ULTIMO_QBIT_VIVOS.txt",
-      "bytes": 125,
-      "exported": true,
-      "redacted": false,
-      "note": ""
-    },
-    {
-      "source": "btdigg",
-      "path": "jobs/a6d837ee83b0/exports/ULTIMO_RD_TEMPORAL.txt",
-      "bytes": 203,
-      "exported": true,
-      "redacted": false,
-      "note": ""
-    },
-    {
-      "source": "btdigg",
-      "path": "jobs/a6d837ee83b0/exports/ULTIMO_TOP.txt",
-      "bytes": 107,
-      "exported": true,
-      "redacted": false,
-      "note": ""
-    },
-    {
-      "source": "btdigg",
-      "path": "jobs/a6d837ee83b0/safeout.log",
-      "bytes": 1960,
-      "exported": true,
-      "redacted": false,
-      "note": ""
-    },
-    {
-      "source": "btdigg",
-      "path": "jobs/a6d837ee83b0/shown.json",
-      "bytes": 2,
-      "exported": true,
-      "redacted": false,
-      "note": ""
-    },
-    {
-      "source": "btdigg",
-      "path": "jobs/a75cc0a48d01/cancel.json",
-      "bytes": 115,
-      "exported": true,
-      "redacted": false,
-      "note": ""
-    },
-    {
-      "source": "btdigg",
-      "path": "jobs/a75cc0a48d01/exports/ULTIMOS_RESULTADOS.json",
-      "bytes": 18640,
-      "exported": true,
-      "redacted": false,
-      "note": ""
-    },
-    {
-      "source": "btdigg",
-      "path": "jobs/a75cc0a48d01/exports/ULTIMO_QBIT_VIVOS.txt",
-      "bytes": 567,
-      "exported": true,
-      "redacted": false,
-      "note": ""
-    },
-    {
-      "source": "btdigg",
-      "path": "jobs/a75cc0a48d01/exports/ULTIMO_RD_TEMPORAL.txt",
-      "bytes": 203,
-      "exported": true,
-      "redacted": false,
-      "note": ""
-    },
-    {
-      "source": "btdigg",
-      "path": "jobs/a75cc0a48d01/exports/ULTIMO_TOP.txt",
-      "bytes": 509,
-      "exported": true,
-      "redacted": false,
-      "note": ""
-    },
-    {
-      "source": "btdigg",
-      "path": "jobs/a75cc0a48d01/safeout.log",
-      "bytes": 3478,
-      "exported": true,
-      "redacted": false,
-      "note": ""
-    },
-    {
-      "source": "btdigg",
-      "path": "jobs/a75cc0a48d01/shown.json",
-      "bytes": 2028,
-      "exported": true,
-      "redacted": false,
-      "note": ""
-    },
-    {
-      "source": "btdigg",
       "path": "jobs/a78ee43d353c/cancel.json",
       "bytes": 115,
-      "exported": true,
-      "redacted": false,
-      "note": ""
-    },
-    {
-      "source": "btdigg",
-      "path": "jobs/a78ee43d353c/exports/ULTIMOS_RESULTADOS.json",
-      "bytes": 83393,
       "exported": true,
       "redacted": false,
       "note": ""
@@ -20547,6 +22147,14 @@
     },
     {
       "source": "btdigg",
+      "path": "jobs/a78ee43d353c/exports/ULTIMOS_RESULTADOS.json",
+      "bytes": 83393,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
       "path": "jobs/a78ee43d353c/safeout.log",
       "bytes": 4779,
       "exported": true,
@@ -20565,14 +22173,6 @@
       "source": "btdigg",
       "path": "jobs/a84d7e65dc85/cancel.json",
       "bytes": 115,
-      "exported": true,
-      "redacted": false,
-      "note": ""
-    },
-    {
-      "source": "btdigg",
-      "path": "jobs/a84d7e65dc85/exports/ULTIMOS_RESULTADOS.json",
-      "bytes": 17163,
       "exported": true,
       "redacted": false,
       "note": ""
@@ -20603,6 +22203,14 @@
     },
     {
       "source": "btdigg",
+      "path": "jobs/a84d7e65dc85/exports/ULTIMOS_RESULTADOS.json",
+      "bytes": 17163,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
       "path": "jobs/a84d7e65dc85/safeout.log",
       "bytes": 2192,
       "exported": true,
@@ -20621,14 +22229,6 @@
       "source": "btdigg",
       "path": "jobs/a999da71e94d/cancel.json",
       "bytes": 115,
-      "exported": true,
-      "redacted": false,
-      "note": ""
-    },
-    {
-      "source": "btdigg",
-      "path": "jobs/a999da71e94d/exports/ULTIMOS_RESULTADOS.json",
-      "bytes": 17340,
       "exported": true,
       "redacted": false,
       "note": ""
@@ -20659,6 +22259,14 @@
     },
     {
       "source": "btdigg",
+      "path": "jobs/a999da71e94d/exports/ULTIMOS_RESULTADOS.json",
+      "bytes": 17340,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
       "path": "jobs/a999da71e94d/safeout.log",
       "bytes": 2281,
       "exported": true,
@@ -20677,14 +22285,6 @@
       "source": "btdigg",
       "path": "jobs/a9b982a5618b/cancel.json",
       "bytes": 115,
-      "exported": true,
-      "redacted": false,
-      "note": ""
-    },
-    {
-      "source": "btdigg",
-      "path": "jobs/a9b982a5618b/exports/ULTIMOS_RESULTADOS.json",
-      "bytes": 17729,
       "exported": true,
       "redacted": false,
       "note": ""
@@ -20715,6 +22315,14 @@
     },
     {
       "source": "btdigg",
+      "path": "jobs/a9b982a5618b/exports/ULTIMOS_RESULTADOS.json",
+      "bytes": 17729,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
       "path": "jobs/a9b982a5618b/safeout.log",
       "bytes": 2849,
       "exported": true,
@@ -20733,14 +22341,6 @@
       "source": "btdigg",
       "path": "jobs/a9c81e4ade8a/cancel.json",
       "bytes": 115,
-      "exported": true,
-      "redacted": false,
-      "note": ""
-    },
-    {
-      "source": "btdigg",
-      "path": "jobs/a9c81e4ade8a/exports/ULTIMOS_RESULTADOS.json",
-      "bytes": 17836,
       "exported": true,
       "redacted": false,
       "note": ""
@@ -20771,6 +22371,14 @@
     },
     {
       "source": "btdigg",
+      "path": "jobs/a9c81e4ade8a/exports/ULTIMOS_RESULTADOS.json",
+      "bytes": 17836,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
       "path": "jobs/a9c81e4ade8a/safeout.log",
       "bytes": 2197,
       "exported": true,
@@ -20787,72 +22395,8 @@
     },
     {
       "source": "btdigg",
-      "path": "jobs/ab7844241b75/cancel.json",
-      "bytes": 115,
-      "exported": true,
-      "redacted": false,
-      "note": ""
-    },
-    {
-      "source": "btdigg",
-      "path": "jobs/ab7844241b75/exports/ULTIMOS_RESULTADOS.json",
-      "bytes": 17873,
-      "exported": true,
-      "redacted": false,
-      "note": ""
-    },
-    {
-      "source": "btdigg",
-      "path": "jobs/ab7844241b75/exports/ULTIMO_QBIT_VIVOS.txt",
-      "bytes": 1958,
-      "exported": true,
-      "redacted": false,
-      "note": ""
-    },
-    {
-      "source": "btdigg",
-      "path": "jobs/ab7844241b75/exports/ULTIMO_RD_TEMPORAL.txt",
-      "bytes": 203,
-      "exported": true,
-      "redacted": false,
-      "note": ""
-    },
-    {
-      "source": "btdigg",
-      "path": "jobs/ab7844241b75/exports/ULTIMO_TOP.txt",
-      "bytes": 1463,
-      "exported": true,
-      "redacted": false,
-      "note": ""
-    },
-    {
-      "source": "btdigg",
-      "path": "jobs/ab7844241b75/safeout.log",
-      "bytes": 3779,
-      "exported": true,
-      "redacted": false,
-      "note": ""
-    },
-    {
-      "source": "btdigg",
-      "path": "jobs/ab7844241b75/shown.json",
-      "bytes": 7473,
-      "exported": true,
-      "redacted": false,
-      "note": ""
-    },
-    {
-      "source": "btdigg",
       "path": "jobs/ac45a3aea430/cancel.json",
       "bytes": 115,
-      "exported": true,
-      "redacted": false,
-      "note": ""
-    },
-    {
-      "source": "btdigg",
-      "path": "jobs/ac45a3aea430/exports/ULTIMOS_RESULTADOS.json",
-      "bytes": 17340,
       "exported": true,
       "redacted": false,
       "note": ""
@@ -20877,6 +22421,14 @@
       "source": "btdigg",
       "path": "jobs/ac45a3aea430/exports/ULTIMO_TOP.txt",
       "bytes": 506,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
+      "path": "jobs/ac45a3aea430/exports/ULTIMOS_RESULTADOS.json",
+      "bytes": 17340,
       "exported": true,
       "redacted": false,
       "note": ""
@@ -20923,14 +22475,6 @@
     },
     {
       "source": "btdigg",
-      "path": "jobs/ae7c93deb0c8/exports/ULTIMOS_RESULTADOS.json",
-      "bytes": 17340,
-      "exported": true,
-      "redacted": false,
-      "note": ""
-    },
-    {
-      "source": "btdigg",
       "path": "jobs/ae7c93deb0c8/exports/ULTIMO_QBIT_VIVOS.txt",
       "bytes": 125,
       "exported": true,
@@ -20949,6 +22493,14 @@
       "source": "btdigg",
       "path": "jobs/ae7c93deb0c8/exports/ULTIMO_TOP.txt",
       "bytes": 506,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
+      "path": "jobs/ae7c93deb0c8/exports/ULTIMOS_RESULTADOS.json",
+      "bytes": 17340,
       "exported": true,
       "redacted": false,
       "note": ""
@@ -20995,14 +22547,6 @@
     },
     {
       "source": "btdigg",
-      "path": "jobs/af120cf844fa/exports/ULTIMOS_RESULTADOS.json",
-      "bytes": 86017,
-      "exported": true,
-      "redacted": false,
-      "note": ""
-    },
-    {
-      "source": "btdigg",
       "path": "jobs/af120cf844fa/exports/ULTIMO_QBIT_VIVOS.txt",
       "bytes": 125,
       "exported": true,
@@ -21021,6 +22565,14 @@
       "source": "btdigg",
       "path": "jobs/af120cf844fa/exports/ULTIMO_TOP.txt",
       "bytes": 107,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
+      "path": "jobs/af120cf844fa/exports/ULTIMOS_RESULTADOS.json",
+      "bytes": 86017,
       "exported": true,
       "redacted": false,
       "note": ""
@@ -21051,14 +22603,6 @@
     },
     {
       "source": "btdigg",
-      "path": "jobs/afcc7bac28c6/exports/ULTIMOS_RESULTADOS.json",
-      "bytes": 17304,
-      "exported": true,
-      "redacted": false,
-      "note": ""
-    },
-    {
-      "source": "btdigg",
       "path": "jobs/afcc7bac28c6/exports/ULTIMO_QBIT_VIVOS.txt",
       "bytes": 125,
       "exported": true,
@@ -21077,6 +22621,14 @@
       "source": "btdigg",
       "path": "jobs/afcc7bac28c6/exports/ULTIMO_TOP.txt",
       "bytes": 506,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
+      "path": "jobs/afcc7bac28c6/exports/ULTIMOS_RESULTADOS.json",
+      "bytes": 17304,
       "exported": true,
       "redacted": false,
       "note": ""
@@ -21107,14 +22659,6 @@
     },
     {
       "source": "btdigg",
-      "path": "jobs/b02c466d3fb7/exports/ULTIMOS_RESULTADOS.json",
-      "bytes": 17384,
-      "exported": true,
-      "redacted": false,
-      "note": ""
-    },
-    {
-      "source": "btdigg",
       "path": "jobs/b02c466d3fb7/exports/ULTIMO_QBIT_VIVOS.txt",
       "bytes": 125,
       "exported": true,
@@ -21133,6 +22677,14 @@
       "source": "btdigg",
       "path": "jobs/b02c466d3fb7/exports/ULTIMO_TOP.txt",
       "bytes": 506,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
+      "path": "jobs/b02c466d3fb7/exports/ULTIMOS_RESULTADOS.json",
+      "bytes": 17384,
       "exported": true,
       "redacted": false,
       "note": ""
@@ -21163,14 +22715,6 @@
     },
     {
       "source": "btdigg",
-      "path": "jobs/b1e33edab325/exports/ULTIMOS_RESULTADOS.json",
-      "bytes": 273247,
-      "exported": true,
-      "redacted": false,
-      "note": ""
-    },
-    {
-      "source": "btdigg",
       "path": "jobs/b1e33edab325/exports/ULTIMO_QBIT_VIVOS.txt",
       "bytes": 1040,
       "exported": true,
@@ -21189,6 +22733,14 @@
       "source": "btdigg",
       "path": "jobs/b1e33edab325/exports/ULTIMO_TOP.txt",
       "bytes": 5452,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
+      "path": "jobs/b1e33edab325/exports/ULTIMOS_RESULTADOS.json",
+      "bytes": 273247,
       "exported": true,
       "redacted": false,
       "note": ""
@@ -21219,14 +22771,6 @@
     },
     {
       "source": "btdigg",
-      "path": "jobs/b2ab43748f9f/exports/ULTIMOS_RESULTADOS.json",
-      "bytes": 18028,
-      "exported": true,
-      "redacted": false,
-      "note": ""
-    },
-    {
-      "source": "btdigg",
       "path": "jobs/b2ab43748f9f/exports/ULTIMO_QBIT_VIVOS.txt",
       "bytes": 125,
       "exported": true,
@@ -21245,6 +22789,14 @@
       "source": "btdigg",
       "path": "jobs/b2ab43748f9f/exports/ULTIMO_TOP.txt",
       "bytes": 490,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
+      "path": "jobs/b2ab43748f9f/exports/ULTIMOS_RESULTADOS.json",
+      "bytes": 18028,
       "exported": true,
       "redacted": false,
       "note": ""
@@ -21275,14 +22827,6 @@
     },
     {
       "source": "btdigg",
-      "path": "jobs/b2f3158c003a/exports/ULTIMOS_RESULTADOS.json",
-      "bytes": 16772,
-      "exported": true,
-      "redacted": false,
-      "note": ""
-    },
-    {
-      "source": "btdigg",
       "path": "jobs/b2f3158c003a/exports/ULTIMO_QBIT_VIVOS.txt",
       "bytes": 125,
       "exported": true,
@@ -21301,6 +22845,14 @@
       "source": "btdigg",
       "path": "jobs/b2f3158c003a/exports/ULTIMO_TOP.txt",
       "bytes": 107,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
+      "path": "jobs/b2f3158c003a/exports/ULTIMOS_RESULTADOS.json",
+      "bytes": 16772,
       "exported": true,
       "redacted": false,
       "note": ""
@@ -21331,14 +22883,6 @@
     },
     {
       "source": "btdigg",
-      "path": "jobs/b353cd7e29ed/exports/ULTIMOS_RESULTADOS.json",
-      "bytes": 17851,
-      "exported": true,
-      "redacted": false,
-      "note": ""
-    },
-    {
-      "source": "btdigg",
       "path": "jobs/b353cd7e29ed/exports/ULTIMO_QBIT_VIVOS.txt",
       "bytes": 125,
       "exported": true,
@@ -21357,6 +22901,14 @@
       "source": "btdigg",
       "path": "jobs/b353cd7e29ed/exports/ULTIMO_TOP.txt",
       "bytes": 416,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
+      "path": "jobs/b353cd7e29ed/exports/ULTIMOS_RESULTADOS.json",
+      "bytes": 17851,
       "exported": true,
       "redacted": false,
       "note": ""
@@ -21387,14 +22939,6 @@
     },
     {
       "source": "btdigg",
-      "path": "jobs/b43439dc6734/exports/ULTIMOS_RESULTADOS.json",
-      "bytes": 14117,
-      "exported": true,
-      "redacted": false,
-      "note": ""
-    },
-    {
-      "source": "btdigg",
       "path": "jobs/b43439dc6734/exports/ULTIMO_QBIT_VIVOS.txt",
       "bytes": 3653,
       "exported": true,
@@ -21413,6 +22957,14 @@
       "source": "btdigg",
       "path": "jobs/b43439dc6734/exports/ULTIMO_TOP.txt",
       "bytes": 2858,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
+      "path": "jobs/b43439dc6734/exports/ULTIMOS_RESULTADOS.json",
+      "bytes": 14117,
       "exported": true,
       "redacted": false,
       "note": ""
@@ -21443,14 +22995,6 @@
     },
     {
       "source": "btdigg",
-      "path": "jobs/b5c7b3b2d511/exports/ULTIMOS_RESULTADOS.json",
-      "bytes": 17304,
-      "exported": true,
-      "redacted": false,
-      "note": ""
-    },
-    {
-      "source": "btdigg",
       "path": "jobs/b5c7b3b2d511/exports/ULTIMO_QBIT_VIVOS.txt",
       "bytes": 125,
       "exported": true,
@@ -21469,6 +23013,14 @@
       "source": "btdigg",
       "path": "jobs/b5c7b3b2d511/exports/ULTIMO_TOP.txt",
       "bytes": 506,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
+      "path": "jobs/b5c7b3b2d511/exports/ULTIMOS_RESULTADOS.json",
+      "bytes": 17304,
       "exported": true,
       "redacted": false,
       "note": ""
@@ -21499,14 +23051,6 @@
     },
     {
       "source": "btdigg",
-      "path": "jobs/b60141abdb74/exports/ULTIMOS_RESULTADOS.json",
-      "bytes": 16051,
-      "exported": true,
-      "redacted": false,
-      "note": ""
-    },
-    {
-      "source": "btdigg",
       "path": "jobs/b60141abdb74/exports/ULTIMO_QBIT_VIVOS.txt",
       "bytes": 3885,
       "exported": true,
@@ -21525,6 +23069,14 @@
       "source": "btdigg",
       "path": "jobs/b60141abdb74/exports/ULTIMO_TOP.txt",
       "bytes": 2957,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
+      "path": "jobs/b60141abdb74/exports/ULTIMOS_RESULTADOS.json",
+      "bytes": 16051,
       "exported": true,
       "redacted": false,
       "note": ""
@@ -21571,14 +23123,6 @@
     },
     {
       "source": "btdigg",
-      "path": "jobs/bbe21e7c6a22/exports/ULTIMOS_RESULTADOS.json",
-      "bytes": 18107,
-      "exported": true,
-      "redacted": false,
-      "note": ""
-    },
-    {
-      "source": "btdigg",
       "path": "jobs/bbe21e7c6a22/exports/ULTIMO_QBIT_VIVOS.txt",
       "bytes": 125,
       "exported": true,
@@ -21597,6 +23141,14 @@
       "source": "btdigg",
       "path": "jobs/bbe21e7c6a22/exports/ULTIMO_TOP.txt",
       "bytes": 606,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
+      "path": "jobs/bbe21e7c6a22/exports/ULTIMOS_RESULTADOS.json",
+      "bytes": 18107,
       "exported": true,
       "redacted": false,
       "note": ""
@@ -21627,14 +23179,6 @@
     },
     {
       "source": "btdigg",
-      "path": "jobs/be9d48042cf7/exports/ULTIMOS_RESULTADOS.json",
-      "bytes": 18107,
-      "exported": true,
-      "redacted": false,
-      "note": ""
-    },
-    {
-      "source": "btdigg",
       "path": "jobs/be9d48042cf7/exports/ULTIMO_QBIT_VIVOS.txt",
       "bytes": 125,
       "exported": true,
@@ -21653,6 +23197,14 @@
       "source": "btdigg",
       "path": "jobs/be9d48042cf7/exports/ULTIMO_TOP.txt",
       "bytes": 606,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
+      "path": "jobs/be9d48042cf7/exports/ULTIMOS_RESULTADOS.json",
+      "bytes": 18107,
       "exported": true,
       "redacted": false,
       "note": ""
@@ -21683,14 +23235,6 @@
     },
     {
       "source": "btdigg",
-      "path": "jobs/bf3e3e23f9ac/exports/ULTIMOS_RESULTADOS.json",
-      "bytes": 17983,
-      "exported": true,
-      "redacted": false,
-      "note": ""
-    },
-    {
-      "source": "btdigg",
       "path": "jobs/bf3e3e23f9ac/exports/ULTIMO_QBIT_VIVOS.txt",
       "bytes": 543,
       "exported": true,
@@ -21715,6 +23259,14 @@
     },
     {
       "source": "btdigg",
+      "path": "jobs/bf3e3e23f9ac/exports/ULTIMOS_RESULTADOS.json",
+      "bytes": 17983,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
       "path": "jobs/bf3e3e23f9ac/safeout.log",
       "bytes": 2561,
       "exported": true,
@@ -21731,7 +23283,7 @@
     },
     {
       "source": "btdigg",
-      "path": "jobs/c0fce226b6fe/cancel.json",
+      "path": "jobs/bf6371f90a82/cancel.json",
       "bytes": 115,
       "exported": true,
       "redacted": false,
@@ -21739,8 +23291,112 @@
     },
     {
       "source": "btdigg",
-      "path": "jobs/c0fce226b6fe/exports/ULTIMOS_RESULTADOS.json",
-      "bytes": 17340,
+      "path": "jobs/bf6371f90a82/exports/ULTIMO_QBIT_VIVOS.txt",
+      "bytes": 125,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
+      "path": "jobs/bf6371f90a82/exports/ULTIMO_RD_TEMPORAL.txt",
+      "bytes": 203,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
+      "path": "jobs/bf6371f90a82/exports/ULTIMO_TOP.txt",
+      "bytes": 107,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
+      "path": "jobs/bf6371f90a82/exports/ULTIMOS_RESULTADOS.json",
+      "bytes": 11824,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
+      "path": "jobs/bf6371f90a82/safeout.log",
+      "bytes": 3881,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
+      "path": "jobs/bf6371f90a82/shown.json",
+      "bytes": 2,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
+      "path": "jobs/c0420e1d4d5f/cancel.json",
+      "bytes": 115,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
+      "path": "jobs/c0420e1d4d5f/exports/ULTIMO_QBIT_VIVOS.txt",
+      "bytes": 125,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
+      "path": "jobs/c0420e1d4d5f/exports/ULTIMO_RD_TEMPORAL.txt",
+      "bytes": 203,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
+      "path": "jobs/c0420e1d4d5f/exports/ULTIMO_TOP.txt",
+      "bytes": 493,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
+      "path": "jobs/c0420e1d4d5f/exports/ULTIMOS_RESULTADOS.json",
+      "bytes": 17779,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
+      "path": "jobs/c0420e1d4d5f/safeout.log",
+      "bytes": 2404,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
+      "path": "jobs/c0420e1d4d5f/shown.json",
+      "bytes": 3530,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
+      "path": "jobs/c0fce226b6fe/cancel.json",
+      "bytes": 115,
       "exported": true,
       "redacted": false,
       "note": ""
@@ -21771,6 +23427,14 @@
     },
     {
       "source": "btdigg",
+      "path": "jobs/c0fce226b6fe/exports/ULTIMOS_RESULTADOS.json",
+      "bytes": 17340,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
       "path": "jobs/c0fce226b6fe/safeout.log",
       "bytes": 2281,
       "exported": true,
@@ -21787,7 +23451,7 @@
     },
     {
       "source": "btdigg",
-      "path": "jobs/c3d38a48ff18/cancel.json",
+      "path": "jobs/c200c2dd6021/cancel.json",
       "bytes": 115,
       "exported": true,
       "redacted": false,
@@ -21795,8 +23459,56 @@
     },
     {
       "source": "btdigg",
-      "path": "jobs/c3d38a48ff18/exports/ULTIMOS_RESULTADOS.json",
-      "bytes": 18028,
+      "path": "jobs/c200c2dd6021/exports/ULTIMO_QBIT_VIVOS.txt",
+      "bytes": 125,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
+      "path": "jobs/c200c2dd6021/exports/ULTIMO_RD_TEMPORAL.txt",
+      "bytes": 203,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
+      "path": "jobs/c200c2dd6021/exports/ULTIMO_TOP.txt",
+      "bytes": 107,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
+      "path": "jobs/c200c2dd6021/exports/ULTIMOS_RESULTADOS.json",
+      "bytes": 8138,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
+      "path": "jobs/c200c2dd6021/safeout.log",
+      "bytes": 2650,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
+      "path": "jobs/c200c2dd6021/shown.json",
+      "bytes": 2,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
+      "path": "jobs/c3d38a48ff18/cancel.json",
+      "bytes": 115,
       "exported": true,
       "redacted": false,
       "note": ""
@@ -21827,6 +23539,14 @@
     },
     {
       "source": "btdigg",
+      "path": "jobs/c3d38a48ff18/exports/ULTIMOS_RESULTADOS.json",
+      "bytes": 18028,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
       "path": "jobs/c3d38a48ff18/safeout.log",
       "bytes": 2483,
       "exported": true,
@@ -21845,14 +23565,6 @@
       "source": "btdigg",
       "path": "jobs/c41669355df7/cancel.json",
       "bytes": 115,
-      "exported": true,
-      "redacted": false,
-      "note": ""
-    },
-    {
-      "source": "btdigg",
-      "path": "jobs/c41669355df7/exports/ULTIMOS_RESULTADOS.json",
-      "bytes": 16624,
       "exported": true,
       "redacted": false,
       "note": ""
@@ -21883,6 +23595,14 @@
     },
     {
       "source": "btdigg",
+      "path": "jobs/c41669355df7/exports/ULTIMOS_RESULTADOS.json",
+      "bytes": 16624,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
       "path": "jobs/c41669355df7/safeout.log",
       "bytes": 1826,
       "exported": true,
@@ -21901,14 +23621,6 @@
       "source": "btdigg",
       "path": "jobs/c45b3ba65aa5/cancel.json",
       "bytes": 115,
-      "exported": true,
-      "redacted": false,
-      "note": ""
-    },
-    {
-      "source": "btdigg",
-      "path": "jobs/c45b3ba65aa5/exports/ULTIMOS_RESULTADOS.json",
-      "bytes": 17340,
       "exported": true,
       "redacted": false,
       "note": ""
@@ -21939,6 +23651,14 @@
     },
     {
       "source": "btdigg",
+      "path": "jobs/c45b3ba65aa5/exports/ULTIMOS_RESULTADOS.json",
+      "bytes": 17340,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
       "path": "jobs/c45b3ba65aa5/safeout.log",
       "bytes": 2281,
       "exported": true,
@@ -21955,7 +23675,7 @@
     },
     {
       "source": "btdigg",
-      "path": "jobs/cb8d2ad4f66d/cancel.json",
+      "path": "jobs/c8f10cae15cf/cancel.json",
       "bytes": 115,
       "exported": true,
       "redacted": false,
@@ -21963,8 +23683,56 @@
     },
     {
       "source": "btdigg",
-      "path": "jobs/cb8d2ad4f66d/exports/ULTIMOS_RESULTADOS.json",
-      "bytes": 20422,
+      "path": "jobs/c8f10cae15cf/exports/ULTIMO_QBIT_VIVOS.txt",
+      "bytes": 125,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
+      "path": "jobs/c8f10cae15cf/exports/ULTIMO_RD_TEMPORAL.txt",
+      "bytes": 203,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
+      "path": "jobs/c8f10cae15cf/exports/ULTIMO_TOP.txt",
+      "bytes": 107,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
+      "path": "jobs/c8f10cae15cf/exports/ULTIMOS_RESULTADOS.json",
+      "bytes": 6515,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
+      "path": "jobs/c8f10cae15cf/safeout.log",
+      "bytes": 1974,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
+      "path": "jobs/c8f10cae15cf/shown.json",
+      "bytes": 2,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
+      "path": "jobs/cb8d2ad4f66d/cancel.json",
+      "bytes": 115,
       "exported": true,
       "redacted": false,
       "note": ""
@@ -21989,6 +23757,14 @@
       "source": "btdigg",
       "path": "jobs/cb8d2ad4f66d/exports/ULTIMO_TOP.txt",
       "bytes": 107,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
+      "path": "jobs/cb8d2ad4f66d/exports/ULTIMOS_RESULTADOS.json",
+      "bytes": 20422,
       "exported": true,
       "redacted": false,
       "note": ""
@@ -22035,14 +23811,6 @@
     },
     {
       "source": "btdigg",
-      "path": "jobs/cf5f38ab9fd5/exports/ULTIMOS_RESULTADOS.json",
-      "bytes": 2,
-      "exported": true,
-      "redacted": false,
-      "note": ""
-    },
-    {
-      "source": "btdigg",
       "path": "jobs/cf5f38ab9fd5/exports/ULTIMO_QBIT_VIVOS.txt",
       "bytes": 125,
       "exported": true,
@@ -22061,6 +23829,14 @@
       "source": "btdigg",
       "path": "jobs/cf5f38ab9fd5/exports/ULTIMO_TOP.txt",
       "bytes": 107,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
+      "path": "jobs/cf5f38ab9fd5/exports/ULTIMOS_RESULTADOS.json",
+      "bytes": 2,
       "exported": true,
       "redacted": false,
       "note": ""
@@ -22091,14 +23867,6 @@
     },
     {
       "source": "btdigg",
-      "path": "jobs/d79f10a29602/exports/ULTIMOS_RESULTADOS.json",
-      "bytes": 18028,
-      "exported": true,
-      "redacted": false,
-      "note": ""
-    },
-    {
-      "source": "btdigg",
       "path": "jobs/d79f10a29602/exports/ULTIMO_QBIT_VIVOS.txt",
       "bytes": 125,
       "exported": true,
@@ -22117,6 +23885,14 @@
       "source": "btdigg",
       "path": "jobs/d79f10a29602/exports/ULTIMO_TOP.txt",
       "bytes": 490,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
+      "path": "jobs/d79f10a29602/exports/ULTIMOS_RESULTADOS.json",
+      "bytes": 18028,
       "exported": true,
       "redacted": false,
       "note": ""
@@ -22147,14 +23923,6 @@
     },
     {
       "source": "btdigg",
-      "path": "jobs/d965e9efe79a/exports/ULTIMOS_RESULTADOS.json",
-      "bytes": 18105,
-      "exported": true,
-      "redacted": false,
-      "note": ""
-    },
-    {
-      "source": "btdigg",
       "path": "jobs/d965e9efe79a/exports/ULTIMO_QBIT_VIVOS.txt",
       "bytes": 125,
       "exported": true,
@@ -22179,6 +23947,14 @@
     },
     {
       "source": "btdigg",
+      "path": "jobs/d965e9efe79a/exports/ULTIMOS_RESULTADOS.json",
+      "bytes": 18105,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
       "path": "jobs/d965e9efe79a/safeout.log",
       "bytes": 2548,
       "exported": true,
@@ -22195,128 +23971,8 @@
     },
     {
       "source": "btdigg",
-      "path": "jobs/db0854e0dac0/cancel.json",
-      "bytes": 115,
-      "exported": true,
-      "redacted": false,
-      "note": ""
-    },
-    {
-      "source": "btdigg",
-      "path": "jobs/db0854e0dac0/exports/ULTIMOS_RESULTADOS.json",
-      "bytes": 2,
-      "exported": true,
-      "redacted": false,
-      "note": ""
-    },
-    {
-      "source": "btdigg",
-      "path": "jobs/db0854e0dac0/exports/ULTIMO_QBIT_VIVOS.txt",
-      "bytes": 125,
-      "exported": true,
-      "redacted": false,
-      "note": ""
-    },
-    {
-      "source": "btdigg",
-      "path": "jobs/db0854e0dac0/exports/ULTIMO_RD_TEMPORAL.txt",
-      "bytes": 203,
-      "exported": true,
-      "redacted": false,
-      "note": ""
-    },
-    {
-      "source": "btdigg",
-      "path": "jobs/db0854e0dac0/exports/ULTIMO_TOP.txt",
-      "bytes": 107,
-      "exported": true,
-      "redacted": false,
-      "note": ""
-    },
-    {
-      "source": "btdigg",
-      "path": "jobs/db0854e0dac0/safeout.log",
-      "bytes": 1231,
-      "exported": true,
-      "redacted": false,
-      "note": ""
-    },
-    {
-      "source": "btdigg",
-      "path": "jobs/db0854e0dac0/shown.json",
-      "bytes": 2,
-      "exported": true,
-      "redacted": false,
-      "note": ""
-    },
-    {
-      "source": "btdigg",
-      "path": "jobs/db5b1e1f8f99/cancel.json",
-      "bytes": 115,
-      "exported": true,
-      "redacted": false,
-      "note": ""
-    },
-    {
-      "source": "btdigg",
-      "path": "jobs/db5b1e1f8f99/exports/ULTIMOS_RESULTADOS.json",
-      "bytes": 2,
-      "exported": true,
-      "redacted": false,
-      "note": ""
-    },
-    {
-      "source": "btdigg",
-      "path": "jobs/db5b1e1f8f99/exports/ULTIMO_QBIT_VIVOS.txt",
-      "bytes": 125,
-      "exported": true,
-      "redacted": false,
-      "note": ""
-    },
-    {
-      "source": "btdigg",
-      "path": "jobs/db5b1e1f8f99/exports/ULTIMO_RD_TEMPORAL.txt",
-      "bytes": 203,
-      "exported": true,
-      "redacted": false,
-      "note": ""
-    },
-    {
-      "source": "btdigg",
-      "path": "jobs/db5b1e1f8f99/exports/ULTIMO_TOP.txt",
-      "bytes": 107,
-      "exported": true,
-      "redacted": false,
-      "note": ""
-    },
-    {
-      "source": "btdigg",
-      "path": "jobs/db5b1e1f8f99/safeout.log",
-      "bytes": 1718,
-      "exported": true,
-      "redacted": false,
-      "note": ""
-    },
-    {
-      "source": "btdigg",
-      "path": "jobs/db5b1e1f8f99/shown.json",
-      "bytes": 2,
-      "exported": true,
-      "redacted": false,
-      "note": ""
-    },
-    {
-      "source": "btdigg",
       "path": "jobs/db84ca81035d/cancel.json",
       "bytes": 115,
-      "exported": true,
-      "redacted": false,
-      "note": ""
-    },
-    {
-      "source": "btdigg",
-      "path": "jobs/db84ca81035d/exports/ULTIMOS_RESULTADOS.json",
-      "bytes": 17879,
       "exported": true,
       "redacted": false,
       "note": ""
@@ -22347,6 +24003,14 @@
     },
     {
       "source": "btdigg",
+      "path": "jobs/db84ca81035d/exports/ULTIMOS_RESULTADOS.json",
+      "bytes": 17879,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
       "path": "jobs/db84ca81035d/safeout.log",
       "bytes": 2136,
       "exported": true,
@@ -22365,14 +24029,6 @@
       "source": "btdigg",
       "path": "jobs/dce6e34170d4/cancel.json",
       "bytes": 115,
-      "exported": true,
-      "redacted": false,
-      "note": ""
-    },
-    {
-      "source": "btdigg",
-      "path": "jobs/dce6e34170d4/exports/ULTIMOS_RESULTADOS.json",
-      "bytes": 17340,
       "exported": true,
       "redacted": false,
       "note": ""
@@ -22403,6 +24059,14 @@
     },
     {
       "source": "btdigg",
+      "path": "jobs/dce6e34170d4/exports/ULTIMOS_RESULTADOS.json",
+      "bytes": 17340,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
       "path": "jobs/dce6e34170d4/safeout.log",
       "bytes": 2281,
       "exported": true,
@@ -22421,14 +24085,6 @@
       "source": "btdigg",
       "path": "jobs/dd3ee833eee1/cancel.json",
       "bytes": 115,
-      "exported": true,
-      "redacted": false,
-      "note": ""
-    },
-    {
-      "source": "btdigg",
-      "path": "jobs/dd3ee833eee1/exports/ULTIMOS_RESULTADOS.json",
-      "bytes": 17340,
       "exported": true,
       "redacted": false,
       "note": ""
@@ -22459,6 +24115,14 @@
     },
     {
       "source": "btdigg",
+      "path": "jobs/dd3ee833eee1/exports/ULTIMOS_RESULTADOS.json",
+      "bytes": 17340,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
       "path": "jobs/dd3ee833eee1/safeout.log",
       "bytes": 2281,
       "exported": true,
@@ -22475,72 +24139,8 @@
     },
     {
       "source": "btdigg",
-      "path": "jobs/df89ceced5ca/cancel.json",
-      "bytes": 115,
-      "exported": true,
-      "redacted": false,
-      "note": ""
-    },
-    {
-      "source": "btdigg",
-      "path": "jobs/df89ceced5ca/exports/ULTIMOS_RESULTADOS.json",
-      "bytes": 17946,
-      "exported": true,
-      "redacted": false,
-      "note": ""
-    },
-    {
-      "source": "btdigg",
-      "path": "jobs/df89ceced5ca/exports/ULTIMO_QBIT_VIVOS.txt",
-      "bytes": 1524,
-      "exported": true,
-      "redacted": false,
-      "note": ""
-    },
-    {
-      "source": "btdigg",
-      "path": "jobs/df89ceced5ca/exports/ULTIMO_RD_TEMPORAL.txt",
-      "bytes": 203,
-      "exported": true,
-      "redacted": false,
-      "note": ""
-    },
-    {
-      "source": "btdigg",
-      "path": "jobs/df89ceced5ca/exports/ULTIMO_TOP.txt",
-      "bytes": 1503,
-      "exported": true,
-      "redacted": false,
-      "note": ""
-    },
-    {
-      "source": "btdigg",
-      "path": "jobs/df89ceced5ca/safeout.log",
-      "bytes": 3310,
-      "exported": true,
-      "redacted": false,
-      "note": ""
-    },
-    {
-      "source": "btdigg",
-      "path": "jobs/df89ceced5ca/shown.json",
-      "bytes": 7629,
-      "exported": true,
-      "redacted": false,
-      "note": ""
-    },
-    {
-      "source": "btdigg",
       "path": "jobs/e4bd9f5c8324/cancel.json",
       "bytes": 115,
-      "exported": true,
-      "redacted": false,
-      "note": ""
-    },
-    {
-      "source": "btdigg",
-      "path": "jobs/e4bd9f5c8324/exports/ULTIMOS_RESULTADOS.json",
-      "bytes": 128538,
       "exported": true,
       "redacted": false,
       "note": ""
@@ -22571,6 +24171,14 @@
     },
     {
       "source": "btdigg",
+      "path": "jobs/e4bd9f5c8324/exports/ULTIMOS_RESULTADOS.json",
+      "bytes": 128538,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
       "path": "jobs/e4bd9f5c8324/safeout.log",
       "bytes": 10571,
       "exported": true,
@@ -22589,14 +24197,6 @@
       "source": "btdigg",
       "path": "jobs/e60e9f06fa90/cancel.json",
       "bytes": 115,
-      "exported": true,
-      "redacted": false,
-      "note": ""
-    },
-    {
-      "source": "btdigg",
-      "path": "jobs/e60e9f06fa90/exports/ULTIMOS_RESULTADOS.json",
-      "bytes": 2,
       "exported": true,
       "redacted": false,
       "note": ""
@@ -22627,6 +24227,14 @@
     },
     {
       "source": "btdigg",
+      "path": "jobs/e60e9f06fa90/exports/ULTIMOS_RESULTADOS.json",
+      "bytes": 2,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
       "path": "jobs/e60e9f06fa90/safeout.log",
       "bytes": 1065,
       "exported": true,
@@ -22645,14 +24253,6 @@
       "source": "btdigg",
       "path": "jobs/e6f39f0719c1/cancel.json",
       "bytes": 115,
-      "exported": true,
-      "redacted": false,
-      "note": ""
-    },
-    {
-      "source": "btdigg",
-      "path": "jobs/e6f39f0719c1/exports/ULTIMOS_RESULTADOS.json",
-      "bytes": 2,
       "exported": true,
       "redacted": false,
       "note": ""
@@ -22683,6 +24283,14 @@
     },
     {
       "source": "btdigg",
+      "path": "jobs/e6f39f0719c1/exports/ULTIMOS_RESULTADOS.json",
+      "bytes": 2,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
       "path": "jobs/e6f39f0719c1/safeout.log",
       "bytes": 894,
       "exported": true,
@@ -22699,72 +24307,8 @@
     },
     {
       "source": "btdigg",
-      "path": "jobs/ea129daa2b6b/cancel.json",
-      "bytes": 115,
-      "exported": true,
-      "redacted": false,
-      "note": ""
-    },
-    {
-      "source": "btdigg",
-      "path": "jobs/ea129daa2b6b/exports/ULTIMOS_RESULTADOS.json",
-      "bytes": 17890,
-      "exported": true,
-      "redacted": false,
-      "note": ""
-    },
-    {
-      "source": "btdigg",
-      "path": "jobs/ea129daa2b6b/exports/ULTIMO_QBIT_VIVOS.txt",
-      "bytes": 1497,
-      "exported": true,
-      "redacted": false,
-      "note": ""
-    },
-    {
-      "source": "btdigg",
-      "path": "jobs/ea129daa2b6b/exports/ULTIMO_RD_TEMPORAL.txt",
-      "bytes": 203,
-      "exported": true,
-      "redacted": false,
-      "note": ""
-    },
-    {
-      "source": "btdigg",
-      "path": "jobs/ea129daa2b6b/exports/ULTIMO_TOP.txt",
-      "bytes": 1121,
-      "exported": true,
-      "redacted": false,
-      "note": ""
-    },
-    {
-      "source": "btdigg",
-      "path": "jobs/ea129daa2b6b/safeout.log",
-      "bytes": 3557,
-      "exported": true,
-      "redacted": false,
-      "note": ""
-    },
-    {
-      "source": "btdigg",
-      "path": "jobs/ea129daa2b6b/shown.json",
-      "bytes": 5625,
-      "exported": true,
-      "redacted": false,
-      "note": ""
-    },
-    {
-      "source": "btdigg",
       "path": "jobs/ecc296091b07/cancel.json",
       "bytes": 115,
-      "exported": true,
-      "redacted": false,
-      "note": ""
-    },
-    {
-      "source": "btdigg",
-      "path": "jobs/ecc296091b07/exports/ULTIMOS_RESULTADOS.json",
-      "bytes": 17879,
       "exported": true,
       "redacted": false,
       "note": ""
@@ -22795,6 +24339,14 @@
     },
     {
       "source": "btdigg",
+      "path": "jobs/ecc296091b07/exports/ULTIMOS_RESULTADOS.json",
+      "bytes": 17879,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
       "path": "jobs/ecc296091b07/safeout.log",
       "bytes": 2136,
       "exported": true,
@@ -22819,14 +24371,6 @@
     },
     {
       "source": "btdigg",
-      "path": "jobs/ece1236c24cb/exports/ULTIMOS_RESULTADOS.json",
-      "bytes": 18069,
-      "exported": true,
-      "redacted": false,
-      "note": ""
-    },
-    {
-      "source": "btdigg",
       "path": "jobs/ece1236c24cb/exports/ULTIMO_QBIT_VIVOS.txt",
       "bytes": 125,
       "exported": true,
@@ -22845,6 +24389,14 @@
       "source": "btdigg",
       "path": "jobs/ece1236c24cb/exports/ULTIMO_TOP.txt",
       "bytes": 506,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
+      "path": "jobs/ece1236c24cb/exports/ULTIMOS_RESULTADOS.json",
+      "bytes": 18069,
       "exported": true,
       "redacted": false,
       "note": ""
@@ -22891,14 +24443,6 @@
     },
     {
       "source": "btdigg",
-      "path": "jobs/f1398f5d4d5a/exports/ULTIMOS_RESULTADOS.json",
-      "bytes": 17304,
-      "exported": true,
-      "redacted": false,
-      "note": ""
-    },
-    {
-      "source": "btdigg",
       "path": "jobs/f1398f5d4d5a/exports/ULTIMO_QBIT_VIVOS.txt",
       "bytes": 125,
       "exported": true,
@@ -22917,6 +24461,14 @@
       "source": "btdigg",
       "path": "jobs/f1398f5d4d5a/exports/ULTIMO_TOP.txt",
       "bytes": 506,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
+      "path": "jobs/f1398f5d4d5a/exports/ULTIMOS_RESULTADOS.json",
+      "bytes": 17304,
       "exported": true,
       "redacted": false,
       "note": ""
@@ -22947,14 +24499,6 @@
     },
     {
       "source": "btdigg",
-      "path": "jobs/f17e8b2a89a4/exports/ULTIMOS_RESULTADOS.json",
-      "bytes": 17340,
-      "exported": true,
-      "redacted": false,
-      "note": ""
-    },
-    {
-      "source": "btdigg",
       "path": "jobs/f17e8b2a89a4/exports/ULTIMO_QBIT_VIVOS.txt",
       "bytes": 125,
       "exported": true,
@@ -22979,6 +24523,14 @@
     },
     {
       "source": "btdigg",
+      "path": "jobs/f17e8b2a89a4/exports/ULTIMOS_RESULTADOS.json",
+      "bytes": 17340,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
       "path": "jobs/f17e8b2a89a4/safeout.log",
       "bytes": 2281,
       "exported": true,
@@ -22995,7 +24547,7 @@
     },
     {
       "source": "btdigg",
-      "path": "jobs/f53a8666331c/cancel.json",
+      "path": "jobs/f2c440e37863/cancel.json",
       "bytes": 115,
       "exported": true,
       "redacted": false,
@@ -23003,15 +24555,7 @@
     },
     {
       "source": "btdigg",
-      "path": "jobs/f53a8666331c/exports/ULTIMOS_RESULTADOS.json",
-      "bytes": 2,
-      "exported": true,
-      "redacted": false,
-      "note": ""
-    },
-    {
-      "source": "btdigg",
-      "path": "jobs/f53a8666331c/exports/ULTIMO_QBIT_VIVOS.txt",
+      "path": "jobs/f2c440e37863/exports/ULTIMO_QBIT_VIVOS.txt",
       "bytes": 125,
       "exported": true,
       "redacted": false,
@@ -23019,7 +24563,7 @@
     },
     {
       "source": "btdigg",
-      "path": "jobs/f53a8666331c/exports/ULTIMO_RD_TEMPORAL.txt",
+      "path": "jobs/f2c440e37863/exports/ULTIMO_RD_TEMPORAL.txt",
       "bytes": 203,
       "exported": true,
       "redacted": false,
@@ -23027,7 +24571,7 @@
     },
     {
       "source": "btdigg",
-      "path": "jobs/f53a8666331c/exports/ULTIMO_TOP.txt",
+      "path": "jobs/f2c440e37863/exports/ULTIMO_TOP.txt",
       "bytes": 107,
       "exported": true,
       "redacted": false,
@@ -23035,15 +24579,23 @@
     },
     {
       "source": "btdigg",
-      "path": "jobs/f53a8666331c/safeout.log",
-      "bytes": 1718,
+      "path": "jobs/f2c440e37863/exports/ULTIMOS_RESULTADOS.json",
+      "bytes": 1660,
       "exported": true,
       "redacted": false,
       "note": ""
     },
     {
       "source": "btdigg",
-      "path": "jobs/f53a8666331c/shown.json",
+      "path": "jobs/f2c440e37863/safeout.log",
+      "bytes": 1059,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
+      "path": "jobs/f2c440e37863/shown.json",
       "bytes": 2,
       "exported": true,
       "redacted": false,
@@ -23053,14 +24605,6 @@
       "source": "btdigg",
       "path": "jobs/f59dadba735f/cancel.json",
       "bytes": 115,
-      "exported": true,
-      "redacted": false,
-      "note": ""
-    },
-    {
-      "source": "btdigg",
-      "path": "jobs/f59dadba735f/exports/ULTIMOS_RESULTADOS.json",
-      "bytes": 55177,
       "exported": true,
       "redacted": false,
       "note": ""
@@ -23091,6 +24635,14 @@
     },
     {
       "source": "btdigg",
+      "path": "jobs/f59dadba735f/exports/ULTIMOS_RESULTADOS.json",
+      "bytes": 55177,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
       "path": "jobs/f59dadba735f/safeout.log",
       "bytes": 4207,
       "exported": true,
@@ -23107,16 +24659,24 @@
     },
     {
       "source": "btdigg",
-      "path": "jobs/f7af9adeaa65/cancel.json",
-      "bytes": 115,
+      "path": "jobs/f75f0cb40f77/cancel.json",
+      "bytes": 117,
       "exported": true,
       "redacted": false,
       "note": ""
     },
     {
       "source": "btdigg",
-      "path": "jobs/f7af9adeaa65/exports/ULTIMOS_RESULTADOS.json",
-      "bytes": 2,
+      "path": "jobs/f75f0cb40f77/safeout.log",
+      "bytes": 1500,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
+      "path": "jobs/f7af9adeaa65/cancel.json",
+      "bytes": 115,
       "exported": true,
       "redacted": false,
       "note": ""
@@ -23147,6 +24707,14 @@
     },
     {
       "source": "btdigg",
+      "path": "jobs/f7af9adeaa65/exports/ULTIMOS_RESULTADOS.json",
+      "bytes": 2,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
       "path": "jobs/f7af9adeaa65/safeout.log",
       "bytes": 1459,
       "exported": true,
@@ -23165,14 +24733,6 @@
       "source": "btdigg",
       "path": "jobs/fd5f09d17c00/cancel.json",
       "bytes": 115,
-      "exported": true,
-      "redacted": false,
-      "note": ""
-    },
-    {
-      "source": "btdigg",
-      "path": "jobs/fd5f09d17c00/exports/ULTIMOS_RESULTADOS.json",
-      "bytes": 17836,
       "exported": true,
       "redacted": false,
       "note": ""
@@ -23203,6 +24763,14 @@
     },
     {
       "source": "btdigg",
+      "path": "jobs/fd5f09d17c00/exports/ULTIMOS_RESULTADOS.json",
+      "bytes": 17836,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
       "path": "jobs/fd5f09d17c00/safeout.log",
       "bytes": 2197,
       "exported": true,
@@ -23219,72 +24787,8 @@
     },
     {
       "source": "btdigg",
-      "path": "jobs/fe62e35fcb43/cancel.json",
-      "bytes": 115,
-      "exported": true,
-      "redacted": false,
-      "note": ""
-    },
-    {
-      "source": "btdigg",
-      "path": "jobs/fe62e35fcb43/exports/ULTIMOS_RESULTADOS.json",
-      "bytes": 2,
-      "exported": true,
-      "redacted": false,
-      "note": ""
-    },
-    {
-      "source": "btdigg",
-      "path": "jobs/fe62e35fcb43/exports/ULTIMO_QBIT_VIVOS.txt",
-      "bytes": 125,
-      "exported": true,
-      "redacted": false,
-      "note": ""
-    },
-    {
-      "source": "btdigg",
-      "path": "jobs/fe62e35fcb43/exports/ULTIMO_RD_TEMPORAL.txt",
-      "bytes": 203,
-      "exported": true,
-      "redacted": false,
-      "note": ""
-    },
-    {
-      "source": "btdigg",
-      "path": "jobs/fe62e35fcb43/exports/ULTIMO_TOP.txt",
-      "bytes": 107,
-      "exported": true,
-      "redacted": false,
-      "note": ""
-    },
-    {
-      "source": "btdigg",
-      "path": "jobs/fe62e35fcb43/safeout.log",
-      "bytes": 1231,
-      "exported": true,
-      "redacted": false,
-      "note": ""
-    },
-    {
-      "source": "btdigg",
-      "path": "jobs/fe62e35fcb43/shown.json",
-      "bytes": 2,
-      "exported": true,
-      "redacted": false,
-      "note": ""
-    },
-    {
-      "source": "btdigg",
       "path": "jobs/feb4b71537ce/cancel.json",
       "bytes": 115,
-      "exported": true,
-      "redacted": false,
-      "note": ""
-    },
-    {
-      "source": "btdigg",
-      "path": "jobs/feb4b71537ce/exports/ULTIMOS_RESULTADOS.json",
-      "bytes": 17340,
       "exported": true,
       "redacted": false,
       "note": ""
@@ -23309,6 +24813,14 @@
       "source": "btdigg",
       "path": "jobs/feb4b71537ce/exports/ULTIMO_TOP.txt",
       "bytes": 506,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
+      "path": "jobs/feb4b71537ce/exports/ULTIMOS_RESULTADOS.json",
+      "bytes": 17340,
       "exported": true,
       "redacted": false,
       "note": ""
@@ -23347,14 +24859,6 @@
     },
     {
       "source": "btdigg",
-      "path": "motor/exports/ULTIMOS_RESULTADOS.json",
-      "bytes": 16624,
-      "exported": true,
-      "redacted": false,
-      "note": ""
-    },
-    {
-      "source": "btdigg",
       "path": "motor/exports/ULTIMO_QBIT_VIVOS.txt",
       "bytes": 125,
       "exported": true,
@@ -23379,6 +24883,14 @@
     },
     {
       "source": "btdigg",
+      "path": "motor/exports/ULTIMOS_RESULTADOS.json",
+      "bytes": 1660,
+      "exported": true,
+      "redacted": false,
+      "note": ""
+    },
+    {
+      "source": "btdigg",
       "path": "motor/rd_token.txt",
       "bytes": 52,
       "exported": true,
@@ -23388,7 +24900,7 @@
     {
       "source": "btdigg",
       "path": "search_queue.json",
-      "bytes": 206,
+      "bytes": 885,
       "exported": true,
       "redacted": false,
       "note": ""
@@ -23396,7 +24908,7 @@
     {
       "source": "btdigg",
       "path": "seguimiento_actual.json",
-      "bytes": 32395,
+      "bytes": 32432,
       "exported": true,
       "redacted": false,
       "note": ""
@@ -23412,7 +24924,7 @@
     {
       "source": "btdigg",
       "path": "ui_state.json",
-      "bytes": 533,
+      "bytes": 496,
       "exported": true,
       "redacted": false,
       "note": ""
@@ -23436,7 +24948,7 @@
     {
       "source": "cloudflared_logs",
       "path": "cloudflared/cloudflared.log",
-      "bytes": 79498,
+      "bytes": 81074,
       "exported": true,
       "redacted": false,
       "note": ""

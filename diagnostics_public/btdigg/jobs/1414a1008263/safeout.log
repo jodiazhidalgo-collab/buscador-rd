@@ -1,0 +1,81 @@
+
+--- ARRANQUE MOTOR BTDIGG RD ---
+BTDigg + RD - opción 1 limpia
+Búsqueda: Pillion
+Páginas: 1-3
+Modo: 0
+
+
+Navegador automático página 1 (1/3):
+  https://en.btdig.com/search?q=pillion&p=0
+  BTDigg Chrome TLS: 10 magnets encontrados
+
+Navegador automático página 2 (2/3):
+  https://en.btdig.com/search?q=pillion&p=1
+  BTDigg Chrome TLS: 10 magnets encontrados
+
+Navegador automático página 3 (3/3):
+  https://en.btdig.com/search?q=pillion&p=2
+  BTDigg Chrome TLS: 10 magnets encontrados
+
+Encontrados 30 resultados brutos. Filtrando...
+
+Aspiradora terminada: 30 resultados únicos encontrados.
+Modo sin filtro: no descarto por idioma/calidad y no ordeno por calidad/tamano; solo penalizo basura.
+Criba búsqueda seria: 26/30 coinciden en el mismo título/archivo.
+Rescate RD pendiente por titulo/pack dudoso: 1
+Descartados antes de verificar por no coincidir: 3
+
+Comprobando token Real-Debrid...
+Token Real-Debrid OK: exmelenas
+
+Consultando Real-Debrid cache/instantáneo...
+
+Aviso: Real-Debrid tiene desactivada instantAvailability.
+Paso serio: verifico de verdad con addMagnet los 26 mejores candidatos.
+  Verificando 19/26: Pillion.2025.2160p.iT.WEB-DL.Hybrid.H.265.DV.HDR10..DDP.5.1.English-HONE[PianYuan]
+  Verificando 1/26: Pillion.2025.1080p.BluRay.H264-RiSEHD [TorrentSurf.to]
+  Verificando 9/26: Pillion (2025) AMZN WEB-DL 1080p x265 EAC3 DDP 5.1-InChY
+  Verificando 14/26: www.UIndex.org    -    Pillion.2025.720p.BluRay.x264-KNiVES
+  Verificando 17/26: Pillion.2025.REPACK.2160p.iT.WEB-DL.Hybrid.H265.DV.HDR10 .DDP.5.1.English-HONE
+  Verificando 8/26: www.UIndex.org    -    Pillion (2025) 720p WEBRip-LAMA
+  Verificando 20/26: Pillion (2025) 1080p WEBRip 5.1-LAMA-BFR-TeAm
+  Verificando 5/26: Pillion.2025.1080p.BluRay.x264-TRB
+  Verificando 4/26: www.UIndex.org    -    Pillion 2025 1080p 10bit WEBRip 6CH X265 HEVC-PSA
+  Verificando 3/26: Pillion.2025.Webrip.Hin.Dub.1Xbet
+  Verificando 25/26: Pillion 2026 1080p HD X264 1080p
+  RD OK 13/26: www.UIndex.org    -    Pillion (2025) 1080p BluRay 5.1-LAMA
+  Verificando 2/26: Pillion.2025.WEBRip.BEN.DUB.1XBET
+  Verificando 15/26: www.UIndex.org    -    Pillion.2025.1080p.BluRay.x264-KNiVES
+  RD OK 26/26: Pillion (2025) [Bluray][Esp]
+  Verificando 12/26: www.UIndex.org    -    Pillion.2025.1080p.WEB.h264-GRACE
+  RD OK 22/26: Pillion.2025.360p.WEB.EN-RGB
+  RD OK 6/26: www.UIndex.org    -    Pillion 2025 1080p WEB EN-RGB
+  RD OK 21/26: Pillion.2025.1080p.WEB.EN-RGB
+  Verificando 10/26: www.UIndex.org    -    Pillion 2025 1080p WEBRip x265-DH
+  RD OK 23/26: Pillion.2025.720p.WEB.EN-RGB
+  Verificando 7/26: www.UIndex.org    -    Pillion (2025) 1080p WEBRip 5.1-LAMA
+  Verificando 18/26: Pillion 2025 2160p IT WEB-DL Hybrid H265 DV HDR10 DDP 5 1 English-HONE
+  Verificando 11/26: Pillion (2025) (1080p AMZN WEB-DL H264 SDR DDP 5.1 English - HONE)
+  Verificando 24/26: Pillion.2025.1080p.WEBRip.x265-KONTRAST
+  Verificando 16/26: Pillion.2025.2160p.iT.WEB-DL.Hybrid.H265.DV.HDR10 DDP.5.1.English-HONE
+
+Resumen RD: NO_INSTANT=2 | RD_FAIL=18 | RD_OK=6
+Resultados válidos para JDownloader/RD: 6/26
+Lista extra qBittorrent vivos reales: 0
+
+========================================================================
+ TOP LIMPIO
+========================================================================
+[01] RD:OK           SCORE:   0 SIZE:   6.1 GB  www.UIndex.org    -    Pillion 2025 1080p WEB EN-RGB
+[02] RD:OK           SCORE:   0 SIZE:   2.0 GB  www.UIndex.org    -    Pillion (2025) 1080p BluRay 5.1-LAMA
+[03] RD:OK           SCORE:   0 SIZE:   6.1 GB  Pillion.2025.1080p.WEB.EN-RGB
+[04] RD:OK           SCORE:   0 SIZE:   1.5 GB  Pillion.2025.360p.WEB.EN-RGB
+[05] RD:OK           SCORE:   0 SIZE:   2.6 GB  Pillion.2025.720p.WEB.EN-RGB
+[06] RD:OK           SCORE:   0 SIZE:   1.3 GB  Pillion (2025) [Bluray][Esp]
+========================================================================
+Elige: 1 | 1,4,7 | A=todos los válidos RD | T=todos mostrados RD/qBit | S=salir
+Resultados guardados para el Editor: 6
+Real-Debrid temporal limpio: 6 id(s) revisado(s).
+
+RESULTADOS LISTOS. Escribe abajo 1, 1,3, A, T o S y pulsa Enviar.

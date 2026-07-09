@@ -1,0 +1,19 @@
+- 2026-07-08T17:55:12+02:00 [info] download::DOWNLOAD_CLICK_RECEIVED - Whistle El silbido del mal Ingles-Castellano Subt-Esp.Forz H264 E-AC3 5.1 BDrip hd 1080p
+- 2026-07-08T17:55:12+02:00 [info] btdigg::BTDIGG_CLIENT_CARD
+- 2026-07-08T17:55:12+02:00 [info] btdigg::BTDIGG_SERVER_CARD_OK - Whistle El silbido del mal Ingles-Castellano Subt-Esp.Forz H264 E-AC3 5.1 BDrip hd 1080p
+- 2026-07-08T17:55:12+02:00 [info] download::CLIENT_CONTRACT_HINT
+- 2026-07-08T17:55:12+02:00 [info] download::CONTRACT_SUMMARY
+- 2026-07-08T17:55:12+02:00 [info] general::DESTINATION_SELECTED
+- 2026-07-08T17:55:12+02:00 [info] btdigg::BTDIGG_RESOLVE_START - Whistle El silbido del mal Ingles-Castellano Subt-Esp.Forz H264 E-AC3 5.1 BDrip hd 1080p
+- 2026-07-08T17:55:13+02:00 [info] btdigg::BTDIGG_RESOLVE_OK
+- 2026-07-08T17:55:13+02:00 [info] download::ROUTE_DECIDED - qbt_status=QBT_VIVO
+- 2026-07-08T17:55:13+02:00 [info] download::CONTRACT_SUMMARY - qbt_status=QBT_VIVO
+- 2026-07-08T17:55:13+02:00 [info] download::ROUTE_SELECTED
+- 2026-07-08T17:55:13+02:00 [info] qbittorrent::qBittorrent_INFO_BY_HASH_OK
+- 2026-07-08T17:55:13+02:00 [info] qbittorrent::qBittorrent_ADD_URL_START
+- 2026-07-08T17:55:13+02:00 [info] qbittorrent::qBittorrent_LOGIN_OK
+- 2026-07-08T17:55:13+02:00 [info] qbittorrent::qBittorrent_POST_ADD_ATTEMPT
+- 2026-07-08T17:55:13+02:00 [info] qbittorrent::qBittorrent_ADD_URL_OK
+- 2026-07-08T17:55:13+02:00 [info] download::TRACKING_REGISTERED
+- 2026-07-08T17:55:13+02:00 [info] download::CLEANUP_FINAL - qbit_target
+- 2026-07-08T17:55:13+02:00 [info] download::DOWNLOAD_END_OK

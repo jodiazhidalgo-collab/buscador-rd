@@ -1,0 +1,1337 @@
+- 2026-07-08T06:05:02+02:00 [info] web::JOB_STARTED
+- 2026-07-08T06:05:02+02:00 [info] general::CONFIG_SNAPSHOT
+- 2026-07-08T06:05:02+02:00 [info] web::COMMAND_PREPARED
+- 2026-07-08T06:05:02+02:00 [info] web::PROCESS_STARTED
+- 2026-07-08T06:05:02+0200 [info] search::editor_clean_search_start
+- 2026-07-08T06:05:02+0200 [info] btdigg::browser_auto_search_start_dom
+- 2026-07-08T06:05:03+0200 [info] btdigg::extract_magnets
+- 2026-07-08T06:05:03+0200 [info] btdigg::btdigg_curl_cffi_fetch
+- 2026-07-08T06:05:06+0200 [info] btdigg::extract_magnets
+- 2026-07-08T06:05:06+0200 [info] btdigg::btdigg_curl_cffi_fetch
+- 2026-07-08T06:05:09+0200 [info] btdigg::extract_magnets
+- 2026-07-08T06:05:09+0200 [info] btdigg::btdigg_curl_cffi_fetch
+- 2026-07-08T06:05:13+0200 [info] btdigg::extract_magnets
+- 2026-07-08T06:05:13+0200 [info] btdigg::btdigg_curl_cffi_fetch
+- 2026-07-08T06:05:17+0200 [info] btdigg::extract_magnets
+- 2026-07-08T06:05:17+0200 [info] btdigg::btdigg_curl_cffi_fetch
+- 2026-07-08T06:05:21+0200 [info] btdigg::extract_magnets
+- 2026-07-08T06:05:21+0200 [info] btdigg::btdigg_curl_cffi_fetch
+- 2026-07-08T06:05:26+0200 [info] btdigg::extract_magnets
+- 2026-07-08T06:05:26+0200 [info] btdigg::btdigg_curl_cffi_fetch
+- 2026-07-08T06:05:30+0200 [info] btdigg::extract_magnets
+- 2026-07-08T06:05:30+0200 [info] btdigg::btdigg_curl_cffi_fetch
+- 2026-07-08T06:05:33+0200 [info] btdigg::extract_magnets
+- 2026-07-08T06:05:33+0200 [info] btdigg::btdigg_curl_cffi_fetch
+- 2026-07-08T06:05:37+0200 [info] btdigg::extract_magnets
+- 2026-07-08T06:05:37+0200 [info] btdigg::btdigg_curl_cffi_fetch
+- 2026-07-08T06:05:39+0200 [info] btdigg::browser_auto_search_end_dom
+- 2026-07-08T06:05:39+0200 [info] motor::prepare_results_start
+- 2026-07-08T06:05:39+0200 [info] motor::prepare_after_scoring
+- 2026-07-08T06:05:39+0200 [info] motor::prepare_after_filter
+- 2026-07-08T06:05:39+0200 [info] motor::prepare_after_query_prefilter
+- 2026-07-08T06:05:39+0200 [info] real-debrid::rd_account_check_ok
+- 2026-07-08T06:05:39+0200 [info] real-debrid::rd_check_start
+- 2026-07-08T06:05:39+0200 [info] real-debrid::rd_api_http_error - disabled_endpoint
+- 2026-07-08T06:05:39+0200 [info] real-debrid::rd_cache_api_disabled_cached_set - Real-Debrid HTTP 403: [37 disabled_endpoint] {
+	"error": "disabled_endpoint",
+	"error_code": 37
+}
+- 2026-07-08T06:05:39+0200 [info] real-debrid::rd_cache_api_disabled - Real-Debrid HTTP 403: [37 disabled_endpoint] {
+	"error": "disabled_endpoint",
+	"error_code": 37
+}
+- 2026-07-08T06:05:39+0200 [info] real-debrid::rd_verify_batch_start
+- 2026-07-08T06:05:40+0200 [info] real-debrid::rd_slots_refresh
+- 2026-07-08T06:05:40+0200 [info] real-debrid::rd_active_count_before
+- 2026-07-08T06:05:40+0200 [info] real-debrid::rd_existing_preload_done
+- 2026-07-08T06:05:40+0200 [info] real-debrid::rd_verify_queue_start
+- 2026-07-08T06:05:40+0200 [info] real-debrid::rd_verify_queue_submit - Las vacaciones de Mr Bean (DVDRip) (EliteTorrent.net)
+- 2026-07-08T06:05:40+0200 [info] real-debrid::rd_verify_add_start - Las vacaciones de Mr Bean (DVDRip) (EliteTorrent.net)
+- 2026-07-08T06:05:40+0200 [info] real-debrid::rd_verify_queue_submit - Las vacaciones de Mr. Bean [DVDRIP XViD MP3][www.emwreloaded.com]
+- 2026-07-08T06:05:40+0200 [info] real-debrid::rd_verify_add_start - Las vacaciones de Mr. Bean [DVDRIP XViD MP3][www.emwreloaded.com]
+- 2026-07-08T06:05:40+0200 [info] real-debrid::rd_slots_reserve
+- 2026-07-08T06:05:40+0200 [info] real-debrid::rd_verify_add_start - Las vacaciones de Mr.Bean [DVD-Rip] [Spanish] [www.topetorrent.com]
+- 2026-07-08T06:05:40+0200 [info] real-debrid::rd_verify_queue_submit - Las vacaciones de Mr.Bean [DVD-Rip] [Spanish] [www.topetorrent.com]
+- 2026-07-08T06:05:40+0200 [info] real-debrid::rd_slots_reserve
+- 2026-07-08T06:05:40+0200 [info] real-debrid::rd_verify_queue_submit - Las.Vacaciones.De.Mr.Bean.2007.SPANISH.DVDRiP.www.lokotorrents.com
+- 2026-07-08T06:05:40+0200 [info] real-debrid::rd_verify_add_start - Las.Vacaciones.De.Mr.Bean.2007.SPANISH.DVDRiP.www.lokotorrents.com
+- 2026-07-08T06:05:40+0200 [info] real-debrid::rd_slots_reserve
+- 2026-07-08T06:05:40+0200 [debug] real-debrid::rd_rate_wait
+- 2026-07-08T06:05:40+0200 [info] real-debrid::rd_verify_queue_submit - Las Vacaciones De Mr Bean [DVDRip] [www.torrentspain.com]
+- 2026-07-08T06:05:40+0200 [info] real-debrid::rd_verify_add_start - Las Vacaciones De Mr Bean [DVDRip] [www.torrentspain.com]
+- 2026-07-08T06:05:40+0200 [info] real-debrid::rd_slots_reserve
+- 2026-07-08T06:05:40+0200 [info] real-debrid::rd_verify_queue_submit - Las Vacaciones De Mr.  Bean [DVDRIP][Spansih][2007][www.newpct.com]
+- 2026-07-08T06:05:40+0200 [info] real-debrid::rd_verify_add_start - Las Vacaciones De Mr.  Bean [DVDRIP][Spansih][2007][www.newpct.com]
+- 2026-07-08T06:05:40+0200 [info] real-debrid::rd_slots_reserve
+- 2026-07-08T06:05:40+0200 [info] real-debrid::rd_verify_queue_submit - Las Vacaciones De Mr.Bean [DVDRip][Xvid][ESP][TaquillaSpa.com]
+- 2026-07-08T06:05:40+0200 [info] real-debrid::rd_verify_add_start - Las Vacaciones De Mr.Bean [DVDRip][Xvid][ESP][TaquillaSpa.com]
+- 2026-07-08T06:05:40+0200 [debug] real-debrid::rd_endpoint_pace_wait
+- 2026-07-08T06:05:40+0200 [info] real-debrid::rd_slots_reserve
+- 2026-07-08T06:05:40+0200 [info] real-debrid::rd_verify_queue_submit - Las.Vacaciones.De.Mr.Bean.[DVDRIP.XViD][MP3.Spanish][www.btvideoclub.com]
+- 2026-07-08T06:05:40+0200 [info] real-debrid::rd_verify_add_start - Las.Vacaciones.De.Mr.Bean.[DVDRIP.XViD][MP3.Spanish][www.btvideoclub.com]
+- 2026-07-08T06:05:40+0200 [info] real-debrid::rd_slots_reserve
+- 2026-07-08T06:05:40+0200 [info] real-debrid::rd_slots_reserve
+- 2026-07-08T06:05:40+0200 [info] real-debrid::rd_verify_add_start - Las vacaciones de Mr. Bean (2007) HDrip XviD Castellano
+- 2026-07-08T06:05:40+0200 [info] real-debrid::rd_slots_reserve
+- 2026-07-08T06:05:40+0200 [info] real-debrid::rd_verify_queue_submit - Las vacaciones de Mr. Bean (2007) HDrip XviD Castellano
+- 2026-07-08T06:05:40+0200 [info] real-debrid::rd_verify_queue_submit - Las.Vacaciones.de.Mr.Bean.[DVD.XViD][AC3.Spanish.Latino][www.btvideoclub.com]
+- 2026-07-08T06:05:40+0200 [info] real-debrid::rd_verify_add_start - Las.Vacaciones.de.Mr.Bean.[DVD.XViD][AC3.Spanish.Latino][www.btvideoclub.com]
+- 2026-07-08T06:05:40+0200 [info] real-debrid::rd_verify_add_start - Mr Bean (Serie) Las vacaciones de Mr Bean (Pelicula)
+- 2026-07-08T06:05:40+0200 [info] real-debrid::rd_verify_queue_submit - Mr Bean (Serie) Las vacaciones de Mr Bean (Pelicula)
+- 2026-07-08T06:05:40+0200 [info] real-debrid::rd_slots_reserve
+- 2026-07-08T06:05:40+0200 [info] real-debrid::rd_verify_queue_submit - Las.Vacaciones.De.Mr.Bean.CVCD.DVDrip.[www.TodoCVCD.com].mpg
+- 2026-07-08T06:05:40+0200 [info] real-debrid::rd_verify_add_start - Las.Vacaciones.De.Mr.Bean.CVCD.DVDrip.[www.TodoCVCD.com].mpg
+- 2026-07-08T06:05:40+0200 [info] real-debrid::rd_slots_reserve
+- 2026-07-08T06:05:40+0200 [info] real-debrid::rd_verify_queue_submit - Las.Vacaciones.De.Mr.Bean.[DVDRip].[www.tensiontorrent.com].avi
+- 2026-07-08T06:05:40+0200 [info] real-debrid::rd_verify_add_start - Las.Vacaciones.De.Mr.Bean.[DVDRip].[www.tensiontorrent.com].avi
+- 2026-07-08T06:05:40+0200 [info] real-debrid::rd_slots_reserve
+- 2026-07-08T06:05:40+0200 [info] real-debrid::rd_verify_queue_submit - Las Vacaciones de Mr Bean 1080p Audio Latino.mkv
+- 2026-07-08T06:05:40+0200 [info] real-debrid::rd_verify_add_start - Las Vacaciones de Mr Bean 1080p Audio Latino.mkv
+- 2026-07-08T06:05:40+0200 [info] real-debrid::rd_slots_reserve
+- 2026-07-08T06:05:40+0200 [info] real-debrid::rd_verify_queue_submit - Las.Vacaciones.De.Mr.Bean.DVDR.[Multi].[www.MoviesDVDR.com].iso
+- 2026-07-08T06:05:40+0200 [info] real-debrid::rd_verify_add_start - Las.Vacaciones.De.Mr.Bean.DVDR.[Multi].[www.MoviesDVDR.com].iso
+- 2026-07-08T06:05:40+0200 [info] real-debrid::rd_slots_reserve
+- 2026-07-08T06:05:40+0200 [info] real-debrid::rd_verify_queue_submit - Las vacaciones de Mr Bean [HDDVDRIP][720p][x264][www.emwreloaded.com].mkv
+- 2026-07-08T06:05:40+0200 [info] real-debrid::rd_verify_add_start - Las vacaciones de Mr Bean [HDDVDRIP][720p][x264][www.emwreloaded.com].mkv
+- 2026-07-08T06:05:40+0200 [info] real-debrid::rd_slots_reserve
+- 2026-07-08T06:05:40+0200 [info] real-debrid::rd_verify_queue_submit - Las.Vacaciones.De.Mr.Bean.DVD-Rip.Xvid-Mp3.Spanish.wWw.BajandoXvid.com.avi
+- 2026-07-08T06:05:40+0200 [info] real-debrid::rd_verify_add_start - Las.Vacaciones.De.Mr.Bean.DVD-Rip.Xvid-Mp3.Spanish.wWw.BajandoXvid.com.avi
+- 2026-07-08T06:05:40+0200 [info] real-debrid::rd_slots_reserve
+- 2026-07-08T06:05:40+0200 [info] real-debrid::rd_verify_queue_submit - Las.Vacaciones.De.Mr.Bean.DVDrip.XViD.MP3.[www.DivxTotaL.CoM].avi
+- 2026-07-08T06:05:40+0200 [info] real-debrid::rd_verify_add_start - Las.Vacaciones.De.Mr.Bean.DVDrip.XViD.MP3.[www.DivxTotaL.CoM].avi
+- 2026-07-08T06:05:40+0200 [info] real-debrid::rd_slots_reserve
+- 2026-07-08T06:05:40+0200 [info] real-debrid::rd_verify_queue_submit - las vacaciones de mr bean 1080p audio latino.mkv.7z
+- 2026-07-08T06:05:40+0200 [info] real-debrid::rd_verify_add_start - las vacaciones de mr bean 1080p audio latino.mkv.7z
+- 2026-07-08T06:05:40+0200 [info] real-debrid::rd_slots_reserve
+- 2026-07-08T06:05:40+0200 [info] real-debrid::rd_verify_queue_submit - Las Vacaciones De Mr. Bean [DVDR][Spanish 5.1-English 5.1][Subs.Sp-En][2007][www.newpct.com]
+- 2026-07-08T06:05:40+0200 [info] real-debrid::rd_verify_add_start - Las Vacaciones De Mr. Bean [DVDR][Spanish 5.1-English 5.1][Subs.Sp-En][2007][www.newpct.com]
+- 2026-07-08T06:05:40+0200 [info] real-debrid::rd_slots_reserve
+- 2026-07-08T06:05:40+0200 [info] real-debrid::rd_verify_queue_submit - Las Vacaciones de Mr. Bean-Spanish- [TScreener][bajaloaqui.com]
+- 2026-07-08T06:05:40+0200 [info] real-debrid::rd_verify_add_start - Las Vacaciones de Mr. Bean-Spanish- [TScreener][bajaloaqui.com]
+- 2026-07-08T06:05:40+0200 [info] real-debrid::rd_slots_reserve
+- 2026-07-08T06:05:40+0200 [info] real-debrid::rd_verify_queue_submit - Las.vacaciones.de.Mr.Bean.Mr.Beans.Holiday.TS.Xvid.Mp3.wWw.SpaTorrent.com
+- 2026-07-08T06:05:40+0200 [info] real-debrid::rd_verify_add_start - Las.vacaciones.de.Mr.Bean.Mr.Beans.Holiday.TS.Xvid.Mp3.wWw.SpaTorrent.com
+- 2026-07-08T06:05:40+0200 [info] real-debrid::rd_verify_add_start - Las.Vacaciones.De.Mr.Bean.DVD.XviD.MP3.Screener.[DTL].avi
+- 2026-07-08T06:05:40+0200 [info] real-debrid::rd_verify_queue_submit - Las.Vacaciones.De.Mr.Bean.DVD.XviD.MP3.Screener.[DTL].avi
+- 2026-07-08T06:05:40+0200 [info] real-debrid::rd_slots_reserve
+- 2026-07-08T06:05:40+0200 [info] real-debrid::rd_verify_add_start - Las.vacaciones.de.Mr.Bean.(Mr.Beans.Holiday).TS.Xvid.Mp3.[www.btvideoclub.com].avi
+- 2026-07-08T06:05:40+0200 [info] real-debrid::rd_slots_reserve
+- 2026-07-08T06:05:40+0200 [info] real-debrid::rd_verify_queue_submit - Las.vacaciones.de.Mr.Bean.(Mr.Beans.Holiday).TS.Xvid.Mp3.[www.btvideoclub.com].avi
+- 2026-07-08T06:05:40+0200 [info] real-debrid::rd_verify_queue_submit - LAS VACACIONES DE MR BEAN
+- 2026-07-08T06:05:40+0200 [info] real-debrid::rd_verify_queue_submit - Las.Vacaciones.de.Mr.Bean.TS_Screener.[www.nosolotorrents.com]
+- 2026-07-08T06:05:40+0200 [info] real-debrid::rd_verify_add_start - LAS VACACIONES DE MR BEAN
+- 2026-07-08T06:05:40+0200 [info] real-debrid::rd_verify_add_start - Las Vacaciones De Mr. Bean [TS-Screener][Spanish][2007][www.newpct.com]
+- 2026-07-08T06:05:40+0200 [info] real-debrid::rd_slots_reserve
+- 2026-07-08T06:05:40+0200 [info] real-debrid::rd_verify_add_start - Las.Vacaciones.de.Mr.Bean.TS_Screener.[www.nosolotorrents.com]
+- 2026-07-08T06:05:40+0200 [info] real-debrid::rd_verify_queue_submit - Las Vacaciones De Mr. Bean [TS-Screener][Spanish][2007][www.newpct.com]
+- 2026-07-08T06:05:40+0200 [info] real-debrid::rd_slots_reserve
+- 2026-07-08T06:05:40+0200 [info] real-debrid::rd_verify_queue_submit - Las vacaciones de Mr Bean (TS-Screener) (EliteTorrent.net).avi
+- 2026-07-08T06:05:40+0200 [info] real-debrid::rd_verify_add_start - Las vacaciones de Mr Bean (TS-Screener) (EliteTorrent.net).avi
+- 2026-07-08T06:05:40+0200 [info] real-debrid::rd_slots_reserve
+- 2026-07-08T06:05:40+0200 [info] real-debrid::rd_verify_queue_submit - Las.Vacaciones.De.Mr.Bean.TS.XviD.MP3.Screener.[DTL].avi
+- 2026-07-08T06:05:40+0200 [info] real-debrid::rd_verify_add_start - Las.Vacaciones.De.Mr.Bean.TS.XviD.MP3.Screener.[DTL].avi
+- 2026-07-08T06:05:40+0200 [info] real-debrid::rd_slots_reserve
+- 2026-07-08T06:05:40+0200 [info] real-debrid::rd_verify_queue_submit - Las.Vacaciones.De.Mr.Bean.CVCD.TS-Screener.[DTL].mpg
+- 2026-07-08T06:05:40+0200 [info] real-debrid::rd_verify_add_start - Las.Vacaciones.De.Mr.Bean.CVCD.TS-Screener.[DTL].mpg
+- 2026-07-08T06:05:40+0200 [info] real-debrid::rd_slots_reserve
+- 2026-07-08T06:05:40+0200 [info] real-debrid::rd_verify_queue_submit - Las.Vacaciones.de.Mr.Bean.DVDSCREENER.XVid.Mp3.wWw.SpaTorrent.com
+- 2026-07-08T06:05:40+0200 [info] real-debrid::rd_verify_add_start - Las.Vacaciones.de.Mr.Bean.DVDSCREENER.XVid.Mp3.wWw.SpaTorrent.com
+- 2026-07-08T06:05:40+0200 [info] real-debrid::rd_slots_reserve
+- 2026-07-08T06:05:40+0200 [info] real-debrid::rd_verify_add_start - Las Vacaciones De Mr Bean [DVDScreener][Spanish][2007][www.newpct.com]
+- 2026-07-08T06:05:40+0200 [info] real-debrid::rd_verify_queue_submit - Las Vacaciones De Mr Bean [DVDScreener][Spanish][2007][www.newpct.com]
+- 2026-07-08T06:05:40+0200 [info] real-debrid::rd_verify_queue_submit - Las.Vacaciones.De.Mr.Bean.CVCD.DVDScreener.[DTL].mpg
+- 2026-07-08T06:05:40+0200 [info] real-debrid::rd_verify_add_start - Las.Vacaciones.De.Mr.Bean.CVCD.DVDScreener.[DTL].mpg
+- 2026-07-08T06:05:40+0200 [info] real-debrid::rd_slots_reserve
+- 2026-07-08T06:05:40+0200 [info] real-debrid::rd_verify_queue_submit - Las.Vacaciones.de.Mr.Bean.DVDSCREENER.CVCD.wWw.SpaTorrent.com.mpg
+- 2026-07-08T06:05:40+0200 [info] real-debrid::rd_verify_add_start - Las.Vacaciones.de.Mr.Bean.DVDSCREENER.CVCD.wWw.SpaTorrent.com.mpg
+- 2026-07-08T06:05:40+0200 [info] real-debrid::rd_slots_reserve
+- 2026-07-08T06:05:40+0200 [info] real-debrid::rd_verify_queue_submit - Las.Vacaciones.de.Mr.Bean.DVDSCREENER.Xvid.Spanish.Mp3.[www.btvideoclub.com].avi
+- 2026-07-08T06:05:40+0200 [info] real-debrid::rd_verify_add_start - Las.Vacaciones.de.Mr.Bean.DVDSCREENER.Xvid.Spanish.Mp3.[www.btvideoclub.com].avi
+- 2026-07-08T06:05:40+0200 [info] real-debrid::rd_slots_reserve
+- 2026-07-08T06:05:40+0200 [info] real-debrid::rd_verify_add_start - Las.vacaciones.de.Mr.Bean.DVDScreener.Sample.Xvid.Mp3.[Spanish].[WwW.VeoDivX.CoM].avi
+- 2026-07-08T06:05:40+0200 [info] real-debrid::rd_verify_queue_submit - Las.vacaciones.de.Mr.Bean.DVDScreener.Sample.Xvid.Mp3.[Spanish].[WwW.VeoDivX.CoM].avi
+- 2026-07-08T06:05:40+0200 [info] real-debrid::rd_slots_reserve
+- 2026-07-08T06:05:40+0200 [info] real-debrid::rd_verify_queue_submit - Las.Vacaciones.de.Mr.Bean.DVD-Screener.Xvid-Mp3.Spanish.wWw.BajandoXvid.com.avi
+- 2026-07-08T06:05:40+0200 [info] real-debrid::rd_verify_add_start - Las.Vacaciones.de.Mr.Bean.DVD-Screener.Xvid-Mp3.Spanish.wWw.BajandoXvid.com.avi
+- 2026-07-08T06:05:40+0200 [info] real-debrid::rd_slots_reserve
+- 2026-07-08T06:05:40+0200 [info] real-debrid::rd_slots_reserve
+- 2026-07-08T06:05:40+0200 [info] real-debrid::rd_slots_reserve
+- 2026-07-08T06:05:40+0200 [info] real-debrid::rd_slots_reserve
+- 2026-07-08T06:05:40+0200 [info] real-debrid::rd_slots_reserve
+- 2026-07-08T06:05:40+0200 [info] real-debrid::rd_api_http_error - infringing_file
+- 2026-07-08T06:05:40+0200 [info] real-debrid::rd_call_terminal_error - infringing_file
+- 2026-07-08T06:05:40+0200 [info] real-debrid::rd_candidate_addmagnet_blocked - infringing_file
+- 2026-07-08T06:05:40+0200 [info] real-debrid::rd_verify_infringing - Las vacaciones de Mr Bean (DVDRip) (EliteTorrent.net)
+- 2026-07-08T06:05:40+0200 [info] real-debrid::rd_verify_queue_done_item - Las vacaciones de Mr Bean (DVDRip) (EliteTorrent.net)
+- 2026-07-08T06:05:42+0200 [info] real-debrid::rd_verify_added
+- 2026-07-08T06:05:43+0200 [debug] real-debrid::rd_verify_poll - Las Vacaciones De Mr.  Bean [DVDRIP][Spansih][2007][www.newpct.com]
+- 2026-07-08T06:05:43+0200 [info] real-debrid::rd_delete_torrent
+- 2026-07-08T06:05:43+0200 [info] real-debrid::rd_slots_release
+- 2026-07-08T06:05:43+0200 [info] real-debrid::rd_verify_not_instant - Las Vacaciones De Mr.  Bean [DVDRIP][Spansih][2007][www.newpct.com]
+- 2026-07-08T06:05:43+0200 [info] real-debrid::rd_verify_queue_done_item - Las Vacaciones De Mr.  Bean [DVDRIP][Spansih][2007][www.newpct.com]
+- 2026-07-08T06:05:44+0200 [info] real-debrid::rd_verify_added
+- 2026-07-08T06:05:44+0200 [debug] real-debrid::rd_verify_poll - Las.Vacaciones.De.Mr.Bean.CVCD.DVDScreener.[DTL].mpg
+- 2026-07-08T06:05:44+0200 [info] real-debrid::rd_delete_torrent
+- 2026-07-08T06:05:45+0200 [info] real-debrid::rd_slots_release
+- 2026-07-08T06:05:45+0200 [info] real-debrid::rd_verify_not_instant - Las.Vacaciones.De.Mr.Bean.CVCD.DVDScreener.[DTL].mpg
+- 2026-07-08T06:05:45+0200 [info] real-debrid::rd_verify_queue_done_item - Las.Vacaciones.De.Mr.Bean.CVCD.DVDScreener.[DTL].mpg
+- 2026-07-08T06:05:45+0200 [info] real-debrid::rd_verify_added
+- 2026-07-08T06:05:45+0200 [debug] real-debrid::rd_verify_poll - Las.Vacaciones.de.Mr.Bean.DVDSCREENER.Xvid.Spanish.Mp3.[www.btvideoclub.com].avi
+- 2026-07-08T06:05:45+0200 [debug] real-debrid::rd_waiting_files_selection - Las.Vacaciones.de.Mr.Bean.DVDSCREENER.Xvid.Spanish.Mp3.[www.btvideoclub.com].avi
+- 2026-07-08T06:05:45+0200 [info] real-debrid::rd_select_files_decision - Las.Vacaciones.de.Mr.Bean.DVDSCREENER.Xvid.Spanish.Mp3.[www.btvideoclub.com].avi
+- 2026-07-08T06:05:45+0200 [info] real-debrid::rd_verify_select_files - Las.Vacaciones.de.Mr.Bean.DVDSCREENER.Xvid.Spanish.Mp3.[www.btvideoclub.com].avi
+- 2026-07-08T06:05:45+0200 [debug] real-debrid::rd_endpoint_pace_wait
+- 2026-07-08T06:05:46+0200 [debug] real-debrid::rd_verify_post_select_poll - Las.Vacaciones.de.Mr.Bean.DVDSCREENER.Xvid.Spanish.Mp3.[www.btvideoclub.com].avi
+- 2026-07-08T06:05:46+0200 [info] real-debrid::rd_fast_discard - zero_progress_post_select
+- 2026-07-08T06:05:46+0200 [info] real-debrid::rd_fast_discard_reason - zero_progress_post_select
+- 2026-07-08T06:05:46+0200 [info] real-debrid::rd_fast_discard_delete - zero_progress_post_select
+- 2026-07-08T06:05:46+0200 [info] real-debrid::rd_zero_progress_fast_delete - Las.Vacaciones.de.Mr.Bean.DVDSCREENER.Xvid.Spanish.Mp3.[www.btvideoclub.com].avi
+- 2026-07-08T06:05:46+0200 [info] real-debrid::rd_delete_torrent
+- 2026-07-08T06:05:46+0200 [info] real-debrid::rd_slots_release
+- 2026-07-08T06:05:46+0200 [info] real-debrid::rd_verify_queue_done_item - Las.Vacaciones.de.Mr.Bean.DVDSCREENER.Xvid.Spanish.Mp3.[www.btvideoclub.com].avi
+- 2026-07-08T06:05:47+0200 [info] real-debrid::rd_verify_added
+- 2026-07-08T06:05:47+0200 [debug] real-debrid::rd_verify_poll - Las.Vacaciones.De.Mr.Bean.CVCD.TS-Screener.[DTL].mpg
+- 2026-07-08T06:05:48+0200 [info] real-debrid::rd_verify_added
+- 2026-07-08T06:05:48+0200 [info] real-debrid::rd_delete_torrent
+- 2026-07-08T06:05:48+0200 [info] real-debrid::rd_slots_release
+- 2026-07-08T06:05:48+0200 [info] real-debrid::rd_verify_not_instant - Las.Vacaciones.De.Mr.Bean.CVCD.TS-Screener.[DTL].mpg
+- 2026-07-08T06:05:48+0200 [info] real-debrid::rd_verify_queue_done_item - Las.Vacaciones.De.Mr.Bean.CVCD.TS-Screener.[DTL].mpg
+- 2026-07-08T06:05:48+0200 [debug] real-debrid::rd_verify_poll - Las.Vacaciones.de.Mr.Bean.TS_Screener.[www.nosolotorrents.com]
+- 2026-07-08T06:05:48+0200 [debug] real-debrid::rd_waiting_files_selection - Las.Vacaciones.de.Mr.Bean.TS_Screener.[www.nosolotorrents.com]
+- 2026-07-08T06:05:48+0200 [info] real-debrid::rd_select_files_decision - Las.Vacaciones.de.Mr.Bean.TS_Screener.[www.nosolotorrents.com]
+- 2026-07-08T06:05:48+0200 [debug] real-debrid::rd_rate_wait
+- 2026-07-08T06:05:49+0200 [info] real-debrid::rd_verify_select_files - Las.Vacaciones.de.Mr.Bean.TS_Screener.[www.nosolotorrents.com]
+- 2026-07-08T06:05:49+0200 [debug] real-debrid::rd_verify_post_select_poll - Las.Vacaciones.de.Mr.Bean.TS_Screener.[www.nosolotorrents.com]
+- 2026-07-08T06:05:49+0200 [info] real-debrid::rd_fast_discard - zero_progress_post_select
+- 2026-07-08T06:05:49+0200 [info] real-debrid::rd_fast_discard_reason - zero_progress_post_select
+- 2026-07-08T06:05:49+0200 [info] real-debrid::rd_fast_discard_delete - zero_progress_post_select
+- 2026-07-08T06:05:49+0200 [info] real-debrid::rd_zero_progress_fast_delete - Las.Vacaciones.de.Mr.Bean.TS_Screener.[www.nosolotorrents.com]
+- 2026-07-08T06:05:49+0200 [info] real-debrid::rd_verify_added
+- 2026-07-08T06:05:49+0200 [info] real-debrid::rd_delete_torrent
+- 2026-07-08T06:05:49+0200 [info] real-debrid::rd_slots_release
+- 2026-07-08T06:05:49+0200 [info] real-debrid::rd_verify_queue_done_item - Las.Vacaciones.de.Mr.Bean.TS_Screener.[www.nosolotorrents.com]
+- 2026-07-08T06:05:50+0200 [debug] real-debrid::rd_verify_poll - Mr Bean (Serie) Las vacaciones de Mr Bean (Pelicula)
+- 2026-07-08T06:05:50+0200 [debug] real-debrid::rd_waiting_files_selection - Mr Bean (Serie) Las vacaciones de Mr Bean (Pelicula)
+- 2026-07-08T06:05:50+0200 [info] real-debrid::rd_select_files_decision - Mr Bean (Serie) Las vacaciones de Mr Bean (Pelicula)
+- 2026-07-08T06:05:50+0200 [info] real-debrid::rd_verify_select_files - Mr Bean (Serie) Las vacaciones de Mr Bean (Pelicula)
+- 2026-07-08T06:05:51+0200 [debug] real-debrid::rd_endpoint_pace_wait
+- 2026-07-08T06:05:51+0200 [debug] real-debrid::rd_verify_post_select_poll - Mr Bean (Serie) Las vacaciones de Mr Bean (Pelicula)
+- 2026-07-08T06:05:51+0200 [info] real-debrid::rd_fast_discard - zero_progress_post_select
+- 2026-07-08T06:05:51+0200 [info] real-debrid::rd_fast_discard_reason - zero_progress_post_select
+- 2026-07-08T06:05:51+0200 [info] real-debrid::rd_fast_discard_delete - zero_progress_post_select
+- 2026-07-08T06:05:51+0200 [info] real-debrid::rd_zero_progress_fast_delete - Mr Bean (Serie) Las vacaciones de Mr Bean (Pelicula)
+- 2026-07-08T06:05:51+0200 [info] real-debrid::rd_verify_added
+- 2026-07-08T06:05:51+0200 [info] real-debrid::rd_delete_torrent
+- 2026-07-08T06:05:51+0200 [info] real-debrid::rd_slots_release
+- 2026-07-08T06:05:51+0200 [info] real-debrid::rd_verify_queue_done_item - Mr Bean (Serie) Las vacaciones de Mr Bean (Pelicula)
+- 2026-07-08T06:05:51+0200 [debug] real-debrid::rd_verify_poll - Las.Vacaciones.de.Mr.Bean.DVDSCREENER.CVCD.wWw.SpaTorrent.com.mpg
+- 2026-07-08T06:05:51+0200 [debug] real-debrid::rd_waiting_files_selection - Las.Vacaciones.de.Mr.Bean.DVDSCREENER.CVCD.wWw.SpaTorrent.com.mpg
+- 2026-07-08T06:05:51+0200 [info] real-debrid::rd_select_files_decision - Las.Vacaciones.de.Mr.Bean.DVDSCREENER.CVCD.wWw.SpaTorrent.com.mpg
+- 2026-07-08T06:05:52+0200 [info] real-debrid::rd_verify_select_files - Las.Vacaciones.de.Mr.Bean.DVDSCREENER.CVCD.wWw.SpaTorrent.com.mpg
+- 2026-07-08T06:05:52+0200 [debug] real-debrid::rd_verify_post_select_poll - Las.Vacaciones.de.Mr.Bean.DVDSCREENER.CVCD.wWw.SpaTorrent.com.mpg
+- 2026-07-08T06:05:52+0200 [info] real-debrid::rd_fast_discard - zero_progress_post_select
+- 2026-07-08T06:05:52+0200 [info] real-debrid::rd_fast_discard_reason - zero_progress_post_select
+- 2026-07-08T06:05:52+0200 [info] real-debrid::rd_fast_discard_delete - zero_progress_post_select
+- 2026-07-08T06:05:52+0200 [info] real-debrid::rd_zero_progress_fast_delete - Las.Vacaciones.de.Mr.Bean.DVDSCREENER.CVCD.wWw.SpaTorrent.com.mpg
+- 2026-07-08T06:05:53+0200 [info] real-debrid::rd_delete_torrent
+- 2026-07-08T06:05:53+0200 [info] real-debrid::rd_slots_release
+- 2026-07-08T06:05:53+0200 [info] real-debrid::rd_verify_added
+- 2026-07-08T06:05:53+0200 [info] real-debrid::rd_verify_queue_done_item - Las.Vacaciones.de.Mr.Bean.DVDSCREENER.CVCD.wWw.SpaTorrent.com.mpg
+- 2026-07-08T06:05:53+0200 [debug] real-debrid::rd_verify_poll - las vacaciones de mr bean 1080p audio latino.mkv.7z
+- 2026-07-08T06:05:53+0200 [info] real-debrid::rd_delete_torrent
+- 2026-07-08T06:05:53+0200 [info] real-debrid::rd_slots_release
+- 2026-07-08T06:05:53+0200 [info] real-debrid::rd_verify_not_instant - las vacaciones de mr bean 1080p audio latino.mkv.7z
+- 2026-07-08T06:05:53+0200 [info] real-debrid::rd_verify_queue_done_item - las vacaciones de mr bean 1080p audio latino.mkv.7z
+- 2026-07-08T06:05:54+0200 [info] real-debrid::rd_verify_added
+- 2026-07-08T06:05:54+0200 [debug] real-debrid::rd_verify_poll - Las.Vacaciones.De.Mr.Bean.DVD.XviD.MP3.Screener.[DTL].avi
+- 2026-07-08T06:05:54+0200 [debug] real-debrid::rd_waiting_files_selection - Las.Vacaciones.De.Mr.Bean.DVD.XviD.MP3.Screener.[DTL].avi
+- 2026-07-08T06:05:54+0200 [info] real-debrid::rd_select_files_decision - Las.Vacaciones.De.Mr.Bean.DVD.XviD.MP3.Screener.[DTL].avi
+- 2026-07-08T06:05:54+0200 [info] real-debrid::rd_verify_select_files - Las.Vacaciones.De.Mr.Bean.DVD.XviD.MP3.Screener.[DTL].avi
+- 2026-07-08T06:05:55+0200 [debug] real-debrid::rd_verify_post_select_poll - Las.Vacaciones.De.Mr.Bean.DVD.XviD.MP3.Screener.[DTL].avi
+- 2026-07-08T06:05:55+0200 [info] real-debrid::rd_fast_discard - zero_progress_post_select
+- 2026-07-08T06:05:55+0200 [info] real-debrid::rd_fast_discard_reason - zero_progress_post_select
+- 2026-07-08T06:05:55+0200 [info] real-debrid::rd_fast_discard_delete - zero_progress_post_select
+- 2026-07-08T06:05:55+0200 [info] real-debrid::rd_zero_progress_fast_delete - Las.Vacaciones.De.Mr.Bean.DVD.XviD.MP3.Screener.[DTL].avi
+- 2026-07-08T06:05:55+0200 [info] real-debrid::rd_delete_torrent
+- 2026-07-08T06:05:55+0200 [info] real-debrid::rd_slots_release
+- 2026-07-08T06:05:55+0200 [info] real-debrid::rd_verify_queue_done_item - Las.Vacaciones.De.Mr.Bean.DVD.XviD.MP3.Screener.[DTL].avi
+- 2026-07-08T06:05:55+0200 [info] real-debrid::rd_verify_added
+- 2026-07-08T06:05:55+0200 [debug] real-debrid::rd_verify_poll - Las.Vacaciones.De.Mr.Bean.TS.XviD.MP3.Screener.[DTL].avi
+- 2026-07-08T06:05:55+0200 [debug] real-debrid::rd_waiting_files_selection - Las.Vacaciones.De.Mr.Bean.TS.XviD.MP3.Screener.[DTL].avi
+- 2026-07-08T06:05:55+0200 [info] real-debrid::rd_select_files_decision - Las.Vacaciones.De.Mr.Bean.TS.XviD.MP3.Screener.[DTL].avi
+- 2026-07-08T06:05:55+0200 [debug] real-debrid::rd_rate_wait
+- 2026-07-08T06:05:56+0200 [info] real-debrid::rd_verify_select_files - Las.Vacaciones.De.Mr.Bean.TS.XviD.MP3.Screener.[DTL].avi
+- 2026-07-08T06:05:56+0200 [debug] real-debrid::rd_endpoint_pace_wait
+- 2026-07-08T06:05:56+0200 [debug] real-debrid::rd_verify_post_select_poll - Las.Vacaciones.De.Mr.Bean.TS.XviD.MP3.Screener.[DTL].avi
+- 2026-07-08T06:05:56+0200 [info] real-debrid::rd_fast_discard - zero_progress_post_select
+- 2026-07-08T06:05:56+0200 [info] real-debrid::rd_fast_discard_reason - zero_progress_post_select
+- 2026-07-08T06:05:56+0200 [info] real-debrid::rd_fast_discard_delete - zero_progress_post_select
+- 2026-07-08T06:05:56+0200 [info] real-debrid::rd_zero_progress_fast_delete - Las.Vacaciones.De.Mr.Bean.TS.XviD.MP3.Screener.[DTL].avi
+- 2026-07-08T06:05:57+0200 [info] real-debrid::rd_delete_torrent
+- 2026-07-08T06:05:57+0200 [info] real-debrid::rd_slots_release
+- 2026-07-08T06:05:57+0200 [info] real-debrid::rd_verify_queue_done_item - Las.Vacaciones.De.Mr.Bean.TS.XviD.MP3.Screener.[DTL].avi
+- 2026-07-08T06:05:57+0200 [info] real-debrid::rd_verify_added
+- 2026-07-08T06:05:57+0200 [debug] real-debrid::rd_verify_poll - Las Vacaciones de Mr Bean 1080p Audio Latino.mkv
+- 2026-07-08T06:05:57+0200 [debug] real-debrid::rd_waiting_files_selection - Las Vacaciones de Mr Bean 1080p Audio Latino.mkv
+- 2026-07-08T06:05:57+0200 [info] real-debrid::rd_select_files_decision - Las Vacaciones de Mr Bean 1080p Audio Latino.mkv
+- 2026-07-08T06:05:57+0200 [info] real-debrid::rd_verify_select_files - Las Vacaciones de Mr Bean 1080p Audio Latino.mkv
+- 2026-07-08T06:05:58+0200 [debug] real-debrid::rd_verify_post_select_poll - Las Vacaciones de Mr Bean 1080p Audio Latino.mkv
+- 2026-07-08T06:05:58+0200 [info] real-debrid::rd_fast_discard - zero_progress_post_select
+- 2026-07-08T06:05:58+0200 [info] real-debrid::rd_fast_discard_reason - zero_progress_post_select
+- 2026-07-08T06:05:58+0200 [info] real-debrid::rd_fast_discard_delete - zero_progress_post_select
+- 2026-07-08T06:05:58+0200 [info] real-debrid::rd_zero_progress_fast_delete - Las Vacaciones de Mr Bean 1080p Audio Latino.mkv
+- 2026-07-08T06:05:58+0200 [info] real-debrid::rd_delete_torrent
+- 2026-07-08T06:05:58+0200 [info] real-debrid::rd_slots_release
+- 2026-07-08T06:05:58+0200 [info] real-debrid::rd_verify_queue_done_item - Las Vacaciones de Mr Bean 1080p Audio Latino.mkv
+- 2026-07-08T06:05:59+0200 [info] real-debrid::rd_verify_added
+- 2026-07-08T06:05:59+0200 [debug] real-debrid::rd_verify_poll - Las.vacaciones.de.Mr.Bean.(Mr.Beans.Holiday).TS.Xvid.Mp3.[www.btvideoclub.com].avi
+- 2026-07-08T06:05:59+0200 [info] real-debrid::rd_delete_torrent
+- 2026-07-08T06:05:59+0200 [info] real-debrid::rd_slots_release
+- 2026-07-08T06:05:59+0200 [info] real-debrid::rd_verify_not_instant - Las.vacaciones.de.Mr.Bean.(Mr.Beans.Holiday).TS.Xvid.Mp3.[www.btvideoclub.com].avi
+- 2026-07-08T06:05:59+0200 [info] real-debrid::rd_verify_queue_done_item - Las.vacaciones.de.Mr.Bean.(Mr.Beans.Holiday).TS.Xvid.Mp3.[www.btvideoclub.com].avi
+- 2026-07-08T06:06:00+0200 [info] real-debrid::rd_api_http_error - infringing_file
+- 2026-07-08T06:06:00+0200 [info] real-debrid::rd_call_terminal_error - infringing_file
+- 2026-07-08T06:06:00+0200 [info] real-debrid::rd_candidate_addmagnet_blocked - infringing_file
+- 2026-07-08T06:06:00+0200 [info] real-debrid::rd_verify_infringing - Las vacaciones de Mr. Bean (2007) HDrip XviD Castellano
+- 2026-07-08T06:06:00+0200 [info] real-debrid::rd_verify_queue_done_item - Las vacaciones de Mr. Bean (2007) HDrip XviD Castellano
+- 2026-07-08T06:06:01+0200 [debug] real-debrid::rd_endpoint_pace_wait
+- 2026-07-08T06:06:01+0200 [info] real-debrid::rd_api_http_error - infringing_file
+- 2026-07-08T06:06:01+0200 [info] real-debrid::rd_call_terminal_error - infringing_file
+- 2026-07-08T06:06:01+0200 [info] real-debrid::rd_candidate_addmagnet_blocked - infringing_file
+- 2026-07-08T06:06:01+0200 [info] real-debrid::rd_verify_infringing - Las vacaciones de Mr Bean [HDDVDRIP][720p][x264][www.emwreloaded.com].mkv
+- 2026-07-08T06:06:01+0200 [info] real-debrid::rd_verify_queue_done_item - Las vacaciones de Mr Bean [HDDVDRIP][720p][x264][www.emwreloaded.com].mkv
+- 2026-07-08T06:06:03+0200 [info] real-debrid::rd_api_http_error - infringing_file
+- 2026-07-08T06:06:03+0200 [info] real-debrid::rd_call_terminal_error - infringing_file
+- 2026-07-08T06:06:03+0200 [info] real-debrid::rd_candidate_addmagnet_blocked - infringing_file
+- 2026-07-08T06:06:03+0200 [info] real-debrid::rd_verify_infringing - Las.Vacaciones.De.Mr.Bean.[DVDRip].[www.tensiontorrent.com].avi
+- 2026-07-08T06:06:03+0200 [info] real-debrid::rd_verify_queue_done_item - Las.Vacaciones.De.Mr.Bean.[DVDRip].[www.tensiontorrent.com].avi
+- 2026-07-08T06:06:04+0200 [info] real-debrid::rd_verify_added
+- 2026-07-08T06:06:04+0200 [debug] real-debrid::rd_verify_poll - Las.Vacaciones.De.Mr.Bean.DVD-Rip.Xvid-Mp3.Spanish.wWw.BajandoXvid.com.avi
+- 2026-07-08T06:06:04+0200 [debug] real-debrid::rd_waiting_files_selection - Las.Vacaciones.De.Mr.Bean.DVD-Rip.Xvid-Mp3.Spanish.wWw.BajandoXvid.com.avi
+- 2026-07-08T06:06:04+0200 [info] real-debrid::rd_select_files_decision - Las.Vacaciones.De.Mr.Bean.DVD-Rip.Xvid-Mp3.Spanish.wWw.BajandoXvid.com.avi
+- 2026-07-08T06:06:05+0200 [info] real-debrid::rd_verify_select_files - Las.Vacaciones.De.Mr.Bean.DVD-Rip.Xvid-Mp3.Spanish.wWw.BajandoXvid.com.avi
+- 2026-07-08T06:06:05+0200 [debug] real-debrid::rd_verify_post_select_poll - Las.Vacaciones.De.Mr.Bean.DVD-Rip.Xvid-Mp3.Spanish.wWw.BajandoXvid.com.avi
+- 2026-07-08T06:06:05+0200 [info] real-debrid::rd_fast_discard - zero_progress_post_select
+- 2026-07-08T06:06:05+0200 [info] real-debrid::rd_fast_discard_reason - zero_progress_post_select
+- 2026-07-08T06:06:05+0200 [info] real-debrid::rd_fast_discard_delete - zero_progress_post_select
+- 2026-07-08T06:06:05+0200 [info] real-debrid::rd_zero_progress_fast_delete - Las.Vacaciones.De.Mr.Bean.DVD-Rip.Xvid-Mp3.Spanish.wWw.BajandoXvid.com.avi
+- 2026-07-08T06:06:05+0200 [info] real-debrid::rd_delete_torrent
+- 2026-07-08T06:06:05+0200 [info] real-debrid::rd_slots_release
+- 2026-07-08T06:06:06+0200 [info] real-debrid::rd_verify_queue_done_item - Las.Vacaciones.De.Mr.Bean.DVD-Rip.Xvid-Mp3.Spanish.wWw.BajandoXvid.com.avi
+- 2026-07-08T06:06:06+0200 [info] real-debrid::rd_verify_added
+- 2026-07-08T06:06:06+0200 [debug] real-debrid::rd_verify_poll - Las.Vacaciones.de.Mr.Bean.DVDSCREENER.XVid.Mp3.wWw.SpaTorrent.com
+- 2026-07-08T06:06:06+0200 [debug] real-debrid::rd_waiting_files_selection - Las.Vacaciones.de.Mr.Bean.DVDSCREENER.XVid.Mp3.wWw.SpaTorrent.com
+- 2026-07-08T06:06:06+0200 [info] real-debrid::rd_select_files_decision - Las.Vacaciones.de.Mr.Bean.DVDSCREENER.XVid.Mp3.wWw.SpaTorrent.com
+- 2026-07-08T06:06:06+0200 [debug] real-debrid::rd_rate_wait
+- 2026-07-08T06:06:06+0200 [info] real-debrid::rd_verify_select_files - Las.Vacaciones.de.Mr.Bean.DVDSCREENER.XVid.Mp3.wWw.SpaTorrent.com
+- 2026-07-08T06:06:06+0200 [debug] real-debrid::rd_endpoint_pace_wait
+- 2026-07-08T06:06:07+0200 [debug] real-debrid::rd_verify_post_select_poll - Las.Vacaciones.de.Mr.Bean.DVDSCREENER.XVid.Mp3.wWw.SpaTorrent.com
+- 2026-07-08T06:06:07+0200 [info] real-debrid::rd_fast_discard - zero_progress_post_select
+- 2026-07-08T06:06:07+0200 [info] real-debrid::rd_fast_discard_reason - zero_progress_post_select
+- 2026-07-08T06:06:07+0200 [info] real-debrid::rd_fast_discard_delete - zero_progress_post_select
+- 2026-07-08T06:06:07+0200 [info] real-debrid::rd_zero_progress_fast_delete - Las.Vacaciones.de.Mr.Bean.DVDSCREENER.XVid.Mp3.wWw.SpaTorrent.com
+- 2026-07-08T06:06:07+0200 [info] real-debrid::rd_delete_torrent
+- 2026-07-08T06:06:07+0200 [info] real-debrid::rd_slots_release
+- 2026-07-08T06:06:07+0200 [info] real-debrid::rd_verify_queue_done_item - Las.Vacaciones.de.Mr.Bean.DVDSCREENER.XVid.Mp3.wWw.SpaTorrent.com
+- 2026-07-08T06:06:07+0200 [info] real-debrid::rd_verify_added
+- 2026-07-08T06:06:07+0200 [debug] real-debrid::rd_verify_poll - Las.Vacaciones.de.Mr.Bean.DVD-Screener.Xvid-Mp3.Spanish.wWw.BajandoXvid.com.avi
+- 2026-07-08T06:06:07+0200 [debug] real-debrid::rd_waiting_files_selection - Las.Vacaciones.de.Mr.Bean.DVD-Screener.Xvid-Mp3.Spanish.wWw.BajandoXvid.com.avi
+- 2026-07-08T06:06:07+0200 [info] real-debrid::rd_select_files_decision - Las.Vacaciones.de.Mr.Bean.DVD-Screener.Xvid-Mp3.Spanish.wWw.BajandoXvid.com.avi
+- 2026-07-08T06:06:08+0200 [info] real-debrid::rd_verify_select_files - Las.Vacaciones.de.Mr.Bean.DVD-Screener.Xvid-Mp3.Spanish.wWw.BajandoXvid.com.avi
+- 2026-07-08T06:06:08+0200 [debug] real-debrid::rd_verify_post_select_poll - Las.Vacaciones.de.Mr.Bean.DVD-Screener.Xvid-Mp3.Spanish.wWw.BajandoXvid.com.avi
+- 2026-07-08T06:06:08+0200 [info] real-debrid::rd_fast_discard - zero_progress_post_select
+- 2026-07-08T06:06:08+0200 [info] real-debrid::rd_fast_discard_reason - zero_progress_post_select
+- 2026-07-08T06:06:08+0200 [info] real-debrid::rd_fast_discard_delete - zero_progress_post_select
+- 2026-07-08T06:06:08+0200 [info] real-debrid::rd_zero_progress_fast_delete - Las.Vacaciones.de.Mr.Bean.DVD-Screener.Xvid-Mp3.Spanish.wWw.BajandoXvid.com.avi
+- 2026-07-08T06:06:09+0200 [info] real-debrid::rd_delete_torrent
+- 2026-07-08T06:06:09+0200 [info] real-debrid::rd_slots_release
+- 2026-07-08T06:06:09+0200 [info] real-debrid::rd_verify_queue_done_item - Las.Vacaciones.de.Mr.Bean.DVD-Screener.Xvid-Mp3.Spanish.wWw.BajandoXvid.com.avi
+- 2026-07-08T06:06:09+0200 [info] real-debrid::rd_api_http_error - infringing_file
+- 2026-07-08T06:06:09+0200 [info] real-debrid::rd_call_terminal_error - infringing_file
+- 2026-07-08T06:06:09+0200 [info] real-debrid::rd_candidate_addmagnet_blocked - infringing_file
+- 2026-07-08T06:06:09+0200 [info] real-debrid::rd_verify_infringing - Las.Vacaciones.De.Mr.Bean.DVDrip.XViD.MP3.[www.DivxTotaL.CoM].avi
+- 2026-07-08T06:06:09+0200 [info] real-debrid::rd_verify_queue_done_item - Las.Vacaciones.De.Mr.Bean.DVDrip.XViD.MP3.[www.DivxTotaL.CoM].avi
+- 2026-07-08T06:06:10+0200 [info] real-debrid::rd_verify_added
+- 2026-07-08T06:06:11+0200 [debug] real-debrid::rd_verify_poll - Las Vacaciones de Mr. Bean-Spanish- [TScreener][bajaloaqui.com]
+- 2026-07-08T06:06:11+0200 [debug] real-debrid::rd_waiting_files_selection - Las Vacaciones de Mr. Bean-Spanish- [TScreener][bajaloaqui.com]
+- 2026-07-08T06:06:11+0200 [info] real-debrid::rd_select_files_decision - Las Vacaciones de Mr. Bean-Spanish- [TScreener][bajaloaqui.com]
+- 2026-07-08T06:06:11+0200 [info] real-debrid::rd_verify_select_files - Las Vacaciones de Mr. Bean-Spanish- [TScreener][bajaloaqui.com]
+- 2026-07-08T06:06:11+0200 [debug] real-debrid::rd_verify_post_select_poll - Las Vacaciones de Mr. Bean-Spanish- [TScreener][bajaloaqui.com]
+- 2026-07-08T06:06:11+0200 [info] real-debrid::rd_fast_discard - zero_progress_post_select
+- 2026-07-08T06:06:11+0200 [info] real-debrid::rd_fast_discard_reason - zero_progress_post_select
+- 2026-07-08T06:06:11+0200 [info] real-debrid::rd_fast_discard_delete - zero_progress_post_select
+- 2026-07-08T06:06:11+0200 [info] real-debrid::rd_zero_progress_fast_delete - Las Vacaciones de Mr. Bean-Spanish- [TScreener][bajaloaqui.com]
+- 2026-07-08T06:06:12+0200 [info] real-debrid::rd_delete_torrent
+- 2026-07-08T06:06:12+0200 [debug] real-debrid::rd_endpoint_pace_wait
+- 2026-07-08T06:06:12+0200 [info] real-debrid::rd_slots_release
+- 2026-07-08T06:06:12+0200 [info] real-debrid::rd_verify_queue_done_item - Las Vacaciones de Mr. Bean-Spanish- [TScreener][bajaloaqui.com]
+- 2026-07-08T06:06:12+0200 [info] real-debrid::rd_api_http_error - infringing_file
+- 2026-07-08T06:06:12+0200 [info] real-debrid::rd_call_terminal_error - infringing_file
+- 2026-07-08T06:06:12+0200 [info] real-debrid::rd_candidate_addmagnet_blocked - infringing_file
+- 2026-07-08T06:06:12+0200 [info] real-debrid::rd_verify_infringing - Las Vacaciones De Mr Bean [DVDRip] [www.torrentspain.com]
+- 2026-07-08T06:06:12+0200 [info] real-debrid::rd_verify_queue_done_item - Las Vacaciones De Mr Bean [DVDRip] [www.torrentspain.com]
+- 2026-07-08T06:06:14+0200 [info] real-debrid::rd_verify_added
+- 2026-07-08T06:06:14+0200 [debug] real-debrid::rd_verify_poll - Las.Vacaciones.De.Mr.Bean.CVCD.DVDrip.[www.TodoCVCD.com].mpg
+- 2026-07-08T06:06:15+0200 [info] real-debrid::rd_delete_torrent
+- 2026-07-08T06:06:15+0200 [info] real-debrid::rd_slots_release
+- 2026-07-08T06:06:15+0200 [info] real-debrid::rd_verify_not_instant - Las.Vacaciones.De.Mr.Bean.CVCD.DVDrip.[www.TodoCVCD.com].mpg
+- 2026-07-08T06:06:15+0200 [info] real-debrid::rd_verify_queue_done_item - Las.Vacaciones.De.Mr.Bean.CVCD.DVDrip.[www.TodoCVCD.com].mpg
+- 2026-07-08T06:06:15+0200 [info] real-debrid::rd_verify_added
+- 2026-07-08T06:06:15+0200 [debug] real-debrid::rd_verify_poll - Las Vacaciones De Mr. Bean [TS-Screener][Spanish][2007][www.newpct.com]
+- 2026-07-08T06:06:16+0200 [info] real-debrid::rd_delete_torrent
+- 2026-07-08T06:06:16+0200 [info] real-debrid::rd_slots_release
+- 2026-07-08T06:06:16+0200 [info] real-debrid::rd_verify_not_instant - Las Vacaciones De Mr. Bean [TS-Screener][Spanish][2007][www.newpct.com]
+- 2026-07-08T06:06:16+0200 [info] real-debrid::rd_verify_queue_done_item - Las Vacaciones De Mr. Bean [TS-Screener][Spanish][2007][www.newpct.com]
+- 2026-07-08T06:06:16+0200 [info] real-debrid::rd_verify_added
+- 2026-07-08T06:06:17+0200 [debug] real-debrid::rd_verify_poll - Las.Vacaciones.de.Mr.Bean.[DVD.XViD][AC3.Spanish.Latino][www.btvideoclub.com]
+- 2026-07-08T06:06:17+0200 [debug] real-debrid::rd_waiting_files_selection - Las.Vacaciones.de.Mr.Bean.[DVD.XViD][AC3.Spanish.Latino][www.btvideoclub.com]
+- 2026-07-08T06:06:17+0200 [info] real-debrid::rd_select_files_decision - Las.Vacaciones.de.Mr.Bean.[DVD.XViD][AC3.Spanish.Latino][www.btvideoclub.com]
+- 2026-07-08T06:06:17+0200 [info] real-debrid::rd_verify_select_files - Las.Vacaciones.de.Mr.Bean.[DVD.XViD][AC3.Spanish.Latino][www.btvideoclub.com]
+- 2026-07-08T06:06:17+0200 [debug] real-debrid::rd_endpoint_pace_wait
+- 2026-07-08T06:06:17+0200 [debug] real-debrid::rd_verify_post_select_poll - Las.Vacaciones.de.Mr.Bean.[DVD.XViD][AC3.Spanish.Latino][www.btvideoclub.com]
+- 2026-07-08T06:06:17+0200 [info] real-debrid::rd_fast_discard - zero_progress_post_select
+- 2026-07-08T06:06:17+0200 [info] real-debrid::rd_fast_discard_reason - zero_progress_post_select
+- 2026-07-08T06:06:17+0200 [info] real-debrid::rd_fast_discard_delete - zero_progress_post_select
+- 2026-07-08T06:06:17+0200 [info] real-debrid::rd_zero_progress_fast_delete - Las.Vacaciones.de.Mr.Bean.[DVD.XViD][AC3.Spanish.Latino][www.btvideoclub.com]
+- 2026-07-08T06:06:18+0200 [info] real-debrid::rd_delete_torrent
+- 2026-07-08T06:06:18+0200 [info] real-debrid::rd_slots_release
+- 2026-07-08T06:06:18+0200 [info] real-debrid::rd_verify_queue_done_item - Las.Vacaciones.de.Mr.Bean.[DVD.XViD][AC3.Spanish.Latino][www.btvideoclub.com]
+- 2026-07-08T06:06:18+0200 [info] real-debrid::rd_verify_added
+- 2026-07-08T06:06:19+0200 [debug] real-debrid::rd_verify_poll - Las.Vacaciones.De.Mr.Bean.DVDR.[Multi].[www.MoviesDVDR.com].iso
+- 2026-07-08T06:06:19+0200 [info] real-debrid::rd_delete_torrent
+- 2026-07-08T06:06:19+0200 [info] real-debrid::rd_slots_release
+- 2026-07-08T06:06:19+0200 [info] real-debrid::rd_verify_not_instant - Las.Vacaciones.De.Mr.Bean.DVDR.[Multi].[www.MoviesDVDR.com].iso
+- 2026-07-08T06:06:19+0200 [info] real-debrid::rd_verify_queue_done_item - Las.Vacaciones.De.Mr.Bean.DVDR.[Multi].[www.MoviesDVDR.com].iso
+- 2026-07-08T06:06:20+0200 [info] real-debrid::rd_verify_added
+- 2026-07-08T06:06:20+0200 [debug] real-debrid::rd_verify_poll - Las.vacaciones.de.Mr.Bean.DVDScreener.Sample.Xvid.Mp3.[Spanish].[WwW.VeoDivX.CoM].avi
+- 2026-07-08T06:06:21+0200 [info] real-debrid::rd_delete_torrent
+- 2026-07-08T06:06:21+0200 [info] real-debrid::rd_slots_release
+- 2026-07-08T06:06:21+0200 [info] real-debrid::rd_verify_not_instant - Las.vacaciones.de.Mr.Bean.DVDScreener.Sample.Xvid.Mp3.[Spanish].[WwW.VeoDivX.CoM].avi
+- 2026-07-08T06:06:21+0200 [info] real-debrid::rd_verify_queue_done_item - Las.vacaciones.de.Mr.Bean.DVDScreener.Sample.Xvid.Mp3.[Spanish].[WwW.VeoDivX.CoM].avi
+- 2026-07-08T06:06:21+0200 [info] real-debrid::rd_verify_added
+- 2026-07-08T06:06:21+0200 [debug] real-debrid::rd_verify_poll - Las Vacaciones De Mr. Bean [DVDR][Spanish 5.1-English 5.1][Subs.Sp-En][2007][www.newpct.com]
+- 2026-07-08T06:06:21+0200 [debug] real-debrid::rd_waiting_files_selection - Las Vacaciones De Mr. Bean [DVDR][Spanish 5.1-English 5.1][Subs.Sp-En][2007][www.newpct.com]
+- 2026-07-08T06:06:21+0200 [info] real-debrid::rd_select_files_decision - Las Vacaciones De Mr. Bean [DVDR][Spanish 5.1-English 5.1][Subs.Sp-En][2007][www.newpct.com]
+- 2026-07-08T06:06:21+0200 [debug] real-debrid::rd_rate_wait
+- 2026-07-08T06:06:21+0200 [info] real-debrid::rd_verify_select_files - Las Vacaciones De Mr. Bean [DVDR][Spanish 5.1-English 5.1][Subs.Sp-En][2007][www.newpct.com]
+- 2026-07-08T06:06:22+0200 [debug] real-debrid::rd_verify_post_select_poll - Las Vacaciones De Mr. Bean [DVDR][Spanish 5.1-English 5.1][Subs.Sp-En][2007][www.newpct.com]
+- 2026-07-08T06:06:22+0200 [info] real-debrid::rd_fast_discard - zero_progress_post_select
+- 2026-07-08T06:06:22+0200 [info] real-debrid::rd_fast_discard_reason - zero_progress_post_select
+- 2026-07-08T06:06:22+0200 [info] real-debrid::rd_fast_discard_delete - zero_progress_post_select
+- 2026-07-08T06:06:22+0200 [info] real-debrid::rd_zero_progress_fast_delete - Las Vacaciones De Mr. Bean [DVDR][Spanish 5.1-English 5.1][Subs.Sp-En][2007][www.newpct.com]
+- 2026-07-08T06:06:22+0200 [info] real-debrid::rd_delete_torrent
+- 2026-07-08T06:06:22+0200 [info] real-debrid::rd_slots_release
+- 2026-07-08T06:06:22+0200 [debug] real-debrid::rd_endpoint_pace_wait
+- 2026-07-08T06:06:22+0200 [info] real-debrid::rd_verify_queue_done_item - Las Vacaciones De Mr. Bean [DVDR][Spanish 5.1-English 5.1][Subs.Sp-En][2007][www.newpct.com]
+- 2026-07-08T06:06:27+0200 [debug] real-debrid::rd_endpoint_pace_wait
+- 2026-07-08T06:06:29+0200 [info] real-debrid::rd_verify_added
+- 2026-07-08T06:06:29+0200 [debug] real-debrid::rd_verify_poll - Las vacaciones de Mr Bean (TS-Screener) (EliteTorrent.net).avi
+- 2026-07-08T06:06:29+0200 [info] real-debrid::rd_verify_added
+- 2026-07-08T06:06:30+0200 [debug] real-debrid::rd_verify_poll - Las Vacaciones De Mr.Bean [DVDRip][Xvid][ESP][TaquillaSpa.com]
+- 2026-07-08T06:06:30+0200 [info] real-debrid::rd_delete_torrent
+- 2026-07-08T06:06:30+0200 [info] real-debrid::rd_slots_release
+- 2026-07-08T06:06:30+0200 [info] real-debrid::rd_verify_not_instant - Las vacaciones de Mr Bean (TS-Screener) (EliteTorrent.net).avi
+- 2026-07-08T06:06:30+0200 [info] real-debrid::rd_verify_queue_done_item - Las vacaciones de Mr Bean (TS-Screener) (EliteTorrent.net).avi
+- 2026-07-08T06:06:30+0200 [debug] real-debrid::rd_endpoint_pace_wait
+- 2026-07-08T06:06:30+0200 [info] real-debrid::rd_delete_torrent
+- 2026-07-08T06:06:30+0200 [info] real-debrid::rd_slots_release
+- 2026-07-08T06:06:30+0200 [info] real-debrid::rd_verify_not_instant - Las Vacaciones De Mr.Bean [DVDRip][Xvid][ESP][TaquillaSpa.com]
+- 2026-07-08T06:06:30+0200 [info] real-debrid::rd_verify_queue_done_item - Las Vacaciones De Mr.Bean [DVDRip][Xvid][ESP][TaquillaSpa.com]
+- 2026-07-08T06:06:31+0200 [info] real-debrid::rd_verify_added
+- 2026-07-08T06:06:31+0200 [debug] real-debrid::rd_verify_poll - Las vacaciones de Mr.Bean [DVD-Rip] [Spanish] [www.topetorrent.com]
+- 2026-07-08T06:06:31+0200 [debug] real-debrid::rd_waiting_files_selection - Las vacaciones de Mr.Bean [DVD-Rip] [Spanish] [www.topetorrent.com]
+- 2026-07-08T06:06:31+0200 [info] real-debrid::rd_select_files_decision - Las vacaciones de Mr.Bean [DVD-Rip] [Spanish] [www.topetorrent.com]
+- 2026-07-08T06:06:31+0200 [info] real-debrid::rd_verify_select_files - Las vacaciones de Mr.Bean [DVD-Rip] [Spanish] [www.topetorrent.com]
+- 2026-07-08T06:06:32+0200 [debug] real-debrid::rd_verify_post_select_poll - Las vacaciones de Mr.Bean [DVD-Rip] [Spanish] [www.topetorrent.com]
+- 2026-07-08T06:06:32+0200 [info] real-debrid::rd_fast_discard - zero_progress_post_select
+- 2026-07-08T06:06:32+0200 [info] real-debrid::rd_fast_discard_reason - zero_progress_post_select
+- 2026-07-08T06:06:32+0200 [info] real-debrid::rd_fast_discard_delete - zero_progress_post_select
+- 2026-07-08T06:06:32+0200 [info] real-debrid::rd_zero_progress_fast_delete - Las vacaciones de Mr.Bean [DVD-Rip] [Spanish] [www.topetorrent.com]
+- 2026-07-08T06:06:32+0200 [info] real-debrid::rd_delete_torrent
+- 2026-07-08T06:06:32+0200 [info] real-debrid::rd_slots_release
+- 2026-07-08T06:06:32+0200 [info] real-debrid::rd_verify_queue_done_item - Las vacaciones de Mr.Bean [DVD-Rip] [Spanish] [www.topetorrent.com]
+- 2026-07-08T06:06:32+0200 [debug] real-debrid::rd_endpoint_pace_wait
+- 2026-07-08T06:06:33+0200 [info] real-debrid::rd_verify_added
+- 2026-07-08T06:06:34+0200 [debug] real-debrid::rd_verify_poll - Las.Vacaciones.De.Mr.Bean.[DVDRIP.XViD][MP3.Spanish][www.btvideoclub.com]
+- 2026-07-08T06:06:34+0200 [info] real-debrid::rd_api_http_error - infringing_file
+- 2026-07-08T06:06:34+0200 [info] real-debrid::rd_call_terminal_error - infringing_file
+- 2026-07-08T06:06:34+0200 [info] real-debrid::rd_candidate_addmagnet_blocked - infringing_file
+- 2026-07-08T06:06:34+0200 [info] real-debrid::rd_verify_infringing - Las.Vacaciones.De.Mr.Bean.2007.SPANISH.DVDRiP.www.lokotorrents.com
+- 2026-07-08T06:06:34+0200 [info] real-debrid::rd_verify_queue_done_item - Las.Vacaciones.De.Mr.Bean.2007.SPANISH.DVDRiP.www.lokotorrents.com
+- 2026-07-08T06:06:34+0200 [info] real-debrid::rd_delete_torrent
+- 2026-07-08T06:06:34+0200 [info] real-debrid::rd_slots_release
+- 2026-07-08T06:06:34+0200 [info] real-debrid::rd_verify_not_instant - Las.Vacaciones.De.Mr.Bean.[DVDRIP.XViD][MP3.Spanish][www.btvideoclub.com]
+- 2026-07-08T06:06:34+0200 [info] real-debrid::rd_verify_queue_done_item - Las.Vacaciones.De.Mr.Bean.[DVDRIP.XViD][MP3.Spanish][www.btvideoclub.com]
+- 2026-07-08T06:06:35+0200 [info] real-debrid::rd_verify_added
+- 2026-07-08T06:06:35+0200 [debug] real-debrid::rd_verify_poll - Las Vacaciones De Mr Bean [DVDScreener][Spanish][2007][www.newpct.com]
+- 2026-07-08T06:06:35+0200 [debug] real-debrid::rd_waiting_files_selection - Las Vacaciones De Mr Bean [DVDScreener][Spanish][2007][www.newpct.com]
+- 2026-07-08T06:06:35+0200 [info] real-debrid::rd_select_files_decision - Las Vacaciones De Mr Bean [DVDScreener][Spanish][2007][www.newpct.com]
+- 2026-07-08T06:06:36+0200 [info] real-debrid::rd_verify_select_files - Las Vacaciones De Mr Bean [DVDScreener][Spanish][2007][www.newpct.com]
+- 2026-07-08T06:06:37+0200 [debug] real-debrid::rd_verify_post_select_poll - Las Vacaciones De Mr Bean [DVDScreener][Spanish][2007][www.newpct.com]
+- 2026-07-08T06:06:37+0200 [info] real-debrid::rd_fast_discard - zero_progress_post_select
+- 2026-07-08T06:06:37+0200 [info] real-debrid::rd_fast_discard_reason - zero_progress_post_select
+- 2026-07-08T06:06:37+0200 [info] real-debrid::rd_fast_discard_delete - zero_progress_post_select
+- 2026-07-08T06:06:37+0200 [info] real-debrid::rd_zero_progress_fast_delete - Las Vacaciones De Mr Bean [DVDScreener][Spanish][2007][www.newpct.com]
+- 2026-07-08T06:06:37+0200 [info] real-debrid::rd_api_http_error - infringing_file
+- 2026-07-08T06:06:37+0200 [info] real-debrid::rd_call_terminal_error - infringing_file
+- 2026-07-08T06:06:37+0200 [info] real-debrid::rd_candidate_addmagnet_blocked - infringing_file
+- 2026-07-08T06:06:37+0200 [info] real-debrid::rd_verify_infringing - Las.vacaciones.de.Mr.Bean.Mr.Beans.Holiday.TS.Xvid.Mp3.wWw.SpaTorrent.com
+- 2026-07-08T06:06:37+0200 [info] real-debrid::rd_verify_queue_done_item - Las.vacaciones.de.Mr.Bean.Mr.Beans.Holiday.TS.Xvid.Mp3.wWw.SpaTorrent.com
+- 2026-07-08T06:06:37+0200 [info] real-debrid::rd_delete_torrent
+- 2026-07-08T06:06:37+0200 [info] real-debrid::rd_slots_release
+- 2026-07-08T06:06:37+0200 [info] real-debrid::rd_verify_queue_done_item - Las Vacaciones De Mr Bean [DVDScreener][Spanish][2007][www.newpct.com]
+- 2026-07-08T06:06:38+0200 [debug] real-debrid::rd_endpoint_pace_wait
+- 2026-07-08T06:06:38+0200 [info] real-debrid::rd_api_http_error - infringing_file
+- 2026-07-08T06:06:38+0200 [info] real-debrid::rd_call_terminal_error - infringing_file
+- 2026-07-08T06:06:38+0200 [info] real-debrid::rd_candidate_addmagnet_blocked - infringing_file
+- 2026-07-08T06:06:38+0200 [info] real-debrid::rd_verify_infringing - Las vacaciones de Mr. Bean [DVDRIP XViD MP3][www.emwreloaded.com]
+- 2026-07-08T06:06:38+0200 [info] real-debrid::rd_verify_queue_done_item - Las vacaciones de Mr. Bean [DVDRIP XViD MP3][www.emwreloaded.com]
+- 2026-07-08T06:06:40+0200 [info] real-debrid::rd_verify_added
+- 2026-07-08T06:06:40+0200 [debug] real-debrid::rd_verify_poll - LAS VACACIONES DE MR BEAN
+- 2026-07-08T06:06:40+0200 [debug] real-debrid::rd_waiting_files_selection - LAS VACACIONES DE MR BEAN
+- 2026-07-08T06:06:40+0200 [info] real-debrid::rd_select_files_decision - LAS VACACIONES DE MR BEAN
+- 2026-07-08T06:06:40+0200 [info] real-debrid::rd_verify_select_files - LAS VACACIONES DE MR BEAN
+- 2026-07-08T06:06:41+0200 [debug] real-debrid::rd_verify_post_select_poll - LAS VACACIONES DE MR BEAN
+- 2026-07-08T06:06:41+0200 [info] real-debrid::rd_fast_discard - zero_progress_post_select
+- 2026-07-08T06:06:41+0200 [info] real-debrid::rd_fast_discard_reason - zero_progress_post_select
+- 2026-07-08T06:06:41+0200 [info] real-debrid::rd_fast_discard_delete - zero_progress_post_select
+- 2026-07-08T06:06:41+0200 [info] real-debrid::rd_zero_progress_fast_delete - LAS VACACIONES DE MR BEAN
+- 2026-07-08T06:06:41+0200 [info] real-debrid::rd_delete_torrent
+- 2026-07-08T06:06:41+0200 [info] real-debrid::rd_slots_release
+- 2026-07-08T06:06:41+0200 [info] real-debrid::rd_verify_queue_done_item - LAS VACACIONES DE MR BEAN
+- 2026-07-08T06:06:41+0200 [info] real-debrid::rd_verify_queue_end
+- 2026-07-08T06:06:41+0200 [info] real-debrid::rd_rate_summary
+- 2026-07-08T06:06:41+0200 [info] real-debrid::rd_endpoint_pacer_summary
+- 2026-07-08T06:06:41+0200 [info] real-debrid::rd_cleanup_final_start
+- 2026-07-08T06:06:41+0200 [info] real-debrid::rd_slots_refresh
+- 2026-07-08T06:06:41+0200 [info] real-debrid::rd_active_count_after
+- 2026-07-08T06:06:41+0200 [info] real-debrid::rd_cleanup_final_end
+- 2026-07-08T06:06:41+0200 [info] real-debrid::rd_rate_summary
+- 2026-07-08T06:06:41+0200 [info] real-debrid::rd_endpoint_pacer_summary
+- 2026-07-08T06:06:41+0200 [info] real-debrid::rd_verify_batch_end
+- 2026-07-08T06:06:41+0200 [info] real-debrid::rd_check_summary
+- 2026-07-08T06:06:41+0200 [info] qbittorrent::qbt_relevance_filter
+- 2026-07-08T06:06:41+0200 [info] qbittorrent::qbt_probe_batch_start
+- 2026-07-08T06:06:41+0200 [info] qbittorrent::qbt_login
+- 2026-07-08T06:06:41+0200 [info] qbittorrent::qbt_login
+- 2026-07-08T06:06:41+0200 [info] qbittorrent::qbt_login
+- 2026-07-08T06:06:41+0200 [info] qbittorrent::qbt_login
+- 2026-07-08T06:06:41+0200 [info] qbittorrent::qbt_login
+- 2026-07-08T06:06:41+0200 [info] qbittorrent::qbt_probe_add - Las vacaciones de Mr. Bean [DVDRIP XViD MP3][www.emwreloaded.com]
+- 2026-07-08T06:06:41+0200 [info] qbittorrent::qbt_probe_add - Las vacaciones de Mr Bean (DVDRip) (EliteTorrent.net)
+- 2026-07-08T06:06:41+0200 [info] qbittorrent::qbt_probe_add - Las Vacaciones De Mr Bean [DVDRip] [www.torrentspain.com]
+- 2026-07-08T06:06:42+0200 [info] qbittorrent::qbt_probe_add - Las vacaciones de Mr.Bean [DVD-Rip] [Spanish] [www.topetorrent.com]
+- 2026-07-08T06:06:42+0200 [info] qbittorrent::qbt_probe_add - Las.Vacaciones.De.Mr.Bean.2007.SPANISH.DVDRiP.www.lokotorrents.com
+- 2026-07-08T06:06:44+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:06:44+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:06:44+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:06:44+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:06:44+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:06:46+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:06:46+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:06:46+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:06:46+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:06:46+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:06:48+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:06:48+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:06:48+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:06:48+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:06:48+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:06:50+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:06:50+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:06:50+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:06:50+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:06:50+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:06:52+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:06:52+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:06:52+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:06:52+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:06:52+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:06:54+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:06:54+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:06:54+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:06:54+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:06:54+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:06:56+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:06:56+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:06:56+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:06:56+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:06:56+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:06:58+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:06:58+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:06:58+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:06:58+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:06:58+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:07:00+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:07:00+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:07:00+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:07:00+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:07:00+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:07:02+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:07:02+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:07:02+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:07:02+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:07:02+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:07:04+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:07:04+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:07:04+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:07:04+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:07:04+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:07:06+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:07:06+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:07:06+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:07:06+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:07:06+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:07:08+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:07:08+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:07:08+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:07:08+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:07:08+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:07:10+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:07:10+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:07:10+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:07:10+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:07:10+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:07:12+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:07:12+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:07:12+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:07:12+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:07:12+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:07:14+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:07:14+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:07:14+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:07:14+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:07:14+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:07:16+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:07:16+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:07:16+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:07:16+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:07:16+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:07:18+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:07:18+0200 [info] qbittorrent::qbt_probe_result - Sin vida clara en qBittorrent: state=metadl, seeds=0, peers=0, progress=0.000
+- 2026-07-08T06:07:18+0200 [info] qbittorrent::qbt_delete_probe
+- 2026-07-08T06:07:18+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:07:18+0200 [info] qbittorrent::qbt_probe_result - Sin vida clara en qBittorrent: state=metadl, seeds=0, peers=0, progress=0.000
+- 2026-07-08T06:07:18+0200 [info] qbittorrent::qbt_delete_probe
+- 2026-07-08T06:07:18+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:07:18+0200 [info] qbittorrent::qbt_probe_result - Sin vida clara en qBittorrent: state=metadl, seeds=0, peers=0, progress=0.000
+- 2026-07-08T06:07:18+0200 [info] qbittorrent::qbt_login
+- 2026-07-08T06:07:18+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:07:18+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:07:18+0200 [info] qbittorrent::qbt_probe_result - Sin vida clara en qBittorrent: state=metadl, seeds=0, peers=0, progress=0.000
+- 2026-07-08T06:07:18+0200 [info] qbittorrent::qbt_probe_result - Sin vida clara en qBittorrent: state=metadl, seeds=0, peers=0, progress=0.000
+- 2026-07-08T06:07:18+0200 [info] qbittorrent::qbt_delete_probe
+- 2026-07-08T06:07:18+0200 [info] qbittorrent::qbt_login
+- 2026-07-08T06:07:18+0200 [info] qbittorrent::qbt_delete_probe
+- 2026-07-08T06:07:18+0200 [info] qbittorrent::qbt_delete_probe
+- 2026-07-08T06:07:18+0200 [info] qbittorrent::qbt_probe_add - Las Vacaciones De Mr.  Bean [DVDRIP][Spansih][2007][www.newpct.com]
+- 2026-07-08T06:07:18+0200 [info] qbittorrent::qbt_login
+- 2026-07-08T06:07:18+0200 [info] qbittorrent::qbt_login
+- 2026-07-08T06:07:18+0200 [info] qbittorrent::qbt_login
+- 2026-07-08T06:07:18+0200 [info] qbittorrent::qbt_probe_add - Las Vacaciones De Mr.Bean [DVDRip][Xvid][ESP][TaquillaSpa.com]
+- 2026-07-08T06:07:18+0200 [info] qbittorrent::qbt_probe_add - Las.Vacaciones.De.Mr.Bean.[DVDRIP.XViD][MP3.Spanish][www.btvideoclub.com]
+- 2026-07-08T06:07:18+0200 [info] qbittorrent::qbt_probe_add - Las vacaciones de Mr. Bean (2007) HDrip XviD Castellano
+- 2026-07-08T06:07:18+0200 [info] qbittorrent::qbt_probe_add - Las.Vacaciones.de.Mr.Bean.[DVD.XViD][AC3.Spanish.Latino][www.btvideoclub.com]
+- 2026-07-08T06:07:20+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:07:20+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:07:20+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:07:20+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:07:20+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:07:22+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:07:22+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:07:22+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:07:22+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:07:22+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:07:24+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:07:24+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:07:24+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:07:24+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:07:24+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:07:26+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:07:26+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:07:26+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:07:26+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:07:26+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:07:28+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:07:28+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:07:28+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:07:28+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:07:28+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:07:30+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:07:30+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:07:30+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:07:30+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:07:30+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:07:32+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:07:32+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:07:32+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:07:32+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:07:32+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:07:34+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:07:34+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:07:34+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:07:34+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:07:34+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:07:36+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:07:36+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:07:36+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:07:36+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:07:36+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:07:38+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:07:38+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:07:38+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:07:38+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:07:38+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:07:40+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:07:40+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:07:40+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:07:40+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:07:40+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:07:42+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:07:42+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:07:42+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:07:42+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:07:42+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:07:44+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:07:44+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:07:44+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:07:44+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:07:44+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:07:46+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:07:46+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:07:46+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:07:46+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:07:46+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:07:48+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:07:48+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:07:48+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:07:48+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:07:48+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:07:50+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:07:50+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:07:50+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:07:50+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:07:50+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:07:52+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:07:52+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:07:52+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:07:52+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:07:52+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:07:54+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:07:54+0200 [info] qbittorrent::qbt_probe_result - Sin vida clara en qBittorrent: state=metadl, seeds=0, peers=1, progress=0.000
+- 2026-07-08T06:07:54+0200 [info] qbittorrent::qbt_delete_probe
+- 2026-07-08T06:07:54+0200 [info] qbittorrent::qbt_login
+- 2026-07-08T06:07:54+0200 [info] qbittorrent::qbt_probe_add - Mr Bean (Serie) Las vacaciones de Mr Bean (Pelicula)
+- 2026-07-08T06:07:54+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:07:54+0200 [info] qbittorrent::qbt_probe_result - Sin vida clara en qBittorrent: state=metadl, seeds=0, peers=1, progress=0.000
+- 2026-07-08T06:07:54+0200 [info] qbittorrent::qbt_delete_probe
+- 2026-07-08T06:07:54+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:07:54+0200 [info] qbittorrent::qbt_probe_result - Sin vida clara en qBittorrent: state=metadl, seeds=0, peers=1, progress=0.000
+- 2026-07-08T06:07:54+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:07:54+0200 [info] qbittorrent::qbt_login
+- 2026-07-08T06:07:54+0200 [info] qbittorrent::qbt_delete_probe
+- 2026-07-08T06:07:54+0200 [info] qbittorrent::qbt_probe_result - Sin vida clara en qBittorrent: state=metadl, seeds=0, peers=0, progress=0.000
+- 2026-07-08T06:07:54+0200 [info] qbittorrent::qbt_probe_add - Las.Vacaciones.De.Mr.Bean.CVCD.DVDrip.[www.TodoCVCD.com].mpg
+- 2026-07-08T06:07:54+0200 [info] qbittorrent::qbt_delete_probe
+- 2026-07-08T06:07:54+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:07:54+0200 [info] qbittorrent::qbt_probe_result - Sin vida clara en qBittorrent: state=metadl, seeds=0, peers=0, progress=0.000
+- 2026-07-08T06:07:54+0200 [info] qbittorrent::qbt_login
+- 2026-07-08T06:07:54+0200 [info] qbittorrent::qbt_delete_probe
+- 2026-07-08T06:07:54+0200 [info] qbittorrent::qbt_probe_add - Las.Vacaciones.De.Mr.Bean.[DVDRip].[www.tensiontorrent.com].avi
+- 2026-07-08T06:07:54+0200 [info] qbittorrent::qbt_login
+- 2026-07-08T06:07:54+0200 [info] qbittorrent::qbt_login
+- 2026-07-08T06:07:54+0200 [info] qbittorrent::qbt_probe_add - Las Vacaciones de Mr Bean 1080p Audio Latino.mkv
+- 2026-07-08T06:07:54+0200 [info] qbittorrent::qbt_probe_add - Las.Vacaciones.De.Mr.Bean.DVDR.[Multi].[www.MoviesDVDR.com].iso
+- 2026-07-08T06:07:56+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:07:56+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:07:56+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:07:56+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:07:56+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:07:58+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:07:58+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:07:58+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:07:58+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:07:59+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:08:00+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:08:00+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:08:00+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:08:01+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:08:01+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:08:02+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:08:02+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:08:02+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:08:03+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:08:03+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:08:04+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:08:04+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:08:04+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:08:05+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:08:05+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:08:06+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:08:06+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:08:06+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:08:07+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:08:07+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:08:08+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:08:08+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:08:08+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:08:09+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:08:09+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:08:10+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:08:10+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:08:10+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:08:11+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:08:11+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:08:12+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:08:12+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:08:12+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:08:13+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:08:13+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:08:14+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:08:14+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:08:14+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:08:15+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:08:15+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:08:16+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:08:16+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:08:17+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:08:17+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:08:17+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:08:18+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:08:18+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:08:19+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:08:19+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:08:19+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:08:20+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:08:20+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:08:21+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:08:21+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:08:21+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:08:22+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:08:22+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:08:23+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:08:23+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:08:23+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:08:24+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:08:24+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:08:25+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:08:25+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:08:25+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:08:26+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:08:26+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:08:27+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:08:27+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:08:27+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:08:28+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:08:28+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:08:29+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:08:29+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:08:29+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:08:30+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:08:30+0200 [info] qbittorrent::qbt_probe_result - Sin vida clara en qBittorrent: state=metadl, seeds=0, peers=1, progress=0.000
+- 2026-07-08T06:08:30+0200 [info] qbittorrent::qbt_delete_probe
+- 2026-07-08T06:08:30+0200 [info] qbittorrent::qbt_login
+- 2026-07-08T06:08:30+0200 [info] qbittorrent::qbt_probe_add - Las vacaciones de Mr Bean [HDDVDRIP][720p][x264][www.emwreloaded.com].mkv
+- 2026-07-08T06:08:30+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:08:30+0200 [info] qbittorrent::qbt_probe_result - Sin vida clara en qBittorrent: state=metadl, seeds=0, peers=0, progress=0.000
+- 2026-07-08T06:08:30+0200 [info] qbittorrent::qbt_delete_probe
+- 2026-07-08T06:08:31+0200 [info] qbittorrent::qbt_login
+- 2026-07-08T06:08:31+0200 [info] qbittorrent::qbt_probe_add - Las.Vacaciones.De.Mr.Bean.DVD-Rip.Xvid-Mp3.Spanish.wWw.BajandoXvid.com.avi
+- 2026-07-08T06:08:31+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:08:31+0200 [info] qbittorrent::qbt_probe_result - Sin vida clara en qBittorrent: state=metadl, seeds=0, peers=0, progress=0.000
+- 2026-07-08T06:08:31+0200 [info] qbittorrent::qbt_delete_probe
+- 2026-07-08T06:08:31+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:08:31+0200 [info] qbittorrent::qbt_probe_result - Sin vida clara en qBittorrent: state=metadl, seeds=0, peers=0, progress=0.000
+- 2026-07-08T06:08:31+0200 [info] qbittorrent::qbt_login
+- 2026-07-08T06:08:31+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:08:31+0200 [info] qbittorrent::qbt_delete_probe
+- 2026-07-08T06:08:31+0200 [info] qbittorrent::qbt_probe_result - Sin vida clara en qBittorrent: state=metadl, seeds=0, peers=0, progress=0.000
+- 2026-07-08T06:08:31+0200 [info] qbittorrent::qbt_probe_add - Las.Vacaciones.De.Mr.Bean.DVDrip.XViD.MP3.[www.DivxTotaL.CoM].avi
+- 2026-07-08T06:08:31+0200 [info] qbittorrent::qbt_delete_probe
+- 2026-07-08T06:08:31+0200 [info] qbittorrent::qbt_login
+- 2026-07-08T06:08:31+0200 [info] qbittorrent::qbt_login
+- 2026-07-08T06:08:31+0200 [info] qbittorrent::qbt_probe_add - las vacaciones de mr bean 1080p audio latino.mkv.7z
+- 2026-07-08T06:08:31+0200 [info] qbittorrent::qbt_probe_add - Las Vacaciones De Mr. Bean [DVDR][Spanish 5.1-English 5.1][Subs.Sp-En][2007][www.newpct.com]
+- 2026-07-08T06:08:32+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:08:33+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:08:33+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:08:33+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:08:33+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:08:34+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:08:35+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:08:35+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:08:35+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:08:35+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:08:36+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:08:37+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:08:37+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:08:37+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:08:37+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:08:38+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:08:39+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:08:39+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:08:39+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:08:39+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:08:40+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:08:41+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:08:41+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:08:41+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:08:41+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:08:42+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:08:43+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:08:43+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:08:43+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:08:43+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:08:44+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:08:45+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:08:45+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:08:45+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:08:45+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:08:46+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:08:47+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:08:47+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:08:47+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:08:47+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:08:48+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:08:49+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:08:49+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:08:49+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:08:49+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:08:50+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:08:51+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:08:51+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:08:51+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:08:51+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:08:52+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:08:53+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:08:53+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:08:53+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:08:53+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:08:54+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:08:55+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:08:55+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:08:55+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:08:55+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:08:56+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:08:57+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:08:57+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:08:57+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:08:57+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:08:58+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:08:59+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:08:59+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:08:59+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:08:59+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:09:00+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:09:01+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:09:01+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:09:01+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:09:01+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:09:02+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:09:03+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:09:03+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:09:03+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:09:03+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:09:04+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:09:05+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:09:05+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:09:05+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:09:05+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:09:06+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:09:06+0200 [info] qbittorrent::qbt_probe_result - Sin vida clara en qBittorrent: state=metadl, seeds=0, peers=0, progress=0.000
+- 2026-07-08T06:09:06+0200 [info] qbittorrent::qbt_delete_probe
+- 2026-07-08T06:09:07+0200 [info] qbittorrent::qbt_login
+- 2026-07-08T06:09:07+0200 [info] qbittorrent::qbt_probe_add - Las Vacaciones de Mr. Bean-Spanish- [TScreener][bajaloaqui.com]
+- 2026-07-08T06:09:07+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:09:07+0200 [info] qbittorrent::qbt_probe_result - qBittorrent tiene metadatos pero sin vida clara: state=stalleddl, seeds=0, peers=3
+- 2026-07-08T06:09:07+0200 [info] qbittorrent::qbt_delete_probe
+- 2026-07-08T06:09:07+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:09:07+0200 [info] qbittorrent::qbt_login
+- 2026-07-08T06:09:07+0200 [info] qbittorrent::qbt_probe_result - Sin vida clara en qBittorrent: state=metadl, seeds=0, peers=0, progress=0.000
+- 2026-07-08T06:09:07+0200 [info] qbittorrent::qbt_probe_add - Las.vacaciones.de.Mr.Bean.Mr.Beans.Holiday.TS.Xvid.Mp3.wWw.SpaTorrent.com
+- 2026-07-08T06:09:07+0200 [info] qbittorrent::qbt_delete_probe
+- 2026-07-08T06:09:07+0200 [info] qbittorrent::qbt_login
+- 2026-07-08T06:09:07+0200 [info] qbittorrent::qbt_probe_add - Las.Vacaciones.De.Mr.Bean.DVD.XviD.MP3.Screener.[DTL].avi
+- 2026-07-08T06:09:07+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:09:07+0200 [info] qbittorrent::qbt_probe_result - Sin vida clara en qBittorrent: state=metadl, seeds=0, peers=0, progress=0.000
+- 2026-07-08T06:09:07+0200 [info] qbittorrent::qbt_delete_probe
+- 2026-07-08T06:09:07+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:09:07+0200 [info] qbittorrent::qbt_login
+- 2026-07-08T06:09:07+0200 [info] qbittorrent::qbt_probe_result - Sin vida clara en qBittorrent: state=metadl, seeds=0, peers=2, progress=0.000
+- 2026-07-08T06:09:07+0200 [info] qbittorrent::qbt_probe_add - Las.vacaciones.de.Mr.Bean.(Mr.Beans.Holiday).TS.Xvid.Mp3.[www.btvideoclub.com].avi
+- 2026-07-08T06:09:07+0200 [info] qbittorrent::qbt_delete_probe
+- 2026-07-08T06:09:07+0200 [info] qbittorrent::qbt_login
+- 2026-07-08T06:09:07+0200 [info] qbittorrent::qbt_probe_add - LAS VACACIONES DE MR BEAN
+- 2026-07-08T06:09:09+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:09:09+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:09:09+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:09:09+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:09:09+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:09:11+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:09:11+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:09:11+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:09:11+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:09:11+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:09:13+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:09:13+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:09:13+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:09:13+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:09:13+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:09:15+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:09:15+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:09:15+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:09:15+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:09:15+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:09:17+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:09:17+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:09:17+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:09:17+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:09:17+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:09:19+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:09:19+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:09:19+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:09:19+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:09:19+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:09:21+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:09:21+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:09:21+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:09:21+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:09:21+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:09:23+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:09:23+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:09:23+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:09:23+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:09:23+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:09:25+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:09:25+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:09:25+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:09:25+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:09:25+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:09:27+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:09:27+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:09:27+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:09:27+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:09:27+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:09:29+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:09:29+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:09:29+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:09:29+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:09:29+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:09:31+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:09:31+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:09:31+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:09:31+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:09:31+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:09:33+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:09:33+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:09:33+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:09:33+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:09:33+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:09:35+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:09:35+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:09:35+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:09:35+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:09:35+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:09:37+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:09:37+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:09:37+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:09:37+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:09:37+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:09:39+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:09:39+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:09:39+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:09:39+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:09:39+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:09:41+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:09:41+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:09:41+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:09:41+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:09:41+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:09:43+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:09:43+0200 [info] qbittorrent::qbt_probe_result - Sin vida clara en qBittorrent: state=metadl, seeds=0, peers=0, progress=0.000
+- 2026-07-08T06:09:43+0200 [info] qbittorrent::qbt_delete_probe
+- 2026-07-08T06:09:43+0200 [info] qbittorrent::qbt_login
+- 2026-07-08T06:09:43+0200 [info] qbittorrent::qbt_probe_add - Las.Vacaciones.de.Mr.Bean.TS_Screener.[www.nosolotorrents.com]
+- 2026-07-08T06:09:43+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:09:43+0200 [info] qbittorrent::qbt_probe_result - Sin vida clara en qBittorrent: state=metadl, seeds=0, peers=0, progress=0.000
+- 2026-07-08T06:09:43+0200 [info] qbittorrent::qbt_delete_probe
+- 2026-07-08T06:09:43+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:09:43+0200 [info] qbittorrent::qbt_login
+- 2026-07-08T06:09:43+0200 [info] qbittorrent::qbt_probe_result - Sin vida clara en qBittorrent: state=metadl, seeds=0, peers=0, progress=0.000
+- 2026-07-08T06:09:43+0200 [info] qbittorrent::qbt_probe_add - Las Vacaciones De Mr. Bean [TS-Screener][Spanish][2007][www.newpct.com]
+- 2026-07-08T06:09:43+0200 [info] qbittorrent::qbt_delete_probe
+- 2026-07-08T06:09:43+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:09:43+0200 [info] qbittorrent::qbt_login
+- 2026-07-08T06:09:43+0200 [info] qbittorrent::qbt_probe_result - Sin vida clara en qBittorrent: state=metadl, seeds=0, peers=0, progress=0.000
+- 2026-07-08T06:09:43+0200 [info] qbittorrent::qbt_delete_probe
+- 2026-07-08T06:09:43+0200 [info] qbittorrent::qbt_probe_add - Las vacaciones de Mr Bean (TS-Screener) (EliteTorrent.net).avi
+- 2026-07-08T06:09:43+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:09:43+0200 [info] qbittorrent::qbt_probe_result - Sin vida clara en qBittorrent: state=metadl, seeds=0, peers=0, progress=0.000
+- 2026-07-08T06:09:43+0200 [info] qbittorrent::qbt_login
+- 2026-07-08T06:09:43+0200 [info] qbittorrent::qbt_delete_probe
+- 2026-07-08T06:09:43+0200 [info] qbittorrent::qbt_probe_add - Las.Vacaciones.De.Mr.Bean.TS.XviD.MP3.Screener.[DTL].avi
+- 2026-07-08T06:09:43+0200 [info] qbittorrent::qbt_login
+- 2026-07-08T06:09:43+0200 [info] qbittorrent::qbt_probe_add - Las.Vacaciones.De.Mr.Bean.CVCD.TS-Screener.[DTL].mpg
+- 2026-07-08T06:09:45+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:09:45+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:09:45+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:09:45+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:09:45+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:09:47+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:09:47+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:09:47+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:09:47+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:09:47+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:09:49+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:09:49+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:09:49+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:09:49+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:09:49+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:09:51+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:09:51+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:09:51+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:09:51+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:09:51+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:09:53+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:09:53+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:09:53+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:09:53+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:09:53+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:09:55+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:09:55+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:09:55+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:09:55+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:09:55+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:09:57+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:09:57+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:09:57+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:09:57+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:09:57+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:09:59+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:09:59+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:09:59+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:09:59+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:09:59+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:10:01+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:10:01+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:10:01+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:10:01+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:10:01+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:10:03+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:10:03+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:10:03+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:10:03+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:10:03+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:10:05+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:10:05+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:10:05+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:10:05+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:10:05+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:10:07+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:10:07+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:10:07+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:10:07+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:10:07+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:10:09+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:10:09+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:10:09+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:10:09+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:10:09+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:10:11+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:10:11+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:10:11+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:10:11+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:10:11+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:10:13+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:10:13+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:10:13+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:10:13+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:10:13+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:10:15+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:10:15+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:10:15+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:10:15+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:10:15+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:10:17+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:10:17+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:10:17+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:10:17+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:10:17+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:10:19+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:10:19+0200 [info] qbittorrent::qbt_probe_result - Sin vida clara en qBittorrent: state=metadl, seeds=0, peers=0, progress=0.000
+- 2026-07-08T06:10:19+0200 [info] qbittorrent::qbt_delete_probe
+- 2026-07-08T06:10:19+0200 [info] qbittorrent::qbt_login
+- 2026-07-08T06:10:19+0200 [info] qbittorrent::qbt_probe_add - Las.Vacaciones.de.Mr.Bean.DVDSCREENER.XVid.Mp3.wWw.SpaTorrent.com
+- 2026-07-08T06:10:19+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:10:19+0200 [info] qbittorrent::qbt_probe_result - Sin vida clara en qBittorrent: state=metadl, seeds=0, peers=0, progress=0.000
+- 2026-07-08T06:10:19+0200 [info] qbittorrent::qbt_delete_probe
+- 2026-07-08T06:10:19+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:10:19+0200 [info] qbittorrent::qbt_login
+- 2026-07-08T06:10:19+0200 [info] qbittorrent::qbt_probe_result - Sin vida clara en qBittorrent: state=metadl, seeds=0, peers=1, progress=0.000
+- 2026-07-08T06:10:19+0200 [info] qbittorrent::qbt_probe_add - Las Vacaciones De Mr Bean [DVDScreener][Spanish][2007][www.newpct.com]
+- 2026-07-08T06:10:19+0200 [info] qbittorrent::qbt_delete_probe
+- 2026-07-08T06:10:19+0200 [info] qbittorrent::qbt_login
+- 2026-07-08T06:10:19+0200 [info] qbittorrent::qbt_probe_add - Las.Vacaciones.De.Mr.Bean.CVCD.DVDScreener.[DTL].mpg
+- 2026-07-08T06:10:19+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:10:19+0200 [info] qbittorrent::qbt_probe_result - Sin vida clara en qBittorrent: state=metadl, seeds=0, peers=0, progress=0.000
+- 2026-07-08T06:10:19+0200 [info] qbittorrent::qbt_delete_probe
+- 2026-07-08T06:10:19+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:10:19+0200 [info] qbittorrent::qbt_probe_result - Sin vida clara en qBittorrent: state=metadl, seeds=0, peers=0, progress=0.000
+- 2026-07-08T06:10:19+0200 [info] qbittorrent::qbt_login
+- 2026-07-08T06:10:19+0200 [info] qbittorrent::qbt_delete_probe
+- 2026-07-08T06:10:20+0200 [info] qbittorrent::qbt_probe_add - Las.Vacaciones.de.Mr.Bean.DVDSCREENER.CVCD.wWw.SpaTorrent.com.mpg
+- 2026-07-08T06:10:20+0200 [info] qbittorrent::qbt_login
+- 2026-07-08T06:10:20+0200 [info] qbittorrent::qbt_probe_add - Las.Vacaciones.de.Mr.Bean.DVDSCREENER.Xvid.Spanish.Mp3.[www.btvideoclub.com].avi
+- 2026-07-08T06:10:21+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:10:21+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:10:21+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:10:22+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:10:22+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:10:23+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:10:23+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:10:23+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:10:24+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:10:24+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:10:25+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:10:25+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:10:25+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:10:26+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:10:26+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:10:27+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:10:27+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:10:27+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:10:28+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:10:28+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:10:29+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:10:29+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:10:29+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:10:30+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:10:30+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:10:31+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:10:31+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:10:31+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:10:32+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:10:32+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:10:33+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:10:33+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:10:33+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:10:34+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:10:34+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:10:35+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:10:35+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:10:35+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:10:36+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:10:36+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:10:37+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:10:37+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:10:37+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:10:38+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:10:38+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:10:39+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:10:39+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:10:39+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:10:40+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:10:40+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:10:41+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:10:41+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:10:41+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:10:42+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:10:42+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:10:43+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:10:43+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:10:44+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:10:44+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:10:44+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:10:45+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:10:45+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:10:46+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:10:46+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:10:46+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:10:47+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:10:47+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:10:48+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:10:48+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:10:48+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:10:49+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:10:49+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:10:50+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:10:50+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:10:50+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:10:51+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:10:51+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:10:52+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:10:52+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:10:52+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:10:53+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:10:53+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:10:54+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:10:54+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:10:54+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:10:55+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:10:55+0200 [info] qbittorrent::qbt_probe_result - Sin vida clara en qBittorrent: state=metadl, seeds=0, peers=0, progress=0.000
+- 2026-07-08T06:10:55+0200 [info] qbittorrent::qbt_delete_probe
+- 2026-07-08T06:10:55+0200 [info] qbittorrent::qbt_login
+- 2026-07-08T06:10:55+0200 [info] qbittorrent::qbt_probe_add - Las.vacaciones.de.Mr.Bean.DVDScreener.Sample.Xvid.Mp3.[Spanish].[WwW.VeoDivX.CoM].avi
+- 2026-07-08T06:10:55+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:10:55+0200 [info] qbittorrent::qbt_probe_result - Sin vida clara en qBittorrent: state=metadl, seeds=0, peers=0, progress=0.000
+- 2026-07-08T06:10:56+0200 [info] qbittorrent::qbt_delete_probe
+- 2026-07-08T06:10:56+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:10:56+0200 [info] qbittorrent::qbt_probe_result - Sin vida clara en qBittorrent: state=metadl, seeds=0, peers=0, progress=0.000
+- 2026-07-08T06:10:56+0200 [info] qbittorrent::qbt_login
+- 2026-07-08T06:10:56+0200 [info] qbittorrent::qbt_delete_probe
+- 2026-07-08T06:10:56+0200 [info] qbittorrent::qbt_probe_add - Las.Vacaciones.de.Mr.Bean.DVD-Screener.Xvid-Mp3.Spanish.wWw.BajandoXvid.com.avi
+- 2026-07-08T06:10:56+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:10:56+0200 [info] qbittorrent::qbt_probe_result - Sin vida clara en qBittorrent: state=metadl, seeds=0, peers=0, progress=0.000
+- 2026-07-08T06:10:56+0200 [info] qbittorrent::qbt_delete_probe
+- 2026-07-08T06:10:56+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:10:56+0200 [info] qbittorrent::qbt_probe_result - Sin vida clara en qBittorrent: state=metadl, seeds=0, peers=0, progress=0.000
+- 2026-07-08T06:10:56+0200 [info] qbittorrent::qbt_delete_probe
+- 2026-07-08T06:10:57+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:10:58+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:10:59+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:11:00+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:11:01+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:11:02+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:11:03+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:11:04+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:11:05+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:11:06+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:11:07+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:11:08+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:11:09+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:11:10+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:11:11+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:11:12+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:11:13+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:11:14+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:11:15+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:11:16+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:11:17+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:11:18+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:11:19+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:11:20+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:11:22+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:11:22+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:11:24+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:11:24+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:11:26+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:11:26+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:11:28+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:11:28+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:11:30+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:11:30+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:11:32+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:11:32+0200 [info] qbittorrent::qbt_probe_result - Sin vida clara en qBittorrent: state=metadl, seeds=0, peers=0, progress=0.000
+- 2026-07-08T06:11:32+0200 [info] qbittorrent::qbt_delete_probe
+- 2026-07-08T06:11:32+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T06:11:32+0200 [info] qbittorrent::qbt_probe_result - Sin vida clara en qBittorrent: state=metadl, seeds=0, peers=0, progress=0.000
+- 2026-07-08T06:11:32+0200 [info] qbittorrent::qbt_delete_probe
+- 2026-07-08T06:11:32+0200 [info] qbittorrent::qbt_probe_batch_end
+- 2026-07-08T06:11:32+0200 [info] motor::prepare_qbit_extras
+- 2026-07-08T06:11:32+0200 [info] motor::prepare_rd_temp_errors
+- 2026-07-08T06:11:32+0200 [info] motor::prepare_after_working_filter
+- 2026-07-08T06:11:32+0200 [info] search::export_results
+- 2026-07-08T06:11:32+0200 [info] search::export_results
+- 2026-07-08T06:11:32+0200 [info] search::editor_clean_search_rd_cleanup
+- 2026-07-08T06:11:32+0200 [info] search::editor_clean_search_end
+- 2026-07-08T06:11:32+02:00 [info] web::JOB_FINISHED_OK

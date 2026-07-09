@@ -1,12 +1,41 @@
 {
-  "current_index": -1,
+  "current_index": 1,
   "current_job_id": "",
   "error": "",
-  "finished": "",
-  "id": "",
-  "items": [],
-  "restore_qbit_enabled": null,
-  "started": "",
-  "status": "idle",
+  "finished": "05:48:56",
+  "id": "queue_8e948c9216",
+  "items": [
+    {
+      "error": "",
+      "finished": "05:47:59",
+      "id": "q_mrbjeah0_ar5h",
+      "job_id": "779ec70f5a1f",
+      "min_gb": "",
+      "mode": "0",
+      "pages": "1",
+      "qbit_enabled": false,
+      "query": "Pillion",
+      "results_count": 1,
+      "started": "05:47:40",
+      "status": "done"
+    },
+    {
+      "error": "",
+      "finished": "05:48:56",
+      "id": "q_mrbjem1e_3no9",
+      "job_id": "4f91f376f1a8",
+      "min_gb": "",
+      "mode": "0",
+      "pages": "1",
+      "qbit_enabled": true,
+      "query": "Torrente presidente",
+      "results_count": 9,
+      "started": "05:47:59",
+      "status": "done"
+    }
+  ],
+  "restore_qbit_enabled": false,
+  "started": "05:47:40",
+  "status": "done",
   "stop_requested": false
 }

@@ -1,0 +1,61 @@
+{
+  "already_present": false,
+  "card": {
+    "hash": "3fb3da21017cb10a854b5866f9e47f1a23bbdd7c",
+    "source": "RD",
+    "status": "RD OK",
+    "title": "Whistle.2025.UHD.WEB.DL.HEVC.2160p.4K.HDR.10 E-AC3"
+  },
+  "counts": {
+    "debug": 3,
+    "error": 0,
+    "info": 35,
+    "warn": 0
+  },
+  "destination": {
+    "destino": "movies",
+    "inbox": "/watch/torrents/inbox/movies",
+    "qbt_savepath": "/data/downloads/torrents/complete/movies",
+    "rdt_savepath": "/data/downloads/movies"
+  },
+  "diagnostic_status": "ok",
+  "elapsed": "3.21s",
+  "engine": "RDT-Client",
+  "event_count": 38,
+  "hash": "3fb3da21017cb10a854b5866f9e47f1a23bbdd7c",
+  "id": "a47a0465fd",
+  "index": 2,
+  "kind": "download",
+  "last_event": "RDT_FOLLOWUP_DONE",
+  "link_ref": "***",
+  "link_type": "***",
+  "module": "btdigg",
+  "operation_status": "ok",
+  "phases": {
+    "btdigg": 4,
+    "download": 9,
+    "general": 1,
+    "rdt-client": 13,
+    "real-debrid": 10
+  },
+  "rdt_id": "5e59a897-f972-41ad-b2e1-c9233be65e61",
+  "read_order": [
+    "summary.json",
+    "timeline.md",
+    "warnings.jsonl",
+    "errors.jsonl",
+    "events.jsonl"
+  ],
+  "remote": "192.168.1.160",
+  "route": "RD_VERIFIED_MAGNET_NATIVE",
+  "started_at": "2026-07-08T18:02:51+02:00",
+  "status": "ok",
+  "title": "Whistle.2025.UHD.WEB.DL.HEVC.2160p.4K.HDR.10 E-AC3",
+  "tracking": {
+    "destino": "movies",
+    "hash": "3fb3da21017cb10a854b5866f9e47f1a23bbdd7c",
+    "record_id": "13c44ec1acaca852",
+    "tracking_file": "/app/data/seguimiento_actual.json"
+  },
+  "updated_at": "2026-07-08T18:02:54+02:00"
+}

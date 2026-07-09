@@ -1,0 +1,728 @@
+- 2026-07-08T18:20:50+02:00 [info] web::JOB_STARTED
+- 2026-07-08T18:20:50+02:00 [info] general::CONFIG_SNAPSHOT
+- 2026-07-08T18:20:50+02:00 [info] web::COMMAND_PREPARED
+- 2026-07-08T18:20:50+02:00 [info] web::PROCESS_STARTED
+- 2026-07-08T18:20:50+0200 [info] search::editor_clean_search_start
+- 2026-07-08T18:20:50+0200 [info] btdigg::browser_auto_search_start_dom
+- 2026-07-08T18:20:52+0200 [info] btdigg::extract_magnets
+- 2026-07-08T18:20:52+0200 [info] btdigg::btdigg_curl_cffi_fetch
+- 2026-07-08T18:20:55+0200 [info] btdigg::extract_magnets
+- 2026-07-08T18:20:55+0200 [info] btdigg::btdigg_curl_cffi_fetch
+- 2026-07-08T18:20:58+0200 [info] btdigg::extract_magnets
+- 2026-07-08T18:20:58+0200 [info] btdigg::btdigg_curl_cffi_fetch
+- 2026-07-08T18:21:01+0200 [info] btdigg::extract_magnets
+- 2026-07-08T18:21:01+0200 [info] btdigg::btdigg_curl_cffi_fetch
+- 2026-07-08T18:21:04+0200 [info] btdigg::extract_magnets
+- 2026-07-08T18:21:04+0200 [info] btdigg::btdigg_curl_cffi_fetch
+- 2026-07-08T18:21:06+0200 [info] btdigg::browser_auto_search_end_dom
+- 2026-07-08T18:21:06+0200 [info] motor::prepare_results_start
+- 2026-07-08T18:21:07+0200 [info] motor::prepare_after_scoring
+- 2026-07-08T18:21:07+0200 [info] motor::prepare_after_filter
+- 2026-07-08T18:21:07+0200 [info] motor::prepare_after_query_prefilter
+- 2026-07-08T18:21:07+0200 [info] real-debrid::rd_account_check_ok
+- 2026-07-08T18:21:07+0200 [info] real-debrid::rd_check_start
+- 2026-07-08T18:21:07+0200 [info] real-debrid::rd_api_http_error - disabled_endpoint
+- 2026-07-08T18:21:07+0200 [info] real-debrid::rd_cache_api_disabled_cached_set - Real-Debrid HTTP 403: [37 disabled_endpoint] {
+	"error": "disabled_endpoint",
+	"error_code": 37
+}
+- 2026-07-08T18:21:07+0200 [info] real-debrid::rd_cache_api_disabled - Real-Debrid HTTP 403: [37 disabled_endpoint] {
+	"error": "disabled_endpoint",
+	"error_code": 37
+}
+- 2026-07-08T18:21:07+0200 [info] real-debrid::rd_verify_batch_start
+- 2026-07-08T18:21:07+0200 [info] real-debrid::rd_slots_refresh
+- 2026-07-08T18:21:07+0200 [info] real-debrid::rd_active_count_before
+- 2026-07-08T18:21:07+0200 [info] real-debrid::rd_existing_preload_done
+- 2026-07-08T18:21:07+0200 [info] real-debrid::rd_verify_queue_start
+- 2026-07-08T18:21:07+0200 [info] real-debrid::rd_verify_queue_submit - Mr.Beans.Holiday.2007.PL.480p.BDRip.XviD-PTRG
+- 2026-07-08T18:21:07+0200 [info] real-debrid::rd_verify_add_start - Mr.Beans.Holiday.2007.PL.480p.BDRip.XviD-PTRG
+- 2026-07-08T18:21:07+0200 [info] real-debrid::rd_verify_queue_submit - playstation-magazine-issue-01-holiday-2007
+- 2026-07-08T18:21:07+0200 [info] real-debrid::rd_verify_add_start - playstation-magazine-issue-01-holiday-2007
+- 2026-07-08T18:21:07+0200 [info] real-debrid::rd_slots_reserve
+- 2026-07-08T18:21:07+0200 [info] real-debrid::rd_verify_add_start - Mr.Beans.Holiday.2007.x264.DTS.2AUDIO-WAF
+- 2026-07-08T18:21:07+0200 [info] real-debrid::rd_verify_queue_submit - Mr.Beans.Holiday.2007.x264.DTS.2AUDIO-WAF
+- 2026-07-08T18:21:07+0200 [info] real-debrid::rd_slots_reserve
+- 2026-07-08T18:21:07+0200 [debug] real-debrid::rd_rate_wait
+- 2026-07-08T18:21:08+0200 [info] real-debrid::rd_slots_reserve
+- 2026-07-08T18:21:08+0200 [info] real-debrid::rd_verify_add_start - www.torrenting.com  - Mr.Beans.Holiday.2007.FS.DVDRip.x264-REGRET
+- 2026-07-08T18:21:08+0200 [info] real-debrid::rd_slots_reserve
+- 2026-07-08T18:21:08+0200 [info] real-debrid::rd_verify_queue_submit - www.torrenting.com  - Mr.Beans.Holiday.2007.FS.DVDRip.x264-REGRET
+- 2026-07-08T18:21:08+0200 [info] real-debrid::rd_verify_add_start - Mr. Beans Holiday 2007 BluRay 720p DTS x264-3Li
+- 2026-07-08T18:21:08+0200 [info] real-debrid::rd_verify_queue_submit - Mr. Beans Holiday 2007 BluRay 720p DTS x264-3Li
+- 2026-07-08T18:21:08+0200 [debug] real-debrid::rd_endpoint_pace_wait
+- 2026-07-08T18:21:08+0200 [info] real-debrid::rd_slots_reserve
+- 2026-07-08T18:21:08+0200 [info] real-debrid::rd_verify_add_start - cdrom-maximum-cd-holiday-2007
+- 2026-07-08T18:21:08+0200 [info] real-debrid::rd_verify_queue_submit - cdrom-maximum-cd-holiday-2007
+- 2026-07-08T18:21:08+0200 [info] real-debrid::rd_slots_reserve
+- 2026-07-08T18:21:08+0200 [info] real-debrid::rd_verify_queue_submit - Mr.Bean Holiday (2007) [Rowan Atkinson] 1080p BluRay H264 DolbyD 5.1   nickarad
+- 2026-07-08T18:21:08+0200 [info] real-debrid::rd_verify_add_start - Mr.Bean Holiday (2007) [Rowan Atkinson] 1080p BluRay H264 DolbyD 5.1   nickarad
+- 2026-07-08T18:21:08+0200 [info] real-debrid::rd_verify_queue_submit - Mr.Beans.Holiday.2007.720p.BluRay.x264-x0r
+- 2026-07-08T18:21:08+0200 [info] real-debrid::rd_verify_add_start - Mr.Beans.Holiday.2007.720p.BluRay.x264-x0r
+- 2026-07-08T18:21:08+0200 [info] real-debrid::rd_slots_reserve
+- 2026-07-08T18:21:08+0200 [info] real-debrid::rd_verify_queue_submit - Mr.Beans.Holiday.2007.720p.BluRay.x264-x0r
+- 2026-07-08T18:21:08+0200 [info] real-debrid::rd_verify_add_start - Mr.Beans.Holiday.2007.720p.BluRay.x264-x0r
+- 2026-07-08T18:21:08+0200 [info] real-debrid::rd_slots_reserve
+- 2026-07-08T18:21:08+0200 [info] real-debrid::rd_verify_queue_submit - Mr.Beans.Holiday.2007.FS.DVDRip.x264-REGRET[rarbg]
+- 2026-07-08T18:21:08+0200 [info] real-debrid::rd_verify_queue_submit - [憨豆先生的假期].Mr.Beans.Holiday.2007.DVDRip.XviD.AC3.iNT-BKL
+- 2026-07-08T18:21:08+0200 [info] real-debrid::rd_slots_reserve
+- 2026-07-08T18:21:08+0200 [info] real-debrid::rd_verify_add_start - [憨豆先生的假期].Mr.Beans.Holiday.2007.DVDRip.XviD.AC3.iNT-BKL
+- 2026-07-08T18:21:08+0200 [info] real-debrid::rd_verify_queue_submit - Mr.Beans.Holiday.2007.BDRip.x264.DTS-WAF
+- 2026-07-08T18:21:08+0200 [info] real-debrid::rd_verify_add_start - Mr.Beans.Holiday.2007.BDRip.x264.DTS-WAF
+- 2026-07-08T18:21:08+0200 [info] real-debrid::rd_verify_add_start - Mr.Beans.Holiday.2007.FS.DVDRip.x264-REGRET[rarbg]
+- 2026-07-08T18:21:08+0200 [info] real-debrid::rd_slots_reserve
+- 2026-07-08T18:21:08+0200 [info] real-debrid::rd_verify_queue_submit - Mr.Beans.Holiday.2007.BluRay.720p.DTS.x264-SpaceHD
+- 2026-07-08T18:21:08+0200 [info] real-debrid::rd_verify_add_start - Mr.Beans.Holiday.2007.BluRay.720p.DTS.x264-SpaceHD
+- 2026-07-08T18:21:08+0200 [info] real-debrid::rd_slots_reserve
+- 2026-07-08T18:21:08+0200 [info] real-debrid::rd_verify_queue_submit - www.Torrenting.com   -    The Perfect Holiday (2007) 720p WEBRip-LAMA
+- 2026-07-08T18:21:08+0200 [info] real-debrid::rd_verify_add_start - www.Torrenting.com   -    The Perfect Holiday (2007) 720p WEBRip-LAMA
+- 2026-07-08T18:21:08+0200 [info] real-debrid::rd_slots_reserve
+- 2026-07-08T18:21:08+0200 [info] real-debrid::rd_verify_queue_submit - Mr.Beans Holiday 2007 (720p)
+- 2026-07-08T18:21:08+0200 [info] real-debrid::rd_verify_add_start - Mr.Beans Holiday 2007 (720p)
+- 2026-07-08T18:21:08+0200 [info] real-debrid::rd_slots_reserve
+- 2026-07-08T18:21:08+0200 [info] real-debrid::rd_verify_queue_submit - the_family_holiday_2007___57d461914a323
+- 2026-07-08T18:21:08+0200 [info] real-debrid::rd_verify_add_start - the_family_holiday_2007___57d461914a323
+- 2026-07-08T18:21:08+0200 [info] real-debrid::rd_slots_reserve
+- 2026-07-08T18:21:08+0200 [info] real-debrid::rd_verify_queue_submit - Mr.Beans.Holiday.2007.BluRay.720p.DTS.2Audio.x264-CHD
+- 2026-07-08T18:21:08+0200 [info] real-debrid::rd_verify_add_start - Mr.Beans.Holiday.2007.BluRay.720p.DTS.2Audio.x264-CHD
+- 2026-07-08T18:21:08+0200 [info] real-debrid::rd_slots_reserve
+- 2026-07-08T18:21:08+0200 [info] real-debrid::rd_verify_queue_submit - mr.-beans.-holiday.-2007.720p.-brrip.x-264.-gaz.-yify
+- 2026-07-08T18:21:08+0200 [info] real-debrid::rd_verify_add_start - mr.-beans.-holiday.-2007.720p.-brrip.x-264.-gaz.-yify
+- 2026-07-08T18:21:08+0200 [info] real-debrid::rd_slots_reserve
+- 2026-07-08T18:21:08+0200 [info] real-debrid::rd_verify_queue_submit - Family.Holiday-2007
+- 2026-07-08T18:21:08+0200 [info] real-debrid::rd_verify_add_start - Family.Holiday-2007
+- 2026-07-08T18:21:08+0200 [info] real-debrid::rd_slots_reserve
+- 2026-07-08T18:21:08+0200 [info] real-debrid::rd_verify_queue_submit - 07.09.11.Mr.Beans.Holiday.2007.HD DVD.REMUX.VC1.1080P.DD51.DDPLUS.F@Silu
+- 2026-07-08T18:21:08+0200 [info] real-debrid::rd_verify_add_start - 07.09.11.Mr.Beans.Holiday.2007.HD DVD.REMUX.VC1.1080P.DD51.DDPLUS.F@Silu
+- 2026-07-08T18:21:08+0200 [info] real-debrid::rd_slots_reserve
+- 2026-07-08T18:21:08+0200 [info] real-debrid::rd_verify_queue_submit - 10.10.13.Mr.Beans.Holiday.2007.Blu-ray.REMUX.VC-1.1080P.DTSHDMA.MySilu
+- 2026-07-08T18:21:08+0200 [info] real-debrid::rd_verify_add_start - 10.10.13.Mr.Beans.Holiday.2007.Blu-ray.REMUX.VC-1.1080P.DTSHDMA.MySilu
+- 2026-07-08T18:21:08+0200 [info] real-debrid::rd_slots_reserve
+- 2026-07-08T18:21:08+0200 [info] real-debrid::rd_slots_reserve
+- 2026-07-08T18:21:08+0200 [info] real-debrid::rd_slots_reserve
+- 2026-07-08T18:21:08+0200 [info] real-debrid::rd_api_http_error - infringing_file
+- 2026-07-08T18:21:08+0200 [info] real-debrid::rd_call_terminal_error - infringing_file
+- 2026-07-08T18:21:08+0200 [info] real-debrid::rd_candidate_addmagnet_blocked - infringing_file
+- 2026-07-08T18:21:08+0200 [info] real-debrid::rd_verify_infringing - Mr.Beans.Holiday.2007.PL.480p.BDRip.XviD-PTRG
+- 2026-07-08T18:21:08+0200 [info] real-debrid::rd_verify_queue_done_item - Mr.Beans.Holiday.2007.PL.480p.BDRip.XviD-PTRG
+- 2026-07-08T18:21:09+0200 [info] real-debrid::rd_verify_added
+- 2026-07-08T18:21:09+0200 [debug] real-debrid::rd_verify_poll - 07.09.11.Mr.Beans.Holiday.2007.HD DVD.REMUX.VC1.1080P.DD51.DDPLUS.F@Silu
+- 2026-07-08T18:21:09+0200 [debug] real-debrid::rd_waiting_files_selection - 07.09.11.Mr.Beans.Holiday.2007.HD DVD.REMUX.VC1.1080P.DD51.DDPLUS.F@Silu
+- 2026-07-08T18:21:09+0200 [info] real-debrid::rd_select_files_decision - 07.09.11.Mr.Beans.Holiday.2007.HD DVD.REMUX.VC1.1080P.DD51.DDPLUS.F@Silu
+- 2026-07-08T18:21:10+0200 [info] real-debrid::rd_verify_select_files - 07.09.11.Mr.Beans.Holiday.2007.HD DVD.REMUX.VC1.1080P.DD51.DDPLUS.F@Silu
+- 2026-07-08T18:21:10+0200 [debug] real-debrid::rd_verify_post_select_poll - 07.09.11.Mr.Beans.Holiday.2007.HD DVD.REMUX.VC1.1080P.DD51.DDPLUS.F@Silu
+- 2026-07-08T18:21:10+0200 [info] real-debrid::rd_fast_discard - zero_progress_post_select
+- 2026-07-08T18:21:10+0200 [info] real-debrid::rd_fast_discard_reason - zero_progress_post_select
+- 2026-07-08T18:21:10+0200 [info] real-debrid::rd_fast_discard_delete - zero_progress_post_select
+- 2026-07-08T18:21:10+0200 [info] real-debrid::rd_zero_progress_fast_delete - 07.09.11.Mr.Beans.Holiday.2007.HD DVD.REMUX.VC1.1080P.DD51.DDPLUS.F@Silu
+- 2026-07-08T18:21:10+0200 [info] real-debrid::rd_delete_torrent
+- 2026-07-08T18:21:10+0200 [info] real-debrid::rd_slots_release
+- 2026-07-08T18:21:10+0200 [info] real-debrid::rd_verify_queue_done_item - 07.09.11.Mr.Beans.Holiday.2007.HD DVD.REMUX.VC1.1080P.DD51.DDPLUS.F@Silu
+- 2026-07-08T18:21:11+0200 [info] real-debrid::rd_verify_added
+- 2026-07-08T18:21:11+0200 [debug] real-debrid::rd_verify_poll - Mr.Beans.Holiday.2007.720p.BluRay.x264-x0r
+- 2026-07-08T18:21:12+0200 [info] real-debrid::rd_delete_torrent
+- 2026-07-08T18:21:12+0200 [info] real-debrid::rd_slots_release
+- 2026-07-08T18:21:12+0200 [info] real-debrid::rd_verify_not_instant - Mr.Beans.Holiday.2007.720p.BluRay.x264-x0r
+- 2026-07-08T18:21:12+0200 [info] real-debrid::rd_verify_queue_done_item - Mr.Beans.Holiday.2007.720p.BluRay.x264-x0r
+- 2026-07-08T18:21:12+0200 [info] real-debrid::rd_verify_added
+- 2026-07-08T18:21:12+0200 [debug] real-debrid::rd_verify_poll - Mr.Bean Holiday (2007) [Rowan Atkinson] 1080p BluRay H264 DolbyD 5.1   nickarad
+- 2026-07-08T18:21:12+0200 [debug] real-debrid::rd_waiting_files_selection - Mr.Bean Holiday (2007) [Rowan Atkinson] 1080p BluRay H264 DolbyD 5.1   nickarad
+- 2026-07-08T18:21:12+0200 [info] real-debrid::rd_select_files_decision - Mr.Bean Holiday (2007) [Rowan Atkinson] 1080p BluRay H264 DolbyD 5.1   nickarad
+- 2026-07-08T18:21:13+0200 [info] real-debrid::rd_verify_select_files - Mr.Bean Holiday (2007) [Rowan Atkinson] 1080p BluRay H264 DolbyD 5.1   nickarad
+- 2026-07-08T18:21:13+0200 [debug] real-debrid::rd_endpoint_pace_wait
+- 2026-07-08T18:21:13+0200 [debug] real-debrid::rd_verify_post_select_poll - Mr.Bean Holiday (2007) [Rowan Atkinson] 1080p BluRay H264 DolbyD 5.1   nickarad
+- 2026-07-08T18:21:13+0200 [info] real-debrid::rd_verify_ok - Mr.Bean Holiday (2007) [Rowan Atkinson] 1080p BluRay H264 DolbyD 5.1   nickarad
+- 2026-07-08T18:21:13+0200 [info] real-debrid::rd_verify_queue_done_item - Mr.Bean Holiday (2007) [Rowan Atkinson] 1080p BluRay H264 DolbyD 5.1   nickarad
+- 2026-07-08T18:21:14+0200 [info] real-debrid::rd_verify_added
+- 2026-07-08T18:21:14+0200 [debug] real-debrid::rd_verify_poll - Mr.Beans.Holiday.2007.BluRay.720p.DTS.x264-SpaceHD
+- 2026-07-08T18:21:14+0200 [debug] real-debrid::rd_waiting_files_selection - Mr.Beans.Holiday.2007.BluRay.720p.DTS.x264-SpaceHD
+- 2026-07-08T18:21:14+0200 [info] real-debrid::rd_select_files_decision - Mr.Beans.Holiday.2007.BluRay.720p.DTS.x264-SpaceHD
+- 2026-07-08T18:21:14+0200 [info] real-debrid::rd_verify_select_files - Mr.Beans.Holiday.2007.BluRay.720p.DTS.x264-SpaceHD
+- 2026-07-08T18:21:15+0200 [debug] real-debrid::rd_verify_post_select_poll - Mr.Beans.Holiday.2007.BluRay.720p.DTS.x264-SpaceHD
+- 2026-07-08T18:21:15+0200 [info] real-debrid::rd_fast_discard - zero_progress_post_select
+- 2026-07-08T18:21:15+0200 [info] real-debrid::rd_fast_discard_reason - zero_progress_post_select
+- 2026-07-08T18:21:15+0200 [info] real-debrid::rd_fast_discard_delete - zero_progress_post_select
+- 2026-07-08T18:21:15+0200 [info] real-debrid::rd_zero_progress_fast_delete - Mr.Beans.Holiday.2007.BluRay.720p.DTS.x264-SpaceHD
+- 2026-07-08T18:21:15+0200 [info] real-debrid::rd_delete_torrent
+- 2026-07-08T18:21:15+0200 [info] real-debrid::rd_slots_release
+- 2026-07-08T18:21:15+0200 [info] real-debrid::rd_verify_queue_done_item - Mr.Beans.Holiday.2007.BluRay.720p.DTS.x264-SpaceHD
+- 2026-07-08T18:21:16+0200 [info] real-debrid::rd_verify_added
+- 2026-07-08T18:21:16+0200 [debug] real-debrid::rd_verify_poll - cdrom-maximum-cd-holiday-2007
+- 2026-07-08T18:21:16+0200 [info] real-debrid::rd_delete_torrent
+- 2026-07-08T18:21:16+0200 [info] real-debrid::rd_slots_release
+- 2026-07-08T18:21:16+0200 [info] real-debrid::rd_verify_not_instant - cdrom-maximum-cd-holiday-2007
+- 2026-07-08T18:21:16+0200 [info] real-debrid::rd_verify_queue_done_item - cdrom-maximum-cd-holiday-2007
+- 2026-07-08T18:21:17+0200 [info] real-debrid::rd_verify_added
+- 2026-07-08T18:21:17+0200 [debug] real-debrid::rd_verify_poll - 10.10.13.Mr.Beans.Holiday.2007.Blu-ray.REMUX.VC-1.1080P.DTSHDMA.MySilu
+- 2026-07-08T18:21:18+0200 [info] real-debrid::rd_delete_torrent
+- 2026-07-08T18:21:18+0200 [info] real-debrid::rd_slots_release
+- 2026-07-08T18:21:18+0200 [info] real-debrid::rd_verify_not_instant - 10.10.13.Mr.Beans.Holiday.2007.Blu-ray.REMUX.VC-1.1080P.DTSHDMA.MySilu
+- 2026-07-08T18:21:18+0200 [info] real-debrid::rd_verify_queue_done_item - 10.10.13.Mr.Beans.Holiday.2007.Blu-ray.REMUX.VC-1.1080P.DTSHDMA.MySilu
+- 2026-07-08T18:21:18+0200 [debug] real-debrid::rd_endpoint_pace_wait
+- 2026-07-08T18:21:19+0200 [info] real-debrid::rd_verify_added
+- 2026-07-08T18:21:19+0200 [debug] real-debrid::rd_verify_poll - Family.Holiday-2007
+- 2026-07-08T18:21:19+0200 [info] real-debrid::rd_delete_torrent
+- 2026-07-08T18:21:19+0200 [info] real-debrid::rd_slots_release
+- 2026-07-08T18:21:20+0200 [info] real-debrid::rd_verify_not_instant - Family.Holiday-2007
+- 2026-07-08T18:21:20+0200 [info] real-debrid::rd_verify_queue_done_item - Family.Holiday-2007
+- 2026-07-08T18:21:21+0200 [info] real-debrid::rd_verify_added
+- 2026-07-08T18:21:21+0200 [debug] real-debrid::rd_verify_poll - [憨豆先生的假期].Mr.Beans.Holiday.2007.DVDRip.XviD.AC3.iNT-BKL
+- 2026-07-08T18:21:21+0200 [info] real-debrid::rd_api_http_error - infringing_file
+- 2026-07-08T18:21:22+0200 [info] real-debrid::rd_call_terminal_error - infringing_file
+- 2026-07-08T18:21:22+0200 [info] real-debrid::rd_candidate_addmagnet_blocked - infringing_file
+- 2026-07-08T18:21:22+0200 [info] real-debrid::rd_verify_infringing - Mr.Beans.Holiday.2007.720p.BluRay.x264-x0r
+- 2026-07-08T18:21:22+0200 [info] real-debrid::rd_verify_queue_done_item - Mr.Beans.Holiday.2007.720p.BluRay.x264-x0r
+- 2026-07-08T18:21:22+0200 [info] real-debrid::rd_delete_torrent
+- 2026-07-08T18:21:22+0200 [info] real-debrid::rd_slots_release
+- 2026-07-08T18:21:22+0200 [info] real-debrid::rd_verify_not_instant - [憨豆先生的假期].Mr.Beans.Holiday.2007.DVDRip.XviD.AC3.iNT-BKL
+- 2026-07-08T18:21:22+0200 [info] real-debrid::rd_verify_queue_done_item - [憨豆先生的假期].Mr.Beans.Holiday.2007.DVDRip.XviD.AC3.iNT-BKL
+- 2026-07-08T18:21:23+0200 [debug] real-debrid::rd_endpoint_pace_wait
+- 2026-07-08T18:21:23+0200 [info] real-debrid::rd_verify_added
+- 2026-07-08T18:21:23+0200 [debug] real-debrid::rd_verify_poll - Mr.Beans Holiday 2007 (720p)
+- 2026-07-08T18:21:24+0200 [info] real-debrid::rd_delete_torrent
+- 2026-07-08T18:21:24+0200 [info] real-debrid::rd_slots_release
+- 2026-07-08T18:21:24+0200 [info] real-debrid::rd_verify_not_instant - Mr.Beans Holiday 2007 (720p)
+- 2026-07-08T18:21:24+0200 [info] real-debrid::rd_verify_queue_done_item - Mr.Beans Holiday 2007 (720p)
+- 2026-07-08T18:21:24+0200 [info] real-debrid::rd_api_http_error - infringing_file
+- 2026-07-08T18:21:24+0200 [info] real-debrid::rd_call_terminal_error - infringing_file
+- 2026-07-08T18:21:24+0200 [info] real-debrid::rd_candidate_addmagnet_blocked - infringing_file
+- 2026-07-08T18:21:24+0200 [info] real-debrid::rd_verify_infringing - www.torrenting.com  - Mr.Beans.Holiday.2007.FS.DVDRip.x264-REGRET
+- 2026-07-08T18:21:24+0200 [info] real-debrid::rd_verify_queue_done_item - www.torrenting.com  - Mr.Beans.Holiday.2007.FS.DVDRip.x264-REGRET
+- 2026-07-08T18:21:26+0200 [info] real-debrid::rd_verify_added
+- 2026-07-08T18:21:26+0200 [debug] real-debrid::rd_verify_poll - Mr. Beans Holiday 2007 BluRay 720p DTS x264-3Li
+- 2026-07-08T18:21:26+0200 [debug] real-debrid::rd_waiting_files_selection - Mr. Beans Holiday 2007 BluRay 720p DTS x264-3Li
+- 2026-07-08T18:21:26+0200 [info] real-debrid::rd_select_files_decision - Mr. Beans Holiday 2007 BluRay 720p DTS x264-3Li
+- 2026-07-08T18:21:27+0200 [info] real-debrid::rd_verify_select_files - Mr. Beans Holiday 2007 BluRay 720p DTS x264-3Li
+- 2026-07-08T18:21:27+0200 [debug] real-debrid::rd_verify_post_select_poll - Mr. Beans Holiday 2007 BluRay 720p DTS x264-3Li
+- 2026-07-08T18:21:27+0200 [info] real-debrid::rd_fast_discard - zero_progress_post_select
+- 2026-07-08T18:21:27+0200 [info] real-debrid::rd_fast_discard_reason - zero_progress_post_select
+- 2026-07-08T18:21:27+0200 [info] real-debrid::rd_fast_discard_delete - zero_progress_post_select
+- 2026-07-08T18:21:27+0200 [info] real-debrid::rd_zero_progress_fast_delete - Mr. Beans Holiday 2007 BluRay 720p DTS x264-3Li
+- 2026-07-08T18:21:27+0200 [info] real-debrid::rd_delete_torrent
+- 2026-07-08T18:21:27+0200 [info] real-debrid::rd_slots_release
+- 2026-07-08T18:21:27+0200 [info] real-debrid::rd_verify_queue_done_item - Mr. Beans Holiday 2007 BluRay 720p DTS x264-3Li
+- 2026-07-08T18:21:27+0200 [info] real-debrid::rd_api_http_error - infringing_file
+- 2026-07-08T18:21:27+0200 [info] real-debrid::rd_call_terminal_error - infringing_file
+- 2026-07-08T18:21:28+0200 [info] real-debrid::rd_candidate_addmagnet_blocked - infringing_file
+- 2026-07-08T18:21:28+0200 [info] real-debrid::rd_verify_infringing - www.Torrenting.com   -    The Perfect Holiday (2007) 720p WEBRip-LAMA
+- 2026-07-08T18:21:28+0200 [info] real-debrid::rd_verify_queue_done_item - www.Torrenting.com   -    The Perfect Holiday (2007) 720p WEBRip-LAMA
+- 2026-07-08T18:21:28+0200 [debug] real-debrid::rd_endpoint_pace_wait
+- 2026-07-08T18:21:29+0200 [info] real-debrid::rd_verify_added
+- 2026-07-08T18:21:29+0200 [debug] real-debrid::rd_verify_poll - playstation-magazine-issue-01-holiday-2007
+- 2026-07-08T18:21:30+0200 [info] real-debrid::rd_delete_torrent
+- 2026-07-08T18:21:30+0200 [info] real-debrid::rd_slots_release
+- 2026-07-08T18:21:30+0200 [info] real-debrid::rd_verify_not_instant - playstation-magazine-issue-01-holiday-2007
+- 2026-07-08T18:21:30+0200 [info] real-debrid::rd_verify_queue_done_item - playstation-magazine-issue-01-holiday-2007
+- 2026-07-08T18:21:31+0200 [info] real-debrid::rd_verify_added
+- 2026-07-08T18:21:31+0200 [debug] real-debrid::rd_verify_poll - the_family_holiday_2007___57d461914a323
+- 2026-07-08T18:21:31+0200 [info] real-debrid::rd_delete_torrent
+- 2026-07-08T18:21:31+0200 [info] real-debrid::rd_slots_release
+- 2026-07-08T18:21:31+0200 [info] real-debrid::rd_verify_not_instant - the_family_holiday_2007___57d461914a323
+- 2026-07-08T18:21:31+0200 [info] real-debrid::rd_verify_queue_done_item - the_family_holiday_2007___57d461914a323
+- 2026-07-08T18:21:32+0200 [info] real-debrid::rd_verify_added
+- 2026-07-08T18:21:32+0200 [debug] real-debrid::rd_verify_poll - Mr.Beans.Holiday.2007.BDRip.x264.DTS-WAF
+- 2026-07-08T18:21:33+0200 [info] real-debrid::rd_delete_torrent
+- 2026-07-08T18:21:33+0200 [info] real-debrid::rd_slots_release
+- 2026-07-08T18:21:33+0200 [info] real-debrid::rd_verify_not_instant - Mr.Beans.Holiday.2007.BDRip.x264.DTS-WAF
+- 2026-07-08T18:21:33+0200 [info] real-debrid::rd_verify_queue_done_item - Mr.Beans.Holiday.2007.BDRip.x264.DTS-WAF
+- 2026-07-08T18:21:34+0200 [debug] real-debrid::rd_endpoint_pace_wait
+- 2026-07-08T18:21:34+0200 [info] real-debrid::rd_verify_added
+- 2026-07-08T18:21:34+0200 [debug] real-debrid::rd_verify_poll - Mr.Beans.Holiday.2007.BluRay.720p.DTS.2Audio.x264-CHD
+- 2026-07-08T18:21:34+0200 [debug] real-debrid::rd_waiting_files_selection - Mr.Beans.Holiday.2007.BluRay.720p.DTS.2Audio.x264-CHD
+- 2026-07-08T18:21:34+0200 [info] real-debrid::rd_select_files_decision - Mr.Beans.Holiday.2007.BluRay.720p.DTS.2Audio.x264-CHD
+- 2026-07-08T18:21:34+0200 [info] real-debrid::rd_verify_select_files - Mr.Beans.Holiday.2007.BluRay.720p.DTS.2Audio.x264-CHD
+- 2026-07-08T18:21:35+0200 [debug] real-debrid::rd_verify_post_select_poll - Mr.Beans.Holiday.2007.BluRay.720p.DTS.2Audio.x264-CHD
+- 2026-07-08T18:21:35+0200 [info] real-debrid::rd_fast_discard - zero_progress_post_select
+- 2026-07-08T18:21:35+0200 [info] real-debrid::rd_fast_discard_reason - zero_progress_post_select
+- 2026-07-08T18:21:35+0200 [info] real-debrid::rd_fast_discard_delete - zero_progress_post_select
+- 2026-07-08T18:21:35+0200 [info] real-debrid::rd_zero_progress_fast_delete - Mr.Beans.Holiday.2007.BluRay.720p.DTS.2Audio.x264-CHD
+- 2026-07-08T18:21:35+0200 [info] real-debrid::rd_delete_torrent
+- 2026-07-08T18:21:35+0200 [info] real-debrid::rd_slots_release
+- 2026-07-08T18:21:35+0200 [info] real-debrid::rd_verify_queue_done_item - Mr.Beans.Holiday.2007.BluRay.720p.DTS.2Audio.x264-CHD
+- 2026-07-08T18:21:35+0200 [info] real-debrid::rd_api_http_error - infringing_file
+- 2026-07-08T18:21:35+0200 [info] real-debrid::rd_call_terminal_error - infringing_file
+- 2026-07-08T18:21:35+0200 [info] real-debrid::rd_candidate_addmagnet_blocked - infringing_file
+- 2026-07-08T18:21:35+0200 [info] real-debrid::rd_verify_infringing - Mr.Beans.Holiday.2007.FS.DVDRip.x264-REGRET[rarbg]
+- 2026-07-08T18:21:35+0200 [info] real-debrid::rd_verify_queue_done_item - Mr.Beans.Holiday.2007.FS.DVDRip.x264-REGRET[rarbg]
+- 2026-07-08T18:21:36+0200 [info] real-debrid::rd_api_http_error - too_many_requests
+- 2026-07-08T18:21:36+0200 [info] real-debrid::rd_endpoint_429_backoff
+- 2026-07-08T18:21:36+0200 [info] real-debrid::rd_rate_429_cooldown
+- 2026-07-08T18:21:37+0200 [info] real-debrid::rd_call_retry_429 - Real-Debrid HTTP 429: [34 too_many_requests] {"error": "too_many_requests", "error_code": 34, "src": "front-1"}
+- 2026-07-08T18:21:39+0200 [debug] real-debrid::rd_endpoint_pace_wait
+- 2026-07-08T18:21:43+0200 [info] real-debrid::rd_verify_added
+- 2026-07-08T18:21:43+0200 [debug] real-debrid::rd_verify_poll - mr.-beans.-holiday.-2007.720p.-brrip.x-264.-gaz.-yify
+- 2026-07-08T18:21:43+0200 [debug] real-debrid::rd_waiting_files_selection - mr.-beans.-holiday.-2007.720p.-brrip.x-264.-gaz.-yify
+- 2026-07-08T18:21:43+0200 [info] real-debrid::rd_select_files_decision - mr.-beans.-holiday.-2007.720p.-brrip.x-264.-gaz.-yify
+- 2026-07-08T18:21:43+0200 [info] real-debrid::rd_verify_select_files - mr.-beans.-holiday.-2007.720p.-brrip.x-264.-gaz.-yify
+- 2026-07-08T18:21:44+0200 [debug] real-debrid::rd_verify_post_select_poll - mr.-beans.-holiday.-2007.720p.-brrip.x-264.-gaz.-yify
+- 2026-07-08T18:21:44+0200 [debug] real-debrid::rd_endpoint_pace_wait
+- 2026-07-08T18:21:44+0200 [info] real-debrid::rd_fast_discard - zero_progress_post_select
+- 2026-07-08T18:21:44+0200 [info] real-debrid::rd_fast_discard_reason - zero_progress_post_select
+- 2026-07-08T18:21:44+0200 [info] real-debrid::rd_fast_discard_delete - zero_progress_post_select
+- 2026-07-08T18:21:44+0200 [info] real-debrid::rd_zero_progress_fast_delete - mr.-beans.-holiday.-2007.720p.-brrip.x-264.-gaz.-yify
+- 2026-07-08T18:21:44+0200 [info] real-debrid::rd_delete_torrent
+- 2026-07-08T18:21:44+0200 [info] real-debrid::rd_slots_release
+- 2026-07-08T18:21:44+0200 [info] real-debrid::rd_verify_queue_done_item - mr.-beans.-holiday.-2007.720p.-brrip.x-264.-gaz.-yify
+- 2026-07-08T18:21:46+0200 [info] real-debrid::rd_verify_added
+- 2026-07-08T18:21:46+0200 [debug] real-debrid::rd_verify_poll - Mr.Beans.Holiday.2007.x264.DTS.2AUDIO-WAF
+- 2026-07-08T18:21:46+0200 [debug] real-debrid::rd_waiting_files_selection - Mr.Beans.Holiday.2007.x264.DTS.2AUDIO-WAF
+- 2026-07-08T18:21:46+0200 [info] real-debrid::rd_select_files_decision - Mr.Beans.Holiday.2007.x264.DTS.2AUDIO-WAF
+- 2026-07-08T18:21:46+0200 [info] real-debrid::rd_verify_select_files - Mr.Beans.Holiday.2007.x264.DTS.2AUDIO-WAF
+- 2026-07-08T18:21:47+0200 [debug] real-debrid::rd_verify_post_select_poll - Mr.Beans.Holiday.2007.x264.DTS.2AUDIO-WAF
+- 2026-07-08T18:21:47+0200 [info] real-debrid::rd_fast_discard - zero_progress_post_select
+- 2026-07-08T18:21:47+0200 [info] real-debrid::rd_fast_discard_reason - zero_progress_post_select
+- 2026-07-08T18:21:47+0200 [info] real-debrid::rd_fast_discard_delete - zero_progress_post_select
+- 2026-07-08T18:21:47+0200 [info] real-debrid::rd_zero_progress_fast_delete - Mr.Beans.Holiday.2007.x264.DTS.2AUDIO-WAF
+- 2026-07-08T18:21:47+0200 [info] real-debrid::rd_delete_torrent
+- 2026-07-08T18:21:47+0200 [info] real-debrid::rd_slots_release
+- 2026-07-08T18:21:47+0200 [info] real-debrid::rd_verify_queue_done_item - Mr.Beans.Holiday.2007.x264.DTS.2AUDIO-WAF
+- 2026-07-08T18:21:47+0200 [info] real-debrid::rd_verify_queue_end
+- 2026-07-08T18:21:47+0200 [info] real-debrid::rd_rate_summary
+- 2026-07-08T18:21:47+0200 [info] real-debrid::rd_endpoint_pacer_summary
+- 2026-07-08T18:21:47+0200 [info] real-debrid::rd_cleanup_final_start
+- 2026-07-08T18:21:47+0200 [info] real-debrid::rd_slots_refresh
+- 2026-07-08T18:21:47+0200 [info] real-debrid::rd_active_count_after
+- 2026-07-08T18:21:47+0200 [info] real-debrid::rd_cleanup_final_end
+- 2026-07-08T18:21:47+0200 [info] real-debrid::rd_rate_summary
+- 2026-07-08T18:21:47+0200 [info] real-debrid::rd_endpoint_pacer_summary
+- 2026-07-08T18:21:47+0200 [info] real-debrid::rd_verify_batch_end
+- 2026-07-08T18:21:47+0200 [info] real-debrid::rd_check_summary
+- 2026-07-08T18:21:47+0200 [info] qbittorrent::qbt_relevance_filter
+- 2026-07-08T18:21:47+0200 [info] qbittorrent::qbt_probe_batch_start
+- 2026-07-08T18:21:47+0200 [info] qbittorrent::qbt_login
+- 2026-07-08T18:21:47+0200 [info] qbittorrent::qbt_login
+- 2026-07-08T18:21:47+0200 [info] qbittorrent::qbt_login
+- 2026-07-08T18:21:47+0200 [info] qbittorrent::qbt_login
+- 2026-07-08T18:21:47+0200 [info] qbittorrent::qbt_login
+- 2026-07-08T18:21:47+0200 [info] qbittorrent::qbt_probe_add - playstation-magazine-issue-01-holiday-2007
+- 2026-07-08T18:21:47+0200 [info] qbittorrent::qbt_probe_add - Mr. Beans Holiday 2007 BluRay 720p DTS x264-3Li
+- 2026-07-08T18:21:47+0200 [info] qbittorrent::qbt_probe_add - Mr.Beans.Holiday.2007.x264.DTS.2AUDIO-WAF
+- 2026-07-08T18:21:47+0200 [info] qbittorrent::qbt_probe_add - www.torrenting.com  - Mr.Beans.Holiday.2007.FS.DVDRip.x264-REGRET
+- 2026-07-08T18:21:47+0200 [info] qbittorrent::qbt_probe_add - Mr.Beans.Holiday.2007.PL.480p.BDRip.XviD-PTRG
+- 2026-07-08T18:21:49+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T18:21:49+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T18:21:49+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T18:21:49+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T18:21:49+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T18:21:51+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T18:21:51+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T18:21:51+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T18:21:51+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T18:21:51+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T18:21:51+0200 [info] qbittorrent::qbt_probe_result - qBittorrent con seed conectado: seeds=1, peers=3, state=stalleddl
+- 2026-07-08T18:21:51+0200 [info] qbittorrent::qbt_delete_probe
+- 2026-07-08T18:21:52+0200 [info] qbittorrent::qbt_login
+- 2026-07-08T18:21:52+0200 [info] qbittorrent::qbt_probe_add - cdrom-maximum-cd-holiday-2007
+- 2026-07-08T18:21:53+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T18:21:53+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T18:21:53+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T18:21:53+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T18:21:54+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T18:21:55+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T18:21:55+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T18:21:55+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T18:21:55+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T18:21:56+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T18:21:57+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T18:21:57+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T18:21:57+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T18:21:57+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T18:21:58+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T18:21:59+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T18:21:59+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T18:21:59+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T18:21:59+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T18:22:00+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T18:22:01+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T18:22:01+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T18:22:01+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T18:22:02+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T18:22:02+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T18:22:03+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T18:22:03+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T18:22:04+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T18:22:04+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T18:22:04+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T18:22:05+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T18:22:05+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T18:22:06+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T18:22:06+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T18:22:06+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T18:22:07+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T18:22:07+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T18:22:08+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T18:22:08+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T18:22:08+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T18:22:09+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T18:22:09+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T18:22:10+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T18:22:10+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T18:22:10+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T18:22:11+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T18:22:12+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T18:22:12+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T18:22:12+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T18:22:12+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T18:22:13+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T18:22:14+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T18:22:14+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T18:22:14+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T18:22:14+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T18:22:16+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T18:22:16+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T18:22:16+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T18:22:16+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T18:22:16+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T18:22:18+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T18:22:18+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T18:22:18+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T18:22:18+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T18:22:18+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T18:22:20+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T18:22:20+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T18:22:20+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T18:22:20+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T18:22:20+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T18:22:22+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T18:22:22+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T18:22:22+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T18:22:22+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T18:22:22+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T18:22:24+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T18:22:24+0200 [info] qbittorrent::qbt_probe_result - Sin vida clara en qBittorrent: state=metadl, seeds=0, peers=0, progress=0.000
+- 2026-07-08T18:22:24+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T18:22:24+0200 [info] qbittorrent::qbt_delete_probe
+- 2026-07-08T18:22:24+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T18:22:24+0200 [info] qbittorrent::qbt_probe_result - Sin vida clara en qBittorrent: state=metadl, seeds=0, peers=0, progress=0.000
+- 2026-07-08T18:22:24+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T18:22:24+0200 [info] qbittorrent::qbt_probe_result - Sin vida clara en qBittorrent: state=metadl, seeds=0, peers=0, progress=0.000
+- 2026-07-08T18:22:24+0200 [info] qbittorrent::qbt_probe_result - Sin vida clara en qBittorrent: state=metadl, seeds=0, peers=0, progress=0.000
+- 2026-07-08T18:22:24+0200 [info] qbittorrent::qbt_delete_probe
+- 2026-07-08T18:22:24+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T18:22:24+0200 [info] qbittorrent::qbt_login
+- 2026-07-08T18:22:24+0200 [info] qbittorrent::qbt_delete_probe
+- 2026-07-08T18:22:24+0200 [info] qbittorrent::qbt_delete_probe
+- 2026-07-08T18:22:24+0200 [info] qbittorrent::qbt_login
+- 2026-07-08T18:22:24+0200 [info] qbittorrent::qbt_login
+- 2026-07-08T18:22:24+0200 [info] qbittorrent::qbt_probe_add - Mr.Beans.Holiday.2007.720p.BluRay.x264-x0r
+- 2026-07-08T18:22:24+0200 [info] qbittorrent::qbt_login
+- 2026-07-08T18:22:24+0200 [info] qbittorrent::qbt_probe_add - Mr.Beans.Holiday.2007.720p.BluRay.x264-x0r
+- 2026-07-08T18:22:24+0200 [info] qbittorrent::qbt_probe_add - Mr.Beans.Holiday.2007.FS.DVDRip.x264-REGRET[rarbg]
+- 2026-07-08T18:22:24+0200 [info] qbittorrent::qbt_probe_add - [憨豆先生的假期].Mr.Beans.Holiday.2007.DVDRip.XviD.AC3.iNT-BKL
+- 2026-07-08T18:22:26+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T18:22:26+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T18:22:26+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T18:22:26+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T18:22:26+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T18:22:28+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T18:22:28+0200 [info] qbittorrent::qbt_probe_result - Sin vida clara en qBittorrent: state=metadl, seeds=0, peers=0, progress=0.000
+- 2026-07-08T18:22:28+0200 [info] qbittorrent::qbt_delete_probe
+- 2026-07-08T18:22:28+0200 [info] qbittorrent::qbt_login
+- 2026-07-08T18:22:28+0200 [info] qbittorrent::qbt_probe_add - Mr.Beans.Holiday.2007.BDRip.x264.DTS-WAF
+- 2026-07-08T18:22:28+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T18:22:28+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T18:22:28+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T18:22:28+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T18:22:30+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T18:22:30+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T18:22:30+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T18:22:30+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T18:22:30+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T18:22:32+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T18:22:32+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T18:22:32+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T18:22:32+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T18:22:32+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T18:22:34+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T18:22:34+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T18:22:34+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T18:22:34+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T18:22:34+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T18:22:36+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T18:22:36+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T18:22:36+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T18:22:36+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T18:22:36+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T18:22:38+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T18:22:38+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T18:22:38+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T18:22:38+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T18:22:38+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T18:22:40+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T18:22:40+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T18:22:40+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T18:22:40+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T18:22:40+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T18:22:42+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T18:22:42+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T18:22:42+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T18:22:42+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T18:22:42+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T18:22:44+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T18:22:44+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T18:22:44+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T18:22:44+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T18:22:44+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T18:22:46+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T18:22:46+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T18:22:46+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T18:22:46+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T18:22:46+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T18:22:48+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T18:22:48+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T18:22:48+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T18:22:48+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T18:22:48+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T18:22:50+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T18:22:50+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T18:22:50+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T18:22:50+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T18:22:50+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T18:22:52+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T18:22:52+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T18:22:52+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T18:22:52+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T18:22:52+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T18:22:54+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T18:22:54+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T18:22:54+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T18:22:54+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T18:22:54+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T18:22:56+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T18:22:56+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T18:22:56+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T18:22:56+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T18:22:56+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T18:22:58+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T18:22:58+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T18:22:58+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T18:22:58+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T18:22:58+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T18:23:00+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T18:23:00+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T18:23:00+0200 [info] qbittorrent::qbt_probe_result - Sin vida clara en qBittorrent: state=metadl, seeds=0, peers=0, progress=0.000
+- 2026-07-08T18:23:00+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T18:23:00+0200 [info] qbittorrent::qbt_delete_probe
+- 2026-07-08T18:23:00+0200 [info] qbittorrent::qbt_probe_result - Sin vida clara en qBittorrent: state=metadl, seeds=0, peers=0, progress=0.000
+- 2026-07-08T18:23:00+0200 [info] qbittorrent::qbt_delete_probe
+- 2026-07-08T18:23:00+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T18:23:00+0200 [info] qbittorrent::qbt_probe_result - Sin vida clara en qBittorrent: state=metadl, seeds=0, peers=0, progress=0.000
+- 2026-07-08T18:23:00+0200 [info] qbittorrent::qbt_login
+- 2026-07-08T18:23:00+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T18:23:00+0200 [info] qbittorrent::qbt_delete_probe
+- 2026-07-08T18:23:00+0200 [info] qbittorrent::qbt_login
+- 2026-07-08T18:23:00+0200 [info] qbittorrent::qbt_probe_result - Sin vida clara en qBittorrent: state=metadl, seeds=0, peers=1, progress=0.000
+- 2026-07-08T18:23:00+0200 [info] qbittorrent::qbt_probe_add - Mr.Beans.Holiday.2007.BluRay.720p.DTS.x264-SpaceHD
+- 2026-07-08T18:23:00+0200 [info] qbittorrent::qbt_delete_probe
+- 2026-07-08T18:23:00+0200 [info] qbittorrent::qbt_probe_add - www.Torrenting.com   -    The Perfect Holiday (2007) 720p WEBRip-LAMA
+- 2026-07-08T18:23:00+0200 [info] qbittorrent::qbt_login
+- 2026-07-08T18:23:01+0200 [info] qbittorrent::qbt_login
+- 2026-07-08T18:23:01+0200 [info] qbittorrent::qbt_probe_add - Mr.Beans Holiday 2007 (720p)
+- 2026-07-08T18:23:01+0200 [info] qbittorrent::qbt_probe_add - the_family_holiday_2007___57d461914a323
+- 2026-07-08T18:23:02+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T18:23:02+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T18:23:02+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T18:23:03+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T18:23:03+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T18:23:04+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T18:23:04+0200 [info] qbittorrent::qbt_probe_result - Sin vida clara en qBittorrent: state=metadl, seeds=0, peers=0, progress=0.000
+- 2026-07-08T18:23:04+0200 [info] qbittorrent::qbt_delete_probe
+- 2026-07-08T18:23:04+0200 [info] qbittorrent::qbt_login
+- 2026-07-08T18:23:04+0200 [info] qbittorrent::qbt_probe_add - Mr.Beans.Holiday.2007.BluRay.720p.DTS.2Audio.x264-CHD
+- 2026-07-08T18:23:04+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T18:23:04+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T18:23:05+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T18:23:05+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T18:23:06+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T18:23:06+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T18:23:06+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T18:23:07+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T18:23:07+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T18:23:08+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T18:23:08+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T18:23:08+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T18:23:09+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T18:23:09+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T18:23:10+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T18:23:10+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T18:23:10+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T18:23:11+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T18:23:11+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T18:23:12+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T18:23:12+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T18:23:12+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T18:23:13+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T18:23:13+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T18:23:14+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T18:23:14+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T18:23:14+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T18:23:15+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T18:23:15+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T18:23:16+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T18:23:16+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T18:23:16+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T18:23:17+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T18:23:17+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T18:23:18+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T18:23:18+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T18:23:18+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T18:23:19+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T18:23:19+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T18:23:20+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T18:23:20+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T18:23:21+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T18:23:21+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T18:23:21+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T18:23:22+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T18:23:22+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T18:23:23+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T18:23:23+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T18:23:23+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T18:23:24+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T18:23:24+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T18:23:25+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T18:23:25+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T18:23:25+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T18:23:26+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T18:23:26+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T18:23:27+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T18:23:27+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T18:23:27+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T18:23:28+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T18:23:28+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T18:23:29+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T18:23:29+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T18:23:29+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T18:23:30+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T18:23:30+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T18:23:31+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T18:23:31+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T18:23:31+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T18:23:32+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T18:23:32+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T18:23:33+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T18:23:33+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T18:23:33+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T18:23:34+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T18:23:34+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T18:23:35+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T18:23:35+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T18:23:35+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T18:23:36+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T18:23:36+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T18:23:36+0200 [info] qbittorrent::qbt_probe_result - Sin vida clara en qBittorrent: state=metadl, seeds=0, peers=0, progress=0.000
+- 2026-07-08T18:23:36+0200 [info] qbittorrent::qbt_delete_probe
+- 2026-07-08T18:23:36+0200 [info] qbittorrent::qbt_login
+- 2026-07-08T18:23:36+0200 [info] qbittorrent::qbt_probe_add - mr.-beans.-holiday.-2007.720p.-brrip.x-264.-gaz.-yify
+- 2026-07-08T18:23:37+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T18:23:37+0200 [info] qbittorrent::qbt_probe_result - Sin vida clara en qBittorrent: state=metadl, seeds=0, peers=0, progress=0.000
+- 2026-07-08T18:23:37+0200 [info] qbittorrent::qbt_delete_probe
+- 2026-07-08T18:23:37+0200 [info] qbittorrent::qbt_login
+- 2026-07-08T18:23:37+0200 [info] qbittorrent::qbt_probe_add - Family.Holiday-2007
+- 2026-07-08T18:23:37+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T18:23:37+0200 [info] qbittorrent::qbt_probe_result - Sin vida clara en qBittorrent: state=metadl, seeds=0, peers=0, progress=0.000
+- 2026-07-08T18:23:37+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T18:23:37+0200 [info] qbittorrent::qbt_delete_probe
+- 2026-07-08T18:23:37+0200 [info] qbittorrent::qbt_probe_result - Sin vida clara en qBittorrent: state=metadl, seeds=0, peers=0, progress=0.000
+- 2026-07-08T18:23:37+0200 [info] qbittorrent::qbt_delete_probe
+- 2026-07-08T18:23:37+0200 [info] qbittorrent::qbt_login
+- 2026-07-08T18:23:37+0200 [info] qbittorrent::qbt_login
+- 2026-07-08T18:23:37+0200 [info] qbittorrent::qbt_probe_add - 07.09.11.Mr.Beans.Holiday.2007.HD DVD.REMUX.VC1.1080P.DD51.DDPLUS.F@Silu
+- 2026-07-08T18:23:37+0200 [info] qbittorrent::qbt_probe_add - 10.10.13.Mr.Beans.Holiday.2007.Blu-ray.REMUX.VC-1.1080P.DTSHDMA.MySilu
+- 2026-07-08T18:23:38+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T18:23:38+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T18:23:39+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T18:23:39+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T18:23:39+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T18:23:40+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T18:23:40+0200 [info] qbittorrent::qbt_probe_result - Sin vida clara en qBittorrent: state=metadl, seeds=0, peers=0, progress=0.000
+- 2026-07-08T18:23:40+0200 [info] qbittorrent::qbt_delete_probe
+- 2026-07-08T18:23:40+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T18:23:41+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T18:23:41+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T18:23:41+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T18:23:43+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T18:23:43+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T18:23:43+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T18:23:43+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T18:23:45+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T18:23:45+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T18:23:45+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T18:23:45+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T18:23:47+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T18:23:47+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T18:23:47+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T18:23:47+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T18:23:49+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T18:23:49+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T18:23:49+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T18:23:49+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T18:23:51+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T18:23:51+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T18:23:51+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T18:23:51+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T18:23:53+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T18:23:53+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T18:23:53+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T18:23:53+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T18:23:55+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T18:23:55+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T18:23:55+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T18:23:55+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T18:23:57+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T18:23:57+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T18:23:57+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T18:23:57+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T18:23:59+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T18:23:59+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T18:23:59+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T18:23:59+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T18:24:01+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T18:24:01+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T18:24:01+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T18:24:01+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T18:24:03+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T18:24:03+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T18:24:03+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T18:24:03+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T18:24:05+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T18:24:05+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T18:24:05+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T18:24:05+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T18:24:07+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T18:24:07+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T18:24:07+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T18:24:07+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T18:24:09+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T18:24:09+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T18:24:09+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T18:24:09+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T18:24:11+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T18:24:11+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T18:24:11+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T18:24:11+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T18:24:13+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T18:24:13+0200 [info] qbittorrent::qbt_probe_result - Sin vida clara en qBittorrent: state=metadl, seeds=0, peers=0, progress=0.000
+- 2026-07-08T18:24:13+0200 [info] qbittorrent::qbt_delete_probe
+- 2026-07-08T18:24:13+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T18:24:13+0200 [info] qbittorrent::qbt_probe_result - Sin vida clara en qBittorrent: state=metadl, seeds=0, peers=1, progress=0.000
+- 2026-07-08T18:24:13+0200 [info] qbittorrent::qbt_delete_probe
+- 2026-07-08T18:24:13+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T18:24:13+0200 [info] qbittorrent::qbt_probe_result - Sin vida clara en qBittorrent: state=metadl, seeds=0, peers=0, progress=0.000
+- 2026-07-08T18:24:13+0200 [info] qbittorrent::qbt_delete_probe
+- 2026-07-08T18:24:13+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T18:24:13+0200 [info] qbittorrent::qbt_probe_result - Sin vida clara en qBittorrent: state=metadl, seeds=0, peers=1, progress=0.000
+- 2026-07-08T18:24:13+0200 [info] qbittorrent::qbt_delete_probe
+- 2026-07-08T18:24:13+0200 [info] qbittorrent::qbt_probe_batch_end
+- 2026-07-08T18:24:13+0200 [info] motor::prepare_qbit_extras
+- 2026-07-08T18:24:13+0200 [info] motor::prepare_rd_temp_errors
+- 2026-07-08T18:24:13+0200 [info] motor::prepare_after_working_filter
+- 2026-07-08T18:24:13+0200 [info] search::export_results
+- 2026-07-08T18:24:13+0200 [info] search::export_results
+- 2026-07-08T18:24:13+0200 [info] real-debrid::rd_delete_torrent
+- 2026-07-08T18:24:13+0200 [debug] real-debrid::rd_endpoint_pace_wait
+- 2026-07-08T18:24:14+0200 [info] real-debrid::rd_api_http_error - unknown_ressource
+- 2026-07-08T18:24:14+0200 [info] real-debrid::rd_delete_torrent_missing
+- 2026-07-08T18:24:14+0200 [info] search::editor_clean_search_rd_cleanup
+- 2026-07-08T18:24:14+0200 [info] search::editor_clean_search_end
+- 2026-07-08T18:24:14+02:00 [info] web::JOB_FINISHED_OK

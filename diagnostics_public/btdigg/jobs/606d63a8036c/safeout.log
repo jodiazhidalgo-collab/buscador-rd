@@ -1,0 +1,89 @@
+
+--- ARRANQUE MOTOR BTDIGG RD ---
+BTDigg + RD - opción 1 limpia
+Búsqueda: Holiday 2007
+Páginas: 1-5
+Modo: 0
+
+
+Navegador automático página 1 (1/5):
+  https://en.btdig.com/search?q=holiday%202007&p=0
+  BTDigg Chrome TLS: 10 magnets encontrados
+
+Navegador automático página 2 (2/5):
+  https://en.btdig.com/search?q=holiday%202007&p=1
+  BTDigg Chrome TLS: 10 magnets encontrados
+
+Navegador automático página 3 (3/5):
+  https://en.btdig.com/search?q=holiday%202007&p=2
+  BTDigg Chrome TLS: 10 magnets encontrados
+
+Navegador automático página 4 (4/5):
+  https://en.btdig.com/search?q=holiday%202007&p=3
+  BTDigg Chrome TLS: 10 magnets encontrados
+
+Navegador automático página 5 (5/5):
+  https://en.btdig.com/search?q=holiday%202007&p=4
+  BTDigg Chrome TLS: 10 magnets encontrados
+
+Encontrados 50 resultados brutos. Filtrando...
+
+Aspiradora terminada: 50 resultados únicos encontrados.
+Modo sin filtro: no descarto por idioma/calidad y no ordeno por calidad/tamano; solo penalizo basura.
+Criba búsqueda seria: 21/50 coinciden en el mismo título/archivo.
+Rescate RD pendiente por titulo/pack dudoso: 22
+Descartados antes de verificar por no coincidir: 7
+
+Comprobando token Real-Debrid...
+Token Real-Debrid OK: exmelenas
+
+Consultando Real-Debrid cache/instantáneo...
+
+Aviso: Real-Debrid tiene desactivada instantAvailability.
+Paso serio: verifico de verdad con addMagnet los 21 mejores candidatos.
+  Verificando 1/21: Mr.Beans.Holiday.2007.PL.480p.BDRip.XviD-PTRG
+  Verificando 20/21: 07.09.11.Mr.Beans.Holiday.2007.HD DVD.REMUX.VC1.1080P.DD51.DDPLUS.F@Silu
+  Verificando 8/21: Mr.Beans.Holiday.2007.720p.BluRay.x264-x0r
+  RD OK 7/21: Mr.Bean Holiday (2007) [Rowan Atkinson] 1080p BluRay H264 DolbyD 5.1   nickarad
+  Verificando 13/21: Mr.Beans.Holiday.2007.BluRay.720p.DTS.x264-SpaceHD
+  Verificando 6/21: cdrom-maximum-cd-holiday-2007
+  Verificando 21/21: 10.10.13.Mr.Beans.Holiday.2007.Blu-ray.REMUX.VC-1.1080P.DTSHDMA.MySilu
+  Verificando 19/21: Family.Holiday-2007
+  Verificando 9/21: Mr.Beans.Holiday.2007.720p.BluRay.x264-x0r
+  Verificando 11/21: [憨豆先生的假期].Mr.Beans.Holiday.2007.DVDRip.XviD.AC3.iNT-BKL
+  Verificando 15/21: Mr.Beans Holiday 2007 (720p)
+  Verificando 4/21: www.torrenting.com  - Mr.Beans.Holiday.2007.FS.DVDRip.x264-REGRET
+  Verificando 5/21: Mr. Beans Holiday 2007 BluRay 720p DTS x264-3Li
+  Verificando 14/21: www.Torrenting.com   -    The Perfect Holiday (2007) 720p WEBRip-LAMA
+  Verificando 2/21: playstation-magazine-issue-01-holiday-2007
+  Verificando 16/21: the_family_holiday_2007___57d461914a323
+  Verificando 12/21: Mr.Beans.Holiday.2007.BDRip.x264.DTS-WAF
+  Verificando 17/21: Mr.Beans.Holiday.2007.BluRay.720p.DTS.2Audio.x264-CHD
+  Verificando 10/21: Mr.Beans.Holiday.2007.FS.DVDRip.x264-REGRET[rarbg]
+  Verificando 18/21: mr.-beans.-holiday.-2007.720p.-brrip.x-264.-gaz.-yify
+  Verificando 3/21: Mr.Beans.Holiday.2007.x264.DTS.2AUDIO-WAF
+
+Resumen RD: NO_INSTANT=15 | RD_FAIL=5 | RD_OK=1
+
+qBit: probando 20 candidatos extra (5 a la vez, 35s máximo).
+qBit vivo 1/20: QBT_VIVO - Mr. Beans Holiday 2007 BluRay 720p DTS x264-3Li
+qBit progreso: 4/20 comprobados | vivos 1
+qBit progreso: 8/20 comprobados | vivos 1
+qBit progreso: 12/20 comprobados | vivos 1
+qBit progreso: 16/20 comprobados | vivos 1
+qBit progreso: 20/20 comprobados | vivos 1
+Resultados válidos para JDownloader/RD: 1/21
+Lista extra qBittorrent vivos reales: 1
+
+========================================================================
+ TOP LIMPIO
+========================================================================
+[01] RD:OK           SCORE:   0 SIZE:   1.7 GB  Mr.Bean Holiday (2007) [Rowan Atkinson] 1080p BluRay H264 DolbyD 5.1   nickarad
+[02] RD:NO_INSTANT   SCORE:   0 SIZE:   3.7 GB  Mr. Beans Holiday 2007 BluRay 720p DTS x264-3Li
+     qBit vivo: QBT_VIVO | seeds=1 peers=3 | qBittorrent con seed conectado: seeds=1, peers=3, state=stalleddl
+========================================================================
+Elige: 1 | 1,4,7 | A=todos los válidos RD | T=todos mostrados RD/qBit | S=salir
+Resultados guardados para el Editor: 2
+Real-Debrid temporal limpio: 2 id(s) revisado(s).
+
+RESULTADOS LISTOS. Escribe abajo 1, 1,3, A, T o S y pulsa Enviar.

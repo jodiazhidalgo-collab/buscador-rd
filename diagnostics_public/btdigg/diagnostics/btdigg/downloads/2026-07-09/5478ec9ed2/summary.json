@@ -1,0 +1,67 @@
+{
+  "already_present": false,
+  "card": {
+    "hash": "d0168140ed5e16a523de4f8a44d85532f905dd64",
+    "source": "qBit",
+    "status": "qBit vivo",
+    "title": "Whistle El silbido del mal Ingles-Castellano Subt-Esp.Forz H264 E-AC3 5.1 BDrip hd 1080p"
+  },
+  "counts": {
+    "debug": 0,
+    "error": 0,
+    "info": 19,
+    "warn": 0
+  },
+  "destination": {
+    "destino": "movies",
+    "inbox": "/watch/torrents/inbox/movies",
+    "qbt_savepath": "/data/downloads/torrents/complete/movies",
+    "rdt_savepath": "/data/downloads/movies"
+  },
+  "diagnostic_status": "ok",
+  "elapsed": "0.21s",
+  "engine": "qBittorrent",
+  "event_count": 19,
+  "hash": "d0168140ed5e16a523de4f8a44d85532f905dd64",
+  "id": "5478ec9ed2",
+  "index": 1,
+  "kind": "download",
+  "last_event": "DOWNLOAD_END_OK",
+  "link_ref": "***",
+  "link_type": "***",
+  "module": "btdigg",
+  "operation_status": "ok",
+  "phases": {
+    "btdigg": 4,
+    "download": 9,
+    "general": 1,
+    "qbittorrent": 5
+  },
+  "qbittorrent_add": {
+    "added_torrent_ids": [
+      "d0168140ed5e16a523de4f8a44d85532f905dd64"
+    ],
+    "failure_count": 0,
+    "pending_count": 0,
+    "success_count": 1
+  },
+  "read_order": [
+    "summary.json",
+    "timeline.md",
+    "warnings.jsonl",
+    "errors.jsonl",
+    "events.jsonl"
+  ],
+  "remote": "192.168.1.199",
+  "route": "QBIT_REUSABLE",
+  "started_at": "2026-07-09T00:38:13+02:00",
+  "status": "ok",
+  "title": "Whistle El silbido del mal Ingles-Castellano Subt-Esp.Forz H264 E-AC3 5.1 BDrip hd 1080p",
+  "tracking": {
+    "destino": "movies",
+    "hash": "d0168140ed5e16a523de4f8a44d85532f905dd64",
+    "record_id": "813f8190017acd93",
+    "tracking_file": "/app/data/seguimiento_actual.json"
+  },
+  "updated_at": "2026-07-09T00:38:13+02:00"
+}

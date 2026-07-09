@@ -1,0 +1,190 @@
+- 2026-07-08T18:17:06+02:00 [info] web::JOB_STARTED
+- 2026-07-08T18:17:06+02:00 [info] general::CONFIG_SNAPSHOT
+- 2026-07-08T18:17:06+02:00 [info] web::COMMAND_PREPARED
+- 2026-07-08T18:17:06+02:00 [info] web::PROCESS_STARTED
+- 2026-07-08T18:17:06+0200 [info] search::editor_clean_search_start
+- 2026-07-08T18:17:06+0200 [info] btdigg::browser_auto_search_start_dom
+- 2026-07-08T18:17:08+0200 [info] btdigg::extract_magnets
+- 2026-07-08T18:17:08+0200 [info] btdigg::btdigg_curl_cffi_fetch
+- 2026-07-08T18:17:11+0200 [info] btdigg::extract_magnets
+- 2026-07-08T18:17:11+0200 [info] btdigg::btdigg_curl_cffi_fetch
+- 2026-07-08T18:17:14+0200 [info] btdigg::extract_magnets
+- 2026-07-08T18:17:14+0200 [info] btdigg::btdigg_curl_cffi_fetch
+- 2026-07-08T18:17:18+0200 [info] btdigg::extract_magnets
+- 2026-07-08T18:17:18+0200 [info] btdigg::btdigg_curl_cffi_fetch
+- 2026-07-08T18:17:21+0200 [info] btdigg::extract_magnets
+- 2026-07-08T18:17:21+0200 [info] btdigg::btdigg_curl_cffi_fetch
+- 2026-07-08T18:17:23+0200 [info] btdigg::browser_auto_search_end_dom
+- 2026-07-08T18:17:23+0200 [info] btdigg::browser_quality_rescue_start
+- 2026-07-08T18:17:23+0200 [info] btdigg::browser_auto_search_start_dom
+- 2026-07-08T18:17:24+0200 [info] btdigg::extract_magnets
+- 2026-07-08T18:17:24+0200 [info] btdigg::btdigg_curl_cffi_fetch
+- 2026-07-08T18:17:26+0200 [info] btdigg::browser_auto_search_end_dom
+- 2026-07-08T18:17:26+0200 [info] btdigg::browser_quality_rescue_results
+- 2026-07-08T18:17:26+0200 [info] btdigg::browser_quality_rescue_end
+- 2026-07-08T18:17:26+0200 [info] motor::prepare_results_start
+- 2026-07-08T18:17:26+0200 [info] motor::prepare_after_scoring
+- 2026-07-08T18:17:26+0200 [info] motor::prepare_after_filter
+- 2026-07-08T18:17:26+0200 [info] motor::prepare_after_query_prefilter
+- 2026-07-08T18:17:26+0200 [info] real-debrid::rd_account_check_ok
+- 2026-07-08T18:17:26+0200 [info] real-debrid::rd_check_start
+- 2026-07-08T18:17:27+0200 [info] real-debrid::rd_api_http_error - disabled_endpoint
+- 2026-07-08T18:17:27+0200 [info] real-debrid::rd_cache_api_disabled_cached_set - Real-Debrid HTTP 403: [37 disabled_endpoint] {
+	"error": "disabled_endpoint",
+	"error_code": 37
+}
+- 2026-07-08T18:17:27+0200 [info] real-debrid::rd_cache_api_disabled - Real-Debrid HTTP 403: [37 disabled_endpoint] {
+	"error": "disabled_endpoint",
+	"error_code": 37
+}
+- 2026-07-08T18:17:27+0200 [info] real-debrid::rd_verify_batch_start
+- 2026-07-08T18:17:27+0200 [info] real-debrid::rd_slots_refresh
+- 2026-07-08T18:17:27+0200 [info] real-debrid::rd_active_count_before
+- 2026-07-08T18:17:27+0200 [info] real-debrid::rd_existing_preload_done
+- 2026-07-08T18:17:27+0200 [info] real-debrid::rd_verify_queue_start
+- 2026-07-08T18:17:27+0200 [info] real-debrid::rd_verify_queue_submit - 【高清影视之家发布 www.HDBTHD.com】憨豆的黄金周[高码版][国英多音轨 中文字幕].Mr.Bean
+- 2026-07-08T18:17:27+0200 [info] real-debrid::rd_verify_add_start - 【高清影视之家发布 www.HDBTHD.com】憨豆的黄金周[高码版][国英多音轨 中文字幕].Mr.Bean
+- 2026-07-08T18:17:27+0200 [info] real-debrid::rd_slots_reserve
+- 2026-07-08T18:17:27+0200 [info] real-debrid::rd_verify_queue_submit - [蓝光高清网]憨豆的黄金周.Mr.Bean
+- 2026-07-08T18:17:27+0200 [info] real-debrid::rd_verify_add_start - [蓝光高清网]憨豆的黄金周.Mr.Bean
+- 2026-07-08T18:17:27+0200 [info] real-debrid::rd_slots_reserve
+- 2026-07-08T18:17:27+0200 [info] real-debrid::rd_verify_queue_submit - [Hao4K]憨豆的黄金周.Mr.Bean
+- 2026-07-08T18:17:27+0200 [info] real-debrid::rd_verify_add_start - [Hao4K]憨豆的黄金周.Mr.Bean
+- 2026-07-08T18:17:27+0200 [info] real-debrid::rd_slots_reserve
+- 2026-07-08T18:17:27+0200 [debug] real-debrid::rd_rate_wait
+- 2026-07-08T18:17:27+0200 [info] real-debrid::rd_verify_add_start - 憨豆的黄金周[4KHDR.CN]Mr.Bean
+- 2026-07-08T18:17:27+0200 [info] real-debrid::rd_slots_reserve
+- 2026-07-08T18:17:27+0200 [info] real-debrid::rd_verify_queue_submit - 憨豆的黄金周[4KHDR.CN]Mr.Bean
+- 2026-07-08T18:17:27+0200 [debug] real-debrid::rd_endpoint_pace_wait
+- 2026-07-08T18:17:28+0200 [info] real-debrid::rd_verify_added
+- 2026-07-08T18:17:28+0200 [debug] real-debrid::rd_verify_poll - [蓝光高清网]憨豆的黄金周.Mr.Bean
+- 2026-07-08T18:17:28+0200 [info] real-debrid::rd_delete_torrent
+- 2026-07-08T18:17:28+0200 [info] real-debrid::rd_slots_release
+- 2026-07-08T18:17:28+0200 [info] real-debrid::rd_verify_not_instant - [蓝光高清网]憨豆的黄金周.Mr.Bean
+- 2026-07-08T18:17:28+0200 [info] real-debrid::rd_verify_queue_done_item - [蓝光高清网]憨豆的黄金周.Mr.Bean
+- 2026-07-08T18:17:29+0200 [info] real-debrid::rd_api_http_error - infringing_file
+- 2026-07-08T18:17:29+0200 [info] real-debrid::rd_call_terminal_error - infringing_file
+- 2026-07-08T18:17:29+0200 [info] real-debrid::rd_candidate_addmagnet_blocked - infringing_file
+- 2026-07-08T18:17:29+0200 [info] real-debrid::rd_verify_infringing - 【高清影视之家发布 www.HDBTHD.com】憨豆的黄金周[高码版][国英多音轨 中文字幕].Mr.Bean
+- 2026-07-08T18:17:29+0200 [info] real-debrid::rd_verify_queue_done_item - 【高清影视之家发布 www.HDBTHD.com】憨豆的黄金周[高码版][国英多音轨 中文字幕].Mr.Bean
+- 2026-07-08T18:17:31+0200 [info] real-debrid::rd_verify_added
+- 2026-07-08T18:17:31+0200 [debug] real-debrid::rd_verify_poll - 憨豆的黄金周[4KHDR.CN]Mr.Bean
+- 2026-07-08T18:17:31+0200 [info] real-debrid::rd_delete_torrent
+- 2026-07-08T18:17:31+0200 [info] real-debrid::rd_slots_release
+- 2026-07-08T18:17:31+0200 [info] real-debrid::rd_verify_not_instant - 憨豆的黄金周[4KHDR.CN]Mr.Bean
+- 2026-07-08T18:17:31+0200 [info] real-debrid::rd_verify_queue_done_item - 憨豆的黄金周[4KHDR.CN]Mr.Bean
+- 2026-07-08T18:17:32+0200 [info] real-debrid::rd_api_http_error - infringing_file
+- 2026-07-08T18:17:32+0200 [info] real-debrid::rd_call_terminal_error - infringing_file
+- 2026-07-08T18:17:32+0200 [info] real-debrid::rd_candidate_addmagnet_blocked - infringing_file
+- 2026-07-08T18:17:32+0200 [info] real-debrid::rd_verify_infringing - [Hao4K]憨豆的黄金周.Mr.Bean
+- 2026-07-08T18:17:32+0200 [info] real-debrid::rd_verify_queue_done_item - [Hao4K]憨豆的黄金周.Mr.Bean
+- 2026-07-08T18:17:32+0200 [info] real-debrid::rd_verify_queue_end
+- 2026-07-08T18:17:32+0200 [info] real-debrid::rd_rate_summary
+- 2026-07-08T18:17:32+0200 [info] real-debrid::rd_endpoint_pacer_summary
+- 2026-07-08T18:17:32+0200 [info] real-debrid::rd_cleanup_final_start
+- 2026-07-08T18:17:32+0200 [info] real-debrid::rd_slots_refresh
+- 2026-07-08T18:17:32+0200 [info] real-debrid::rd_active_count_after
+- 2026-07-08T18:17:32+0200 [info] real-debrid::rd_cleanup_final_end
+- 2026-07-08T18:17:32+0200 [info] real-debrid::rd_rate_summary
+- 2026-07-08T18:17:32+0200 [info] real-debrid::rd_endpoint_pacer_summary
+- 2026-07-08T18:17:32+0200 [info] real-debrid::rd_verify_batch_end
+- 2026-07-08T18:17:32+0200 [info] real-debrid::rd_check_summary
+- 2026-07-08T18:17:32+0200 [info] qbittorrent::qbt_relevance_filter
+- 2026-07-08T18:17:32+0200 [info] qbittorrent::qbt_probe_batch_start
+- 2026-07-08T18:17:32+0200 [info] qbittorrent::qbt_login
+- 2026-07-08T18:17:32+0200 [info] qbittorrent::qbt_login
+- 2026-07-08T18:17:32+0200 [info] qbittorrent::qbt_login
+- 2026-07-08T18:17:32+0200 [info] qbittorrent::qbt_login
+- 2026-07-08T18:17:32+0200 [info] qbittorrent::qbt_probe_add - 【高清影视之家发布 www.HDBTHD.com】憨豆的黄金周[高码版][国英多音轨 中文字幕].Mr.Bean
+- 2026-07-08T18:17:32+0200 [info] qbittorrent::qbt_probe_add - 憨豆的黄金周[4KHDR.CN]Mr.Bean
+- 2026-07-08T18:17:32+0200 [info] qbittorrent::qbt_probe_add - [Hao4K]憨豆的黄金周.Mr.Bean
+- 2026-07-08T18:17:32+0200 [info] qbittorrent::qbt_probe_add - [蓝光高清网]憨豆的黄金周.Mr.Bean
+- 2026-07-08T18:17:34+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T18:17:34+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T18:17:34+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T18:17:34+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T18:17:36+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T18:17:36+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T18:17:36+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T18:17:36+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T18:17:38+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T18:17:38+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T18:17:38+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T18:17:38+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T18:17:40+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T18:17:40+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T18:17:40+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T18:17:40+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T18:17:42+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T18:17:42+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T18:17:42+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T18:17:43+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T18:17:44+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T18:17:45+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T18:17:45+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T18:17:45+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T18:17:46+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T18:17:47+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T18:17:47+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T18:17:47+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T18:17:48+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T18:17:49+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T18:17:49+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T18:17:49+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T18:17:51+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T18:17:51+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T18:17:51+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T18:17:51+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T18:17:53+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T18:17:53+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T18:17:53+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T18:17:53+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T18:17:55+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T18:17:55+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T18:17:55+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T18:17:55+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T18:17:57+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T18:17:57+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T18:17:57+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T18:17:57+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T18:17:59+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T18:17:59+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T18:17:59+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T18:17:59+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T18:18:01+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T18:18:01+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T18:18:01+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T18:18:01+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T18:18:03+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T18:18:03+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T18:18:03+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T18:18:03+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T18:18:05+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T18:18:05+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T18:18:05+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T18:18:05+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T18:18:07+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T18:18:07+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T18:18:07+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T18:18:07+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T18:18:09+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T18:18:09+0200 [info] qbittorrent::qbt_probe_result - Sin vida clara en qBittorrent: state=metadl, seeds=0, peers=0, progress=0.000
+- 2026-07-08T18:18:09+0200 [info] qbittorrent::qbt_delete_probe
+- 2026-07-08T18:18:09+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T18:18:09+0200 [info] qbittorrent::qbt_probe_result - Sin vida clara en qBittorrent: state=metadl, seeds=0, peers=2, progress=0.000
+- 2026-07-08T18:18:09+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T18:18:09+0200 [info] qbittorrent::qbt_delete_probe
+- 2026-07-08T18:18:09+0200 [info] qbittorrent::qbt_probe_result - Sin vida clara en qBittorrent: state=metadl, seeds=0, peers=0, progress=0.000
+- 2026-07-08T18:18:09+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T18:18:09+0200 [info] qbittorrent::qbt_probe_result - Sin vida clara en qBittorrent: state=metadl, seeds=0, peers=0, progress=0.000
+- 2026-07-08T18:18:09+0200 [info] qbittorrent::qbt_delete_probe
+- 2026-07-08T18:18:09+0200 [info] qbittorrent::qbt_delete_probe
+- 2026-07-08T18:18:09+0200 [info] qbittorrent::qbt_probe_batch_end
+- 2026-07-08T18:18:09+0200 [info] motor::prepare_qbit_extras
+- 2026-07-08T18:18:09+0200 [info] motor::prepare_rd_temp_errors
+- 2026-07-08T18:18:09+0200 [info] motor::prepare_after_working_filter
+- 2026-07-08T18:18:09+0200 [info] search::export_results
+- 2026-07-08T18:18:09+0200 [info] search::export_results
+- 2026-07-08T18:18:09+0200 [info] search::editor_clean_search_rd_cleanup
+- 2026-07-08T18:18:09+0200 [info] search::editor_clean_search_end
+- 2026-07-08T18:18:09+02:00 [info] web::JOB_FINISHED_OK

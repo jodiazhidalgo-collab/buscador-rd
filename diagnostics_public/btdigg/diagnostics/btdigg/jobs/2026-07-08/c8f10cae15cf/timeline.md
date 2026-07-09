@@ -1,0 +1,160 @@
+- 2026-07-08T19:12:55+02:00 [info] web::JOB_STARTED
+- 2026-07-08T19:12:55+02:00 [info] general::CONFIG_SNAPSHOT
+- 2026-07-08T19:12:55+02:00 [info] web::COMMAND_PREPARED
+- 2026-07-08T19:12:55+02:00 [info] web::PROCESS_STARTED
+- 2026-07-08T19:12:55+0200 [info] search::editor_clean_search_start
+- 2026-07-08T19:12:55+0200 [info] btdigg::browser_auto_search_start_dom
+- 2026-07-08T19:12:57+0200 [info] btdigg::extract_magnets
+- 2026-07-08T19:12:57+0200 [info] btdigg::btdigg_curl_cffi_fetch
+- 2026-07-08T19:13:00+0200 [info] btdigg::extract_magnets
+- 2026-07-08T19:13:00+0200 [info] btdigg::btdigg_curl_cffi_fetch
+- 2026-07-08T19:13:03+0200 [info] btdigg::extract_magnets
+- 2026-07-08T19:13:03+0200 [info] btdigg::btdigg_curl_cffi_fetch
+- 2026-07-08T19:13:06+0200 [info] btdigg::extract_magnets
+- 2026-07-08T19:13:06+0200 [info] btdigg::btdigg_curl_cffi_fetch
+- 2026-07-08T19:13:09+0200 [info] btdigg::extract_magnets
+- 2026-07-08T19:13:09+0200 [info] btdigg::btdigg_curl_cffi_fetch
+- 2026-07-08T19:13:11+0200 [info] btdigg::browser_auto_search_end_dom
+- 2026-07-08T19:13:11+0200 [info] motor::prepare_results_start
+- 2026-07-08T19:13:11+0200 [info] motor::prepare_after_scoring
+- 2026-07-08T19:13:11+0200 [info] motor::prepare_after_filter
+- 2026-07-08T19:13:11+0200 [info] motor::prepare_after_query_prefilter
+- 2026-07-08T19:13:12+0200 [info] real-debrid::rd_account_check_ok
+- 2026-07-08T19:13:12+0200 [info] real-debrid::rd_check_start
+- 2026-07-08T19:13:12+0200 [info] real-debrid::rd_api_http_error - disabled_endpoint
+- 2026-07-08T19:13:12+0200 [info] real-debrid::rd_cache_api_disabled_cached_set - Real-Debrid HTTP 403: [37 disabled_endpoint] {
+	"error": "disabled_endpoint",
+	"error_code": 37
+}
+- 2026-07-08T19:13:12+0200 [info] real-debrid::rd_cache_api_disabled - Real-Debrid HTTP 403: [37 disabled_endpoint] {
+	"error": "disabled_endpoint",
+	"error_code": 37
+}
+- 2026-07-08T19:13:12+0200 [info] real-debrid::rd_verify_batch_start
+- 2026-07-08T19:13:12+0200 [info] real-debrid::rd_slots_refresh
+- 2026-07-08T19:13:12+0200 [info] real-debrid::rd_active_count_before
+- 2026-07-08T19:13:12+0200 [info] real-debrid::rd_existing_preload_done
+- 2026-07-08T19:13:12+0200 [info] real-debrid::rd_verify_queue_start
+- 2026-07-08T19:13:12+0200 [info] real-debrid::rd_verify_queue_submit - 24.S08.720p.BluRay.x264-WASABi
+- 2026-07-08T19:13:12+0200 [info] real-debrid::rd_verify_add_start - 24.S08.720p.BluRay.x264-WASABi
+- 2026-07-08T19:13:12+0200 [info] real-debrid::rd_verify_queue_submit - Wasabi
+- 2026-07-08T19:13:12+0200 [info] real-debrid::rd_verify_add_start - Wasabi
+- 2026-07-08T19:13:12+0200 [info] real-debrid::rd_slots_reserve
+- 2026-07-08T19:13:12+0200 [info] real-debrid::rd_verify_queue_submit - Tadashi x Wasabi
+- 2026-07-08T19:13:12+0200 [info] real-debrid::rd_verify_add_start - Tadashi x Wasabi
+- 2026-07-08T19:13:12+0200 [info] real-debrid::rd_slots_reserve
+- 2026-07-08T19:13:12+0200 [debug] real-debrid::rd_rate_wait
+- 2026-07-08T19:13:12+0200 [info] real-debrid::rd_slots_reserve
+- 2026-07-08T19:13:12+0200 [debug] real-debrid::rd_endpoint_pace_wait
+- 2026-07-08T19:13:13+0200 [info] real-debrid::rd_api_http_error - infringing_file
+- 2026-07-08T19:13:13+0200 [info] real-debrid::rd_call_terminal_error - infringing_file
+- 2026-07-08T19:13:13+0200 [info] real-debrid::rd_candidate_addmagnet_blocked - infringing_file
+- 2026-07-08T19:13:13+0200 [info] real-debrid::rd_verify_infringing - 24.S08.720p.BluRay.x264-WASABi
+- 2026-07-08T19:13:13+0200 [info] real-debrid::rd_verify_queue_done_item - 24.S08.720p.BluRay.x264-WASABi
+- 2026-07-08T19:13:14+0200 [info] real-debrid::rd_verify_added
+- 2026-07-08T19:13:14+0200 [debug] real-debrid::rd_verify_poll - Wasabi
+- 2026-07-08T19:13:14+0200 [debug] real-debrid::rd_waiting_files_selection - Wasabi
+- 2026-07-08T19:13:14+0200 [info] real-debrid::rd_select_files_decision - Wasabi
+- 2026-07-08T19:13:15+0200 [info] real-debrid::rd_verify_select_files - Wasabi
+- 2026-07-08T19:13:15+0200 [debug] real-debrid::rd_verify_post_select_poll - Wasabi
+- 2026-07-08T19:13:15+0200 [info] real-debrid::rd_fast_discard - zero_progress_post_select
+- 2026-07-08T19:13:15+0200 [info] real-debrid::rd_fast_discard_reason - zero_progress_post_select
+- 2026-07-08T19:13:15+0200 [info] real-debrid::rd_fast_discard_delete - zero_progress_post_select
+- 2026-07-08T19:13:15+0200 [info] real-debrid::rd_zero_progress_fast_delete - Wasabi
+- 2026-07-08T19:13:15+0200 [info] real-debrid::rd_delete_torrent
+- 2026-07-08T19:13:15+0200 [info] real-debrid::rd_slots_release
+- 2026-07-08T19:13:15+0200 [info] real-debrid::rd_verify_queue_done_item - Wasabi
+- 2026-07-08T19:13:16+0200 [info] real-debrid::rd_verify_added
+- 2026-07-08T19:13:16+0200 [debug] real-debrid::rd_verify_poll - Tadashi x Wasabi
+- 2026-07-08T19:13:17+0200 [info] real-debrid::rd_delete_torrent
+- 2026-07-08T19:13:17+0200 [info] real-debrid::rd_slots_release
+- 2026-07-08T19:13:17+0200 [info] real-debrid::rd_verify_not_instant - Tadashi x Wasabi
+- 2026-07-08T19:13:17+0200 [info] real-debrid::rd_verify_queue_done_item - Tadashi x Wasabi
+- 2026-07-08T19:13:17+0200 [info] real-debrid::rd_verify_queue_end
+- 2026-07-08T19:13:17+0200 [info] real-debrid::rd_rate_summary
+- 2026-07-08T19:13:17+0200 [info] real-debrid::rd_endpoint_pacer_summary
+- 2026-07-08T19:13:17+0200 [info] real-debrid::rd_cleanup_final_start
+- 2026-07-08T19:13:17+0200 [info] real-debrid::rd_slots_refresh
+- 2026-07-08T19:13:17+0200 [info] real-debrid::rd_active_count_after
+- 2026-07-08T19:13:17+0200 [info] real-debrid::rd_cleanup_final_end
+- 2026-07-08T19:13:17+0200 [info] real-debrid::rd_rate_summary
+- 2026-07-08T19:13:17+0200 [info] real-debrid::rd_endpoint_pacer_summary
+- 2026-07-08T19:13:17+0200 [info] real-debrid::rd_verify_batch_end
+- 2026-07-08T19:13:17+0200 [info] real-debrid::rd_check_summary
+- 2026-07-08T19:13:17+0200 [info] qbittorrent::qbt_relevance_filter
+- 2026-07-08T19:13:17+0200 [info] qbittorrent::qbt_probe_batch_start
+- 2026-07-08T19:13:17+0200 [info] qbittorrent::qbt_login
+- 2026-07-08T19:13:17+0200 [info] qbittorrent::qbt_login
+- 2026-07-08T19:13:17+0200 [info] qbittorrent::qbt_login
+- 2026-07-08T19:13:17+0200 [info] qbittorrent::qbt_probe_add - Wasabi
+- 2026-07-08T19:13:17+0200 [info] qbittorrent::qbt_probe_add - 24.S08.720p.BluRay.x264-WASABi
+- 2026-07-08T19:13:17+0200 [info] qbittorrent::qbt_probe_add - Tadashi x Wasabi
+- 2026-07-08T19:13:19+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T19:13:19+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T19:13:19+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T19:13:21+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T19:13:21+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T19:13:21+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T19:13:23+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T19:13:23+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T19:13:23+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T19:13:25+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T19:13:25+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T19:13:25+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T19:13:27+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T19:13:27+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T19:13:27+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T19:13:29+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T19:13:29+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T19:13:29+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T19:13:31+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T19:13:31+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T19:13:31+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T19:13:33+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T19:13:33+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T19:13:33+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T19:13:35+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T19:13:35+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T19:13:35+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T19:13:37+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T19:13:37+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T19:13:37+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T19:13:39+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T19:13:39+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T19:13:39+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T19:13:41+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T19:13:41+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T19:13:41+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T19:13:43+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T19:13:43+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T19:13:43+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T19:13:45+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T19:13:45+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T19:13:45+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T19:13:47+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T19:13:47+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T19:13:47+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T19:13:49+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T19:13:49+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T19:13:49+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T19:13:51+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T19:13:51+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T19:13:51+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T19:13:53+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T19:13:53+0200 [info] qbittorrent::qbt_probe_result - qBittorrent tiene metadatos pero sin vida clara: state=stalleddl, seeds=0, peers=0
+- 2026-07-08T19:13:53+0200 [info] qbittorrent::qbt_delete_probe
+- 2026-07-08T19:13:53+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T19:13:53+0200 [info] qbittorrent::qbt_probe_result - Sin vida clara en qBittorrent: state=metadl, seeds=0, peers=0, progress=0.000
+- 2026-07-08T19:13:53+0200 [info] qbittorrent::qbt_delete_probe
+- 2026-07-08T19:13:53+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T19:13:53+0200 [info] qbittorrent::qbt_probe_result - Sin vida clara en qBittorrent: state=metadl, seeds=0, peers=0, progress=0.000
+- 2026-07-08T19:13:54+0200 [info] qbittorrent::qbt_delete_probe
+- 2026-07-08T19:13:54+0200 [info] qbittorrent::qbt_probe_batch_end
+- 2026-07-08T19:13:54+0200 [info] motor::prepare_qbit_extras
+- 2026-07-08T19:13:54+0200 [info] motor::prepare_rd_temp_errors
+- 2026-07-08T19:13:54+0200 [info] motor::prepare_after_working_filter
+- 2026-07-08T19:13:54+0200 [info] search::export_results
+- 2026-07-08T19:13:54+0200 [info] search::export_results
+- 2026-07-08T19:13:54+0200 [info] search::editor_clean_search_rd_cleanup
+- 2026-07-08T19:13:54+0200 [info] search::editor_clean_search_end
+- 2026-07-08T19:13:54+02:00 [info] web::JOB_FINISHED_OK

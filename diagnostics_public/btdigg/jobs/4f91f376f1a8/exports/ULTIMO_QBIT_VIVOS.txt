@@ -1,0 +1,36 @@
+RD Turbo Pro - lista extra qBittorrent vivos
+================================================================================
+[Q01] QBT:QBT_VIVO   SIZE:   1.7 GB HASH:6aeb9f49517789b447b26e5fbd09c36880cf7cd1
+      TORRENT: www.UIndex.org    -    Torrente Presidente (2026) 1080p WEBRip x265 10bit 5.1-WORLD
+      MOTIVO: qBittorrent descargando: 0.09 MB/s, seeds=2, peers=0
+      MAGNET: magnet:?xt=urn:btih:6aeb9f49517789b447b26e5fbd09c36880cf7cd1&dn=www.UIndex.org++++-++++Torrente+Presidente+(2026)+1080p+WEBRip+x265+10bit+5.1-WORLD&tr=udp://tracker.openbittorrent.com:80&tr=udp://tracker.opentrackr.org:1337/announce
+
+[Q02] QBT:QBT_VIVO   SIZE:   1.9 GB HASH:b73e8f3553b93866dc1d05e4d924307841d5e9ef
+      TORRENT: www.UIndex.org    -    Torrente Presidente (2026) 1080p WEBRip 5.1-WORLD
+      MOTIVO: qBittorrent con seed conectado: seeds=1, peers=5, state=stalleddl
+      MAGNET: magnet:?xt=urn:btih:b73e8f3553b93866dc1d05e4d924307841d5e9ef&dn=www.UIndex.org++++-++++Torrente+Presidente+(2026)+1080p+WEBRip+5.1-WORLD&tr=udp://tracker.openbittorrent.com:80&tr=udp://tracker.opentrackr.org:1337/announce
+
+[Q03] QBT:QBT_VIVO   SIZE:   0.9 GB HASH:b3e47bed045d114aa1ac135eafdf062fd62bd181
+      TORRENT: www.UIndex.org    -    Torrente Presidente (2026) 720p WEBRip-WORLD
+      MOTIVO: qBittorrent con seed conectado: seeds=1, peers=0, state=stalleddl
+      MAGNET: magnet:?xt=urn:btih:b3e47bed045d114aa1ac135eafdf062fd62bd181&dn=www.UIndex.org++++-++++Torrente+Presidente+(2026)+720p+WEBRip-WORLD&tr=udp://tracker.openbittorrent.com:80&tr=udp://tracker.opentrackr.org:1337/announce
+
+[Q04] QBT:QBT_VIVO   SIZE:   4.5 GB HASH:a63597e8edecd3586c7869bcbcea2732f38b43e2
+      TORRENT: www.UIndex.org    -    Torrente Presidente 2026 1080p NF WEB-DL DDP5 1 x264-SPWEB
+      MOTIVO: qBittorrent descargando: 0.61 MB/s, seeds=3, peers=1
+      MAGNET: magnet:?xt=urn:btih:a63597e8edecd3586c7869bcbcea2732f38b43e2&dn=www.UIndex.org++++-++++Torrente+Presidente+2026+1080p+NF+WEB-DL+DDP5+1+x264-SPWEB&tr=udp://tracker.openbittorrent.com:80&tr=udp://tracker.opentrackr.org:1337/announce
+
+[Q05] QBT:QBT_VIVO   SIZE:   1.9 GB HASH:ae063523346cf7dbd3050cf23efc8d65f25bd6e5
+      TORRENT: Torrente Presidente (2026) [1080p] [WEBRip] [5.1] [YTS.GG - YTS.BZ]
+      MOTIVO: qBittorrent descargando: 0.14 MB/s, seeds=5, peers=0
+      MAGNET: magnet:?xt=urn:btih:ae063523346cf7dbd3050cf23efc8d65f25bd6e5&dn=Torrente+Presidente+(2026)+%5B1080p%5D+%5BWEBRip%5D+%5B5.1%5D+%5BYTS.GG+-+YTS.BZ%5D&tr=udp://tracker.openbittorrent.com:80&tr=udp://tracker.opentrackr.org:1337/announce
+
+[Q06] QBT:QBT_VIVO   SIZE:   0.9 GB HASH:37d5ce941f46d0425707ac34683d3f974220277f
+      TORRENT: Torrente Presidente (2026) [720p] [WEBRip] [YTS.GG - YTS.BZ]
+      MOTIVO: qBittorrent con seed conectado: seeds=1, peers=11, state=stalleddl
+      MAGNET: magnet:?xt=urn:btih:37d5ce941f46d0425707ac34683d3f974220277f&dn=Torrente+Presidente+(2026)+%5B720p%5D+%5BWEBRip%5D+%5BYTS.GG+-+YTS.BZ%5D&tr=udp://tracker.openbittorrent.com:80&tr=udp://tracker.opentrackr.org:1337/announce
+
+[Q07] QBT:QBT_VIVO   SIZE:   1.7 GB HASH:6db6cf36f7f10e856406d07ca1ab7a3308d24959
+      TORRENT: Torrente Presidente (2026) [1080p] [WEBRip] [x265] [10bit] [5.1] [YTS.GG - YTS.BZ]
+      MOTIVO: qBittorrent descargando: 0.02 MB/s, seeds=1, peers=3
+      MAGNET: magnet:?xt=urn:btih:6db6cf36f7f10e856406d07ca1ab7a3308d24959&dn=Torrente+Presidente+(2026)+%5B1080p%5D+%5BWEBRip%5D+%5Bx265%5D+%5B10bit%5D+%5B5.1%5D+%5BYTS.GG+-+YTS.BZ%5D&tr=udp://tracker.openbittorrent.com:80&tr=udp://tracker.opentrackr.org:1337/announce

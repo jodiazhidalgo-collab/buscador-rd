@@ -1,0 +1,6 @@
+RD Turbo Pro - lista extra qBittorrent vivos
+================================================================================
+[Q01] QBT:QBT_VIVO   SIZE:   3.7 GB HASH:9a6c998227394e30ca194d74e220eb8bf123599e
+      TORRENT: Mr. Beans Holiday 2007 BluRay 720p DTS x264-3Li
+      MOTIVO: qBittorrent con seed conectado: seeds=1, peers=3, state=stalleddl
+      MAGNET: magnet:?xt=urn:btih:9a6c998227394e30ca194d74e220eb8bf123599e&dn=Mr.+Beans+Holiday+2007+BluRay+720p+DTS+x264-3Li&tr=udp://tracker.openbittorrent.com:80&tr=udp://tracker.opentrackr.org:1337/announce

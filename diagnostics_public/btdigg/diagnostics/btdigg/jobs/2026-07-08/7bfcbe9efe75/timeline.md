@@ -1,0 +1,101 @@
+- 2026-07-08T17:53:53+02:00 [info] web::JOB_STARTED
+- 2026-07-08T17:53:53+02:00 [info] general::CONFIG_SNAPSHOT
+- 2026-07-08T17:53:53+02:00 [info] web::COMMAND_PREPARED
+- 2026-07-08T17:53:53+02:00 [info] web::PROCESS_STARTED
+- 2026-07-08T17:53:53+0200 [info] search::editor_clean_search_start
+- 2026-07-08T17:53:53+0200 [info] btdigg::browser_auto_search_start_dom
+- 2026-07-08T17:53:55+0200 [info] btdigg::extract_magnets
+- 2026-07-08T17:53:55+0200 [info] btdigg::btdigg_curl_cffi_fetch
+- 2026-07-08T17:54:04+0200 [info] btdigg::extract_magnets
+- 2026-07-08T17:54:04+0200 [info] btdigg::btdigg_curl_cffi_fetch
+- 2026-07-08T17:54:09+0200 [info] btdigg::extract_magnets
+- 2026-07-08T17:54:09+0200 [info] btdigg::btdigg_curl_cffi_fetch
+- 2026-07-08T17:54:14+0200 [info] btdigg::extract_magnets
+- 2026-07-08T17:54:14+0200 [info] btdigg::btdigg_curl_cffi_fetch
+- 2026-07-08T17:54:19+0200 [info] btdigg::extract_magnets
+- 2026-07-08T17:54:19+0200 [info] btdigg::btdigg_curl_cffi_fetch
+- 2026-07-08T17:54:25+0200 [info] btdigg::extract_magnets
+- 2026-07-08T17:54:25+0200 [info] btdigg::btdigg_curl_cffi_fetch
+- 2026-07-08T17:54:30+0200 [info] btdigg::extract_magnets
+- 2026-07-08T17:54:30+0200 [info] btdigg::btdigg_curl_cffi_fetch
+- 2026-07-08T17:54:38+0200 [info] btdigg::extract_magnets
+- 2026-07-08T17:54:38+0200 [info] btdigg::btdigg_curl_cffi_fetch
+- 2026-07-08T17:54:43+0200 [info] btdigg::extract_magnets
+- 2026-07-08T17:54:43+0200 [info] btdigg::btdigg_curl_cffi_fetch
+- 2026-07-08T17:54:49+0200 [info] btdigg::extract_magnets
+- 2026-07-08T17:54:49+0200 [info] btdigg::btdigg_curl_cffi_fetch
+- 2026-07-08T17:54:51+0200 [info] btdigg::browser_auto_search_end_dom
+- 2026-07-08T17:54:51+0200 [info] motor::prepare_results_start
+- 2026-07-08T17:54:51+0200 [info] motor::prepare_after_scoring
+- 2026-07-08T17:54:51+0200 [info] motor::prepare_after_filter
+- 2026-07-08T17:54:51+0200 [info] motor::prepare_after_query_prefilter
+- 2026-07-08T17:54:51+0200 [info] real-debrid::rd_account_check_ok
+- 2026-07-08T17:54:51+0200 [info] real-debrid::rd_check_start
+- 2026-07-08T17:54:51+0200 [info] real-debrid::rd_api_http_error - disabled_endpoint
+- 2026-07-08T17:54:51+0200 [info] real-debrid::rd_cache_api_disabled_cached_set - Real-Debrid HTTP 403: [37 disabled_endpoint] {
+	"error": "disabled_endpoint",
+	"error_code": 37
+}
+- 2026-07-08T17:54:51+0200 [info] real-debrid::rd_cache_api_disabled - Real-Debrid HTTP 403: [37 disabled_endpoint] {
+	"error": "disabled_endpoint",
+	"error_code": 37
+}
+- 2026-07-08T17:54:51+0200 [info] real-debrid::rd_verify_batch_start
+- 2026-07-08T17:54:51+0200 [info] real-debrid::rd_slots_refresh
+- 2026-07-08T17:54:51+0200 [info] real-debrid::rd_active_count_before
+- 2026-07-08T17:54:52+0200 [info] real-debrid::rd_existing_preload_done
+- 2026-07-08T17:54:52+0200 [info] real-debrid::rd_verify_queue_start
+- 2026-07-08T17:54:52+0200 [info] real-debrid::rd_verify_add_start - Whistle El silbido del mal BDrip XviD Castellano
+- 2026-07-08T17:54:52+0200 [info] real-debrid::rd_verify_queue_submit - Whistle El silbido del mal BDrip XviD Castellano
+- 2026-07-08T17:54:52+0200 [info] real-debrid::rd_slots_reserve
+- 2026-07-08T17:54:52+0200 [info] real-debrid::rd_verify_add_start - Whistle El silbido del mal Ingles-Castellano Subt-Esp.Forz H264 E-AC3 5.1 BDrip hd 1080p
+- 2026-07-08T17:54:52+0200 [info] real-debrid::rd_verify_queue_submit - Whistle El silbido del mal Ingles-Castellano Subt-Esp.Forz H264 E-AC3 5.1 BDrip hd 1080p
+- 2026-07-08T17:54:52+0200 [debug] real-debrid::rd_rate_wait
+- 2026-07-08T17:54:52+0200 [info] real-debrid::rd_slots_reserve
+- 2026-07-08T17:54:52+0200 [debug] real-debrid::rd_endpoint_pace_wait
+- 2026-07-08T17:54:52+0200 [info] real-debrid::rd_api_http_error - infringing_file
+- 2026-07-08T17:54:52+0200 [info] real-debrid::rd_call_terminal_error - infringing_file
+- 2026-07-08T17:54:52+0200 [info] real-debrid::rd_candidate_addmagnet_blocked - infringing_file
+- 2026-07-08T17:54:52+0200 [info] real-debrid::rd_verify_infringing - Whistle El silbido del mal BDrip XviD Castellano
+- 2026-07-08T17:54:52+0200 [info] real-debrid::rd_verify_queue_done_item - Whistle El silbido del mal BDrip XviD Castellano
+- 2026-07-08T17:54:53+0200 [info] real-debrid::rd_api_http_error - infringing_file
+- 2026-07-08T17:54:53+0200 [info] real-debrid::rd_call_terminal_error - infringing_file
+- 2026-07-08T17:54:53+0200 [info] real-debrid::rd_candidate_addmagnet_blocked - infringing_file
+- 2026-07-08T17:54:53+0200 [info] real-debrid::rd_verify_infringing - Whistle El silbido del mal Ingles-Castellano Subt-Esp.Forz H264 E-AC3 5.1 BDrip hd 1080p
+- 2026-07-08T17:54:53+0200 [info] real-debrid::rd_verify_queue_done_item - Whistle El silbido del mal Ingles-Castellano Subt-Esp.Forz H264 E-AC3 5.1 BDrip hd 1080p
+- 2026-07-08T17:54:53+0200 [info] real-debrid::rd_verify_queue_end
+- 2026-07-08T17:54:53+0200 [info] real-debrid::rd_rate_summary
+- 2026-07-08T17:54:53+0200 [info] real-debrid::rd_endpoint_pacer_summary
+- 2026-07-08T17:54:53+0200 [info] real-debrid::rd_cleanup_final_start
+- 2026-07-08T17:54:54+0200 [info] real-debrid::rd_slots_refresh
+- 2026-07-08T17:54:54+0200 [info] real-debrid::rd_active_count_after
+- 2026-07-08T17:54:54+0200 [info] real-debrid::rd_cleanup_final_end
+- 2026-07-08T17:54:54+0200 [info] real-debrid::rd_rate_summary
+- 2026-07-08T17:54:54+0200 [info] real-debrid::rd_endpoint_pacer_summary
+- 2026-07-08T17:54:54+0200 [info] real-debrid::rd_verify_batch_end
+- 2026-07-08T17:54:54+0200 [info] real-debrid::rd_check_summary
+- 2026-07-08T17:54:54+0200 [info] qbittorrent::qbt_relevance_filter
+- 2026-07-08T17:54:54+0200 [info] qbittorrent::qbt_probe_batch_start
+- 2026-07-08T17:54:54+0200 [info] qbittorrent::qbt_login
+- 2026-07-08T17:54:54+0200 [info] qbittorrent::qbt_login
+- 2026-07-08T17:54:54+0200 [info] qbittorrent::qbt_probe_add - Whistle El silbido del mal BDrip XviD Castellano
+- 2026-07-08T17:54:54+0200 [info] qbittorrent::qbt_probe_add - Whistle El silbido del mal Ingles-Castellano Subt-Esp.Forz H264 E-AC3 5.1 BDrip hd 1080p
+- 2026-07-08T17:54:56+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T17:54:56+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T17:54:58+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T17:54:58+0200 [info] qbittorrent::qbt_probe_result - qBittorrent con seed conectado: seeds=2, peers=0, state=stalleddl
+- 2026-07-08T17:54:58+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T17:54:58+0200 [info] qbittorrent::qbt_delete_probe
+- 2026-07-08T17:55:00+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T17:55:02+0200 [debug] qbittorrent::qbt_probe_poll
+- 2026-07-08T17:55:02+0200 [info] qbittorrent::qbt_probe_result - qBittorrent descargando: 0.71 MB/s, seeds=4, peers=12
+- 2026-07-08T17:55:02+0200 [info] qbittorrent::qbt_delete_probe
+- 2026-07-08T17:55:02+0200 [info] qbittorrent::qbt_probe_batch_end
+- 2026-07-08T17:55:02+0200 [info] motor::prepare_qbit_extras
+- 2026-07-08T17:55:02+0200 [info] motor::prepare_rd_temp_errors
+- 2026-07-08T17:55:02+0200 [info] motor::prepare_after_working_filter
+- 2026-07-08T17:55:02+0200 [info] search::export_results
+- 2026-07-08T17:55:02+0200 [info] search::export_results
+- 2026-07-08T17:55:02+0200 [info] search::editor_clean_search_rd_cleanup
+- 2026-07-08T17:55:02+0200 [info] search::editor_clean_search_end
+- 2026-07-08T17:55:02+02:00 [info] web::JOB_FINISHED_OK
