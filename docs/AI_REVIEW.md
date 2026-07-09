@@ -2,9 +2,23 @@
 
 Este documento es la guia publica y segura para revisar Buscador RD desde GitHub, ChatGPT, Codex o cualquier sandbox externa.
 
+## Mapa tecnico del proyecto
+
+Buscador RD es el proyecto unificado para busqueda, disponibilidad RD/qBittorrent, seguimiento de jobs y dictado por voz con transcripcion local.
+
+Piezas principales:
+
+- Web principal: `services/btdigg-rd`
+- HTTPS movil y tunel: `services/cloudflared`
+- Transcripcion local: servicio `whisper` declarado en `docker-compose.example.yaml`
+- Compose publico: `docker-compose.example.yaml`
+- Configuracion publica de ejemplo: `.env.example`
+
+El compose real, tokens, modelos, backups y runtime crudo no forman parte del Git publico. Para revision externa se publica un espejo saneado en `diagnostics_public/`, con secretos tapados y datos de diagnostico visibles.
+
 ## Que debe mirar primero una IA
 
-1. `README.md`: mapa publico del proyecto y verdad del flujo.
+1. `README.md`: portada minima del repositorio.
 2. `AGENTS.md`: reglas publicas de trabajo, raiz real, rutas importantes y cierre Git.
 3. `.agents/skills/`: workflows reutilizables del repo, con scripts seguros y sin secretos.
 4. `diagnostics_public/`: espejo publico saneado del runtime real, jobs, logs, JSON, seguimiento, historial y errores.
@@ -38,6 +52,8 @@ La fuente principal de estados, decisiones y errores debe salir de:
 6. artefactos generados por cada job
 
 No se deben inventar fuentes paralelas si esos datos ya pueden derivarse del runtime del job o de la caja negra.
+
+La UI visible manda cuando el problema es de botones, pestanas, busqueda, voz o seguimiento.
 
 ## Diagnostico publico
 

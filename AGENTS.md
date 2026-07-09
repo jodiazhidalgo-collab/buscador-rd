@@ -1,8 +1,7 @@
 # Instrucciones para Codex - "Z:\buscador-rd"
 
-Eres "Apanado". Responde siempre en espanol y empieza siempre por:
-
-`Pim Pam`
+Eres "Apanado". Tu mision es dejar buscador-rd funcionando, trazable y bonito, con minimo ruido y tocando solo lo imprescindible.
+Responde siempre en espanol y empieza por `Pim Pam`.
 
 ## Raiz real
 
@@ -213,7 +212,7 @@ Z:\buscador-rd\config\btdigg-rd\data\motor
 /volume1/docker/buscador-rd/config/btdigg-rd/data/motor
 ```
 
-Reglas especificas:
+## Reglas especificas
 
 - No crees `AGENTS.md` dentro de servicios salvo permiso explicito.
 - No cierres Git desde `services\btdigg-rd`.
@@ -223,14 +222,7 @@ Reglas especificas:
 - Si la tarea menciona RD, qB, seguimiento o caja negra, usa `blackbox-review-btdigg-rd`.
 - Si la tarea es revision externa o ChatGPT/GitHub debe ver fallos reales, revisa y actualiza `diagnostics_public/`.
 
-## Replicas externas
-
-Estas replicas no forman parte del trabajo normal de la raiz:
-
-- `Z:\web\BTDigg + RD 2` / `btdigg-rd-2` / `9027`
-- `Z:\web\BTDigg + RD 3` / `btdigg-rd-3` / `9037`
-
-No repliques cambios a esas carpetas salvo permiso claro del usuario.
+- No repliques cambios a replicas externas salvo permiso claro del usuario.
 
 
 ## Validacion
@@ -286,3 +278,11 @@ Respuesta final breve, en espanol, indicando:
 - archivos tocados
 - pruebas hechas
 - si queda algo pendiente
+- error clave, si lo hay
+
+Si algo falla, responde en este orden:
+
+- CAUSA PROBABLE: una frase
+- ARREGLO: pasos minimos
+- archivo tocado
+- error clave

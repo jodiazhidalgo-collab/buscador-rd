@@ -11,30 +11,37 @@ def read(relative: str) -> str:
     return (PROJECT_ROOT / relative).read_text(encoding="utf-8")
 
 
-def test_root_readme_declares_public_entrypoints_and_truth_source():
+def test_root_readme_stays_minimal_and_points_to_review_docs():
     text = read("README.md")
+
+    for expected in (
+        "AGENTS.md",
+        "docs/AI_REVIEW.md",
+    ):
+        assert expected in text
+
+    for hidden_from_front_page in (
+        "Real-Debrid",
+        "qBittorrent",
+        "services/btdigg-rd",
+        "diagnostics_public/",
+        "deploy key",
+        "Push desde la web",
+    ):
+        assert hidden_from_front_page not in text
+
+
+def test_ai_review_guide_points_to_ci_evidence_safe_boundaries_and_truth_source():
+    text = read("docs/AI_REVIEW.md")
 
     for expected in (
         "services/btdigg-rd",
         "services/cloudflared",
-        "docker-compose.example.yaml",
         "AGENTS.md",
         ".agents/skills/",
         ".agents/skills/investigacion-avanzada-buscador-rd/",
         "DATA_DIR",
         "diagnostics/btdigg",
-        "docs/AI_REVIEW.md",
-    ):
-        assert expected in text
-
-
-def test_ai_review_guide_points_to_ci_evidence_and_safe_boundaries():
-    text = read("docs/AI_REVIEW.md")
-
-    for expected in (
-        "AGENTS.md",
-        ".agents/skills/",
-        ".agents/skills/investigacion-avanzada-buscador-rd/",
         "buscador-rd-pytest-evidence",
         "buscador-rd-pytest-junit.xml",
         "docker-compose.example.yaml",
