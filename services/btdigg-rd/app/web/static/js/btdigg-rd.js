@@ -63,6 +63,7 @@ let historyResultStore = {};
 let qbitNoSeedsHistoryCache = null;
 let qbitNoSeedsHistoryOpenState = { days: {}, searches: {} };
 let qbitNoSeedsHistoryResultStore = {};
+let qbitNoSeedsHistoryCollapsed = true;
 let titleResolveOpenKey = "";
 let titleResolveCache = {};
 let resultsSnapshot = "";
@@ -180,6 +181,7 @@ function uiStatePayload() {
       days: qbitNoSeedsHistoryOpenState.days || {},
       searches: qbitNoSeedsHistoryOpenState.searches || {}
     },
+    qbit_no_seeds_card_collapsed: !!qbitNoSeedsHistoryCollapsed,
     result_sort: resultSort.btdigg || { key: "index", dir: "asc" }
   };
 }
@@ -248,6 +250,8 @@ function applyUiState(state, remote = false) {
     if (!focusedFormField()) applyFormState(state.form || {});
     historyOpenState = normalizeHistoryOpenState(state.history_open);
     qbitNoSeedsHistoryOpenState = normalizeHistoryOpenState(state.qbit_no_seeds_history_open);
+    qbitNoSeedsHistoryCollapsed = typeof state.qbit_no_seeds_card_collapsed === "boolean" ? state.qbit_no_seeds_card_collapsed : true;
+    setQbitNoSeedsCardCollapsed(qbitNoSeedsHistoryCollapsed, false);
     if (state.result_sort && typeof state.result_sort === "object") {
       resultSort.btdigg = {
         key: String(state.result_sort.key || "index"),
@@ -1039,6 +1043,25 @@ function collapseSettingsSections() {
   setSettingsSectionCollapsed("settingsRdSection", true);
   setSettingsSectionCollapsed("rdFollowSection", true);
   setSettingsSectionCollapsed("settingsTvRulesSection", true);
+}
+
+function setQbitNoSeedsCardCollapsed(collapsed, persist = true) {
+  qbitNoSeedsHistoryCollapsed = !!collapsed;
+  const body = document.getElementById("qbitNoSeedsHistoryBody");
+  const toggle = document.getElementById("qbitNoSeedsHistoryToggle");
+  if (body) body.classList.toggle("is-hidden", qbitNoSeedsHistoryCollapsed);
+  if (toggle) {
+    toggle.classList.toggle("is-collapsed", qbitNoSeedsHistoryCollapsed);
+    toggle.setAttribute("aria-expanded", qbitNoSeedsHistoryCollapsed ? "false" : "true");
+    toggle.title = qbitNoSeedsHistoryCollapsed ? "Mostrar historial sin semillas" : "Ocultar historial sin semillas";
+    toggle.setAttribute("aria-label", toggle.title);
+  }
+  if (!qbitNoSeedsHistoryCollapsed) loadQbitNoSeedsHistory(false);
+  if (persist) markUiStateChanged();
+}
+
+function toggleQbitNoSeedsCard() {
+  setQbitNoSeedsCardCollapsed(!qbitNoSeedsHistoryCollapsed, true);
 }
 
 function setSettingsView(show, persist = true) {
@@ -2696,6 +2719,17 @@ function historyUsefulLink(item) {
   return "";
 }
 
+function historyUsefulLinkKind(link) {
+  const value = String(link || "").trim().toLowerCase();
+  if (value.startsWith("magnet:")) return "magnet";
+  if (value.startsWith("http://") || value.startsWith("https://")) return "torrent";
+  return "";
+}
+
+function historyUsefulLinkLabel(link) {
+  return historyUsefulLinkKind(link) === "magnet" ? "Magnet" : "Torrent";
+}
+
 async function forceQbitNoSeedsHistoryItem(key, btn = null) {
   const saved = qbitNoSeedsHistoryResultStore[key];
   if (!saved || !saved.item) {
@@ -3242,6 +3276,8 @@ function renderQbitNoSeedsHistory() {
         const result = document.createElement("div");
         const link = historyUsefulLink(item);
         const hasLink = !!link;
+        const linkLabel = historyUsefulLinkLabel(link);
+        const linkCopyTitle = linkLabel === "Magnet" ? "Copiar magnet" : "Copiar torrent";
         const resultKey = searchKey + "-" + originalIndex;
         qbitNoSeedsHistoryResultStore[resultKey] = {
           item,
@@ -3258,7 +3294,7 @@ function renderQbitNoSeedsHistory() {
             '</div>' +
           '</div>' +
           '<div class="history-result-actions">' +
-            (hasLink ? '<button class="result-icon result-copy history-copy" type="button" title="Copiar enlace" aria-label="Copiar enlace">Copiar</button>' : '') +
+            (hasLink ? '<button class="result-icon result-copy history-copy" type="button" title="' + escAttr(linkCopyTitle) + '" aria-label="' + escAttr(linkCopyTitle) + '">' + esc(linkLabel) + '</button>' : '') +
             (hasLink ? '<button class="result-icon result-download history-download history-route-btn history-route-qbit" type="button" title="Forzar qBit" aria-label="Forzar qBit">qBit</button>' : '') +
             '<button class="result-icon result-title-resolve history-title-resolve" type="button" title="Resolver titulo" aria-label="Resolver titulo">Aa</button>' +
           '</div>';

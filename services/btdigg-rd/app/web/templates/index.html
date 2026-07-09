@@ -217,12 +217,17 @@
         </div>
         <div id="historyPanel" class="history-list"></div>
       </div>
-      <div class="panel history-page">
+      <div id="qbitNoSeedsHistoryCard" class="panel history-page qbit-no-seeds-history-card">
         <div class="history-page-head">
           <h2 class="history-page-title">Historial sin semillas qB</h2>
-          <button class="btn" type="button" onclick="loadQbitNoSeedsHistory(true)">Actualizar</button>
+          <div class="history-page-actions">
+            <button class="btn" type="button" onclick="loadQbitNoSeedsHistory(true)">Actualizar</button>
+            <button id="qbitNoSeedsHistoryToggle" class="panel-toggle history-page-toggle is-collapsed" type="button" title="Mostrar historial sin semillas" aria-label="Mostrar historial sin semillas" aria-expanded="false" aria-controls="qbitNoSeedsHistoryBody" onclick="toggleQbitNoSeedsCard()">&#9662;</button>
+          </div>
         </div>
-        <div id="qbitNoSeedsHistoryPanel" class="history-list"></div>
+        <div id="qbitNoSeedsHistoryBody" class="history-page-body is-hidden">
+          <div id="qbitNoSeedsHistoryPanel" class="history-list"></div>
+        </div>
       </div>
     </section>
 
