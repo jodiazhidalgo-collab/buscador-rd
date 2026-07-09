@@ -164,7 +164,9 @@ h2{margin:0;font-size:15px;letter-spacing:0}
 .rule-destination-preview{display:flex;align-items:center;gap:8px;flex-wrap:wrap;min-width:0}
 .rule-destination-preview .hint{line-height:1.25}
 .history-page{overflow:hidden}
-.history-page-head{display:flex;align-items:flex-start;justify-content:space-between;gap:12px;padding:14px 16px 10px;border-bottom:1px solid var(--line)}
+.history-page-head{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:12px;padding:12px 16px;border-bottom:1px solid var(--line)}
+.history-page-title{grid-column:2;margin:0;color:var(--text);font-size:18px;font-weight:1000;line-height:1.1;text-align:center}
+.history-page-head .btn{grid-column:3;justify-self:end}
 .history-list{display:grid;gap:10px;padding:14px 16px}
 .history-empty{padding:12px;margin:0}
 .history-day,.history-search{border:1px solid #2d4248;border-radius:8px;background:linear-gradient(180deg,#10181b,#0e1416);overflow:hidden}
@@ -294,7 +296,9 @@ h2{margin:0;font-size:15px;letter-spacing:0}
   .field.grow,.actions{grid-column:1/-1}
   .log{height:260px}
   .settings-page-head{flex-direction:column}
-  .history-page-head{flex-direction:column}
+  .history-page-head{grid-template-columns:1fr;justify-items:stretch}
+  .history-page-title{grid-column:1;justify-self:center}
+  .history-page-head .btn{grid-column:1;justify-self:stretch}
   .queue-page-head{flex-direction:column}
   .settings-actions{width:100%}
   .settings-grid-full{grid-template-columns:1fr}
