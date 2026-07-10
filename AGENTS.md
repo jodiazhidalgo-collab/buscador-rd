@@ -222,6 +222,26 @@ Z:\buscador-rd\config\btdigg-rd\data\motor
 /volume1/docker/buscador-rd/config/btdigg-rd/data/motor
 ```
 
+## Documentacion funcional RD/qB
+
+Antes de modificar Real-Debrid, BTDigg, qBittorrent, jobs, resultados,
+descarga, RDT-Client, seguimiento o limpieza, lee:
+
+- `docs/configuracion-servidor-rd.md`: contrato interno y configuracion
+  efectiva de RD.
+- `docs/flujo-descarga-rd-qb.md`: flujo completo de busqueda, seleccion y
+  descarga.
+
+Si un cambio altera comportamiento, configuracion efectiva, estados, limites,
+prioridades, rutas, limpieza o trazabilidad, actualiza el documento
+correspondiente en el mismo cambio. Si afecta a ambos contratos, actualiza
+ambos.
+
+Estos documentos describen unicamente el funcionamiento vigente. No anadas
+historiales, snapshots fechados ni valores copiados que ya tengan otra fuente
+canonica. Ante contradicciones mandan el codigo ejecutado, la configuracion
+efectiva, los contratos y la caja negra reciente.
+
 ## Reglas especificas
 
 - No crees `AGENTS.md` dentro de servicios salvo permiso explicito.

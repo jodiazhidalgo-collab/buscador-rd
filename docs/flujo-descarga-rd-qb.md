@@ -19,9 +19,10 @@ documento complementario
 cuándo entra RD en el flujo, qué recibe y cómo su respuesta altera las
 decisiones generales.
 
-Este texto documenta el comportamiento efectivo del código y la configuración
-viva observada el 10 de julio de 2026. Cuando un comentario antiguo contradice
-al código ejecutado, manda el código.
+Este es el contrato funcional vigente del flujo BTDigg/RD/qB. Cualquier cambio
+de su comportamiento efectivo debe actualizar este documento en el mismo
+cambio. Cuando un comentario antiguo contradice al código ejecutado, manda el
+código.
 
 ## 2. Qué abarca y qué no abarca
 
@@ -104,7 +105,7 @@ Consulta + páginas + modo + GB mínimo + qB ON/OFF
         Elegir RD/RDT-Client o qB según evidencias reales
                            |
                            v
-      Evitar duplicados, registrar y seguir hasta entrega
+  Comprobar duplicados cuando haya identidad y registrar según ruta
 ```
 
 El principio central es separar tres conceptos que no deben confundirse:
@@ -183,9 +184,9 @@ construyen un contrato fiable y escogen la ruta final.
 | Campo | Significado | Regla efectiva |
 |---|---|---|
 | `query` | Título o texto buscado | Se recorta; vacío hace fallar el motor con código 2 |
-| `pages` | Rango BTDigg | Vacío usa `default_pages`; actual `1-3` |
+| `pages` | Rango BTDigg | Vacío usa `default_pages` |
 | `mode` | Política de calidad/idioma | Solo `0`, `1` o `3`; cualquier otro pasa a `0` |
-| `min_gb` | Mínimo aproximado | Vacío usa `min_size_gb`; actual `0` |
+| `min_gb` | Mínimo aproximado | Vacío usa `min_size_gb` |
 | qB toggle | Probar alternativas qB | Se guarda en configuración antes del job; no viaja en el payload normal |
 
 La web guarda el formulario localmente y también en el estado compartido. Una
@@ -203,8 +204,8 @@ La cadena de páginas se convierte así:
 | `3` | páginas 1, 2 y 3 |
 | `1-5` | páginas 1 a 5 |
 | `5-2` | se corrige a páginas 2 a 5 |
-| `0` | páginas 1 a `safe_max_pages_when_zero`, actualmente 30 |
-| inválida | vuelve a `default_pages`, actualmente `1-3` |
+| `0` | páginas 1 a `safe_max_pages_when_zero` |
+| inválida | vuelve a `default_pages` |
 
 Un rango nunca empieza por debajo de 1 ni supera 500 en su extremo final. El
 valor `0` no significa infinito: siempre respeta el tope de seguridad.
@@ -215,15 +216,10 @@ El botón `qB ON/OFF` escribe inmediatamente `qbit_probe_enabled` en el
 `config.json` vivo. Es un estado global del servicio, compartido entre clientes,
 y afecta a la siguiente búsqueda que cargue la configuración.
 
-En la instantánea actual:
-
-```text
-qbit_probe_enabled=false
-```
-
-Por tanto, una búsqueda normal ejecutada ahora trabaja solo con RD y registra
-`qbt_probe_skipped`. El documento también describe íntegramente la rama qB para
-cuando se active el botón o un elemento de cola tenga qB ON.
+Con `qbit_probe_enabled=false`, la búsqueda trabaja solo con RD y registra
+`qbt_probe_skipped`. Con `true`, o cuando un elemento de cola activa qB, también
+se ejecuta la rama descrita en la sección 15. El valor efectivo vigente se
+mantiene únicamente en la sección 31.2.
 
 ## 6. Exclusión mutua y creación del job
 
@@ -258,9 +254,10 @@ status=queued
 cancel_requested=false
 ```
 
-Antes de crearlo se sincroniza el token RD desde la fuente del servicio hacia
-el fichero esperado por el motor, pero nunca se imprime ni se incorpora a los
-artefactos públicos.
+Antes de crearlo se hace un bootstrap condicional del token RD desde la fuente
+del servicio hacia el fichero esperado por el motor. Solo se escribe si el
+fichero falta, está vacío o conserva el placeholder; un valor existente no se
+reemplaza. El token nunca se imprime ni se incorpora a artefactos públicos.
 
 ### 6.3 Runtime aislado
 
@@ -275,8 +272,10 @@ last_links.txt
 last_links_ordenado.txt
 ```
 
-Esto impide que una búsqueda a medias sobrescriba los últimos resultados buenos.
-Solo un job terminado con código 0 promociona sus artefactos al runtime compartido.
+Esto separa las escrituras del motor mientras trabaja. Solo un job terminado con
+código 0 intenta promocionar sus artefactos al runtime compartido. La promoción
+es una copia secuencial, no una transacción: un fallo entre copias puede dejar
+una actualización parcial.
 
 La retención normal conserva al menos los últimos 100 jobs y también los jobs de
 los últimos 7 días. La limpieza se ejecuta antes de iniciar uno nuevo.
@@ -329,17 +328,18 @@ background o recibir `pageshow`, la web:
 Además realiza un refresco compartido cada 15 segundos y evita recargar la tabla
 de resultados más de una vez cada 30 segundos cuando no hay trabajo.
 
+La reconexión requiere que el backend siga vivo: `jobs` y sus runtimes activos
+se conservan en memoria y no se rehidratan desde `data/jobs` tras reiniciar el
+servicio. La recarga del navegador sí reconecta mientras ese proceso servidor
+continúe ejecutándose.
+
 ## 8. Búsqueda real en BTDigg
 
 ### 8.1 Normalización de la consulta
 
-La consulta se pasa a minúsculas ASCII, se eliminan acentos y se sustituyen los
-separadores por espacios. Por ejemplo:
-
-```text
-El Señor de los Anillos: 2001
--> el senor de los anillos 2001
-```
+La consulta se pasa a minúsculas ASCII, se eliminan acentos, se sustituyen los
+separadores por espacios, se compactan los espacios consecutivos y se eliminan
+los espacios de los extremos.
 
 Esta forma se URL-codifica para BTDigg. La consulta original sigue disponible
 para logs y presentación.
@@ -407,9 +407,13 @@ derivan:
 - coincidencia de los términos buscados;
 - texto bruto limitado para auditoría.
 
-El extractor de tamaño comprende TB/TiB, GB/GiB y MB/MiB y normaliza todo a
-GiB. Solo admite valores aproximados entre 0,001 y 5000 GiB para evitar falsos
-positivos evidentes.
+El extractor de tamaño comprende TB/TiB, GB/GiB y MB/MiB, además de las
+abreviaturas `T`, `G` y `M`, y normaliza todo a GiB. Solo admite valores
+aproximados entre 0,001 y 5000 GiB para evitar falsos positivos evidentes.
+
+La detección de archivos internos de vídeo durante esta extracción reconoce
+`.mkv`, `.mp4`, `.avi`, `.m4v`, `.mov` y `.wmv`. Las extensiones adicionales que
+RD clasifica en su instantánea pertenecen a otra fase y no amplían este parser.
 
 ### 9.3 Modelo interno
 
@@ -532,8 +536,8 @@ coincidencia coherente en un único título o archivo.
 ### 11.2 Términos buscados
 
 Todos los tokens alfanuméricos normalizados de la consulta entran en la
-comparación. No hay una lista de stopwords. Un año como `2001` también es un
-término. Si un nombre interno contiene un rango de años, el año se considera
+comparación. No hay una lista de stopwords. Los años también son términos. Si un
+nombre interno contiene un rango de años, el año consultado se considera
 cubierto cuando cae dentro del rango.
 
 ### 11.3 Regla de coincidencia
@@ -543,14 +547,9 @@ El candidato pasa directamente si:
 - todos los términos aparecen en el título del torrent; o
 - aparecen juntos en un mismo archivo de vídeo detectado dentro del contexto.
 
-La coincidencia interna mínima usa actualmente el mismo umbral que qB:
-
-```text
-qbit_same_file_min_ratio=0.9
-```
-
-Es decir, se exige el 90 % de términos en el mismo archivo, salvo que el título
-general ya cubra el 100 %.
+La coincidencia interna mínima usa `qbit_same_file_min_ratio`, cuyo valor
+efectivo se mantiene en la sección 31.2. El título general debe cubrir el 100 %
+para pasar directamente por esa vía.
 
 ### 11.4 Tres carriles
 
@@ -569,17 +568,13 @@ nombres generales engañosos.
 ### 11.5 Rescate parcial
 
 Si el título contiene términos de la consulta con ratio igual o superior a
-`rd_rescue_min_title_ratio=0.5`, el resultado no se tira todavía. Se marca
+`rd_rescue_min_title_ratio`, el resultado no se tira todavía. Se marca
 `RESCATE_BUSQUEDA`.
 
-El rescate se ejecuta después de la primera ronda RD y cumple:
-
-```text
-rd_rescue_enabled=true
-rd_rescue_only_if_no_rd_ok=true
-rd_rescue_max_candidates=5
-rd_rescue_min_title_ratio=0.5
-```
+El rescate se ejecuta después de la primera ronda RD según
+`rd_rescue_enabled`, `rd_rescue_only_if_no_rd_ok`,
+`rd_rescue_max_candidates` y `rd_rescue_min_title_ratio`. Sus valores efectivos
+se mantienen únicamente en `configuracion-servidor-rd.md`.
 
 Por tanto:
 
@@ -587,7 +582,11 @@ Por tanto:
    rescate;
 2. si no obtuvo ninguno, se ordenan los rescatables y se comprueban como máximo
    cinco;
-3. los no comprobados quedan `RESCATE_NO_VERIFICADO`, no “muertos”.
+3. si el rescate no se ejecuta por política, los reservados quedan
+   `RESCATE_NO_VERIFICADO`;
+4. si el rescate sí se ejecuta, solo entran los primeros
+   `rd_rescue_max_candidates`; el excedente actual no se reincorpora ni recibe
+   automáticamente ese estado en el export.
 
 ## 12. Filtro de tamaño solicitado
 
@@ -601,8 +600,6 @@ tolerancia = max(1 GiB, 5 % del mínimo solicitado)
 tolerancia máxima = 3 GiB
 mínimo efectivo = mínimo solicitado - tolerancia
 ```
-
-Ejemplo: pedir 20 GiB acepta desde 19 GiB; pedir 100 GiB acepta desde 97 GiB.
 
 ### 12.2 Orden de fuentes de tamaño
 
@@ -619,7 +616,8 @@ qbt_size_gb
 Antes de RD se puede conservar un candidato si el tamaño total satisface el
 mínimo, el archivo individual parece pequeño y el título coincide de forma
 completa. Después de RD se prioriza el tamaño del archivo seleccionado o el
-mayor tamaño confirmado por RD.
+mayor tamaño confirmado por RD. Un RD existente puede conservarse cuando el
+tamaño total alcanza el mínimo aunque el archivo preferido sea menor.
 
 ### 12.3 Tamaño desconocido
 
@@ -673,9 +671,13 @@ propia rama y no se confunden con magnets.
 Antes de consultar RD:
 
 - debe existir token y superar healthcheck;
-- las URLs `.torrent` se materializan y se comprueba que sean metainfo real;
+- las primeras URLs `.torrent` hasta `torrent_candidate_probe_max` pasan por un
+  probe de MIME, extensión o firma parcial; las posteriores pueden llegar a RD
+  sin ese probe y no existe validación bencode completa obligatoria;
 - los magnets deben tener hash;
-- se limita la verificación seria a 60 candidatos.
+- `verify_max_candidates` limita la rama `.torrent` y el batch magnet cuando
+  `instantAvailability` está desactivado, pero no limita los `RD_INSTANT` cuando
+  ese endpoint funciona.
 
 ### 14.2 Decisión
 
@@ -715,9 +717,12 @@ web ejecuta además:
 cleanup_unselected_verified(shown, [], token)
 ```
 
-Como la selección está vacía durante una búsqueda web, se borran también los
-positivos temporales recién verificados que no eran torrents ya existentes.
-Esto es intencionado: la búsqueda termina sin dejar pruebas en RD.
+Como la selección está vacía durante una búsqueda web, se intenta borrar los
+positivos temporales incluidos en `shown` que no eran torrents existentes
+descargados. Los `RD_OK` fuera del límite visible o creados antes de una
+cancelación que impida construir `shown` no entran en esa limpieza posterior y
+pueden quedar en RD. El barrido del motor tampoco los borra porque excluye los
+IDs positivos.
 
 La tarjeta conserva la evidencia (`rd_status`, `rd_links`, hash, archivo), pero
 el clic final no presupone que aquel ID temporal siga vivo; hace una comprobación
@@ -738,7 +743,7 @@ no como una repetición de los positivos RD.
 ### 15.2 Criba previa qB
 
 Con `qbit_require_same_file_match=true`, el título o un mismo archivo interno
-debe alcanzar la coincidencia configurada del 90 %. Si no:
+debe alcanzar `qbit_same_file_min_ratio`. Si no:
 
 ```text
 qbt_status=QBT_NO_COINCIDE_ARCHIVO
@@ -747,21 +752,17 @@ qbt_status=QBT_NO_COINCIDE_ARCHIVO
 y no se añade el magnet a qB. Esto evita consumir probes con palabras repartidas
 entre distintos archivos de un pack.
 
+La selección inicial parte de candidatos con magnet, pero con
+`qbit_probe_only_non_rd_working=true` la implementación sustituye esa lista por
+todos los candidatos sin RD utilizable. Por ello, una fila sin magnet puede
+consumir cupo, llegar al worker y terminar como `QBT_SIN_HASH`.
+
 ### 15.3 Límites actuales
 
-```text
-qbit_probe_max_candidates=40
-qbit_probe_parallel_workers=5
-qbit_probe_wait_sec=35
-qbit_probe_poll_sec=2
-qbit_probe_save_path=/data/downloads/torrents/incomplete/rd_turbo_probe
-qbit_probe_category=manual
-qbit_delete_probe_after=true
-qbit_show_metadata_only=false
-```
-
-Se toman como máximo los primeros 40 candidatos relevantes conservando el orden
-producido por las fases anteriores. Cinco workers pueden probarlos en paralelo.
+Los valores canónicos están en la sección 31.2. El motor toma como máximo
+`qbit_probe_max_candidates` candidatos relevantes en el orden recibido, limita
+el paralelismo con `qbit_probe_parallel_workers` y consulta hasta
+`qbit_probe_wait_sec` usando `qbit_probe_poll_sec`.
 
 ### 15.4 Login y duplicado
 
@@ -796,8 +797,8 @@ savepath=<ruta temporal de probe>
 category=manual
 ```
 
-Después se consulta por hash cada 2 segundos hasta 35 segundos o hasta obtener
-evidencia viva.
+Después se consulta por hash con cadencia `qbit_probe_poll_sec` hasta
+`qbit_probe_wait_sec` o hasta obtener evidencia viva.
 
 ### 15.6 Clasificación qB exacta
 
@@ -824,16 +825,18 @@ del tracker sin conexión real puede ser engañosa.
 
 ### 15.7 Limpieza del probe
 
-Todo torrent creado por la prueba se elimina con:
+Todo torrent que el worker confirma que creó intenta eliminarse con:
 
 ```text
 POST /api/v2/torrents/delete
 deleteFiles=true
 ```
 
-Se elimina tanto tras éxito como tras fallo o cancelación. En cancelación se
-entra en una sección no cancelable para intentar garantizar la limpieza. Los
-torrents que ya existían antes del probe se conservan.
+El borrado se intenta al final normal y en cancelación mediante una sección no
+cancelable. Solo se aplica cuando `added_by_us=true`; los torrents preexistentes
+se conservan. Un error de borrado queda diagnosticado, pero no se propaga como
+garantía de desaparición y una excepción distinta de cancelación antes del final
+puede impedir alcanzar esa llamada.
 
 ## 16. Composición de la lista final
 
@@ -909,7 +912,7 @@ Con `write_exports=true`, cada job puede producir:
 | `last_links.txt` | Enlaces finales de la vía interactiva antigua, si se generaron |
 | `last_links_ordenado.txt` | Enlaces con nombre y orden de selección |
 
-### 17.2 Promoción atómica por éxito
+### 17.2 Promoción condicionada por éxito
 
 El supervisor solo copia los artefactos del job al runtime compartido cuando el
 subproceso termina con código 0. Si termina en error o cancelado:
@@ -920,6 +923,10 @@ subproceso termina con código 0. Si termina en error o cancelado:
 
 Esta regla es importante al replicar el sistema: el resultado compartido debe
 ser “último éxito”, no “último intento”.
+
+Las copias se ejecutan secuencialmente con `copy2`, sin staging común ni rename
+transaccional. Si una copia falla después de otras correctas, el job termina en
+error pero el runtime compartido puede haber quedado actualizado parcialmente.
 
 ### 17.3 Historial normal
 
@@ -955,7 +962,8 @@ Al recibir `done` por SSE o polling:
 
 1. se cierra el canal LIVE;
 2. `moduleBusy` pasa a falso;
-3. se muestra `done`, `error` o `cancelled`;
+3. se procesa el estado interno `done`, `error` o `cancelled` y se muestra la
+   etiqueta `Terminado`, `Error` o `Cancelado`;
 4. solo con `done` se carga la lista recibida;
 5. se invalidan caches de historial;
 6. se hace una lectura final del seguimiento RD;
@@ -989,19 +997,23 @@ no debe ensanchar el `body` completo.
 
 ### 18.3 Persistencia
 
-Se conserva:
+El JSON compartido saneado conserva únicamente:
 
 - vista principal, ajustes, historial o cola;
 - consulta, páginas, modo y mínimo;
 - orden de resultados;
-- días y búsquedas abiertos del historial;
-- borrador de cola;
-- paneles colapsados;
-- job activo.
+- días y búsquedas abiertos del historial normal.
 
-El estado existe en local y en un JSON compartido saneado. La versión con marca
-de tiempo más reciente evita que una pestaña antigua pise silenciosamente a una
-más nueva.
+`localStorage` conserva por separado el borrador de cola, el job activo y el
+estado colapsado de actividad y seguimiento RD. Los subpaneles internos de
+Ajustes no se persisten. El navegador intenta enviar también la apertura del
+historial qB sin semillas, pero el saneado del backend no la guarda y una carga
+remota puede restablecerla.
+
+No existe control de versión entre pestañas: el último `POST` aceptado por el
+backend gana. El margen local de 2,5 segundos solo evita aplicar una respuesta
+remota durante una edición reciente; no impide que una pestaña antigua escriba
+después.
 
 ## 19. Contrato seguro al pulsar descargar
 
@@ -1065,7 +1077,7 @@ Antes de enviar se clasifica el título como película o serie.
 
 ### 20.1 Reglas de serie
 
-Primero se prueban plantillas configurables como:
+Primero se prueban, en orden, las plantillas configuradas:
 
 ```text
 SXXEXX, SXEX, SXX EXX, XXxXX, XxXX,
@@ -1094,6 +1106,11 @@ Si alguna regla coincide, destino `tv`; en caso contrario, `movies`.
 
 La búsqueda no elige el destino definitivo: se calcula otra vez con el título
 de la fila validada al pulsar descargar.
+
+El mapping `manual` existe en la infraestructura, pero `/api/rdt/send` llama
+siempre a la clasificación con fallback `movies`. `module=manual` identifica el
+origen de la petición y no fuerza ese destino: una regla de serie lleva a `tv` y
+cualquier otro título a `movies`.
 
 ## 21. Matriz de decisión de ruta final
 
@@ -1148,16 +1165,19 @@ autoTMM=false
 
 1. se descargan los bytes con timeout de 90 segundos;
 2. se exige un mínimo de 40 bytes;
-3. se calcula infohash desde el diccionario bencode `info`;
-4. se busca duplicado por ese hash;
-5. si no existe, se sube multipart a `/api/v2/torrents/add`.
+3. se intenta calcular el infohash desde el diccionario bencode `info`;
+4. si existe hash, se busca duplicado y un fallo de consulta bloquea el alta;
+5. si no se pudo extraer ningún hash, el código actual omite esa comprobación;
+6. si no se encontró duplicado, se sube multipart a
+   `/api/v2/torrents/add`.
 
 ### 22.3 Comprobación conservadora de duplicados
 
-Si el servidor no puede autenticar o consultar qB, no interpreta “no sé” como
-“no existe”. Rechaza el alta para evitar duplicados. Si la consulta funciona y
-encuentra el hash, no evalúa de nuevo la salud: considera satisfecha la petición
-porque la descarga ya está gestionada por qB.
+Para magnets, y para `.torrent` con hash disponible, si el servidor no puede
+autenticar o consultar qB no interpreta “no sé” como “no existe”: rechaza el
+alta. La excepción efectiva son los bytes `.torrent` sin hash extraíble, que se
+suben sin consulta previa. Si una consulta correcta encuentra el hash, no evalúa
+de nuevo la salud: considera satisfecha la petición porque qB ya lo gestiona.
 
 ### 22.4 Forzar qB desde historial sin semillas
 
@@ -1213,18 +1233,34 @@ Si RDT falla durante el upload, el preflight RD se borra inmediatamente.
 
 Las fases interpretadas son:
 
-| Fase | Significado | Acción |
+| Fase preexistente | Significado | Acción antes de una nueva importación |
 |---|---|---|
 | `finished` | terminado | reutilizar |
 | `healthy_started` | tiene descargas o está descargando | reutilizar |
-| `blocked_pending` | aún no añadido a proveedor o esperando selección | eliminar como obsoleto y reintentar |
-| `error` | error/fallo | eliminar con datos y reintentar |
+| `blocked_pending` | aún no añadido a proveedor o esperando selección | intentar borrar y volver a importar |
+| `error` | error/fallo | intentar borrar con datos y volver a importar |
 | `selected_only` | solo archivos seleccionados | no crear duplicado; rechazar como pendiente no saludable |
 | `pending_other` | pendiente ambiguo | no crear duplicado; rechazar |
 | `missing` | no existe | crear nueva fila |
 | `unknown` | no se pudo comprobar | rechazar por seguridad |
 
+La tabla se aplica a filas encontradas antes del alta. El borrado previo es
+best-effort: un fallo se diagnostica, pero no se propaga. Una fila recién creada
+que siga pendiente a los 45 segundos se devuelve como `pending=true`; no se
+borra ni se reimporta en ese momento.
+
+La fila creada se identifica primero por hash entre las filas nuevas, después
+por el mismo hash en toda la lista y, si apareció una sola fila nueva, por esa
+única diferencia.
+
 ### 23.4 Configuración enviada a RDT-Client
+
+La vía nativa usa `/Api/Authentication/Login`, `/Api/Torrents`,
+`/Api/Torrents/UploadMagnet`, `/Api/Torrents/UploadFile` y
+`/Api/Torrents/Delete/{id}`. Login, lecturas, altas y upload de fichero realizan
+como máximo cinco intentos ante excepciones o HTTP
+`408/429/500/502/503/504`. La espera respeta `Retry-After` entre 1 y 12 segundos;
+sin cabecera usa backoff hasta 8 segundos.
 
 La API nativa recibe:
 
@@ -1268,7 +1304,12 @@ vez localizada, se consulta hasta 45 segundos:
 
 ### 23.6 Seguimiento posterior y limpieza
 
-El worker de seguimiento usa por defecto:
+El worker se crea únicamente para `RD_VERIFIED_MAGNET_NATIVE`, porque esa ruta
+mantiene un preflight RD temporal. `RD_REUSABLE_NATIVE` y la rama manual no lo
+inician. Es un hilo daemon en memoria y no se recupera tras reiniciar el
+servicio.
+
+Usa por defecto:
 
 ```text
 intervalo=15 segundos
@@ -1282,8 +1323,9 @@ Resultados:
 - timeout: borrar preflight RD y fila RDT con datos;
 - excepción: intentar al menos borrar el preflight RD.
 
-La última ejecución real revisada siguió exactamente la rama sana: RDT quedó
-preparado, se borró el ID temporal RD y terminó `RDT_FOLLOWUP_DONE`.
+Una fila nueva `blocked_pending` sigue en polling hasta quedar preparada, entrar
+en error o agotar el timeout. En timeout se intenta borrar RDT y el preflight,
+pero no se realiza una segunda importación.
 
 ## 24. Selección de archivos en RDT
 
@@ -1317,6 +1359,10 @@ En ella “RD aceptó” significa que `addMagnet`/`addTorrent` y `selectFiles`
 terminaron sin error; no repite la verificación estricta de links usada durante
 la búsqueda BTDigg.
 
+Esta rama no consulta duplicados qB ni RDT antes del alta. Su precheck RD usa
+`keep_alive=false`: selecciona y elimina el temporal RD antes de entregar al
+receptor, por lo que no existe el follow-up de preflight de la ruta BTDigg.
+
 ### 25.1 Magnet manual
 
 1. hacer precheck RD con `addMagnet` y `selectFiles`;
@@ -1324,9 +1370,14 @@ la búsqueda BTDigg.
 3. si RD no lo acepta, enviarlo a qBittorrent;
 4. registrar el motor elegido.
 
+Si RD aceptó y después falla el envío RDT, la excepción termina la petición: no
+se intenta qB. El fallback qB solo se elige cuando el precheck RD devuelve
+negativo.
+
 ### 25.2 URL `.torrent` manual
 
-1. descargar y validar los bytes;
+1. descargar los bytes y exigir al menos 40 bytes; el infohash se intenta
+   extraer, pero no es requisito para continuar;
 2. hacer precheck RD con `addTorrent`;
 3. si RD acepta, subir a RDT-Client;
 4. si falla la API RDT compatible, puede escribir el `.torrent` atómicamente en
@@ -1345,10 +1396,16 @@ porque esa opción controla los probes de búsqueda, no el receptor final manual
 
 ### 26.1 Cuándo se registra
 
-Se crea un registro nuevo después de que:
+El momento del registro depende de la ruta:
 
-- el receptor final acepte una nueva alta; y
-- el sistema pueda resolver el hash o conservar evidencia suficiente del envío.
+- RDT nativo: después de localizar una fila nueva preparada o pendiente;
+- qB o API compatible de RDT: cuando la petición HTTP de alta retorna sin
+  excepción; el cuerpo de respuesta no se valida contra `Ok`/`Fails`;
+- inbox `.torrent`: después de publicar el fichero mediante escritura atómica.
+
+`record_download` admite hash vacío si ninguna fuente pudo resolverlo. El
+registro acredita que la rutina de entrega alcanzó su punto de éxito interno,
+no una confirmación uniforme del receptor.
 
 Un clic rechazado, un preflight fallido o una comprobación de duplicado incierta
 no crean un falso registro de éxito.
@@ -1375,9 +1432,9 @@ time
 ts
 ```
 
-El hash se obtiene del resultado, del magnet o del diccionario `info` del
-`.torrent`. El ID de registro es independiente del ID RD/RDT y evita depender de
-nombres repetidos.
+El hash se intenta obtener del resultado, del magnet o del diccionario `info`
+del `.torrent`; puede quedar vacío. El ID de registro es independiente del ID
+RD/RDT y evita depender de nombres repetidos.
 
 ### 26.3 Qué significa el registro
 
@@ -1423,7 +1480,7 @@ mantiene una segunda verdad paralela.
 
 ### 27.3 Diagnóstico de descarga
 
-Cada clic genera un `trace_id` independiente y eventos como:
+Cada clic genera un `trace_id` independiente. El contrato de eventos incluye:
 
 ```text
 DOWNLOAD_CLICK_RECEIVED
@@ -1533,8 +1590,13 @@ Antes del primer elemento se recuerda el estado global qB. Para cada elemento:
 2. crear un job normal con sus parámetros;
 3. esperar a que termine;
 4. guardar estado, cantidad de resultados y error;
-5. continuar con el siguiente aunque el anterior terminara en error;
+5. continuar con el siguiente si el anterior termina `error`;
 6. al final, restaurar el qB global anterior.
+
+Si un job termina `cancelled`, la cola se detiene aunque no existiera una orden
+global de parada: marca como cancelados los elementos pendientes y finaliza como
+`cancelled`. Si hubo uno o más `error` pero ninguno fue cancelado, procesa el
+resto y termina la cola como `error`.
 
 No se ejecutan elementos en paralelo. Esto mantiene la exclusión del motor y
 evita que un elemento cambie qB mientras otro todavía lee la configuración.
@@ -1649,21 +1711,11 @@ qbit_probe_category=manual
 
 ### 31.3 Real-Debrid
 
-```text
-verify_max_candidates=60
-verify_instant_results_with_addmagnet=true
-verify_candidates_when_api_off=true
-verify_wait_attempts=1 (forzado internamente)
-verify_wait_sec=0.25
-rd_verify_queue_enabled=true
-rd_verify_parallel_workers=60
-rd_check_existing_torrents=true
-cleanup_failed_verifications=true
-cleanup_unselected_verified=true
-```
-
-Los límites finos de endpoints, 429, slots, selección y borrado deben copiarse
-desde `configuracion-servidor-rd.md`, que es la especificación dedicada.
+La configuración interna RD no se duplica aquí. Capacidad, concurrencia,
+reintentos, cachés, slots, errores especiales, selección y limpieza se toman de
+`configuracion-servidor-rd.md`, que es su única especificación canónica. Este
+flujo consume las decisiones RD descritas en la sección 14 y no redefine sus
+valores.
 
 ## 32. Opciones heredadas, inactivas o engañosas
 
@@ -1691,10 +1743,9 @@ esa ruta.
 
 ### 32.4 Notas `_nota_*`
 
-Las claves de texto son ayuda humana y pueden quedar antiguas. Por ejemplo, una
-nota menciona 30 candidatos qB, 24 segundos y ratio 0,85, mientras los valores
-efectivos son 40, 35 y 0,9. Para reconstruir se copian valores y código activo,
-no comentarios descriptivos obsoletos.
+Las claves de texto son ayuda humana y pueden quedar antiguas. No gobiernan el
+motor ni son una fuente de configuración. Para reconstruir se usan los valores
+efectivos y el código activo, nunca comentarios descriptivos.
 
 ### 32.5 Envío antiguo del editor y JDownloader
 
@@ -1704,6 +1755,13 @@ copiarlos al portapapeles para JDownloader porque
 esa ruta: llama `POST /api/rdt/send` y aplica el contrato seguro RD/RDT/qB
 descrito en las secciones 19–24. No se deben mezclar ambas vías al reconstruir
 la web vigente.
+
+### 32.6 `quality_mode_extra_btdigg_terms`
+
+La clave existe en defaults, pero no gobierna ningún modo vigente: el modo `1`
+fuerza directamente `2160p`, el modo `0` sale por ser sin filtro y el modo `3`
+sale si la consulta no contiene un número de identidad. No debe presentarse como
+una lista activa configurable para estas rutas.
 
 ## 33. Pseudocódigo completo reproducible
 
@@ -1733,16 +1791,26 @@ function buscar(query, pages, mode, min_gb, qbit_enabled):
     principales = filtrar_tamano_aproximado(principales, min_gb)
     ordenar_para_gastar_RD_en_los_mejores(principales)
 
-    comprobados = comprobar_RD(principales, maximo=60)
+    materializar_hasta_torrent_candidate_probe_max_urls_torrent()
+    si instantAvailability esta desactivado:
+        comprobar_magnets(principales[:verify_max_candidates])
+    si instantAvailability funciona:
+        comprobar_con_addMagnet_cada_RD_INSTANT_sin_tope_global
+    comprobar_urls_torrent_hasta_verify_max_candidates()
     comprobados = volver_a_filtrar_tamano_con_evidencia_RD(comprobados)
 
     if no hay RD valido and rescate habilitado:
-        comprobar_RD(hasta_cinco_mejores(rescate))
+        comprobar_RD(rescate[:rd_rescue_max_candidates])
 
     if qbit_enabled:
         no_rd = elegir_no_RD_con_coincidencia_mismo_archivo(comprobados)
-        probar_temporalmente_en_qbit(hasta_40, workers=5, espera=35)
-        borrar_todos_los_probes_creados
+        incluir_tambien_no_RD_sin_magnet_que_terminaran_QBT_SIN_HASH
+        probar_temporalmente_en_qbit(
+            no_rd[:qbit_probe_max_candidates],
+            workers=qbit_probe_parallel_workers,
+            espera=qbit_probe_wait_sec
+        )
+        intentar_borrar_probes_confirmados_como_creados_por_el_job
 
     completos = comprobados + descartados_diagnosticos
     visibles = solo_RD_o_qbit_utiles(comprobados)
@@ -1751,9 +1819,10 @@ function buscar(query, pages, mode, min_gb, qbit_enabled):
 
     exportar(completos, visibles)
     guardar shown aislado
-    limpiar_temporales_RD_de_busqueda
+    limpiar_fallos_RD_en_motor
+    intentar_limpiar_RD_OK_incluidos_en_shown
     si subproceso termina bien:
-        promover artefactos compartidos
+        copiar_secuencialmente_artefactos_compartidos
         guardar historial
     devolver visibles
 
@@ -1778,24 +1847,30 @@ function descargar(tarjeta_cliente):
     else:
         bloquear por falta de evidencia segura
 
-    registrar solo si receptor acepto o ya lo tenia
+    registrar solo una nueva alta al alcanzar el punto de exito de su ruta
+    no registrar un duplicado devuelto como already_present
 ```
 
 ## 34. Invariantes que no deben romperse al replicar
 
 1. Una búsqueda y una cola nunca ejecutan el motor a la vez.
 2. Cada job escribe primero en su runtime aislado.
-3. Solo un job exitoso reemplaza los resultados compartidos.
+3. Solo un job exitoso inicia la promoción compartida, que no es transaccional.
 4. BTDigg encontrado no equivale a torrent válido.
 5. Las palabras de la consulta deben coincidir en el mismo título/archivo.
 6. Modo sin filtro no desactiva validaciones técnicas.
 7. `instantAvailability` no equivale a `RD_OK`.
 8. qB solo llama vivo a evidencia real; metadatos solos no bastan actualmente.
-9. Los probes qB creados por la búsqueda se borran; los preexistentes no.
-10. Los temporales RD de búsqueda se borran antes de terminar.
+9. Se intenta borrar los probes qB confirmados como creados por la búsqueda; los
+   preexistentes no se tocan y un fallo de borrado queda diagnosticado.
+10. Los fallos RD se limpian en el motor y los positivos de `shown` después; los
+    positivos fuera de `shown` o anteriores a una cancelación pueden quedar.
 11. El clic se valida contra el servidor; el navegador no decide la ruta.
-12. Un “no pude comprobar duplicado” bloquea el alta, no permite duplicar.
-13. Un RD existente se refresca y nunca se borra como temporal.
+12. Un “no pude comprobar duplicado” bloquea magnets y `.torrent` con hash; un
+    `.torrent` sin hash extraíble se sube sin esa consulta.
+13. Un RD existente descargado y marcado `rd_existing=true` se refresca y se
+    protege; un activo recuperado por error 33 conserva la limitación descrita
+    en el documento RD.
 14. Un RD verificado no existente recibe preflight nuevo al descargar.
 15. El preflight RD vive hasta que RDT está encaminado y luego se limpia.
 16. Fallos temporales no se etiquetan como torrents muertos.
@@ -1814,6 +1889,8 @@ function descargar(tarjeta_cliente):
 | Runtime aislado | `app/api/btdigg_rd/_runtime_dirs.py` |
 | Promoción de artefactos | `app/api/btdigg_rd/_job_artifacts.py` |
 | Cola | `app/api/btdigg_rd/search_queue.py` |
+| Estado compartido de interfaz | `app/api/btdigg_rd/ui_state.py`, `app/api/btdigg_rd/_ui_state_service.py` |
+| Seguimiento RD visible | `app/api/btdigg_rd/rd_follow.py` |
 | Puente web-motor | `app/motor/btdigg/rd_turbo_editor_maestro.py` |
 | Búsqueda, scoring, filtros, RD/qB | `app/motor/btdigg/rd_turbo_pro.py` |
 | Probe qB | `app/motor/btdigg/_motor_qbt_probe.py` |
@@ -1823,6 +1900,7 @@ function descargar(tarjeta_cliente):
 | Historial | `app/api/btdigg_rd/history.py` |
 | Contrato y decisión de descarga | `app/api/btdigg_rd/_send_contracts.py` |
 | Entrega final | `app/api/btdigg_rd/send.py` |
+| Rama manual de entrega | `app/api/btdigg_rd/_send_manual_flow.py` |
 | Cliente qB | `app/api/btdigg_rd/_qbt_client.py` |
 | Cliente RD | `app/api/btdigg_rd/_rd_client.py` |
 | Contrato nativo RDT | `app/api/btdigg_rd/_rdt_client.py` |
@@ -1850,54 +1928,18 @@ Copiar solo la consulta a BTDigg, el token RD o un fallback qB no reproduce el
 sistema. El comportamiento completo es la suma ordenada de todos los contratos
 descritos en este documento y en `configuracion-servidor-rd.md`.
 
-## 37. Evidencia real usada para contrastar esta especificación
+## 37. Validación de vigencia
 
-La última búsqueda completa revisada en la caja negra no se usa como regla, pero
-demuestra el orden real de las fases:
+Para considerar vigente esta especificación después de un cambio funcional hay
+que:
 
-```text
-consulta=Holmes 3
-páginas=1-5
-modo=1
-mínimo=0
-BTDigg únicos=10
-criba principal=10
-qB habilitado=false
-RD_OK=2
-RD_FAIL=7
-NO_INSTANT=1
-resultados mostrados=2
-errores de diagnóstico=0
-duración=36,84 s
-```
+1. contrastar las rutas y símbolos de la sección 35 con el código ejecutado;
+2. revisar la configuración efectiva sin exponer credenciales ni runtime crudo;
+3. ejecutar los contratos y pruebas que cubran las decisiones modificadas;
+4. revisar la caja negra reciente cuando cambien RD, qB, jobs, seguimiento,
+   descarga o limpieza;
+5. validar la web real cuando el cambio afecte a comportamiento visible.
 
-La secuencia observada fue:
-
-```text
-JOB_STARTED
-CONFIG_SNAPSHOT
-PROCESS_STARTED
-búsqueda BTDigg base
-rescate de calidad 2160p
-scoring
-criba de consulta
-endpoint instantAvailability desactivado (37)
-fallback serio addMagnet
-cola RD y slots activos
-selectFiles=all
-2 verificaciones RD correctas
-rechazos terminales y descarte sin progreso
-qB omitido por OFF
-exportación
-limpieza de temporales
-JOB_FINISHED_OK
-```
-
-La descarga real más reciente revisada confirmó la otra mitad del contrato:
-preflight RD, alta RDT, detección de RDT preparado, borrado correcto del
-preflight y `RDT_FOLLOWUP_DONE`.
-
-La web real respondió HTTP 200 en escritorio y móvil, mostró qB OFF, dos
-resultados RD y cero errores de consola, página o red. La persistencia volvió a
-la misma vista tras recargar. En móvil, la tabla de 860 px se desplazó dentro de
-su contenedor sin aumentar el ancho del `body`.
+Las búsquedas concretas, tiempos, cantidades y resultados de una ejecución son
+evidencia de diagnóstico, no reglas del sistema. Se conservan en caja negra,
+pruebas y Git; no se incorporan como comportamiento permanente a este contrato.

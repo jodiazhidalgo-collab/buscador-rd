@@ -2804,7 +2804,7 @@ def _same_file_match_for_result(title, context):
 
 def _query_relevance_bucket(r):
     """
-    Criba previa en dos carriles:
+    Criba previa en tres carriles:
     - primary: se verifica normal.
     - rescue: no se tira; se prueba solo si hace falta y con limite.
     - discard: basura clara.
@@ -2853,28 +2853,6 @@ def _query_relevance_bucket(r):
 
 def _result_relevant_to_current_query(r):
     return _query_relevance_bucket(r) == "primary"
-    """
-    Criba seria previa: no verifica basura.
-    Regla: los términos fuertes de búsqueda deben aparecer juntos en el título del torrent
-    o en un MISMO archivo interno detectado en el bloque de BTDigg.
-    No vale repartir palabras entre archivos distintos del pack.
-    """
-    terms = query_terms_for_match()
-    if not terms:
-        r.same_file_match = True
-        r.same_file_reason = "sin_terminos_fuertes"
-        return True
-    ok, fname, fgb, why = _same_file_match_for_result(r.title, _match_context_for_result(r))
-    r.same_file_match = bool(ok)
-    r.same_file_reason = why
-    if ok:
-        if fname and fname != r.title:
-            r.btdigg_file_name = fname
-            r.btdigg_file_size_gb = fgb or 0.0
-        return True
-    r.rd_status = "DESCARTADO_BUSQUEDA"
-    r.reason = "Descartado antes de verificar: la búsqueda no coincide en un mismo título/archivo. " + why
-    return False
 
 def _ascii_fold(s):
     s = str(s or "").lower()
@@ -4618,10 +4596,10 @@ def _rd_mark_verify_ok(r, tid, links, idx=0, total=0, ctx=None):
 
 def rd_verify_by_addmagnet(r, token, idx=0, total=0, ctx=None):
     """
-    Verificación seria v2.1:
+    Verificación seria:
     - Añade magnet a RD.
-    - Si pide selección, NO selecciona todo.
-    - En packs elige solo el archivo interno que coincide con la búsqueda.
+    - Si pide selección, envía files=all salvo IDs explícitos.
+    - Conserva el detalle de archivos solo para diagnóstico y tamaño.
     - Solo marca RD_OK cuando RD entrega link real.
     """
     cancel_checkpoint("rd_verify_by_addmagnet.before")

@@ -1,5 +1,10 @@
 # Configuración y comportamiento completo de Real-Debrid
 
+Este es el contrato funcional vigente de Real-Debrid. Cualquier cambio de su
+comportamiento efectivo debe actualizar este documento en el mismo cambio. El
+flujo exterior que consume estas decisiones se documenta en
+[`flujo-descarga-rd-qb.md`](flujo-descarga-rd-qb.md).
+
 ## 1. Objetivo y límite de este documento
 
 Este documento describe exclusivamente el contrato de comportamiento de
@@ -26,11 +31,17 @@ Un torrent no se considera bueno solo porque:
 - alcance `waiting_files_selection`;
 - tenga metadatos o seeders.
 
-Para la comprobación seria, solo se considera utilizable cuando RD entrega uno
-o más enlaces reales en `links` y el estado/progreso indica que están listos:
+El criterio positivo efectivo depende de la rama:
 
-- estado `downloaded`, `compressing` o `uploading`; o
-- progreso igual o superior al 100 %.
+- `addMagnet` exige enlaces reales y estado `downloaded`, `compressing` o
+  `uploading`, o que el progreso convertido a texto sea exactamente `100` o
+  `100.0`;
+- `addTorrent` selecciona archivos, obtiene los enlaces, intenta
+  `unrestrict/link` y considera positivo que quede al menos una descarga
+  desrestringida; esa rama no vuelve a exigir estado o progreso.
+
+Por tanto, recibir un ID nunca basta, pero las dos ramas no comparten actualmente
+una única función de aceptación.
 
 Con la configuración actual, un positivo de `instantAvailability` siempre se
 confirma después mediante `addMagnet`. Por eso el positivo definitivo normal es
@@ -55,11 +66,12 @@ obtenerse un hash se devuelve `SIN_HASH` antes de gastar una comprobación RD.
 
 ### 3.2 URL de archivo `.torrent`
 
-La URL se materializa antes de enviarla a RD:
+La URL puede pasar por una materialización previa antes de enviarla a RD:
 
 1. Se descarga el contenido binario con timeout.
-2. Debe tener apariencia real de metainfo BitTorrent; HTML, respuestas vacías o
-   contenido inválido se descartan.
+2. El probe acepta contenido por tipo MIME BitTorrent, extensión `.torrent` o
+   firma parcial de bytes con diccionario e indicador `info`; no decodifica y
+   valida obligatoriamente todo el bencode.
 3. Se envían los bytes con `PUT /torrents/addTorrent` y tipo
    `application/x-bittorrent`.
 4. RD debe devolver un `id`.
@@ -67,9 +79,12 @@ La URL se materializa antes de enviarla a RD:
 6. Cada enlace RD resultante se convierte mediante `POST /unrestrict/link` al
    preparar una descarga directa.
 
-La verificación inicial de `.torrent` está limitada por
-`verify_max_candidates`. Los candidatos que exceden el límite quedan como
-`NO_VERIFICADO`.
+La materialización previa se aplica como máximo a
+`torrent_candidate_probe_max`. Los siguientes quedan `NO_VERIFICADO` en esa
+fase, pero el bucle RD actual no bloquea ese estado: todavía puede descargar y
+enviar URLs posteriores hasta el límite propio de la rama `.torrent`. Esta es
+una diferencia efectiva entre “probe previo” y “verificación RD”, no una
+garantía de bencode completo.
 
 ### 3.3 Torrent ya existente en la cuenta RD
 
@@ -84,7 +99,14 @@ cuenta por hash. Solo se reutiliza como positivo un elemento que:
   términos buscados.
 
 Cuando cumple esas condiciones se marca `RD_OK` con `rd_existing=true` y se
-conserva su identificador. Nunca se borra como residuo de una comprobación.
+conserva su identificador. Esa clase de existente descargado queda protegida de
+la limpieza.
+
+El error 33 tiene otra ruta: puede recuperar un torrent activo por hash y
+reutilizar su ID sin marcarlo como existente protegido. Si después no produce
+links, el flujo actual puede tratarlo como temporal `NO_INSTANT` e intentar
+borrarlo. No debe confundirse esta limitación con la protección de los
+existentes descargados precargados.
 
 ### 3.4 Torrent individual
 
@@ -95,7 +117,8 @@ reales para declararlo `RD_OK`.
 
 ### 3.5 Pack o torrent con varios archivos
 
-El motor toma una instantánea diagnóstica de todos los archivos:
+El motor calcula contadores y tamaños sobre todos los archivos y conserva en la
+instantánea diagnóstica el detalle de como máximo 24 filas:
 
 - identificador;
 - ruta;
@@ -105,8 +128,8 @@ El motor toma una instantánea diagnóstica de todos los archivos:
 - coincidencia con los términos buscados;
 - y selección informada por RD.
 
-Esta instantánea sirve para diagnóstico, tamaño y trazabilidad. La selección
-efectiva actual es:
+Los archivos adicionales se cuentan como omitidos. Esta instantánea sirve para
+diagnóstico, tamaño y trazabilidad. La selección efectiva actual es:
 
 ```text
 files=all
@@ -118,6 +141,11 @@ Por tanto, un pack selecciona todo: vídeo principal, episodios, extras,
 subtítulos, imágenes y demás contenido incluido por RD. Si otro proyecto quiere
 replicar exactamente esta configuración debe enviar `all`; si quiere selección
 inteligente por archivo, eso sería un comportamiento diferente.
+
+`file_name=todos los archivos` pertenece al payload diagnóstico de la decisión.
+El resultado operativo guarda `selected_file_ids=all`, deja
+`selected_file_name` vacío deliberadamente y usa como tamaño seleccionado la
+suma del contenido elegido, no el tamaño de un archivo concreto.
 
 Solo cuando el contrato de entrada ya contiene `selected_file_ids` explícitos
 se envían esos IDs en lugar de `all`.
@@ -135,13 +163,16 @@ se envían esos IDs en lugar de `all`.
 
 ### 4.2 Preparación de candidatos
 
-Antes de RD ya deben quedar fuera los `.torrent` vacíos, HTML, enlaces directos
-inválidos y elementos sin identidad utilizable. RD recibe únicamente candidatos
-materializados y con datos suficientes para la rama correspondiente.
+Antes de RD quedan fuera los `.torrent` que el probe sí inspeccionó y clasificó
+como inválidos, los enlaces directos inválidos y los elementos sin identidad
+utilizable. Un `.torrent` que excedió el máximo del probe puede continuar por la
+ruta RD, como se describe en 3.2.
 
-La configuración admite hasta 60 candidatos RD por lote. Los mejores se
-comprueban primero. Los que quedan fuera del límite se marcan `NO_VERIFICADO`:
-no se confunden con torrents muertos.
+`verify_max_candidates` no es actualmente un presupuesto global. Limita el lote
+de magnets cuando `instantAvailability` está desactivado y limita la rama
+`.torrent`; cuando `instantAvailability` funciona, cada `RD_INSTANT` puede pasar
+a `addMagnet` sin aplicar ese tope. `NO_VERIFICADO` significa fuera de un límite
+concreto, no torrent muerto.
 
 ### 4.3 Consulta rápida de caché
 
@@ -192,8 +223,8 @@ Para un `.torrent` real:
 6. Esperar dos segundos entre consultas de esta fase.
 7. Exigir al menos un enlace.
 8. Si no aparecen enlaces, clasificar como `NO_INSTANT` cuando el mensaje indica
-   que sigue pendiente; en los demás errores, `RD_FAIL` o `RD_ERROR_TEMPORAL`
-   según corresponda.
+   que sigue pendiente; los errores temporales pasan a `RD_ERROR_TEMPORAL` y los
+   restantes a `RD_ERROR`. Esta función no produce `RD_FAIL`.
 9. Borrar el torrent temporal si la verificación falla.
 
 ### 4.6 Confirmación positiva
@@ -208,10 +239,12 @@ Un candidato confirmado queda con:
 - `rd_existing=true` únicamente si ya estaba descargado en la cuenta.
 
 Un identificador temporal marcado como positivo no se elimina en la limpieza
-del lote porque todavía puede utilizarse para convertir sus enlaces. Los
-positivos creados durante la prueba pero no elegidos se borran posteriormente
-si `cleanup_unselected_verified=true`. Los torrents RD ya existentes nunca se
-borran por no haber sido elegidos.
+del lote porque todavía puede utilizarse para convertir sus enlaces. Después,
+`cleanup_unselected_verified=true` limpia los positivos temporales incluidos en
+la lista `shown`. Los positivos que no llegaron a `shown`, incluido un exceso
+sobre el límite visible o una cancelación anterior a esa fase, no entran en esa
+segunda limpieza. Los existentes descargados con `rd_existing=true` se excluyen;
+la ruta especial de error 33 conserva la limitación descrita en 3.3.
 
 ## 5. Estados y decisiones
 
@@ -229,6 +262,7 @@ borran por no haber sido elegidos.
 | `RD_TOKEN_ERROR` | Token rechazado o healthcheck fallido | No comprobado | Abortar comprobaciones RD del lote |
 | `SIN_HASH` | No se pudo obtener el infohash | No comprobable como magnet | No llamar a `instantAvailability` |
 | `SIN_MAGNET` | La rama esperaba magnet y no lo recibió | No | Terminar esa comprobación |
+| `SIN_TORRENT` | La rama esperaba URL `.torrent` y no la recibió | No | Terminar esa comprobación |
 | `TORRENT_NO_VALIDO` | El contenido `.torrent` no supera la validación previa | No | No enviarlo a RD |
 | `NO_VERIFICADO` | Quedó fuera del límite de candidatos | Desconocido | No llamarlo muerto ni válido |
 | `RESCATE_NO_VERIFICADO` | Candidato dudoso no usado por la política de rescate | Desconocido | Mantenerlo fuera de los positivos RD |
@@ -285,7 +319,7 @@ Los siguientes son valores efectivos, después de combinar defaults y
 
 | Opción | Valor | Efecto |
 |---|---:|---|
-| `verify_max_candidates` | `60` | Máximo de magnets o `.torrent` sometidos a verificación seria |
+| `verify_max_candidates` | `60` | Tope del batch magnet con API instantánea desactivada y de la rama `.torrent`; no limita los `RD_INSTANT` cuando el endpoint funciona |
 | `rd_verify_queue_enabled` | `true` | Usa la cola coordinada de verificaciones RD |
 | `rd_verify_parallel_workers` | `60` | Máximo lógico de workers, limitado por número de candidatos y pacers |
 | `verify_wait_attempts` | `1` | Una lectura principal por candidato magnet; el valor está forzado internamente |
@@ -293,7 +327,7 @@ Los siguientes son valores efectivos, después de combinar defaults y
 | `verify_instant_results_with_addmagnet` | `true` | Nunca confiar solo en `instantAvailability` |
 | `verify_candidates_when_api_off` | `true` | Si falla el endpoint instantáneo, usar `addMagnet` |
 | `torrent_candidate_probe_enabled` | `true` | Materializar y validar candidatos `.torrent` |
-| `torrent_candidate_probe_max` | `40` | Máximo de URLs `.torrent` materializadas previamente |
+| `torrent_candidate_probe_max` | `40` | Máximo de URLs `.torrent` materializadas previamente; las posteriores no quedan bloqueadas por este ajuste |
 | `torrent_candidate_probe_timeout_sec` | `12` | Timeout de esa materialización |
 
 ### 7.2 Ritmo y concurrencia por endpoint
@@ -404,7 +438,7 @@ Si RD devuelve un resultado no válido, este contrato termina ahí. Cualquier
 estrategia externa alternativa pertenece a otro componente y no forma parte de
 esta configuración RD.
 
-## 10. Cancelación y garantía de limpieza
+## 10. Cancelación y limpieza efectiva
 
 La cancelación se comprueba antes y durante llamadas, esperas y workers. Cuando
 se cancela:
@@ -413,14 +447,16 @@ se cancela:
 2. el temporal actual se marca como fallido;
 3. se entra en una sección de limpieza no cancelable;
 4. se intenta borrar el temporal;
-5. el barrido final revisa todos los IDs creados que no sean positivos ni
-   existentes;
+5. el barrido final revisa los IDs temporales o fallidos, pero excluye los
+   positivos del lote y los existentes reconocidos;
 6. confirma la desaparición mediante `404` o registra explícitamente cualquier
    resto que no pudo eliminar.
 
-La limpieza final reúne IDs temporales, fallidos y borrados pendientes; excluye
-los positivos conservados y los torrents que ya existían en la cuenta. Así se
-evita tanto dejar basura como borrar contenido legítimo.
+La limpieza final reúne IDs temporales, fallidos y borrados pendientes. Los
+positivos se delegan a la limpieza posterior de `shown`. Por ello, una
+cancelación después de crear un `RD_OK` pero antes de construir `shown`, o un
+positivo que quede fuera del límite visible, puede dejar un temporal. Los
+fallos de borrado se registran; la desaparición absoluta no se puede prometer.
 
 ## 11. Contrato mínimo para reproducir esta lógica
 
@@ -435,12 +471,29 @@ Otro proyecto que quiera copiar exactamente este comportamiento debe cumplir:
 5. Separar fallos terminales, ausencia de caché, falta de comprobación y errores
    temporales.
 6. Regular cada endpoint y reaccionar de forma adaptativa a 429.
-7. Borrar todos los temporales fallidos, no elegidos o cancelados.
-8. No borrar torrents que ya existían en la cuenta.
+7. Intentar borrar temporales fallidos y positivos mostrados no elegidos,
+   registrando cualquier resto; el código actual no cubre todos los positivos
+   creados antes de una cancelación ni los que quedan fuera de `shown`.
+8. No borrar existentes descargados marcados `rd_existing=true`; los activos
+   recuperados por error 33 no tienen hoy esa misma protección.
 9. Volver a comprobar RD justo antes de entregar un positivo a un gestor de
    descargas.
 10. Mantener el preflight hasta que el receptor confirme que ya puede continuar
     y borrarlo después.
 
-Esa combinación, y no una opción aislada, es la configuración funcional que
-evita falsos positivos, duplicados y residuos en Real-Debrid.
+Esa combinación, junto con las limitaciones expresas de este documento, define
+el comportamiento funcional vigente. No debe elevarse ninguna de sus limpiezas
+best-effort a garantía absoluta.
+
+## 12. Fuentes y validación de vigencia
+
+La fuente principal del motor RD es
+`app/motor/btdigg/rd_turbo_pro.py`, con reintentos auxiliares en
+`app/motor/btdigg/_motor_rd_retry.py`. El preflight de descarga y la limpieza
+posterior viven en `app/api/btdigg_rd/send.py` y
+`app/api/btdigg_rd/_rd_client.py`.
+
+Después de cualquier cambio funcional se deben contrastar defaults más
+`config.json`, contratos RD, pruebas de selección `files=all`, reintentos,
+errores especiales y la caja negra reciente. Las credenciales y el runtime
+crudo no forman parte de esta especificación.
