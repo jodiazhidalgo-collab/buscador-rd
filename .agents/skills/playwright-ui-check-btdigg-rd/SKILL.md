@@ -36,6 +36,8 @@ powershell -NoProfile -ExecutionPolicy Bypass -File .agents\skills\playwright-ui
 
 ## Reglas
 
+- No ejecutar esta skill en revisiones generales de solo lectura ni para cambios
+  no visuales. Usarla tras un cambio de UI o si el usuario pide la comprobacion.
 - La validacion visible manda sobre logs internos cuando el fallo es de UI.
 - No uses esta skill para cambiar codigo; solo para comprobar y recoger evidencia.
 - No hagas pruebas destructivas ni lances descargas reales sin permiso.

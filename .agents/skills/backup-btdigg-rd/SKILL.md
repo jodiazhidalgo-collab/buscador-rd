@@ -1,6 +1,6 @@
 ---
 name: backup-btdigg-rd
-description: Crear backups fechados del proyecto unificado Z:\buscador-rd antes de cambios delicados. Usar antes de editar AGENTS, .codex, skills, frontend, backend, motor RD/qB, Docker, Cloudflared, Whisper, configuracion funcional o cualquier zona donde el usuario espere salvavidas local.
+description: Crear backups fechados del proyecto unificado Z:\buscador-rd antes de cambios delicados. Usar cuando una vuelta atras local aporte valor real, no en revisiones de solo lectura ni retoques pequenos.
 ---
 
 # Backup Buscador RD
@@ -28,6 +28,12 @@ powershell -NoProfile -ExecutionPolicy Bypass -File .agents\skills\backup-btdigg
 
 ## Reglas
 
+- No usar esta skill en un turno de solo lectura.
+- No hacer backup automatico para cambios pequenos, documentales o facilmente
+  reversibles.
+- Considerar delicados el motor RD/qB, Docker, secretos, migraciones, cambios
+  funcionales amplios y el propio sistema de backup, limpieza, hooks o Git.
+- `-DryRun` debe ser totalmente lector: no puede crear `_backups` ni otro archivo.
 - El unico directorio de backups valido es `Z:\buscador-rd\_backups`.
 - No crear backups dentro de `services\btdigg-rd`, `config\cloudflared`, `config\whisper` ni subcarpetas sueltas.
 - No meter `_backups/` en Git.

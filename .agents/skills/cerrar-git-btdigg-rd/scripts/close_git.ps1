@@ -1,7 +1,8 @@
 param(
     [string]$Message = "",
     [switch]$NoCommit,
-    [switch]$NoPush
+    [switch]$NoPush,
+    [switch]$ForceCleanup
 )
 
 $ErrorActionPreference = "Stop"
@@ -90,22 +91,48 @@ function Invoke-PushIfConfigured {
     } else {
         git push -u $remote $branch
     }
+    if ($LASTEXITCODE -ne 0) {
+        throw "Fallo al hacer push al remoto $remote."
+    }
+}
+
+function Invoke-ResidueCleanup {
+    param(
+        [string]$Root,
+        [string]$Stage
+    )
+
+    $residueScript = Join-Path $Root ".agents\skills\limpiar-residuos-btdigg-rd\scripts\clean_residues.ps1"
+    if (Test-Path -LiteralPath $residueScript) {
+        & powershell -NoProfile -ExecutionPolicy Bypass -File $residueScript
+        if ($LASTEXITCODE -ne 0) {
+            throw "Fallo la limpieza de residuos en la fase $Stage."
+        }
+    }
+
+    $removed = Remove-SafeGeneratedJunk -Root $Root
+    Write-Host "Basura generada limpiada ($Stage): $removed"
 }
 
 $root = Assert-InRepoRoot
 
-$residueScript = Join-Path $root ".agents\skills\limpiar-residuos-btdigg-rd\scripts\clean_residues.ps1"
-if (Test-Path -LiteralPath $residueScript) {
-    & powershell -NoProfile -ExecutionPolicy Bypass -File $residueScript
+$initialStatus = @(git status --short)
+if ($LASTEXITCODE -ne 0) {
+    throw "No se pudo leer el estado inicial de Git."
+}
+if ($initialStatus.Count -eq 0 -and -not $ForceCleanup) {
+    Write-Host "Git limpio de inicio. No limpio, no hago commit y no hago push."
+    exit 0
 }
 
-$removed = Remove-SafeGeneratedJunk -Root $root
-Write-Host "Basura generada limpiada: $removed"
+Invoke-ResidueCleanup -Root $root -Stage "pre-commit"
 
 $status = @(git status --short)
+if ($LASTEXITCODE -ne 0) {
+    throw "No se pudo leer Git despues de limpiar."
+}
 if ($status.Count -eq 0) {
-    Write-Host "Git limpio. No hay cambios que cerrar."
-    Invoke-PushIfConfigured -SkipPush:$NoPush
+    Write-Host "No hay cambios versionables despues de la limpieza. No hago commit ni push."
     exit 0
 }
 
@@ -122,7 +149,13 @@ if (-not $Message.Trim()) {
 }
 
 git diff --check
+if ($LASTEXITCODE -ne 0) {
+    throw "git diff --check ha detectado errores."
+}
 git add -A
+if ($LASTEXITCODE -ne 0) {
+    throw "No se pudieron preparar los cambios para el commit."
+}
 
 $staged = @(git diff --cached --name-only)
 if ($staged.Count -eq 0) {
@@ -130,11 +163,24 @@ if ($staged.Count -eq 0) {
     exit 0
 }
 
-git commit -m $Message
+$commitExit = 0
+try {
+    git commit -m $Message
+    $commitExit = $LASTEXITCODE
+}
+finally {
+    Invoke-ResidueCleanup -Root $root -Stage "post-commit"
+}
+if ($commitExit -ne 0) {
+    throw "El commit fallo. Los residuos del hook se han limpiado."
+}
 
 Invoke-PushIfConfigured -SkipPush:$NoPush
 
 $finalStatus = @(git status --short)
+if ($LASTEXITCODE -ne 0) {
+    throw "No se pudo comprobar el estado final de Git."
+}
 if ($finalStatus.Count -ne 0) {
     Write-Host "--- git sigue sucio ---"
     $finalStatus | ForEach-Object { Write-Host $_ }

@@ -108,3 +108,45 @@ def test_advanced_investigation_skill_points_to_github_repo():
     assert "AGENTS.md" in skill
     assert "docs/AI_REVIEW.md" in skill
     assert ".agents/skills/" in skill
+
+
+def test_read_only_policy_avoids_backups_cleanup_visual_checks_and_real_git_tests():
+    agents = read("AGENTS.md").lower()
+    backup_skill = read(".agents/skills/backup-btdigg-rd/SKILL.md").lower()
+    cleanup_skill = read(".agents/skills/limpiar-residuos-btdigg-rd/SKILL.md").lower()
+    ui_skill = read(".agents/skills/playwright-ui-check-btdigg-rd/SKILL.md").lower()
+
+    for expected in (
+        "un turno de solo lectura no crea absolutamente nada",
+        "si no has modificado ningun archivo, no ejecutes",
+        "pruebas sinteticas que ejecuten git real",
+        "no hagas prueba visual para cambios no visuales",
+    ):
+        assert expected in agents
+
+    assert "no usar esta skill en un turno de solo lectura" in backup_skill
+    assert "-dryrun` debe ser totalmente lector" in backup_skill
+    assert "no usar en un turno de solo lectura" in cleanup_skill
+    assert "revisiones generales de solo lectura" in ui_skill
+
+
+def test_backup_dry_run_and_git_close_are_side_effect_free_when_clean():
+    backup_script = read(".agents/skills/backup-btdigg-rd/scripts/create_backup.ps1")
+    close_script = read(".agents/skills/cerrar-git-btdigg-rd/scripts/close_git.ps1")
+    close_skill = read(".agents/skills/cerrar-git-btdigg-rd/SKILL.md")
+
+    dry_run_index = backup_script.index("if ($DryRun)")
+    backup_dir_creation_index = backup_script.index(
+        'New-Item -ItemType Directory -Path $backupDir'
+    )
+    assert dry_run_index < backup_dir_creation_index
+
+    initial_status_index = close_script.index("$initialStatus = @(git status --short)")
+    first_cleanup_index = close_script.index(
+        'Invoke-ResidueCleanup -Root $root -Stage "pre-commit"'
+    )
+    assert initial_status_index < first_cleanup_index
+    assert "Git limpio de inicio. No limpio, no hago commit y no hago push." in close_script
+    assert 'Invoke-ResidueCleanup -Root $root -Stage "post-commit"' in close_script
+    assert "if ($commitExit -ne 0)" in close_script
+    assert "-ForceCleanup" in close_skill

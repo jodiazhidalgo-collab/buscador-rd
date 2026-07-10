@@ -8,9 +8,6 @@ $ErrorActionPreference = "Stop"
 
 $root = Resolve-Path (Join-Path $PSScriptRoot "..\..\..\..")
 $backupDir = Join-Path $root "_backups"
-if (-not (Test-Path -LiteralPath $backupDir)) {
-    New-Item -ItemType Directory -Path $backupDir | Out-Null
-}
 
 $safeReason = ($Reason.ToLowerInvariant() -replace '[^a-z0-9_-]+', '-').Trim('-')
 if ([string]::IsNullOrWhiteSpace($safeReason)) { $safeReason = "manual" }
@@ -75,6 +72,10 @@ if ($DryRun) {
         Mode = "DryRun"
     })
     return
+}
+
+if (-not (Test-Path -LiteralPath $backupDir)) {
+    New-Item -ItemType Directory -Path $backupDir | Out-Null
 }
 
 Add-Type -AssemblyName System.IO.Compression

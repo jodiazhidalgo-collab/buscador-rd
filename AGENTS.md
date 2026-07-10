@@ -49,7 +49,16 @@ Rutas importantes:
 ## Reglas de trabajo
 
 - Antes de tocar, ejecuta `git status --short` desde `Z:\buscador-rd`.
+- Un turno de solo lectura no crea absolutamente nada: sin backup, temporales,
+  capturas, informes, `_codex_runtime`, limpieza, commit ni push.
+- En solo lectura no ejecutes pruebas que escriban en disco. Limita la revision a
+  comandos y scripts realmente lectores.
+- Las pruebas sinteticas que ejecuten Git real solo se hacen al modificar el
+  propio sistema de cierre, limpieza, hooks o Git. Los contratos que simulan Git
+  sin ejecutar repositorios reales pueden seguir formando parte de la suite.
+- Cualquier temporal de una prueba debe quedar aislado y eliminarse al terminar.
 - Si modificas cualquier archivo del proyecto, cierra el turno con `cerrar-git-btdigg-rd` desde `Z:\buscador-rd`: limpieza segura, commit y push al remoto configurado.
+- Si no has modificado ningun archivo, no ejecutes `cerrar-git-btdigg-rd`.
 - No dejes cambios locales sin commit/push salvo que el usuario pida expresamente no cerrar Git.
 - Las skills del proyecto viven en `Z:\buscador-rd\.agents\skills`.
 - La configuracion Codex del proyecto vive en `Z:\buscador-rd\.codex`.
@@ -64,7 +73,8 @@ Rutas importantes:
 
 ## Skills
 
-- Cambios delicados: usa `backup-btdigg-rd` antes.
+- Cambios delicados: usa `backup-btdigg-rd` antes. No hagas backup automatico
+  para retoques pequenos y facilmente reversibles.
 - Errores RD, qB, seguimiento o caja negra: usa `blackbox-review-btdigg-rd`.
 - UI visible: usa `playwright-ui-check-btdigg-rd`.
 - Rebuild/validacion del servicio web: usa `rebuild-btdigg-rd`.
@@ -217,10 +227,13 @@ Z:\buscador-rd\config\btdigg-rd\data\motor
 - No crees `AGENTS.md` dentro de servicios salvo permiso explicito.
 - No cierres Git desde `services\btdigg-rd`.
 - No crees `_backups` dentro de `services\btdigg-rd`.
-- Si cambias UI, valida visualmente.
+- Si cambias UI o el usuario pide comprobar un comportamiento visible, valida
+  visualmente. No hagas prueba visual para cambios no visuales.
 - Si la tarea menciona micro, voz, HTTPS, Cloudflare, Cloudflared o Whisper, usa `https-voz-btdigg-rd`.
 - Si la tarea menciona RD, qB, seguimiento o caja negra, usa `blackbox-review-btdigg-rd`.
-- Si la tarea es revision externa o ChatGPT/GitHub debe ver fallos reales, revisa y actualiza `diagnostics_public/`.
+- Si la tarea es revision externa o ChatGPT/GitHub debe ver fallos reales, revisa
+  `diagnostics_public/`. Actualizalo solo cuando haga falta publicar datos nuevos;
+  nunca como efecto secundario de una revision de solo lectura.
 
 - No repliques cambios a replicas externas salvo permiso claro del usuario.
 
@@ -229,7 +242,8 @@ Z:\buscador-rd\config\btdigg-rd\data\motor
 
 Si cambias frontend, backend, Docker o configuracion funcional:
 
-1. Backup en `Z:\buscador-rd\_backups`.
+1. Backup en `Z:\buscador-rd\_backups` solo si el cambio es delicado o necesita
+   un salvavidas local claro.
 2. Prueba local o Docker segun toque.
 3. Si afecta a UI, prueba visual real.
 4. Cierre con estado Git desde `Z:\buscador-rd`.
@@ -268,8 +282,8 @@ Reglas:
 - GitHub Actions si existe para pruebas publicas, informe JUnit y evidencia descargable.
 - Si el informe se crea retroactivamente para el ultimo trabajo importante,
   dilo dentro del propio informe.
-- Si no hubo cambios de codigo, aun asi deja claro que se actualizo el flujo
-  de cierre y como se verifico.
+- Si hubo cambios de documentacion o gobierno pero no de codigo, deja claro que
+  se actualizo el flujo de cierre y como se verifico.
 
 ## Cierre
 

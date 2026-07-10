@@ -9,6 +9,9 @@ description: Limpiar residuos seguros de Codex y pruebas en el proyecto unificad
 
 Usar dentro del cierre final de `cerrar-git-btdigg-rd`.
 
+No usar en un turno de solo lectura. El modo `-DryRun` solo se usa cuando el
+usuario pide expresamente auditar residuos y no debe crear carpetas ni archivos.
+
 ## Zonas
 
 `config\btdigg-rd\data` es sagrado: solo datos reales de la app.
